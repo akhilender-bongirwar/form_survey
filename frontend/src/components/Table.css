@@ -23,6 +23,19 @@ th {
    margin-right: 10px;
    margin-left: 10px;
 } */
+.inner-div-tag{
+  margin-right: 1% ;
+  font-weight: bold;
+  width: 20%;
+  padding: 1%;
+  border-right: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: content;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
 .div-style{
   display: flex;
   width: 100%;
@@ -40,5 +53,4 @@ th {
 .checkboxes{
   display: flex;
   padding: 1%;
-  padding-right: 7%;
 }

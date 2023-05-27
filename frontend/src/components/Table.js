@@ -37,15 +37,7 @@ function Table() {
               A. MSME Specific Questionairre
             </h2>
             <div className="div-style">
-              <label
-                htmlFor="enterprise"
-                style={{
-                  marginRight: "1% 1.5%",
-                  fontWeight: "bold",
-                  width: "20%",
-                  borderRight: "2px solid black",
-                }}
-              >
+              <label htmlFor="enterprise" className="inner-div-tag">
                 Enterprise name
               </label>
               <input
@@ -58,79 +50,66 @@ function Table() {
             <div className="div-style" style={{ borderTop: 0 }}>
               <label
                 htmlFor="entrepreneur"
-                style={{
-                  marginRight: "1% 1.5%",
-                  fontWeight: "bold",
-                  width: "20%",
-                  borderRight: "2px solid black",
-                }}
-              >
+                className="inner-div-tag">
                 Entrepreneur name
               </label>
               <input
                 type="text"
                 id="enterprise"
                 name="entrepreneur"
-                style={{ width: "75%", border: "transparent" }}
-              />
+                style={{ width: "75%", border: "transparent" }} />
             </div>
             <div className="div-style" style={{ borderTop: 0 }}>
-              <div
-                style={{
-                  marginRight: "1% 1.5%",
-                  width: "20%",
-                  borderRight: "2px solid black",
-                  fontWeight: "bold",
-                }}
-              >
+              <div className="inner-div-tag">
                 <span>Sex:</span>
-                <div style={{ display: "flex", gap: "2  " }}>
+                <div style={{ display: "flex",padding:"0.5vw"}}>
                   <input
                     type="radio"
                     name="sex"
-                    value="yes"
+                    value="male"
                     style={{ margin: "0.5%" }}
                   />
                   M
                   <input
                     type="radio"
                     name="sex"
-                    value="yes"
+                    value="female"
                     style={{ margin: "0.5%" }}
                   />
                   F
                 </div>
               </div>
-              <div>
-                <label
-                  htmlFor="category"
+              <div style={{display:"flex",justifyContent:"center",alignItems:"center",gap:"2%"}}>
+                <div
                   style={{
                     fontWeight: "bold",
-                    marginRight: "0.2%",
+                    marginRight: "0.1%",
                     alignSelf: "center",
                   }}
                 >
                   Category
-                </label>
-                <input
-                  type="text"
-                  name="category"
-                  id="category"
-                  placeholder="SC/ST/OBC/General"
-                  style={{ width: "70%", border: "transparent" }}
-                />
+                </div>
+                <div>
+                <label htmlFor="SC" style={{fontWeight:"500"}}>SC</label>
+                <input type="radio" id="SC" name="category" value="SC" />
+                </div>
+                <div>
+                <label htmlFor="ST" style={{fontWeight:"500"}}>ST</label>
+                <input type="radio" id="ST" name="category" value="ST" />
+                </div>
+                <div>
+                <label htmlFor="OBC" style={{fontWeight:"500"}}>SC</label>
+                <input type="radio" id="OBC" name="category" value="OBC" />
+                </div>
+                <div>
+                <label htmlFor="General" style={{fontWeight:"500"}}>SC</label>
+                <input type="radio" id="General" name="category" value="General" />
+                </div>
               </div>
             </div>
             <div className="div-style" style={{ borderTop: 0 }}>
               <label
-                htmlFor="address"
-                style={{
-                  marginRight: "1% 1.5%",
-                  fontWeight: "bold",
-                  width: "20%",
-                  borderRight: "2px solid black",
-                }}
-              >
+                htmlFor="address" className="inner-div-tag">
                 Address:
               </label>
               <input
@@ -141,15 +120,7 @@ function Table() {
               />
             </div>
             <div className="div-style" style={{ borderTop: 0 }}>
-              <label
-                htmlFor="website"
-                style={{
-                  marginRight: "1% 1.5%",
-                  fontWeight: "bold",
-                  width: "20%",
-                  borderRight: "2px solid black",
-                }}
-              >
+              <label htmlFor="address" className="inner-div-tag" >
                 Website:{" "}
               </label>
               <input
@@ -160,15 +131,7 @@ function Table() {
               />
             </div>
             <div className="div-style" style={{ borderTop: 0 }}>
-              <label
-                htmlFor="website"
-                style={{
-                  marginRight: "1% 1.5%",
-                  fontWeight: "bold",
-                  width: "20%",
-                  borderRight: "2px solid black",
-                }}
-              >
+              <label className="inner-div-tag">
                 Is your firm registerd?{" "}
               </label>
               <div
@@ -176,7 +139,7 @@ function Table() {
                 style={{ borderRight: "2px solid black" }}
               >
                 <div>
-                  <label htmlFor="yes">Yes</label>
+                  <label htmlFor="yes" style={{fontWeight:"500"}}>Yes</label>
                   <input
                     type="radio"
                     name="web"
@@ -185,218 +148,163 @@ function Table() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="no">No</label>
+                  <label htmlFor="no" style={{fontWeight:"500"}}>No</label>
                   <input
                     type="radio"
                     name="web"
                     value="no"
                     id="no"
-                    style={{ margin: "0.5%" }}
-                  />
+                    style={{ margin: "0.5%" }}/>
                 </div>
               </div>
-              <label
-                htmlFor="website"
-                style={{
-                  marginRight: "1% 1.5%",
-                  fontWeight: "bold",
-                  width: "20%",
-                  borderRight: "2px solid black",
-                }}
-              >
+            </div>
+            <div className="div-style" style={{ borderTop: 0 }}>
+            <label className="inner-div-tag" >
                 Do you have Udhyog Aadhar / Udyam Registration{" "}
               </label>
               <div className="checkboxes">
                 <div>
-                  <label htmlFor="yes">Yes</label>
+                  <label htmlFor="yes" style={{fontWeight:"500"}}>Yes</label>
                   <input
                     type="radio"
-                    name="register"
+                    name="aadhar"
                     value="yes"
-                    style={{ margin: "0.5%" }}
-                  />
+                    style={{ margin: "0.5%" }}/>
                 </div>
                 <div>
-                  <label htmlFor="no">No</label>
+                  <label htmlFor="no"  style={{fontWeight:"500"}}>No</label>
                   <input
                     type="radio"
-                    name="register"
+                    name="aadhar"
                     value="no"
                     id="no"
-                    style={{ margin: "0.5%" }}
-                  />
+                    style={{ margin: "0.5%" }}/>
                 </div>
               </div>
             </div>
             <div className="div-style" style={{ borderTop: 0 }}>
               <label
-                htmlFor="uae"
-                style={{
-                  marginRight: "1% 1.5%",
-                  fontWeight: "bold",
-                  width: "20%",
-                  borderRight: "2px solid black",
-                }}
-              >
+                htmlFor="uae" className="inner-div-tag">
                 UAM /UEM Number:
               </label>
               <input
                 type="text"
                 id="uae"
-                name="uae"
                 style={{
-                  width: "26%",
+                  display:"flex",
+                  flexBasis:"content",
                   border: "transparent",
                   borderRight: "2px solid black",
                 }}
               />
               <label
-                htmlFor="year"
-                style={{
-                  marginRight: "1% 1.5%",
-                  fontWeight: "bold",
-                  width: "18%",
-                  borderRight: "2px solid black",
-                }}
-              >
+                htmlFor="year" className="inner-div-tag">
                 Year of Establishment
               </label>
               <input
                 type="number"
-                id="uae"
+                id="year"
                 name="year"
+                style={{ width: "25%", border: "transparent"}}
+              />
+            </div>
+            <div className="div-style" style={{ borderTop: 0 }}>
+              <label className="inner-div-tag">
+              Type of Business
+              </label>
+              <div>
+                <label htmlFor="manufacturing" style={{fontWeight:"500"}}>Manufacturing</label>
+                <input type="radio" id="manufacturing" name="business" value="Manufacturing" style={{ margin: "0.5%" }} />
+                </div>
+                <div>
+                <label htmlFor="Service" style={{fontWeight:"500"}}>Service</label>
+                <input type="radio" id="Service" name="business" value="Service" style={{ margin: "0.5%" }} />
+                </div>
+                <div>
+                <label htmlFor="Trading" style={{fontWeight:"500"}}>Trading</label>
+                <input type="radio" id="Trading" name="business" value="Trading" style={{ margin: "0.5%" }} />
+                </div>
+            </div>
+            <div className="div-style" style={{ borderTop: 0 }}>
+            <label htmlFor="year" className="inner-div-tag">Whether operations are seasonal in nature? 
+             <br/> In case seasonal operations, <br/> no. of months of operations in a year
+              </label>
+              <input
+                type="text"
+                id="year"
                 style={{ width: "25%", border: "transparent" }}
               />
             </div>
             <div className="div-style" style={{ borderTop: 0 }}>
-              <label
-                htmlFor="uae"
-                style={{
-                  marginRight: "1% 1.5%",
-                  fontWeight: "bold",
-                  width: "20%",
-                  borderRight: "2px solid black",
-                }}
-              >
-                Type of Business (Manufacturing /Service / Trading)
-              </label>
-              <input
-                type="text"
-                id="uae"
-                name="uae"
-                style={{
-                  width: "26%",
-                  border: "transparent",
-                  borderRight: "2px solid black",
-                }}
-              />
-              <label
-                htmlFor="year"
-                style={{
-                  marginRight: "1% 1.5%",
-                  fontWeight: "bold",
-                  width: "18%",
-                  borderRight: "2px solid black",
-                }}
-              >
-                Whether operations are seasonal in nature? In case seasonal
-                operations, no. of months of operations in a year
-              </label>
-              <input
-                type="text"
-                id="uae"
-                name="year"
-                style={{ width: "25%", border: "transparent" }}
-              />
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
-              <div
-                htmlFor="address"
-                style={{
-                  marginRight: "1% 1.5%",
-                  fontWeight: "bold",
-                  width: "20%",
-                  borderRight: "2px solid black",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
+              <div className="inner-div-tag">
                 Ownership Pattern:
               </div>
               <div
                 className="checkboxes"
-                style={{ borderRight: "2px solid black", width: "3%" }}
-              >
+                style={{ borderRight: "2px solid black", display:"flex", flexBasis:"content"}}>
+                <div>
                 <label htmlFor="proprietary">Proprietary</label>
-                <br />
                 <input
                   type="radio"
-                  name="proprietary"
-                  value="yes"
-                  style={{ margin: "1%" }}
+                  id="proprietary"
+                  name="ownership"
+                  value="proprietary"
+                  style={{display:"flex", flexWrap:"wrap"}}
                 />
+                </div>
               </div>
-              <label
-                htmlFor="address"
-                style={{
-                  marginRight: "1% 1.5%",
-                  fontWeight: "bold",
-                  width: "20%",
-                  borderRight: "2px solid black",
-                }}
-              >
-                Partnership If Yes, % ownership of female . . . . .
-              </label>
-              <div
-                className="checkboxes"
-                style={{ borderRight: "2px solid black", width: "3%" }}
-              >
+              <div className="inner-div-tag">
+                Partnership If Yes, <br />% ownership of female . . . . .
+              </div>
+              <div className="checkboxes"  style={{ borderRight: "2px solid black", display:"flex", flexBasis:"content"}}>
                 <div>
-                  <label htmlFor="proprietary">Private Limited</label>
+                  <label htmlFor="private">Private Limited</label>
                   <input
                     type="radio"
-                    name="private"
-                    value="yes"
+                    id="private"
+                    name="ownership"
+                    value="private Limited"
                     style={{ margin: "1%" }}
                   />
                 </div>
               </div>
               <div
                 className="checkboxes"
-                style={{ borderRight: "2px solid black", width: "3%" }}
+                style={{ borderRight: "2px solid black", display:"flex", flexBasis:"content"}}
               >
                 <div>
-                  <label htmlFor="proprietary">LLP</label>
+                  <label htmlFor="LLP">LLP</label>
                   <input
                     type="radio"
-                    name="private"
-                    value="yes"
+                    id="LLP"
+                    name="ownership"
+                    value="LLP"
                     style={{ margin: "1%" }}
                   />
                 </div>
               </div>
               <div
                 className="checkboxes"
-                style={{ borderRight: "2px solid black", width: "3%" }}
+                style={{ borderRight: "2px solid black", display:"flex", flexBasis:"content"}}
               >
                 <div>
-                  <label htmlFor="proprietary">Public Limited</label>
+                  <label htmlFor="public limited">Public Limited</label>
                   <input
                     type="radio"
-                    name="private"
-                    value="yes"
+                    id="public limited"
+                    name="ownership"
+                    value="Public Limited"
                     style={{ margin: "1%" }}
                   />
                 </div>
               </div>
-              <div className="checkboxes" style={{ width: "3%" }}>
+              <div className="checkboxes"  style={{display:"flex", flexBasis:"content"}}>
                 <div>
-                  <label htmlFor="proprietary">No Legal Entity</label>
-                  <input
-                    type="radio"
-                    name="private"
-                    value="yes"
+                  <label htmlFor="Nolegal">No Legal Entity</label>
+                  <input type="radio"
+                    id="Nolegal"
+                    name="ownership"
+                    value="No Legal Entity"
                     style={{ margin: "1%" }}
                   />
                 </div>
