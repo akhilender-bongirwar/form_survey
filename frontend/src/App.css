@@ -6,6 +6,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 input[type="radio"] {
@@ -22,4 +23,15 @@ input[type=radio]:checked {
 
 input[type=radio]:focus {
   outline-color: transparent;
+}
+
+input[type=text] {
+  outline: none;
+  padding: 1%;
+  font-size: larger;
+  letter-spacing: 0.1em;
+}
+
+label {
+  font-size: larger;
 }
