@@ -7,7 +7,9 @@ import {
   Route,
 } from "react-router-dom";
 const router = createBrowserRouter(
-  createRoutesFromElements(<Route path="/" element={<Table />} />)
+  createRoutesFromElements(
+    <Route path="/" element={<Table />} action={dataaction} />
+  )
 );
 function App() {
   return <RouterProvider router={router} />;

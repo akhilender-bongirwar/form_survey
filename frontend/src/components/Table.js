@@ -1,21 +1,38 @@
 import React from "react";
 import "./Table.css";
 import Input from "./Input";
-import { Form } from "react-router-dom";
+import { Form, useActionData } from "react-router-dom";
+import FormPart2 from "./FormPart2";
+import axios from "axios";
 export async function dataaction({ request }) {
+  // console.log(request);
   const formData = await request.formData();
+  // console.log(formData.get("enterprise"));
   const submission = {
-    email: formData.get("enterprise"),
+    Enterprise_Name: formData.get("Enterprise_Name"),
   };
-  console.log(formData);
+  axios
+    .post("http://localhost:8080/form-data", {
+      body: submission,
+    })
+    .then((result) => {
+      console.log(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  // console.log(submission.enterprise);
+  // console.log(formData);
   return null;
 }
 
 function Table() {
+  // const a = useActionData();
+  // console.log(a);
   return (
     <>
       <h1 style={{ textAlign: "center" }}>DRAFT SURVEY FORM</h1>
-      <Form action="/" method="post">
+      <Form method="post">
         <div
           style={{
             display: "flex",
@@ -37,32 +54,31 @@ function Table() {
               A. MSME Specific Questionairre
             </h2>
             <div className="div-style">
-              <label htmlFor="enterprise" className="inner-div-tag">
+              <label htmlFor="Enterprise_Name" className="inner-div-tag">
                 Enterprise name
               </label>
               <input
                 type="text"
                 id="enterprise"
-                name="enterprise"
+                name="Enterprise_Name"
                 style={{ width: "70%", border: "transparent" }}
               />
             </div>
             <div className="div-style" style={{ borderTop: 0 }}>
-              <label
-                htmlFor="entrepreneur"
-                className="inner-div-tag">
+              <label htmlFor="entrepreneur" className="inner-div-tag">
                 Entrepreneur name
               </label>
               <input
                 type="text"
                 id="enterprise"
                 name="entrepreneur"
-                style={{ width: "75%", border: "transparent" }} />
+                style={{ width: "75%", border: "transparent" }}
+              />
             </div>
             <div className="div-style" style={{ borderTop: 0 }}>
               <div className="inner-div-tag">
                 <span>Sex:</span>
-                <div style={{ display: "flex",padding:"0.5vw"}}>
+                <div style={{ display: "flex", padding: "0.5vw" }}>
                   <input
                     type="radio"
                     name="sex"
@@ -79,7 +95,14 @@ function Table() {
                   F
                 </div>
               </div>
-              <div style={{display:"flex",justifyContent:"center",alignItems:"center",gap:"2%"}}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "2%",
+                }}
+              >
                 <div
                   style={{
                     fontWeight: "bold",
@@ -90,26 +113,38 @@ function Table() {
                   Category
                 </div>
                 <div>
-                <label htmlFor="SC" style={{fontWeight:"500"}}>SC</label>
-                <input type="radio" id="SC" name="category" value="SC" />
+                  <label htmlFor="SC" style={{ fontWeight: "500" }}>
+                    SC
+                  </label>
+                  <input type="radio" id="SC" name="category" value="SC" />
                 </div>
                 <div>
-                <label htmlFor="ST" style={{fontWeight:"500"}}>ST</label>
-                <input type="radio" id="ST" name="category" value="ST" />
+                  <label htmlFor="ST" style={{ fontWeight: "500" }}>
+                    ST
+                  </label>
+                  <input type="radio" id="ST" name="category" value="ST" />
                 </div>
                 <div>
-                <label htmlFor="OBC" style={{fontWeight:"500"}}>SC</label>
-                <input type="radio" id="OBC" name="category" value="OBC" />
+                  <label htmlFor="OBC" style={{ fontWeight: "500" }}>
+                    SC
+                  </label>
+                  <input type="radio" id="OBC" name="category" value="OBC" />
                 </div>
                 <div>
-                <label htmlFor="General" style={{fontWeight:"500"}}>SC</label>
-                <input type="radio" id="General" name="category" value="General" />
+                  <label htmlFor="General" style={{ fontWeight: "500" }}>
+                    SC
+                  </label>
+                  <input
+                    type="radio"
+                    id="General"
+                    name="category"
+                    value="General"
+                  />
                 </div>
               </div>
             </div>
             <div className="div-style" style={{ borderTop: 0 }}>
-              <label
-                htmlFor="address" className="inner-div-tag">
+              <label htmlFor="address" className="inner-div-tag">
                 Address:
               </label>
               <input
@@ -120,7 +155,7 @@ function Table() {
               />
             </div>
             <div className="div-style" style={{ borderTop: 0 }}>
-              <label htmlFor="address" className="inner-div-tag" >
+              <label htmlFor="address" className="inner-div-tag">
                 Website:{" "}
               </label>
               <input
@@ -131,15 +166,15 @@ function Table() {
               />
             </div>
             <div className="div-style" style={{ borderTop: 0 }}>
-              <label className="inner-div-tag">
-                Is your firm registerd?{" "}
-              </label>
+              <label className="inner-div-tag">Is your firm registerd? </label>
               <div
                 className="checkboxes"
                 style={{ borderRight: "2px solid black" }}
               >
                 <div>
-                  <label htmlFor="yes" style={{fontWeight:"500"}}>Yes</label>
+                  <label htmlFor="yes" style={{ fontWeight: "500" }}>
+                    Yes
+                  </label>
                   <input
                     type="radio"
                     name="web"
@@ -148,86 +183,117 @@ function Table() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="no" style={{fontWeight:"500"}}>No</label>
+                  <label htmlFor="no" style={{ fontWeight: "500" }}>
+                    No
+                  </label>
                   <input
                     type="radio"
                     name="web"
                     value="no"
                     id="no"
-                    style={{ margin: "0.5%" }}/>
+                    style={{ margin: "0.5%" }}
+                  />
                 </div>
               </div>
             </div>
             <div className="div-style" style={{ borderTop: 0 }}>
-            <label className="inner-div-tag" >
+              <label className="inner-div-tag">
                 Do you have Udhyog Aadhar / Udyam Registration{" "}
               </label>
               <div className="checkboxes">
                 <div>
-                  <label htmlFor="yes" style={{fontWeight:"500"}}>Yes</label>
+                  <label htmlFor="yes" style={{ fontWeight: "500" }}>
+                    Yes
+                  </label>
                   <input
                     type="radio"
                     name="aadhar"
                     value="yes"
-                    style={{ margin: "0.5%" }}/>
+                    style={{ margin: "0.5%" }}
+                  />
                 </div>
                 <div>
-                  <label htmlFor="no"  style={{fontWeight:"500"}}>No</label>
+                  <label htmlFor="no" style={{ fontWeight: "500" }}>
+                    No
+                  </label>
                   <input
                     type="radio"
                     name="aadhar"
                     value="no"
                     id="no"
-                    style={{ margin: "0.5%" }}/>
+                    style={{ margin: "0.5%" }}
+                  />
                 </div>
               </div>
             </div>
             <div className="div-style" style={{ borderTop: 0 }}>
-              <label
-                htmlFor="uae" className="inner-div-tag">
+              <label htmlFor="uae" className="inner-div-tag">
                 UAM /UEM Number:
               </label>
               <input
                 type="text"
                 id="uae"
                 style={{
-                  display:"flex",
-                  flexBasis:"content",
+                  display: "flex",
+                  flexBasis: "content",
                   border: "transparent",
                   borderRight: "2px solid black",
                 }}
               />
-              <label
-                htmlFor="year" className="inner-div-tag">
+              <label htmlFor="year" className="inner-div-tag">
                 Year of Establishment
               </label>
               <input
                 type="number"
                 id="year"
                 name="year"
-                style={{ width: "25%", border: "transparent"}}
+                style={{ width: "25%", border: "transparent" }}
               />
             </div>
             <div className="div-style" style={{ borderTop: 0 }}>
-              <label className="inner-div-tag">
-              Type of Business
-              </label>
+              <label className="inner-div-tag">Type of Business</label>
               <div>
-                <label htmlFor="manufacturing" style={{fontWeight:"500"}}>Manufacturing</label>
-                <input type="radio" id="manufacturing" name="business" value="Manufacturing" style={{ margin: "0.5%" }} />
-                </div>
-                <div>
-                <label htmlFor="Service" style={{fontWeight:"500"}}>Service</label>
-                <input type="radio" id="Service" name="business" value="Service" style={{ margin: "0.5%" }} />
-                </div>
-                <div>
-                <label htmlFor="Trading" style={{fontWeight:"500"}}>Trading</label>
-                <input type="radio" id="Trading" name="business" value="Trading" style={{ margin: "0.5%" }} />
-                </div>
+                <label htmlFor="manufacturing" style={{ fontWeight: "500" }}>
+                  Manufacturing
+                </label>
+                <input
+                  type="radio"
+                  id="manufacturing"
+                  name="business"
+                  value="Manufacturing"
+                  style={{ margin: "0.5%" }}
+                />
+              </div>
+              <div>
+                <label htmlFor="Service" style={{ fontWeight: "500" }}>
+                  Service
+                </label>
+                <input
+                  type="radio"
+                  id="Service"
+                  name="business"
+                  value="Service"
+                  style={{ margin: "0.5%" }}
+                />
+              </div>
+              <div>
+                <label htmlFor="Trading" style={{ fontWeight: "500" }}>
+                  Trading
+                </label>
+                <input
+                  type="radio"
+                  id="Trading"
+                  name="business"
+                  value="Trading"
+                  style={{ margin: "0.5%" }}
+                />
+              </div>
             </div>
             <div className="div-style" style={{ borderTop: 0 }}>
-            <label htmlFor="year" className="inner-div-tag">Whether operations are seasonal in nature? 
-             <br/> In case seasonal operations, <br/> no. of months of operations in a year
+              <label htmlFor="year" className="inner-div-tag">
+                Whether operations are seasonal in nature?
+                <br /> In case seasonal operations, <br /> no. of months of
+                operations in a year
               </label>
               <input
                 type="text"
@@ -236,27 +302,37 @@ function Table() {
               />
             </div>
             <div className="div-style" style={{ borderTop: 0 }}>
-              <div className="inner-div-tag">
-                Ownership Pattern:
-              </div>
+              <div className="inner-div-tag">Ownership Pattern:</div>
               <div
                 className="checkboxes"
-                style={{ borderRight: "2px solid black", display:"flex", flexBasis:"content"}}>
+                style={{
+                  borderRight: "2px solid black",
+                  display: "flex",
+                  flexBasis: "content",
+                }}
+              >
                 <div>
-                <label htmlFor="proprietary">Proprietary</label>
-                <input
-                  type="radio"
-                  id="proprietary"
-                  name="ownership"
-                  value="proprietary"
-                  style={{display:"flex", flexWrap:"wrap"}}
-                />
+                  <label htmlFor="proprietary">Proprietary</label>
+                  <input
+                    type="radio"
+                    id="proprietary"
+                    name="ownership"
+                    value="proprietary"
+                    style={{ display: "flex", flexWrap: "wrap" }}
+                  />
                 </div>
               </div>
               <div className="inner-div-tag">
                 Partnership If Yes, <br />% ownership of female . . . . .
               </div>
-              <div className="checkboxes"  style={{ borderRight: "2px solid black", display:"flex", flexBasis:"content"}}>
+              <div
+                className="checkboxes"
+                style={{
+                  borderRight: "2px solid black",
+                  display: "flex",
+                  flexBasis: "content",
+                }}
+              >
                 <div>
                   <label htmlFor="private">Private Limited</label>
                   <input
@@ -270,7 +346,11 @@ function Table() {
               </div>
               <div
                 className="checkboxes"
-                style={{ borderRight: "2px solid black", display:"flex", flexBasis:"content"}}
+                style={{
+                  borderRight: "2px solid black",
+                  display: "flex",
+                  flexBasis: "content",
+                }}
               >
                 <div>
                   <label htmlFor="LLP">LLP</label>
@@ -285,7 +365,11 @@ function Table() {
               </div>
               <div
                 className="checkboxes"
-                style={{ borderRight: "2px solid black", display:"flex", flexBasis:"content"}}
+                style={{
+                  borderRight: "2px solid black",
+                  display: "flex",
+                  flexBasis: "content",
+                }}
               >
                 <div>
                   <label htmlFor="public limited">Public Limited</label>
@@ -298,10 +382,14 @@ function Table() {
                   />
                 </div>
               </div>
-              <div className="checkboxes"  style={{display:"flex", flexBasis:"content"}}>
+              <div
+                className="checkboxes"
+                style={{ display: "flex", flexBasis: "content" }}
+              >
                 <div>
                   <label htmlFor="Nolegal">No Legal Entity</label>
-                  <input type="radio"
+                  <input
+                    type="radio"
                     id="Nolegal"
                     name="ownership"
                     value="No Legal Entity"
@@ -698,6 +786,7 @@ function Table() {
             </div>
           </div>
         </div>
+        {/* <FormPart2 /> */}
       </Form>
     </>
   );
