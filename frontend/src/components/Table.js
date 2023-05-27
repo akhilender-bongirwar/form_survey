@@ -621,11 +621,14 @@ function Table() {
                   />
                 </div>
               </div>
-              <div className="checkboxes" style={{
+              <div
+                className="checkboxes"
+                style={{
                   borderRight: "2px solid black",
                   display: "flex",
                   flexBasis: "content",
-                }}>
+                }}
+              >
                 <div>
                   <label htmlFor="others">Other please specify</label>
                   <input
@@ -633,19 +636,19 @@ function Table() {
                     id="others"
                     name="sell"
                     style={{
-                  display: "flex",
-                  flexBasis: "content",
-                  border: "transparent",
-                }}
+                      display: "flex",
+                      flexBasis: "content",
+                      border: "transparent",
+                    }}
                   />
                 </div>
               </div>
             </div>
             <div className="div-style" style={{ borderTop: 0 }}>
-              <div
-                className="inner-div-tag">
-                In case of <br/> Service Industry,<br/>
-                 your services are offered to{" "}
+              <div className="inner-div-tag">
+                In case of <br /> Service Industry,
+                <br />
+                your services are offered to{" "}
               </div>
               <div
                 className="checkboxes"
@@ -742,11 +745,14 @@ function Table() {
                   />
                 </div>
               </div>
-              <div className="checkboxes" style={{
+              <div
+                className="checkboxes"
+                style={{
                   borderRight: "2px solid black",
                   display: "flex",
                   flexBasis: "content",
-                }}>
+                }}
+              >
                 <div>
                   <label htmlFor="others">Other please specify</label>
                   <input
@@ -754,10 +760,10 @@ function Table() {
                     id="others"
                     name="service"
                     style={{
-                  display: "flex",
-                  flexBasis: "content",
-                  border: "transparent",
-                }}
+                      display: "flex",
+                      flexBasis: "content",
+                      border: "transparent",
+                    }}
                   />
                 </div>
               </div>
@@ -801,33 +807,67 @@ function Table() {
                   />
                 </div>
               </div>
-              <div style={{display:"flex",padding:"1%",flexDirection:"column",borderRight:"2px solid black"}}>
+              <div
+                style={{
+                  display: "flex",
+                  padding: "1%",
+                  flexDirection: "column",
+                  borderRight: "2px solid black",
+                }}
+              >
                 <div>
-                <label htmlFor="time">Full time: </label>
-                <input type="text" id="time" placeholder="" style={{width:"50%",border:"transparent"}} />
+                  <label htmlFor="time">Full time: </label>
+                  <input
+                    type="text"
+                    id="time"
+                    placeholder=""
+                    style={{ width: "50%", border: "transparent" }}
+                  />
                 </div>
                 <div>
-                <label htmlFor="time">Part time: </label>
-                <input type="text" id="time" placeholder="" style={{width:"50%",border:"transparent"}} />
+                  <label htmlFor="time">Part time: </label>
+                  <input
+                    type="text"
+                    id="time"
+                    placeholder=""
+                    style={{ width: "50%", border: "transparent" }}
+                  />
                 </div>
-            </div> 
-            <div style={{display:"flex",padding:"1%",flexDirection:"column",borderRight:"2px solid black"}}>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  padding: "1%",
+                  flexDirection: "column",
+                  borderRight: "2px solid black",
+                }}
+              >
                 <div>
-                <label htmlFor="time">Full time: </label>
-                <input type="text" id="time" placeholder="" style={{width:"50%",border:"transparent"}} />
+                  <label htmlFor="time">Full time: </label>
+                  <input
+                    type="text"
+                    id="time"
+                    placeholder=""
+                    style={{ width: "50%", border: "transparent" }}
+                  />
                 </div>
                 <div>
-                <label htmlFor="time">Part time: </label>
-                <input type="text" id="time" placeholder="" style={{width:"50%",border:"transparent"}} />
+                  <label htmlFor="time">Part time: </label>
+                  <input
+                    type="text"
+                    id="time"
+                    placeholder=""
+                    style={{ width: "50%", border: "transparent" }}
+                  />
                 </div>
-            </div> 
+              </div>
               {/* <div>
                 <button type="submit">submit</button>
               </div> */}
             </div>
+            <FormPart2 />
           </div>
         </div>
-        {/* <FormPart2 /> */}
       </Form>
     </>
   );
