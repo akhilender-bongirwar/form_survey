@@ -1,13 +1,16 @@
-import './App.css';
-import Table , {action as formAction}from './components/Table';
-import { RouterProvider,createBrowserRouter,createRoutesFromElements,Route } from 'react-router-dom';
-const router = createBrowserRouter(createRoutesFromElements(
-  <Route path='/' element={<Table />} action={formAction} />
-))
+import "./App.css";
+import Table, { dataaction } from "./components/Table";
+import {
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+} from "react-router-dom";
+const router = createBrowserRouter(
+  createRoutesFromElements(<Route path="/" element={<Table />} />)
+);
 function App() {
-  return (
-    <RouterProvider router={router} />
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

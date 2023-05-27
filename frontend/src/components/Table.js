@@ -2,8 +2,12 @@ import React from "react";
 import "./Table.css";
 import Input from "./Input";
 import { Form } from "react-router-dom";
-export async function action({ request }) {
+export async function dataaction({ request }) {
   const formData = await request.formData();
+  const submission = {
+    email: formData.get("enterprise"),
+  };
+  console.log(formData);
   return null;
 }
 
@@ -11,7 +15,7 @@ function Table() {
   return (
     <>
       <h1 style={{ textAlign: "center" }}>DRAFT SURVEY FORM</h1>
-      <Form method="post" action>
+      <Form action="/" method="post">
         <div
           style={{
             display: "flex",
@@ -759,6 +763,7 @@ function Table() {
                   />
                 </div>
               </div>
+
               {/* <div style={{display:"flex",padding:"1%",flexDirection:"column",borderRight:"2px solid black"}}>
                 <div>
                 <label htmlFor="time">Full time: </label>
@@ -779,6 +784,9 @@ function Table() {
                 <input type="text" id="time" placeholder="" style={{width:"50%",border:"transparent"}} />
                 </div>
             </div>  */}
+              <div>
+                <button type="submit">submit</button>
+              </div>
             </div>
           </div>
         </div>
