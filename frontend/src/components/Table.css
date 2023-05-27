@@ -44,12 +44,6 @@ th {
   border-left: 0;
   border-right: 0;
 }
-.overflow-div-style{
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
-  border: 0.15em solid black;  
-}
 .checkboxes{
   display: flex;
   padding: 1%;
