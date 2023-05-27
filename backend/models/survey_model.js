@@ -7,222 +7,248 @@ const surveyData = new Schema({
     type: String,
     required: true,
   },
-  // Entrepreneur_Name: {
-  //   type: String,
-  //   required: true,
-  // },
-  // Sex: {
-  //   type: String,
-  //   required: true,
-  // },
-  // Category: {
-  //   type: String,
-  //   enum: ["SC", "ST", "Minority", "OBC", "General"],
-  //   required: true,
-  // },
-  // Address: {
-  //   type: String,
-  //   required: true,
-  // },
-  // Firm_Registered: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },
-  // Udyam_Registration: {
-  //   type: Boolean,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },
-  // UAM_UEM_Number: {
-  //   type: Number,
-  //   required: true,
-  // },
-  // Year_of_Establishment: {
-  //   type: Number,
-  //   required: true,
-  // },
-  // Type_of_Business: {
-  //   type: String,
-  //   enum: ["manufacturing", "service", "trading"],
-  //   required: true,
-  // },
-  // Operations_seasonal: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  // },
-  // months_of_operation: {
-  //   type: Number,
-  // },
-  // Ownership_Pattern: {
-  //   type: String,
-  //   enum: [
-  //     "proprietary",
-  //     "partnership",
-  //     "private",
-  //     "LLP",
-  //     "PUBLIC",
-  //     "NO LEGAL ENTITY",
-  //   ],
-  //   required: true,
-  // },
-  // Cluster: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },
-  // IF_YES_HOW_MANY_UNITS: {
-  //   type: Number,
-  // },
-  // IF_NO_WHY: {
-  //   type: String,
-  // },
-  // use_computer: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },
-  // TOP_THREE_PRODUCTS: {
-  //   type: [String],
-  //   required: true,
-  // },
+  Entrepreneur_Name: {
+    type: String,
+    required: true,
+  },
+  Sex: {
+    type: String,
+    required: true,
+  },
+  Category: {
+    type: String,
+    enum: ["SC", "ST", "Minority", "OBC", "General"],
+    required: true,
+  },
+  Address: {
+    type: String,
+    required: true,
+  },
+  Firm_Registered: {
+    type: String,
+    enum: ["YES", "NO"],
+    required: true,
+  },
+  Udyam_Registration: {
+    type: String,
+    enum: ["YES", "NO"],
+    required: true,
+  },
+  UAM_UEM_Number: {
+    type: Number,
+    required: true,
+  },
+  Year_of_Establishment: {
+    type: Number,
+    required: true,
+  },
+  Type_of_Business: {
+    type: String,
+    enum: ["manufacturing", "service", "trading"],
+    required: true,
+  },
+  Operations_seasonal: {
+    type: String,
+    enum: ["YES", "NO"],
+  },
+  months_of_operation: {
+    type: Number,
+  },
+  Ownership_Pattern: {
+    type: String,
+    enum: [
+      "proprietary",
+      "partnership",
+      "private",
+      "LLP",
+      "PUBLIC",
+      "NO LEGAL ENTITY",
+    ],
+    required: true,
+  },
+   ownership_female_partnership:{
+    type:Number,
+   },
+  Cluster: {
+    type: String,
+    enum: ["YES", "NO"],
+    required: true,
+  },
+  IF_YES_HOW_MANY_UNITS: {
+    type: String,
+  },
+  use_computer: {
+    type: String,
+    enum: ["YES", "NO"],
+    required: true,
+  },
+  TOP_THREE_PRODUCTS: {
+    type: [String],
+    required: true,
+  },
   // sell_produce_majorly: {
-  //   type: String,
-  //   // enum:["Local_Market_Trader","government","online_platform","other_states_in_india","export_outside_india","other"]
-  // },
-  // full_time_Emoployee: {
-  //   type: Number,
-  //   required: true,
-  // },
-  // part_time_Emoployee: {
-  //   type: Number,
-  //   required: true,
-  // },
+  //   type: [String],
+  // },//left
+  // service_industry: {
+  //   type: [String],
+  // },//left
+  full_time_Emoployee: {
+    type: Number,
+    required: true,
+  },
+  part_time_Emoployee: {
+    type: Number,
+    required: true,
+  },
 
-  // Permanent_Emoployee: {
-  //   type: Number,
-  //   required: true,
-  // },
-  // Contractual_Emoployee: {
-  //   type: Number,
-  //   required: true,
-  // },
-  // male_employee: {
-  //   type: Number,
-  //   required: true,
-  // },
-  // female_employee: {
-  //   type: Number,
-
-  //   required: true,
-  // },
-  // finacing_source: {
-  //   type: String,
-  //   required: true,
-  // },
-  // loan_availed: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },
-  // loan_specification: {
-  //   type: String,
-  //   enum: ["Term Loan", "Working capital", "Both"],
-  // },
-  // loan_adequate: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },
-  // loan_required: {
-  //   type: Number,
-  // },
-  // availed_loan_last_year: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },
-  // innovation_RD: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },
-  // pan_card_company: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },
-  // GST_NO: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },
-  // Current_Bank_Account: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },
-  // have_CA_audited_financial_statement: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },
-  // Annual_Turnover: {
-  //   type: Number,
-  //   required: true,
-  // },
-  // Investment_plant_machinery: {
-  //   type: Number,
-  //   required: true,
-  // },
-  // Investment_IT_Infrastructure: {
-  //   type: Number,
-  //   required: true,
-  // },
-  // You_Export: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },
-  // Export_Value: {
-  //   type: Number,
-  //   required: true,
-  // },
-  // Overall_Annual_productiom: {
-  //   type: Number,
-  //   required: true,
-  // },
-  // Electric_Availability_Hours: {
-  //   type: Number,
-  //   required: true,
-  // },
-  // Electricity_rate_Per_Unit: {
-  //   type: Number,
-  //   required: true,
-  // },
-  // Water_Availability: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },
-  // Effluent_Treatment_Constraint: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },
-  // GOVT_Training: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },
-  // Email: {
-  //   type: String,
-  //   required: true,
-  // },
-  // Phone_Number: {
-  //   type: Number,
-  //   required: true,
-  // },
+  Permanent_Emoployee: {
+    type: Number,
+    required: true,
+  },
+  Contractual_Emoployee: {
+    type: Number,
+    required: true,
+  },
+  male_employee: {
+    type: Number,
+    required: true,
+  },
+  female_employee: {
+    type: Number,
+    required: true,
+  },
+  formal_source: {
+    type: String,
+    required: true,
+  },
+  informal_source: {
+    type: String,
+    required: true,
+  },
+  internal_fund_generation: {
+    type: String,
+    required: true,
+  },
+  other_source: {
+    type: String,
+  },
+  loan_availed: {
+    type: String,
+    enum: ["YES", "NO"],
+    required: true,
+  },
+  loan_specification: {
+    type: String,
+  },
+  loan_adequate: {
+    type: String,
+    enum: ["YES", "NO"],
+    required: true,
+  },
+  loan_required: {
+    type: Number,
+  },
+  availed_loan_last_year: {
+    type: String,
+    enum: ["YES", "NO"],
+    required: true,
+  },
+  availed_loan_amount: {
+    type: String,
+  },
+  innovation_RD: {
+    type: String,
+    enum: ["YES", "NO"],
+    required: true,
+  },
+  innovation_RD_institute: {
+    type: String,
+  },
+  govt_scheme:{
+    type:String,
+  },
+  govt_program:{
+    type:String,
+  },
+  govt_organisation:{
+    type:String,
+  },
+  pan_card_company: {
+    type: String,
+    enum: ["YES", "NO"],
+    required: true,
+  },
+  GST_NO: {
+    type: String,
+    enum: ["YES", "NO"],
+    required: true,
+  },
+  Current_Bank_Account: {
+    type: String,
+    enum: ["YES", "NO"],
+    required: true,
+  },
+  have_CA_audited_financial_statement: {
+    type: String,
+    enum: ["YES", "NO"],
+    required: true,
+  },
+  Annual_Turnover: {
+    type: Number,
+    required: true,
+  },
+  Investment_plant_machinery: {
+    type: Number,
+    required: true,
+  },
+  Investment_IT_Infrastructure: {
+    type: Number,
+    required: true,
+  },
+  You_Export: {
+    type: String,
+    enum: ["YES", "NO"],
+    required: true,
+  },
+  Export_Value: {
+    type: Number,
+    required: true,
+  },
+  Overall_Annual_production: {
+    type: Number,
+    required: true,
+  },
+  Electric_Availability_Hours: {
+    type: Number,
+    required: true,
+  },
+  Electricity_rate_Per_Unit: {
+    type: Number,
+    required: true,
+  },
+  Water_Availability: {
+    type: String,
+    enum: ["YES", "NO"],
+    required: true,
+  },
+  Effluent_Treatment_Constraint: {
+    type: String,
+    enum: ["YES", "NO"],
+    required: true,
+  },
+  GOVT_Training: {
+    type: String,
+    enum: ["YES", "NO"],
+    required: true,
+  },
+  Email: {
+    type: String,
+    required: true,
+  },
+  Phone_Number: {
+    type: Number,
+    required: true,
+  },
   // Raw_Materials: {
   //   type: String,
   //   required: true,
