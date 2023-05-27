@@ -313,7 +313,7 @@ const surveyData = new Schema({
   // },
   // Aware_of_listed_scehmes: {
   //   Central_Govt: {
-  //     type: String,
+  //     type: [String],
   //     required: true,
   //     enum: [
   //       "ZED",
@@ -324,7 +324,7 @@ const surveyData = new Schema({
   //       "IPR_scheme",
   //       "Samadhan",
   //       "CGTMSE",
-  //       " MSME Champions",
+  //       "MSME Champions",
   //     ],
   //   },
   //   State_Government: {
@@ -369,7 +369,7 @@ const surveyData = new Schema({
   //   required: true,
   // },
   // applied_loan_outcome: {
-  //   type: String,
+  //   type: [String],
   //   required: true,
   // },
   // reason_of_rejection: {
@@ -383,7 +383,6 @@ const surveyData = new Schema({
   // },
   // face_challenge_from_buyer: {
   //   type: String,
-  //   enum: ["YES", "NO"],
   //   required: true,
   // },
   // Questionnaire_For_Exporters: {
