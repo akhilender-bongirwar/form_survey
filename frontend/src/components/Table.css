@@ -1,0 +1,44 @@
+/* Table.css
+
+table {
+  width: 90%;
+  border-collapse: collapse;
+  border: 2px solid black;
+}
+
+th,
+td {
+  padding: 4px;
+  text-align: left;
+  border-bottom: 1px solid #2c2c2cf5;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+.removeUnderline{
+    border-bottom: none;
+}
+.firm-cb{
+   margin-right: 10px;
+   margin-left: 10px;
+} */
+.div-style{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  border: 0.15em solid black;
+  border-left: 0;
+  border-right: 0;
+}
+.overflow-div-style{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  border: 0.15em solid black;  
+}
+.checkboxes{
+  display: flex;
+  padding: 1%;
+  padding-right: 7%;
+}
