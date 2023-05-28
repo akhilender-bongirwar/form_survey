@@ -1,5 +1,5 @@
 import React from "react";
-import './Table.css'
+import "./Table.css";
 
 const FormPart2 = () => {
   return (
@@ -47,7 +47,12 @@ const FormPart2 = () => {
                 >
                   direct
                 </label>
-                <input type="radio" id="direct" value="direct" name="Raw_Materials" />
+                <input
+                  type="radio"
+                  id="direct"
+                  value="direct"
+                  name="Raw_Materials"
+                />
               </div>
               <div>
                 <label
@@ -56,7 +61,12 @@ const FormPart2 = () => {
                 >
                   Through Traders
                 </label>
-                <input type="radio" id="trader" value="Through Traders" name="Raw_Materials" />
+                <input
+                  type="radio"
+                  id="trader"
+                  value="Through Traders"
+                  name="Raw_Materials"
+                />
               </div>
               <div>
                 <label
@@ -65,7 +75,12 @@ const FormPart2 = () => {
                 >
                   Online
                 </label>
-                <input type="radio" id="online" value="Online" name="Raw_Materials" />
+                <input
+                  type="radio"
+                  id="online"
+                  value="Online"
+                  name="Raw_Materials"
+                />
               </div>
               <div>
                 <label
@@ -248,7 +263,7 @@ const FormPart2 = () => {
                     }}
                   >
                     <div>
-                      <label htmlFor="soldTo2">Wholesalers  </label>
+                      <label htmlFor="soldTo2">Wholesalers </label>
                       <input
                         type="checkbox"
                         id="soldTo2"
@@ -286,7 +301,9 @@ const FormPart2 = () => {
                     }}
                   >
                     <div>
-                      <label htmlFor="soldTo4">Large Manufacturers/ Anchor units </label>
+                      <label htmlFor="soldTo4">
+                        Large Manufacturers/ Anchor units{" "}
+                      </label>
                       <input
                         type="checkbox"
                         id="soldTo4"
@@ -503,7 +520,8 @@ const FormPart2 = () => {
                   <div>
                     <div>
                       <h3>
-                      What challenges do you face / hear while selling your products
+                        What challenges do you face / hear while selling your
+                        products
                       </h3>
                     </div>
                     <div>
@@ -525,7 +543,10 @@ const FormPart2 = () => {
                             style={{ margin: "0.5%" }}
                             id="advanceTech"
                           />
-                          <label htmlFor="advanceTech" style={{ fontWeight: "500" }}>
+                          <label
+                            htmlFor="advanceTech"
+                            style={{ fontWeight: "500" }}
+                          >
                             Advance technology
                           </label>
                         </div>
@@ -543,7 +564,10 @@ const FormPart2 = () => {
                             style={{ margin: "0.5%" }}
                             id="quality"
                           />
-                          <label htmlFor="quality" style={{ fontWeight: "500" }}>
+                          <label
+                            htmlFor="quality"
+                            style={{ fontWeight: "500" }}
+                          >
                             Quality of product
                           </label>
                         </div>
@@ -561,7 +585,10 @@ const FormPart2 = () => {
                             id="marketComp"
                             style={{ margin: "0.5%" }}
                           />
-                          <label htmlFor="marketComp" style={{ fontWeight: "500" }}>
+                          <label
+                            htmlFor="marketComp"
+                            style={{ fontWeight: "500" }}
+                          >
                             Market Competition
                           </label>
                         </div>
@@ -579,7 +606,10 @@ const FormPart2 = () => {
                             id="capital"
                             style={{ margin: "0.5%" }}
                           />
-                          <label htmlFor="capital" style={{ fontWeight: "500" }}>
+                          <label
+                            htmlFor="capital"
+                            style={{ fontWeight: "500" }}
+                          >
                             Capital
                           </label>
                         </div>
@@ -597,7 +627,10 @@ const FormPart2 = () => {
                             id="brandMarket"
                             style={{ margin: "0.5%" }}
                           />
-                          <label htmlFor="brandMarket" style={{ fontWeight: "500" }}>
+                          <label
+                            htmlFor="brandMarket"
+                            style={{ fontWeight: "500" }}
+                          >
                             Branding & Marketing
                           </label>
                         </div>
@@ -675,7 +708,7 @@ const FormPart2 = () => {
                               <input
                                 type="checkbox"
                                 id="exhibition"
-                                name="involved_in_marketing"
+                                name="options_you_leverage_for_sale"
                                 value="exhibitions"
                                 style={{ display: "flex", flexWrap: "wrap" }}
                               />
@@ -695,7 +728,7 @@ const FormPart2 = () => {
                               <input
                                 type="checkbox"
                                 id="portal"
-                                name="involved_in_marketing"
+                                name="options_you_leverage_for_sale"
                                 value="portals"
                                 style={{ margin: "1%" }}
                               />
@@ -714,7 +747,7 @@ const FormPart2 = () => {
                               <input
                                 type="checkbox"
                                 id="website"
-                                name="involved_in_marketing"
+                                name="options_you_leverage_for_sale"
                                 value="websites"
                                 style={{ margin: "1%" }}
                               />
@@ -729,13 +762,11 @@ const FormPart2 = () => {
                             }}
                           >
                             <div>
-                              <label htmlFor="socMedia">
-                                Social Media
-                              </label>
+                              <label htmlFor="socMedia">Social Media</label>
                               <input
                                 type="checkbox"
                                 id="socMedia"
-                                name="involved_in_marketing"
+                                name="options_you_leverage_for_sale"
                                 value="social media"
                                 style={{ margin: "1%" }}
                               />
@@ -756,177 +787,208 @@ const FormPart2 = () => {
                               <input
                                 type="checkbox"
                                 id="marketFacility"
-                                name="involved_in_marketing"
+                                name="options_you_leverage_for_sale"
                                 value="Common marketing facility"
                                 style={{ margin: "1%" }}
                               />
                             </div>
                             <div>
-                              <label htmlFor="others">
-                              Others (specify):
-                              </label>
+                              <label htmlFor="others">Others (specify):</label>
                               <input
                                 type="text"
                                 id="others"
-                                name="involved_in_marketing"
-                                style={{border:"transparent",width:"50%"}}
+                                name="options_you_leverage_for_sale"
+                                style={{ border: "transparent", width: "50%" }}
                               />
                             </div>
                           </div>
                         </div>
                       </div>
-              <div className="div-style" style={{ borderTop: 0 }}>
-              <label className="inner-div-tag">
-              Quality/Testing labs are easily <br/>available?
-              </label>
-              <div className="checkboxes">
-                <div>
-                  <label style={{ fontWeight: "500" }}>Yes</label>
-                  <input
-                    type="radio"
-                    name="Quality_Testing_lab_available"
-                    value="YES"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-                <div>
-                  <label style={{ fontWeight: "500" }}>No</label>
-                  <input
-                    type="radio"
-                    name="Quality_Testing_lab_available"
-                    value="NO"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
-              <label className="inner-div-tag">Is skilled labour and training<br/>
-facilities easily available? </label>
-              <div
-                className="checkboxes"
-                style={{ borderRight: "2px solid black", borderRight:0 }}
-              >
-                <div>
-                  <label
-                    htmlFor="yes"
-                    style={{ fontWeight: "500" }}
-                  >
-                    Yes
-                  </label>
-                  <input
-                    type="radio"
-                    id="yes"
-                    name="labour_and_training"
-                    value="YES"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="no"
-                    style={{ fontWeight: "500" }}
-                  >
-                    No
-                  </label>
-                  <input
-                    type="radio"
-                    id="no"
-                    name="labour_and_training"
-                    value="NO"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
-              <label className="inner-div-tag">
-              Whether skilled <br/>labour is required?
-              </label>
-              <div className="checkboxes">
-                <div>
-                  <label
-                    htmlFor="yes"
-                    style={{ fontWeight: "500" }}
-                  >
-                    Yes
-                  </label>
-                  <input
-                    type="radio"
-                    id="yes"
-                    name="skilled_labour_reqd"
-                    value="YES"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="no"
-                    style={{ fontWeight: "500" }}
-                  >
-                    No
-                  </label>
-                  <input
-                    type="radio"
-                    id="no"
-                    name="skilled_labour_reqd"
-                    value="NO"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-              </div>
-            </div>
-            <div style={{border:"1px solid black"}}>
-              <h2>For Service Industry</h2>
-              <div style={{display:"flex",flexBasis:"content"}}>
-              <div>
-                <h3>Nature of Services Offered</h3>
-              </div>
-              <div>
-                <input type="text" name="Nature_of_Services_Offered1" style={{ border: "transparent" }} />
-              </div>
-              <div>
-              <input type="text" name="Nature_of_Services_Offered2" style={{ border: "transparent" }} />
-              </div>
-              <div>
-              <input type="text" name="Nature_of_Services_Offered3" style={{ border: "transparent" }} />
-              </div>
-            </div>
-            <div style={{display:"flex",flexBasis:"content"}}>
-              <div>
-                <h3>Challenges Faced</h3>
-              </div>
-              <div>
-                <input type="text" name="Challenges_faced1" style={{  border: "transparent" }} />
-              </div>
-              <div>
-              <input type="text" name="Challenges_faced2" style={{ border: "transparent" }} />
-              </div>
-              <div>
-              <input type="text" name="Challenges_faced3" style={{ border: "transparent" }} />
-              </div>
-            </div>
-            </div>
-            <div style={{display:"flex",flexBasis:"content"}}>
-              <div>
-                <h3>In case you are availing support<br/>
-Govt. agencies / schemes what<br/>
-are the challenges faced with<br/>
-scheme</h3>
-              </div>
-              <div>
-                <input type="text" name="Govt_Scheme_Challenges" style={{ border: "transparent" }} />
-              </div>
-            </div>
-            </div>
-            <div style={{display:"flex",flexBasis:"content"}}>
-              <div>
-                <h3>Support required</h3>
-              </div>
-              <div>
-                <input type="text" name="Support_required" style={{ border: "transparent" }} />
-              </div>
-            </div>
+                      <div className="div-style" style={{ borderTop: 0 }}>
+                        <label className="inner-div-tag">
+                          Quality/Testing labs are easily <br />
+                          available?
+                        </label>
+                        <div className="checkboxes">
+                          <div>
+                            <label style={{ fontWeight: "500" }}>Yes</label>
+                            <input
+                              type="radio"
+                              name="Quality_Testing_lab_available"
+                              value="YES"
+                              style={{ margin: "0.5%" }}
+                            />
+                          </div>
+                          <div>
+                            <label style={{ fontWeight: "500" }}>No</label>
+                            <input
+                              type="radio"
+                              name="Quality_Testing_lab_available"
+                              value="NO"
+                              style={{ margin: "0.5%" }}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="div-style" style={{ borderTop: 0 }}>
+                        <label className="inner-div-tag">
+                          Is skilled labour and training
+                          <br />
+                          facilities easily available?{" "}
+                        </label>
+                        <div
+                          className="checkboxes"
+                          style={{
+                            borderRight: "2px solid black",
+                            borderRight: 0,
+                          }}
+                        >
+                          <div>
+                            <label htmlFor="yes" style={{ fontWeight: "500" }}>
+                              Yes
+                            </label>
+                            <input
+                              type="radio"
+                              id="yes"
+                              name="labour_and_training"
+                              value="YES"
+                              style={{ margin: "0.5%" }}
+                            />
+                          </div>
+                          <div>
+                            <label htmlFor="no" style={{ fontWeight: "500" }}>
+                              No
+                            </label>
+                            <input
+                              type="radio"
+                              id="no"
+                              name="labour_and_training"
+                              value="NO"
+                              style={{ margin: "0.5%" }}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="div-style" style={{ borderTop: 0 }}>
+                        <label className="inner-div-tag">
+                          Whether skilled <br />
+                          labour is required?
+                        </label>
+                        <div className="checkboxes">
+                          <div>
+                            <label htmlFor="yes" style={{ fontWeight: "500" }}>
+                              Yes
+                            </label>
+                            <input
+                              type="radio"
+                              id="yes"
+                              name="skilled_labour_is_required"
+                              value="YES"
+                              style={{ margin: "0.5%" }}
+                            />
+                          </div>
+                          <div>
+                            <label htmlFor="no" style={{ fontWeight: "500" }}>
+                              No
+                            </label>
+                            <input
+                              type="radio"
+                              id="no"
+                              name="skilled_labour_is_required"
+                              value="NO"
+                              style={{ margin: "0.5%" }}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div style={{ border: "1px solid black" }}>
+                        <h2>For Service Industry</h2>
+                        <div style={{ display: "flex", flexBasis: "content" }}>
+                          <div>
+                            <h3>Nature of Services Offered</h3>
+                          </div>
+                          <div>
+                            <input
+                              type="text"
+                              name="Nature_of_Services_Offered"
+                              style={{ border: "transparent" }}
+                            />
+                          </div>
+                          <div>
+                            <input
+                              type="text"
+                              name="Nature_of_Services_Offered"
+                              style={{ border: "transparent" }}
+                            />
+                          </div>
+                          <div>
+                            <input
+                              type="text"
+                              name="Nature_of_Services_Offered"
+                              style={{ border: "transparent" }}
+                            />
+                          </div>
+                        </div>
+                        <div style={{ display: "flex", flexBasis: "content" }}>
+                          <div>
+                            <h3>Challenges Faced</h3>
+                          </div>
+                          <div>
+                            <input
+                              type="text"
+                              name="Challenges_faced"
+                              style={{ border: "transparent" }}
+                            />
+                          </div>
+                          <div>
+                            <input
+                              type="text"
+                              name="Challenges_faced"
+                              style={{ border: "transparent" }}
+                            />
+                          </div>
+                          <div>
+                            <input
+                              type="text"
+                              name="Challenges_faced"
+                              style={{ border: "transparent" }}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div style={{ display: "flex", flexBasis: "content" }}>
+                        <div>
+                          <h3>
+                            In case you are availing support
+                            <br />
+                            Govt. agencies / schemes what
+                            <br />
+                            are the challenges faced with
+                            <br />
+                            scheme
+                          </h3>
+                        </div>
+                        <div>
+                          <input
+                            type="text"
+                            name="Govt_Scheme_Challenges"
+                            style={{ border: "transparent" }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div style={{ display: "flex", flexBasis: "content" }}>
+                      <div>
+                        <h3>Support required</h3>
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          name="Support_required"
+                          style={{ border: "transparent" }}
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
