@@ -74,16 +74,16 @@ export async function dataaction({ request }) {
     Phone_Number: formData.get("Phone_Number"),
   };
   console.log(submission);
-  axios
-    .post("http://localhost:8080/form-data", {
-      body: submission,
-    })
-    .then((result) => {
-      console.log(result);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  // axios
+  // .post("http://localhost:8080/form-data", {
+  //   body: submission,
+  // })
+  // .then((result) => {
+  //   console.log(result);
+  // })
+  // .catch((err) => {
+  //   console.log(err);
+  // });
   return null;
 }
 
@@ -1807,6 +1807,7 @@ function Table() {
             <button type="submit">submit</button>
           </div>
         </div>
+        <FormPart2 />
       </Form>
     </>
   );
