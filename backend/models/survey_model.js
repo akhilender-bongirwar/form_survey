@@ -74,7 +74,10 @@ const surveyData = new Schema({
     enum: ["YES", "NO"],
     required: true,
   },
-  IF_YES_HOW_MANY_UNITS: {
+  Cluster_Yes: {
+    type: String,
+  },
+  Cluster_No: {
     type: String,
   },
   use_computer: {
