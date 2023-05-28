@@ -19,52 +19,67 @@ function FormPart3() {
           borderBottom: "0",
         }}
       >
-          <table style={{ width: "100%", overflowWrap: "break-word" }}>
-            <tr>
-              <td colSpan={1}><span>Are you aware about the current
-                    government programs benefitting MSMEs </span></td>
-              <td colSpan={6}>
-                <div className="radio_wrapper">
-                  <div>
-                    <label htmlFor="YES">YES</label>
-                    <input type="radio" name="aware_of_govt_policy" id="YES" value="YES" />
-                  </div>
-                  <div>
-                    <label htmlFor="NO">NO</label>
-                    <input type="radio" name="aware_of_govt_policy" id="NO" value="NO" />
-                  </div>
+        <table style={{ width: "100%", overflowWrap: "break-word" }}>
+          <tr>
+            <td colSpan={1}><span>Are you aware about the current
+              government programs benefitting MSMEs </span></td>
+            <td colSpan={6}>
+              <div className="radio_wrapper">
+                <div>
+                  <label htmlFor="YES">YES</label>
+                  <input type="radio" name="aware_of_govt_policy" id="YES" value="YES" />
                 </div>
-              </td>
-            </tr>
-            <tr>
-              <td colSpan={1}><span>Which program benefits are you availing currently from the state? Please describe the key benefits and challenges related to the program</span></td>
-              <td colSpan={6}>
-                <thead>Name of the program</thead>
-                <tr>
-                  <td>
-                    <label htmlFor='Anything'>1.</label>
+                <div>
+                  <label htmlFor="NO">NO</label>
+                  <input type="radio" name="aware_of_govt_policy" id="NO" value="NO" />
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colSpan={1}><span>Which program benefits are you availing currently from the state? Please describe the key benefits and challenges related to the program</span></td>
+            <td colSpan={6}>
+              <tr>
+                <td colSpan={1}>
+                  <tr><span>Name of the program</span></tr>
+                  <tr>
+                    <label style={{ textAlign: "center" }} htmlFor='Anything'>1.</label>
                     <input type='text' id='Anything' style={{ width: "90%", border: "transparent" }} />
-                  </td>
-                  <td>
+                  </tr>
+                  <tr>
                     <label htmlFor='Anything1'>2.</label>
                     <input type='text' id='Anything1' style={{ width: "90%", border: "transparent" }} />
-                  </td>
-                </tr>
-                <tr>
-                  <td colSpan={2}>
-                    <label htmlFor='benefits'>Nature of assistance/Benefits:</label>
-                    <input type='text' name='Policy_benifitted' id='benefits' style={{ width: "90%", border: "transparent" }} />
-                  </td>
-                </tr>
-                <tr>
-                  <td colSpan={2}>
-                    <label htmlFor='challenges'>Challenges:</label>
-                    <input type='text' name='Challenges_faced_policy_related' id='challenges' style={{ width: "90%", border: "transparent" }} />
-                  </td>
-                </tr>
-              </td>
-            </tr>
-          </table>
+                  </tr>
+                </td>
+              </tr>
+              <tr>
+                <td colSpan={2}>
+                  <label htmlFor='benefits'>Nature of assistance/Benefits:</label>
+                  <input type='text' name='Policy_benifitted' id='benefits' style={{ width: "90%", border: "transparent" }} />
+                </td>
+              </tr>
+              <tr>
+                <td colSpan={2}>
+                  <label htmlFor='challenges'>Challenges:</label>
+                  <input type='text' name='Challenges_faced_policy_related' id='challenges' style={{ width: "90%", border: "transparent" }} />
+                </td>
+              </tr>
+            </td>
+          </tr>
+          <tr>
+            <td colSpan={1}><span>What are your expectations from the State / Central Government (related to infra/training/finance/etc)</span></td>
+            <td colSpan={6} >
+              <div>
+                <label style={{ textAlign: "center" }} htmlFor='Anything'>1.</label>
+                <input type='text' id='Anything' style={{ width: "90%", border: "transparent" }} />
+              </div>
+              <div>
+                <label htmlFor='Anything1'>2.</label>
+                <input type='text' id='Anything1' style={{ width: "90%", border: "transparent" }} />
+              </div>
+            </td>
+          </tr>
+        </table>
         {/* <div className="div-style" style={{ borderTop: 0 }}>
           <label className="inner-div-tag" >Are you aware about<br />the current
             government <br />programs benefitting<br />
@@ -96,7 +111,7 @@ function FormPart3() {
             </div>
           </div>
         </div> */}
-        <div className="div-style" style={{ borderTop: 0 }}>
+        {/* <div className="div-style" style={{ borderTop: 0 }}>
           <div className="inner-div-tag" >Which program benefits are you<br />availing currently from the state?
             <br />Please describe the key benefits<br />
             and challenges related to the<br />
@@ -118,7 +133,7 @@ function FormPart3() {
               <input type='text' id='challenges' name='Challenges_faced_policy_related' style={{ width: "50%", border: "transparent" }} />
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="div-style" style={{ borderTop: 0 }}>
           <div className="inner-div-tag" >What are your expectations from<br />the State / Central Government
             <br />(related to infra/training/finance/<br />

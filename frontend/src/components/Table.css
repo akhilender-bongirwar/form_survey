@@ -7,7 +7,7 @@ table,th,td{
   padding: 0.8em;
 }
 input[type=text]{
-  font-size: medium;
+  font-size: small;
 }
 .inner-div-tag{
   margin-right: 1% ;
