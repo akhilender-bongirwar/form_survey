@@ -274,11 +274,11 @@ const surveyData = new Schema({
   // final_product_sold_to: {
   //   type: String,
   //   required: true,
-  // },
+  // },//multiple
   // markets_supplied: {
   //   type: String,
   //   enum: ["Within State", " Outside State", "Outside Country"],
-  // },
+  // },//multiple
   // have_product_brand_name: {
   //   type: String,
   //   enum: ["YES", "NO"],
@@ -289,12 +289,12 @@ const surveyData = new Schema({
   // },
   // challenges_while_selling: {
   //   type: String,
-  // },
+  // },//multiple
   // involved_in_marketing: {
   //   type: String,
   //   enum: ["YES", "NO"],
   //   required: true,
-  // },
+  // },//multiple + add a field
   // Quality_Testing_lab_available: {
   //   type: String,
   //   enum: ["YES", "NO"],
@@ -420,6 +420,7 @@ const surveyData = new Schema({
   //       type: String,
   //     },
   //   },
+  //   added 1 2 3
   //   Infrastructure: {
   //     Currently_owned: {
   //       type: String,
@@ -438,7 +439,6 @@ const surveyData = new Schema({
   //   },
   //   Certification_required: {
   //     type: String,
-  //     enum: ["YES", "NO"],
   //     required: true,
   //     tentative_cost: {
   //       type: String,
@@ -447,7 +447,6 @@ const surveyData = new Schema({
   //   laboratory_requirement: {
   //     type: String,
   //     required: true,
-  //     enum: ["YES", "NO"],
   //     tentative_cost: {
   //       type: String,
   //     },
