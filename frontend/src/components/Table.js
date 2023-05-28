@@ -90,6 +90,7 @@ export async function dataaction({ request }) {
 function Table() {
   const [a1,setA1]=useState(null);
   const [a2,setA2]=useState(null);
+  const [a3,setA3]=useState(null);
   return (
     <>
       <h1 style={{ textAlign: "center" }}>DRAFT SURVEY FORM</h1>
@@ -241,7 +242,7 @@ function Table() {
                       <input type="radio" onClick={()=>setA1("show1")} name="Operations_seasonal" id="Operations_seasonalyes" value="YES" />
                     </div>
                       {a1!="show1"?(""):(<tr style={{display:"flex",alignItems:"center",gap:"3px"}}><span>In case seasonal operations, no. of  months of
-                operations in a year{" "}</span><input  style={{minWidth:"20px"}} type="text" id="UAM_UEM_Number" name="UAM_UEM_Number" /></tr>)}
+                operations in a year{" "}</span><input  style={{minWidth:"20px"}} type="number" id="months_of_operation" name="months_of_operation" /></tr>)}
                     <div>
                       <label htmlFor="Operations_seasonalno">NO</label>
                       <input type="radio" onClick={()=>setA1(null)} name="Operations_seasonal" id="Operations_seasonalno" value="NO" />
@@ -249,7 +250,7 @@ function Table() {
                   </div>
                 </td>
               </tr>
-              {/* <tr>
+              <tr>
               <td colSpan={1}><span> Ownership_Pattern{" "}</span></td>
                 <td colSpan={6}>
                   <div className="radio_wrapper">
@@ -259,29 +260,79 @@ function Table() {
                     </div>
                     <div>
                       <label htmlFor="partnership">Partnership</label>
-                      <input type="radio" name="Ownership_Pattern" id="partnership" value="partnership" />
-                      {a2!="show1"?(""):(<tr style={{display:"flex",alignItems:"center",gap:"3px"}}><span>In case seasonal operations, no. of  months of
-                operations in a year{" "}</span><input  style={{minWidth:"20px"}} type="text" id="UAM_UEM_Number" name="UAM_UEM_Number" /></tr>)}
+                      <input type="radio" onClick={()=>setA2("show2")} name="Ownership_Pattern" id="partnership" value="partnership" />
                     </div>
                     <div>
                       <label htmlFor="private">Private</label>
-                      <input type="radio" name="Ownership_Pattern" id="private" value="private" />
+                      <input type="radio" onClick={()=>setA2(null)} name="Ownership_Pattern" id="private" value="private" />
                     </div>
                     <div>
                       <label htmlFor="LLP">LLP</label>
-                      <input type="radio" name="Ownership_Pattern" id="LLP" value="LLP" />
+                      <input type="radio" onClick={()=>setA2(null)} name="Ownership_Pattern" id="LLP" value="LLP" />
                     </div>
                     <div>
                       <label htmlFor="PUBLIC">Public</label>
-                      <input type="radio" name="Ownership_Pattern" id="PUBLIC" value="PUBLIC" />
+                      <input type="radio" onClick={()=>setA2(null)} name="Ownership_Pattern" id="PUBLIC" value="PUBLIC" />
                     </div>
                     <div>
                       <label htmlFor="NO LEGAL ENTITY">No Legal Entity</label>
-                      <input type="radio" name="Ownership_Pattern" id="NO LEGAL ENTITY" value="NO LEGAL ENTITY" />
+                      <input type="radio" onClick={()=>setA2(null)} name="Ownership_Pattern" id="NO LEGAL ENTITY" value="NO LEGAL ENTITY" />
+                    </div>
+                  </div>
+                      {a2!="show2"?(""):(<tr style={{display:"flex",alignItems:"center",gap:"3px"}}><span>If Yes, % ownership of female{" "}</span><input  style={{minWidth:"20px"}} type="number" id="ownership_female_partnership" name="ownership_female_partnership" /></tr>)}
+                </td>
+              </tr>
+              <tr>
+              <td colSpan={1}><span>Are you a part of any Cluster?{" "}</span></td>
+                <td colSpan={6}>
+                  <div className="radio_wrapper">
+                    <div>
+                      <label htmlFor="Clusteryes">YES</label>
+                      <input type="radio" onClick={()=>setA3("Yes")} name="Cluster" id="Clusteryes" value="YES" />
+                    </div>
+                    <div>
+                      <label htmlFor="Clusterno">NO</label>
+                      <input type="radio" onClick={()=>setA3("No")} name="Cluster" id="Clusterno" value="NO" />
+                    </div>
+                  </div>
+                  {a3=="Yes"?(<tr style={{display:"flex",alignItems:"center",gap:"3px"}}><span>If Yes, which one? How many units are there</span><input  style={{minWidth:"20px"}} type="text" id="Cluster_Yes" name="Cluster_Yes" /></tr>):("")}
+                {a3=="No"?(<tr style={{display:"flex",alignItems:"center",gap:"3px"}}><span>If No, Why?{" "}</span><input  style={{minWidth:"20px"}} type="text" id="Cluster_No" name="Cluster_No" /></tr>):("")}
+                </td>
+              </tr>
+              <tr>
+              <td colSpan={1}><span> Do you use computer 
+                software for accounting
+                or managing finances?</span></td>
+                <td colSpan={6}>
+                  <div className="radio_wrapper">
+                    <div>
+                      <label htmlFor="use_computeryes">YES</label>
+                      <input type="radio" name="use_computer" id="use_computeryes" value="YES" />
+                    </div>
+                    <div>
+                      <label htmlFor="use_computerno">NO</label>
+                      <input type="radio" name="use_computer" id="use_computerno" value="NO" />
                     </div>
                   </div>
                 </td>
-              </tr> */}
+              </tr>
+              <tr>
+                <td colSpan={1} ><span>What are the top 3 products you offer?{" "}</span></td>
+                <td colSpan={6}>
+                      <div>
+                        <label htmlFor="TOP_THREE_PRODUCTS-1">1.</label>
+                        <input style={{width:"90%"}} type="text" id="TOP_THREE_PRODUCTS-1" name="TOP_THREE_PRODUCTS" />
+                      </div>
+                      <div>
+                        <label htmlFor="TOP_THREE_PRODUCTS-2">2.</label>
+                        <input style={{width:"90%"}} type="text" id="TOP_THREE_PRODUCTS-2" name="TOP_THREE_PRODUCTS" />
+                      </div>
+                      <div>
+                        <label htmlFor="TOP_THREE_PRODUCTS-3">3.</label>
+                        <input style={{width:"90%"}} type="text" id="TOP_THREE_PRODUCTS-3" name="TOP_THREE_PRODUCTS" />
+                      </div>
+                    </td>
+                  </tr>
             </table>
             {/* <div className="div-style">
               <label htmlFor="Enterprise_Name" className="inner-div-tag">
@@ -574,7 +625,7 @@ function Table() {
                 style={{ width: "10%", border: "transparent" }}
               />
             </div> */}
-            <div className="div-style" style={{ borderTop: 0 }}>
+            {/* <div className="div-style" style={{ borderTop: 0 }}>
               <div className="inner-div-tag">Ownership Pattern:</div>
               <div
                 className="checkboxes"
@@ -690,9 +741,9 @@ function Table() {
                   />
                 </div>
               </div>
-            </div>
+            </div> */}
 
-            <div className="div-style" style={{ borderTop: 0 }}>
+            {/* <div className="div-style" style={{ borderTop: 0 }}>
               <div className="inner-div-tag">
                 Are you a part of <br />
                 any Cluster?{" "}
@@ -737,8 +788,8 @@ function Table() {
                 placeholder="If No, Why?"
                 style={{ width: "30%", border: "transparent" }}
               />
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
+            </div> */}
+            {/* <div className="div-style" style={{ borderTop: 0 }}>
               <div className="inner-div-tag">
                 Do you use computer <br />
                 software for accounting
@@ -809,7 +860,7 @@ function Table() {
                   style={{ width: "80%", border: "transparent" }}
                 />
               </div>
-            </div>
+            </div> */}
             <div className="div-style" style={{ borderTop: 0 }}>
               <div className="inner-div-tag">
                 Where all do you sell your <br /> produce/products majorly?{" "}
