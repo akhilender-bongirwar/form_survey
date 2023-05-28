@@ -27,28 +27,28 @@ function FormPart6() {
                 <tr>
                     <td>Certifications</td>
                     <td>
-                        <input type='text' id='certificate1' name='Currently_owned' style={{ width: "50%", border: "transparent"}} />
+                        <input type='text' id='certificate1' name='Currently_owned-1' style={{ width: "50%", border: "transparent"}} />
                     </td>
                     <td>
-                        <input type='text' id='certificate2' name='To_be_Required' style={{ width: "50%", border: "transparent"}} />
+                        <input type='text' id='certificate2' name='To_be_Required-1' style={{ width: "50%", border: "transparent"}} />
                     </td>
                 </tr>
                 <tr>
                     <td>Infrastructure</td>
                     <td>
-                        <input type='text' id='infra1' name='Currently_owned' style={{ width: "50%", border: "transparent"}} />
+                        <input type='text' id='infra1' name='Currently_owned-2' style={{ width: "50%", border: "transparent"}} />
                     </td>
                     <td>
-                        <input type='text' id='infra2' name='To_be_Required' style={{ width: "50%", border: "transparent"}} />
+                        <input type='text' id='infra2' name='To_be_Required-2' style={{ width: "50%", border: "transparent"}} />
                     </td>
                 </tr>
                 <tr>
                 <td>Laboratory</td>
                     <td>
-                        <input type='text' id='lab1' name='Currently_owned' style={{ width: "50%", border: "transparent"}} />
+                        <input type='text' id='lab1' name='Currently_owned-3' style={{ width: "50%", border: "transparent"}} />
                     </td>
                     <td>
-                        <input type='text' id='lab2' name='To_be_Required' style={{ width: "50%", border: "transparent"}} />
+                        <input type='text' id='lab2' name='To_be_Required-3' style={{ width: "50%", border: "transparent"}} />
                     </td>
                 </tr>
             </tbody>
