@@ -2,7 +2,7 @@ import React from "react";
 import "./Table.css";
 import Input from "./Input";
 import { Form } from "react-router-dom";
-import FormPart2 from "./FormPart2";
+import FormPart3 from "./FormPart3";
 import axios from "axios";
 export async function dataaction({ request }) {
   const formData = await request.formData();
@@ -1807,7 +1807,11 @@ function Table() {
             <button type="submit">submit</button>
           </div>
         </div>
+<<<<<<< Updated upstream
         <FormPart2 />
+=======
+        {/* <FormPart3 /> */}
+>>>>>>> Stashed changes
       </Form>
     </>
   );
