@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Table.css";
 import Input from "./Input";
 import { Form } from "react-router-dom";
@@ -103,27 +103,104 @@ function Table() {
           <div
             style={{
               border: "0.2em solid black",
-              width: "70vw",
+              width: "95vw",
               flexWrap: "wrap",
               overflowWrap: "break-word",
               borderBottom: "0",
             }}
           >
-            <h2 style={{ marginLeft: "0.8em", padding: "2%" }}>
-              A. MSME Specific Questionairre
-            </h2>
-            <div className="div-style">
+            {/* <h2 style={{ marginLeft: "0.8em", padding: "2%" }}>
+              {("A. MSME Specific Questionairre")}
+            </h2> */}
+            <table style={{ width: "100%", overflowWrap: "break-word" }}>
+              <th colSpan={6}>{("A. MSME Specific Questionairre")}</th>
+              <tr>
+                <td colSpan={1}><label htmlFor="Enterprise_Name">{("Enterprise name")}</label></td><td colSpan={6}>
+                <input type="text" id="Enterprise_Name" name="Enterprise_Name" /></td>
+              </tr>
+              <tr>
+                <td colSpan={1} ><label htmlFor="Entrepreneur_Name">{("Entrepreneur Name")}</label></td>
+                <td colSpan={6}><input type="text" id="Entrepreneur_Name" name="Entrepreneur_Name" /></td>
+              </tr>
+              <tr>
+                <td colSpan={1}><span>Sex:</span></td>
+                <td colSpan={6}>
+                  <div className="radio_wrapper">
+                    <div>
+                      <label htmlFor="M">M</label>
+                      <input type="radio" name="Sex" id="M" value="male" />
+                    </div>
+                    <div>
+                      <label htmlFor="F">F</label>
+                      <input type="radio" name="Sex" id="F" value="female" />
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td colSpan={1}><span>Category:</span></td>
+                <td colSpan={6}>
+                  <div className="radio_wrapper">
+                    <div>
+                      <label htmlFor="SC">SC</label>
+                      <input type="radio" name="Category" id="SC" value="SC" />
+                    </div>
+                    <div>
+                      <label htmlFor="ST">ST</label>
+                      <input type="radio" name="Category" id="ST" value="ST" />
+                    </div>
+                    <div>
+                      <label htmlFor="OBC">OBC</label>
+                      <input type="radio" name="Category" id="OBC" value="OBC" />
+                    </div>
+                    <div>
+                      <label htmlFor="Minority">Minority</label>
+                      <input type="radio" name="Category" id="Minority" value="Minority" />
+                    </div>
+                    <div>
+                      <label htmlFor="General">General</label>
+                      <input type="radio" name="Category" id="General" value="General" />
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td colSpan={1} ><label htmlFor="Address">{("Address:")}</label></td>
+                <td colSpan={6}><input type="text" id="Address" name="Address" /></td>
+              </tr>
+              <tr>
+                <td colSpan={1} ><label htmlFor="Website">{("Website:")}</label></td>
+                <td colSpan={6}><input type="text" id="Website" name="Website" /></td>
+              </tr>
+              <tr>
+                <td colSpan={1}><span>Is your firm registerd?</span></td>
+                <td colSpan={6}>
+                  <div className="radio_wrapper">
+                    <div>
+                      <label htmlFor="Firm_Registeredyes">YES</label>
+                      <input type="radio" name="Firm_Registered" id="Firm_Registeredyes" value="YES" />
+                    </div>
+                    <div>
+                      <label htmlFor="Firm_Registeredno">NO</label>
+                      <input type="radio" name="Firm_Registered" id="Firm_Registeredno" value="NO" />
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr></tr>
+            </table>
+            {/* <div className="div-style">
               <label htmlFor="Enterprise_Name" className="inner-div-tag">
                 Enterprise name
               </label>
               <input
-                type="text"
+                
                 id="enterprise"
                 name="Enterprise_Name"
                 style={{ width: "70%", border: "transparent" }}
               />
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
+            </div> */}
+            {/* <div className="div-style" style={{ borderTop: 0 }}>
               <label htmlFor="Entrepreneur_Name" className="inner-div-tag">
                 Entrepreneur name
               </label>
@@ -133,25 +210,13 @@ function Table() {
                 name="Entrepreneur_Name"
                 style={{ width: "75%", border: "transparent" }}
               />
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
+            </div> */}
+            {/* <div className="div-style" style={{ borderTop: 0 }}>
               <div className="inner-div-tag">
                 <span>Sex:</span>
                 <div style={{ display: "flex", padding: "0.5vw" }}>
-                  <input
-                    type="radio"
-                    name="Sex"
-                    value="male"
-                    style={{ margin: "0.5%" }}
-                  />
-                  M
-                  <input
-                    type="radio"
-                    name="Sex"
-                    value="female"
-                    style={{ margin: "0.5%" }}
-                  />
-                  F
+                  <input type="radio" name="Sex" value="male"/>M
+                  <input type="radio" name="Sex" value="female"/>F
                 </div>
               </div>
               <div
@@ -212,8 +277,8 @@ function Table() {
                   />
                 </div>
               </div>
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
+            </div> */}
+            {/* <div className="div-style" style={{ borderTop: 0 }}>
               <label htmlFor="Address" className="inner-div-tag">
                 Address:
               </label>
@@ -223,8 +288,8 @@ function Table() {
                 name="Address"
                 style={{ width: "70%", border: "transparent" }}
               />
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
+            </div> */}
+            {/* <div className="div-style" style={{ borderTop: 0 }}>
               <label htmlFor="Website" className="inner-div-tag">
                 Website:{" "}
               </label>
@@ -234,8 +299,8 @@ function Table() {
                 name="Website"
                 style={{ width: "70%", border: "transparent" }}
               />
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
+            </div> */}
+            {/* <div className="div-style" style={{ borderTop: 0 }}>
               <label className="inner-div-tag">Is your firm registerd? </label>
               <div
                 className="checkboxes"
@@ -270,7 +335,7 @@ function Table() {
                   />
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="div-style" style={{ borderTop: 0 }}>
               <label className="inner-div-tag">
                 Do you have Udhyog Aadhar / Udyam Registration{" "}
