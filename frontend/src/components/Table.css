@@ -63,7 +63,7 @@ table,th,td{
   }
   .radio_wrapper{
     flex-direction: column;
-  }  
+  } 
 }
 input{
   width:100%
