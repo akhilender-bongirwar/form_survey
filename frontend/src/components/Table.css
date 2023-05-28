@@ -1,28 +1,8 @@
-/* Table.css
-
-table {
-  width: 90%;
+table,th,td{
+  border: 1px solid black;
   border-collapse: collapse;
-  border: 2px solid black;
+  padding: 0.8em;
 }
-
-th,
-td {
-  padding: 4px;
-  text-align: left;
-  border-bottom: 1px solid #2c2c2cf5;
-}
-
-th {
-  background-color: #f2f2f2;
-}
-.removeUnderline{
-    border-bottom: none;
-}
-.firm-cb{
-   margin-right: 10px;
-   margin-left: 10px;
-} */
 .inner-div-tag{
   margin-right: 1% ;
   font-weight: bold;
