@@ -1,4 +1,5 @@
 import "./App.css";
+import FormPart2 from './components/FormPart2'
 import FormPart3 from "./components/FormPart3";
 import FormPart4 from "./components/FormPart4";
 import FormPart5 from "./components/FormPart5";

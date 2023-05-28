@@ -6,6 +6,9 @@ table,th,td{
   border-collapse: collapse;
   padding: 0.8em;
 }
+input[type=text]{
+  font-size: medium;
+}
 .inner-div-tag{
   margin-right: 1% ;
   font-weight: bold;
@@ -48,6 +51,9 @@ table,th,td{
   align-items: center;
 }
 @media screen and (max-width:768px) {
+  input[type=text]{
+    font-size: small;
+  }
   .radio_wrapper>div{
     display: flex;
     /* flex-direction: column; */
@@ -63,7 +69,15 @@ table,th,td{
   }
   .radio_wrapper{
     flex-direction: column;
-  } 
+  }  
+  label{
+    font-weight: 600;
+    font-size: small;
+  }
+  span{
+    font-weight: 600;
+    font-size: small;
+  }
 }
 input{
   width:100%
