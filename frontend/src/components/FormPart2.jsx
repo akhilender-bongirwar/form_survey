@@ -1,4 +1,5 @@
 import React from "react";
+import './Table.css'
 
 const FormPart2 = () => {
   return (
@@ -46,25 +47,25 @@ const FormPart2 = () => {
                 >
                   direct
                 </label>
-                <input type="radio" id="SC" name="direct" />
+                <input type="radio" id="direct" value="direct" name="Raw_Materials" />
               </div>
               <div>
                 <label
-                  htmlFor="ST"
+                  htmlFor="trader"
                   style={{ fontWeight: "500", lineHeight: "2em" }}
                 >
                   Through Traders
                 </label>
-                <input type="radio" id="ST" name="Through_Traders" />
+                <input type="radio" id="trader" value="Through Traders" name="Raw_Materials" />
               </div>
               <div>
                 <label
-                  htmlFor="OBC"
+                  htmlFor="online"
                   style={{ fontWeight: "500", lineHeight: "2em" }}
                 >
                   Online
                 </label>
-                <input type="radio" id="OBC" name="Online" />
+                <input type="radio" id="online" value="Online" name="Raw_Materials" />
               </div>
               <div>
                 <label
@@ -77,7 +78,7 @@ const FormPart2 = () => {
                 <input
                   type="text"
                   id="General"
-                  name="Others"
+                  name="Raw_Materials"
                   style={{ width: "70%", border: "transparent" }}
                 />
               </div>
@@ -104,8 +105,9 @@ const FormPart2 = () => {
                   </label>
                   <input
                     type="radio"
-                    name="yes"
-                    value="yes"
+                    id="yes"
+                    name="if_Raw_Materials_available"
+                    value="YES"
                     style={{ margin: "0.5%" }}
                   />
                 </div>
@@ -115,8 +117,8 @@ const FormPart2 = () => {
                   </label>
                   <input
                     type="radio"
-                    name="yes"
-                    value="no"
+                    name="if_Raw_Materials_available"
+                    value="NO"
                     id="no"
                     style={{ margin: "0.5%" }}
                   />
@@ -128,8 +130,8 @@ const FormPart2 = () => {
               <u>
                 <input
                   type="text"
-                  id="General"
-                  name="Others"
+                  id="difficulties"
+                  name="if_no_mention_difficulties"
                   style={{
                     width: "70%",
                     border: "transparent",
@@ -154,8 +156,9 @@ const FormPart2 = () => {
                       </label>
                       <input
                         type="radio"
-                        name="yes"
-                        value="yes"
+                        name="green_tech"
+                        id="yes"
+                        value="YES"
                         style={{ margin: "0.5%" }}
                       />
                     </div>
@@ -165,8 +168,8 @@ const FormPart2 = () => {
                       </label>
                       <input
                         type="radio"
-                        name="yes"
-                        value="no"
+                        name="green_tech"
+                        value="NO"
                         id="no"
                         style={{ margin: "0.5%" }}
                       />
@@ -191,8 +194,9 @@ const FormPart2 = () => {
                   </label>
                   <input
                     type="radio"
-                    name="yes"
-                    value="yes"
+                    id="yes"
+                    name="environment_clearence"
+                    value="YES"
                     style={{ margin: "0.5%" }}
                   />
                 </div>
@@ -202,8 +206,8 @@ const FormPart2 = () => {
                   </label>
                   <input
                     type="radio"
-                    name="yes"
-                    value="no"
+                    name="environment_clearence"
+                    value="NO"
                     id="no"
                     style={{ margin: "0.5%" }}
                   />
@@ -225,12 +229,12 @@ const FormPart2 = () => {
                     }}
                   >
                     <div>
-                      <label htmlFor="proprietary">Traders/Agents </label>
+                      <label htmlFor="soldTo1">Traders/Agents </label>
                       <input
-                        type="radio"
-                        id="proprietary"
-                        name="ownership"
-                        value="proprietary"
+                        type="checkbox"
+                        id="soldTo1"
+                        name="final_product_sold_to"
+                        value="Traders/Agents"
                         style={{ display: "flex", flexWrap: "wrap" }}
                       />
                     </div>
@@ -244,12 +248,12 @@ const FormPart2 = () => {
                     }}
                   >
                     <div>
-                      <label htmlFor="proprietary">Traders/Agents </label>
+                      <label htmlFor="soldTo2">Wholesalers  </label>
                       <input
-                        type="radio"
-                        id="proprietary"
-                        name="ownership"
-                        value="proprietary"
+                        type="checkbox"
+                        id="soldTo2"
+                        name="final_product_sold_to"
+                        value="wholesalers "
                         style={{ display: "flex", flexWrap: "wrap" }}
                       />
                     </div>
@@ -263,12 +267,12 @@ const FormPart2 = () => {
                     }}
                   >
                     <div>
-                      <label htmlFor="proprietary">Traders/Agents </label>
+                      <label htmlFor="soldTo3">Retailers </label>
                       <input
-                        type="radio"
-                        id="proprietary"
-                        name="ownership"
-                        value="proprietary"
+                        type="checkbox"
+                        id="soldTo3"
+                        name="final_product_sold_to"
+                        value="retailers"
                         style={{ display: "flex", flexWrap: "wrap" }}
                       />
                     </div>
@@ -282,12 +286,12 @@ const FormPart2 = () => {
                     }}
                   >
                     <div>
-                      <label htmlFor="proprietary">Traders/Agents </label>
+                      <label htmlFor="soldTo4">Large Manufacturers/ Anchor units </label>
                       <input
-                        type="radio"
-                        id="proprietary"
-                        name="ownership"
-                        value="proprietary"
+                        type="checkbox"
+                        id="soldTo4"
+                        name="final_product_sold_to"
+                        value="large manufacturers/ anchor units"
                         style={{ display: "flex", flexWrap: "wrap" }}
                       />
                     </div>
@@ -301,12 +305,12 @@ const FormPart2 = () => {
                     }}
                   >
                     <div>
-                      <label htmlFor="proprietary">Traders/Agents </label>
+                      <label htmlFor="soldTo5">Exporters </label>
                       <input
-                        type="radio"
-                        id="proprietary"
-                        name="ownership"
-                        value="proprietary"
+                        type="checkbox"
+                        id="soldTo5"
+                        name="final_product_sold_to"
+                        value="exporters"
                         style={{ display: "flex", flexWrap: "wrap" }}
                       />
                     </div>
@@ -320,12 +324,12 @@ const FormPart2 = () => {
                     }}
                   >
                     <div>
-                      <label htmlFor="proprietary">Traders/Agents </label>
+                      <label htmlFor="soldTo6">OEMs </label>
                       <input
-                        type="radio"
-                        id="proprietary"
-                        name="ownership"
-                        value="proprietary"
+                        type="checkbox"
+                        id="soldTo6"
+                        name="final_product_sold_to"
+                        value="oems"
                         style={{ display: "flex", flexWrap: "wrap" }}
                       />
                     </div>
@@ -339,12 +343,12 @@ const FormPart2 = () => {
                     }}
                   >
                     <div>
-                      <label htmlFor="proprietary">Traders/Agents </label>
+                      <label htmlFor="soldTo7">End User </label>
                       <input
-                        type="radio"
-                        id="proprietary"
-                        name="ownership"
-                        value="proprietary"
+                        type="checkbox"
+                        id="soldTo7"
+                        name="final_product_sold_to"
+                        value="end user"
                         style={{ display: "flex", flexWrap: "wrap" }}
                       />
                     </div>
@@ -358,12 +362,12 @@ const FormPart2 = () => {
                     }}
                   >
                     <div>
-                      <label htmlFor="proprietary">Traders/Agents </label>
+                      <label htmlFor="soldTo8">Others </label>
                       <input
-                        type="radio"
-                        id="proprietary"
-                        name="ownership"
-                        value="proprietary"
+                        type="checkbox"
+                        id="soldTo8"
+                        name="final_product_sold_to"
+                        value="others"
                         style={{ display: "flex", flexWrap: "wrap" }}
                       />
                     </div>
@@ -382,12 +386,12 @@ const FormPart2 = () => {
                     }}
                   >
                     <div>
-                      <label htmlFor="proprietary">Traders/Agents </label>
+                      <label htmlFor="withinState">Within State </label>
                       <input
-                        type="radio"
-                        id="proprietary"
-                        name="ownership"
-                        value="proprietary"
+                        type="checkbox"
+                        id="withinState"
+                        name="markets_supplied"
+                        value="within state"
                         style={{ display: "flex", flexWrap: "wrap" }}
                       />
                     </div>
@@ -401,12 +405,12 @@ const FormPart2 = () => {
                     }}
                   >
                     <div>
-                      <label htmlFor="proprietary">Traders/Agents </label>
+                      <label htmlFor="outState">Outside State</label>
                       <input
-                        type="radio"
-                        id="proprietary"
-                        name="ownership"
-                        value="proprietary"
+                        type="checkbox"
+                        id="outState"
+                        name="markets_supplied"
+                        value="outside state "
                         style={{ display: "flex", flexWrap: "wrap" }}
                       />
                     </div>
@@ -420,12 +424,12 @@ const FormPart2 = () => {
                     }}
                   >
                     <div>
-                      <label htmlFor="proprietary">Traders/Agents </label>
+                      <label htmlFor="outCountry">Outside Country </label>
                       <input
-                        type="radio"
-                        id="proprietary"
-                        name="ownership"
-                        value="proprietary"
+                        type="checkbox"
+                        id="outCountry"
+                        name="markets_supplied"
+                        value="outside country"
                         style={{ display: "flex", flexWrap: "wrap" }}
                       />
                     </div>
@@ -445,8 +449,8 @@ const FormPart2 = () => {
                       </label>
                       <input
                         type="radio"
-                        name="yes"
-                        value="yes"
+                        name="have_product_brand_name"
+                        value="YES"
                         style={{ margin: "0.5%" }}
                       />
                     </div>
@@ -456,8 +460,8 @@ const FormPart2 = () => {
                       </label>
                       <input
                         type="radio"
-                        name="yes"
-                        value="no"
+                        name="have_product_brand_name"
+                        value="NO"
                         id="no"
                         style={{ margin: "0.5%" }}
                       />
@@ -472,13 +476,13 @@ const FormPart2 = () => {
                       flexWrap: "wrap",
                     }}
                   >
-                    <label htmlFor="others">
+                    <label htmlFor="brand">
                       <h3>Brand_name</h3>
                     </label>
                     <input
                       type="text"
-                      id="others"
-                      name="sell"
+                      id="brand"
+                      name="Brand_name"
                       style={{
                         display: "flex",
                         flexBasis: "content",
@@ -499,8 +503,7 @@ const FormPart2 = () => {
                   <div>
                     <div>
                       <h3>
-                        What challenges do you face / hear while selling your
-                        products
+                      What challenges do you face / hear while selling your products
                       </h3>
                     </div>
                     <div>
@@ -516,12 +519,13 @@ const FormPart2 = () => {
                           }}
                         >
                           <input
-                            type="radio"
-                            name="yes"
-                            value="yes"
+                            type="checkbox"
+                            name="challenges_while_selling"
+                            value="advance technology"
                             style={{ margin: "0.5%" }}
+                            id="advanceTech"
                           />
-                          <label htmlFor="yes" style={{ fontWeight: "500" }}>
+                          <label htmlFor="advanceTech" style={{ fontWeight: "500" }}>
                             Advance technology
                           </label>
                         </div>
@@ -533,12 +537,13 @@ const FormPart2 = () => {
                           }}
                         >
                           <input
-                            type="radio"
-                            name="yes"
-                            value="yes"
+                            type="checkbox"
+                            name="challenges_while_selling"
+                            value="quality of product"
                             style={{ margin: "0.5%" }}
+                            id="quality"
                           />
-                          <label htmlFor="yes" style={{ fontWeight: "500" }}>
+                          <label htmlFor="quality" style={{ fontWeight: "500" }}>
                             Quality of product
                           </label>
                         </div>
@@ -550,12 +555,13 @@ const FormPart2 = () => {
                           }}
                         >
                           <input
-                            type="radio"
-                            name="yes"
-                            value="yes"
+                            type="checkbox"
+                            name="challenges_while_selling"
+                            value="market competition"
+                            id="marketComp"
                             style={{ margin: "0.5%" }}
                           />
-                          <label htmlFor="yes" style={{ fontWeight: "500" }}>
+                          <label htmlFor="marketComp" style={{ fontWeight: "500" }}>
                             Market Competition
                           </label>
                         </div>
@@ -567,12 +573,13 @@ const FormPart2 = () => {
                           }}
                         >
                           <input
-                            type="radio"
-                            name="yes"
-                            value="yes"
+                            type="checkbox"
+                            name="challenges_while_selling"
+                            value="capital"
+                            id="capital"
                             style={{ margin: "0.5%" }}
                           />
-                          <label htmlFor="yes" style={{ fontWeight: "500" }}>
+                          <label htmlFor="capital" style={{ fontWeight: "500" }}>
                             Capital
                           </label>
                         </div>
@@ -584,12 +591,13 @@ const FormPart2 = () => {
                           }}
                         >
                           <input
-                            type="radio"
-                            name="yes"
-                            value="yes"
+                            type="checkbox"
+                            name="challenges_while_selling"
+                            value="branding and marketing"
+                            id="brandMarket"
                             style={{ margin: "0.5%" }}
                           />
-                          <label htmlFor="yes" style={{ fontWeight: "500" }}>
+                          <label htmlFor="brandMarket" style={{ fontWeight: "500" }}>
                             Branding & Marketing
                           </label>
                         </div>
@@ -600,14 +608,14 @@ const FormPart2 = () => {
                             // flexWrap: "wrap",
                           }}
                         >
-                          <label htmlFor="yes" style={{ fontWeight: "500" }}>
+                          <label htmlFor="other" style={{ fontWeight: "500" }}>
                             Other (specify)
                           </label>
 
                           <input
                             type="text"
-                            id="yes"
-                            name="Others"
+                            id="other"
+                            name="challenges_while_selling"
                             style={{
                               width: "70%",
                               border: "transparent",
@@ -633,8 +641,8 @@ const FormPart2 = () => {
                             </label>
                             <input
                               type="radio"
-                              name="yes"
-                              value="yes"
+                              name="involved_in_marketing"
+                              value="YES"
                               style={{ margin: "0.5%" }}
                             />
                           </div>
@@ -644,8 +652,8 @@ const FormPart2 = () => {
                             </label>
                             <input
                               type="radio"
-                              name="yes"
-                              value="no"
+                              name="involved_in_marketing"
+                              value="NO"
                               id="no"
                               style={{ margin: "0.5%" }}
                             />
@@ -663,12 +671,12 @@ const FormPart2 = () => {
                             }}
                           >
                             <div>
-                              <label htmlFor="proprietary">Exhibitions</label>
+                              <label htmlFor="exhibition">Exhibitions</label>
                               <input
-                                type="radio"
-                                id="proprietary"
-                                name="ownership"
-                                value="proprietary"
+                                type="checkbox"
+                                id="exhibition"
+                                name="involved_in_marketing"
+                                value="exhibitions"
                                 style={{ display: "flex", flexWrap: "wrap" }}
                               />
                             </div>
@@ -683,12 +691,12 @@ const FormPart2 = () => {
                             }}
                           >
                             <div>
-                              <label htmlFor="private">Portals</label>
+                              <label htmlFor="portal">Portals</label>
                               <input
-                                type="radio"
-                                id="private"
-                                name="ownership"
-                                value="private Limited"
+                                type="checkbox"
+                                id="portal"
+                                name="involved_in_marketing"
+                                value="portals"
                                 style={{ margin: "1%" }}
                               />
                             </div>
@@ -702,12 +710,12 @@ const FormPart2 = () => {
                             }}
                           >
                             <div>
-                              <label htmlFor="LLP">Websites </label>
+                              <label htmlFor="website">Websites </label>
                               <input
-                                type="radio"
-                                id="LLP"
-                                name="ownership"
-                                value="LLP"
+                                type="checkbox"
+                                id="website"
+                                name="involved_in_marketing"
+                                value="websites"
                                 style={{ margin: "1%" }}
                               />
                             </div>
@@ -721,14 +729,14 @@ const FormPart2 = () => {
                             }}
                           >
                             <div>
-                              <label htmlFor="public limited">
+                              <label htmlFor="socMedia">
                                 Social Media
                               </label>
                               <input
-                                type="radio"
-                                id="public limited"
-                                name="ownership"
-                                value="Public Limited"
+                                type="checkbox"
+                                id="socMedia"
+                                name="involved_in_marketing"
+                                value="social media"
                                 style={{ margin: "1%" }}
                               />
                             </div>
@@ -742,22 +750,183 @@ const FormPart2 = () => {
                             }}
                           >
                             <div>
-                              <label htmlFor="public limited">
+                              <label htmlFor="marketFacility">
                                 Common marketing facility
                               </label>
                               <input
-                                type="radio"
-                                id="public limited"
-                                name="ownership"
-                                value="Public Limited"
+                                type="checkbox"
+                                id="marketFacility"
+                                name="involved_in_marketing"
+                                value="Common marketing facility"
                                 style={{ margin: "1%" }}
                               />
                             </div>
-                            Others (specify):
+                            <div>
+                              <label htmlFor="others">
+                              Others (specify):
+                              </label>
+                              <input
+                                type="text"
+                                id="others"
+                                name="involved_in_marketing"
+                                style={{border:"transparent",width:"50%"}}
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
+              <div className="div-style" style={{ borderTop: 0 }}>
+              <label className="inner-div-tag">
+              Quality/Testing labs are easily <br/>available?
+              </label>
+              <div className="checkboxes">
+                <div>
+                  <label style={{ fontWeight: "500" }}>Yes</label>
+                  <input
+                    type="radio"
+                    name="Quality_Testing_lab_available"
+                    value="YES"
+                    style={{ margin: "0.5%" }}
+                  />
+                </div>
+                <div>
+                  <label style={{ fontWeight: "500" }}>No</label>
+                  <input
+                    type="radio"
+                    name="Quality_Testing_lab_available"
+                    value="NO"
+                    style={{ margin: "0.5%" }}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="div-style" style={{ borderTop: 0 }}>
+              <label className="inner-div-tag">Is skilled labour and training<br/>
+facilities easily available? </label>
+              <div
+                className="checkboxes"
+                style={{ borderRight: "2px solid black", borderRight:0 }}
+              >
+                <div>
+                  <label
+                    htmlFor="yes"
+                    style={{ fontWeight: "500" }}
+                  >
+                    Yes
+                  </label>
+                  <input
+                    type="radio"
+                    id="yes"
+                    name="labour_and_training"
+                    value="YES"
+                    style={{ margin: "0.5%" }}
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="no"
+                    style={{ fontWeight: "500" }}
+                  >
+                    No
+                  </label>
+                  <input
+                    type="radio"
+                    id="no"
+                    name="labour_and_training"
+                    value="NO"
+                    style={{ margin: "0.5%" }}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="div-style" style={{ borderTop: 0 }}>
+              <label className="inner-div-tag">
+              Whether skilled <br/>labour is required?
+              </label>
+              <div className="checkboxes">
+                <div>
+                  <label
+                    htmlFor="yes"
+                    style={{ fontWeight: "500" }}
+                  >
+                    Yes
+                  </label>
+                  <input
+                    type="radio"
+                    id="yes"
+                    name="skilled_labour_reqd"
+                    value="YES"
+                    style={{ margin: "0.5%" }}
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="no"
+                    style={{ fontWeight: "500" }}
+                  >
+                    No
+                  </label>
+                  <input
+                    type="radio"
+                    id="no"
+                    name="skilled_labour_reqd"
+                    value="NO"
+                    style={{ margin: "0.5%" }}
+                  />
+                </div>
+              </div>
+            </div>
+            <div style={{border:"1px solid black"}}>
+              <h2>For Service Industry</h2>
+              <div style={{display:"flex",flexBasis:"content"}}>
+              <div>
+                <h3>Nature of Services Offered</h3>
+              </div>
+              <div>
+                <input type="text" name="Nature_of_Services_Offered1" style={{ border: "transparent" }} />
+              </div>
+              <div>
+              <input type="text" name="Nature_of_Services_Offered2" style={{ border: "transparent" }} />
+              </div>
+              <div>
+              <input type="text" name="Nature_of_Services_Offered3" style={{ border: "transparent" }} />
+              </div>
+            </div>
+            <div style={{display:"flex",flexBasis:"content"}}>
+              <div>
+                <h3>Challenges Faced</h3>
+              </div>
+              <div>
+                <input type="text" name="Challenges_faced1" style={{  border: "transparent" }} />
+              </div>
+              <div>
+              <input type="text" name="Challenges_faced2" style={{ border: "transparent" }} />
+              </div>
+              <div>
+              <input type="text" name="Challenges_faced3" style={{ border: "transparent" }} />
+              </div>
+            </div>
+            </div>
+            <div style={{display:"flex",flexBasis:"content"}}>
+              <div>
+                <h3>In case you are availing support<br/>
+Govt. agencies / schemes what<br/>
+are the challenges faced with<br/>
+scheme</h3>
+              </div>
+              <div>
+                <input type="text" name="Govt_Scheme_Challenges" style={{ border: "transparent" }} />
+              </div>
+            </div>
+            </div>
+            <div style={{display:"flex",flexBasis:"content"}}>
+              <div>
+                <h3>Support required</h3>
+              </div>
+              <div>
+                <input type="text" name="Support_required" style={{ border: "transparent" }} />
+              </div>
+            </div>
                   </div>
                 </div>
               </div>

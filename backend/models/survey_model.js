@@ -305,6 +305,11 @@ const surveyData = new Schema({
   //   enum: ["YES", "NO"],
   //   required: true,
   // },
+  // skilled_labour_reqd: {
+  //   type: String,
+  //   enum: ["YES", "NO"],
+  //   required: true,
+  // },
   // Nature_of_Services_Offered: {
   //   type: [String],
   //   required: true,
