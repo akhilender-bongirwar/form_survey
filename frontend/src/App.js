@@ -12,14 +12,8 @@ import {
 } from "react-router-dom";
 const router = createBrowserRouter(
   createRoutesFromElements(
-<<<<<<< Updated upstream
     <Route path="/" element={<Table />} action={dataaction} />
-=======
-    <><Route path="/" element={<Table />} action={dataaction} />
-    <Route path="/2" element={<FormPart6 />} />
-    </>
-    
->>>>>>> Stashed changes
+
   )
 );
 function App() {

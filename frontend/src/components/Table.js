@@ -1807,11 +1807,6 @@ function Table() {
             <button type="submit">submit</button>
           </div>
         </div>
-<<<<<<< Updated upstream
-        <FormPart2 />
-=======
-        {/* <FormPart3 /> */}
->>>>>>> Stashed changes
       </Form>
     </>
   );
