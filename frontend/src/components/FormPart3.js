@@ -23,7 +23,7 @@ function FormPart3() {
           <tr>
             <td colSpan={1}><span>Are you aware about the current
               government programs benefitting MSMEs </span></td>
-            <td colSpan={6}>
+            <td style={{width:"100px"}} colSpan={6}>
               <div className="radio_wrapper">
                 <div>
                   <label htmlFor="YES">YES</label>
