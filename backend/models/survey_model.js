@@ -66,9 +66,9 @@ const surveyData = new Schema({
     ],
     required: true,
   },
-   ownership_female_partnership:{
-    type:Number,
-   },
+  ownership_female_partnership: {
+    type: Number,
+  },
   Cluster: {
     type: String,
     enum: ["YES", "NO"],
@@ -167,14 +167,14 @@ const surveyData = new Schema({
   innovation_RD_institute: {
     type: String,
   },
-  govt_scheme:{
-    type:String,
+  govt_scheme: {
+    type: String,
   },
-  govt_program:{
-    type:String,
+  govt_program: {
+    type: String,
   },
-  govt_organisation:{
-    type:String,
+  govt_organisation: {
+    type: String,
   },
   pan_card_company: {
     type: String,
@@ -252,95 +252,88 @@ const surveyData = new Schema({
     type: Number,
     required: true,
   },
-  // Raw_Materials: {
-  //   type: String,
-  //   required: true,
-  // },
-  // if_Raw_Materials_available: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },
-  // if_no_mention_difficulties: {
-  //   type: String,
-  // },
-  // green_tech: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },
-  // environment_clearence: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },
-  // final_product_sold_to: {
-  //   type: String,
-  //   required: true,
-  // },//multiple
-  // markets_supplied: {
-  //   type: String,
-  //   enum: ["Within State", " Outside State", "Outside Country"],
-  // },//multiple
-  // have_product_brand_name: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },
-  // Brand_name: {
-  //   type: String,
-  // },
-  // challenges_while_selling: {
-  //   type: String,
-  // },//multiple
-  // involved_in_marketing: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },//multiple + add a field
-  // Quality_Testing_lab_available: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },
-  // labour_and_training: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },
-  // skilled_labour_reqd: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },
-  // Nature_of_Services_Offered: {
-  //   type: [String],
-  //   required: true,
-  // },
-  // Challenges_faced: {
-  //   type: [String],
-  //   required: true,
-  // },
-  // Govt_Scheme_Challenges: {
-  //   type: [String],
-  //   required: true,
-  // },
-  // Support_required: {
-  //   type: String,
-  //   required: true,
-  // },
+  Raw_Materials: {
+    type: String,
+  },
+  if_Raw_Materials_available: {
+    type: String,
+    enum: ["YES", "NO"],
+  },
+  if_no_mention_difficulties: {
+    type: String,
+  },
+  green_tech: {
+    type: String,
+    enum: ["YES", "NO"],
+  },
+  environment_clearence: {
+    type: String,
+    enum: ["YES", "NO"],
+  },
+  final_product_sold_to: {
+    type: [String],
+  }, //multiple
+  markets_supplied: {
+    type: [String],
+    //enum: ["Within State", " Outside State", "Outside Country"],
+  }, //multiple
+  have_product_brand_name: {
+    type: String,
+    enum: ["YES", "NO"],
+  },
+  Brand_name: {
+    type: String,
+  },
+  challenges_while_selling: {
+    type: [String],
+  }, //multiple
+  involved_in_marketing: {
+    type: String,
+    enum: ["YES", "NO"],
+  }, //multiple + add a field
+  options_you_leverage_for_sale: {
+    type: [String],
+  },
+  Quality_Testing_lab_available: {
+    type: String,
+    enum: ["YES", "NO"],
+  },
+  labour_and_training: {
+    type: String,
+    enum: ["YES", "NO"],
+  },
+
+  skilled_labour_is_required: {
+    type: String,
+    enum: ["YES", "NO"],
+  },
+  Nature_of_Services_Offered: {
+    type: [String],
+  },
+
+  Challenges_faced: {
+    type: [String],
+  },
+  Govt_Scheme_Challenges: {
+    type: String,
+  },
+  Support_required: {
+    type: String,
+  },
   // aware_of_govt_policy: {
   //   type: String,
   //   enum: ["YES", "NO"],
   //   required: true,
   // },
+  //
   // Policy_benifitted: {
   //   type: [String],
-  //   required: true,
   // },
+  //Benifits_of_policy:{
+  // type:String,
+  //}
   // Challenges_faced_policy_related: {
-  //   type: [String],
-  //   required: true,
+  //   type: String,
   // },
   // expectation_from_govt: {
   //   type: [String],
@@ -361,17 +354,18 @@ const surveyData = new Schema({
   //       "MSME Champions",
   //     ],
   //   },
-  //   State_Government: {
+  //   State_Govt: {
   //     type: String,
   //     required: true,
-  //   },
+  // //enum:["ODOP","UP MSME Promotion Policy","Technical upgradation","UP Chief Minister Youth Self Employment Scheme",]
+  //}
   // },
   // Remarks: {
   //   type: String,
   //   required: true,
   // },
   // Scheme_Like_to_avail: {
-  //   Central_Govt: {
+  //   Central_Govt2: {
   //     type: String,
   //     enum: [
   //       "ZED",
@@ -385,7 +379,7 @@ const surveyData = new Schema({
   //       " MSME Champions",
   //     ],
   //   },
-  //   State_Govt: {
+  //   State_Govt2: {
   //     type: String,
   //     required: true,
   //   },

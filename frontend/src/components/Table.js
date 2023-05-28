@@ -1,4 +1,4 @@
-import React, { useEffect, useState , useRef} from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./Table.css";
 import Input from "./Input";
 import { Form } from "react-router-dom";
@@ -72,7 +72,48 @@ export async function dataaction({ request }) {
     GOVT_Training: formData.get("GOVT_Training"),
     Email: formData.get("Email"),
     Phone_Number: formData.get("Phone_Number"),
+    Raw_Materials: formData.get("Raw_Materials"),
+    if_Raw_Materials_available: formData.get("if_Raw_Materials_available"),
+    if_no_mention_difficulties: formData.get("if_no_mention_difficulties"),
+    green_tech: formData.get("green_tech"),
+    environment_clearence: formData.get("environment_clearence"),
+    final_product_sold_to: formData.getAll("final_product_sold_to"),
+    markets_supplied: formData.get("markets_supplied"),
+    have_product_brand_name: formData.get("have_product_brand_name"),
+    Brand_name: formData.get("Brand_name"),
+    challenges_while_selling: formData.get("challenges_while_selling"),
+    involved_in_marketing: formData.get("involved_in_marketing"),
+    options_you_leverage_for_sale: formData.getAll(
+      "options_you_leverage_for_sale:"
+    ),
+    Quality_Testing_lab_available: formData.get(
+      "Quality_Testing_lab_available"
+    ),
+    labour_and_training: formData.get("labour_and_training"),
+    skilled_labour_is_required: formData.get("skilled_labour_is_required"),
+    Nature_of_Services_Offered: formData.getAll("Nature_of_Services_Offered"),
+    Challenges_faced: formData.getAll("Challenges_faced"),
+
+    Govt_Scheme_Challenges: formData.get("Govt_Scheme_Challenges"),
+    Support_required: formData.get("Support_required"),
+    aware_of_govt_policy: formData.get("aware_of_govt_policy"),
+    Policy_benifitted: formData.getAll("Policy_benifitted"),
+    Benifits_of_policy: formData.get("Policy_benifitted"),
+    Challenges_faced_policy_related: formData.get(
+      "Challenges_faced_policy_related"
+    ),
+    expectation_from_govt: formData.getAll("expectation_from_govt"),
+    Aware_of_listed_scehmes: {
+      Central_Govt: formData.getAll("Central_Govt"),
+      State_Govt: formData.getAll("State_Govt"),
+    },
+    Remarks: formData.get("Remarks"),
+    Scheme_Like_to_avail: {
+      Central_Govt: formData.getAll("Central_Govt2"),
+      State_Govt: formData.getAll("State_Govt2"),
+    },
   };
+
   console.log(submission);
   // axios
   // .post("http://localhost:8080/form-data", {
@@ -88,9 +129,9 @@ export async function dataaction({ request }) {
 }
 
 function Table() {
-  const [a1,setA1]=useState(null);
-  const [a2,setA2]=useState(null);
-  const [a3,setA3]=useState(null);
+  const [a1, setA1] = useState(null);
+  const [a2, setA2] = useState(null);
+  const [a3, setA3] = useState(null);
   return (
     <>
       <h1 style={{ textAlign: "center" }}>DRAFT SURVEY FORM</h1>
@@ -116,17 +157,47 @@ function Table() {
               {("A. MSME Specific Questionairre")}
             </h2> */}
             <table style={{ width: "100%", overflowWrap: "break-word" }}>
-              <th colSpan={6}>{("A. MSME Specific Questionairre")}</th>
+              <th colSpan={6}>{"A. MSME Specific Questionairre"}</th>
               <tr>
-                <td colSpan={1}><label htmlFor="Enterprise_Name">Enterprise name</label></td><td colSpan={6}>
-                <input type="text" id="Enterprise_Name" name="Enterprise_Name" /></td>
+                <td colSpan={1}>
+                  <label htmlFor="Enterprise_Name">{"Enterprise name"}</label>
+                </td>
+                <td colSpan={6}>
+                  <input
+                    type="text"
+                    id="Enterprise_Name"
+                    name="Enterprise_Name"
+                  />
+                </td>
+                <td colSpan={1}>
+                  <label htmlFor="Enterprise_Name">Enterprise name</label>
+                </td>
+                <td colSpan={6}>
+                  <input
+                    type="text"
+                    id="Enterprise_Name"
+                    name="Enterprise_Name"
+                  />
+                </td>
               </tr>
               <tr>
-                <td colSpan={1} ><label htmlFor="Entrepreneur_Name">Entrepreneur Name</label></td>
-                <td colSpan={6}><input type="text" id="Entrepreneur_Name" name="Entrepreneur_Name" /></td>
+                <td colSpan={1}>
+                  <label htmlFor="Entrepreneur_Name">
+                    {"Entrepreneur Name"}
+                  </label>
+                </td>
+                <td colSpan={6}>
+                  <input
+                    type="text"
+                    id="Entrepreneur_Name"
+                    name="Entrepreneur_Name"
+                  />
+                </td>
               </tr>
               <tr>
-                <td colSpan={1}><span>Sex:</span></td>
+                <td colSpan={1}>
+                  <span>Sex:</span>
+                </td>
                 <td colSpan={6}>
                   <div className="radio_wrapper">
                     <div>
@@ -141,7 +212,9 @@ function Table() {
                 </td>
               </tr>
               <tr>
-                <td colSpan={1}><span>Category:</span></td>
+                <td colSpan={1}>
+                  <span>Category:</span>
+                </td>
                 <td colSpan={6}>
                   <div className="radio_wrapper">
                     <div>
@@ -154,185 +227,437 @@ function Table() {
                     </div>
                     <div>
                       <label htmlFor="OBC">OBC</label>
-                      <input type="radio" name="Category" id="OBC" value="OBC" />
+                      <input
+                        type="radio"
+                        name="Category"
+                        id="OBC"
+                        value="OBC"
+                      />
                     </div>
                     <div>
                       <label htmlFor="Minority">Minority</label>
-                      <input type="radio" name="Category" id="Minority" value="Minority" />
+                      <input
+                        type="radio"
+                        name="Category"
+                        id="Minority"
+                        value="Minority"
+                      />
                     </div>
                     <div>
                       <label htmlFor="General">General</label>
-                      <input type="radio" name="Category" id="General" value="General" />
+                      <input
+                        type="radio"
+                        name="Category"
+                        id="General"
+                        value="General"
+                      />
                     </div>
                   </div>
                 </td>
               </tr>
               <tr>
-                <td colSpan={1} ><label htmlFor="Address">Address:</label></td>
-                <td colSpan={6}><input type="text" id="Address" name="Address" /></td>
+                <td colSpan={1}>
+                  <label htmlFor="Address">{"Address:"}</label>
+                </td>
+                <td colSpan={6}>
+                  <input type="text" id="Address" name="Address" />
+                </td>
               </tr>
               <tr>
-                <td colSpan={1} ><label htmlFor="Website">Website:</label></td>
-                <td colSpan={6}><input type="text" id="Website" name="Website" /></td>
+                <td colSpan={1}>
+                  <label htmlFor="Website">{"Website:"}</label>
+                </td>
+                <td colSpan={6}>
+                  <input type="text" id="Website" name="Website" />
+                </td>
               </tr>
               <tr>
-                <td colSpan={1}><span>Is your firm registerd?</span></td>
+                <td colSpan={1}>
+                  <span>Is your firm registerd?</span>
+                </td>
                 <td colSpan={6}>
                   <div className="radio_wrapper">
                     <div>
                       <label htmlFor="Firm_Registeredyes">YES</label>
-                      <input type="radio" name="Firm_Registered" id="Firm_Registeredyes" value="YES" />
+                      <input
+                        type="radio"
+                        name="Firm_Registered"
+                        id="Firm_Registeredyes"
+                        value="YES"
+                      />
                     </div>
                     <div>
                       <label htmlFor="Firm_Registeredno">NO</label>
-                      <input type="radio" name="Firm_Registered" id="Firm_Registeredno" value="NO" />
+                      <input
+                        type="radio"
+                        name="Firm_Registered"
+                        id="Firm_Registeredno"
+                        value="NO"
+                      />
                     </div>
                   </div>
                 </td>
               </tr>
               <tr>
-              <td colSpan={1}><span> Do you have Udhyog Aadhar / Udyam Registration{" "}</span></td>
+                <td colSpan={1}>
+                  <span> Do you have Udhyog Aadhar / Udyam Registration </span>
+                </td>
                 <td colSpan={6}>
                   <div className="radio_wrapper">
                     <div>
                       <label htmlFor="Udyam_Registrationyes">YES</label>
-                      <input type="radio" name="Udyam_Registration" id="Udyam_Registrationyes" value="YES" />
+                      <input
+                        type="radio"
+                        name="Udyam_Registration"
+                        id="Udyam_Registrationyes"
+                        value="YES"
+                      />
                     </div>
                     <div>
                       <label htmlFor="Udyam_Registrationno">NO</label>
-                      <input type="radio" name="Udyam_Registration" id="Udyam_Registrationno" value="NO" />
+                      <input
+                        type="radio"
+                        name="Udyam_Registration"
+                        id="Udyam_Registrationno"
+                        value="NO"
+                      />
                     </div>
                   </div>
                 </td>
               </tr>
               <tr>
-                <td colSpan={1} ><label htmlFor="UAM_UEM_Number">Uam Uem Number</label></td>
-                <td colSpan={6}><input type="text" id="UAM_UEM_Number" name="UAM_UEM_Number" /></td>
+                <td colSpan={1}>
+                  <label htmlFor="UAM_UEM_Number">Uam Uem Number</label>
+                </td>
+                <td colSpan={6}>
+                  <input
+                    type="text"
+                    id="UAM_UEM_Number"
+                    name="UAM_UEM_Number"
+                  />
+                </td>
               </tr>
               <tr>
-                <td colSpan={1} ><label htmlFor="Year_of_Establishment">Year_of_Establishment:</label></td>
-                <td colSpan={6}><input type="text" id="Year_of_Establishment" name="Year_of_Establishment" /></td>
+                <td colSpan={1}>
+                  <label htmlFor="Year_of_Establishment">
+                    Year_of_Establishment:
+                  </label>
+                </td>
+                <td colSpan={6}>
+                  <input
+                    type="text"
+                    id="Year_of_Establishment"
+                    name="Year_of_Establishment"
+                  />
+                </td>
               </tr>
               <tr>
-              <td colSpan={1}><span> Type_of_Business{" "}</span></td>
+                <td colSpan={1}>
+                  <span> Type_of_Business </span>
+                </td>
                 <td colSpan={6}>
                   <div className="radio_wrapper">
                     <div>
                       <label htmlFor="manufacturing">Manufacturing</label>
-                      <input type="radio" name="Type_of_Business" id="manufacturing" value="manufacturing" />
+                      <input
+                        type="radio"
+                        name="Type_of_Business"
+                        id="manufacturing"
+                        value="manufacturing"
+                      />
                     </div>
                     <div>
                       <label htmlFor="service">Service</label>
-                      <input type="radio" name="Type_of_Business" id="service" value="service" />
+                      <input
+                        type="radio"
+                        name="Type_of_Business"
+                        id="service"
+                        value="service"
+                      />
                     </div>
                     <div>
                       <label htmlFor="trading">Trading</label>
-                      <input type="radio" name="Type_of_Business" id="trading" value="trading" />
+                      <input
+                        type="radio"
+                        name="Type_of_Business"
+                        id="trading"
+                        value="trading"
+                      />
                     </div>
                   </div>
                 </td>
               </tr>
               <tr>
-              <td colSpan={1}><span> Whether operations are seasonal in nature?
-                  </span></td>
+                <td colSpan={1}>
+                  <span> Whether operations are seasonal in nature?</span>
+                </td>
                 <td colSpan={6}>
                   <div className="radio_wrapper">
                     <div>
                       <label htmlFor="Operations_seasonalyes">YES</label>
-                      <input type="radio" onClick={()=>setA1("show1")} name="Operations_seasonal" id="Operations_seasonalyes" value="YES" />
+                      <input
+                        type="radio"
+                        onClick={() => setA1("show1")}
+                        name="Operations_seasonal"
+                        id="Operations_seasonalyes"
+                        value="YES"
+                      />
                     </div>
-                      {a1!="show1"?(""):(<tr style={{display:"flex",alignItems:"center",gap:"3px"}}><span>In case seasonal operations, no. of  months of
-                operations in a year{" "}</span><input  style={{minWidth:"20px"}} type="number" id="months_of_operation" name="months_of_operation" /></tr>)}
+                    {a1 != "show1" ? (
+                      ""
+                    ) : (
+                      <tr
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "3px",
+                        }}
+                      >
+                        <span>
+                          In case seasonal operations, no. of months of
+                          operations in a year{" "}
+                        </span>
+                        <input
+                          style={{ minWidth: "20px" }}
+                          type="number"
+                          id="months_of_operation"
+                          name="months_of_operation"
+                        />
+                      </tr>
+                    )}
                     <div>
                       <label htmlFor="Operations_seasonalno">NO</label>
-                      <input type="radio" onClick={()=>setA1(null)} name="Operations_seasonal" id="Operations_seasonalno" value="NO" />
+                      <input
+                        type="radio"
+                        onClick={() => setA1(null)}
+                        name="Operations_seasonal"
+                        id="Operations_seasonalno"
+                        value="NO"
+                      />
                     </div>
                   </div>
                 </td>
               </tr>
               <tr>
-              <td colSpan={1}><span> Ownership_Pattern{" "}</span></td>
+                <td colSpan={1}>
+                  <span> Ownership_Pattern </span>
+                </td>
                 <td colSpan={6}>
                   <div className="radio_wrapper">
                     <div>
                       <label htmlFor="proprietary">Proprietary</label>
-                      <input type="radio" name="Ownership_Pattern" onClick={()=>setA2(null)} id="proprietary" value="proprietary" />
+                      <input
+                        type="radio"
+                        name="Ownership_Pattern"
+                        onClick={() => setA2(null)}
+                        id="proprietary"
+                        value="proprietary"
+                      />
                     </div>
                     <div>
                       <label htmlFor="partnership">Partnership</label>
-                      <input type="radio" onClick={()=>setA2("show2")} name="Ownership_Pattern" id="partnership" value="partnership" />
+                      <input
+                        type="radio"
+                        onClick={() => setA2("show2")}
+                        name="Ownership_Pattern"
+                        id="partnership"
+                        value="partnership"
+                      />
                     </div>
                     <div>
                       <label htmlFor="private">Private</label>
-                      <input type="radio" onClick={()=>setA2(null)} name="Ownership_Pattern" id="private" value="private" />
+                      <input
+                        type="radio"
+                        onClick={() => setA2(null)}
+                        name="Ownership_Pattern"
+                        id="private"
+                        value="private"
+                      />
                     </div>
                     <div>
                       <label htmlFor="LLP">LLP</label>
-                      <input type="radio" onClick={()=>setA2(null)} name="Ownership_Pattern" id="LLP" value="LLP" />
+                      <input
+                        type="radio"
+                        onClick={() => setA2(null)}
+                        name="Ownership_Pattern"
+                        id="LLP"
+                        value="LLP"
+                      />
                     </div>
                     <div>
                       <label htmlFor="PUBLIC">Public</label>
-                      <input type="radio" onClick={()=>setA2(null)} name="Ownership_Pattern" id="PUBLIC" value="PUBLIC" />
+                      <input
+                        type="radio"
+                        onClick={() => setA2(null)}
+                        name="Ownership_Pattern"
+                        id="PUBLIC"
+                        value="PUBLIC"
+                      />
                     </div>
                     <div>
                       <label htmlFor="NO LEGAL ENTITY">No Legal Entity</label>
-                      <input type="radio" onClick={()=>setA2(null)} name="Ownership_Pattern" id="NO LEGAL ENTITY" value="NO LEGAL ENTITY" />
+                      <input
+                        type="radio"
+                        onClick={() => setA2(null)}
+                        name="Ownership_Pattern"
+                        id="NO LEGAL ENTITY"
+                        value="NO LEGAL ENTITY"
+                      />
                     </div>
                   </div>
-                      {a2!="show2"?(""):(<tr style={{display:"flex",alignItems:"center",gap:"3px"}}><span>If Yes, % ownership of female{" "}</span><input  style={{minWidth:"20px"}} type="number" id="ownership_female_partnership" name="ownership_female_partnership" /></tr>)}
+                  {a2 != "show2" ? (
+                    ""
+                  ) : (
+                    <tr
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "3px",
+                      }}
+                    >
+                      <span>If Yes, % ownership of female </span>
+                      <input
+                        style={{ minWidth: "20px" }}
+                        type="number"
+                        id="ownership_female_partnership"
+                        name="ownership_female_partnership"
+                      />
+                    </tr>
+                  )}
                 </td>
               </tr>
               <tr>
-              <td colSpan={1}><span>Are you a part of any Cluster?{" "}</span></td>
+                <td colSpan={1}>
+                  <span>Are you a part of any Cluster? </span>
+                </td>
                 <td colSpan={6}>
                   <div className="radio_wrapper">
                     <div>
                       <label htmlFor="Clusteryes">YES</label>
-                      <input type="radio" onClick={()=>setA3("Yes")} name="Cluster" id="Clusteryes" value="YES" />
+                      <input
+                        type="radio"
+                        onClick={() => setA3("Yes")}
+                        name="Cluster"
+                        id="Clusteryes"
+                        value="YES"
+                      />
                     </div>
                     <div>
                       <label htmlFor="Clusterno">NO</label>
-                      <input type="radio" onClick={()=>setA3("No")} name="Cluster" id="Clusterno" value="NO" />
+                      <input
+                        type="radio"
+                        onClick={() => setA3("No")}
+                        name="Cluster"
+                        id="Clusterno"
+                        value="NO"
+                      />
                     </div>
                   </div>
-                  {a3=="Yes"?(<tr style={{display:"flex",alignItems:"center",gap:"3px"}}><span>If Yes, which one? How many units are there</span><input  style={{minWidth:"20px"}} type="text" id="Cluster_Yes" name="Cluster_Yes" /></tr>):("")}
-                {a3=="No"?(<tr style={{display:"flex",alignItems:"center",gap:"3px"}}><span>If No, Why?{" "}</span><input  style={{minWidth:"20px"}} type="text" id="Cluster_No" name="Cluster_No" /></tr>):("")}
+                  {a3 == "Yes" ? (
+                    <tr
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "3px",
+                      }}
+                    >
+                      <span>If Yes, which one? How many units are there</span>
+                      <input
+                        style={{ minWidth: "20px" }}
+                        type="text"
+                        id="Cluster_Yes"
+                        name="Cluster_Yes"
+                      />
+                    </tr>
+                  ) : (
+                    ""
+                  )}
+                  {a3 == "No" ? (
+                    <tr
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "3px",
+                      }}
+                    >
+                      <span>If No, Why? </span>
+                      <input
+                        style={{ minWidth: "20px" }}
+                        type="text"
+                        id="Cluster_No"
+                        name="Cluster_No"
+                      />
+                    </tr>
+                  ) : (
+                    ""
+                  )}
                 </td>
               </tr>
               <tr>
-              <td colSpan={1}><span> Do you use computer 
-                software for accounting
-                or managing finances?</span></td>
+                <td colSpan={1}>
+                  <span>
+                    {" "}
+                    Do you use computer software for accounting or managing
+                    finances?
+                  </span>
+                </td>
                 <td colSpan={6}>
                   <div className="radio_wrapper">
                     <div>
                       <label htmlFor="use_computeryes">YES</label>
-                      <input type="radio" name="use_computer" id="use_computeryes" value="YES" />
+                      <input
+                        type="radio"
+                        name="use_computer"
+                        id="use_computeryes"
+                        value="YES"
+                      />
                     </div>
                     <div>
                       <label htmlFor="use_computerno">NO</label>
-                      <input type="radio" name="use_computer" id="use_computerno" value="NO" />
+                      <input
+                        type="radio"
+                        name="use_computer"
+                        id="use_computerno"
+                        value="NO"
+                      />
                     </div>
                   </div>
                 </td>
               </tr>
               <tr>
-                <td colSpan={1} ><span>What are the top 3 products you offer?{" "}</span></td>
+                <td colSpan={1}>
+                  <span>What are the top 3 products you offer? </span>
+                </td>
                 <td colSpan={6}>
-                      <div>
-                        <label htmlFor="TOP_THREE_PRODUCTS-1">1.</label>
-                        <input style={{width:"90%"}} type="text" id="TOP_THREE_PRODUCTS-1" name="TOP_THREE_PRODUCTS" />
-                      </div>
-                      <div>
-                        <label htmlFor="TOP_THREE_PRODUCTS-2">2.</label>
-                        <input style={{width:"90%"}} type="text" id="TOP_THREE_PRODUCTS-2" name="TOP_THREE_PRODUCTS" />
-                      </div>
-                      <div>
-                        <label htmlFor="TOP_THREE_PRODUCTS-3">3.</label>
-                        <input style={{width:"90%"}} type="text" id="TOP_THREE_PRODUCTS-3" name="TOP_THREE_PRODUCTS" />
-                      </div>
-                    </td>
-                  </tr>
+                  <div>
+                    <label htmlFor="TOP_THREE_PRODUCTS-1">1.</label>
+                    <input
+                      style={{ width: "90%" }}
+                      type="text"
+                      id="TOP_THREE_PRODUCTS-1"
+                      name="TOP_THREE_PRODUCTS"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="TOP_THREE_PRODUCTS-2">2.</label>
+                    <input
+                      style={{ width: "90%" }}
+                      type="text"
+                      id="TOP_THREE_PRODUCTS-2"
+                      name="TOP_THREE_PRODUCTS"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="TOP_THREE_PRODUCTS-3">3.</label>
+                    <input
+                      style={{ width: "90%" }}
+                      type="text"
+                      id="TOP_THREE_PRODUCTS-3"
+                      name="TOP_THREE_PRODUCTS"
+                    />
+                  </div>
+                </td>
+              </tr>
             </table>
             {/* <div className="div-style">
               <label htmlFor="Enterprise_Name" className="inner-div-tag">
