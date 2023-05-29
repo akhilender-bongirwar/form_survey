@@ -1,20 +1,26 @@
-*{
+* {
   user-select: none;
 }
-table,th,td{
+
+table,
+th,
+td {
   border: 1px solid black;
   border-collapse: collapse;
   padding: 0.8em;
 }
-input[type=text]{
+
+input[type=text] {
   font-size: small;
 }
-.inner-div-tag{
-  margin-right: 1% ;
+
+
+.inner-div-tag {
+  margin-right: 1%;
   font-weight: bold;
   width: 20%;
   padding: 1%;
-  border-right: 2px solid black;
+  /* border-right: 2px solid black; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +28,8 @@ input[type=text]{
   flex-direction: column;
   flex-wrap: wrap;
 }
-.div-style{
+
+.div-style {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
@@ -30,11 +37,13 @@ input[type=text]{
   border-left: 0;
   border-right: 0;
 }
-.checkboxes{
+
+.checkboxes {
   display: flex;
   padding: 1%;
 }
-.radio_wrapper{
+
+.radio_wrapper {
   display: flex;
   flex-wrap: wrap;
   /* flex-direction: column; */
@@ -42,19 +51,29 @@ input[type=text]{
   padding: 1%;
   justify-content: space-evenly;
 }
-.outer{
+
+.outer {
   border: black solid 1px;
 }
-.radio_wrapper>div{
+
+.radio_wrapper>div {
   display: flex;
   gap: 5px;
   align-items: center;
 }
+
 @media screen and (max-width:768px) {
-  input[type=text]{
+  tr {
+    flex-direction: column;
+    display: flex;
+
+  }
+
+  input[type=text] {
     font-size: small;
   }
-  .radio_wrapper>div{
+
+  .radio_wrapper>div {
     display: flex;
     /* flex-direction: column; */
     justify-content: center;
@@ -62,23 +81,28 @@ input[type=text]{
     /* gap: 5px; */
     align-items: center;
   }
-  .radio_wrapper>div>input{
+
+  .radio_wrapper>div>input {
     margin-left: auto;
     width: 15px;
     margin-right: 15%;
   }
-  .radio_wrapper{
+
+  .radio_wrapper {
     flex-direction: column;
-  }  
-  label{
+  }
+
+  label {
     font-weight: 600;
     font-size: small;
   }
-  span{
+
+  span {
     font-weight: 600;
     font-size: small;
   }
 }
-input{
-  width:100%
+
+input {
+  width: 100%
 }

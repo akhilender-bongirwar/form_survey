@@ -4,6 +4,10 @@ import Input from "./Input";
 import { Form } from "react-router-dom";
 import FormPart3 from "./FormPart3";
 import axios from "axios";
+import FormPart2 from "./FormPart2";
+import FormPart4 from "./FormPart4";
+import FormPart5 from "./FormPart5";
+import FormPart6 from "./FormPart6";
 export async function dataaction({ request }) {
   const formData = await request.formData();
   const submission = {
@@ -112,6 +116,55 @@ export async function dataaction({ request }) {
       Central_Govt: formData.getAll("Central_Govt2"),
       State_Govt: formData.getAll("State_Govt2"),
     },
+    scheme_availed_by_you_central_govt: formData.get(
+      "scheme_availed_by_you_central_govt"
+    ),
+    scheme_availed_by_you_state_govt: formData.get(
+      "scheme_availed_by_you_state_govt"
+    ),
+    Key_Reason_Preventing_loan: formData.getAll("Key_Reason_Preventing_loan"),
+    source_of_credit_form: formData.get("source_of_credit_form"),
+    applied_loan_outcome: formData.getAll("applied_loan_outcome"),
+    reason_of_rejection: formData.get("reason_of_rejection"),
+    availed_samadhaan_service: formData.get("availed_samadhaan_service"),
+    face_challenge_from_buyer: formData.get("face_challenge_from_buyer"),
+    Questionnaire_For_Exporters: {
+      Certifications: {
+        Currently_owned_1: formData.get("Currently_owned_1"),
+        To_be_Required_1: formData.get("To_be_Required_1"),
+      },
+      Infrastructure: {
+        Currently_owned_2: formData.get("Currently_owned_2"),
+        To_be_Required_2: formData.get("To_be_Required_2"),
+      },
+      Laboratory: {
+        Currently_owned_3: formData.get("Currently_owned_3"),
+        To_be_Required_3: formData.get("To_be_Required_3"),
+      },
+    },
+    Certification_required: formData.get("Certification_required"),
+    laboratory_requirement: formData.get("laboratory_requirement"),
+    Requirement_of_Soft_Interventions: {
+      Counselling: formData.get("Counselling"),
+      Upgradation_of_IT_Infrastructure: formData.get(
+        "Upgradation_of_IT_Infrastructure"
+      ),
+      Participation_in_Training: formData.get("Participation_in_Training"),
+      Institution_Development: formData.get("Institution_Development"),
+      Implementation_of_new_software: formData.get(
+        "Implementation_of_new_software"
+      ),
+      Training_Process_Improvement: formData.get(
+        "Training_Process_Improvement"
+      ),
+      Market_Promotion_Initiatives: formData.get(
+        "Market_Promotion_Initiatives"
+      ),
+      Design_and_product_development: formData.get(
+        "Design_and_product_development"
+      ),
+      Promotion_Campaign: formData.get("Promotion_Campaign"),
+    },
   };
 
   console.log(submission);
@@ -161,16 +214,6 @@ function Table() {
               <tr>
                 <td colSpan={1}>
                   <label htmlFor="Enterprise_Name">{"Enterprise name"}</label>
-                </td>
-                <td colSpan={6}>
-                  <input
-                    type="text"
-                    id="Enterprise_Name"
-                    name="Enterprise_Name"
-                  />
-                </td>
-                <td colSpan={1}>
-                  <label htmlFor="Enterprise_Name">Enterprise name</label>
                 </td>
                 <td colSpan={6}>
                   <input
@@ -2339,6 +2382,12 @@ function Table() {
                 style={{ width: "25%", border: "transparent" }}
               />
             </div>
+            {/* <FormPart2 /> */}
+            {/* <FormPart3 /> */}
+            {/* <FormPart4 /> */}
+            <FormPart5 />
+            {/* <FormPart6 /> */}
+
             <button type="submit">submit</button>
           </div>
         </div>

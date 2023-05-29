@@ -389,7 +389,7 @@ const surveyData = new Schema({
   //   required: true,
   // },
   // Key_Reason_Preventing_loan: {
-  //   type: String,
+  //   type: [String],
   //   required: true,
   // },
   // source_of_credit_form: {
