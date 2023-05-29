@@ -6,13 +6,80 @@ const FormPart2 = () => {
     <>
       <>
         <table style={{ width: "100%", overflowWrap: "break-word" }}>
-          <th colSpan={6}>{"B. For Manufacturing"}</th>
+          <thead>
+            <th colSpan={6}>{"B. For Manufacturing"}</th>
+          </thead>
           <tr>
-            <td colSpan={1}>Raw Materials</td>
-            <td colSpan={6}>
-              <tr style={{ width: "100%" }}>
-                <td style={{ width: "100%" }}>Source of Procurement</td>
-              </tr>
+            <td colSpan={1} style={{ textAlign: "center" }}>
+              Raw Materials
+            </td>
+            <td
+              colSpan={1}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                flexDirection: "column",
+              }}
+            >
+              <div style={{ textAlign: "center", fontWeight: "bolder" }}>
+                Source of Procurement
+              </div>
+              <div
+                style={{ display: "flex", flexWrap: "wrap" }}
+                className="grevience_redressal radio_wrapper"
+              >
+                <div className="d_flex_align_CONTENT_justify">
+                  <label
+                    htmlFor="raw1"
+                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                  >
+                    Direct
+                  </label>
+                  <input
+                    type="checkbox"
+                    id="raw1"
+                    name="Aware_of_listed_scehmes"
+                    value="Direct"
+                  />
+                </div>
+                <div className="d_flex_align_CONTENT_justify">
+                  <label
+                    htmlFor="raw2"
+                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                  >
+                    Through Traders
+                  </label>
+                  <input
+                    type="checkbox"
+                    id="raw2"
+                    name="Aware_of_listed_scehmes"
+                    value="Through Traders"
+                  />
+                </div>
+                <div className="d_flex_align_CONTENT_justify">
+                  <label
+                    htmlFor="raw3"
+                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                  >
+                    Online
+                  </label>
+                  <input
+                    type="checkbox"
+                    id="raw3"
+                    name="Aware_of_listed_scehmes"
+                    value="Online"
+                  />
+                </div>
+                <div className="d_flex_align_CONTENT_justify">
+                  <label
+                    htmlFor="raw4"
+                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                  >
+                    others(specify)
+                  </label>
+                  <input type="checkbox" id="raw4" name="asdf" value="others" />
+                </div>
+              </div>
             </td>
           </tr>
         </table>
@@ -31,67 +98,6 @@ const FormPart2 = () => {
                 >
                   Source of Procurement
                 </h3>
-                <div style={{}}>
-                  <label
-                    htmlFor="direct"
-                    style={{
-                      fontWeight: "500",
-                      marginRight: "1%",
-                      lineHeight: "2em",
-                    }}
-                  >
-                    direct
-                  </label>
-                  <input
-                    type="radio"
-                    id="direct"
-                    value="direct"
-                    name="Raw_Materials"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="trader"
-                    style={{ fontWeight: "500", lineHeight: "2em" }}
-                  >
-                    Through Traders
-                  </label>
-                  <input
-                    type="radio"
-                    id="trader"
-                    value="Through Traders"
-                    name="Raw_Materials"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="online"
-                    style={{ fontWeight: "500", lineHeight: "2em" }}
-                  >
-                    Online
-                  </label>
-                  <input
-                    type="radio"
-                    id="online"
-                    value="Online"
-                    name="Raw_Materials"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="General"
-                    style={{ fontWeight: "500", lineHeight: "2em" }}
-                  >
-                    Others Please Specify
-                  </label>
-
-                  <input
-                    type="text"
-                    id="General"
-                    name="Raw_Materials"
-                    style={{ width: "70%", border: "transparent" }}
-                  />
-                </div>
               </div>
             </div>
             <div>

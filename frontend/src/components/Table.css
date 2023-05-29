@@ -1,7 +1,8 @@
 * {
   user-select: none;
 }
-td[ colspan="6" ]{
+
+td[ colspan="6"] {
   width: 100%;
 }
 
@@ -13,10 +14,8 @@ td {
   padding: 0.8em;
 }
 
-input[type=text] {
-  font-size: small;
-}
-label{
+
+label {
   font-size: medium;
 }
 
@@ -58,7 +57,8 @@ label{
   justify-content: space-evenly;
   align-content: space-evenly;
 }
-#ownership_pattern{
+
+#ownership_pattern {
   /* justify-content: space-around; */
   gap: 10px;
   white-space: nowrap;
@@ -67,12 +67,14 @@ label{
 .outer {
   border: black solid 1px;
 }
-input[type=checkbox]{
+
+input[type=checkbox] {
   width: 15px;
   margin-left: auto;
   margin-right: 50%;
 }
-input[type=radio]{
+
+input[type=radio] {
   width: 15px;
   margin-left: auto;
   margin-right: 50%;
@@ -83,7 +85,8 @@ input[type=radio]{
   gap: 5px;
   align-items: center;
 }
-.form4_styling{
+
+.form4_styling {
   width: 75%;
 }
 
@@ -99,15 +102,18 @@ input[type=radio]{
     display: flex;
 
   }
-  .form4_styling{
+
+  .form4_styling {
     width: 100%;
   }
-  input[type=checkbox]{
+
+  input[type=checkbox] {
     width: 15px;
     margin-left: auto;
     margin-right: 10px;
   }
-  input[type=radio]{
+
+  input[type=radio] {
     width: 15px;
     margin-left: auto;
     margin-right: 10px;
@@ -155,8 +161,9 @@ input[type=radio]{
 input {
   width: 100%
 }
-.input_label_gapper>div{
+
+.input_label_gapper>div {
   display: flex;
   gap: 10px;
-  align-items:center;
+  align-items: center;
 }

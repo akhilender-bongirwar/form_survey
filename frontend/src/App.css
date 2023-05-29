@@ -14,7 +14,7 @@
   padding: 0.5em;
   -webkit-appearance: none;
 } */
- /* input[type=radio]:checked {
+/* input[type=radio]:checked {
   background-color: #000000;
   background: url(data:image/gif;base64,R0lGODlhAQABAPAAAP///////yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==) no-repeat center center;
   background-size: 9px 9px;
@@ -24,15 +24,17 @@
   outline-color: transparent;
 } */
 
-input[type=text] {
+input[type=text],
+input[type=number] {
   outline: none;
   padding: 1%;
   font-size: larger;
   letter-spacing: 0.1em;
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    display: none;
+  display: none;
 }
 
 

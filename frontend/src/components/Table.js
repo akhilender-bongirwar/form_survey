@@ -1687,6 +1687,11 @@ function Table() {
             <button type="submit">submit</button>
           </div>
         </div>
+        <FormPart2 />
+        <FormPart3 />
+        <FormPart4 />
+        <FormPart5 />
+        <FormPart6 />
       </Form>
     </>
   );
