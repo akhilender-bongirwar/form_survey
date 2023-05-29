@@ -32,8 +32,8 @@ export async function dataaction({ request }) {
       formData.get("TOP_THREE_PRODUCTS-2"),
       formData.get("TOP_THREE_PRODUCTS-3"),
     ],
-    // sell_produce_majorly:formData.get("sell_produce_majorly"),
-    // service_industry: formData.get("service_industry"),
+    sell_produce_majorly:formData.get("sell_produce_majorly"),
+    service_industry: formData.get("service_industry"),
     full_time_Emoployee: formData.get("full_time_Emoployee"),
     part_time_Emoployee: formData.get("part_time_Emoployee"),
     Permanent_Emoployee: formData.get("Permanent_Emoployee"),
@@ -43,7 +43,7 @@ export async function dataaction({ request }) {
     formal_source: formData.get("formal_source"),
     informal_source: formData.get("informal_source"),
     internal_fund_generation: formData.get("internal_fund_generation"),
-    other_source: formData.get("other_source"),
+    other_financing_source: formData.get("other_financing_source"),
     loan_availed: formData.get("loan_availed"),
     loan_specification: formData.get("loan_specification"),
     loan_adequate: formData.get("loan_adequate"),
@@ -185,6 +185,9 @@ function Table() {
   const [a1, setA1] = useState(null);
   const [a2, setA2] = useState(null);
   const [a3, setA3] = useState(null);
+  const [a4, setA4] = useState(null);
+  const [a5, setA5] = useState(null);
+  const [a6, setA6] = useState(null);
   return (
     <>
       <h1 style={{ textAlign: "center" }}>DRAFT SURVEY FORM</h1>
@@ -462,7 +465,7 @@ function Table() {
                             operations in a year{" "}
                           </span>
                           <input
-                            style={{ minWidth: "20px" }}
+                            style={{ minWidth: "20px" ,marginBottom:"12px"}}
                             type="number"
                             id="months_of_operation"
                             name="months_of_operation"
@@ -626,7 +629,7 @@ function Table() {
                       >
                         <span>If No, Why? </span>
                         <input
-                          style={{ minWidth: "20px" }}
+                          style={{ minWidth: "20px",marginBottom:"12px" }}
                           type="text"
                           id="Cluster_No"
                           name="Cluster_No"
@@ -768,1042 +771,745 @@ function Table() {
                     </div>
                   </td>
                 </tr>
-              </tbody>
-            </table>
-            <div className="div-style" style={{ borderTop: 0 }}>
-              <div className="inner-div-tag">
-                In case of <br /> Service Industry,
-                <br />
-                your services are offered to{" "}
-              </div>
-              <div
-                className="checkboxes"
-                style={{
-                  borderRight: "2px solid black",
-                  display: "flex",
-                  flexBasis: "content",
-                }}
-              >
-                <div>
-                  <label htmlFor="local">Local Market/ trader</label>
-                  <input
-                    type="checkbox"
-                    name="service_industry"
-                    id="local"
-                    value="Local Market"
-                    style={{ display: "flex", flexWrap: "wrap" }}
-                  />
-                </div>
-              </div>
-              <div
-                className="checkboxes"
-                style={{
-                  borderRight: "2px solid black",
-                  display: "flex",
-                  flexBasis: "content",
-                }}
-              >
-                <div>
-                  <label htmlFor="Govt">Government (State/Central)</label>
-                  <input
-                    type="checkbox"
-                    id="Govt"
-                    name="service_industry"
-                    value="Government"
-                    style={{ display: "flex", flexWrap: "wrap" }}
-                  />
-                </div>
-              </div>
-              <div
-                className="checkboxes"
-                style={{
-                  borderRight: "2px solid black",
-                  display: "flex",
-                  flexBasis: "content",
-                }}
-              >
-                <div>
-                  <label htmlFor="online">Online Platform</label>
-                  <input
-                    type="checkbox"
-                    id="online"
-                    name="service_industry"
-                    value="online"
-                    style={{ display: "flex", flexWrap: "wrap" }}
-                  />
-                </div>
-              </div>
-              <div
-                className="checkboxes"
-                style={{
-                  borderRight: "2px solid black",
-                  display: "flex",
-                  flexBasis: "content",
-                }}
-              >
-                <div>
-                  <label htmlFor="other">Other states in India </label>
-                  <input
-                    type="checkbox"
-                    id="other"
-                    name="service_industry"
-                    value="Other states"
-                    style={{ display: "flex", flexWrap: "wrap" }}
-                  />
-                </div>
-              </div>
-              <div
-                className="checkboxes"
-                style={{
-                  borderRight: "2px solid black",
-                  display: "flex",
-                  flexBasis: "content",
-                }}
-              >
-                <div>
-                  <label htmlFor="export">Internationally</label>
-                  <input
-                    type="checkbox"
-                    id="export"
-                    name="service_industry"
-                    value="export outside"
-                    style={{ display: "flex", flexWrap: "wrap" }}
-                  />
-                </div>
-              </div>
-              <div
-                className="checkboxes"
-                style={{
-                  borderRight: "2px solid black",
-                  display: "flex",
-                  flexBasis: "content",
-                }}
-              >
-                <div>
-                  <label htmlFor="others">Other please specify</label>
-                  <input
-                    type="text"
-                    id="others"
-                    name="service_industry"
-                    style={{
-                      display: "flex",
-                      flexBasis: "content",
-                      border: "transparent",
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
-              <label
-                htmlFor="website"
-                style={{
-                  marginRight: "1% 1.5%",
-                  fontWeight: "bold",
-                  width: "20%",
-                  borderRight: "2px solid black",
-                }}
-              >
-                No. of Employees (or %){" "}
-              </label>
-              <div
-                style={{
-                  display: "flex",
-                  padding: "1%",
-                  flexDirection: "column",
-                  borderRight: "2px solid black",
-                }}
-              >
-                <div>
-                  <label htmlFor="time">Full time: </label>
-                  <input
-                    type="number"
-                    name="full_time_Emoployee"
-                    id="time"
-                    placeholder=""
-                    style={{ width: "50%", border: "transparent" }}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="time">Part time: </label>
-                  <input
-                    type="number"
-                    name="part_time_Emoployee"
-                    id="time"
-                    placeholder=""
-                    style={{ width: "50%", border: "transparent" }}
-                  />
-                </div>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  padding: "1%",
-                  flexDirection: "column",
-                  borderRight: "2px solid black",
-                }}
-              >
-                <div>
-                  <label htmlFor="time">Permanent Emoployee </label>
-                  <input
-                    type="number"
-                    name="Permanent_Emoployee"
-                    id="time"
-                    placeholder=""
-                    style={{ width: "50%", border: "transparent" }}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="time">Contractual Emoployee: </label>
-                  <input
-                    type="number"
-                    name="Contractual_Emoployee"
-                    id="time"
-                    placeholder=""
-                    style={{ width: "50%", border: "transparent" }}
-                  />
-                </div>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  padding: "1%",
-                  flexDirection: "column",
-                  borderRight: "2px solid black",
-                }}
-              >
-                <div>
-                  <label htmlFor="time">Male Employee </label>
-                  <input
-                    type="number"
-                    name="male_employee"
-                    id="time"
-                    placeholder=""
-                    style={{ width: "50%", border: "transparent" }}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="time">Female Employee </label>
-                  <input
-                    type="number"
-                    name="female_employee"
-                    id="time"
-                    placeholder=""
-                    style={{ width: "50%", border: "transparent" }}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
-              <label
-                htmlFor="website"
-                style={{
-                  marginRight: "1% 1.5%",
-                  fontWeight: "bold",
-                  width: "20%",
-                  borderRight: "2px solid black",
-                }}
-              >
-                Major Source of your Financing (or %){" "}
-              </label>
-              <div
-                style={{
-                  display: "flex",
-                  padding: "1%",
-                  flexDirection: "column",
-                  borderRight: "2px solid black",
-                }}
-              >
-                <div>
-                  <label htmlFor="time">Formal source </label>
-                  <input
-                    type="number"
-                    name="part_time_Emoployee"
-                    id="time"
-                    placeholder=""
-                    style={{ width: "50%", border: "transparent" }}
-                  />
-                </div>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  padding: "1%",
-                  flexDirection: "column",
-                  borderRight: "2px solid black",
-                }}
-              >
-                <div>
-                  <label htmlFor="time">Permanent Emoployee </label>
-                  <input
-                    type="number"
-                    name="Permanent_Emoployee"
-                    id="time"
-                    placeholder=""
-                    style={{ width: "50%", border: "transparent" }}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="time">Contractual Emoployee: </label>
-                  <input
-                    type="number"
-                    name="Contractual_Emoployee"
-                    id="time"
-                    placeholder=""
-                    style={{ width: "50%", border: "transparent" }}
-                  />
-                </div>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  padding: "1%",
-                  flexDirection: "column",
-                  borderRight: "2px solid black",
-                }}
-              >
-                <div>
-                  <label htmlFor="time">Male Employee </label>
-                  <input
-                    type="number"
-                    name="male_employee"
-                    id="time"
-                    placeholder=""
-                    style={{ width: "50%", border: "transparent" }}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="time">Female Employee </label>
-                  <input
-                    type="number"
-                    name="female_employee"
-                    id="time"
-                    placeholder=""
-                    style={{ width: "50%", border: "transparent" }}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
-              <label
-                htmlFor="website"
-                style={{
-                  marginRight: "1% 1.5%",
-                  fontWeight: "bold",
-                  width: "20%",
-                  borderRight: "2px solid black",
-                }}
-              >
-                Major Source of your Financing (or %){" "}
-              </label>
-              <div
-                style={{
-                  display: "flex",
-                  padding: "1%",
-                  flexDirection: "column",
-                  borderRight: "2px solid black",
-                }}
-              >
-                <div>
-                  <label htmlFor="time">Formal source </label>
-                  <input
-                    type="text"
-                    name="formal_source"
-                    id="time"
-                    placeholder=""
-                    style={{ width: "50%", border: "transparent" }}
-                  />
-                </div>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  padding: "1%",
-                  flexDirection: "column",
-                  borderRight: "2px solid black",
-                }}
-              >
-                <div>
-                  <label htmlFor="time">Informal Source </label>
-                  <input
-                    type="text"
-                    name="informal_source"
-                    id="time"
-                    placeholder=""
-                    style={{ width: "50%", border: "transparent" }}
-                  />
-                </div>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  padding: "1%",
-                  flexDirection: "column",
-                  borderRight: "2px solid black",
-                }}
-              >
-                <div>
-                  <label htmlFor="time">Internal Fund Generation</label>
-                  <input
-                    type="text"
-                    name="internal_fund_generation"
-                    id="time"
-                    placeholder=""
-                    style={{ width: "50%", border: "transparent" }}
-                  />
-                </div>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  padding: "1%",
-                  flexDirection: "column",
-                  borderRight: "2px solid black",
-                }}
-              >
-                <div>
-                  <label htmlFor="time">Other, please specify</label>
-                  <input
-                    type="text"
-                    name="other_source"
-                    id="time"
-                    placeholder=""
-                    style={{ width: "50%", border: "transparent" }}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
-              <div className="inner-div-tag">Whether loan availed? </div>
-              <div
-                className="checkboxes"
-                style={{ borderRight: "2px solid black" }}
-              >
-                <div>
-                  <label htmlFor="yes" style={{ fontWeight: "500" }}>
-                    Yes
-                  </label>
-                  <input
-                    type="radio"
-                    name="loan_availed"
-                    value="YES"
-                    id="yes"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="no" style={{ fontWeight: "500" }}>
-                    No
-                  </label>
-                  <input
-                    type="radio"
-                    name="loan_availed"
-                    value="NO"
-                    id="no"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-              </div>
-              <label htmlFor="units" className="inner-div-tag">
-                Please specify Term <br />
-                Loan/Working Capital/Both{" "}
-              </label>
-              <input
-                type="text"
-                id="units"
-                name="loan_specification"
-                placeholder=""
-                style={{ width: "30%", border: "transparent" }}
-              />
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
-              <div className="inner-div-tag">
-                Whether Loan is adequate for your operations? If not, please
+                <tr>
+                  <td colSpan={1}>
+                    <span> In case of Service Industry,
+                your services are offered to{" "}</span>
+                  </td>
+                  <td colSpan={6}>
+                    <div className="radio_wrapper" id="ownership_pattern">
+                      <div>
+                        <label htmlFor="local">Local Market/ trader</label>
+                        <input
+                          type="checkbox"
+                          name="service_industry"
+                          id="local"
+                          value="Local Market"
+                        />
+                      </div>
+
+                      <div>
+                        <label htmlFor="Govt">Government (State/Central)</label>
+                        <input
+                          type="checkbox"
+                          id="Govt"
+                          name="service_industry"
+                          value="Government"
+                        />
+                      </div>
+
+                      <div>
+                        <label htmlFor="online">Online Platform</label>
+                        <input
+                          type="checkbox"
+                          id="online"
+                          name="service_industry"
+                          value="online"
+                        />
+                      </div>
+
+                      <div>
+                        <label htmlFor="other">Other states in India </label>
+                        <input
+                          type="checkbox"
+                          id="other"
+                          name="service_industry"
+                          value="Other states"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="export">Internationally</label>
+                        <input
+                          type="checkbox"
+                          id="export"
+                          name="service_industry"
+                          value="export outside"
+                        />
+                      </div>
+                      <div style={{width:"100%",gap:"15px",display:"flex",flexDirection:"row",flexWrap:"wrap",justifyContent:"flex-start"}}>
+                        <label htmlFor="others">Other please specify</label>
+                        <input
+                          type="text"
+                          id="others"
+                          name="service_industry"
+                          style={{width:"85%"}}
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={1}>
+                    <span>No of Employees ( or % )</span>
+                  </td>
+                  <td className="input_label_gapper" style={{ display: "flex", flexDirection: "column", gap: "10px" }} colSpan={6}>
+                    <div>
+                      <label htmlFor="full_time_Emoployee-1">Full time: </label>
+                      <input
+                        style={{ width: "95%" }}
+                        type="text"
+                        id="full_time_Emoployee-1"
+                        name="full_time_Emoployee"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="part_time_Emoployee-2">Part time: </label>
+                      <input
+                        style={{ width: "95%" }}
+                        type="text"
+                        id="part_time_Emoployee-2"
+                        name="part_time_Emoployee"
+                      />
+                    </div>
+                  </td>
+                  <td className="input_label_gapper" style={{ display: "flex", flexDirection: "column", gap: "10px" }} colSpan={6}>
+                    <div>
+                      <label htmlFor="Permanent_Emoployee-1">Permanent: </label>
+                      <input
+                        style={{ width: "95%" }}
+                        type="text"
+                        id="Permanent_Emoployee-1"
+                        name="Permanent_Emoployee"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="Contractual_Emoployee-2">Contractual: </label>
+                      <input
+                        style={{ width: "95%" }}
+                        type="text"
+                        id="Contractual_Emoployee-2"
+                        name="Contractual_Emoployee"
+                      />
+                    </div>
+                  </td>
+                  <td className="input_label_gapper" style={{ display: "flex", flexDirection: "column", gap: "10px" }} colSpan={6}>
+                    <div>
+                      <label htmlFor="male_employee-1">Male: </label>
+                      <input
+                        style={{ width: "95%" }}
+                        type="text"
+                        id="male_employee-1"
+                        name="male_employee"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="female_employee-2">Female: </label>
+                      <input
+                        style={{ width: "95%" }}
+                        type="text"
+                        id="female_employee-2"
+                        name="female_employee"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={1}>
+                    <span>Major Source of your Financing (or %){" "}</span>
+                  </td>
+                  <td className="input_label_gapper" style={{ display: "flex", flexDirection: "column", gap: "10px" }} colSpan={6}>
+                    <div>
+                      <label htmlFor="formal_source-1">Formal Sources(Bank/NBFCs etc): </label>
+                      <input
+                        style={{ width: "95%" }}
+                        type="text"
+                        id="formal_source-1"
+                        name="formal_source"
+                      />
+                    </div>
+                  </td>
+                  <td className="input_label_gapper" style={{ display: "flex", flexDirection: "column", gap: "10px" }} colSpan={6}>
+                    <div>
+                      <label htmlFor="informal_source-1">Informal Sources(friends/relatives//money lenders):  </label>
+                      <input
+                        style={{ width: "95%" }}
+                        type="text"
+                        id="informal_source-1"
+                        name="informal_source"
+                      />
+                    </div>
+                  </td>
+                  <td className="input_label_gapper" style={{ display: "flex", flexDirection: "column", gap: "10px" }} colSpan={6}>
+                    <div>
+                      <label htmlFor="internal_fund_generation-1">Internal fund generation/Own sources: </label>
+                      <input
+                        style={{ width: "95%" }}
+                        type="text"
+                        id="internal_fund_generation-1"
+                        name="internal_fund_generation"
+                      />
+                    </div>
+                  </td>
+                  <td className="input_label_gapper" style={{ display: "flex", flexDirection: "column", gap: "10px" }} colSpan={6}>
+                    <div>
+                      <label htmlFor="other_financing_source-1">Other, please specify </label>
+                      <input
+                        style={{ width: "95%" }}
+                        type="text"
+                        id="other_financing_source-1"
+                        name="other_financing_source"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={1}>
+                    <span> Whether loan availed </span>
+                  </td>
+                  <td colSpan={6}>
+                    <div className="radio_wrapper">
+                      <div>
+                        <label htmlFor="loan_availedyes">YES</label>
+                        <input
+                          type="radio"
+                          name="loan_availed"
+                          id="loan_availedyes"
+                          value="YES"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="loan_availedno">NO</label>
+                        <input
+                          type="radio"
+                          name="loan_availed"
+                          id="loan_availedno"
+                          value="NO"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={1}>
+                    <label htmlFor="loan_specification">Please specify, Term Loan / Working Capital / Both </label>
+                  </td>
+                  <td colSpan={6}>
+                    <input
+                      type="text"
+                      id="loan_specification"
+                      name="loan_specification"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={1}>
+                    <span> Whether Loan is adequate for your operations?</span>
+                  </td>
+                  <td colSpan={6}>
+                    <div className="radio_wrapper">
+                      <div>
+                        <label htmlFor="loan_adequateyes">YES</label>
+                        <input
+                          type="radio"
+                          onClick={() => setA4("show4")}
+                          name="loan_adequate"
+                          id="loan_adequateyes"
+                          value="YES"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="loan_adequateno">NO</label>
+                        <input
+                          type="radio"
+                          onClick={() => setA4(null)}
+                          name="loan_adequate"
+                          id="loan_adequateno"
+                          value="NO"
+                        />
+                      </div>
+                    </div>
+                    {a4 != "show4" ? (
+                        ""
+                      ) : (
+                        <tr
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "3px",
+                          }}
+                        >
+                          <span>
+                          If not, please
                 indicate the amount of loan required for both term loan and
                 working capital loan{" "}
-              </div>
-              <div
-                className="checkboxes"
-                style={{ borderRight: "2px solid black" }}
-              >
-                <div>
-                  <label htmlFor="yes" style={{ fontWeight: "500" }}>
-                    Yes
-                  </label>
-                  <input
-                    type="radio"
-                    name="loan_adequate"
-                    value="YES"
-                    id="yes"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="no" style={{ fontWeight: "500" }}>
-                    No
-                  </label>
-                  <input
-                    type="radio"
-                    name="loan_adequate"
-                    value="NO"
-                    id="no"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-              </div>
-              <input
-                type="number"
-                id="units"
-                name="loan_required"
-                placeholder="If not, please indicate loan amount required"
-                style={{ width: "30%", border: "transparent" }}
-              />
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
-              <div className="inner-div-tag">
-                Did you avail any credit facility in the last 12 months?{" "}
-              </div>
-              <div
-                className="checkboxes"
-                style={{ borderRight: "2px solid black" }}
-              >
-                <div>
-                  <label htmlFor="yes" style={{ fontWeight: "500" }}>
-                    Yes
-                  </label>
-                  <input
-                    type="radio"
-                    name="availed_loan_last_year"
-                    value="YES"
-                    id="yes"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="no" style={{ fontWeight: "500" }}>
-                    No
-                  </label>
-                  <input
-                    type="radio"
-                    name="availed_loan_last_year"
-                    value="NO"
-                    id="no"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-              </div>
-              <input
-                type="text"
-                id="units"
-                name="availed_loan_amount"
-                placeholder="If Yes, then amount and 
-                bank/lender"
-                style={{ width: "30%", border: "transparent" }}
-              />
-              <div
-                className="checkboxes"
-                style={{ borderRight: "2px solid black" }}
-              >
-                <div className="inner-div-tag">
-                  Any innovation or R&D undertaken on your own or in
-                  collaboration/support from some institute?{" "}
-                </div>
-                <div>
-                  <label htmlFor="yes" style={{ fontWeight: "500" }}>
-                    Yes
-                  </label>
-                  <input
-                    type="radio"
-                    name="innovation_RD"
-                    value="YES"
-                    id="yes"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="no" style={{ fontWeight: "500" }}>
-                    No
-                  </label>
-                  <input
-                    type="radio"
-                    name="innovation_RD"
-                    value="NO"
-                    id="no"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-              </div>
-              <input
-                type="text"
-                id="units"
-                name="innovation_RD_institute"
-                placeholder="If yes, which 
-                one?"
-                style={{ width: "30%", border: "transparent" }}
-              />
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
-              <label
-                htmlFor="website"
-                style={{
-                  marginRight: "1% 1.5%",
-                  fontWeight: "bold",
-                  width: "20%",
-                  borderRight: "2px solid black",
-                }}
-              >
-                Have you taken any support from Govt agency / scheme{" "}
-              </label>
-              <div
-                style={{
-                  display: "flex",
-                  padding: "1%",
-                  flexDirection: "column",
-                  borderRight: "2px solid black",
-                }}
-              >
-                <div>
-                  <label htmlFor="time">Scheme </label>
-                  <input
-                    type="text"
-                    name="govt_scheme"
-                    id="time"
-                    placeholder=""
-                    style={{ width: "50%", border: "transparent" }}
-                  />
-                </div>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  padding: "1%",
-                  flexDirection: "column",
-                  borderRight: "2px solid black",
-                }}
-              >
-                <div>
-                  <label htmlFor="time">Program </label>
-                  <input
-                    type="text"
-                    name="govt_program"
-                    id="time"
-                    placeholder=""
-                    style={{ width: "50%", border: "transparent" }}
-                  />
-                </div>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  padding: "1%",
-                  flexDirection: "column",
-                  borderRight: "2px solid black",
-                }}
-              >
-                <div>
-                  <label htmlFor="time">Name of Organisation</label>
-                  <input
-                    type="text"
-                    name="govt_organisation"
-                    id="time"
-                    placeholder=""
-                    style={{ width: "50%", border: "transparent" }}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
-              <label className="inner-div-tag">
-                Do you have PAN card on the name of your company?{" "}
-              </label>
-              <div
-                className="checkboxes"
-                style={{ borderRight: "2px solid black" }}
-              >
-                <div>
-                  <label
-                    htmlFor="Firm_Registered"
-                    style={{ fontWeight: "500" }}
-                  >
-                    Yes
-                  </label>
-                  <input
-                    type="radio"
-                    name="pan_card_company"
-                    value="YES"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="Firm_Registered"
-                    style={{ fontWeight: "500" }}
-                  >
-                    No
-                  </label>
-                  <input
-                    type="radio"
-                    name="pan_card_company"
-                    value="NO"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
-              <label className="inner-div-tag">Do you have GST No.? </label>
-              <div className="checkboxes">
-                <div>
-                  <label
-                    htmlFor="Udyam_Registration"
-                    style={{ fontWeight: "500" }}
-                  >
-                    Yes
-                  </label>
-                  <input
-                    type="radio"
-                    name="GST_NO"
-                    value="YES"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="Udyam_Registration"
-                    style={{ fontWeight: "500" }}
-                  >
-                    No
-                  </label>
-                  <input
-                    type="radio"
-                    name="GST_NO"
-                    value="NO"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
-              <label className="inner-div-tag">
-                Do you have a Current Bank Account
-              </label>
-              <div
-                className="checkboxes"
-                style={{ borderRight: "2px solid black" }}
-              >
-                <div>
-                  <label
-                    htmlFor="Firm_Registered"
-                    style={{ fontWeight: "500" }}
-                  >
-                    Yes
-                  </label>
-                  <input
-                    type="radio"
-                    name="Current_Bank_Account"
-                    value="YES"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="Firm_Registered"
-                    style={{ fontWeight: "500" }}
-                  >
-                    No
-                  </label>
-                  <input
-                    type="radio"
-                    name="Current_Bank_Account"
-                    value="NO"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
-              <label className="inner-div-tag">
-                Do you have CA audited financial statement for Last FY 2021-2022{" "}
-              </label>
-              <div className="checkboxes">
-                <div>
-                  <label
-                    htmlFor="Udyam_Registration"
-                    style={{ fontWeight: "500" }}
-                  >
-                    Yes
-                  </label>
-                  <input
-                    type="radio"
-                    name="have_CA_audited_financial_statement"
-                    value="YES"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="Udyam_Registration"
-                    style={{ fontWeight: "500" }}
-                  >
-                    No
-                  </label>
-                  <input
-                    type="radio"
-                    name="have_CA_audited_financial_statement"
-                    value="NO"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
-              <label htmlFor="Annual_Turnover" className="inner-div-tag">
-                Annual Turnover (Avg last 3 years)
-              </label>
-              <input
-                type="number"
-                name="Annual_Turnover"
-                id="Annual_Turnover"
-                style={{
-                  display: "flex",
-                  flexBasis: "content",
-                  border: "transparent",
-                  borderRight: "2px solid black",
-                }}
-              />
-              <label
-                htmlFor="Investment_plant_machinery"
-                className="inner-div-tag"
-              >
-                Investment in plant & machinery (Avg last 3 years)
-              </label>
-              <input
-                type="number"
-                id="Investment_plant_machinery"
-                name="Investment_plant_machinery"
-                style={{ width: "25%", border: "transparent" }}
-              />
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
-              <label
-                htmlFor="Investment_IT_Infrastructure"
-                className="inner-div-tag"
-              >
-                Investment in IT Infrastructure (Avg in Last 3 Years)
-              </label>
-              <input
-                type="number"
-                id="Investment_IT_Infrastructure"
-                name="Investment_IT_Infrastructure"
-                style={{ width: "25%", border: "transparent" }}
-              />
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
-              <div className="inner-div-tag">Do you export (Yes/ No) </div>
-              <div
-                className="checkboxes"
-                style={{ borderRight: "2px solid black" }}
-              >
-                <div>
-                  <label htmlFor="yes" style={{ fontWeight: "500" }}>
-                    Yes
-                  </label>
-                  <input
-                    type="radio"
-                    name="You_Export"
-                    value="YES"
-                    id="yes"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="no" style={{ fontWeight: "500" }}>
-                    No
-                  </label>
-                  <input
-                    type="radio"
-                    name="You_Export"
-                    value="NO"
-                    id="no"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-              </div>
-              <label htmlFor="Export_Value" className="inner-div-tag">
-                Export value (avg in last 3 yrs){" "}
-              </label>
-              <input
-                type="number"
-                id="Export_Value"
-                name="Export_Value"
-                placeholder=""
-                style={{ width: "30%", border: "transparent" }}
-              />
-              <label
-                htmlFor="Overall_Annual_production"
-                className="inner-div-tag"
-              >
-                Overall Annual Production:{" "}
-              </label>
-              <input
-                type="number"
-                id="Overall_Annual_production"
-                name="Overall_Annual_production"
-                placeholder=""
-                style={{ width: "30%", border: "transparent" }}
-              />
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
-              <label
-                htmlFor="Electric_Availability_Hours"
-                className="inner-div-tag"
-              >
-                Electricity availability for how many hours?
-              </label>
-              <input
-                type="number"
-                name="Electric_Availability_Hours"
-                id="Electric_Availability_Hours"
-                style={{
-                  display: "flex",
-                  flexBasis: "content",
-                  border: "transparent",
-                  borderRight: "2px solid black",
-                }}
-              />
-              <label
-                htmlFor="Electricity_rate_Per_Unit"
-                className="inner-div-tag"
-              >
-                Electricity rate Per Unit?
-              </label>
-              <input
-                type="number"
-                id="Electricity_rate_Per_Unit"
-                name="Electricity_rate_Per_Unit"
-                style={{ width: "25%", border: "transparent" }}
-              />
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
-              <label className="inner-div-tag">
-                Is Water availability a constraint?
-              </label>
-              <div
-                className="checkboxes"
-                style={{ borderRight: "2px solid black" }}
-              >
-                <div>
-                  <label
-                    htmlFor="Water_Availability"
-                    style={{ fontWeight: "500" }}
-                  >
-                    Yes
-                  </label>
-                  <input
-                    type="radio"
-                    name="Water_Availability"
-                    value="YES"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="Firm_Registered"
-                    style={{ fontWeight: "500" }}
-                  >
-                    No
-                  </label>
-                  <input
-                    type="radio"
-                    name="Water_Availability"
-                    value="NO"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
-              <label className="inner-div-tag">
-                Is there a constraint for Effluent Treatment?{" "}
-              </label>
-              <div className="checkboxes">
-                <div>
-                  <label style={{ fontWeight: "500" }}>Yes</label>
-                  <input
-                    type="radio"
-                    name="Effluent_Treatment_Constraint"
-                    value="YES"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-                <div>
-                  <label style={{ fontWeight: "500" }}>No</label>
-                  <input
-                    type="radio"
-                    name="Effluent_Treatment_Constraint"
-                    value="NO"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
-              <label className="inner-div-tag">
-                Did you undergo any training activities or attend
-                seminars/awareness program of the Govt. for MSME Sector?{" "}
-              </label>
-              <div className="checkboxes">
-                <div>
-                  <label style={{ fontWeight: "500" }}>Yes</label>
-                  <input
-                    type="radio"
-                    name="GOVT_Training"
-                    value="YES"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-                <div>
-                  <label style={{ fontWeight: "500" }}>No</label>
-                  <input
-                    type="radio"
-                    name="GOVT_Training"
-                    value="NO"
-                    style={{ margin: "0.5%" }}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="div-style" style={{ borderTop: 0 }}>
-              <label htmlFor="Email" className="inner-div-tag">
-                Email:
-              </label>
-              <input
-                type="email"
-                name="Email"
-                id="Email"
-                style={{
-                  display: "flex",
-                  flexBasis: "content",
-                  border: "transparent",
-                  borderRight: "2px solid black",
-                }}
-              />
-              <label htmlFor="Phone_Number" className="inner-div-tag">
-                Phone No.
-              </label>
-              <input
-                type="number"
-                id="Phone_Number"
-                name="Phone_Number"
-                style={{ width: "25%", border: "transparent" }}
-              />
-            </div>
-            {/* <FormPart2 /> */}
-            {/* <FormPart3 /> */}
-            <FormPart4 />
-            {/* <FormPart5 /> */}
-            {/* <FormPart6 /> */}
-
+                          </span>
+                          <input
+                            style={{ minWidth: "20px" ,marginBottom:"12px"}}
+                            type="number"
+                            id="loan_required"
+                            name="loan_required"
+                          />
+                        </tr>
+                      )}
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={1}>
+                    <span>Did you avail any credit facility in the last 12 months?{" "}</span>
+                  </td>
+                  <td colSpan={6}>
+                    <div className="radio_wrapper">
+                      <div>
+                        <label htmlFor="availed_loan_last_yearyes">YES</label>
+                        <input
+                          type="radio"
+                          onClick={() => setA5("show5")}
+                          name="availed_loan_last_year"
+                          id="availed_loan_last_yearyes"
+                          value="YES"
+                        />
+                      </div>
+                      
+                      <div>
+                        <label htmlFor="availed_loan_last_yearno">NO</label>
+                        <input
+                          type="radio"
+                          onClick={() => setA5(null)}
+                          name="availed_loan_last_year"
+                          id="availed_loan_last_yearno"
+                          value="NO"
+                        />
+                      </div>
+                    </div>
+                    {a5 != "show5" ? (
+                        ""
+                      ) : (
+                        <tr
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "3px",
+                          }}
+                        >
+                          <span>
+                          If Yes, then amount and 
+                bank/lender{" "}
+                          </span>
+                          <input
+                            style={{ minWidth: "20px" ,marginBottom:"12px"}}
+                            type="text"
+                            id="availed_loan_amount"
+                            name="availed_loan_amount"
+                          />
+                        </tr>
+                      )}
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={1}>
+                    <span> Any innovation or R&D undertaken on your own or in collaboration/support from some institute?{" "}</span>
+                  </td>
+                  <td colSpan={6}>
+                    <div className="radio_wrapper">
+                      <div>
+                        <label htmlFor="innovation_RDyes">YES</label>
+                        <input
+                          type="radio"
+                          onClick={() => setA6("show6")}
+                          name="innovation_RD"
+                          id="innovation_RDyes"
+                          value="YES"
+                        />
+                      </div>
+                      
+                      <div>
+                        <label htmlFor="innovation_RDno">NO</label>
+                        <input
+                          type="radio"
+                          onClick={() => setA6(null)}
+                          name="innovation_RD"
+                          id="innovation_RDno"
+                          value="NO"
+                        />
+                      </div>
+                    </div>
+                    {a6 != "show6" ? (
+                        ""
+                      ) : (
+                        <tr
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "3px",
+                          }}
+                        >
+                          <span>
+                          If yes, which one?{" "}
+                          </span>
+                          <input
+                            style={{ minWidth: "20px" ,marginBottom:"12px"}}
+                            type="text"
+                            id="innovation_RD_institute"
+                            name="innovation_RD_institute"
+                          />
+                        </tr>
+                      )}
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={1}>
+                    <span>Have you taken any support from Govt agency / scheme{" "}</span>
+                  </td>
+                  <td className="input_label_gapper" style={{ display: "flex", flexDirection: "column", gap: "10px" }} colSpan={6}>
+                    <div>
+                      <label htmlFor="govt_scheme-1">Scheme:  </label>
+                      <input
+                        style={{ width: "95%" }}
+                        type="text"
+                        id="govt_scheme-1"
+                        name="govt_scheme"
+                      />
+                    </div>
+                  </td>
+                  <td className="input_label_gapper" style={{ display: "flex", flexDirection: "column", gap: "10px" }} colSpan={6}>
+                    <div>
+                      <label htmlFor="govt_program-1">Program: </label>
+                      <input
+                        style={{ width: "95%" }}
+                        type="text"
+                        id="govt_program-1"
+                        name="govt_program"
+                      />
+                    </div>
+                  </td>
+                  <td className="input_label_gapper" style={{ display: "flex", flexDirection: "column", gap: "10px" }} colSpan={6}>
+                    <div>
+                      <label htmlFor="govt_organisation-1">Name of Organisation: </label>
+                      <input
+                        style={{ width: "95%" }}
+                        type="text"
+                        id="govt_organisation-1"
+                        name="govt_organisation"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={1}>
+                    <span> Do you have PAN card on the name of your company?{" "}</span>
+                  </td>
+                  <td colSpan={6}>
+                    <div className="radio_wrapper">
+                      <div>
+                        <label htmlFor="pan_card_companyyes">YES</label>
+                        <input
+                          type="radio"
+                          name="pan_card_company"
+                          id="pan_card_companyyes"
+                          value="YES"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="pan_card_companyno">NO</label>
+                        <input
+                          type="radio"
+                          name="pan_card_company"
+                          id="pan_card_companyno"
+                          value="NO"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={1}>
+                    <span> Do you have GST No.? </span>
+                  </td>
+                  <td colSpan={6}>
+                    <div className="radio_wrapper">
+                      <div>
+                        <label htmlFor="GST_NOyes">YES</label>
+                        <input
+                          type="radio"
+                          name="GST_NO"
+                          id="GST_NOyes"
+                          value="YES"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="GST_NOno">NO</label>
+                        <input
+                          type="radio"
+                          name="GST_NO"
+                          id="GST_NOno"
+                          value="NO"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={1}>
+                    <span> Do you have a Current Bank Account ?{" "}</span>
+                  </td>
+                  <td colSpan={6}>
+                    <div className="radio_wrapper">
+                      <div>
+                        <label htmlFor="Current_Bank_Accountyes">YES</label>
+                        <input
+                          type="radio"
+                          name="Current_Bank_Account"
+                          id="Current_Bank_Accountyes"
+                          value="YES"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="Current_Bank_Accountno">NO</label>
+                        <input
+                          type="radio"
+                          name="Current_Bank_Account"
+                          id="Current_Bank_Accountno"
+                          value="NO"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={1}>
+                    <span> Do you have CA audited financial statement for Last FY 2021-2022{" "} </span>
+                  </td>
+                  <td colSpan={6}>
+                    <div className="radio_wrapper">
+                      <div>
+                        <label htmlFor="have_CA_audited_financial_statementyes">YES</label>
+                        <input
+                          type="radio"
+                          name="have_CA_audited_financial_statement"
+                          id="have_CA_audited_financial_statementyes"
+                          value="YES"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="have_CA_audited_financial_statementno">NO</label>
+                        <input
+                          type="radio"
+                          name="have_CA_audited_financial_statement"
+                          id="have_CA_audited_financial_statementno"
+                          value="NO"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={1}>
+                    <label htmlFor="Annual_Turnover">Annual Turnover (Avg last 3 years)</label>
+                  </td>
+                  <td colSpan={6}>
+                    <input
+                      type="number"
+                      id="Annual_Turnover"
+                      name="Annual_Turnover"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={1}>
+                    <label htmlFor="Investment_plant_machinery">Investment in plant & machinery (Avg last 3 years)</label>
+                  </td>
+                  <td colSpan={6}>
+                    <input
+                      type="number"
+                      id="Investment_plant_machinery"
+                      name="Investment_plant_machinery"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={1}>
+                    <label htmlFor="Investment_IT_Infrastructure">Investment in IT Infrastructure (Avg in Last 3 Years)</label>
+                  </td>
+                  <td colSpan={6}>
+                    <input
+                      type="number"
+                      id="Investment_IT_Infrastructure"
+                      name="Investment_IT_Infrastructure"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={1}>
+                    <span> Do you Export ?{" "}</span>
+                  </td>
+                  <td colSpan={6}>
+                    <div className="radio_wrapper">
+                      <div>
+                        <label htmlFor="You_Exportyes">YES</label>
+                        <input
+                          type="radio"
+                          name="You_Export"
+                          id="You_Exportyes"
+                          value="YES"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="You_Exportno">NO</label>
+                        <input
+                          type="radio"
+                          name="You_Export"
+                          id="You_Exportno"
+                          value="NO"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={1}>
+                    <label htmlFor="Export_Value">Export value (avg in last 3 yrs){" "}</label>
+                  </td>
+                  <td colSpan={6}>
+                    <input
+                      type="number"
+                      id="Export_Value"
+                      name="Export_Value"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={1}>
+                    <label htmlFor="Overall_Annual_production">Overall Annual Production:{" "}</label>
+                  </td>
+                  <td colSpan={6}>
+                    <input
+                      type="number"
+                      id="Overall_Annual_production"
+                      name="Overall_Annual_production"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={1}>
+                    <label htmlFor="Electric_Availability_Hours">Electricity availability for how many hours?{" "}</label>
+                  </td>
+                  <td colSpan={6}>
+                    <input
+                      type="number"
+                      id="Electric_Availability_Hours"
+                      name="Electric_Availability_Hours"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={1}>
+                    <label htmlFor="Electricity_rate_Per_Unit">Electricity rate per unit{" "}</label>
+                  </td>
+                  <td colSpan={6}>
+                    <input
+                      type="number"
+                      id="Electricity_rate_Per_Unit"
+                      name="Electricity_rate_Per_Unit"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={1}>
+                    <span> Is water availability a constraint?{" "}</span>
+                  </td>
+                  <td colSpan={6}>
+                    <div className="radio_wrapper">
+                      <div>
+                        <label htmlFor="Water_Availabilityyes">YES</label>
+                        <input
+                          type="radio"
+                          name="Water_Availability"
+                          id="Water_Availabilityyes"
+                          value="YES"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="Water_Availabilityno">NO</label>
+                        <input
+                          type="radio"
+                          name="Water_Availability"
+                          id="Water_Availabilityno"
+                          value="NO"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={1}>
+                    <span> Is there a constraint for Effluent Treatment?{" "}</span>
+                  </td>
+                  <td colSpan={6}>
+                    <div className="radio_wrapper">
+                      <div>
+                        <label htmlFor="Effluent_Treatment_Constraintyes">YES</label>
+                        <input
+                          type="radio"
+                          name="Effluent_Treatment_Constraint"
+                          id="Effluent_Treatment_Constraintyes"
+                          value="YES"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="Effluent_Treatment_Constraintno">NO</label>
+                        <input
+                          type="radio"
+                          name="Effluent_Treatment_Constraint"
+                          id="Effluent_Treatment_Constraintno"
+                          value="NO"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={1}>
+                    <span>  Did you undergo any training activities or attend seminars/awareness program of the Govt. for MSME Sector?{" "}</span>
+                  </td>
+                  <td colSpan={6}>
+                    <div className="radio_wrapper">
+                      <div>
+                        <label htmlFor="Current_Bank_Accountyes">YES</label>
+                        <input
+                          type="radio"
+                          name="Current_Bank_Account"
+                          id="Current_Bank_Accountyes"
+                          value="YES"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="Current_Bank_Accountno">NO</label>
+                        <input
+                          type="radio"
+                          name="Current_Bank_Account"
+                          id="Current_Bank_Accountno"
+                          value="NO"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={1}>
+                    <label htmlFor="Email">Email : </label>
+                  </td>
+                  <td colSpan={6}>
+                    <input
+                      type="email"
+                      id="Email"
+                      name="Email"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={1}>
+                    <label htmlFor="Phone_Number">Phone No. : </label>
+                  </td>
+                  <td colSpan={6}>
+                    <input
+                      type="number"
+                      id="Phone_Number"
+                      name="Phone_Number"
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
             <button type="submit">submit</button>
           </div>
         </div>

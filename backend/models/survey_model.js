@@ -89,12 +89,12 @@ const surveyData = new Schema({
     type: [String],
     required: true,
   },
-  // sell_produce_majorly: {
-  //   type: [String],
-  // },//left
-  // service_industry: {
-  //   type: [String],
-  // },//left
+  sell_produce_majorly: {
+    type: [String],
+  },
+  service_industry: {
+    type: [String],
+  },
   full_time_Emoployee: {
     type: Number,
     required: true,
@@ -132,7 +132,7 @@ const surveyData = new Schema({
     type: String,
     required: true,
   },
-  other_source: {
+  other_financing_source: {
     type: String,
   },
   loan_availed: {
