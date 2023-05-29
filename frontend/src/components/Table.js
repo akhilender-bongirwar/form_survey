@@ -2383,9 +2383,9 @@ function Table() {
               />
             </div>
             {/* <FormPart2 /> */}
-            {/* <FormPart3 /> */}
+            <FormPart3 />
             {/* <FormPart4 /> */}
-            <FormPart5 />
+            {/* <FormPart5 /> */}
             {/* <FormPart6 /> */}
 
             <button type="submit">submit</button>

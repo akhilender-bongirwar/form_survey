@@ -7,7 +7,7 @@ function FormPart5() {
       <h2 style={{ marginTop: "2em", marginBottom: "2em" }}>
         E. Grievance Redressal
       </h2>
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div
           style={{
             border: "0.2em solid black",
@@ -18,13 +18,24 @@ function FormPart5() {
             width: "100%",
           }}
         >
-          <div className="div-style" style={{ borderTop: 0 }}>
-            <label className="inner-div-tag">
-              Do you avail Samadhaan service (Online dispute
-              <br /> mechanism) for delayed payments{" "}
+          <div
+            className="div-style grevience_redressal"
+            style={{ borderTop: 0, gap: "2%" }}
+          >
+            <label className="inner-div-tag" style={{ width: "100%" }}>
+              Do you avail Samadhaan service (Online dispute mechanism) for
+              delayed payments{" "}
             </label>
-            <div className="checkboxes">
-              <div>
+            <div
+              className="checkboxes  grevience_redressal"
+              style={{
+                alignItems: "center",
+                gap: "18%",
+                padding: "2%",
+                marginLeft: "9%",
+              }}
+            >
+              <div style={{ display: "flex", width: "100%" }}>
                 <label htmlFor="valid" style={{ fontWeight: "500" }}>
                   Yes
                 </label>
@@ -36,7 +47,7 @@ function FormPart5() {
                   style={{ margin: "0.5%" }}
                 />
               </div>
-              <div>
+              <div style={{ display: "flex", width: "100%" }}>
                 <label htmlFor="invalid" style={{ fontWeight: "500" }}>
                   No
                 </label>
