@@ -13,7 +13,7 @@ import {
 } from "react-router-dom";
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<FormPart3 />} action={dataaction} />
+    <Route path="/" element={<Table />} action={dataaction} />
   )
 );
 function App() {

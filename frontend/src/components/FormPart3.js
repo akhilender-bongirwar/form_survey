@@ -488,7 +488,7 @@ function FormPart3() {
                   <input
                     type="checkbox"
                     id="op1"
-                    name="Scheme_Like_to_avail"
+                    name="Central_Govt2"
                     value="ZED"
                   />
                   <label
@@ -502,7 +502,7 @@ function FormPart3() {
                   <input
                     type="checkbox"
                     id="op2"
-                    name="Scheme_Like_to_avail"
+                    name="Central_Govt2"
                     value="LEAN"
                   />
                   <label
@@ -516,7 +516,7 @@ function FormPart3() {
                   <input
                     type="checkbox"
                     id="op3"
-                    name="Scheme_Like_to_avail"
+                    name="Central_Govt2"
                     value="TREDs"
                   />
                   <label
@@ -530,7 +530,7 @@ function FormPart3() {
                   <input
                     type="checkbox"
                     id="op4"
-                    name="Scheme_Like_to_avail"
+                    name="Central_Govt2"
                     value="Design_scheme"
                   />
                   <label
@@ -544,7 +544,7 @@ function FormPart3() {
                   <input
                     type="checkbox"
                     id="op5"
-                    name="Scheme_Like_to_avail"
+                    name="Central_Govt2"
                     value="Digital_Scheme"
                   />
                   <label
@@ -558,7 +558,7 @@ function FormPart3() {
                   <input
                     type="checkbox"
                     id="op6"
-                    name="Scheme_Like_to_avail"
+                    name="Central_Govt2"
                     value="IPR_scheme"
                   />
                   <label
@@ -572,7 +572,7 @@ function FormPart3() {
                   <input
                     type="checkbox"
                     id="op7"
-                    name="Scheme_Like_to_avail"
+                    name="Central_Govt2"
                     value="Samadhan"
                   />
                   <label
@@ -586,7 +586,7 @@ function FormPart3() {
                   <input
                     type="checkbox"
                     id="op8"
-                    name="Scheme_Like_to_avail"
+                    name="Central_Govt2"
                     value="CGTMSE"
                   />
                   <label
@@ -600,7 +600,7 @@ function FormPart3() {
                   <input
                     type="checkbox"
                     id="op9"
-                    name="Scheme_Like_to_avail"
+                    name="Central_Govt2"
                     value="MSME Champions"
                   />
                   <label
@@ -619,7 +619,7 @@ function FormPart3() {
                   <input
                     type="checkbox"
                     id="opt1"
-                    name="Scheme_Like_to_avail"
+                    name="State_Govt2"
                     value="ODOP"
                   />
                   <label
@@ -633,7 +633,7 @@ function FormPart3() {
                   <input
                     type="checkbox"
                     id="opt2"
-                    name="Scheme_Like_to_avail"
+                    name="State_Govt2"
                     value="UP MSME Promotion Policy"
                   />
                   <label
@@ -647,7 +647,7 @@ function FormPart3() {
                   <input
                     type="checkbox"
                     id="opt3"
-                    name="Scheme_Like_to_avail"
+                    name="State_Govt2"
                     value="Technical upgradation"
                   />
                   <label
@@ -661,7 +661,7 @@ function FormPart3() {
                   <input
                     type="checkbox"
                     id="opt4"
-                    name="Scheme_Like_to_avail"
+                    name="State_Govt2"
                     value="UP Chief Minister Youth Self Employment Scheme"
                   />
                   <label
@@ -675,7 +675,7 @@ function FormPart3() {
                   <input
                     type="checkbox"
                     id="opt5"
-                    name="Scheme_Like_to_avail"
+                    name="State_Govt2"
                     value="UP Startup Policy 2020"
                   />
                   <label
@@ -689,7 +689,7 @@ function FormPart3() {
                   <input
                     type="checkbox"
                     id="opt6"
-                    name="Scheme_Like_to_avail"
+                    name="State_Govt2"
                     value="Others"
                   />
                   <label
@@ -717,7 +717,15 @@ function FormPart3() {
           <input
             type="text"
             id="availedByMe"
-            name="scheme_availed_by_you"
+            name="scheme_availed_by_you_central_govt"
+            placeholder="central govt."
+            style={{ width: "50%", border: "transparent" }}
+          />
+          <input
+            type="text"
+            id="availedByMe2"
+            placeholder="state govt."
+            name="scheme_availed_by_you_state_govt"
             style={{ width: "50%", border: "transparent" }}
           />
         </div>
