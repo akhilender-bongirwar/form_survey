@@ -770,130 +770,6 @@ function Table() {
                 </tr>
               </tbody>
             </table>
-
-
-            {/* <div className="div-style" style={{ borderTop: 0 }}>
-              <div className="inner-div-tag">
-                Where all do you sell your produce/products majorly? Please tick (✓) all the relevant options
-              </div>
-              <div
-                className="checkboxes"
-                style={{
-                  borderRight: "2px solid black",
-                  display: "flex",
-                  flexBasis: "content",
-                }}
-              >
-                <div>
-                  <label htmlFor="local">Local Market/ trader</label>
-                  <input
-                    type="checkbox"
-                    name="sell_produce_majorly"
-                    id="local"
-                    value="Local Market"
-                    style={{ display: "flex", flexWrap: "wrap" }}
-                  />
-                </div>
-              </div>
-              <div
-                className="checkboxes"
-                style={{
-                  borderRight: "2px solid black",
-                  display: "flex",
-                  flexBasis: "content",
-                }}
-              >
-                <div>
-                  <label htmlFor="Govt">Government (State/Central)</label>
-                  <input
-                    type="checkbox"
-                    id="Govt"
-                    name="sell_produce_majorly"
-                    value="Government"
-                    style={{ display: "flex", flexWrap: "wrap" }}
-                  />
-                </div>
-              </div>
-              <div
-                className="checkboxes"
-                style={{
-                  borderRight: "2px solid black",
-                  display: "flex",
-                  flexBasis: "content",
-                }}
-              >
-                <div>
-                  <label htmlFor="online">Online Platform</label>
-                  <input
-                    type="checkbox"
-                    id="online"
-                    name="sell_produce_majorly"
-                    value="online"
-                    style={{ display: "flex", flexWrap: "wrap" }}
-                  />
-                </div>
-              </div>
-              <div
-                className="checkboxes"
-                style={{
-                  borderRight: "2px solid black",
-                  display: "flex",
-                  flexBasis: "content",
-                }}
-              >
-                <div>
-                  <label htmlFor="other">Other states in India </label>
-                  <input
-                    type="checkbox"
-                    id="other"
-                    name="sell_produce_majorly"
-                    value="Other states"
-                    style={{ display: "flex", flexWrap: "wrap" }}
-                  />
-                </div>
-              </div>
-              <div
-                className="checkboxes"
-                style={{
-                  borderRight: "2px solid black",
-                  display: "flex",
-                  flexBasis: "content",
-                }}
-              >
-                <div>
-                  <label htmlFor="export">Export outside India</label>
-                  <input
-                    type="checkbox"
-                    id="export"
-                    name="sell_produce_majorly"
-                    value="export outside"
-                    style={{ display: "flex", flexWrap: "wrap" }}
-                  />
-                </div>
-              </div>
-              <div
-                className="checkboxes"
-                style={{
-                  borderRight: "2px solid black",
-                  display: "flex",
-                  flexBasis: "content",
-                }}
-              >
-                <div>
-                  <label htmlFor="others">Other please specify</label>
-                  <input
-                    type="text"
-                    id="others"
-                    name="sell_produce_majorly"
-                    style={{
-                      display: "flex",
-                      flexBasis: "content",
-                      border: "transparent",
-                    }}
-                  />
-                </div>
-              </div>
-            </div> */}
             <div className="div-style" style={{ borderTop: 0 }}>
               <div className="inner-div-tag">
                 In case of <br /> Service Industry,
@@ -1924,7 +1800,7 @@ function Table() {
             </div>
             {/* <FormPart2 /> */}
             {/* <FormPart3 /> */}
-            {/* <FormPart4 /> */}
+            <FormPart4 />
             {/* <FormPart5 /> */}
             {/* <FormPart6 /> */}
 
