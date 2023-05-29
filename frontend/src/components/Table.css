@@ -67,11 +67,24 @@ label{
 .outer {
   border: black solid 1px;
 }
+input[type=checkbox]{
+  width: 15px;
+  margin-left: auto;
+  margin-right: 50%;
+}
+input[type=radio]{
+  width: 15px;
+  margin-left: auto;
+  margin-right: 50%;
+}
 
 .radio_wrapper>div {
   display: flex;
   gap: 5px;
   align-items: center;
+}
+.form4_styling{
+  width: 75%;
 }
 
 @media screen and (max-width:768px) {
@@ -79,6 +92,19 @@ label{
     flex-direction: column;
     display: flex;
 
+  }
+  .form4_styling{
+    width: 100%;
+  }
+  input[type=checkbox]{
+    width: 15px;
+    margin-left: auto;
+    margin-right: 10px;
+  }
+  input[type=radio]{
+    width: 15px;
+    margin-left: auto;
+    margin-right: 10px;
   }
 
   input[type=text] {
