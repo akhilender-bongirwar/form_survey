@@ -2382,7 +2382,7 @@ function Table() {
                 style={{ width: "25%", border: "transparent" }}
               />
             </div>
-            {/* <FormPart2 /> */}
+            <FormPart2 />
             <FormPart3 />
             {/* <FormPart4 /> */}
             {/* <FormPart5 /> */}

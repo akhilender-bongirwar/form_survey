@@ -62,6 +62,12 @@ input[type=text] {
   align-items: center;
 }
 
+.d_flex_align_CONTENT_justify {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media screen and (max-width:768px) {
   tr {
     flex-direction: column;
@@ -72,6 +78,7 @@ input[type=text] {
   .grevience_redressal {
     flex-direction: column;
   }
+
 
   input[type=text] {
     font-size: small;

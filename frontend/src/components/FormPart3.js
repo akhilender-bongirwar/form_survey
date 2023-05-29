@@ -138,6 +138,516 @@ function FormPart3() {
               </div>
             </td>
           </tr>
+          <tr>
+            <td colSpan={1}>
+              <span>Are you aware of any of the listed Schemes</span>
+            </td>
+            <td colSpan={6} style={{ width: "100%" }}>
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <div>
+                  <div style={{ fontWeight: "bold", fontSize: "larger" }}>
+                    <u>Central Government:</u>
+                  </div>
+                  <div
+                    style={{ display: "flex", flexWrap: "wrap" }}
+                    className="grevience_redressal radio_wrapper"
+                  >
+                    <div className="d_flex_align_CONTENT_justify">
+                      <label
+                        htmlFor="op1"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        ZED
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="op1"
+                        name="Aware_of_listed_scehmes"
+                        value="ZED"
+                      />
+                    </div>
+                    <div className="d_flex_align_CONTENT_justify">
+                      <label
+                        htmlFor="op2"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        LEAN
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="op2"
+                        name="Aware_of_listed_scehmes"
+                        value="LEAN"
+                      />
+                    </div>
+                    <div className="d_flex_align_CONTENT_justify">
+                      <label
+                        htmlFor="op3"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        TREDs
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="op3"
+                        name="Aware_of_listed_scehmes"
+                        value="TREDs"
+                      />
+                    </div>
+                    <div className="d_flex_align_CONTENT_justify">
+                      <label
+                        htmlFor="op4"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        Design scheme
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="op4"
+                        name="Aware_of_listed_scehmes"
+                        value="Design_scheme"
+                      />
+                    </div>
+                    <div className="d_flex_align_CONTENT_justify">
+                      <label
+                        htmlFor="op5"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        Digital Scheme
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="op5"
+                        name="Aware_of_listed_scehmes"
+                        value="Digital_Scheme"
+                      />
+                    </div>
+                    <div className="d_flex_align_CONTENT_justify">
+                      <label
+                        htmlFor="op6"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        IPR scheme
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="op6"
+                        name="Aware_of_listed_scehmes"
+                        value="IPR_scheme"
+                      />
+                    </div>
+                    <div className="d_flex_align_CONTENT_justify">
+                      <label
+                        htmlFor="op7"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        Samadhan
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="op7"
+                        name="Aware_of_listed_scehmes"
+                        value="Samadhan"
+                      />
+                    </div>
+                    <div className="d_flex_align_CONTENT_justify">
+                      <label
+                        htmlFor="op8"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        CGTMSE
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="op8"
+                        name="Aware_of_listed_scehmes"
+                        value="CGTMSE"
+                      />
+                    </div>
+                    <div className="d_flex_align_CONTENT_justify">
+                      <label
+                        htmlFor="op9"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        MSME Champions
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="op9"
+                        name="Aware_of_listed_scehmes"
+                        value="MSME Champions"
+                      />
+                    </div>
+                  </div>
+                  <div style={{ fontWeight: "bold", fontSize: "larger" }}>
+                    <u>State Government:</u>
+                  </div>
+                  <div style={{ display: "flex" }} className="radio_wrapper">
+                    <div>
+                      <label
+                        htmlFor="opt1"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        ODOP
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="opt1"
+                        name="Aware_of_listed_scehmes"
+                        value="ODOP"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="opt2"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        UP MSME Promotion Policy
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="opt2"
+                        name="Aware_of_listed_scehmes"
+                        value="UP MSME Promotion Policy"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="opt3"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        Technical upgradation
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="opt3"
+                        name="Aware_of_listed_scehmes"
+                        value="Technical upgradation"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="opt4"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        UP Chief Minister Youth Self Employment Scheme
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="opt4"
+                        name="Aware_of_listed_scehmes"
+                        value="UP Chief Minister Youth Self Employment Scheme"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="opt5"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        UP Startup Policy 2020
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="opt5"
+                        name="Aware_of_listed_scehmes"
+                        value="UP Startup Policy 2020"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="opt6"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        Others
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="opt6"
+                        name="Aware_of_listed_scehmes"
+                        value="Others"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colSpan={1}>
+              <label htmlFor="remark">
+                Remarks (Specify if MSMEs are onboarded on any of the above on
+                any of the above schemes)
+              </label>
+            </td>
+            <td colSpan={6}>
+              <input
+                type="text"
+                id="remark"
+                name="Remarks"
+                style={{ width: "50%", border: "transparent" }}
+              />
+            </td>
+          </tr>
+          <tr>
+            <td colSpan={1}>
+              <span> Which scheme would you like to avail?</span>
+            </td>
+            <td colSpan={6} style={{ width: "100%" }}>
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <div>
+                  <div style={{ fontWeight: "bold", fontSize: "larger" }}>
+                    <u>Central Government:</u>
+                  </div>
+                  <div
+                    style={{ display: "flex", flexWrap: "wrap" }}
+                    className="grevience_redressal radio_wrapper"
+                  >
+                    <div className="d_flex_align_CONTENT_justify">
+                      <label
+                        htmlFor="op1"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        ZED
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="op1"
+                        name="Aware_of_listed_scehmes"
+                        value="ZED"
+                      />
+                    </div>
+                    <div className="d_flex_align_CONTENT_justify">
+                      <label
+                        htmlFor="op2"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        LEAN
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="op2"
+                        name="Aware_of_listed_scehmes"
+                        value="LEAN"
+                      />
+                    </div>
+                    <div className="d_flex_align_CONTENT_justify">
+                      <label
+                        htmlFor="op3"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        TREDs
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="op3"
+                        name="Aware_of_listed_scehmes"
+                        value="TREDs"
+                      />
+                    </div>
+                    <div className="d_flex_align_CONTENT_justify">
+                      <label
+                        htmlFor="op4"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        Design scheme
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="op4"
+                        name="Aware_of_listed_scehmes"
+                        value="Design_scheme"
+                      />
+                    </div>
+                    <div className="d_flex_align_CONTENT_justify">
+                      <label
+                        htmlFor="op5"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        Digital Scheme
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="op5"
+                        name="Aware_of_listed_scehmes"
+                        value="Digital_Scheme"
+                      />
+                    </div>
+                    <div className="d_flex_align_CONTENT_justify">
+                      <label
+                        htmlFor="op6"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        IPR scheme
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="op6"
+                        name="Aware_of_listed_scehmes"
+                        value="IPR_scheme"
+                      />
+                    </div>
+                    <div className="d_flex_align_CONTENT_justify">
+                      <label
+                        htmlFor="op7"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        Samadhan
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="op7"
+                        name="Aware_of_listed_scehmes"
+                        value="Samadhan"
+                      />
+                    </div>
+                    <div className="d_flex_align_CONTENT_justify">
+                      <label
+                        htmlFor="op8"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        CGTMSE
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="op8"
+                        name="Aware_of_listed_scehmes"
+                        value="CGTMSE"
+                      />
+                    </div>
+                    <div className="d_flex_align_CONTENT_justify">
+                      <label
+                        htmlFor="op9"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        MSME Champions
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="op9"
+                        name="Aware_of_listed_scehmes"
+                        value="MSME Champions"
+                      />
+                    </div>
+                  </div>
+                  <div style={{ fontWeight: "bold", fontSize: "larger" }}>
+                    <u>State Government:</u>
+                  </div>
+                  <div style={{ display: "flex" }} className="radio_wrapper">
+                    <div>
+                      <label
+                        htmlFor="opt1"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        ODOP
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="opt1"
+                        name="Aware_of_listed_scehmes"
+                        value="ODOP"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="opt2"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        UP MSME Promotion Policy
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="opt2"
+                        name="Aware_of_listed_scehmes"
+                        value="UP MSME Promotion Policy"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="opt3"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        Technical upgradation
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="opt3"
+                        name="Aware_of_listed_scehmes"
+                        value="Technical upgradation"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="opt4"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        UP Chief Minister Youth Self Employment Scheme
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="opt4"
+                        name="Aware_of_listed_scehmes"
+                        value="UP Chief Minister Youth Self Employment Scheme"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="opt5"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        UP Startup Policy 2020
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="opt5"
+                        name="Aware_of_listed_scehmes"
+                        value="UP Startup Policy 2020"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="opt6"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        Others
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="opt6"
+                        name="Aware_of_listed_scehmes"
+                        value="Others"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colSpan={1}>
+              <div>
+                What are the schemes under which you are availing benefits from
+                Govt? (Both State and Central Govt separately)
+              </div>
+            </td>
+            <td colSpan={6} style={{ width: "100%" }}>
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <input
+                  type="text"
+                  id="availedByMe"
+                  name="scheme_availed_by_you_central_govt"
+                  placeholder="central govt."
+                  style={{ width: "50%", border: "transparent" }}
+                />
+                <input
+                  type="text"
+                  id="availedByMe2"
+                  placeholder="state govt."
+                  name="scheme_availed_by_you_state_govt"
+                  style={{ width: "50%", border: "transparent" }}
+                />
+              </div>
+            </td>
+          </tr>
         </table>
         {/* <div className="div-style" style={{ borderTop: 0 }}>
           <label className="inner-div-tag" >Are you aware about<br />the current
@@ -193,542 +703,6 @@ function FormPart3() {
             </div>
           </div>
         </div> */}
-        <div className="div-style" style={{ borderTop: 0 }}>
-          <div className="inner-div-tag">
-            What are your expectations from
-            <br />
-            the State / Central Government
-            <br />
-            (related to infra/training/finance/
-            <br />
-            etc)
-          </div>
-          <div>
-            <div style={{ display: "flex", flexDirection: "column" }}>
-              <div style={{ display: "flex" }}>
-                <label htmlFor="expect1">a.</label>
-                <input
-                  type="text"
-                  id="expect1"
-                  name="expectation_from_govt1"
-                  style={{ width: "50%", border: "transparent" }}
-                />
-              </div>
-              <div style={{ display: "flex" }}>
-                <label htmlFor="expect2">b.</label>
-                <input
-                  type="text"
-                  id="expect2"
-                  name="expectation_from_govt2"
-                  style={{ width: "50%", border: "transparent" }}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="div-style" style={{ borderTop: 0 }}>
-          <div className="inner-div-tag">
-            Are you aware of any of the listed
-            <br />
-            Schemes
-          </div>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <div>
-              <div style={{ fontWeight: "bold" }}>
-                <u>Central Government:</u>
-              </div>
-              <div style={{ display: "flex", flexWrap: "wrap" }}>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="op1"
-                    name="Aware_of_listed_scehmes"
-                    value="ZED"
-                  />
-                  <label
-                    htmlFor="op1"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    ZED
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="op2"
-                    name="Aware_of_listed_scehmes"
-                    value="LEAN"
-                  />
-                  <label
-                    htmlFor="op2"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    LEAN
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="op3"
-                    name="Aware_of_listed_scehmes"
-                    value="TREDs"
-                  />
-                  <label
-                    htmlFor="op3"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    TREDs
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="op4"
-                    name="Aware_of_listed_scehmes"
-                    value="Design_scheme"
-                  />
-                  <label
-                    htmlFor="op4"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    Design scheme
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="op5"
-                    name="Aware_of_listed_scehmes"
-                    value="Digital_Scheme"
-                  />
-                  <label
-                    htmlFor="op5"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    Digital Scheme
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="op6"
-                    name="Aware_of_listed_scehmes"
-                    value="IPR_scheme"
-                  />
-                  <label
-                    htmlFor="op6"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    IPR scheme
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="op7"
-                    name="Aware_of_listed_scehmes"
-                    value="Samadhan"
-                  />
-                  <label
-                    htmlFor="op7"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    Samadhan
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="op8"
-                    name="Aware_of_listed_scehmes"
-                    value="CGTMSE"
-                  />
-                  <label
-                    htmlFor="op8"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    CGTMSE
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="op9"
-                    name="Aware_of_listed_scehmes"
-                    value="MSME Champions"
-                  />
-                  <label
-                    htmlFor="op9"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    MSME Champions
-                  </label>
-                </div>
-              </div>
-              <div style={{ fontWeight: "bold" }}>
-                <u>State Government:</u>
-              </div>
-              <div style={{ display: "flex", flexWrap: "wrap" }}>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="opt1"
-                    name="Aware_of_listed_scehmes"
-                    value="ODOP"
-                  />
-                  <label
-                    htmlFor="opt1"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    ODOP
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="opt2"
-                    name="Aware_of_listed_scehmes"
-                    value="UP MSME Promotion Policy"
-                  />
-                  <label
-                    htmlFor="opt2"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    UP MSME Promotion Policy
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="opt3"
-                    name="Aware_of_listed_scehmes"
-                    value="Technical upgradation"
-                  />
-                  <label
-                    htmlFor="opt3"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    Technical upgradation
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="opt4"
-                    name="Aware_of_listed_scehmes"
-                    value="UP Chief Minister Youth Self Employment Scheme"
-                  />
-                  <label
-                    htmlFor="opt4"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    UP Chief Minister Youth Self Employment Scheme
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="opt5"
-                    name="Aware_of_listed_scehmes"
-                    value="UP Startup Policy 2020"
-                  />
-                  <label
-                    htmlFor="opt5"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    UP Startup Policy 2020
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="opt6"
-                    name="Aware_of_listed_scehmes"
-                    value="Others"
-                  />
-                  <label
-                    htmlFor="opt6"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    Others
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="div-style" style={{ borderTop: 0 }}>
-          <label className="inner-div-tag" htmlFor="remark">
-            Remarks (Specify if MSMEs are
-            <br />
-            onboarded on any of the above
-            <br />
-            on any of the above schemes)
-          </label>
-          <input
-            type="text"
-            id="remark"
-            name="Remarks"
-            style={{ width: "50%", border: "transparent" }}
-          />
-        </div>
-        <div className="div-style" style={{ borderTop: 0 }}>
-          <div className="inner-div-tag">
-            Which scheme would you like to
-            <br />
-            avail?
-          </div>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <div>
-              <div style={{ fontWeight: "bold" }}>
-                <u>Central Government:</u>
-              </div>
-              <div style={{ display: "flex", flexWrap: "wrap" }}>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="op1"
-                    name="Central_Govt2"
-                    value="ZED"
-                  />
-                  <label
-                    htmlFor="op1"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    ZED
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="op2"
-                    name="Central_Govt2"
-                    value="LEAN"
-                  />
-                  <label
-                    htmlFor="op2"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    LEAN
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="op3"
-                    name="Central_Govt2"
-                    value="TREDs"
-                  />
-                  <label
-                    htmlFor="op3"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    TREDs
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="op4"
-                    name="Central_Govt2"
-                    value="Design_scheme"
-                  />
-                  <label
-                    htmlFor="op4"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    Design scheme
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="op5"
-                    name="Central_Govt2"
-                    value="Digital_Scheme"
-                  />
-                  <label
-                    htmlFor="op5"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    Digital Scheme
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="op6"
-                    name="Central_Govt2"
-                    value="IPR_scheme"
-                  />
-                  <label
-                    htmlFor="op6"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    IPR scheme
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="op7"
-                    name="Central_Govt2"
-                    value="Samadhan"
-                  />
-                  <label
-                    htmlFor="op7"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    Samadhan
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="op8"
-                    name="Central_Govt2"
-                    value="CGTMSE"
-                  />
-                  <label
-                    htmlFor="op8"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    CGTMSE
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="op9"
-                    name="Central_Govt2"
-                    value="MSME Champions"
-                  />
-                  <label
-                    htmlFor="op9"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    MSME Champions
-                  </label>
-                </div>
-              </div>
-              <div style={{ fontWeight: "bold" }}>
-                <u>State Government:</u>
-              </div>
-              <div style={{ display: "flex", flexWrap: "wrap" }}>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="opt1"
-                    name="State_Govt2"
-                    value="ODOP"
-                  />
-                  <label
-                    htmlFor="opt1"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    ODOP
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="opt2"
-                    name="State_Govt2"
-                    value="UP MSME Promotion Policy"
-                  />
-                  <label
-                    htmlFor="opt2"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    UP MSME Promotion Policy
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="opt3"
-                    name="State_Govt2"
-                    value="Technical upgradation"
-                  />
-                  <label
-                    htmlFor="opt3"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    Technical upgradation
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="opt4"
-                    name="State_Govt2"
-                    value="UP Chief Minister Youth Self Employment Scheme"
-                  />
-                  <label
-                    htmlFor="opt4"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    UP Chief Minister Youth Self Employment Scheme
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="opt5"
-                    name="State_Govt2"
-                    value="UP Startup Policy 2020"
-                  />
-                  <label
-                    htmlFor="opt5"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    UP Startup Policy 2020
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="opt6"
-                    name="State_Govt2"
-                    value="Others"
-                  />
-                  <label
-                    htmlFor="opt6"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    Others
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="div-style" style={{ borderTop: 0 }}>
-          <label className="inner-div-tag" htmlFor="availedByMe">
-            What are the schemes under
-            <br />
-            which you are availing benefits
-            <br />
-            from Govt?
-            <br />
-            (Both State and Central Govt <br />
-            separately)
-          </label>
-          <input
-            type="text"
-            id="availedByMe"
-            name="scheme_availed_by_you_central_govt"
-            placeholder="central govt."
-            style={{ width: "50%", border: "transparent" }}
-          />
-          <input
-            type="text"
-            id="availedByMe2"
-            placeholder="state govt."
-            name="scheme_availed_by_you_state_govt"
-            style={{ width: "50%", border: "transparent" }}
-          />
-        </div>
       </div>
     </div>
   );
