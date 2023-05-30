@@ -4,118 +4,128 @@ import { NavLink } from "react-router-dom";
 
 const FormPart2 = ({ formD, setFormD }) => {
   function handleChange(event) {
-    const { name, value, type, checked,className } = event.target;
+    const { name, value, type, checked, className } = event.target;
     if (name === "sell_produce_majorly") {
-        if(type=="text"){
-            setFormD((prevFormData) => {
-                return {
-                  ...prevFormData,
-                  [name]: {...prevFormData[name],other: value}
-                }
-              })
-        }
-        else{
-
-            setFormD((prevFormData) => {
-                return {
-                  ...prevFormData,
-                  [name]: {...prevFormData[name],[value]:checked}
-                }
-              })
-        }
-    }
-    else if(name==="service_industry"){
-        if(type=="text"){
-            setFormD((prevFormData) => {
-                return {
-                  ...prevFormData,
-                  [name]: {...prevFormData[name],other: value}
-                }
-              })
-        }
-        else{
-            setFormD((prevFormData) => {
-                return {
-                  ...prevFormData,
-                  [name]: {...prevFormData[name],[value]:checked}
-                }
-              })
-        }
-    } 
-    else if(name==="Aware_of_listed_scehmes"){
-      if(className=="central"){
+      if (type == "text") {
         setFormD((prevFormData) => {
           return {
             ...prevFormData,
-            [name]: {...prevFormData[name],Central_Govt:{...prevFormData[name].Central_Govt,[value]:type === "checkbox" ? checked : value}}
-          }
-        })
-      }
-      else{
+            [name]: { ...prevFormData[name], other: value },
+          };
+        });
+      } else {
         setFormD((prevFormData) => {
           return {
             ...prevFormData,
-            [name]: {...prevFormData[name],State_Govt:{...prevFormData[name].State_Govt,[value]:type === "checkbox" ? checked : value}}
-          }
-        })
+            [name]: { ...prevFormData[name], [value]: checked },
+          };
+        });
       }
-    }
-    else if(name==="Scheme_Like_to_avail"){
-      if(className=="central"){
+    } else if (name === "service_industry") {
+      if (type == "text") {
         setFormD((prevFormData) => {
           return {
             ...prevFormData,
-            [name]: {...prevFormData[name],Central_Govt:{...prevFormData[name].Central_Govt,[value]:type === "checkbox" ? checked : value}}
-          }
-        })
-      }
-      else{
+            [name]: { ...prevFormData[name], other: value },
+          };
+        });
+      } else {
         setFormD((prevFormData) => {
           return {
             ...prevFormData,
-            [name]: {...prevFormData[name],State_Govt:{...prevFormData[name].State_Govt,[value]:type === "checkbox" ? checked : value}}
-          }
-        })
+            [name]: { ...prevFormData[name], [value]: checked },
+          };
+        });
       }
-    }
-    else if (name === "Key_Reason_Preventing_loan") {
-        if(type=="text"){
-            setFormD((prevFormData) => {
-                return {
-                  ...prevFormData,
-                  [name]: {...prevFormData[name],other: value}
-                }
-              })
-        }
-        else{
-
-            setFormD((prevFormData) => {
-                return {
-                  ...prevFormData,
-                  [name]: {...prevFormData[name],[value]:checked}
-                }
-              })
-        }
-    }
-    else if (name === "applied_loan_outcome") {
-        if(type=="radio"){
-            setFormD((prevFormData) => {
-                return {
-                  ...prevFormData,
-                  [name]: {...prevFormData[name],radio_button: value,other:""}
-                }
-              })
-        }
-        else{
-            setFormD((prevFormData) => {
-                return {
-                  ...prevFormData,
-                  [name]: {...prevFormData[name],other:value}
-                }
-              })
-        }
-    }
-    else {
+    } else if (name === "Aware_of_listed_scehmes") {
+      if (className == "central") {
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: {
+              ...prevFormData[name],
+              Central_Govt: {
+                ...prevFormData[name].Central_Govt,
+                [value]: type === "checkbox" ? checked : value,
+              },
+            },
+          };
+        });
+      } else {
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: {
+              ...prevFormData[name],
+              State_Govt: {
+                ...prevFormData[name].State_Govt,
+                [value]: type === "checkbox" ? checked : value,
+              },
+            },
+          };
+        });
+      }
+    } else if (name === "Scheme_Like_to_avail") {
+      if (className == "central") {
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: {
+              ...prevFormData[name],
+              Central_Govt: {
+                ...prevFormData[name].Central_Govt,
+                [value]: type === "checkbox" ? checked : value,
+              },
+            },
+          };
+        });
+      } else {
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: {
+              ...prevFormData[name],
+              State_Govt: {
+                ...prevFormData[name].State_Govt,
+                [value]: type === "checkbox" ? checked : value,
+              },
+            },
+          };
+        });
+      }
+    } else if (name === "Key_Reason_Preventing_loan") {
+      if (type == "text") {
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: { ...prevFormData[name], other: value },
+          };
+        });
+      } else {
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: { ...prevFormData[name], [value]: checked },
+          };
+        });
+      }
+    } else if (name === "applied_loan_outcome") {
+      if (type == "radio") {
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: { ...prevFormData[name], radio_button: value, other: "" },
+          };
+        });
+      } else {
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: { ...prevFormData[name], other: value },
+          };
+        });
+      }
+    } else {
       setFormD((prevFormData) => {
         return {
           ...prevFormData,
@@ -466,32 +476,38 @@ const FormPart2 = ({ formD, setFormD }) => {
                     <td colSpan={6}>
                       <div className="radio_wrapper" id="ownership_pattern">
                         <div>
-                          <label htmlFor="proprietary">within State</label>
+                          <label htmlFor="withinState">within State</label>
                           <input
                             type="checkbox"
                             id="withinState"
                             name="markets_supplied"
-                            value="within State"
+                            value="within_State"
+                            checked={formD.markets_supplied.within_State}
                             onChange={handleChange}
                           />
                         </div>
                         <div>
-                          <label htmlFor="partnership">outside State</label>
+                          <label htmlFor="outState">outside State</label>
                           <input
                             type="checkbox"
                             id="outState"
                             name="markets_supplied"
-                            value="outside State"
+                            checked={formD.markets_supplied.outside_State}
+                            value="outside_State"
                             onChange={handleChange}
                           />
                         </div>
                         <div>
-                          <label htmlFor="private">outside country</label>
+                          <label htmlFor="outside_country">
+                            outside country
+                          </label>
                           <input
                             type="checkbox"
                             name="markets_supplied"
-                            value="outside country"
+                            value="outside_country"
                             onChange={handleChange}
+                            checked={formD.markets_supplied.outside_country}
+                            id="outside_country"
                           />
                         </div>
                       </div>
