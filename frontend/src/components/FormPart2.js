@@ -38,7 +38,7 @@ const FormPart2 = () => {
                   <input
                     type="checkbox"
                     id="raw1"
-                    name="Aware_of_listed_scehmes"
+                    name="Raw_Materials"
                     value="Direct"
                   />
                 </div>
@@ -52,7 +52,7 @@ const FormPart2 = () => {
                   <input
                     type="checkbox"
                     id="raw2"
-                    name="Aware_of_listed_scehmes"
+                    name="Raw_Materials"
                     value="Through Traders"
                   />
                 </div>
@@ -66,7 +66,7 @@ const FormPart2 = () => {
                   <input
                     type="checkbox"
                     id="raw3"
-                    name="Aware_of_listed_scehmes"
+                    name="Raw_Materials"
                     value="Online"
                   />
                 </div>
@@ -80,946 +80,620 @@ const FormPart2 = () => {
                   <input type="checkbox" id="raw4" name="asdf" value="others" />
                 </div>
               </div>
-            </td>
-          </tr>
-        </table>
-      </>
-      <div style={{ width: "70vw", margin: "auto" }}>
-        <>
-          <div style={{}}>
-            <div style={{ display: "flex", flexBasis: "Content" }}>
               <div>
-                <h3
-                  style={{
-                    border: "0.15em solid black",
-                    padding: "1%",
-                    wordBreak: "break-word",
-                  }}
-                >
-                  Source of Procurement
-                </h3>
+                <input type="text" name="Raw_Materials" autoFocus />
               </div>
-            </div>
-            <div>
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <h3
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  Is Raw Material Available Easily
-                </h3>
-                <div
-                  className="checkboxes"
-                  style={{ borderRight: "2px solid black" }}
-                >
-                  <div>
-                    <label htmlFor="yes" style={{ fontWeight: "500" }}>
-                      Yes
-                    </label>
-                    <input
-                      type="radio"
-                      id="yes"
-                      name="if_Raw_Materials_available"
-                      value="YES"
-                      style={{ margin: "0.5%" }}
-                    />
-                  </div>
-                  <div style={{ marginRight: "2em" }}>
-                    <label htmlFor="no" style={{ fontWeight: "500" }}>
-                      No
-                    </label>
-                    <input
-                      type="radio"
-                      name="if_Raw_Materials_available"
-                      value="NO"
-                      id="no"
-                      style={{ margin: "0.5%" }}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h3>If No, please mention difficulties / challenges</h3>
-                <u>
-                  <input
-                    type="text"
-                    id="difficulties"
-                    name="if_no_mention_difficulties"
-                    style={{
-                      width: "70%",
-                      border: "transparent",
-                      borderBottom: "1px solid black",
-                    }}
-                  />
-                </u>
-              </div>
-              <div style={{ display: "flex", marginTop: "2em" }}>
+              <tr>
                 <div>
-                  <h3>
-                    Do you adopt any green technology in your production cycle
-                    (waste management/ recycling/ etc)
-                  </h3>
-                </div>
-                <div>
-                  <>
-                    <div className="checkboxes" style={{}}>
-                      <div>
-                        <label htmlFor="yes" style={{ fontWeight: "500" }}>
-                          Yes
-                        </label>
-                        <input
-                          type="radio"
-                          name="green_tech"
-                          id="yes"
-                          value="YES"
-                          style={{ margin: "0.5%" }}
-                        />
+                  <tr>
+                    <td colSpan={1}>
+                      <span style={{ whiteSpace: "nowrap" }}>
+                        Is Raw Material available easily?
+                      </span>
+                    </td>
+                    <td colSpan={6}>
+                      <div className="radio_wrapper">
+                        <div>
+                          <label htmlFor="yes_material">Yes</label>
+                          <input
+                            type="radio"
+                            name="if_Raw_Materials_available"
+                            id="yes_material"
+                            value="male"
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="no_material">No</label>
+                          <input
+                            type="radio"
+                            name="if_Raw_Materials_available"
+                            id="no_material"
+                            value="female"
+                          />
+                        </div>
                       </div>
-                      <div style={{ marginRight: "2em" }}>
-                        <label htmlFor="no" style={{ fontWeight: "500" }}>
-                          No
-                        </label>
-                        <input
-                          type="radio"
-                          name="green_tech"
-                          value="NO"
-                          id="no"
-                          style={{ margin: "0.5%" }}
-                        />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colSpan={1}>
+                      {/* style={{ whiteSpace: "nowrap" }} */}
+                      If No, please mention difficulties / challenges
+                    </td>
+                    <td colSpan={6}>
+                      <input
+                        type="text"
+                        id="difficulties"
+                        name="if_no_mention_difficulties"
+                        style={{
+                          width: "100%",
+                          border: "transparent",
+                          borderBottom: "1px solid black",
+                        }}
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colSpan={1}>
+                      <span>
+                        {/* style={{ whiteSpace: "nowrap" }} */}
+                        Do you adopt any green technology in your production
+                        cycle (waste management/ recycling/ etc)
+                      </span>
+                    </td>
+                    <td colSpan={6}>
+                      <div className="radio_wrapper">
+                        <div>
+                          <label htmlFor="yes_material2">Yes</label>
+                          <input
+                            type="radio"
+                            name="green_tech"
+                            id="yes_material2"
+                            value="YES"
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="no_material2">No</label>
+                          <input
+                            type="radio"
+                            name="green_tech"
+                            id="no_material2"
+                            value="NO"
+                          />
+                        </div>
                       </div>
-                    </div>
-                  </>
-                </div>
-              </div>
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <div>
-                  <h3>
-                    Does your production facility need any Environment
-                    Clearance?
-                  </h3>
-                </div>
-                <div
-                  className="checkboxes"
-                  style={{ borderRight: "2px solid black" }}
-                >
-                  <div>
-                    <label htmlFor="yes" style={{ fontWeight: "500" }}>
-                      Yes
-                    </label>
-                    <input
-                      type="radio"
-                      id="yes"
-                      name="environment_clearence"
-                      value="YES"
-                      style={{ margin: "0.5%" }}
-                    />
-                  </div>
-                  <div style={{ marginRight: "2em" }}>
-                    <label htmlFor="no" style={{ fontWeight: "500" }}>
-                      No
-                    </label>
-                    <input
-                      type="radio"
-                      name="environment_clearence"
-                      value="NO"
-                      id="no"
-                      style={{ margin: "0.5%" }}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div>
-                  <h3>Final Product sold to</h3>
-                </div>
-                <div>
-                  <div className="div-style" style={{ borderTop: 0 }}>
-                    <div
-                      className="checkboxes"
-                      style={{
-                        borderRight: "2px solid black",
-                        display: "flex",
-                        flexBasis: "content",
-                      }}
-                    >
-                      <div>
-                        <label htmlFor="soldTo1">Traders/Agents </label>
-                        <input
-                          type="checkbox"
-                          id="soldTo1"
-                          name="final_product_sold_to"
-                          value="Traders/Agents"
-                          style={{ display: "flex", flexWrap: "wrap" }}
-                        />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colSpan={1}>
+                      <span>
+                        {/* style={{ whiteSpace: "nowrap" }} */}
+                        Does your production facility need any Environment
+                        Clearance?
+                      </span>
+                    </td>
+                    <td colSpan={6}>
+                      <div className="radio_wrapper">
+                        <div>
+                          <label htmlFor="yes_material3">Yes</label>
+                          <input
+                            type="radio"
+                            name="environment_clearence"
+                            id="yes_material3"
+                            value="YES"
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="no_material3">No</label>
+                          <input
+                            type="radio"
+                            name="environment_clearence"
+                            id="no_material3"
+                            value="NO"
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <div
-                      className="checkboxes"
-                      style={{
-                        borderRight: "2px solid black",
-                        display: "flex",
-                        flexBasis: "content",
-                      }}
-                    >
-                      <div>
-                        <label htmlFor="soldTo2">Wholesalers </label>
-                        <input
-                          type="checkbox"
-                          id="soldTo2"
-                          name="final_product_sold_to"
-                          value="wholesalers "
-                          style={{ display: "flex", flexWrap: "wrap" }}
-                        />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colSpan={1}>
+                      <span style={{ whiteSpace: "nowrap" }}>
+                        Final Product sold to
+                      </span>
+                    </td>
+                    <td colSpan={6}>
+                      <div className="radio_wrapper">
+                        <div className="radio_wrapper">
+                          <label htmlFor="local">Trader / Agents </label>
+                          <input
+                            type="checkbox"
+                            name="service_industry"
+                            id="local"
+                            value="Local Market"
+                          />
+                        </div>
+
+                        <div className="radio_wrapper">
+                          <label htmlFor="Govt">Wholesalers </label>
+                          <input
+                            type="checkbox"
+                            id="Govt"
+                            name="service_industry"
+                            value="Government"
+                          />
+                        </div>
+
+                        <div className="radio_wrapper">
+                          <label htmlFor="online">Retailers</label>
+                          <input
+                            type="checkbox"
+                            id="online"
+                            name="service_industry"
+                            value="online"
+                          />
+                        </div>
+
+                        <div className="radio_wrapper">
+                          <label htmlFor="other">
+                            Large Manufacturers/ Anchor units{" "}
+                          </label>
+                          <input
+                            type="checkbox"
+                            id="other"
+                            name="service_industry"
+                            value="Other states"
+                          />
+                        </div>
+                        <div className="radio_wrapper">
+                          <label htmlFor="export">Exporters </label>
+                          <input
+                            type="checkbox"
+                            id="export"
+                            name="service_industry"
+                            value="export outside"
+                          />
+                        </div>
+                        <div className="radio_wrapper">
+                          <div className="radio_wrapper">
+                            <label htmlFor="local">OEMs </label>
+                            <input
+                              type="checkbox"
+                              name="service_industry"
+                              id="local"
+                              value="Local Market"
+                            />
+                          </div>
+                        </div>
+                        <div className="radio_wrapper">
+                          <div className="radio_wrapper">
+                            <label htmlFor="local">End Users </label>
+                            <input
+                              type="checkbox"
+                              name="service_industry"
+                              id="local"
+                              value="Local Market"
+                            />
+                          </div>
+                        </div>
+                        <div className="radio_wrapper">
+                          <div className="radio_wrapper">
+                            <label htmlFor="local">Others </label>
+                            <input
+                              type="checkbox"
+                              name="service_industry"
+                              id="local"
+                              value="Local Market"
+                            />
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div
-                      className="checkboxes"
-                      style={{
-                        borderRight: "2px solid black",
-                        display: "flex",
-                        flexBasis: "content",
-                      }}
-                    >
-                      <div>
-                        <label htmlFor="soldTo3">Retailers </label>
-                        <input
-                          type="checkbox"
-                          id="soldTo3"
-                          name="final_product_sold_to"
-                          value="retailers"
-                          style={{ display: "flex", flexWrap: "wrap" }}
-                        />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colSpan={1}>
+                      <span style={{ whiteSpace: "nowrap" }}>
+                        Markets you supply to
+                      </span>
+                    </td>
+                    <td colSpan={6}>
+                      <div className="radio_wrapper" id="ownership_pattern">
+                        <div>
+                          <label htmlFor="proprietary">within State</label>
+                          <input
+                            type="radio"
+                            id="withinState"
+                            name="markets_supplied"
+                            value="within State"
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="partnership">outside State</label>
+                          <input
+                            type="radio"
+                            id="outState"
+                            name="markets_supplied"
+                            value="outside State"
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="private">outside country</label>
+                          <input
+                            type="radio"
+                            name="markets_supplied"
+                            value="outside country"
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <div
-                      className="checkboxes"
-                      style={{
-                        borderRight: "2px solid black",
-                        display: "flex",
-                        flexBasis: "content",
-                      }}
-                    >
-                      <div>
-                        <label htmlFor="soldTo4">
-                          Large Manufacturers/ Anchor units{" "}
-                        </label>
-                        <input
-                          type="checkbox"
-                          id="soldTo4"
-                          name="final_product_sold_to"
-                          value="large manufacturers/ anchor units"
-                          style={{ display: "flex", flexWrap: "wrap" }}
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="checkboxes"
-                      style={{
-                        borderRight: "2px solid black",
-                        display: "flex",
-                        flexBasis: "content",
-                      }}
-                    >
-                      <div>
-                        <label htmlFor="soldTo5">Exporters </label>
-                        <input
-                          type="checkbox"
-                          id="soldTo5"
-                          name="final_product_sold_to"
-                          value="exporters"
-                          style={{ display: "flex", flexWrap: "wrap" }}
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="checkboxes"
-                      style={{
-                        borderRight: "2px solid black",
-                        display: "flex",
-                        flexBasis: "content",
-                      }}
-                    >
-                      <div>
-                        <label htmlFor="soldTo6">OEMs </label>
-                        <input
-                          type="checkbox"
-                          id="soldTo6"
-                          name="final_product_sold_to"
-                          value="oems"
-                          style={{ display: "flex", flexWrap: "wrap" }}
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="checkboxes"
-                      style={{
-                        borderRight: "2px solid black",
-                        display: "flex",
-                        flexBasis: "content",
-                      }}
-                    >
-                      <div>
-                        <label htmlFor="soldTo7">End User </label>
-                        <input
-                          type="checkbox"
-                          id="soldTo7"
-                          name="final_product_sold_to"
-                          value="end user"
-                          style={{ display: "flex", flexWrap: "wrap" }}
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="checkboxes"
-                      style={{
-                        borderRight: "2px solid black",
-                        display: "flex",
-                        flexBasis: "content",
-                      }}
-                    >
-                      <div>
-                        <label htmlFor="soldTo8">Others </label>
-                        <input
-                          type="checkbox"
-                          id="soldTo8"
-                          name="final_product_sold_to"
-                          value="others"
-                          style={{ display: "flex", flexWrap: "wrap" }}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div style={{ display: "flex", flexWrap: "wrap" }}>
-                    <div>
-                      <h3>Markets you supply to</h3>
-                    </div>
-                    <div
-                      className="checkboxes"
-                      style={{
-                        borderRight: "2px solid black",
-                        display: "flex",
-                        flexBasis: "content",
-                      }}
-                    >
-                      <div>
-                        <label htmlFor="withinState">Within State </label>
-                        <input
-                          type="checkbox"
-                          id="withinState"
-                          name="markets_supplied"
-                          value="within state"
-                          style={{ display: "flex", flexWrap: "wrap" }}
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="checkboxes"
-                      style={{
-                        borderRight: "2px solid black",
-                        display: "flex",
-                        flexBasis: "content",
-                      }}
-                    >
-                      <div>
-                        <label htmlFor="outState">Outside State</label>
-                        <input
-                          type="checkbox"
-                          id="outState"
-                          name="markets_supplied"
-                          value="outside state "
-                          style={{ display: "flex", flexWrap: "wrap" }}
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="checkboxes"
-                      style={{
-                        borderRight: "2px solid black",
-                        display: "flex",
-                        flexBasis: "content",
-                      }}
-                    >
-                      <div>
-                        <label htmlFor="outCountry">Outside Country </label>
-                        <input
-                          type="checkbox"
-                          id="outCountry"
-                          name="markets_supplied"
-                          value="outside country"
-                          style={{ display: "flex", flexWrap: "wrap" }}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div style={{ display: "flex", flexWrap: "wrap" }}>
-                    <div>
-                      <h3>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colSpan={1}>
+                      <span>
                         Are the products sold under any brand name? If yes,
-                        provide the brand name
-                      </h3>
-                    </div>
-                    <div className="checkboxes">
-                      <div>
-                        <label htmlFor="yes" style={{ fontWeight: "500" }}>
-                          Yes
-                        </label>
-                        <input
-                          type="radio"
-                          name="have_product_brand_name"
-                          value="YES"
-                          style={{ margin: "0.5%" }}
-                        />
+                        provide the brand name.
+                      </span>
+                    </td>
+                    <td colSpan={6}>
+                      <div className="radio_wrapper">
+                        <div>
+                          <label htmlFor="yes_material2">Yes</label>
+                          <input
+                            type="radio"
+                            id="yes_material2"
+                            name="have_product_brand_name"
+                            value="YES"
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="no_material2">No</label>
+                          <input
+                            type="radio"
+                            name="have_product_brand_name"
+                            id="no_material2"
+                            value="NO"
+                          />
+                        </div>
                       </div>
-                      <div style={{ marginRight: "2em" }}>
-                        <label htmlFor="no" style={{ fontWeight: "500" }}>
-                          No
-                        </label>
-                        <input
-                          type="radio"
-                          name="have_product_brand_name"
-                          value="NO"
-                          id="no"
-                          style={{ margin: "0.5%" }}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        flexWrap: "wrap",
-                      }}
-                    >
-                      <label htmlFor="brand">
-                        <h3>Brand_name</h3>
-                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colSpan={1}>
+                      <label htmlFor="brand">Brand_name</label>
+                    </td>
+                    <td colSpan={6}>
                       <input
                         type="text"
                         id="brand"
                         name="Brand_name"
                         style={{
-                          display: "flex",
-                          flexBasis: "content",
-                          border: "transparent",
                           borderBottom: "1px solid black",
-                          marginRight: "3%",
                         }}
                       />
-                    </div>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexWrap: "wrap",
-                      justifyContent: "space-between",
-                    }}
-                  >
-                    <div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label>
+                        What challenges are you facing in selling the product in
+                        the market?
+                      </label>
+                    </td>
+                    <td
+                      colSpan={6}
+                      style={{
+                        width: "100%",
+                        display: "flex",
+                        flexDirection: "column",
+                      }}
+                      className="input_label_gapper"
+                    >
                       <div>
-                        <h3>
-                          What challenges do you face / hear while selling your
-                          products
-                        </h3>
+                        <label
+                          style={{ padding: "0.5em" }}
+                          htmlFor="advanceTech"
+                        >
+                          Advance technology
+                        </label>
+                        <input
+                          type="checkbox"
+                          name="challenges_while_selling"
+                          value="advance technology"
+                          id="advanceTech"
+                        />
                       </div>
                       <div>
-                        <div
-                          className="checkboxes"
-                          style={{ display: "flex", flexWrap: "wrap" }}
+                        <label htmlFor="quality" style={{ padding: "0.5em" }}>
+                          Quality of product
+                        </label>
+                        <input
+                          type="checkbox"
+                          name="challenges_while_selling"
+                          value="quality of product"
+                          id="quality"
+                        />
+                      </div>
+                      <div>
+                        <label
+                          htmlFor="marketComp"
+                          style={{ padding: "0.5em" }}
                         >
-                          <div
-                            style={{
-                              display: "flex",
-                              gap: "1em",
-                              // flexWrap: "wrap",
-                            }}
-                          >
-                            <input
-                              type="checkbox"
-                              name="challenges_while_selling"
-                              value="advance technology"
-                              style={{ margin: "0.5%" }}
-                              id="advanceTech"
-                            />
-                            <label
-                              htmlFor="advanceTech"
-                              style={{ fontWeight: "500" }}
-                            >
-                              Advance technology
-                            </label>
-                          </div>
-                          <div
-                            style={{
-                              display: "flex",
-                              gap: "1em",
-                              // flexWrap: "wrap",
-                            }}
-                          >
-                            <input
-                              type="checkbox"
-                              name="challenges_while_selling"
-                              value="quality of product"
-                              style={{ margin: "0.5%" }}
-                              id="quality"
-                            />
-                            <label
-                              htmlFor="quality"
-                              style={{ fontWeight: "500" }}
-                            >
-                              Quality of product
-                            </label>
-                          </div>
-                          <div
-                            style={{
-                              display: "flex",
-                              gap: "1em",
-                              // flexWrap: "wrap",
-                            }}
-                          >
-                            <input
-                              type="checkbox"
-                              name="challenges_while_selling"
-                              value="market competition"
-                              id="marketComp"
-                              style={{ margin: "0.5%" }}
-                            />
-                            <label
-                              htmlFor="marketComp"
-                              style={{ fontWeight: "500" }}
-                            >
-                              Market Competition
-                            </label>
-                          </div>
-                          <div
-                            style={{
-                              display: "flex",
-                              gap: "1em",
-                              // flexWrap: "wrap",
-                            }}
-                          >
-                            <input
-                              type="checkbox"
-                              name="challenges_while_selling"
-                              value="capital"
-                              id="capital"
-                              style={{ margin: "0.5%" }}
-                            />
-                            <label
-                              htmlFor="capital"
-                              style={{ fontWeight: "500" }}
-                            >
-                              Capital
-                            </label>
-                          </div>
-                          <div
-                            style={{
-                              display: "flex",
-                              gap: "1em",
-                              // flexWrap: "wrap",
-                            }}
-                          >
-                            <input
-                              type="checkbox"
-                              name="challenges_while_selling"
-                              value="branding and marketing"
-                              id="brandMarket"
-                              style={{ margin: "0.5%" }}
-                            />
-                            <label
-                              htmlFor="brandMarket"
-                              style={{ fontWeight: "500" }}
-                            >
-                              Branding & Marketing
-                            </label>
-                          </div>
-                          <div
-                            style={{
-                              display: "flex",
+                          Market Competition
+                        </label>
+                        <input
+                          type="checkbox"
+                          name="challenges_while_selling"
+                          value="market competition"
+                          id="marketComp"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="capital" style={{ padding: "0.5em" }}>
+                          Capital
+                        </label>
+                        <input
+                          type="checkbox"
+                          name="challenges_while_selling"
+                          value="capital"
+                          id="capital"
+                        />
+                      </div>
+                      <div>
+                        <label
+                          htmlFor="brandMarket"
+                          style={{ padding: "0.5em" }}
+                        >
+                          Branding & Marketing
+                        </label>
+                        <input
+                          type="checkbox"
+                          name="challenges_while_selling"
+                          value="branding and marketing"
+                          id="brandMarket"
+                        />
+                      </div>
+                      <div style={{ display: "flex", flexWrap: "wrap" }}>
+                        <label htmlFor="other">Other (specify)</label>
 
-                              // flexWrap: "wrap",
-                            }}
-                          >
+                        <input
+                          type="text"
+                          id="other"
+                          name="challenges_while_selling"
+                          style={{
+                            width: "100%",
+                            border: "transparent",
+                            borderBottom: "1px solid black",
+                          }}
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colSpan={1}>
+                      <span>
+                        Are you involved in marketing & branding of the product
+                        ? If yes, please select the options you leverage for
+                        sale of the product ?
+                      </span>{" "}
+                    </td>
+                    <td
+                      colSpan={6}
+                      // style={{ display: "flex", alignItems: "center" }}
+                    >
+                      <div
+                        className="radio_wrapper"
+                        style={{ alignSelf: "center" }}
+                      >
+                        <div>
+                          <label htmlFor="yesx_material2">Yes</label>
+                          <input
+                            type="radio"
+                            name="involved_in_marketing"
+                            id="yesx_material2"
+                            value="YES"
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="nox_material2">No</label>
+                          <input
+                            type="radio"
+                            name="involved_in_marketing"
+                            id="nox_material2"
+                            value="NO"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <td
+                          colSpan={6}
+                          style={{
+                            width: "100%",
+                            display: "flex",
+                            flexDirection: "column",
+                          }}
+                          className="input_label_gapper"
+                        >
+                          <div>
                             <label
-                              htmlFor="other"
-                              style={{ fontWeight: "500" }}
+                              htmlFor="exhibition"
+                              style={{ padding: "0.5em" }}
                             >
-                              Other (specify)
+                              Exhibitions
                             </label>
+                            <input
+                              type="checkbox"
+                              id="exhibition"
+                              name="options_you_leverage_for_sale"
+                              value="exhibitions"
+                            />
+                          </div>
+                          <div>
+                            <label
+                              htmlFor="portal"
+                              style={{ padding: "0.5em" }}
+                            >
+                              Portals
+                            </label>
+                            <input
+                              type="checkbox"
+                              id="portal"
+                              name="options_you_leverage_for_sale"
+                              value="portals"
+                            />
+                          </div>
+                          <div>
+                            <label
+                              htmlFor="website"
+                              style={{ padding: "0.5em" }}
+                            >
+                              Websites{" "}
+                            </label>
+                            <input
+                              type="checkbox"
+                              id="website"
+                              name="options_you_leverage_for_sale"
+                              value="websites"
+                            />
+                          </div>
+                          <div>
+                            <label
+                              htmlFor="socMedia"
+                              style={{ padding: "0.5em" }}
+                            >
+                              Social Media
+                            </label>
+
+                            <input
+                              type="checkbox"
+                              id="socMedia"
+                              name="options_you_leverage_for_sale"
+                              value="social media"
+                            />
+                          </div>
+                          <div>
+                            <label
+                              htmlFor="marketFacility"
+                              style={{ padding: "0.5em" }}
+                            >
+                              Common marketing facility
+                            </label>
+                            <input
+                              type="checkbox"
+                              id="marketFacility"
+                              name="options_you_leverage_for_sale"
+                              value="Common marketing facility"
+                            />
+                          </div>
+                          <div>
+                            <label htmlFor="other">Other (specify)</label>
 
                             <input
                               type="text"
                               id="other"
                               name="challenges_while_selling"
                               style={{
-                                width: "70%",
+                                width: "100%",
                                 border: "transparent",
                                 borderBottom: "1px solid black",
                               }}
                             />
                           </div>
-                        </div>
+                        </td>
                       </div>
-                      <div style={{ display: "flex", flexWrap: "wrap" }}>
-                        <div style={{ flexBasis: "70%" }}>
-                          <h3>
-                            Are you involved in marketing & branding of the
-                            product ? If yes, please select the options you
-                            leverage for sale of the product ?
-                          </h3>
-                        </div>
-                        <div>
-                          <div className="checkboxes">
-                            <div>
-                              <label
-                                htmlFor="yes"
-                                style={{ fontWeight: "500" }}
-                              >
-                                Yes
-                              </label>
-                              <input
-                                type="radio"
-                                name="involved_in_marketing"
-                                value="YES"
-                                style={{ margin: "0.5%" }}
-                              />
-                            </div>
-                            <div style={{ marginRight: "2em" }}>
-                              <label htmlFor="no" style={{ fontWeight: "500" }}>
-                                No
-                              </label>
-                              <input
-                                type="radio"
-                                name="involved_in_marketing"
-                                value="NO"
-                                id="no"
-                                style={{ margin: "0.5%" }}
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          <div className="div-style" style={{ borderTop: 0 }}>
-                            <div
-                              className="checkboxes"
-                              style={{
-                                borderRight: "2px solid black",
-                                display: "flex",
-                                flexBasis: "content",
-                              }}
-                            >
-                              <div>
-                                <label htmlFor="exhibition">Exhibitions</label>
-                                <input
-                                  type="checkbox"
-                                  id="exhibition"
-                                  name="options_you_leverage_for_sale"
-                                  value="exhibitions"
-                                  style={{ display: "flex", flexWrap: "wrap" }}
-                                />
-                              </div>
-                            </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colSpan={1}>
+                      <span>Quality/Testing labs are easily available?</span>
+                    </td>
 
-                            <div
-                              className="checkboxes"
-                              style={{
-                                borderRight: "2px solid black",
-                                display: "flex",
-                                flexBasis: "content",
-                              }}
-                            >
-                              <div>
-                                <label htmlFor="portal">Portals</label>
-                                <input
-                                  type="checkbox"
-                                  id="portal"
-                                  name="options_you_leverage_for_sale"
-                                  value="portals"
-                                  style={{ margin: "1%" }}
-                                />
-                              </div>
-                            </div>
-                            <div
-                              className="checkboxes"
-                              style={{
-                                borderRight: "2px solid black",
-                                display: "flex",
-                                flexBasis: "content",
-                              }}
-                            >
-                              <div>
-                                <label htmlFor="website">Websites </label>
-                                <input
-                                  type="checkbox"
-                                  id="website"
-                                  name="options_you_leverage_for_sale"
-                                  value="websites"
-                                  style={{ margin: "1%" }}
-                                />
-                              </div>
-                            </div>
-                            <div
-                              className="checkboxes"
-                              style={{
-                                borderRight: "2px solid black",
-                                display: "flex",
-                                flexBasis: "content",
-                              }}
-                            >
-                              <div>
-                                <label htmlFor="socMedia">Social Media</label>
-                                <input
-                                  type="checkbox"
-                                  id="socMedia"
-                                  name="options_you_leverage_for_sale"
-                                  value="social media"
-                                  style={{ margin: "1%" }}
-                                />
-                              </div>
-                            </div>
-                            <div
-                              className="checkboxes"
-                              style={{
-                                borderRight: "2px solid black",
-                                display: "flex",
-                                flexBasis: "content",
-                              }}
-                            >
-                              <div>
-                                <label htmlFor="marketFacility">
-                                  Common marketing facility
-                                </label>
-                                <input
-                                  type="checkbox"
-                                  id="marketFacility"
-                                  name="options_you_leverage_for_sale"
-                                  value="Common marketing facility"
-                                  style={{ margin: "1%" }}
-                                />
-                              </div>
-                              <div>
-                                <label htmlFor="others">
-                                  Others (specify):
-                                </label>
-                                <input
-                                  type="text"
-                                  id="others"
-                                  name="options_you_leverage_for_sale"
-                                  style={{
-                                    border: "transparent",
-                                    width: "50%",
-                                  }}
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="div-style" style={{ borderTop: 0 }}>
-                          <label className="inner-div-tag">
-                            Quality/Testing labs are easily <br />
-                            available?
-                          </label>
-                          <div className="checkboxes">
-                            <div>
-                              <label style={{ fontWeight: "500" }}>Yes</label>
-                              <input
-                                type="radio"
-                                name="Quality_Testing_lab_available"
-                                value="YES"
-                                style={{ margin: "0.5%" }}
-                              />
-                            </div>
-                            <div>
-                              <label style={{ fontWeight: "500" }}>No</label>
-                              <input
-                                type="radio"
-                                name="Quality_Testing_lab_available"
-                                value="NO"
-                                style={{ margin: "0.5%" }}
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div className="div-style" style={{ borderTop: 0 }}>
-                          <label className="inner-div-tag">
-                            Is skilled labour and training
-                            <br />
-                            facilities easily available?{" "}
-                          </label>
-                          <div
-                            className="checkboxes"
-                            style={{
-                              // borderRight: "2px solid black",
-                              borderRight: 0,
-                            }}
-                          >
-                            <div>
-                              <label
-                                htmlFor="yes"
-                                style={{ fontWeight: "500" }}
-                              >
-                                Yes
-                              </label>
-                              <input
-                                type="radio"
-                                id="yes"
-                                name="labour_and_training"
-                                value="YES"
-                                style={{ margin: "0.5%" }}
-                              />
-                            </div>
-                            <div>
-                              <label htmlFor="no" style={{ fontWeight: "500" }}>
-                                No
-                              </label>
-                              <input
-                                type="radio"
-                                id="no"
-                                name="labour_and_training"
-                                value="NO"
-                                style={{ margin: "0.5%" }}
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div className="div-style" style={{ borderTop: 0 }}>
-                          <label className="inner-div-tag">
-                            Whether skilled <br />
-                            labour is required?
-                          </label>
-                          <div className="checkboxes">
-                            <div>
-                              <label
-                                htmlFor="yes"
-                                style={{ fontWeight: "500" }}
-                              >
-                                Yes
-                              </label>
-                              <input
-                                type="radio"
-                                id="yes"
-                                name="skilled_labour_is_required"
-                                value="YES"
-                                style={{ margin: "0.5%" }}
-                              />
-                            </div>
-                            <div>
-                              <label htmlFor="no" style={{ fontWeight: "500" }}>
-                                No
-                              </label>
-                              <input
-                                type="radio"
-                                id="no"
-                                name="skilled_labour_is_required"
-                                value="NO"
-                                style={{ margin: "0.5%" }}
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div style={{ border: "1px solid black" }}>
-                          <h2>For Service Industry</h2>
-                          <div
-                            style={{ display: "flex", flexBasis: "content" }}
-                          >
-                            <div>
-                              <h3>Nature of Services Offered</h3>
-                            </div>
-                            <div>
-                              <input
-                                type="text"
-                                name="Nature_of_Services_Offered"
-                                style={{ border: "transparent" }}
-                              />
-                            </div>
-                            <div>
-                              <input
-                                type="text"
-                                name="Nature_of_Services_Offered"
-                                style={{ border: "transparent" }}
-                              />
-                            </div>
-                            <div>
-                              <input
-                                type="text"
-                                name="Nature_of_Services_Offered"
-                                style={{ border: "transparent" }}
-                              />
-                            </div>
-                          </div>
-                          <div
-                            style={{ display: "flex", flexBasis: "content" }}
-                          >
-                            <div>
-                              <h3>Challenges Faced</h3>
-                            </div>
-                            <div>
-                              <input
-                                type="text"
-                                name="Challenges_faced"
-                                style={{ border: "transparent" }}
-                              />
-                            </div>
-                            <div>
-                              <input
-                                type="text"
-                                name="Challenges_faced"
-                                style={{ border: "transparent" }}
-                              />
-                            </div>
-                            <div>
-                              <input
-                                type="text"
-                                name="Challenges_faced"
-                                style={{ border: "transparent" }}
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div style={{ display: "flex", flexBasis: "content" }}>
-                          <div>
-                            <h3>
-                              In case you are availing support
-                              <br />
-                              Govt. agencies / schemes what
-                              <br />
-                              are the challenges faced with
-                              <br />
-                              scheme
-                            </h3>
-                          </div>
-                          <div>
-                            <input
-                              type="text"
-                              name="Govt_Scheme_Challenges"
-                              style={{ border: "transparent" }}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div style={{ display: "flex", flexBasis: "content" }}>
+                    <td colSpan={6}>
+                      <div className="radio_wrapper">
                         <div>
-                          <h3>Support required</h3>
-                        </div>
-                        <div>
+                          <label htmlFor="yes_material7">Yes</label>
                           <input
-                            type="text"
-                            name="Support_required"
-                            style={{ border: "transparent" }}
+                            type="radio"
+                            name="Quality_Testing_lab_available"
+                            id="yes_material2"
+                            value="YES"
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="no_material7">No</label>
+                          <input
+                            type="radio"
+                            name="Quality_Testing_lab_available"
+                            id="no_material2"
+                            value="NO"
                           />
                         </div>
                       </div>
-                    </div>
-                  </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colSpan={1}>
+                      <span>
+                        {" "}
+                        Is skilled labour and training facilities easily
+                        available?
+                      </span>
+                    </td>
+
+                    <td colSpan={6}>
+                      <div className="radio_wrapper">
+                        <div>
+                          <label htmlFor="yes_material7">Yes</label>
+                          <input
+                            type="radio"
+                            name="labour_and training"
+                            id="yes_material2"
+                            value="YES"
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="no_material7">No</label>
+                          <input
+                            type="radio"
+                            name="labour_and training"
+                            id="no_material2"
+                            value="NO"
+                          />
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colSpan={1}>
+                      <span>Whether skilled labour is required?</span>
+                    </td>
+
+                    <td colSpan={6}>
+                      <div className="radio_wrapper">
+                        <div>
+                          <label htmlFor="yes_material10">Yes</label>
+                          <input
+                            type="radio"
+                            name="skilled_labour_is_required"
+                            id="yes_material0"
+                            value="YES"
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="no_material10">No</label>
+                          <input
+                            type="radio"
+                            name="skilled_labour_is_required"
+                            id="no_material0"
+                            value="NO"
+                          />
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
                 </div>
-              </div>
-            </div>
-          </div>
-        </>
-      </div>
+              </tr>
+            </td>
+          </tr>
+        </table>
+      </>
     </>
   );
 };

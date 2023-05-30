@@ -10,6 +10,8 @@ import FormPart5 from "./FormPart5";
 import FormPart6 from "./FormPart6";
 export async function dataaction({ request }) {
   const formData = await request.formData();
+  // const checkformdata = Object.fromEntries(await request.formData());
+  // console.log(checkformdata);
   const submission = {
     Enterprise_Name: formData.get("Enterprise_Name"),
     Entrepreneur_Name: formData.get("Entrepreneur_Name"),

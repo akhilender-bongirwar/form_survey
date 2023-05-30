@@ -300,7 +300,11 @@ function FormPart3() {
                     <div>
                       <label
                         htmlFor="opt2"
-                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                        style={{
+                          fontSize: "0.9rem",
+                          padding: "0.5em",
+                          whiteSpace: "nowrap",
+                        }}
                       >
                         UP MSME Promotion Policy
                       </label>
@@ -314,7 +318,11 @@ function FormPart3() {
                     <div>
                       <label
                         htmlFor="opt3"
-                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                        style={{
+                          fontSize: "0.9rem",
+                          padding: "0.5em",
+                          whiteSpace: "nowrap",
+                        }}
                       >
                         Technical upgradation
                       </label>
@@ -328,7 +336,11 @@ function FormPart3() {
                     <div>
                       <label
                         htmlFor="opt4"
-                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                        style={{
+                          fontSize: "0.9rem",
+                          padding: "0.5em",
+                          // whiteSpace: "nowrap",
+                        }}
                       >
                         UP Chief Minister Youth Self Employment Scheme
                       </label>
@@ -342,7 +354,11 @@ function FormPart3() {
                     <div>
                       <label
                         htmlFor="opt5"
-                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                        style={{
+                          fontSize: "0.9rem",
+                          padding: "0.5em",
+                          whiteSpace: "nowrap",
+                        }}
                       >
                         UP Startup Policy 2020
                       </label>
@@ -356,7 +372,11 @@ function FormPart3() {
                     <div>
                       <label
                         htmlFor="opt6"
-                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                        style={{
+                          fontSize: "0.9rem",
+                          padding: "0.5em",
+                          whiteSpace: "nowrap",
+                        }}
                       >
                         Others
                       </label>
@@ -550,7 +570,11 @@ function FormPart3() {
                     <div>
                       <label
                         htmlFor="opt2"
-                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                        style={{
+                          fontSize: "0.9rem",
+                          padding: "0.5em",
+                          whiteSpace: "nowrap",
+                        }}
                       >
                         UP MSME Promotion Policy
                       </label>
@@ -564,7 +588,11 @@ function FormPart3() {
                     <div>
                       <label
                         htmlFor="opt3"
-                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                        style={{
+                          fontSize: "0.9rem",
+                          padding: "0.5em",
+                          whiteSpace: "nowrap",
+                        }}
                       >
                         Technical upgradation
                       </label>
@@ -578,7 +606,10 @@ function FormPart3() {
                     <div>
                       <label
                         htmlFor="opt4"
-                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                        style={{
+                          fontSize: "0.9rem",
+                          padding: "0.5em",
+                        }}
                       >
                         UP Chief Minister Youth Self Employment Scheme
                       </label>
@@ -592,7 +623,11 @@ function FormPart3() {
                     <div>
                       <label
                         htmlFor="opt5"
-                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                        style={{
+                          fontSize: "0.9rem",
+                          padding: "0.5em",
+                          whiteSpace: "nowrap",
+                        }}
                       >
                         UP Startup Policy 2020
                       </label>
@@ -636,14 +671,14 @@ function FormPart3() {
                   id="availedByMe"
                   name="scheme_availed_by_you_central_govt"
                   placeholder="central govt."
-                  style={{ width: "50%", border: "transparent" }}
+                  style={{ border: "transparent" }}
                 />
                 <input
                   type="text"
                   id="availedByMe2"
                   placeholder="state govt."
                   name="scheme_availed_by_you_state_govt"
-                  style={{ width: "50%", border: "transparent" }}
+                  style={{ border: "transparent" }}
                 />
               </div>
             </td>

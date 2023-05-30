@@ -36,7 +36,7 @@ function FormPart6() {
                       type="text"
                       id="certificate1"
                       name="Currently_owned_1"
-                      style={{ width: "50%", border: "transparent" }}
+                      style={{ border: "transparent" }}
                       placeholder="Currently owned"
                     />
                   </td>
@@ -45,7 +45,7 @@ function FormPart6() {
                       type="text"
                       id="certificate2"
                       name="To_be_Required_1"
-                      style={{ width: "50%", border: "transparent" }}
+                      style={{ border: "transparent" }}
                       placeholder="To be required"
                     />
                   </td>
@@ -57,7 +57,7 @@ function FormPart6() {
                       type="text"
                       id="infra1"
                       name="Currently_owned_2"
-                      style={{ width: "50%", border: "transparent" }}
+                      style={{ border: "transparent" }}
                       placeholder="Currently owned"
                     />
                   </td>
@@ -66,7 +66,7 @@ function FormPart6() {
                       type="text"
                       id="infra2"
                       name="To_be_Required_2"
-                      style={{ width: "50%", border: "transparent" }}
+                      style={{ border: "transparent" }}
                       placeholder="To be required"
                     />
                   </td>
@@ -78,7 +78,7 @@ function FormPart6() {
                       type="text"
                       id="lab1"
                       name="Currently_owned_3"
-                      style={{ width: "50%", border: "transparent" }}
+                      style={{ border: "transparent" }}
                       placeholder="Currently owned"
                     />
                   </td>
@@ -87,7 +87,7 @@ function FormPart6() {
                       type="text"
                       id="lab2"
                       name="To_be_Required_3"
-                      style={{ width: "50%", border: "transparent" }}
+                      style={{ border: "transparent" }}
                       placeholder="To be required"
                     />
                   </td>
@@ -173,7 +173,7 @@ function FormPart6() {
                       type="text"
                       id="counselling"
                       name="Counselling"
-                      style={{ width: "50%", border: "transparent" }}
+                      style={{ border: "transparent" }}
                     />
                   </td>
                 </tr>
@@ -184,7 +184,7 @@ function FormPart6() {
                       type="text"
                       id="upgrade"
                       name="Upgradation_of_IT_Infrastructure"
-                      style={{ width: "50%", border: "transparent" }}
+                      style={{ border: "transparent" }}
                     />
                   </td>
                 </tr>
@@ -195,7 +195,7 @@ function FormPart6() {
                       type="text"
                       id="training"
                       name="Participation_in_Training"
-                      style={{ width: "50%", border: "transparent" }}
+                      style={{ border: "transparent" }}
                     />
                   </td>
                 </tr>
@@ -206,7 +206,7 @@ function FormPart6() {
                       type="text"
                       id="development"
                       name="Institution_Development"
-                      style={{ width: "50%", border: "transparent" }}
+                      style={{ border: "transparent" }}
                     />
                   </td>
                 </tr>
@@ -217,7 +217,7 @@ function FormPart6() {
                       type="text"
                       id="new_software"
                       name="Implementation_of_new_software"
-                      style={{ width: "50%", border: "transparent" }}
+                      style={{ border: "transparent" }}
                     />
                   </td>
                 </tr>
@@ -232,7 +232,7 @@ function FormPart6() {
                       type="text"
                       id="tools"
                       name="Training_Process_Improvement"
-                      style={{ width: "50%", border: "transparent" }}
+                      style={{ border: "transparent" }}
                     />
                   </td>
                 </tr>
@@ -243,7 +243,7 @@ function FormPart6() {
                       type="text"
                       id="promotion"
                       name="Market_Promotion_Initiatives"
-                      style={{ width: "50%", border: "transparent" }}
+                      style={{ border: "transparent" }}
                     />
                   </td>
                 </tr>
@@ -254,7 +254,7 @@ function FormPart6() {
                       type="text"
                       id="design"
                       name="Design_and_product_development"
-                      style={{ width: "50%", border: "transparent" }}
+                      style={{ border: "transparent" }}
                     />
                   </td>
                 </tr>
@@ -265,7 +265,7 @@ function FormPart6() {
                       type="text"
                       id="campaign"
                       name="Promotion_Campaign"
-                      style={{ width: "50%", border: "transparent" }}
+                      style={{ border: "transparent" }}
                     />
                   </td>
                 </tr>
