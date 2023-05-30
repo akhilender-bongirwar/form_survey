@@ -1,7 +1,17 @@
 import React from "react";
 import "./Table.css";
+import { NavLink } from "react-router-dom";
 
-const FormPart2 = () => {
+const FormPart2 = ({formD,setFormD}) => {
+  function handleChange(event) {
+    const {name, value, type, checked} = event.target
+    setFormD(prevFormData => {
+        return {
+            ...prevFormData,
+            [name]: type === "checkbox" ? checked : value
+        }
+    })
+}
   return (
     <>
       <>
@@ -128,8 +138,9 @@ const FormPart2 = () => {
                       <input
                         type="text"
                         id="difficulties"
-                        name="if_no_mention_difficulties"
                         onChange={handleChange}
+                        value={formD.if_no_mention_difficulties}
+                        name="if_no_mention_difficulties"
                         style={{
                           width: "100%",
                           border: "transparent",
@@ -737,6 +748,8 @@ const FormPart2 = () => {
             </td>
           </tr>
         </table>
+        <NavLink to="/">Prev</NavLink>
+        <NavLink to="/3">Next</NavLink>
       </>
     </>
   );

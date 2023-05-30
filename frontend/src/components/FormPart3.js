@@ -1,6 +1,7 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "./Table.css";
-function FormPart3() {
+function FormPart3({formD,setFormD}) {
   return (
     <div
       style={{
@@ -725,6 +726,8 @@ function FormPart3() {
             </td>
           </tr>
         </table>
+        <NavLink to="/2">Prev</NavLink>
+        <NavLink to="/4">Next</NavLink>
         {/* <div className="div-style" style={{ borderTop: 0 }}>
           <label className="inner-div-tag" >Are you aware about<br />the current
             government <br />programs benefitting<br />
@@ -780,6 +783,7 @@ function FormPart3() {
           </div>
         </div> */}
       </div>
+
     </div>
   );
 }
