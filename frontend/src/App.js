@@ -176,7 +176,7 @@ function App() {
     //added
     applied_loan_outcome: {
       radio_button:"",
-      other:"7"
+      other:""
     },
     reason_of_rejection: "",
     availed_samadhaan_service: "",

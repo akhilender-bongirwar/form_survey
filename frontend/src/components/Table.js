@@ -193,23 +193,118 @@ function Table({ formD, setFormD }) {
   const [a5, setA5] = useState(null);
   const [a6, setA6] = useState(null);
   function handleChange(event) {
-    const { name, value, type, checked } = event.target;
+    const { name, value, type, checked,className } = event.target;
     if (name === "sell_produce_majorly") {
-      setFormD((prevFormData) => {
-        return {
-          ...prevFormData,
-          [name]: {...prevFormData[name],[value]:type === "checkbox" ? checked : value}
+        if(type=="text"){
+            setFormD((prevFormData) => {
+                return {
+                  ...prevFormData,
+                  [name]: {...prevFormData[name],other: value}
+                }
+              })
         }
-      })
+        else{
+
+            setFormD((prevFormData) => {
+                return {
+                  ...prevFormData,
+                  [name]: {...prevFormData[name],[value]:checked}
+                }
+              })
+        }
     }
     else if(name==="service_industry"){
-      setFormD(prevFormData => {
-        return {
-          ...prevFormData,
-          [name]: { ...prevFormData[name], [value]: checked },
-        };
-      });
-    } else {
+        if(type=="text"){
+            setFormD((prevFormData) => {
+                return {
+                  ...prevFormData,
+                  [name]: {...prevFormData[name],other: value}
+                }
+              })
+        }
+        else{
+            setFormD((prevFormData) => {
+                return {
+                  ...prevFormData,
+                  [name]: {...prevFormData[name],[value]:checked}
+                }
+              })
+        }
+    } 
+    else if(name==="Aware_of_listed_scehmes"){
+      if(className=="central"){
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: {...prevFormData[name],Central_Govt:{...prevFormData[name].Central_Govt,[value]:type === "checkbox" ? checked : value}}
+          }
+        })
+      }
+      else{
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: {...prevFormData[name],State_Govt:{...prevFormData[name].State_Govt,[value]:type === "checkbox" ? checked : value}}
+          }
+        })
+      }
+    }
+    else if(name==="Scheme_Like_to_avail"){
+      if(className=="central"){
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: {...prevFormData[name],Central_Govt:{...prevFormData[name].Central_Govt,[value]:type === "checkbox" ? checked : value}}
+          }
+        })
+      }
+      else{
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: {...prevFormData[name],State_Govt:{...prevFormData[name].State_Govt,[value]:type === "checkbox" ? checked : value}}
+          }
+        })
+      }
+    }
+    else if (name === "Key_Reason_Preventing_loan") {
+        if(type=="text"){
+            setFormD((prevFormData) => {
+                return {
+                  ...prevFormData,
+                  [name]: {...prevFormData[name],other: value}
+                }
+              })
+        }
+        else{
+
+            setFormD((prevFormData) => {
+                return {
+                  ...prevFormData,
+                  [name]: {...prevFormData[name],[value]:checked}
+                }
+              })
+        }
+    }
+    else if (name === "applied_loan_outcome") {
+        if(type=="radio"){
+            setFormD((prevFormData) => {
+                return {
+                  ...prevFormData,
+                  [name]: {...prevFormData[name],radio_button: value,other:""}
+                }
+              })
+        }
+        else{
+            setFormD((prevFormData) => {
+                return {
+                  ...prevFormData,
+                  [name]: {...prevFormData[name],other:value}
+                }
+              })
+        }
+    }
+    else {
       setFormD((prevFormData) => {
         return {
           ...prevFormData,
@@ -1028,7 +1123,7 @@ function Table({ formD, setFormD }) {
                           id="others"
                           name="service_industry"
                           onChange={handleChange}
-                          value={formD.service_industry}
+                          value={formD.service_industry.other}
                           style={{ width: "85%" }}
                         />
                       </div>

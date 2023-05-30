@@ -5,20 +5,41 @@ function FormPart3({ formD, setFormD }) {
   function handleChange(event) {
     const { name, value, type, checked,className } = event.target;
     if (name === "sell_produce_majorly") {
-      setFormD((prevFormData) => {
-        return {
-          ...prevFormData,
-          [name]: {...prevFormData[name],[value]:type === "checkbox" ? checked : value}
+        if(type=="text"){
+            setFormD((prevFormData) => {
+                return {
+                  ...prevFormData,
+                  [name]: {...prevFormData[name],other: value}
+                }
+              })
         }
-      })
+        else{
+
+            setFormD((prevFormData) => {
+                return {
+                  ...prevFormData,
+                  [name]: {...prevFormData[name],[value]:checked}
+                }
+              })
+        }
     }
     else if(name==="service_industry"){
-      setFormD(prevFormData => {
-        return {
-          ...prevFormData,
-          [name]: {...prevFormData[name],[value]:type === "checkbox" ? checked : value},
-        };
-      });
+        if(type=="text"){
+            setFormD((prevFormData) => {
+                return {
+                  ...prevFormData,
+                  [name]: {...prevFormData[name],other: value}
+                }
+              })
+        }
+        else{
+            setFormD((prevFormData) => {
+                return {
+                  ...prevFormData,
+                  [name]: {...prevFormData[name],[value]:checked}
+                }
+              })
+        }
     } 
     else if(name==="Aware_of_listed_scehmes"){
       if(className=="central"){
@@ -55,6 +76,43 @@ function FormPart3({ formD, setFormD }) {
           }
         })
       }
+    }
+    else if (name === "Key_Reason_Preventing_loan") {
+        if(type=="text"){
+            setFormD((prevFormData) => {
+                return {
+                  ...prevFormData,
+                  [name]: {...prevFormData[name],other: value}
+                }
+              })
+        }
+        else{
+
+            setFormD((prevFormData) => {
+                return {
+                  ...prevFormData,
+                  [name]: {...prevFormData[name],[value]:checked}
+                }
+              })
+        }
+    }
+    else if (name === "applied_loan_outcome") {
+        if(type=="radio"){
+            setFormD((prevFormData) => {
+                return {
+                  ...prevFormData,
+                  [name]: {...prevFormData[name],radio_button: value,other:""}
+                }
+              })
+        }
+        else{
+            setFormD((prevFormData) => {
+                return {
+                  ...prevFormData,
+                  [name]: {...prevFormData[name],other:value}
+                }
+              })
+        }
     }
     else {
       setFormD((prevFormData) => {
