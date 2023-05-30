@@ -2,6 +2,15 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Table.css";
 function FormPart3({ formD, setFormD }) {
+  function handleChange(event) {
+    const { name, value, type, checked } = event.target;
+    setFormD((prevFormData) => {
+      return {
+        ...prevFormData,
+        [name]: type === "checkbox" ? checked : value,
+      };
+    });
+  }
   return (
     <div
       style={{
@@ -37,6 +46,8 @@ function FormPart3({ formD, setFormD }) {
                     name="aware_of_govt_policy"
                     id="YES"
                     value="YES"
+                    onChange={handleChange}
+                    checked={formD.aware_of_govt_policy == "YES"}
                   />
                 </div>
                 <div>
@@ -46,6 +57,8 @@ function FormPart3({ formD, setFormD }) {
                     name="aware_of_govt_policy"
                     id="NO"
                     value="NO"
+                    onChange={handleChange}
+                    checked={formD.aware_of_govt_policy == "NO"}
                   />
                 </div>
               </div>
@@ -72,6 +85,7 @@ function FormPart3({ formD, setFormD }) {
                     <input
                       type="text"
                       id="Anything"
+                      onChange={handleChange}
                       style={{
                         width: "90%",
                         border: "transparent",
@@ -84,6 +98,7 @@ function FormPart3({ formD, setFormD }) {
                     <input
                       type="text"
                       id="Anything1"
+                      onChange={handleChange}
                       style={{
                         width: "90%",
                         border: "transparent",
@@ -102,6 +117,8 @@ function FormPart3({ formD, setFormD }) {
                     type="text"
                     name="Policy_benifitted"
                     id="benefits"
+                    onChange={handleChange}
+                    value={formD.Policy_benifitted}
                     style={{
                       width: "90%",
                       border: "transparent",
@@ -117,6 +134,8 @@ function FormPart3({ formD, setFormD }) {
                     type="text"
                     name="Challenges_faced_policy_related"
                     id="challenges"
+                    onChange={handleChange}
+                    value={formD.Challenges_faced_policy_related}
                     style={{
                       width: "90%",
                       border: "transparent",
@@ -142,6 +161,7 @@ function FormPart3({ formD, setFormD }) {
                 <input
                   type="text"
                   id="Anything"
+                  onChange={handleChange}
                   style={{
                     width: "90%",
                     border: "transparent",
@@ -154,6 +174,7 @@ function FormPart3({ formD, setFormD }) {
                 <input
                   type="text"
                   id="Anything1"
+                  onChange={handleChange}
                   style={{
                     width: "90%",
                     border: "transparent",
@@ -189,6 +210,7 @@ function FormPart3({ formD, setFormD }) {
                         id="op1"
                         name="Aware_of_listed_scehmes"
                         value="ZED"
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="d_flex_align_CONTENT_justify">
@@ -203,6 +225,7 @@ function FormPart3({ formD, setFormD }) {
                         id="op2"
                         name="Aware_of_listed_scehmes"
                         value="LEAN"
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="d_flex_align_CONTENT_justify">
@@ -217,6 +240,7 @@ function FormPart3({ formD, setFormD }) {
                         id="op3"
                         name="Aware_of_listed_scehmes"
                         value="TREDs"
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="d_flex_align_CONTENT_justify">
@@ -231,6 +255,7 @@ function FormPart3({ formD, setFormD }) {
                         id="op4"
                         name="Aware_of_listed_scehmes"
                         value="Design_scheme"
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="d_flex_align_CONTENT_justify">
@@ -245,6 +270,7 @@ function FormPart3({ formD, setFormD }) {
                         id="op5"
                         name="Aware_of_listed_scehmes"
                         value="Digital_Scheme"
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="d_flex_align_CONTENT_justify">
@@ -259,6 +285,7 @@ function FormPart3({ formD, setFormD }) {
                         id="op6"
                         name="Aware_of_listed_scehmes"
                         value="IPR_scheme"
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="d_flex_align_CONTENT_justify">
@@ -273,6 +300,7 @@ function FormPart3({ formD, setFormD }) {
                         id="op7"
                         name="Aware_of_listed_scehmes"
                         value="Samadhan"
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="d_flex_align_CONTENT_justify">
@@ -287,6 +315,7 @@ function FormPart3({ formD, setFormD }) {
                         id="op8"
                         name="Aware_of_listed_scehmes"
                         value="CGTMSE"
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="d_flex_align_CONTENT_justify">
@@ -301,6 +330,7 @@ function FormPart3({ formD, setFormD }) {
                         id="op9"
                         name="Aware_of_listed_scehmes"
                         value="MSME Champions"
+                        onChange={handleChange}
                       />
                     </div>
                   </div>
@@ -320,6 +350,7 @@ function FormPart3({ formD, setFormD }) {
                         id="opt1"
                         name="Aware_of_listed_scehmes"
                         value="ODOP"
+                        onChange={handleChange}
                       />
                     </div>
                     <div>
@@ -338,6 +369,7 @@ function FormPart3({ formD, setFormD }) {
                         id="opt2"
                         name="Aware_of_listed_scehmes"
                         value="UP MSME Promotion Policy"
+                        onChange={handleChange}
                       />
                     </div>
                     <div>
@@ -356,6 +388,7 @@ function FormPart3({ formD, setFormD }) {
                         id="opt3"
                         name="Aware_of_listed_scehmes"
                         value="Technical upgradation"
+                        onChange={handleChange}
                       />
                     </div>
                     <div>
@@ -374,6 +407,7 @@ function FormPart3({ formD, setFormD }) {
                         id="opt4"
                         name="Aware_of_listed_scehmes"
                         value="UP Chief Minister Youth Self Employment Scheme"
+                        onChange={handleChange}
                       />
                     </div>
                     <div>
@@ -392,6 +426,7 @@ function FormPart3({ formD, setFormD }) {
                         id="opt5"
                         name="Aware_of_listed_scehmes"
                         value="UP Startup Policy 2020"
+                        onChange={handleChange}
                       />
                     </div>
                     <div>
@@ -410,6 +445,7 @@ function FormPart3({ formD, setFormD }) {
                         id="opt6"
                         name="Aware_of_listed_scehmes"
                         value="Others"
+                        onChange={handleChange}
                       />
                     </div>
                   </div>
@@ -429,6 +465,8 @@ function FormPart3({ formD, setFormD }) {
                 type="text"
                 id="remark"
                 name="Remarks"
+                onChange={handleChange}
+                value={formD.Remarks}
                 style={{
                   width: "50%",
                   border: "transparent",
@@ -463,6 +501,7 @@ function FormPart3({ formD, setFormD }) {
                         id="op1"
                         name="Aware_of_listed_scehmes"
                         value="ZED"
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="d_flex_align_CONTENT_justify">
@@ -477,6 +516,7 @@ function FormPart3({ formD, setFormD }) {
                         id="op2"
                         name="Aware_of_listed_scehmes"
                         value="LEAN"
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="d_flex_align_CONTENT_justify">
@@ -491,6 +531,7 @@ function FormPart3({ formD, setFormD }) {
                         id="op3"
                         name="Aware_of_listed_scehmes"
                         value="TREDs"
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="d_flex_align_CONTENT_justify">
@@ -505,6 +546,7 @@ function FormPart3({ formD, setFormD }) {
                         id="op4"
                         name="Aware_of_listed_scehmes"
                         value="Design_scheme"
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="d_flex_align_CONTENT_justify">
@@ -519,6 +561,7 @@ function FormPart3({ formD, setFormD }) {
                         id="op5"
                         name="Aware_of_listed_scehmes"
                         value="Digital_Scheme"
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="d_flex_align_CONTENT_justify">
@@ -533,6 +576,7 @@ function FormPart3({ formD, setFormD }) {
                         id="op6"
                         name="Aware_of_listed_scehmes"
                         value="IPR_scheme"
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="d_flex_align_CONTENT_justify">
@@ -547,6 +591,7 @@ function FormPart3({ formD, setFormD }) {
                         id="op7"
                         name="Aware_of_listed_scehmes"
                         value="Samadhan"
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="d_flex_align_CONTENT_justify">
@@ -561,6 +606,7 @@ function FormPart3({ formD, setFormD }) {
                         id="op8"
                         name="Aware_of_listed_scehmes"
                         value="CGTMSE"
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="d_flex_align_CONTENT_justify">
@@ -575,6 +621,7 @@ function FormPart3({ formD, setFormD }) {
                         id="op9"
                         name="Aware_of_listed_scehmes"
                         value="MSME Champions"
+                        onChange={handleChange}
                       />
                     </div>
                   </div>
@@ -594,6 +641,7 @@ function FormPart3({ formD, setFormD }) {
                         id="opt1"
                         name="Aware_of_listed_scehmes"
                         value="ODOP"
+                        onChange={handleChange}
                       />
                     </div>
                     <div>
@@ -612,6 +660,7 @@ function FormPart3({ formD, setFormD }) {
                         id="opt2"
                         name="Aware_of_listed_scehmes"
                         value="UP MSME Promotion Policy"
+                        onChange={handleChange}
                       />
                     </div>
                     <div>
@@ -630,6 +679,7 @@ function FormPart3({ formD, setFormD }) {
                         id="opt3"
                         name="Aware_of_listed_scehmes"
                         value="Technical upgradation"
+                        onChange={handleChange}
                       />
                     </div>
                     <div>
@@ -647,6 +697,7 @@ function FormPart3({ formD, setFormD }) {
                         id="opt4"
                         name="Aware_of_listed_scehmes"
                         value="UP Chief Minister Youth Self Employment Scheme"
+                        onChange={handleChange}
                       />
                     </div>
                     <div>
@@ -665,6 +716,7 @@ function FormPart3({ formD, setFormD }) {
                         id="opt5"
                         name="Aware_of_listed_scehmes"
                         value="UP Startup Policy 2020"
+                        onChange={handleChange}
                       />
                     </div>
                     <div>
@@ -679,6 +731,7 @@ function FormPart3({ formD, setFormD }) {
                         id="opt6"
                         name="Aware_of_listed_scehmes"
                         value="Others"
+                        onChange={handleChange}
                       />
                     </div>
                   </div>
@@ -700,6 +753,8 @@ function FormPart3({ formD, setFormD }) {
                   id="availedByMe"
                   name="scheme_availed_by_you_central_govt"
                   placeholder="central govt."
+                  onChange={handleChange}
+                  value={formD.scheme_availed_by_you_central_govt}
                   style={{
                     border: "transparent",
                     borderBottom: "2px solid black",
@@ -710,6 +765,8 @@ function FormPart3({ formD, setFormD }) {
                   id="availedByMe2"
                   placeholder="state govt."
                   name="scheme_availed_by_you_state_govt"
+                  onChange={handleChange}
+                  value={formD.scheme_availed_by_you_state_govt}
                   style={{
                     border: "transparent",
                     borderBottom: "2px solid black",

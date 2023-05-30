@@ -3,6 +3,15 @@ import { NavLink } from "react-router-dom";
 import "./Table.css";
 
 function FormPart5({ formD, setFormD }) {
+  function handleChange(event) {
+    const { name, value, type, checked } = event.target;
+    setFormD((prevFormData) => {
+      return {
+        ...prevFormData,
+        [name]: type === "checkbox" ? checked : value,
+      };
+    });
+  }
   return (
     <>
       <h2 style={{ marginTop: "2em", marginBottom: "2em" }}>
@@ -56,6 +65,8 @@ function FormPart5({ formD, setFormD }) {
                   name="availed_samadhaan_service"
                   id="valid"
                   value="YES"
+                  onChange={handleChange}
+                  checked={formD.availed_samadhaan_service == "YES"}
                   style={{ margin: "0.5%" }}
                 />
               </div>
@@ -68,6 +79,8 @@ function FormPart5({ formD, setFormD }) {
                   name="availed_samadhaan_service"
                   value="NO"
                   id="invalid"
+                  onChange={handleChange}
+                  checked={formD.availed_samadhaan_service == "NO"}
                   style={{ margin: "0.5%" }}
                 />
               </div>
