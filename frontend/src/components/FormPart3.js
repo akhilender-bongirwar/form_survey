@@ -3,13 +3,67 @@ import { NavLink } from "react-router-dom";
 import "./Table.css";
 function FormPart3({ formD, setFormD }) {
   function handleChange(event) {
-    const { name, value, type, checked } = event.target;
-    setFormD((prevFormData) => {
-      return {
-        ...prevFormData,
-        [name]: type === "checkbox" ? checked : value,
-      };
-    });
+    const { name, value, type, checked,className } = event.target;
+    if (name === "sell_produce_majorly") {
+      setFormD((prevFormData) => {
+        return {
+          ...prevFormData,
+          [name]: {...prevFormData[name],[value]:type === "checkbox" ? checked : value}
+        }
+      })
+    }
+    else if(name==="service_industry"){
+      setFormD(prevFormData => {
+        return {
+          ...prevFormData,
+          [name]: {...prevFormData[name],[value]:type === "checkbox" ? checked : value},
+        };
+      });
+    } 
+    else if(name==="Aware_of_listed_scehmes"){
+      if(className=="central"){
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: {...prevFormData[name],Central_Govt:{...prevFormData[name].Central_Govt,[value]:type === "checkbox" ? checked : value}}
+          }
+        })
+      }
+      else{
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: {...prevFormData[name],State_Govt:{...prevFormData[name].State_Govt,[value]:type === "checkbox" ? checked : value}}
+          }
+        })
+      }
+    }
+    else if(name==="Scheme_Like_to_avail"){
+      if(className=="central"){
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: {...prevFormData[name],Central_Govt:{...prevFormData[name].Central_Govt,[value]:type === "checkbox" ? checked : value}}
+          }
+        })
+      }
+      else{
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: {...prevFormData[name],State_Govt:{...prevFormData[name].State_Govt,[value]:type === "checkbox" ? checked : value}}
+          }
+        })
+      }
+    }
+    else {
+      setFormD((prevFormData) => {
+        return {
+          ...prevFormData,
+          [name]: type === "checkbox" ? checked : value,
+        };
+      });
+    }
   }
   return (
     <div
@@ -85,6 +139,8 @@ function FormPart3({ formD, setFormD }) {
                     <input
                       type="text"
                       id="Anything"
+                      name="policy_program_1"
+                      value={formD.policy_program_1}
                       onChange={handleChange}
                       style={{
                         width: "90%",
@@ -98,6 +154,8 @@ function FormPart3({ formD, setFormD }) {
                     <input
                       type="text"
                       id="Anything1"
+                      name="policy_program_2"
+                      value={formD.policy_program_2}
                       onChange={handleChange}
                       style={{
                         width: "90%",
@@ -155,12 +213,14 @@ function FormPart3({ formD, setFormD }) {
             </td>
             <td colSpan={6}>
               <div>
-                <label style={{ textAlign: "center" }} htmlFor="Anything">
+                <label style={{ textAlign: "center" }} htmlFor="Anything3">
                   1.
                 </label>
                 <input
                   type="text"
-                  id="Anything"
+                  id="Anything3"
+                  name="expectations_from_govt_1"
+                  value={formD.expectations_from_govt_1}
                   onChange={handleChange}
                   style={{
                     width: "90%",
@@ -170,10 +230,12 @@ function FormPart3({ formD, setFormD }) {
                 />
               </div>
               <div>
-                <label htmlFor="Anything1">2.</label>
+                <label htmlFor="Anything4">2.</label>
                 <input
                   type="text"
-                  id="Anything1"
+                  id="Anything4"
+                  name="expectations_from_govt_2"
+                  value={formD.expectations_from_govt_2}
                   onChange={handleChange}
                   style={{
                     width: "90%",
@@ -208,8 +270,10 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op1"
+                        className="central"
                         name="Aware_of_listed_scehmes"
                         value="ZED"
+                        checked={formD.Aware_of_listed_scehmes.Central_Govt.ZED}
                         onChange={handleChange}
                       />
                     </div>
@@ -223,8 +287,10 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op2"
+                        className="central"
                         name="Aware_of_listed_scehmes"
                         value="LEAN"
+                        checked={formD.Aware_of_listed_scehmes.Central_Govt.LEAN}
                         onChange={handleChange}
                       />
                     </div>
@@ -237,9 +303,11 @@ function FormPart3({ formD, setFormD }) {
                       </label>
                       <input
                         type="checkbox"
+                        className="central"
                         id="op3"
                         name="Aware_of_listed_scehmes"
                         value="TREDs"
+                        checked={formD.Aware_of_listed_scehmes.Central_Govt.TREDs}
                         onChange={handleChange}
                       />
                     </div>
@@ -252,9 +320,11 @@ function FormPart3({ formD, setFormD }) {
                       </label>
                       <input
                         type="checkbox"
+                        className="central"
                         id="op4"
                         name="Aware_of_listed_scehmes"
                         value="Design_scheme"
+                        checked={formD.Aware_of_listed_scehmes.Central_Govt.Design_scheme}
                         onChange={handleChange}
                       />
                     </div>
@@ -267,9 +337,11 @@ function FormPart3({ formD, setFormD }) {
                       </label>
                       <input
                         type="checkbox"
+                        className="central"
                         id="op5"
                         name="Aware_of_listed_scehmes"
                         value="Digital_Scheme"
+                        checked={formD.Aware_of_listed_scehmes.Central_Govt.Digital_Scheme}
                         onChange={handleChange}
                       />
                     </div>
@@ -282,9 +354,11 @@ function FormPart3({ formD, setFormD }) {
                       </label>
                       <input
                         type="checkbox"
+                        className="central"
                         id="op6"
                         name="Aware_of_listed_scehmes"
                         value="IPR_scheme"
+                        checked={formD.Aware_of_listed_scehmes.Central_Govt.IPR_scheme}
                         onChange={handleChange}
                       />
                     </div>
@@ -298,8 +372,10 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op7"
+                        className="central"
                         name="Aware_of_listed_scehmes"
                         value="Samadhan"
+                        checked={formD.Aware_of_listed_scehmes.Central_Govt.Samadhan}
                         onChange={handleChange}
                       />
                     </div>
@@ -313,8 +389,10 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op8"
+                        className="central"
                         name="Aware_of_listed_scehmes"
                         value="CGTMSE"
+                        checked={formD.Aware_of_listed_scehmes.Central_Govt.CGTMSE}
                         onChange={handleChange}
                       />
                     </div>
@@ -328,8 +406,10 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op9"
+                        className="central"
                         name="Aware_of_listed_scehmes"
-                        value="MSME Champions"
+                        value="MSME_Champions"
+                        checked={formD.Aware_of_listed_scehmes.Central_Govt.MSME_Champions}
                         onChange={handleChange}
                       />
                     </div>
@@ -348,7 +428,9 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt1"
+                        className="state"
                         name="Aware_of_listed_scehmes"
+                        checked={formD.Aware_of_listed_scehmes.State_Govt.ODOP}
                         value="ODOP"
                         onChange={handleChange}
                       />
@@ -367,8 +449,10 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt2"
+                        className="state"
                         name="Aware_of_listed_scehmes"
-                        value="UP MSME Promotion Policy"
+                        value="UP_MSME_Promotion_Policy"
+                        checked={formD.Aware_of_listed_scehmes.State_Govt.UP_MSME_Promotion_Policy}
                         onChange={handleChange}
                       />
                     </div>
@@ -386,8 +470,10 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt3"
+                        className="state"
                         name="Aware_of_listed_scehmes"
-                        value="Technical upgradation"
+                        value="Technical_upgradation"
+                        checked={formD.Aware_of_listed_scehmes.State_Govt.Technical_upgradation}
                         onChange={handleChange}
                       />
                     </div>
@@ -405,8 +491,10 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt4"
+                        className="state"
                         name="Aware_of_listed_scehmes"
-                        value="UP Chief Minister Youth Self Employment Scheme"
+                        value="UP_Chief_Minister_Youth_Self_Employment_Scheme"
+                        checked={formD.Aware_of_listed_scehmes.State_Govt.UP_Chief_Minister_Youth_Self_Employment_Scheme}
                         onChange={handleChange}
                       />
                     </div>
@@ -423,9 +511,11 @@ function FormPart3({ formD, setFormD }) {
                       </label>
                       <input
                         type="checkbox"
+                        className="state"
                         id="opt5"
                         name="Aware_of_listed_scehmes"
-                        value="UP Startup Policy 2020"
+                        checked={formD.Aware_of_listed_scehmes.State_Govt.UP_Startup_Policy_2020}
+                        value="UP_Startup_Policy_2020"
                         onChange={handleChange}
                       />
                     </div>
@@ -443,6 +533,8 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt6"
+                        className="state"
+                        checked={formD.Aware_of_listed_scehmes.State_Govt.Others}
                         name="Aware_of_listed_scehmes"
                         value="Others"
                         onChange={handleChange}
@@ -499,7 +591,9 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op1"
-                        name="Aware_of_listed_scehmes"
+                        className="central"
+                        checked={formD.Scheme_Like_to_avail.Central_Govt.ZED}
+                        name="Scheme_Like_to_avail"
                         value="ZED"
                         onChange={handleChange}
                       />
@@ -514,7 +608,9 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op2"
-                        name="Aware_of_listed_scehmes"
+                        className="central"
+                        checked={formD.Scheme_Like_to_avail.Central_Govt.LEAN}
+                        name="Scheme_Like_to_avail"
                         value="LEAN"
                         onChange={handleChange}
                       />
@@ -529,7 +625,9 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op3"
-                        name="Aware_of_listed_scehmes"
+                        className="central"
+                        checked={formD.Scheme_Like_to_avail.Central_Govt.TREDs}
+                        name="Scheme_Like_to_avail"
                         value="TREDs"
                         onChange={handleChange}
                       />
@@ -544,7 +642,9 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op4"
-                        name="Aware_of_listed_scehmes"
+                        className="central"
+                        checked={formD.Scheme_Like_to_avail.Central_Govt.Design_scheme}
+                        name="Scheme_Like_to_avail"
                         value="Design_scheme"
                         onChange={handleChange}
                       />
@@ -559,8 +659,10 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op5"
-                        name="Aware_of_listed_scehmes"
+                        name="Scheme_Like_to_avail"
                         value="Digital_Scheme"
+                        className="central"
+                        checked={formD.Scheme_Like_to_avail.Central_Govt.Digital_Scheme}
                         onChange={handleChange}
                       />
                     </div>
@@ -574,8 +676,10 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op6"
-                        name="Aware_of_listed_scehmes"
+                        name="Scheme_Like_to_avail"
                         value="IPR_scheme"
+                        className="central"
+                        checked={formD.Scheme_Like_to_avail.Central_Govt.IPR_scheme}
                         onChange={handleChange}
                       />
                     </div>
@@ -589,7 +693,9 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op7"
-                        name="Aware_of_listed_scehmes"
+                        className="central"
+                        checked={formD.Scheme_Like_to_avail.Central_Govt.Samadhan}
+                        name="Scheme_Like_to_avail"
                         value="Samadhan"
                         onChange={handleChange}
                       />
@@ -604,7 +710,9 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op8"
-                        name="Aware_of_listed_scehmes"
+                        className="central"
+                        checked={formD.Scheme_Like_to_avail.Central_Govt.CGTMSE}
+                        name="Scheme_Like_to_avail"
                         value="CGTMSE"
                         onChange={handleChange}
                       />
@@ -619,8 +727,10 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op9"
-                        name="Aware_of_listed_scehmes"
-                        value="MSME Champions"
+                        className="central"
+                        checked={formD.Scheme_Like_to_avail.Central_Govt.MSME_Champions}
+                        name="Scheme_Like_to_avail"
+                        value="MSME_Champions"
                         onChange={handleChange}
                       />
                     </div>
@@ -639,7 +749,9 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt1"
-                        name="Aware_of_listed_scehmes"
+                        className="state"
+                        checked={formD.Scheme_Like_to_avail.State_Govt.ODOP}
+                        name="Scheme_Like_to_avail"
                         value="ODOP"
                         onChange={handleChange}
                       />
@@ -658,8 +770,10 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt2"
-                        name="Aware_of_listed_scehmes"
-                        value="UP MSME Promotion Policy"
+                        className="state"
+                        checked={formD.Scheme_Like_to_avail.State_Govt.UP_MSME_Promotion_Policy}
+                        name="Scheme_Like_to_avail"
+                        value="UP_MSME_Promotion_Policy"
                         onChange={handleChange}
                       />
                     </div>
@@ -677,8 +791,10 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt3"
-                        name="Aware_of_listed_scehmes"
-                        value="Technical upgradation"
+                        className="state"
+                        checked={formD.Scheme_Like_to_avail.State_Govt.Technical_upgradation}
+                        name="Scheme_Like_to_avail"
+                        value="Technical_upgradation"
                         onChange={handleChange}
                       />
                     </div>
@@ -695,8 +811,10 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt4"
-                        name="Aware_of_listed_scehmes"
-                        value="UP Chief Minister Youth Self Employment Scheme"
+                        className="state"
+                        checked={formD.Scheme_Like_to_avail.State_Govt.UP_Chief_Minister_Youth_Self_Employment_Scheme}
+                        name="Scheme_Like_to_avail"
+                        value="UP_Chief_Minister_Youth_Self_Employment_Scheme"
                         onChange={handleChange}
                       />
                     </div>
@@ -714,8 +832,10 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt5"
-                        name="Aware_of_listed_scehmes"
-                        value="UP Startup Policy 2020"
+                        className="state"
+                        checked={formD.Scheme_Like_to_avail.State_Govt.UP_Startup_Policy_2020}
+                        name="Scheme_Like_to_avail"
+                        value="UP_Startup_Policy_2020"
                         onChange={handleChange}
                       />
                     </div>
@@ -729,7 +849,9 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt6"
-                        name="Aware_of_listed_scehmes"
+                        className="state"
+                        checked={formD.Scheme_Like_to_avail.State_Govt.Others}
+                        name="Scheme_Like_to_avail"
                         value="Others"
                         onChange={handleChange}
                       />
@@ -783,61 +905,7 @@ function FormPart3({ formD, setFormD }) {
           <NavLink to="/4" className="arrow_notation">
             Next
           </NavLink>
-        </div>
-        {/* <div className="div-style" style={{ borderTop: 0 }}>
-          <label className="inner-div-tag" >Are you aware about<br />the current
-            government <br />programs benefitting<br />
-            MSMEs </label>
-          <div className="checkboxes">
-            <div>
-              <label htmlFor="YES" style={{ fontWeight: "500" }}>
-                Yes
-              </label>
-              <input
-                type="radio"
-                name="aware_of_govt_policy"
-                id="YES"
-                value="YES"
-                style={{ margin: "0.5%" }}
-              />
-            </div>
-            <div>
-              <label htmlFor="NO" style={{ fontWeight: "500" }}>
-                No
-              </label>
-              <input
-                type="radio"
-                name="aware_of_govt_policy"
-                value="NO"
-                id="NO"
-                style={{ margin: "0.5%" }}
-              />
-            </div>
-          </div>
-        </div> */}
-        {/* <div className="div-style" style={{ borderTop: 0 }}>
-          <div className="inner-div-tag" >Which program benefits are you<br />availing currently from the state?
-            <br />Please describe the key benefits<br />
-            and challenges related to the<br />
-            program </div>
-          <div>
-            <label style={{ fontSize: "0.85em" }}>Name of the Program:</label>
-            <div style={{ display: "flex" }}>
-              <label htmlFor='Anything'>1.</label>
-              <input type='text' id='Anything' style={{ width: "50%", border: "transparent" }} />
-              <label htmlFor='Anything1'>2.</label>
-              <input type='text' style={{ width: "50%", border: "transparent" }} />
-            </div>
-            <div style={{ display: "flex" }}>
-              <label htmlFor='benefits' style={{ fontSize: "0.85em" }}>Nature of assistance/Benefits:</label>
-              <input type='text' id='benefits' name='Policy_benifitted' style={{ width: "50%", border: "transparent" }} />
-            </div>
-            <div style={{ display: "flex" }}>
-              <label htmlFor='challenges' style={{ fontSize: "0.85em" }}>Challenges:</label>
-              <input type='text' id='challenges' name='Challenges_faced_policy_related' style={{ width: "50%", border: "transparent" }} />
-            </div>
-          </div>
-        </div> */}
+        </div>      
       </div>
     </div>
   );

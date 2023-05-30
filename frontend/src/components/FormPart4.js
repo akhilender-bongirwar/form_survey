@@ -2,15 +2,127 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 function FormPart4({ formD, setFormD }) {
-  function handleChange(event) {
-    const { name, value, type, checked } = event.target;
-    setFormD((prevFormData) => {
-      return {
-        ...prevFormData,
-        [name]: type === "checkbox" ? checked : value,
-      };
-    });
-  }
+    function handleChange(event) {
+        const { name, value, type, checked,className } = event.target;
+        if (name === "sell_produce_majorly") {
+            if(type=="text"){
+                setFormD((prevFormData) => {
+                    return {
+                      ...prevFormData,
+                      [name]: {...prevFormData[name],other: value}
+                    }
+                  })
+            }
+            else{
+
+                setFormD((prevFormData) => {
+                    return {
+                      ...prevFormData,
+                      [name]: {...prevFormData[name],[value]:checked}
+                    }
+                  })
+            }
+        }
+        else if(name==="service_industry"){
+            if(type=="text"){
+                setFormD((prevFormData) => {
+                    return {
+                      ...prevFormData,
+                      [name]: {...prevFormData[name],other: value}
+                    }
+                  })
+            }
+            else{
+                setFormD((prevFormData) => {
+                    return {
+                      ...prevFormData,
+                      [name]: {...prevFormData[name],[value]:checked}
+                    }
+                  })
+            }
+        } 
+        else if(name==="Aware_of_listed_scehmes"){
+          if(className=="central"){
+            setFormD((prevFormData) => {
+              return {
+                ...prevFormData,
+                [name]: {...prevFormData[name],Central_Govt:{...prevFormData[name].Central_Govt,[value]:type === "checkbox" ? checked : value}}
+              }
+            })
+          }
+          else{
+            setFormD((prevFormData) => {
+              return {
+                ...prevFormData,
+                [name]: {...prevFormData[name],State_Govt:{...prevFormData[name].State_Govt,[value]:type === "checkbox" ? checked : value}}
+              }
+            })
+          }
+        }
+        else if(name==="Scheme_Like_to_avail"){
+          if(className=="central"){
+            setFormD((prevFormData) => {
+              return {
+                ...prevFormData,
+                [name]: {...prevFormData[name],Central_Govt:{...prevFormData[name].Central_Govt,[value]:type === "checkbox" ? checked : value}}
+              }
+            })
+          }
+          else{
+            setFormD((prevFormData) => {
+              return {
+                ...prevFormData,
+                [name]: {...prevFormData[name],State_Govt:{...prevFormData[name].State_Govt,[value]:type === "checkbox" ? checked : value}}
+              }
+            })
+          }
+        }
+        else if (name === "Key_Reason_Preventing_loan") {
+            if(type=="text"){
+                setFormD((prevFormData) => {
+                    return {
+                      ...prevFormData,
+                      [name]: {...prevFormData[name],other: value}
+                    }
+                  })
+            }
+            else{
+
+                setFormD((prevFormData) => {
+                    return {
+                      ...prevFormData,
+                      [name]: {...prevFormData[name],[value]:checked}
+                    }
+                  })
+            }
+        }
+        else if (name === "applied_loan_outcome") {
+            if(type=="radio"){
+                setFormD((prevFormData) => {
+                    return {
+                      ...prevFormData,
+                      [name]: {...prevFormData[name],radio_button: value,other:""}
+                    }
+                  })
+            }
+            else{
+                setFormD((prevFormData) => {
+                    return {
+                      ...prevFormData,
+                      [name]: {...prevFormData[name],other:value}
+                    }
+                  })
+            }
+        }
+        else {
+          setFormD((prevFormData) => {
+            return {
+              ...prevFormData,
+              [name]: type === "checkbox" ? checked : value,
+            };
+          });
+        }
+      }
   return (
     <div
       style={{
@@ -45,10 +157,9 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="reason1"
                     name="Key_Reason_Preventing_loan"
-                    value="Lack of awareness of bank processes requirements"
+                    value="Lack_of_awareness_of_bank_processes_requirements"
                     checked={
-                      formD.Key_Reason_Preventing_loan ==
-                      "Lack of awareness of bank processes requirements"
+                      formD.Key_Reason_Preventing_loan.Lack_of_awareness_of_bank_processes_requirements    
                     }
                     onChange={handleChange}
                   />
@@ -61,9 +172,9 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="reason2"
                     name="Key_Reason_Preventing_loan"
-                    value="High Interest Rate"
+                    value="High_Interest_Rate"
                     checked={
-                      formD.Key_Reason_Preventing_loan == "High Interest Rate"
+                      formD.Key_Reason_Preventing_loan.High_Interest_Rate
                     }
                     onChange={handleChange}
                   />
@@ -76,10 +187,9 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="reason3"
                     name="Key_Reason_Preventing_loan"
-                    value="Longer Processing time"
+                    value="Longer_Processing_time"
                     checked={
-                      formD.Key_Reason_Preventing_loan ==
-                      "Longer Processing time"
+                      formD.Key_Reason_Preventing_loan.Longer_Processing_time
                     }
                     onChange={handleChange}
                   />
@@ -92,10 +202,9 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="reason4"
                     name="Key_Reason_Preventing_loan"
-                    value="Improper documentation"
+                    value="Improper_documentation"
                     checked={
-                      formD.Key_Reason_Preventing_loan ==
-                      "Improper documentation"
+                      formD.Key_Reason_Preventing_loan.Improper_documentation
                     }
                     onChange={handleChange}
                   />
@@ -108,10 +217,9 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="reason5"
                     name="Key_Reason_Preventing_loan"
-                    value="No nearby bank branches"
+                    value="No_nearby_bank_branches"
                     checked={
-                      formD.Key_Reason_Preventing_loan ==
-                      "No nearby bank branches"
+                      formD.Key_Reason_Preventing_loan.No_nearby_bank_branches
                     }
                     onChange={handleChange}
                   />
@@ -124,7 +232,7 @@ function FormPart4({ formD, setFormD }) {
                     type="text"
                     id="reason6"
                     name="Key_Reason_Preventing_loan"
-                    value={formD.Key_Reason_Preventing_loan}
+                    value={formD.Key_Reason_Preventing_loan.other}
                     onChange={handleChange}
                   />
                 </div>
@@ -175,8 +283,9 @@ function FormPart4({ formD, setFormD }) {
                     value="Applied but the application got rejected"
                     onChange={handleChange}
                     checked={
-                      formD.applied_loan_outcome ==
-                      "Applied but the application got rejected"
+                      formD.applied_loan_outcome.radio_button ==
+                      "Applied but the application got rejected" &&
+                      formD.applied_loan_outcome.other==""
                     }
                   />
                 </div>
@@ -191,8 +300,9 @@ function FormPart4({ formD, setFormD }) {
                     value="Applied and got the loan amount in full"
                     onChange={handleChange}
                     checked={
-                      formD.applied_loan_outcome ==
-                      "Applied and got the loan amount in full"
+                      formD.applied_loan_outcome.radio_button ==
+                      "Applied and got the loan amount in full" &&
+                      formD.applied_loan_outcome.other==""
                     }
                   />
                 </div>
@@ -207,8 +317,9 @@ function FormPart4({ formD, setFormD }) {
                     value="Applied but only got partial loan amount"
                     onChange={handleChange}
                     checked={
-                      formD.applied_loan_outcome ==
-                      "Applied but only got partial loan amount"
+                      formD.applied_loan_outcome.radio_button ==
+                      "Applied but only got partial loan amount" &&
+                      formD.applied_loan_outcome.other==""
                     }
                   />
                 </div>
@@ -224,8 +335,9 @@ function FormPart4({ formD, setFormD }) {
                     value="Applied but refused as interest rate offered was high"
                     onChange={handleChange}
                     checked={
-                      formD.applied_loan_outcome ==
-                      "Applied but refused as interest rate offered was high"
+                      formD.applied_loan_outcome.radio_button ==
+                      "Applied but refused as interest rate offered was high" &&
+                      formD.applied_loan_outcome.other==""
                     }
                   />
                 </div>
@@ -240,8 +352,9 @@ function FormPart4({ formD, setFormD }) {
                     value="Loan approved after a significant delay"
                     onChange={handleChange}
                     checked={
-                      formD.applied_loan_outcome ==
-                      "Loan approved after a significant delay"
+                      formD.applied_loan_outcome.radio_button ==
+                      "Loan approved after a significant delay" &&
+                      formD.applied_loan_outcome.other==""
                     }
                   />
                 </div>
@@ -254,7 +367,7 @@ function FormPart4({ formD, setFormD }) {
                     id="outcome6"
                     name="applied_loan_outcome"
                     onChange={handleChange}
-                    value={formD.applied_loan_outcome}
+                    value={formD.applied_loan_outcome.other}
                   />
                 </div>
               </td>

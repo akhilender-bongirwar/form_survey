@@ -198,11 +198,12 @@ function Table({ formD, setFormD }) {
       setFormD((prevFormData) => {
         return {
           ...prevFormData,
-          [name]: { ...prevFormData[name], [value]: checked },
-        };
-      });
-    } else if (name === "service_industry") {
-      setFormD((prevFormData) => {
+          [name]: {...prevFormData[name],[value]:type === "checkbox" ? checked : value}
+        }
+      })
+    }
+    else if(name==="service_industry"){
+      setFormD(prevFormData => {
         return {
           ...prevFormData,
           [name]: { ...prevFormData[name], [value]: checked },
@@ -935,7 +936,7 @@ function Table({ formD, setFormD }) {
                           id="others"
                           name="sell_produce_majorly"
                           onChange={handleChange}
-                          value={formD.sell_produce_majorly}
+                          value={formD.sell_produce_majorly.other}
                           style={{ width: "85%" }}
                         />
                       </div>
