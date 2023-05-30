@@ -1,6 +1,7 @@
 import React from "react";
 import "./Table.css";
-function FormPart6() {
+import { NavLink } from "react-router-dom";
+function FormPart6({formD,setFormD}) {
   return (
     <>
       <h1 style={{ marginBottom: "2em" }}>F. Online Dispute Resolution</h1>
@@ -36,6 +37,7 @@ function FormPart6() {
                       type="text"
                       id="certificate1"
                       name="Currently_owned_1"
+
                       style={{ border: "transparent" }}
                       placeholder="Currently owned"
                     />
@@ -274,6 +276,7 @@ function FormPart6() {
           </div>
         </div>
       </div>
+        <NavLink to="/5">Prev</NavLink>
     </>
   );
 }

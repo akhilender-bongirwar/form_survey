@@ -1,7 +1,8 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "./Table.css";
 
-function FormPart5() {
+function FormPart5({formD,setFormD}) {
   return (
     <>
       <h2 style={{ marginTop: "2em", marginBottom: "2em" }}>
@@ -63,6 +64,8 @@ function FormPart5() {
           </div>
         </div>
       </div>
+      <NavLink to="/4">Prev</NavLink>
+        <NavLink to="/6">Next</NavLink>
     </>
   );
 }
