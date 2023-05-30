@@ -38,7 +38,8 @@ function App() {
       Government:false,
       online:false,
       Other_states:false,
-      export_outside:false
+      export_outside:false,
+      other:""
     },
     service_industry:{
       Local_Market:false,

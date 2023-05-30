@@ -197,7 +197,7 @@ function Table({ formD, setFormD }) {
       setFormD(prevFormData => {
         return {
           ...prevFormData,
-          [name]: {...prevFormData[name],[value]:checked}
+          [name]: {...prevFormData[name],[value]:type === "checkbox" ? checked : value}
         }
       })
     }
@@ -910,7 +910,7 @@ function Table({ formD, setFormD }) {
                           id="others"
                           name="sell_produce_majorly"
                           onChange={handleChange}
-                          value={formD.sell_produce_majorly}
+                          value={formD.sell_produce_majorly.other}
                           style={{ width: "85%" }}
                         />
                       </div>
