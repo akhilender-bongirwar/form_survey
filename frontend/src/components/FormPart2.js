@@ -109,7 +109,7 @@ const FormPart2 = ({ formD, setFormD }) => {
           };
         });
       }
-    } else if (name === "applied_loan_outcome") {
+    } else if (name === "applied_loan_outcome" || name == "Raw_Materials") {
       if (type == "radio") {
         setFormD((prevFormData) => {
           return {
@@ -184,7 +184,11 @@ const FormPart2 = ({ formD, setFormD }) => {
                     Direct
                   </label>
                   <input
-                    type="checkbox"
+                    type="radio"
+                    checked={
+                      formD.Raw_Materials.radio_button == "Direct" &&
+                      formD.Raw_Materials.other == ""
+                    }
                     id="raw1"
                     name="Raw_Materials"
                     value="Direct"
@@ -199,9 +203,13 @@ const FormPart2 = ({ formD, setFormD }) => {
                     Through Traders
                   </label>
                   <input
-                    type="checkbox"
+                    type="radio"
                     id="raw2"
                     name="Raw_Materials"
+                    checked={
+                      formD.Raw_Materials.radio_button == "Through Traders" &&
+                      formD.Raw_Materials.other == ""
+                    }
                     value="Through Traders"
                     onChange={handleChange}
                   />
@@ -214,8 +222,12 @@ const FormPart2 = ({ formD, setFormD }) => {
                     Online
                   </label>
                   <input
-                    type="checkbox"
+                    type="radio"
                     id="raw3"
+                    checked={
+                      formD.Raw_Materials.radio_button == "Online" &&
+                      formD.Raw_Materials.other == ""
+                    }
                     name="Raw_Materials"
                     value="Online"
                     onChange={handleChange}
@@ -226,9 +238,8 @@ const FormPart2 = ({ formD, setFormD }) => {
                 <input
                   type="text"
                   name="Raw_Materials"
-                  autoFocus
                   onChange={handleChange}
-                  value={formD.Raw_Materials}
+                  value={formD.Raw_Materials.other}
                   placeholder="others(specify)"
                 />
               </div>

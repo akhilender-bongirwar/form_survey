@@ -27,13 +27,13 @@ function App() {
     Cluster: "",
     IF_YES_HOW_MANY_UNITS: "",
     use_computer: "",
-    TOP_THREE_PRODUCTS: [
-      {
-        TOP_THREE_PRODUCTS_1: "",
-        TOP_THREE_PRODUCTS_2: "",
-        TOP_THREE_PRODUCTS_3: "",
-      },
-    ],
+    //added
+    TOP_THREE_PRODUCTS: {
+      TOP_THREE_PRODUCTS_1: "",
+      TOP_THREE_PRODUCTS_2: "",
+      TOP_THREE_PRODUCTS_3: "",
+    },
+    //added
     sell_produce_majorly: {
       Local_Market: false,
       Government: false,
@@ -87,7 +87,10 @@ function App() {
     GOVT_Training: "",
     Email: "",
     Phone_Number: "",
-    Raw_Materials: "",
+    Raw_Materials: {
+      radio_button: "",
+      other: "",
+    },
     if_Raw_Materials_available: "",
     if_no_mention_difficulties: "",
     green_tech: "",
@@ -169,6 +172,7 @@ function App() {
     },
     scheme_availed_by_you_central_govt: "",
     scheme_availed_by_you_state_govt: "",
+    //added
     Key_Reason_Preventing_loan: {
       Lack_of_awareness_of_bank_processes_requirements: false,
       High_Interest_Rate: false,
@@ -186,19 +190,18 @@ function App() {
     reason_of_rejection: "",
     availed_samadhaan_service: "",
     face_challenge_from_buyer: "",
-    Questionnaire_For_Exporters: {
-      Certifications: {
-        Currently_owned_1: "",
-        To_be_Required_1: "",
-      },
-      Infrastructure: {
-        Currently_owned_2: "",
-        To_be_Required_2: "",
-      },
-      Laboratory: {
-        Currently_owned_3: "",
-        To_be_Required_3: "",
-      },
+    //added
+    Certifications: {
+      Currently_owned_1: "",
+      To_be_Required_1: "",
+    },
+    Infrastructure: {
+      Currently_owned_2: "",
+      To_be_Required_2: "",
+    },
+    Laboratory: {
+      Currently_owned_3: "",
+      To_be_Required_3: "",
     },
     Certification_required: "",
     laboratory_requirement: "",
