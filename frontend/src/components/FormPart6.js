@@ -2,6 +2,15 @@ import React from "react";
 import "./Table.css";
 import { NavLink } from "react-router-dom";
 function FormPart6({formD,setFormD}) {
+  function handleChange(event) {
+    const { name, value, type, checked } = event.target
+    setFormD(prevFormData => {
+      return {
+        ...prevFormData,
+        [name]: type === "checkbox" ? checked : value
+      }
+    })
+  }
   return (
     <>
       <h1 style={{ marginBottom: "2em" }}>F. Online Dispute Resolution</h1>

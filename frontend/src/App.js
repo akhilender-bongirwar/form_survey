@@ -33,8 +33,20 @@ function App() {
       TOP_THREE_PRODUCTS_3:""
     }
     ],
-    sell_produce_majorly: "",
-    service_industry: "",
+    sell_produce_majorly: {
+      Local_Market:false,
+      Government:false,
+      online:false,
+      Other_states:false,
+      export_outside:false
+    },
+    service_industry:{
+      Local_Market:false,
+      Government:false,
+      online:false,
+      Other_states:false,
+      internationally:false
+    },
     full_time_Emoployee: "",
     part_time_Emoployee: "",
     Permanent_Emoployee: "",

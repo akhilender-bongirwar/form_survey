@@ -3,6 +3,15 @@ import { NavLink } from "react-router-dom";
 import "./Table.css";
 
 function FormPart5({formD,setFormD}) {
+  function handleChange(event) {
+    const { name, value, type, checked } = event.target
+    setFormD(prevFormData => {
+      return {
+        ...prevFormData,
+        [name]: type === "checkbox" ? checked : value
+      }
+    })
+  }
   return (
     <>
       <h2 style={{ marginTop: "2em", marginBottom: "2em" }}>
