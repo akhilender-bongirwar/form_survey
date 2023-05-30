@@ -13,6 +13,8 @@ const FormPart2 = ({ formD, setFormD }) => {
     });
   }
   const [others, setothers] = useState(null);
+  const [challenges, setchallenges] = useState(null);
+  const [leverage, setleverage] = useState(null);
   return (
     <div
       style={{
@@ -97,21 +99,6 @@ const FormPart2 = ({ formD, setFormD }) => {
                     onChange={handleChange}
                   />
                 </div>
-                <div className="d_flex_align_CONTENT_justify">
-                  <label
-                    htmlFor="raw4"
-                    style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                  >
-                    others(specify)
-                  </label>
-                  <input
-                    type="checkbox"
-                    id="raw4"
-                    name="asdf"
-                    value="others"
-                    onChange={handleChange}
-                  />
-                </div>
               </div>
               <div>
                 <input
@@ -120,6 +107,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                   autoFocus
                   onChange={handleChange}
                   value={formD.Raw_Materials}
+                  placeholder="others(specify)"
                 />
               </div>
               <tr>
@@ -138,6 +126,9 @@ const FormPart2 = ({ formD, setFormD }) => {
                             type="radio"
                             name="if_Raw_Materials_available"
                             id="yes_material"
+                            onClick={() => {
+                              setchallenges("yes");
+                            }}
                             value="YES"
                             onChange={handleChange}
                             checked={formD.if_Raw_Materials_available == "YES"}
@@ -150,6 +141,9 @@ const FormPart2 = ({ formD, setFormD }) => {
                             name="if_Raw_Materials_available"
                             id="no_material"
                             value="NO"
+                            onClick={() => {
+                              setchallenges(null);
+                            }}
                             onChange={handleChange}
                             checked={formD.if_Raw_Materials_available == "NO"}
                           />
@@ -157,26 +151,28 @@ const FormPart2 = ({ formD, setFormD }) => {
                       </div>
                     </td>
                   </tr>
-                  <tr>
-                    <td colSpan={1}>
-                      {/* style={{ whiteSpace: "nowrap" }} */}
-                      If No, please mention difficulties / challenges
-                    </td>
-                    <td colSpan={6}>
-                      <input
-                        type="text"
-                        id="difficulties"
-                        onChange={handleChange}
-                        value={formD.if_no_mention_difficulties}
-                        name="if_no_mention_difficulties"
-                        style={{
-                          width: "100%",
-                          border: "transparent",
-                          borderBottom: "1px solid black",
-                        }}
-                      />
-                    </td>
-                  </tr>
+                  {!challenges ? (
+                    <tr>
+                      <td colSpan={1}>
+                        {/* style={{ whiteSpace: "nowrap" }} */}
+                        If No, please mention difficulties / challenges
+                      </td>
+                      <td colSpan={6}>
+                        <input
+                          type="text"
+                          id="difficulties"
+                          onChange={handleChange}
+                          value={formD.if_no_mention_difficulties}
+                          name="if_no_mention_difficulties"
+                          style={{
+                            width: "100%",
+                            border: "transparent",
+                            borderBottom: "1px solid black",
+                          }}
+                        />
+                      </td>
+                    </tr>
+                  ) : null}
                   <tr>
                     <td colSpan={1}>
                       <span>
@@ -256,67 +252,67 @@ const FormPart2 = ({ formD, setFormD }) => {
                     <td colSpan={6}>
                       <div className="radio_wrapper">
                         <div className="radio_wrapper">
-                          <label htmlFor="local">Trader / Agents </label>
+                          <label htmlFor="locala">Trader / Agents </label>
                           <input
                             type="checkbox"
-                            name="service_industry"
-                            id="local"
-                            value="Local Market"
+                            name="final_product_sold_to"
+                            id="locala"
+                            value="Trader / Agents"
                             onChange={handleChange}
                           />
                         </div>
 
                         <div className="radio_wrapper">
-                          <label htmlFor="Govt">Wholesalers </label>
+                          <label htmlFor="Govtb">Wholesalers </label>
                           <input
                             type="checkbox"
-                            id="Govt"
-                            name="service_industry"
-                            value="Government"
+                            id="Govtb"
+                            name="final_product_sold_to"
+                            value="Wholesalers "
                             onChange={handleChange}
                           />
                         </div>
 
                         <div className="radio_wrapper">
-                          <label htmlFor="online">Retailers</label>
+                          <label htmlFor="onlinec">Retailers</label>
                           <input
                             type="checkbox"
-                            id="online"
-                            name="service_industry"
-                            value="online"
+                            id="onlinec"
+                            name="final_product_sold_to"
+                            value="Retailers"
                             onChange={handleChange}
                           />
                         </div>
 
                         <div className="radio_wrapper">
-                          <label htmlFor="other">
+                          <label htmlFor="otherd">
                             Large Manufacturers/ Anchor units{" "}
                           </label>
                           <input
                             type="checkbox"
-                            id="other"
-                            name="service_industry"
-                            value="Other states"
+                            id="otherd"
+                            name="final_product_sold_to"
+                            value="Large Manufacturers/ Anchor units"
                             onChange={handleChange}
                           />
                         </div>
                         <div className="radio_wrapper">
-                          <label htmlFor="export">Exporters </label>
+                          <label htmlFor="exporte">Exporters </label>
                           <input
                             type="checkbox"
-                            id="export"
-                            name="service_industry"
-                            value="export outside"
+                            id="exporte"
+                            name="final_product_sold_to"
+                            value="Exporters"
                             onChange={handleChange}
                           />
                         </div>
                         <div className="radio_wrapper">
                           <div className="radio_wrapper">
-                            <label htmlFor="local">OEMs </label>
+                            <label htmlFor="localf">OEMs </label>
                             <input
                               type="checkbox"
-                              name="service_industry"
-                              id="local"
+                              name="final_product_sold_to"
+                              id="localf"
                               value="Local Market"
                               onChange={handleChange}
                             />
@@ -324,11 +320,11 @@ const FormPart2 = ({ formD, setFormD }) => {
                         </div>
                         <div className="radio_wrapper">
                           <div className="radio_wrapper">
-                            <label htmlFor="local">End Users </label>
+                            <label htmlFor="localg">End Users </label>
                             <input
                               type="checkbox"
-                              name="service_industry"
-                              id="local"
+                              name="final_product_sold_to"
+                              id="localg"
                               value="Local Market"
                               onChange={handleChange}
                             />
@@ -336,11 +332,11 @@ const FormPart2 = ({ formD, setFormD }) => {
                         </div>
                         <div className="radio_wrapper">
                           <div className="radio_wrapper">
-                            <label htmlFor="local">Others </label>
+                            <label htmlFor="localh">Others </label>
                             <input
                               type="checkbox"
-                              name="service_industry"
-                              id="local"
+                              name="final_product_sold_to"
+                              id="localh"
                               value="Local Market"
                               onChange={handleChange}
                             />
@@ -399,10 +395,11 @@ const FormPart2 = ({ formD, setFormD }) => {
                     <td colSpan={6}>
                       <div className="radio_wrapper">
                         <div>
-                          <label htmlFor="yes_material2">Yes</label>
+                          <label htmlFor="yes_material23">Yes</label>
                           <input
                             type="radio"
-                            id="yes_material2"
+                            id="yes_material23"
+                            onClick={() => setothers("yes")}
                             name="have_product_brand_name"
                             value="YES"
                             onChange={handleChange}
@@ -410,12 +407,13 @@ const FormPart2 = ({ formD, setFormD }) => {
                           />
                         </div>
                         <div>
-                          <label htmlFor="no_material2">No</label>
+                          <label htmlFor="no_material23">No</label>
                           <input
                             type="radio"
                             name="have_product_brand_name"
-                            id="no_material2"
+                            id="no_material23"
                             value="NO"
+                            onClick={() => setothers(null)}
                             onChange={handleChange}
                             checked={formD.have_product_brand_name == "NO"}
                           />
@@ -423,23 +421,25 @@ const FormPart2 = ({ formD, setFormD }) => {
                       </div>
                     </td>
                   </tr>
-                  <tr>
-                    <td colSpan={1}>
-                      <label htmlFor="brand">Brand_name</label>
-                    </td>
-                    <td colSpan={6}>
-                      <input
-                        type="text"
-                        id="brand"
-                        name="Brand_name"
-                        onChange={handleChange}
-                        value={formD.Brand_name}
-                        style={{
-                          borderBottom: "1px solid black",
-                        }}
-                      />
-                    </td>
-                  </tr>
+                  {others ? (
+                    <tr>
+                      <td colSpan={1}>
+                        <label htmlFor="brand">Brand_name</label>
+                      </td>
+                      <td colSpan={6}>
+                        <input
+                          type="text"
+                          id="brand"
+                          name="Brand_name"
+                          onChange={handleChange}
+                          value={formD.Brand_name}
+                          style={{
+                            borderBottom: "1px solid black",
+                          }}
+                        />
+                      </td>
+                    </tr>
+                  ) : null}
                   <tr>
                     <td>
                       <label>
@@ -566,6 +566,9 @@ const FormPart2 = ({ formD, setFormD }) => {
                             name="involved_in_marketing"
                             id="yesx_material2"
                             value="YES"
+                            onClick={() => {
+                              setleverage("yes");
+                            }}
                             onChange={handleChange}
                             checked={formD.involved_in_marketing == "YES"}
                           />
@@ -576,116 +579,121 @@ const FormPart2 = ({ formD, setFormD }) => {
                             type="radio"
                             name="involved_in_marketing"
                             id="nox_material2"
+                            onClick={() => {
+                              setleverage(null);
+                            }}
                             value="NO"
                             onChange={handleChange}
                             checked={formD.involved_in_marketing == "NO"}
                           />
                         </div>
                       </div>
-                      <div>
-                        <td
-                          colSpan={6}
-                          style={{
-                            width: "100%",
-                            display: "flex",
-                            flexDirection: "column",
-                          }}
-                          className="input_label_gapper"
-                        >
-                          <div>
-                            <label
-                              htmlFor="exhibition"
-                              style={{ padding: "0.5em" }}
-                            >
-                              Exhibitions
-                            </label>
-                            <input
-                              type="checkbox"
-                              id="exhibition"
-                              name="options_you_leverage_for_sale"
-                              value="exhibitions"
-                              onChange={handleChange}
-                            />
-                          </div>
-                          <div>
-                            <label
-                              htmlFor="portal"
-                              style={{ padding: "0.5em" }}
-                            >
-                              Portals
-                            </label>
-                            <input
-                              type="checkbox"
-                              id="portal"
-                              name="options_you_leverage_for_sale"
-                              value="portals"
-                              onChange={handleChange}
-                            />
-                          </div>
-                          <div>
-                            <label
-                              htmlFor="website"
-                              style={{ padding: "0.5em" }}
-                            >
-                              Websites{" "}
-                            </label>
-                            <input
-                              type="checkbox"
-                              id="website"
-                              name="options_you_leverage_for_sale"
-                              value="websites"
-                              onChange={handleChange}
-                            />
-                          </div>
-                          <div>
-                            <label
-                              htmlFor="socMedia"
-                              style={{ padding: "0.5em" }}
-                            >
-                              Social Media
-                            </label>
+                      {leverage ? (
+                        <div>
+                          <td
+                            colSpan={6}
+                            style={{
+                              width: "100%",
+                              display: "flex",
+                              flexDirection: "column",
+                            }}
+                            className="input_label_gapper"
+                          >
+                            <div>
+                              <label
+                                htmlFor="exhibition"
+                                style={{ padding: "0.5em" }}
+                              >
+                                Exhibitions
+                              </label>
+                              <input
+                                type="checkbox"
+                                id="exhibition"
+                                name="options_you_leverage_for_sale"
+                                value="exhibitions"
+                                onChange={handleChange}
+                              />
+                            </div>
+                            <div>
+                              <label
+                                htmlFor="portal"
+                                style={{ padding: "0.5em" }}
+                              >
+                                Portals
+                              </label>
+                              <input
+                                type="checkbox"
+                                id="portal"
+                                name="options_you_leverage_for_sale"
+                                value="portals"
+                                onChange={handleChange}
+                              />
+                            </div>
+                            <div>
+                              <label
+                                htmlFor="website"
+                                style={{ padding: "0.5em" }}
+                              >
+                                Websites{" "}
+                              </label>
+                              <input
+                                type="checkbox"
+                                id="website"
+                                name="options_you_leverage_for_sale"
+                                value="websites"
+                                onChange={handleChange}
+                              />
+                            </div>
+                            <div>
+                              <label
+                                htmlFor="socMedia"
+                                style={{ padding: "0.5em" }}
+                              >
+                                Social Media
+                              </label>
 
-                            <input
-                              type="checkbox"
-                              id="socMedia"
-                              name="options_you_leverage_for_sale"
-                              value="social media"
-                              onChange={handleChange}
-                            />
-                          </div>
-                          <div>
-                            <label
-                              htmlFor="marketFacility"
-                              style={{ padding: "0.5em" }}
-                            >
-                              Common marketing facility
-                            </label>
-                            <input
-                              type="checkbox"
-                              id="marketFacility"
-                              name="options_you_leverage_for_sale"
-                              value="Common marketing facility"
-                              onChange={handleChange}
-                            />
-                          </div>
-                          <div>
-                            <label htmlFor="other">Other (specify)</label>
+                              <input
+                                type="checkbox"
+                                id="socMedia"
+                                name="options_you_leverage_for_sale"
+                                value="social media"
+                                onChange={handleChange}
+                              />
+                            </div>
+                            <div>
+                              <label
+                                htmlFor="marketFacility"
+                                style={{ padding: "0.5em" }}
+                              >
+                                Common marketing facility
+                              </label>
+                              <input
+                                type="checkbox"
+                                id="marketFacility"
+                                name="options_you_leverage_for_sale"
+                                value="Common marketing facility"
+                                onChange={handleChange}
+                              />
+                            </div>
+                            <div>
+                              <label htmlFor="other">Other (specify)</label>
 
-                            <input
-                              type="text"
-                              id="other"
-                              name="challenges_while_selling"
-                              onChange={handleChange}
-                              value={formD.challenges_while_selling}
-                              style={{
-                                width: "100%",
-                                border: "transparent",
-                                borderBottom: "1px solid black",
-                              }}
-                            />
-                          </div>
-                        </td>
-                      </div>
+                              <input
+                                type="text"
+                                id="other"
+                                name="challenges_while_selling"
+                                onChange={handleChange}
+                                value={formD.challenges_while_selling}
+                                style={{
+                                  width: "100%",
+                                  border: "transparent",
+                                  borderBottom: "1px solid black",
+                                }}
+                              />
+                            </div>
+                          </td>
+                        </div>
+                      ) : null}
                     </td>
                   </tr>
                   <tr>
@@ -700,7 +708,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                           <input
                             type="radio"
                             name="Quality_Testing_lab_available"
-                            id="yes_material2"
+                            id="yes_material7"
                             value="YES"
                             onChange={handleChange}
                             checked={
@@ -713,7 +721,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                           <input
                             type="radio"
                             name="Quality_Testing_lab_available"
-                            id="no_material2"
+                            id="no_material7"
                             value="NO"
                             onChange={handleChange}
                             checked={
@@ -736,22 +744,22 @@ const FormPart2 = ({ formD, setFormD }) => {
                     <td colSpan={6}>
                       <div className="radio_wrapper">
                         <div>
-                          <label htmlFor="yes_material7">Yes</label>
+                          <label htmlFor="yes_material120">Yes</label>
                           <input
                             type="radio"
                             name="labour_and_training"
-                            id="yes_material2"
+                            id="yes_material120"
                             value="YES"
                             onChange={handleChange}
                             checked={formD.labour_and_training == "YES"}
                           />
                         </div>
                         <div>
-                          <label htmlFor="no_material7">No</label>
+                          <label htmlFor="no_material120">No</label>
                           <input
                             type="radio"
                             name="labour_and_training"
-                            id="no_material2"
+                            id="no_material120"
                             value="NO"
                             onChange={handleChange}
                             checked={formD.labour_and_training == "NO"}
@@ -768,22 +776,22 @@ const FormPart2 = ({ formD, setFormD }) => {
                     <td colSpan={6}>
                       <div className="radio_wrapper">
                         <div>
-                          <label htmlFor="yes_material10">Yes</label>
+                          <label htmlFor="yes_material90">Yes</label>
                           <input
                             type="radio"
                             name="skilled_labour_is_required"
-                            id="yes_material0"
+                            id="yes_material90"
                             value="YES"
                             onChange={handleChange}
                             checked={formD.skilled_labour_is_required == "YES"}
                           />
                         </div>
                         <div>
-                          <label htmlFor="no_material10">No</label>
+                          <label htmlFor="no_material90">No</label>
                           <input
                             type="radio"
                             name="skilled_labour_is_required"
-                            id="no_material0"
+                            id="no_material90"
                             value="NO"
                             onChange={handleChange}
                             checked={formD.skilled_labour_is_required == "NO"}
@@ -794,6 +802,56 @@ const FormPart2 = ({ formD, setFormD }) => {
                   </tr>
                 </div>
               </tr>
+            </td>
+          </tr>
+        </table>
+        <table
+          style={{
+            width: "100%",
+            overflowWrap: "break-word",
+            backgroundColor: "rgb(240 235 248 / 77%)",
+          }}
+          className="grevience_redressal"
+        >
+          <thead>
+            <th colSpan={6}>{" For Service Industry"}</th>
+          </thead>
+          <tr>
+            <td colSpan={1} style={{ textAlign: "center" }}>
+              Nature of Services Offered
+            </td>
+            <td colSpan={6}>
+              <input type="text" />
+              <input type="text" />
+              <input type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td colSpan={1} style={{ textAlign: "center" }}>
+              Challenges Faced
+            </td>
+            <td colSpan={6}>
+              {" "}
+              <input type="text" />
+              <input type="text" />
+              <input type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td colSpan={1} style={{ textAlign: "center" }}>
+              In case you are availing support Govt. agencies / schemes what are
+              the challenges faced with scheme
+            </td>
+            <td colSpan={6}>
+              <input type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td colSpan={1} style={{ textAlign: "center" }}>
+              Support required
+            </td>
+            <td colSpan={6}>
+              <input type="text" />
             </td>
           </tr>
         </table>
