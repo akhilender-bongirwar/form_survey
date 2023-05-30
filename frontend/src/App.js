@@ -103,28 +103,81 @@ function App() {
     skilled_labour_is_required: "",
     Nature_of_Services_Offered: "",
     Challenges_faced: "",
-
     Govt_Scheme_Challenges: "",
     Support_required: "",
+    //added
+    policy_program_1:"",
+    policy_program_2:"",
+    //
     aware_of_govt_policy: "",
     Policy_benifitted: "",
     Benifits_of_policy: "",
     Challenges_faced_policy_related: "",
-    expectation_from_govt: "",
+    //added
+    expectation_from_govt_1: "",
+    expectation_from_govt_2: "",
+    //
+    //added
     Aware_of_listed_scehmes: {
-      Central_Govt: "",
-      State_Govt: "",
+      Central_Govt: {
+        ZED:false,        
+        MSME_Champions:false,        
+        Samadhan:false,        
+        CGTMSE:false,        
+        IPR_scheme:false,        
+        Digital_Scheme:false,        
+        Design_scheme:false,        
+        TREDs:false,        
+        LEAN:false,        
+      },
+      State_Govt: {
+        ODOP:false,        
+        UP_MSME_Promotion_Policy:false,        
+        Technical_upgradation:false,        
+        UP_Chief_Minister_Youth_Self_Employment_Scheme:false, 
+        UP_Startup_Policy_2020:false,        
+        Others:false, 
+      },
     },
     Remarks: "",
+    //added
     Scheme_Like_to_avail: {
-      Central_Govt: "",
-      State_Govt: "",
+      Central_Govt: {
+        ZED:false,        
+        MSME_Champions:false,        
+        Samadhan:false,        
+        CGTMSE:false,        
+        IPR_scheme:false,        
+        Digital_Scheme:false,        
+        Design_scheme:false,        
+        TREDs:false,        
+        LEAN:false,        
+      },
+      State_Govt: {
+        ODOP:false,        
+        UP_MSME_Promotion_Policy:false,        
+        Technical_upgradation:false,        
+        UP_Chief_Minister_Youth_Self_Employment_Scheme:false, 
+        UP_Startup_Policy_2020:false,        
+        Others:false, 
+      },
     },
     scheme_availed_by_you_central_govt: "",
     scheme_availed_by_you_state_govt:"",
-    Key_Reason_Preventing_loan: "",
+    Key_Reason_Preventing_loan: {
+      Lack_of_awareness_of_bank_processes_requirements:false,
+      High_Interest_Rate:false,
+      Longer_Processing_time:false,
+      Improper_documentation:false,
+      No_nearby_bank_branches:false,
+      other:"",
+    },
     source_of_credit_form: "",
-    applied_loan_outcome: "",
+    //added
+    applied_loan_outcome: {
+      radio_button:"",
+      other:"7"
+    },
     reason_of_rejection: "",
     availed_samadhaan_service: "",
     face_challenge_from_buyer: "",
