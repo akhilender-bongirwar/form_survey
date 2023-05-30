@@ -46,6 +46,7 @@ function FormPart5({formD,setFormD}) {
                   id="valid"
                   value="YES"
                   onChange={handleChange}
+                  checked={formD.availed_samadhaan_service=="YES"}
                   style={{ margin: "0.5%" }}
                 />
               </div>
@@ -59,6 +60,7 @@ function FormPart5({formD,setFormD}) {
                   value="NO"
                   id="invalid"
                   onChange={handleChange}
+                  checked={formD.availed_samadhaan_service=="NO"}
                   style={{ margin: "0.5%" }}
                 />
               </div>

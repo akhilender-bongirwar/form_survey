@@ -42,7 +42,7 @@ function FormPart4({formD,setFormD}) {
                             </div>
                             <div style={{ display: "flex", flexWrap: "wrap" }}>
                                 <label htmlFor='reason6' style={{ padding: "0.5em" }} >f.{"  "} Others, Please specify ... </label>
-                                <input type="text" id="reason6" name="Key_Reason_Preventing_loan" value={formD.Key_Reason_Preventing_loan} onChange={handleChange}/>
+                                <input type="text" id="reason6" name="Key_Reason_Preventing_loan" value={formD.Key_Reason_Preventing_loan} onChange={handleChange} />
                             </div>
                         </td>
                     </tr>
@@ -64,27 +64,27 @@ function FormPart4({formD,setFormD}) {
                         <td colSpan={5} style={{ width: "100%", display: "flex", flexDirection: "column" }} className='input_label_gapper' >
                             <div>
                                 <label htmlFor='outcome1' style={{ padding: "0.5em" }} >a.{"  "}Applied but the application got rejected </label>
-                                <input type="radio" id="outcome1" name="applied_loan_outcome" value="Applied but the application got rejected" onChange={handleChange} />
+                                <input type="radio" id="outcome1" name="applied_loan_outcome" value="Applied but the application got rejected" onChange={handleChange} checked={formD.applied_loan_outcome=="Applied but the application got rejected"} />
                             </div>
                             <div>
                                 <label htmlFor='outcome2' style={{ padding: "0.5em" }} >b.{"  "}Applied and got the loan amount in full </label>
-                                <input type="radio" id="outcome2" name="applied_loan_outcome" value="Applied and got the loan amount in full" onChange={handleChange} />
+                                <input type="radio" id="outcome2" name="applied_loan_outcome" value="Applied and got the loan amount in full" onChange={handleChange} checked={formD.applied_loan_outcome=="Applied and got the loan amount in full"} />
                             </div>
                             <div>
                                 <label htmlFor='outcome3' style={{ padding: "0.5em" }} >c.{"  "}Applied but only got partial loan amount </label>
-                                <input type="radio" id="outcome3" name="applied_loan_outcome" value="Applied but only got partial loan amount " onChange={handleChange}/>
+                                <input type="radio" id="outcome3" name="applied_loan_outcome" value="Applied but only got partial loan amount" onChange={handleChange} checked={formD.applied_loan_outcome=="Applied but only got partial loan amount"} />
                             </div>
                             <div>
                                 <label htmlFor='outcome4' style={{ padding: "0.5em" }} >d.{"  "}Applied but refused as interest rate offered was high </label>
-                                <input type="radio" id="outcome4" name="applied_loan_outcome" value="Applied but refused as interest rate offered was high " onChange={handleChange}/>
+                                <input type="radio" id="outcome4" name="applied_loan_outcome" value="Applied but refused as interest rate offered was high" onChange={handleChange} checked={formD.applied_loan_outcome=="Applied but refused as interest rate offered was high"} />
                             </div>
                             <div>
                                 <label htmlFor='outcome5' style={{ padding: "0.5em" }} >e.{"  "} Loan approved after a significant delay  </label>
-                                <input type="radio" id="outcome5" name="applied_loan_outcome" value="Loan approved after a significant delay  " onChange={handleChange}/>
+                                <input type="radio" id="outcome5" name="applied_loan_outcome" value="Loan approved after a significant delay" onChange={handleChange} checked={formD.applied_loan_outcome=="Loan approved after a significant delay"} />
                             </div>
                             <div style={{ display: "flex", flexWrap: "wrap" }}>
                                 <label htmlFor='outcome6' style={{ padding: "0.5em" }} >f.{"  "} Others, Please specify ... </label>
-                                <input type="text" id="outcome6" name="applied_loan_outcome" onChange={handleChange}/>
+                                <input type="text" id="outcome6" name="applied_loan_outcome" onChange={handleChange} value={formD.applied_loan_outcome} />
                             </div>
                         </td>
                     </tr>
@@ -95,7 +95,7 @@ function FormPart4({formD,setFormD}) {
                             </label>
                         </td>
                         <td className='form4_styling'>
-                            <input type='text' id='fourthQuestion' name='reason_of_rejection' onChange={handleChange}/>
+                            <input type='text' id='fourthQuestion' name='reason_of_rejection' onChange={handleChange} value={formD.reason_of_rejection}/>
                         </td>
                     </tr>
                 </thead>

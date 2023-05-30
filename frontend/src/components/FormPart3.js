@@ -38,6 +38,7 @@ function FormPart3({formD,setFormD}) {
                     id="YES"
                     value="YES"
                     onChange={handleChange}
+                    checked={formD.aware_of_govt_policy=="YES"}
                   />
                 </div>
                 <div>
@@ -48,6 +49,7 @@ function FormPart3({formD,setFormD}) {
                     id="NO"
                     value="NO"
                     onChange={handleChange}
+                    checked={formD.aware_of_govt_policy=="NO"}
                   />
                 </div>
               </div>
@@ -99,6 +101,7 @@ function FormPart3({formD,setFormD}) {
                     name="Policy_benifitted"
                     id="benefits"
                     onChange={handleChange}
+                    value={formD.Policy_benifitted}
                     style={{ width: "90%", border: "transparent" }}
                   />
                 </td>
@@ -111,6 +114,7 @@ function FormPart3({formD,setFormD}) {
                     name="Challenges_faced_policy_related"
                     id="challenges"
                     onChange={handleChange}
+                    value={formD.Challenges_faced_policy_related}
                     style={{ width: "90%", border: "transparent" }}
                   />
                 </td>
@@ -429,6 +433,7 @@ function FormPart3({formD,setFormD}) {
                 id="remark"
                 name="Remarks"
                 onChange={handleChange}
+                value={formD.Remarks}
                 style={{ width: "50%", border: "transparent" }}
               />
             </td>
@@ -712,6 +717,7 @@ function FormPart3({formD,setFormD}) {
                   name="scheme_availed_by_you_central_govt"
                   placeholder="central govt."
                   onChange={handleChange}
+                  value={formD.scheme_availed_by_you_central_govt}
                   style={{ border: "transparent" }}
                 />
                 <input
@@ -720,6 +726,7 @@ function FormPart3({formD,setFormD}) {
                   placeholder="state govt."
                   name="scheme_availed_by_you_state_govt"
                   onChange={handleChange}
+                  value={formD.scheme_availed_by_you_state_govt}
                   style={{ border: "transparent" }}
                 />
               </div>

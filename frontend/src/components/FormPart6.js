@@ -37,7 +37,7 @@ function FormPart6({formD,setFormD}) {
                       type="text"
                       id="certificate1"
                       name="Currently_owned_1"
-
+                      value={formD.Currently_owned_1}
                       style={{ border: "transparent" }}
                       placeholder="Currently owned"
                       onChange={handleChange}
@@ -48,6 +48,7 @@ function FormPart6({formD,setFormD}) {
                       type="text"
                       id="certificate2"
                       name="To_be_Required_1"
+                      value={formD.To_be_Required_1}
                       style={{ border: "transparent" }}
                       placeholder="To be required"
                       onChange={handleChange}
@@ -61,6 +62,7 @@ function FormPart6({formD,setFormD}) {
                       type="text"
                       id="infra1"
                       name="Currently_owned_2"
+                      value={formD.Currently_owned_2}
                       style={{ border: "transparent" }}
                       placeholder="Currently owned"
                       onChange={handleChange}
@@ -71,6 +73,7 @@ function FormPart6({formD,setFormD}) {
                       type="text"
                       id="infra2"
                       name="To_be_Required_2"
+                      value={formD.To_be_Required_2}
                       style={{ border: "transparent" }}
                       placeholder="To be required"
                       onChange={handleChange}
@@ -84,6 +87,7 @@ function FormPart6({formD,setFormD}) {
                       type="text"
                       id="lab1"
                       name="Currently_owned_3"
+                      value={formD.Currently_owned_3}
                       style={{ border: "transparent" }}
                       placeholder="Currently owned"
                       onChange={handleChange}
@@ -94,6 +98,7 @@ function FormPart6({formD,setFormD}) {
                       type="text"
                       id="lab2"
                       name="To_be_Required_3"
+                      value={formD.To_be_Required_3}
                       style={{ border: "transparent" }}
                       placeholder="To be required"
                       onChange={handleChange}
@@ -114,6 +119,7 @@ function FormPart6({formD,setFormD}) {
               type="text"
               id="question"
               name="face_challenge_from_buyer"
+              value={formD.face_challenge_from_buyer}
               placeholder=". . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
               onChange={handleChange}
               style={{ width: "60%", border: "transparent" }}
@@ -131,6 +137,7 @@ function FormPart6({formD,setFormD}) {
               type="text"
               id="question"
               name="Certification_required"
+              value={formD.Certification_required}
               placeholder=". . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
               onChange={handleChange}
               style={{ width: "60%", border: "transparent" }}
@@ -149,6 +156,7 @@ function FormPart6({formD,setFormD}) {
               type="text"
               id="question"
               name="laboratory_requirement"
+              value={formD.laboratory_requirement}
               placeholder=". . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
               onChange={handleChange}
               style={{ width: "60%", border: "transparent" }}
@@ -184,6 +192,7 @@ function FormPart6({formD,setFormD}) {
                       type="text"
                       id="counselling"
                       name="Counselling"
+                      value={formD.Counselling}
                       onChange={handleChange}
                       style={{ border: "transparent" }}
                     />
@@ -196,6 +205,7 @@ function FormPart6({formD,setFormD}) {
                       type="text"
                       id="upgrade"
                       name="Upgradation_of_IT_Infrastructure"
+                      value={formD.Upgradation_of_IT_Infrastructure}
                       onChange={handleChange}
                       style={{ border: "transparent" }}
                     />
@@ -208,6 +218,7 @@ function FormPart6({formD,setFormD}) {
                       type="text"
                       id="training"
                       name="Participation_in_Training"
+                      value={formD.Participation_in_Training}
                       onChange={handleChange}
                       style={{ border: "transparent" }}
                     />
@@ -220,6 +231,7 @@ function FormPart6({formD,setFormD}) {
                       type="text"
                       id="development"
                       name="Institution_Development"
+                      value={formD.Institution_Development}
                       onChange={handleChange}
                       style={{ border: "transparent" }}
                     />
@@ -232,6 +244,7 @@ function FormPart6({formD,setFormD}) {
                       type="text"
                       id="new_software"
                       name="Implementation_of_new_software"
+                      value={formD.Implementation_of_new_software}
                       onChange={handleChange}
                       style={{ border: "transparent" }}
                     />
@@ -248,6 +261,7 @@ function FormPart6({formD,setFormD}) {
                       type="text"
                       id="tools"
                       name="Training_Process_Improvement"
+                      value={formD.Training_Process_Improvement}
                       onChange={handleChange}
                       style={{ border: "transparent" }}
                     />
@@ -260,6 +274,7 @@ function FormPart6({formD,setFormD}) {
                       type="text"
                       id="promotion"
                       name="Market_Promotion_Initiatives"
+                      value={formD.Market_Promotion_Initiatives}
                       onChange={handleChange}
                       style={{ border: "transparent" }}
                     />
@@ -272,6 +287,7 @@ function FormPart6({formD,setFormD}) {
                       type="text"
                       id="design"
                       name="Design_and_product_development"
+                      value={formD.Design_and_product_development}
                       onChange={handleChange}
                       style={{ border: "transparent" }}
                     />
@@ -284,6 +300,7 @@ function FormPart6({formD,setFormD}) {
                       type="text"
                       id="campaign"
                       name="Promotion_Campaign"
+                      value={formD.Promotion_Campaign}
                       onChange={handleChange}
                       style={{ border: "transparent" }}
                     />
