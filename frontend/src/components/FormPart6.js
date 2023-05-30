@@ -38,6 +38,7 @@ function FormPart6() {
                       name="Currently_owned_1"
                       style={{ border: "transparent" }}
                       placeholder="Currently owned"
+                      onChange={handleChange}
                     />
                   </td>
                   <td>
@@ -47,6 +48,7 @@ function FormPart6() {
                       name="To_be_Required_1"
                       style={{ border: "transparent" }}
                       placeholder="To be required"
+                      onChange={handleChange}
                     />
                   </td>
                 </tr>
@@ -59,6 +61,7 @@ function FormPart6() {
                       name="Currently_owned_2"
                       style={{ border: "transparent" }}
                       placeholder="Currently owned"
+                      onChange={handleChange}
                     />
                   </td>
                   <td>
@@ -68,6 +71,7 @@ function FormPart6() {
                       name="To_be_Required_2"
                       style={{ border: "transparent" }}
                       placeholder="To be required"
+                      onChange={handleChange}
                     />
                   </td>
                 </tr>
@@ -80,6 +84,7 @@ function FormPart6() {
                       name="Currently_owned_3"
                       style={{ border: "transparent" }}
                       placeholder="Currently owned"
+                      onChange={handleChange}
                     />
                   </td>
                   <td>
@@ -89,6 +94,7 @@ function FormPart6() {
                       name="To_be_Required_3"
                       style={{ border: "transparent" }}
                       placeholder="To be required"
+                      onChange={handleChange}
                     />
                   </td>
                 </tr>
@@ -107,6 +113,7 @@ function FormPart6() {
               id="question"
               name="face_challenge_from_buyer"
               placeholder=". . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+              onChange={handleChange}
               style={{ width: "60%", border: "transparent" }}
             />
           </div>
@@ -123,6 +130,7 @@ function FormPart6() {
               id="question"
               name="Certification_required"
               placeholder=". . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+              onChange={handleChange}
               style={{ width: "60%", border: "transparent" }}
             />
           </div>
@@ -140,6 +148,7 @@ function FormPart6() {
               id="question"
               name="laboratory_requirement"
               placeholder=". . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+              onChange={handleChange}
               style={{ width: "60%", border: "transparent" }}
             />
           </div>
@@ -173,6 +182,7 @@ function FormPart6() {
                       type="text"
                       id="counselling"
                       name="Counselling"
+                      onChange={handleChange}
                       style={{ border: "transparent" }}
                     />
                   </td>
@@ -184,6 +194,7 @@ function FormPart6() {
                       type="text"
                       id="upgrade"
                       name="Upgradation_of_IT_Infrastructure"
+                      onChange={handleChange}
                       style={{ border: "transparent" }}
                     />
                   </td>
@@ -195,6 +206,7 @@ function FormPart6() {
                       type="text"
                       id="training"
                       name="Participation_in_Training"
+                      onChange={handleChange}
                       style={{ border: "transparent" }}
                     />
                   </td>
@@ -206,6 +218,7 @@ function FormPart6() {
                       type="text"
                       id="development"
                       name="Institution_Development"
+                      onChange={handleChange}
                       style={{ border: "transparent" }}
                     />
                   </td>
@@ -217,6 +230,7 @@ function FormPart6() {
                       type="text"
                       id="new_software"
                       name="Implementation_of_new_software"
+                      onChange={handleChange}
                       style={{ border: "transparent" }}
                     />
                   </td>
@@ -232,6 +246,7 @@ function FormPart6() {
                       type="text"
                       id="tools"
                       name="Training_Process_Improvement"
+                      onChange={handleChange}
                       style={{ border: "transparent" }}
                     />
                   </td>
@@ -243,6 +258,7 @@ function FormPart6() {
                       type="text"
                       id="promotion"
                       name="Market_Promotion_Initiatives"
+                      onChange={handleChange}
                       style={{ border: "transparent" }}
                     />
                   </td>
@@ -254,6 +270,7 @@ function FormPart6() {
                       type="text"
                       id="design"
                       name="Design_and_product_development"
+                      onChange={handleChange}
                       style={{ border: "transparent" }}
                     />
                   </td>
@@ -265,6 +282,7 @@ function FormPart6() {
                       type="text"
                       id="campaign"
                       name="Promotion_Campaign"
+                      onChange={handleChange}
                       style={{ border: "transparent" }}
                     />
                   </td>

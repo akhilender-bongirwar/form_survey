@@ -230,6 +230,7 @@ function Table() {
                       type="text"
                       id="Enterprise_Name"
                       name="Enterprise_Name"
+                      onChange={handleChange}
                     />
                   </td>
                 </tr>
@@ -244,6 +245,7 @@ function Table() {
                       type="text"
                       id="Entrepreneur_Name"
                       name="Entrepreneur_Name"
+                      onChange={handleChange}
                     />
                   </td>
                 </tr>
@@ -255,11 +257,11 @@ function Table() {
                     <div className="radio_wrapper">
                       <div>
                         <label htmlFor="M">M</label>
-                        <input type="radio" name="Sex" id="M" value="male" />
+                        <input type="radio" name="Sex" id="M" value="male" onChange={handleChange} />
                       </div>
                       <div>
                         <label htmlFor="F">F</label>
-                        <input type="radio" name="Sex" id="F" value="female" />
+                        <input type="radio" name="Sex" id="F" value="female" onChange={handleChange}/>
                       </div>
                     </div>
                   </td>
@@ -277,6 +279,7 @@ function Table() {
                           name="Category"
                           id="SC"
                           value="SC"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -286,6 +289,7 @@ function Table() {
                           name="Category"
                           id="ST"
                           value="ST"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -295,6 +299,7 @@ function Table() {
                           name="Category"
                           id="OBC"
                           value="OBC"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -304,6 +309,7 @@ function Table() {
                           name="Category"
                           id="Minority"
                           value="Minority"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -313,6 +319,7 @@ function Table() {
                           name="Category"
                           id="General"
                           value="General"
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -323,7 +330,7 @@ function Table() {
                     <label htmlFor="Address">{"Address:"}</label>
                   </td>
                   <td colSpan={6}>
-                    <input type="text" id="Address" name="Address" />
+                    <input type="text" id="Address" name="Address" onChange={handleChange} />
                   </td>
                 </tr>
                 <tr>
@@ -331,7 +338,7 @@ function Table() {
                     <label htmlFor="Website">{"Website:"}</label>
                   </td>
                   <td colSpan={6}>
-                    <input type="text" id="Website" name="Website" />
+                    <input type="text" id="Website" name="Website" onChange={handleChange} />
                   </td>
                 </tr>
                 <tr>
@@ -347,6 +354,7 @@ function Table() {
                           name="Firm_Registered"
                           id="Firm_Registeredyes"
                           value="YES"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -356,6 +364,7 @@ function Table() {
                           name="Firm_Registered"
                           id="Firm_Registeredno"
                           value="NO"
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -377,6 +386,7 @@ function Table() {
                           name="Udyam_Registration"
                           id="Udyam_Registrationyes"
                           value="YES"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -386,6 +396,7 @@ function Table() {
                           name="Udyam_Registration"
                           id="Udyam_Registrationno"
                           value="NO"
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -400,6 +411,7 @@ function Table() {
                       type="text"
                       id="UAM_UEM_Number"
                       name="UAM_UEM_Number"
+                      onChange={handleChange}
                     />
                   </td>
                 </tr>
@@ -414,6 +426,7 @@ function Table() {
                       type="text"
                       id="Year_of_Establishment"
                       name="Year_of_Establishment"
+                      onChange={handleChange}
                     />
                   </td>
                 </tr>
@@ -430,6 +443,7 @@ function Table() {
                           name="Type_of_Business"
                           id="manufacturing"
                           value="manufacturing"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -439,6 +453,7 @@ function Table() {
                           name="Type_of_Business"
                           id="service"
                           value="service"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -448,6 +463,7 @@ function Table() {
                           name="Type_of_Business"
                           id="trading"
                           value="trading"
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -467,6 +483,7 @@ function Table() {
                           name="Operations_seasonal"
                           id="Operations_seasonalyes"
                           value="YES"
+                          onChange={handleChange}
                         />
                       </div>
                       {a1 != "show1" ? (
@@ -488,6 +505,7 @@ function Table() {
                             type="number"
                             id="months_of_operation"
                             name="months_of_operation"
+                            onChange={handleChange}
                           />
                         </tr>
                       )}
@@ -499,6 +517,7 @@ function Table() {
                           name="Operations_seasonal"
                           id="Operations_seasonalno"
                           value="NO"
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -518,6 +537,7 @@ function Table() {
                           onClick={() => setA2(null)}
                           id="proprietary"
                           value="proprietary"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -528,6 +548,7 @@ function Table() {
                           name="Ownership_Pattern"
                           id="partnership"
                           value="partnership"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -538,6 +559,7 @@ function Table() {
                           name="Ownership_Pattern"
                           id="private"
                           value="private"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -548,6 +570,7 @@ function Table() {
                           name="Ownership_Pattern"
                           id="LLP"
                           value="LLP"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -558,6 +581,7 @@ function Table() {
                           name="Ownership_Pattern"
                           id="PUBLIC"
                           value="PUBLIC"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -568,6 +592,7 @@ function Table() {
                           name="Ownership_Pattern"
                           id="NO LEGAL ENTITY"
                           value="NO LEGAL ENTITY"
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -587,6 +612,7 @@ function Table() {
                           type="number"
                           id="ownership_female_partnership"
                           name="ownership_female_partnership"
+                          onChange={handleChange}
                         />
                       </tr>
                     )}
@@ -606,6 +632,7 @@ function Table() {
                           name="Cluster"
                           id="Clusteryes"
                           value="YES"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -616,6 +643,7 @@ function Table() {
                           name="Cluster"
                           id="Clusterno"
                           value="NO"
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -633,6 +661,7 @@ function Table() {
                           type="text"
                           id="Cluster_Yes"
                           name="Cluster_Yes"
+                          onChange={handleChange}
                         />
                       </tr>
                     ) : (
@@ -652,6 +681,7 @@ function Table() {
                           type="text"
                           id="Cluster_No"
                           name="Cluster_No"
+                          onChange={handleChange}
                         />
                       </tr>
                     ) : (
@@ -676,6 +706,7 @@ function Table() {
                           name="use_computer"
                           id="use_computeryes"
                           value="YES"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -685,6 +716,7 @@ function Table() {
                           name="use_computer"
                           id="use_computerno"
                           value="NO"
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -710,6 +742,7 @@ function Table() {
                         type="text"
                         id="TOP_THREE_PRODUCTS-1"
                         name="TOP_THREE_PRODUCTS"
+                        onChange={handleChange}
                       />
                     </div>
                     <div>
@@ -719,6 +752,7 @@ function Table() {
                         type="text"
                         id="TOP_THREE_PRODUCTS-2"
                         name="TOP_THREE_PRODUCTS"
+                        onChange={handleChange}
                       />
                     </div>
                     <div>
@@ -728,6 +762,7 @@ function Table() {
                         type="text"
                         id="TOP_THREE_PRODUCTS-3"
                         name="TOP_THREE_PRODUCTS"
+                        onChange={handleChange}
                       />
                     </div>
                   </td>
@@ -749,6 +784,7 @@ function Table() {
                           name="sell_produce_majorly"
                           id="local"
                           value="Local Market"
+                          onChange={handleChange}
                         />
                       </div>
 
@@ -759,6 +795,7 @@ function Table() {
                           id="Govt"
                           name="sell_produce_majorly"
                           value="Government"
+                          onChange={handleChange}
                         />
                       </div>
 
@@ -769,6 +806,7 @@ function Table() {
                           id="online"
                           name="sell_produce_majorly"
                           value="online"
+                          onChange={handleChange}
                         />
                       </div>
 
@@ -779,6 +817,7 @@ function Table() {
                           id="other"
                           name="sell_produce_majorly"
                           value="Other states"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -788,6 +827,7 @@ function Table() {
                           id="export"
                           name="sell_produce_majorly"
                           value="export outside"
+                          onChange={handleChange}
                         />
                       </div>
                       <div
@@ -805,6 +845,7 @@ function Table() {
                           type="text"
                           id="others"
                           name="sell_produce_majorly"
+                          onChange={handleChange}
                           style={{ width: "85%" }}
                         />
                       </div>
@@ -827,6 +868,7 @@ function Table() {
                           name="service_industry"
                           id="local"
                           value="Local Market"
+                          onChange={handleChange}
                         />
                       </div>
 
@@ -837,6 +879,7 @@ function Table() {
                           id="Govt"
                           name="service_industry"
                           value="Government"
+                          onChange={handleChange}
                         />
                       </div>
 
@@ -847,6 +890,7 @@ function Table() {
                           id="online"
                           name="service_industry"
                           value="online"
+                          onChange={handleChange}
                         />
                       </div>
 
@@ -857,6 +901,7 @@ function Table() {
                           id="other"
                           name="service_industry"
                           value="Other states"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -866,6 +911,7 @@ function Table() {
                           id="export"
                           name="service_industry"
                           value="export outside"
+                          onChange={handleChange}
                         />
                       </div>
                       <div
@@ -883,6 +929,7 @@ function Table() {
                           type="text"
                           id="others"
                           name="service_industry"
+                          onChange={handleChange}
                           style={{ width: "85%" }}
                         />
                       </div>
@@ -909,6 +956,7 @@ function Table() {
                         type="text"
                         id="full_time_Emoployee-1"
                         name="full_time_Emoployee"
+                        onChange={handleChange}
                       />
                     </div>
                     <div>
@@ -918,6 +966,7 @@ function Table() {
                         type="text"
                         id="part_time_Emoployee-2"
                         name="part_time_Emoployee"
+                        onChange={handleChange}
                       />
                     </div>
                   </td>
@@ -937,6 +986,7 @@ function Table() {
                         type="text"
                         id="Permanent_Emoployee-1"
                         name="Permanent_Emoployee"
+                        onChange={handleChange}
                       />
                     </div>
                     <div>
@@ -948,6 +998,7 @@ function Table() {
                         type="text"
                         id="Contractual_Emoployee-2"
                         name="Contractual_Emoployee"
+                        onChange={handleChange}
                       />
                     </div>
                   </td>
@@ -967,6 +1018,7 @@ function Table() {
                         type="text"
                         id="male_employee-1"
                         name="male_employee"
+                        onChange={handleChange}
                       />
                     </div>
                     <div>
@@ -976,6 +1028,7 @@ function Table() {
                         type="text"
                         id="female_employee-2"
                         name="female_employee"
+                        onChange={handleChange}
                       />
                     </div>
                   </td>
@@ -1002,6 +1055,7 @@ function Table() {
                         type="text"
                         id="formal_source-1"
                         name="formal_source"
+                        onChange={handleChange}
                       />
                     </div>
                   </td>
@@ -1023,6 +1077,7 @@ function Table() {
                         type="text"
                         id="informal_source-1"
                         name="informal_source"
+                        onChange={handleChange}
                       />
                     </div>
                   </td>
@@ -1044,6 +1099,7 @@ function Table() {
                         type="text"
                         id="internal_fund_generation-1"
                         name="internal_fund_generation"
+                        onChange={handleChange}
                       />
                     </div>
                   </td>
@@ -1065,6 +1121,7 @@ function Table() {
                         type="text"
                         id="other_financing_source-1"
                         name="other_financing_source"
+                        onChange={handleChange}
                       />
                     </div>
                   </td>
@@ -1082,6 +1139,7 @@ function Table() {
                           name="loan_availed"
                           id="loan_availedyes"
                           value="YES"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -1091,6 +1149,7 @@ function Table() {
                           name="loan_availed"
                           id="loan_availedno"
                           value="NO"
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -1107,6 +1166,7 @@ function Table() {
                       type="text"
                       id="loan_specification"
                       name="loan_specification"
+                      onChange={handleChange}
                     />
                   </td>
                 </tr>
@@ -1124,6 +1184,7 @@ function Table() {
                           name="loan_adequate"
                           id="loan_adequateyes"
                           value="YES"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -1134,6 +1195,7 @@ function Table() {
                           name="loan_adequate"
                           id="loan_adequateno"
                           value="NO"
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -1156,6 +1218,7 @@ function Table() {
                           type="number"
                           id="loan_required"
                           name="loan_required"
+                          onChange={handleChange}
                         />
                       </tr>
                     )}
@@ -1177,6 +1240,7 @@ function Table() {
                           name="availed_loan_last_year"
                           id="availed_loan_last_yearyes"
                           value="YES"
+                          onChange={handleChange}
                         />
                       </div>
 
@@ -1188,6 +1252,7 @@ function Table() {
                           name="availed_loan_last_year"
                           id="availed_loan_last_yearno"
                           value="NO"
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -1207,6 +1272,7 @@ function Table() {
                           type="text"
                           id="availed_loan_amount"
                           name="availed_loan_amount"
+                          onChange={handleChange}
                         />
                       </tr>
                     )}
@@ -1230,6 +1296,7 @@ function Table() {
                           name="innovation_RD"
                           id="innovation_RDyes"
                           value="YES"
+                          onChange={handleChange}
                         />
                       </div>
 
@@ -1241,6 +1308,7 @@ function Table() {
                           name="innovation_RD"
                           id="innovation_RDno"
                           value="NO"
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -1260,6 +1328,7 @@ function Table() {
                           type="text"
                           id="innovation_RD_institute"
                           name="innovation_RD_institute"
+                          onChange={handleChange}
                         />
                       </tr>
                     )}
@@ -1287,6 +1356,7 @@ function Table() {
                         type="text"
                         id="govt_scheme-1"
                         name="govt_scheme"
+                        onChange={handleChange}
                       />
                     </div>
                   </td>
@@ -1306,6 +1376,7 @@ function Table() {
                         type="text"
                         id="govt_program-1"
                         name="govt_program"
+                        onChange={handleChange}
                       />
                     </div>
                   </td>
@@ -1327,6 +1398,7 @@ function Table() {
                         type="text"
                         id="govt_organisation-1"
                         name="govt_organisation"
+                        onChange={handleChange}
                       />
                     </div>
                   </td>
@@ -1347,6 +1419,7 @@ function Table() {
                           name="pan_card_company"
                           id="pan_card_companyyes"
                           value="YES"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -1356,6 +1429,7 @@ function Table() {
                           name="pan_card_company"
                           id="pan_card_companyno"
                           value="NO"
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -1374,6 +1448,7 @@ function Table() {
                           name="GST_NO"
                           id="GST_NOyes"
                           value="YES"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -1383,6 +1458,7 @@ function Table() {
                           name="GST_NO"
                           id="GST_NOno"
                           value="NO"
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -1401,6 +1477,7 @@ function Table() {
                           name="Current_Bank_Account"
                           id="Current_Bank_Accountyes"
                           value="YES"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -1410,6 +1487,7 @@ function Table() {
                           name="Current_Bank_Account"
                           id="Current_Bank_Accountno"
                           value="NO"
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -1434,6 +1512,7 @@ function Table() {
                           name="have_CA_audited_financial_statement"
                           id="have_CA_audited_financial_statementyes"
                           value="YES"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -1445,6 +1524,7 @@ function Table() {
                           name="have_CA_audited_financial_statement"
                           id="have_CA_audited_financial_statementno"
                           value="NO"
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -1461,6 +1541,7 @@ function Table() {
                       type="number"
                       id="Annual_Turnover"
                       name="Annual_Turnover"
+                      onChange={handleChange}
                     />
                   </td>
                 </tr>
@@ -1475,6 +1556,7 @@ function Table() {
                       type="number"
                       id="Investment_plant_machinery"
                       name="Investment_plant_machinery"
+                      onChange={handleChange}
                     />
                   </td>
                 </tr>
@@ -1489,6 +1571,7 @@ function Table() {
                       type="number"
                       id="Investment_IT_Infrastructure"
                       name="Investment_IT_Infrastructure"
+                      onChange={handleChange}
                     />
                   </td>
                 </tr>
@@ -1505,6 +1588,7 @@ function Table() {
                           name="You_Export"
                           id="You_Exportyes"
                           value="YES"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -1514,6 +1598,7 @@ function Table() {
                           name="You_Export"
                           id="You_Exportno"
                           value="NO"
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -1530,6 +1615,7 @@ function Table() {
                       type="number"
                       id="Export_Value"
                       name="Export_Value"
+                      onChange={handleChange}
                     />
                   </td>
                 </tr>
@@ -1544,6 +1630,7 @@ function Table() {
                       type="number"
                       id="Overall_Annual_production"
                       name="Overall_Annual_production"
+                      onChange={handleChange}
                     />
                   </td>
                 </tr>
@@ -1558,6 +1645,7 @@ function Table() {
                       type="number"
                       id="Electric_Availability_Hours"
                       name="Electric_Availability_Hours"
+                      onChange={handleChange}
                     />
                   </td>
                 </tr>
@@ -1572,6 +1660,7 @@ function Table() {
                       type="number"
                       id="Electricity_rate_Per_Unit"
                       name="Electricity_rate_Per_Unit"
+                      onChange={handleChange}
                     />
                   </td>
                 </tr>
@@ -1588,6 +1677,7 @@ function Table() {
                           name="Water_Availability"
                           id="Water_Availabilityyes"
                           value="YES"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -1597,6 +1687,7 @@ function Table() {
                           name="Water_Availability"
                           id="Water_Availabilityno"
                           value="NO"
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -1617,6 +1708,7 @@ function Table() {
                           name="Effluent_Treatment_Constraint"
                           id="Effluent_Treatment_Constraintyes"
                           value="YES"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -1628,6 +1720,7 @@ function Table() {
                           name="Effluent_Treatment_Constraint"
                           id="Effluent_Treatment_Constraintno"
                           value="NO"
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -1650,6 +1743,7 @@ function Table() {
                           name="Current_Bank_Account"
                           id="Current_Bank_Accountyes"
                           value="YES"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -1659,6 +1753,7 @@ function Table() {
                           name="Current_Bank_Account"
                           id="Current_Bank_Accountno"
                           value="NO"
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -1669,7 +1764,7 @@ function Table() {
                     <label htmlFor="Email">Email : </label>
                   </td>
                   <td colSpan={6}>
-                    <input type="email" id="Email" name="Email" />
+                    <input type="email" id="Email" name="Email" onChange={handleChange} />
                   </td>
                 </tr>
                 <tr>
@@ -1681,6 +1776,7 @@ function Table() {
                       type="number"
                       id="Phone_Number"
                       name="Phone_Number"
+                      onChange={handleChange}
                     />
                   </td>
                 </tr>

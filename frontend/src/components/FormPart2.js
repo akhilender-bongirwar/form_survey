@@ -40,6 +40,7 @@ const FormPart2 = () => {
                     id="raw1"
                     name="Raw_Materials"
                     value="Direct"
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="d_flex_align_CONTENT_justify">
@@ -54,6 +55,7 @@ const FormPart2 = () => {
                     id="raw2"
                     name="Raw_Materials"
                     value="Through Traders"
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="d_flex_align_CONTENT_justify">
@@ -68,6 +70,7 @@ const FormPart2 = () => {
                     id="raw3"
                     name="Raw_Materials"
                     value="Online"
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="d_flex_align_CONTENT_justify">
@@ -77,11 +80,11 @@ const FormPart2 = () => {
                   >
                     others(specify)
                   </label>
-                  <input type="checkbox" id="raw4" name="asdf" value="others" />
+                  <input type="checkbox" id="raw4" name="asdf" value="others" onChange={handleChange} />
                 </div>
               </div>
               <div>
-                <input type="text" name="Raw_Materials" autoFocus />
+                <input type="text" name="Raw_Materials" autoFocus onChange={handleChange}/>
               </div>
               <tr>
                 <div>
@@ -100,6 +103,7 @@ const FormPart2 = () => {
                             name="if_Raw_Materials_available"
                             id="yes_material"
                             value="male"
+                            onChange={handleChange}
                           />
                         </div>
                         <div>
@@ -109,6 +113,7 @@ const FormPart2 = () => {
                             name="if_Raw_Materials_available"
                             id="no_material"
                             value="female"
+                            onChange={handleChange}
                           />
                         </div>
                       </div>
@@ -124,6 +129,7 @@ const FormPart2 = () => {
                         type="text"
                         id="difficulties"
                         name="if_no_mention_difficulties"
+                        onChange={handleChange}
                         style={{
                           width: "100%",
                           border: "transparent",
@@ -149,6 +155,7 @@ const FormPart2 = () => {
                             name="green_tech"
                             id="yes_material2"
                             value="YES"
+                            onChange={handleChange}
                           />
                         </div>
                         <div>
@@ -158,6 +165,7 @@ const FormPart2 = () => {
                             name="green_tech"
                             id="no_material2"
                             value="NO"
+                            onChange={handleChange}
                           />
                         </div>
                       </div>
@@ -180,6 +188,7 @@ const FormPart2 = () => {
                             name="environment_clearence"
                             id="yes_material3"
                             value="YES"
+                            onChange={handleChange}
                           />
                         </div>
                         <div>
@@ -189,6 +198,7 @@ const FormPart2 = () => {
                             name="environment_clearence"
                             id="no_material3"
                             value="NO"
+                            onChange={handleChange}
                           />
                         </div>
                       </div>
@@ -209,6 +219,7 @@ const FormPart2 = () => {
                             name="service_industry"
                             id="local"
                             value="Local Market"
+                            onChange={handleChange}
                           />
                         </div>
 
@@ -219,6 +230,7 @@ const FormPart2 = () => {
                             id="Govt"
                             name="service_industry"
                             value="Government"
+                            onChange={handleChange}
                           />
                         </div>
 
@@ -229,6 +241,7 @@ const FormPart2 = () => {
                             id="online"
                             name="service_industry"
                             value="online"
+                            onChange={handleChange}
                           />
                         </div>
 
@@ -241,6 +254,7 @@ const FormPart2 = () => {
                             id="other"
                             name="service_industry"
                             value="Other states"
+                            onChange={handleChange}
                           />
                         </div>
                         <div className="radio_wrapper">
@@ -250,6 +264,7 @@ const FormPart2 = () => {
                             id="export"
                             name="service_industry"
                             value="export outside"
+                            onChange={handleChange}
                           />
                         </div>
                         <div className="radio_wrapper">
@@ -260,6 +275,7 @@ const FormPart2 = () => {
                               name="service_industry"
                               id="local"
                               value="Local Market"
+                              onChange={handleChange}
                             />
                           </div>
                         </div>
@@ -271,6 +287,7 @@ const FormPart2 = () => {
                               name="service_industry"
                               id="local"
                               value="Local Market"
+                              onChange={handleChange}
                             />
                           </div>
                         </div>
@@ -282,6 +299,7 @@ const FormPart2 = () => {
                               name="service_industry"
                               id="local"
                               value="Local Market"
+                              onChange={handleChange}
                             />
                           </div>
                         </div>
@@ -303,6 +321,7 @@ const FormPart2 = () => {
                             id="withinState"
                             name="markets_supplied"
                             value="within State"
+                            onChange={handleChange}
                           />
                         </div>
                         <div>
@@ -312,6 +331,7 @@ const FormPart2 = () => {
                             id="outState"
                             name="markets_supplied"
                             value="outside State"
+                            onChange={handleChange}
                           />
                         </div>
                         <div>
@@ -320,6 +340,7 @@ const FormPart2 = () => {
                             type="radio"
                             name="markets_supplied"
                             value="outside country"
+                            onChange={handleChange}
                           />
                         </div>
                       </div>
@@ -341,6 +362,7 @@ const FormPart2 = () => {
                             id="yes_material2"
                             name="have_product_brand_name"
                             value="YES"
+                            onChange={handleChange}
                           />
                         </div>
                         <div>
@@ -350,6 +372,7 @@ const FormPart2 = () => {
                             name="have_product_brand_name"
                             id="no_material2"
                             value="NO"
+                            onChange={handleChange}
                           />
                         </div>
                       </div>
@@ -364,6 +387,7 @@ const FormPart2 = () => {
                         type="text"
                         id="brand"
                         name="Brand_name"
+                        onChange={handleChange}
                         style={{
                           borderBottom: "1px solid black",
                         }}
@@ -398,6 +422,7 @@ const FormPart2 = () => {
                           name="challenges_while_selling"
                           value="advance technology"
                           id="advanceTech"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -409,6 +434,7 @@ const FormPart2 = () => {
                           name="challenges_while_selling"
                           value="quality of product"
                           id="quality"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -423,6 +449,7 @@ const FormPart2 = () => {
                           name="challenges_while_selling"
                           value="market competition"
                           id="marketComp"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -434,6 +461,7 @@ const FormPart2 = () => {
                           name="challenges_while_selling"
                           value="capital"
                           id="capital"
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -448,6 +476,7 @@ const FormPart2 = () => {
                           name="challenges_while_selling"
                           value="branding and marketing"
                           id="brandMarket"
+                          onChange={handleChange}
                         />
                       </div>
                       <div style={{ display: "flex", flexWrap: "wrap" }}>
@@ -457,6 +486,7 @@ const FormPart2 = () => {
                           type="text"
                           id="other"
                           name="challenges_while_selling"
+                          onChange={handleChange}
                           style={{
                             width: "100%",
                             border: "transparent",
@@ -489,6 +519,7 @@ const FormPart2 = () => {
                             name="involved_in_marketing"
                             id="yesx_material2"
                             value="YES"
+                            onChange={handleChange}
                           />
                         </div>
                         <div>
@@ -498,6 +529,7 @@ const FormPart2 = () => {
                             name="involved_in_marketing"
                             id="nox_material2"
                             value="NO"
+                            onChange={handleChange}
                           />
                         </div>
                       </div>
@@ -523,6 +555,7 @@ const FormPart2 = () => {
                               id="exhibition"
                               name="options_you_leverage_for_sale"
                               value="exhibitions"
+                              onChange={handleChange}
                             />
                           </div>
                           <div>
@@ -537,6 +570,7 @@ const FormPart2 = () => {
                               id="portal"
                               name="options_you_leverage_for_sale"
                               value="portals"
+                              onChange={handleChange}
                             />
                           </div>
                           <div>
@@ -551,6 +585,7 @@ const FormPart2 = () => {
                               id="website"
                               name="options_you_leverage_for_sale"
                               value="websites"
+                              onChange={handleChange}
                             />
                           </div>
                           <div>
@@ -566,6 +601,7 @@ const FormPart2 = () => {
                               id="socMedia"
                               name="options_you_leverage_for_sale"
                               value="social media"
+                              onChange={handleChange}
                             />
                           </div>
                           <div>
@@ -580,6 +616,7 @@ const FormPart2 = () => {
                               id="marketFacility"
                               name="options_you_leverage_for_sale"
                               value="Common marketing facility"
+                              onChange={handleChange}
                             />
                           </div>
                           <div>
@@ -589,6 +626,7 @@ const FormPart2 = () => {
                               type="text"
                               id="other"
                               name="challenges_while_selling"
+                              onChange={handleChange}
                               style={{
                                 width: "100%",
                                 border: "transparent",
@@ -614,6 +652,7 @@ const FormPart2 = () => {
                             name="Quality_Testing_lab_available"
                             id="yes_material2"
                             value="YES"
+                            onChange={handleChange}
                           />
                         </div>
                         <div>
@@ -623,6 +662,7 @@ const FormPart2 = () => {
                             name="Quality_Testing_lab_available"
                             id="no_material2"
                             value="NO"
+                            onChange={handleChange}
                           />
                         </div>
                       </div>
@@ -646,6 +686,7 @@ const FormPart2 = () => {
                             name="labour_and training"
                             id="yes_material2"
                             value="YES"
+                            onChange={handleChange}
                           />
                         </div>
                         <div>
@@ -655,6 +696,7 @@ const FormPart2 = () => {
                             name="labour_and training"
                             id="no_material2"
                             value="NO"
+                            onChange={handleChange}
                           />
                         </div>
                       </div>
@@ -674,6 +716,7 @@ const FormPart2 = () => {
                             name="skilled_labour_is_required"
                             id="yes_material0"
                             value="YES"
+                            onChange={handleChange}
                           />
                         </div>
                         <div>
@@ -683,6 +726,7 @@ const FormPart2 = () => {
                             name="skilled_labour_is_required"
                             id="no_material0"
                             value="NO"
+                            onChange={handleChange}
                           />
                         </div>
                       </div>

@@ -44,6 +44,7 @@ function FormPart5() {
                   name="availed_samadhaan_service"
                   id="valid"
                   value="YES"
+                  onChange={handleChange}
                   style={{ margin: "0.5%" }}
                 />
               </div>
@@ -56,6 +57,7 @@ function FormPart5() {
                   name="availed_samadhaan_service"
                   value="NO"
                   id="invalid"
+                  onChange={handleChange}
                   style={{ margin: "0.5%" }}
                 />
               </div>
