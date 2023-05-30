@@ -1,21 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Table.css";
 import { NavLink } from "react-router-dom";
 
-const FormPart2 = ({formD,setFormD}) => {
+const FormPart2 = ({ formD, setFormD }) => {
   function handleChange(event) {
-    const {name, value, type, checked} = event.target
-    setFormD(prevFormData => {
-        return {
-            ...prevFormData,
-            [name]: type === "checkbox" ? checked : value
-        }
-    })
-}
+    const { name, value, type, checked } = event.target;
+    setFormD((prevFormData) => {
+      return {
+        ...prevFormData,
+        [name]: type === "checkbox" ? checked : value,
+      };
+    });
+  }
+  const [others, setothers] = useState(null);
   return (
-    <>
-      <>
-        <table style={{ width: "100%", overflowWrap: "break-word" }}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        height: "90vh",
+        backgroundColor: "rgb(240 235 248 / 77%)",
+      }}
+    >
+      <div style={{ width: "95vw", backgroundColor: "rgb(240 235 248 / 77%)" }}>
+        <table
+          style={{
+            width: "100%",
+            overflowWrap: "break-word",
+            backgroundColor: "rgb(240 235 248 / 77%)",
+          }}
+        >
           <thead>
             <th colSpan={6}>{"B. For Manufacturing"}</th>
           </thead>
@@ -87,6 +101,7 @@ const FormPart2 = ({formD,setFormD}) => {
                   >
                     others(specify)
                   </label>
+                  {}
                   <input type="checkbox" id="raw4" name="asdf" value="others" />
                 </div>
               </div>
@@ -705,10 +720,16 @@ const FormPart2 = ({formD,setFormD}) => {
             </td>
           </tr>
         </table>
-        <NavLink to="/">Prev</NavLink>
-        <NavLink to="/3">Next</NavLink>
-      </>
-    </>
+        <div style={{ marginTop: "1em" }}>
+          <NavLink to="/" className="arrow_notation">
+            Prev
+          </NavLink>
+          <NavLink to="/3" className="arrow_notation">
+            Next
+          </NavLink>
+        </div>
+      </div>
+    </div>
   );
 };
 

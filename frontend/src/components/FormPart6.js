@@ -1,7 +1,7 @@
 import React from "react";
 import "./Table.css";
 import { NavLink } from "react-router-dom";
-function FormPart6({formD,setFormD}) {
+function FormPart6({ formD, setFormD }) {
   return (
     <>
       <h1 style={{ marginBottom: "2em" }}>F. Online Dispute Resolution</h1>
@@ -10,12 +10,18 @@ function FormPart6({formD,setFormD}) {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          backgroundColor: "rgb(240 235 248 / 77%)",
         }}
       >
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div>
             <h2
-              style={{ background: "grey", margin: "0.5em", display: "flex" }}
+              style={{
+                background: "grey",
+                margin: "0.5em",
+                display: "flex",
+                backgroundColor: "rgb(240 235 248 / 77%)",
+              }}
             >
               Questionnaire For Exporters
             </h2>
@@ -37,7 +43,6 @@ function FormPart6({formD,setFormD}) {
                       type="text"
                       id="certificate1"
                       name="Currently_owned_1"
-
                       style={{ border: "transparent" }}
                       placeholder="Currently owned"
                     />
@@ -125,7 +130,7 @@ function FormPart6({formD,setFormD}) {
               id="question"
               name="Certification_required"
               placeholder=". . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-              style={{ width: "60%", border: "transparent" }}
+              style={{ border: "transparent" }}
             />
           </div>
           <div style={{ fontSize: "1.2em", padding: "0.75em" }}>
@@ -142,7 +147,7 @@ function FormPart6({formD,setFormD}) {
               id="question"
               name="laboratory_requirement"
               placeholder=". . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-              style={{ width: "60%", border: "transparent" }}
+              style={{ border: "transparent" }}
             />
           </div>
           <div>
@@ -276,7 +281,11 @@ function FormPart6({formD,setFormD}) {
           </div>
         </div>
       </div>
-        <NavLink to="/5">Prev</NavLink>
+      <div>
+        <NavLink to="/5" className="arrow_notation">
+          Prev
+        </NavLink>
+      </div>
     </>
   );
 }

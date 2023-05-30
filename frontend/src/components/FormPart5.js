@@ -2,13 +2,19 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Table.css";
 
-function FormPart5({formD,setFormD}) {
+function FormPart5({ formD, setFormD }) {
   return (
     <>
       <h2 style={{ marginTop: "2em", marginBottom: "2em" }}>
         E. Grievance Redressal
       </h2>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          backgroundColor: "rgb(240 235 248 / 77%)",
+        }}
+      >
         <div
           style={{
             border: "0.2em solid black",
@@ -16,12 +22,17 @@ function FormPart5({formD,setFormD}) {
             flexWrap: "wrap",
             overflowWrap: "break-word",
             borderBottom: "0",
-            width: "100%",
+            width: "95vw",
+            backgroundColor: "rgb(240 235 248 / 77%)",
           }}
         >
           <div
             className="div-style grevience_redressal"
-            style={{ borderTop: 0, gap: "2%" }}
+            style={{
+              borderTop: 0,
+              gap: "2%",
+              backgroundColor: "rgb(240 235 248 / 77%)",
+            }}
           >
             <label className="inner-div-tag" style={{ width: "100%" }}>
               Do you avail Samadhaan service (Online dispute mechanism) for
@@ -64,8 +75,14 @@ function FormPart5({formD,setFormD}) {
           </div>
         </div>
       </div>
-      <NavLink to="/4">Prev</NavLink>
-        <NavLink to="/6">Next</NavLink>
+      <div style={{ marginTop: "1em" }}>
+        <NavLink to="/4" className="arrow_notation">
+          Prev
+        </NavLink>
+        <NavLink to="/6" className="arrow_notation">
+          Next
+        </NavLink>
+      </div>
     </>
   );
 }

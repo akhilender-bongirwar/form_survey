@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Table.css";
-function FormPart3({formD,setFormD}) {
+function FormPart3({ formD, setFormD }) {
   return (
     <div
       style={{
@@ -9,11 +9,11 @@ function FormPart3({formD,setFormD}) {
         justifyContent: "center",
         height: "90vh",
         overflowY: "scroll",
+        backgroundColor: "rgb(240 235 248 / 77%)",
       }}
     >
       <div
         style={{
-          border: "0.2em solid black",
           width: "95vw",
           flexWrap: "wrap",
           overflowWrap: "break-word",
@@ -72,7 +72,11 @@ function FormPart3({formD,setFormD}) {
                     <input
                       type="text"
                       id="Anything"
-                      style={{ width: "90%", border: "transparent" }}
+                      style={{
+                        width: "90%",
+                        border: "transparent",
+                        borderBottom: "2px solid black",
+                      }}
                     />
                   </tr>
                   <tr>
@@ -80,7 +84,11 @@ function FormPart3({formD,setFormD}) {
                     <input
                       type="text"
                       id="Anything1"
-                      style={{ width: "90%", border: "transparent" }}
+                      style={{
+                        width: "90%",
+                        border: "transparent",
+                        borderBottom: "2px solid black",
+                      }}
                     />
                   </tr>
                 </td>
@@ -94,7 +102,11 @@ function FormPart3({formD,setFormD}) {
                     type="text"
                     name="Policy_benifitted"
                     id="benefits"
-                    style={{ width: "90%", border: "transparent" }}
+                    style={{
+                      width: "90%",
+                      border: "transparent",
+                      borderBottom: "2px solid black",
+                    }}
                   />
                 </td>
               </tr>
@@ -105,7 +117,11 @@ function FormPart3({formD,setFormD}) {
                     type="text"
                     name="Challenges_faced_policy_related"
                     id="challenges"
-                    style={{ width: "90%", border: "transparent" }}
+                    style={{
+                      width: "90%",
+                      border: "transparent",
+                      borderBottom: "2px solid black",
+                    }}
                   />
                 </td>
               </tr>
@@ -126,7 +142,11 @@ function FormPart3({formD,setFormD}) {
                 <input
                   type="text"
                   id="Anything"
-                  style={{ width: "90%", border: "transparent" }}
+                  style={{
+                    width: "90%",
+                    border: "transparent",
+                    borderBottom: "2px solid black",
+                  }}
                 />
               </div>
               <div>
@@ -134,7 +154,11 @@ function FormPart3({formD,setFormD}) {
                 <input
                   type="text"
                   id="Anything1"
-                  style={{ width: "90%", border: "transparent" }}
+                  style={{
+                    width: "90%",
+                    border: "transparent",
+                    borderBottom: "2px solid black",
+                  }}
                 />
               </div>
             </td>
@@ -405,7 +429,11 @@ function FormPart3({formD,setFormD}) {
                 type="text"
                 id="remark"
                 name="Remarks"
-                style={{ width: "50%", border: "transparent" }}
+                style={{
+                  width: "50%",
+                  border: "transparent",
+                  borderBottom: "2px solid black",
+                }}
               />
             </td>
           </tr>
@@ -672,21 +700,33 @@ function FormPart3({formD,setFormD}) {
                   id="availedByMe"
                   name="scheme_availed_by_you_central_govt"
                   placeholder="central govt."
-                  style={{ border: "transparent" }}
+                  style={{
+                    border: "transparent",
+                    borderBottom: "2px solid black",
+                  }}
                 />
                 <input
                   type="text"
                   id="availedByMe2"
                   placeholder="state govt."
                   name="scheme_availed_by_you_state_govt"
-                  style={{ border: "transparent" }}
+                  style={{
+                    border: "transparent",
+                    borderBottom: "2px solid black",
+                  }}
                 />
               </div>
             </td>
           </tr>
         </table>
-        <NavLink to="/2">Prev</NavLink>
-        <NavLink to="/4">Next</NavLink>
+        <div style={{ marginTop: "1em" }}>
+          <NavLink to="/2" className="arrow_notation">
+            Prev
+          </NavLink>
+          <NavLink to="/4" className="arrow_notation">
+            Next
+          </NavLink>
+        </div>
         {/* <div className="div-style" style={{ borderTop: 0 }}>
           <label className="inner-div-tag" >Are you aware about<br />the current
             government <br />programs benefitting<br />
@@ -742,7 +782,6 @@ function FormPart3({formD,setFormD}) {
           </div>
         </div> */}
       </div>
-
     </div>
   );
 }
