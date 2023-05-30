@@ -193,7 +193,7 @@ function Table({ formD, setFormD }) {
   const [a5, setA5] = useState(null);
   const [a6, setA6] = useState(null);
   function handleChange(event) {
-    const { name, value, type, checked,className } = event.target;
+    const { name, value, type, checked,className,id } = event.target;
     if (name === "sell_produce_majorly") {
         if(type=="text"){
             setFormD((prevFormData) => {
@@ -303,6 +303,46 @@ function Table({ formD, setFormD }) {
                 }
               })
         }
+    }
+    else if(className=="Requirement_of_Soft_Interventions"){
+      setFormD((prevFormData) => {
+        return {
+          ...prevFormData,
+          [className]: {...prevFormData[className],[name]:value},
+        };
+      });
+    }
+    else if(className=="Laboratory"){
+      setFormD((prevFormData) => {
+        return {
+          ...prevFormData,
+          [className]: {...prevFormData[className],[name]:value},
+        };
+      });
+    }
+    else if(className=="Certifications"){
+      setFormD((prevFormData) => {
+        return {
+          ...prevFormData,
+          [className]: {...prevFormData[className],[name]:value},
+        };
+      });
+    }
+    else if(className=="Infrastructure"){
+      setFormD((prevFormData) => {
+        return {
+          ...prevFormData,
+          [className]: {...prevFormData[className],[name]:value},
+        };
+      });
+    }
+    else if(name=="TOP_THREE_PRODUCTS"){
+      setFormD((prevFormData) => {
+        return {
+          ...prevFormData,
+          [name]: {...prevFormData[name],[id]:value},
+        };
+      });
     }
     else {
       setFormD((prevFormData) => {
@@ -916,32 +956,35 @@ function Table({ formD, setFormD }) {
                     colSpan={6}
                   >
                     <div>
-                      <label htmlFor="TOP_THREE_PRODUCTS-1">1.</label>
+                      <label htmlFor="TOP_THREE_PRODUCTS_1">1.</label>
                       <input
                         style={{ width: "95%" }}
                         type="text"
-                        id="TOP_THREE_PRODUCTS-1"
+                        id="TOP_THREE_PRODUCTS_1"
                         name="TOP_THREE_PRODUCTS"
+                        value={formD.TOP_THREE_PRODUCTS.TOP_THREE_PRODUCTS_1}
                         onChange={handleChange}
                       />
                     </div>
                     <div>
-                      <label htmlFor="TOP_THREE_PRODUCTS-2">2.</label>
+                      <label htmlFor="TOP_THREE_PRODUCTS_2">2.</label>
                       <input
                         style={{ width: "95%" }}
                         type="text"
-                        id="TOP_THREE_PRODUCTS-2"
+                        id="TOP_THREE_PRODUCTS_2"
                         name="TOP_THREE_PRODUCTS"
+                        value={formD.TOP_THREE_PRODUCTS.TOP_THREE_PRODUCTS_2}
                         onChange={handleChange}
                       />
                     </div>
                     <div>
-                      <label htmlFor="TOP_THREE_PRODUCTS-3">3.</label>
+                      <label htmlFor="TOP_THREE_PRODUCTS_3">3.</label>
                       <input
                         style={{ width: "95%" }}
                         type="text"
-                        id="TOP_THREE_PRODUCTS-3"
+                        id="TOP_THREE_PRODUCTS_3"
                         name="TOP_THREE_PRODUCTS"
+                        value={formD.TOP_THREE_PRODUCTS.TOP_THREE_PRODUCTS_3}
                         onChange={handleChange}
                       />
                     </div>
