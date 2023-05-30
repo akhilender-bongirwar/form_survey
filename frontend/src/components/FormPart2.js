@@ -1,21 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Table.css";
 import { NavLink } from "react-router-dom";
 
-const FormPart2 = ({formD,setFormD}) => {
+const FormPart2 = ({ formD, setFormD }) => {
   function handleChange(event) {
-    const {name, value, type, checked} = event.target
-    setFormD(prevFormData => {
-        return {
-            ...prevFormData,
-            [name]: type === "checkbox" ? checked : value
-        }
-    })
-}
+    const { name, value, type, checked } = event.target;
+    setFormD((prevFormData) => {
+      return {
+        ...prevFormData,
+        [name]: type === "checkbox" ? checked : value,
+      };
+    });
+  }
+  const [others, setothers] = useState(null);
   return (
-    <>
-      <>
-        <table style={{ width: "100%", overflowWrap: "break-word" }}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        height: "90vh",
+        backgroundColor: "rgb(240 235 248 / 77%)",
+      }}
+    >
+      <div style={{ width: "95vw", backgroundColor: "rgb(240 235 248 / 77%)" }}>
+        <table
+          style={{
+            width: "100%",
+            overflowWrap: "break-word",
+            backgroundColor: "rgb(240 235 248 / 77%)",
+          }}
+        >
           <thead>
             <th colSpan={6}>{"B. For Manufacturing"}</th>
           </thead>
@@ -90,11 +104,23 @@ const FormPart2 = ({formD,setFormD}) => {
                   >
                     others(specify)
                   </label>
-                  <input type="checkbox" id="raw4" name="asdf" value="others" onChange={handleChange} />
+                  <input
+                    type="checkbox"
+                    id="raw4"
+                    name="asdf"
+                    value="others"
+                    onChange={handleChange}
+                  />
                 </div>
               </div>
               <div>
-                <input type="text" name="Raw_Materials" autoFocus onChange={handleChange} value={formD.Raw_Materials}/>
+                <input
+                  type="text"
+                  name="Raw_Materials"
+                  autoFocus
+                  onChange={handleChange}
+                  value={formD.Raw_Materials}
+                />
               </div>
               <tr>
                 <div>
@@ -114,7 +140,7 @@ const FormPart2 = ({formD,setFormD}) => {
                             id="yes_material"
                             value="YES"
                             onChange={handleChange}
-                            checked={formD.if_Raw_Materials_available=="YES"}
+                            checked={formD.if_Raw_Materials_available == "YES"}
                           />
                         </div>
                         <div>
@@ -125,7 +151,7 @@ const FormPart2 = ({formD,setFormD}) => {
                             id="no_material"
                             value="NO"
                             onChange={handleChange}
-                            checked={formD.if_Raw_Materials_available=="NO"}
+                            checked={formD.if_Raw_Materials_available == "NO"}
                           />
                         </div>
                       </div>
@@ -169,7 +195,7 @@ const FormPart2 = ({formD,setFormD}) => {
                             id="yes_material2"
                             value="YES"
                             onChange={handleChange}
-                            checked={formD.green_tech=="YES"}
+                            checked={formD.green_tech == "YES"}
                           />
                         </div>
                         <div>
@@ -180,7 +206,7 @@ const FormPart2 = ({formD,setFormD}) => {
                             id="no_material2"
                             value="NO"
                             onChange={handleChange}
-                            checked={formD.green_tech=="NO"}
+                            checked={formD.green_tech == "NO"}
                           />
                         </div>
                       </div>
@@ -204,7 +230,7 @@ const FormPart2 = ({formD,setFormD}) => {
                             id="yes_material3"
                             value="YES"
                             onChange={handleChange}
-                            checked={formD.environment_clearence=="YES"}
+                            checked={formD.environment_clearence == "YES"}
                           />
                         </div>
                         <div>
@@ -215,7 +241,7 @@ const FormPart2 = ({formD,setFormD}) => {
                             id="no_material3"
                             value="NO"
                             onChange={handleChange}
-                            checked={formD.environment_clearence=="NO"}
+                            checked={formD.environment_clearence == "NO"}
                           />
                         </div>
                       </div>
@@ -380,7 +406,7 @@ const FormPart2 = ({formD,setFormD}) => {
                             name="have_product_brand_name"
                             value="YES"
                             onChange={handleChange}
-                            checked={formD.have_product_brand_name=="YES"}
+                            checked={formD.have_product_brand_name == "YES"}
                           />
                         </div>
                         <div>
@@ -391,7 +417,7 @@ const FormPart2 = ({formD,setFormD}) => {
                             id="no_material2"
                             value="NO"
                             onChange={handleChange}
-                            checked={formD.have_product_brand_name=="NO"}
+                            checked={formD.have_product_brand_name == "NO"}
                           />
                         </div>
                       </div>
@@ -541,7 +567,7 @@ const FormPart2 = ({formD,setFormD}) => {
                             id="yesx_material2"
                             value="YES"
                             onChange={handleChange}
-                            checked={formD.involved_in_marketing=="YES"}
+                            checked={formD.involved_in_marketing == "YES"}
                           />
                         </div>
                         <div>
@@ -552,7 +578,7 @@ const FormPart2 = ({formD,setFormD}) => {
                             id="nox_material2"
                             value="NO"
                             onChange={handleChange}
-                            checked={formD.involved_in_marketing=="NO"}
+                            checked={formD.involved_in_marketing == "NO"}
                           />
                         </div>
                       </div>
@@ -677,7 +703,9 @@ const FormPart2 = ({formD,setFormD}) => {
                             id="yes_material2"
                             value="YES"
                             onChange={handleChange}
-                            checked={formD.Quality_Testing_lab_available=="YES"}
+                            checked={
+                              formD.Quality_Testing_lab_available == "YES"
+                            }
                           />
                         </div>
                         <div>
@@ -688,7 +716,9 @@ const FormPart2 = ({formD,setFormD}) => {
                             id="no_material2"
                             value="NO"
                             onChange={handleChange}
-                            checked={formD.Quality_Testing_lab_available=="NO"}
+                            checked={
+                              formD.Quality_Testing_lab_available == "NO"
+                            }
                           />
                         </div>
                       </div>
@@ -713,7 +743,7 @@ const FormPart2 = ({formD,setFormD}) => {
                             id="yes_material2"
                             value="YES"
                             onChange={handleChange}
-                            checked={formD.labour_and_training=="YES"}
+                            checked={formD.labour_and_training == "YES"}
                           />
                         </div>
                         <div>
@@ -724,7 +754,7 @@ const FormPart2 = ({formD,setFormD}) => {
                             id="no_material2"
                             value="NO"
                             onChange={handleChange}
-                            checked={formD.labour_and_training=="NO"}
+                            checked={formD.labour_and_training == "NO"}
                           />
                         </div>
                       </div>
@@ -745,7 +775,7 @@ const FormPart2 = ({formD,setFormD}) => {
                             id="yes_material0"
                             value="YES"
                             onChange={handleChange}
-                            checked={formD.skilled_labour_is_required=="YES"}
+                            checked={formD.skilled_labour_is_required == "YES"}
                           />
                         </div>
                         <div>
@@ -756,7 +786,7 @@ const FormPart2 = ({formD,setFormD}) => {
                             id="no_material0"
                             value="NO"
                             onChange={handleChange}
-                            checked={formD.skilled_labour_is_required=="NO"}
+                            checked={formD.skilled_labour_is_required == "NO"}
                           />
                         </div>
                       </div>
@@ -767,10 +797,16 @@ const FormPart2 = ({formD,setFormD}) => {
             </td>
           </tr>
         </table>
-        <NavLink to="/">Prev</NavLink>
-        <NavLink to="/3">Next</NavLink>
-      </>
-    </>
+        <div style={{ marginTop: "1em" }}>
+          <NavLink to="/" className="arrow_notation">
+            Prev
+          </NavLink>
+          <NavLink to="/3" className="arrow_notation">
+            Next
+          </NavLink>
+        </div>
+      </div>
+    </div>
   );
 };
 

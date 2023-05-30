@@ -1,15 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Table.css";
-function FormPart3({formD,setFormD}) {
+function FormPart3({ formD, setFormD }) {
   function handleChange(event) {
-    const { name, value, type, checked } = event.target
-    setFormD(prevFormData => {
+    const { name, value, type, checked } = event.target;
+    setFormD((prevFormData) => {
       return {
         ...prevFormData,
-        [name]: type === "checkbox" ? checked : value
-      }
-    })
+        [name]: type === "checkbox" ? checked : value,
+      };
+    });
   }
   return (
     <div
@@ -18,11 +18,11 @@ function FormPart3({formD,setFormD}) {
         justifyContent: "center",
         height: "90vh",
         overflowY: "scroll",
+        backgroundColor: "rgb(240 235 248 / 77%)",
       }}
     >
       <div
         style={{
-          border: "0.2em solid black",
           width: "95vw",
           flexWrap: "wrap",
           overflowWrap: "break-word",
@@ -47,7 +47,7 @@ function FormPart3({formD,setFormD}) {
                     id="YES"
                     value="YES"
                     onChange={handleChange}
-                    checked={formD.aware_of_govt_policy=="YES"}
+                    checked={formD.aware_of_govt_policy == "YES"}
                   />
                 </div>
                 <div>
@@ -58,7 +58,7 @@ function FormPart3({formD,setFormD}) {
                     id="NO"
                     value="NO"
                     onChange={handleChange}
-                    checked={formD.aware_of_govt_policy=="NO"}
+                    checked={formD.aware_of_govt_policy == "NO"}
                   />
                 </div>
               </div>
@@ -86,7 +86,11 @@ function FormPart3({formD,setFormD}) {
                       type="text"
                       id="Anything"
                       onChange={handleChange}
-                      style={{ width: "90%", border: "transparent" }}
+                      style={{
+                        width: "90%",
+                        border: "transparent",
+                        borderBottom: "2px solid black",
+                      }}
                     />
                   </tr>
                   <tr>
@@ -95,7 +99,11 @@ function FormPart3({formD,setFormD}) {
                       type="text"
                       id="Anything1"
                       onChange={handleChange}
-                      style={{ width: "90%", border: "transparent" }}
+                      style={{
+                        width: "90%",
+                        border: "transparent",
+                        borderBottom: "2px solid black",
+                      }}
                     />
                   </tr>
                 </td>
@@ -111,7 +119,11 @@ function FormPart3({formD,setFormD}) {
                     id="benefits"
                     onChange={handleChange}
                     value={formD.Policy_benifitted}
-                    style={{ width: "90%", border: "transparent" }}
+                    style={{
+                      width: "90%",
+                      border: "transparent",
+                      borderBottom: "2px solid black",
+                    }}
                   />
                 </td>
               </tr>
@@ -124,7 +136,11 @@ function FormPart3({formD,setFormD}) {
                     id="challenges"
                     onChange={handleChange}
                     value={formD.Challenges_faced_policy_related}
-                    style={{ width: "90%", border: "transparent" }}
+                    style={{
+                      width: "90%",
+                      border: "transparent",
+                      borderBottom: "2px solid black",
+                    }}
                   />
                 </td>
               </tr>
@@ -146,7 +162,11 @@ function FormPart3({formD,setFormD}) {
                   type="text"
                   id="Anything"
                   onChange={handleChange}
-                  style={{ width: "90%", border: "transparent" }}
+                  style={{
+                    width: "90%",
+                    border: "transparent",
+                    borderBottom: "2px solid black",
+                  }}
                 />
               </div>
               <div>
@@ -155,7 +175,11 @@ function FormPart3({formD,setFormD}) {
                   type="text"
                   id="Anything1"
                   onChange={handleChange}
-                  style={{ width: "90%", border: "transparent" }}
+                  style={{
+                    width: "90%",
+                    border: "transparent",
+                    borderBottom: "2px solid black",
+                  }}
                 />
               </div>
             </td>
@@ -443,7 +467,11 @@ function FormPart3({formD,setFormD}) {
                 name="Remarks"
                 onChange={handleChange}
                 value={formD.Remarks}
-                style={{ width: "50%", border: "transparent" }}
+                style={{
+                  width: "50%",
+                  border: "transparent",
+                  borderBottom: "2px solid black",
+                }}
               />
             </td>
           </tr>
@@ -727,7 +755,10 @@ function FormPart3({formD,setFormD}) {
                   placeholder="central govt."
                   onChange={handleChange}
                   value={formD.scheme_availed_by_you_central_govt}
-                  style={{ border: "transparent" }}
+                  style={{
+                    border: "transparent",
+                    borderBottom: "2px solid black",
+                  }}
                 />
                 <input
                   type="text"
@@ -736,14 +767,23 @@ function FormPart3({formD,setFormD}) {
                   name="scheme_availed_by_you_state_govt"
                   onChange={handleChange}
                   value={formD.scheme_availed_by_you_state_govt}
-                  style={{ border: "transparent" }}
+                  style={{
+                    border: "transparent",
+                    borderBottom: "2px solid black",
+                  }}
                 />
               </div>
             </td>
           </tr>
         </table>
-        <NavLink to="/2">Prev</NavLink>
-        <NavLink to="/4">Next</NavLink>
+        <div style={{ marginTop: "1em" }}>
+          <NavLink to="/2" className="arrow_notation">
+            Prev
+          </NavLink>
+          <NavLink to="/4" className="arrow_notation">
+            Next
+          </NavLink>
+        </div>
         {/* <div className="div-style" style={{ borderTop: 0 }}>
           <label className="inner-div-tag" >Are you aware about<br />the current
             government <br />programs benefitting<br />
@@ -799,7 +839,6 @@ function FormPart3({formD,setFormD}) {
           </div>
         </div> */}
       </div>
-
     </div>
   );
 }

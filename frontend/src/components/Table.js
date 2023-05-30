@@ -7,6 +7,7 @@ import FormPart3 from "./FormPart3";
 import axios from "axios";
 import FormPart2 from "./FormPart2";
 import FormPart4 from "./FormPart4";
+
 import FormPart5 from "./FormPart5";
 import FormPart6 from "./FormPart6";
 // export async function dataaction({ request }) {
@@ -192,9 +193,9 @@ function Table({ formD, setFormD }) {
   const [a5, setA5] = useState(null);
   const [a6, setA6] = useState(null);
   function handleChange(event) {
-    const { name, value, type, checked } = event.target
-    if(name==="sell_produce_majorly"){
-      setFormD(prevFormData => {
+    const { name, value, type, checked } = event.target;
+    if (name === "sell_produce_majorly") {
+      setFormD((prevFormData) => {
         return {
           ...prevFormData,
           [name]: {...prevFormData[name],[value]:type === "checkbox" ? checked : value}
@@ -205,17 +206,16 @@ function Table({ formD, setFormD }) {
       setFormD(prevFormData => {
         return {
           ...prevFormData,
-          [name]: {...prevFormData[name],[value]:checked}
-        }
-      })
-    }
-    else{
-      setFormD(prevFormData => {
+          [name]: { ...prevFormData[name], [value]: checked },
+        };
+      });
+    } else {
+      setFormD((prevFormData) => {
         return {
           ...prevFormData,
-          [name]: type === "checkbox" ? checked : value
-        }
-      })
+          [name]: type === "checkbox" ? checked : value,
+        };
+      });
     }
   }
   return (
@@ -227,11 +227,11 @@ function Table({ formD, setFormD }) {
             justifyContent: "center",
             height: "90vh",
             overflowY: "scroll",
+            backgroundColor: "rgb(240 235 248 / 77%)",
           }}
         >
           <div
             style={{
-              border: "0.2em solid black",
               width: "95vw",
               flexWrap: "wrap",
               overflowWrap: "break-word",
@@ -286,11 +286,25 @@ function Table({ formD, setFormD }) {
                     <div className="radio_wrapper">
                       <div>
                         <label htmlFor="M">M</label>
-                        <input type="radio" name="Sex" id="M" value="male" onChange={handleChange} checked={formD.Sex=="male"} />
+                        <input
+                          type="radio"
+                          name="Sex"
+                          id="M"
+                          value="male"
+                          onChange={handleChange}
+                          checked={formD.Sex == "male"}
+                        />
                       </div>
                       <div>
                         <label htmlFor="F">F</label>
-                        <input type="radio" name="Sex" id="F" value="female" onChange={handleChange} checked={formD.Sex=="female"}/>
+                        <input
+                          type="radio"
+                          name="Sex"
+                          id="F"
+                          value="female"
+                          onChange={handleChange}
+                          checked={formD.Sex == "female"}
+                        />
                       </div>
                     </div>
                   </td>
@@ -309,7 +323,7 @@ function Table({ formD, setFormD }) {
                           id="SC"
                           value="SC"
                           onChange={handleChange}
-                          checked={formD.Category=="SC"}
+                          checked={formD.Category == "SC"}
                         />
                       </div>
                       <div>
@@ -320,7 +334,7 @@ function Table({ formD, setFormD }) {
                           id="ST"
                           value="ST"
                           onChange={handleChange}
-                          checked={formD.Category=="ST"}
+                          checked={formD.Category == "ST"}
                         />
                       </div>
                       <div>
@@ -331,7 +345,7 @@ function Table({ formD, setFormD }) {
                           id="OBC"
                           value="OBC"
                           onChange={handleChange}
-                          checked={formD.Category=="OBC"}
+                          checked={formD.Category == "OBC"}
                         />
                       </div>
                       <div>
@@ -342,7 +356,7 @@ function Table({ formD, setFormD }) {
                           id="Minority"
                           value="Minority"
                           onChange={handleChange}
-                          checked={formD.Category=="Minority"}
+                          checked={formD.Category == "Minority"}
                         />
                       </div>
                       <div>
@@ -353,7 +367,7 @@ function Table({ formD, setFormD }) {
                           id="General"
                           value="General"
                           onChange={handleChange}
-                          checked={formD.Category=="General"}
+                          checked={formD.Category == "General"}
                         />
                       </div>
                     </div>
@@ -364,7 +378,13 @@ function Table({ formD, setFormD }) {
                     <label htmlFor="Address">{"Address:"}</label>
                   </td>
                   <td colSpan={6}>
-                    <input type="text" id="Address" name="Address" onChange={handleChange} value={formD.Address} />
+                    <input
+                      type="text"
+                      id="Address"
+                      name="Address"
+                      onChange={handleChange}
+                      value={formD.Address}
+                    />
                   </td>
                 </tr>
                 <tr>
@@ -372,7 +392,13 @@ function Table({ formD, setFormD }) {
                     <label htmlFor="Website">{"Website:"}</label>
                   </td>
                   <td colSpan={6}>
-                    <input type="text" id="Website" name="Website" onChange={handleChange} value={formD.Website} />
+                    <input
+                      type="text"
+                      id="Website"
+                      name="Website"
+                      onChange={handleChange}
+                      value={formD.Website}
+                    />
                   </td>
                 </tr>
                 <tr>
@@ -389,7 +415,7 @@ function Table({ formD, setFormD }) {
                           id="Firm_Registeredyes"
                           value="YES"
                           onChange={handleChange}
-                          checked={formD.Firm_Registered=="YES"}
+                          checked={formD.Firm_Registered == "YES"}
                         />
                       </div>
                       <div>
@@ -400,7 +426,7 @@ function Table({ formD, setFormD }) {
                           id="Firm_Registeredno"
                           value="NO"
                           onChange={handleChange}
-                          checked={formD.Firm_Registered=="NO"}
+                          checked={formD.Firm_Registered == "NO"}
                         />
                       </div>
                     </div>
@@ -423,7 +449,7 @@ function Table({ formD, setFormD }) {
                           id="Udyam_Registrationyes"
                           value="YES"
                           onChange={handleChange}
-                          checked={formD.Udyam_Registration=="YES"}
+                          checked={formD.Udyam_Registration == "YES"}
                         />
                       </div>
                       <div>
@@ -434,7 +460,7 @@ function Table({ formD, setFormD }) {
                           id="Udyam_Registrationno"
                           value="NO"
                           onChange={handleChange}
-                          checked={formD.Udyam_Registration=="NO"}
+                          checked={formD.Udyam_Registration == "NO"}
                         />
                       </div>
                     </div>
@@ -484,7 +510,7 @@ function Table({ formD, setFormD }) {
                           id="manufacturing"
                           value="manufacturing"
                           onChange={handleChange}
-                          checked={formD.Type_of_Business=="manufacturing"}
+                          checked={formD.Type_of_Business == "manufacturing"}
                         />
                       </div>
                       <div>
@@ -495,7 +521,7 @@ function Table({ formD, setFormD }) {
                           id="service"
                           value="service"
                           onChange={handleChange}
-                          checked={formD.Type_of_Business=="service"}
+                          checked={formD.Type_of_Business == "service"}
                         />
                       </div>
                       <div>
@@ -506,7 +532,7 @@ function Table({ formD, setFormD }) {
                           id="trading"
                           value="trading"
                           onChange={handleChange}
-                          checked={formD.Type_of_Business=="trading"}
+                          checked={formD.Type_of_Business == "trading"}
                         />
                       </div>
                     </div>
@@ -527,7 +553,7 @@ function Table({ formD, setFormD }) {
                           id="Operations_seasonalyes"
                           value="YES"
                           onChange={handleChange}
-                          checked={formD.Operations_seasonal=="YES"}
+                          checked={formD.Operations_seasonal == "YES"}
                         />
                       </div>
                       {a1 != "show1" ? (
@@ -563,7 +589,7 @@ function Table({ formD, setFormD }) {
                           id="Operations_seasonalno"
                           value="NO"
                           onChange={handleChange}
-                          checked={formD.Operations_seasonal=="NO"}
+                          checked={formD.Operations_seasonal == "NO"}
                         />
                       </div>
                     </div>
@@ -584,7 +610,7 @@ function Table({ formD, setFormD }) {
                           id="proprietary"
                           value="proprietary"
                           onChange={handleChange}
-                          checked={formD.Ownership_Pattern=="proprietary"}
+                          checked={formD.Ownership_Pattern == "proprietary"}
                         />
                       </div>
                       <div>
@@ -596,7 +622,7 @@ function Table({ formD, setFormD }) {
                           id="partnership"
                           value="partnership"
                           onChange={handleChange}
-                          checked={formD.Ownership_Pattern=="partnership"}
+                          checked={formD.Ownership_Pattern == "partnership"}
                         />
                       </div>
                       <div>
@@ -608,7 +634,7 @@ function Table({ formD, setFormD }) {
                           id="private"
                           value="private"
                           onChange={handleChange}
-                          checked={formD.Ownership_Pattern=="private"}
+                          checked={formD.Ownership_Pattern == "private"}
                         />
                       </div>
                       <div>
@@ -620,7 +646,7 @@ function Table({ formD, setFormD }) {
                           id="LLP"
                           value="LLP"
                           onChange={handleChange}
-                          checked={formD.Ownership_Pattern=="LLP"}
+                          checked={formD.Ownership_Pattern == "LLP"}
                         />
                       </div>
                       <div>
@@ -632,7 +658,7 @@ function Table({ formD, setFormD }) {
                           id="PUBLIC"
                           value="PUBLIC"
                           onChange={handleChange}
-                          checked={formD.Ownership_Pattern=="PUBLIC"}
+                          checked={formD.Ownership_Pattern == "PUBLIC"}
                         />
                       </div>
                       <div>
@@ -644,7 +670,7 @@ function Table({ formD, setFormD }) {
                           id="NO LEGAL ENTITY"
                           value="NO LEGAL ENTITY"
                           onChange={handleChange}
-                          checked={formD.Ownership_Pattern=="NO LEGAL ENTITY"}
+                          checked={formD.Ownership_Pattern == "NO LEGAL ENTITY"}
                         />
                       </div>
                     </div>
@@ -686,7 +712,7 @@ function Table({ formD, setFormD }) {
                           id="Clusteryes"
                           value="YES"
                           onChange={handleChange}
-                          checked={formD.Cluster=="YES"}
+                          checked={formD.Cluster == "YES"}
                         />
                       </div>
                       <div>
@@ -698,7 +724,7 @@ function Table({ formD, setFormD }) {
                           id="Clusterno"
                           value="NO"
                           onChange={handleChange}
-                          checked={formD.Cluster=="NO"}
+                          checked={formD.Cluster == "NO"}
                         />
                       </div>
                     </div>
@@ -764,7 +790,7 @@ function Table({ formD, setFormD }) {
                           id="use_computeryes"
                           value="YES"
                           onChange={handleChange}
-                          checked={formD.use_computer=="YES"}
+                          checked={formD.use_computer == "YES"}
                         />
                       </div>
                       <div>
@@ -775,7 +801,7 @@ function Table({ formD, setFormD }) {
                           id="use_computerno"
                           value="NO"
                           onChange={handleChange}
-                          checked={formD.use_computer=="NO"}
+                          checked={formD.use_computer == "NO"}
                         />
                       </div>
                     </div>
@@ -939,7 +965,9 @@ function Table({ formD, setFormD }) {
                       </div>
 
                       <div>
-                        <label htmlFor="Govt1">Government (State/Central)</label>
+                        <label htmlFor="Govt1">
+                          Government (State/Central)
+                        </label>
                         <input
                           type="checkbox"
                           id="Govt1"
@@ -1221,7 +1249,7 @@ function Table({ formD, setFormD }) {
                           id="loan_availedyes"
                           value="YES"
                           onChange={handleChange}
-                          checked={formD.loan_availed=="YES"}
+                          checked={formD.loan_availed == "YES"}
                         />
                       </div>
                       <div>
@@ -1232,7 +1260,7 @@ function Table({ formD, setFormD }) {
                           id="loan_availedno"
                           value="NO"
                           onChange={handleChange}
-                          checked={formD.loan_availed=="NO"}
+                          checked={formD.loan_availed == "NO"}
                         />
                       </div>
                     </div>
@@ -1269,7 +1297,7 @@ function Table({ formD, setFormD }) {
                           id="loan_adequateyes"
                           value="YES"
                           onChange={handleChange}
-                          checked={formD.loan_adequate=="YES"}
+                          checked={formD.loan_adequate == "YES"}
                         />
                       </div>
                       <div>
@@ -1281,7 +1309,7 @@ function Table({ formD, setFormD }) {
                           id="loan_adequateno"
                           value="NO"
                           onChange={handleChange}
-                          checked={formD.loan_adequate=="NO"}
+                          checked={formD.loan_adequate == "NO"}
                         />
                       </div>
                     </div>
@@ -1328,7 +1356,7 @@ function Table({ formD, setFormD }) {
                           id="availed_loan_last_yearyes"
                           value="YES"
                           onChange={handleChange}
-                          checked={formD.availed_loan_last_year=="YES"}
+                          checked={formD.availed_loan_last_year == "YES"}
                         />
                       </div>
 
@@ -1341,7 +1369,7 @@ function Table({ formD, setFormD }) {
                           id="availed_loan_last_yearno"
                           value="NO"
                           onChange={handleChange}
-                          checked={formD.availed_loan_last_year=="NO"}
+                          checked={formD.availed_loan_last_year == "NO"}
                         />
                       </div>
                     </div>
@@ -1387,7 +1415,7 @@ function Table({ formD, setFormD }) {
                           id="innovation_RDyes"
                           value="YES"
                           onChange={handleChange}
-                          checked={formD.innovation_RD=="YES"}
+                          checked={formD.innovation_RD == "YES"}
                         />
                       </div>
 
@@ -1400,7 +1428,7 @@ function Table({ formD, setFormD }) {
                           id="innovation_RDno"
                           value="NO"
                           onChange={handleChange}
-                          checked={formD.innovation_RD=="NO"}
+                          checked={formD.innovation_RD == "NO"}
                         />
                       </div>
                     </div>
@@ -1516,7 +1544,7 @@ function Table({ formD, setFormD }) {
                           id="pan_card_companyyes"
                           value="YES"
                           onChange={handleChange}
-                          checked={formD.pan_card_company=="YES"}
+                          checked={formD.pan_card_company == "YES"}
                         />
                       </div>
                       <div>
@@ -1527,7 +1555,7 @@ function Table({ formD, setFormD }) {
                           id="pan_card_companyno"
                           value="NO"
                           onChange={handleChange}
-                          checked={formD.pan_card_company=="NO"}
+                          checked={formD.pan_card_company == "NO"}
                         />
                       </div>
                     </div>
@@ -1547,7 +1575,7 @@ function Table({ formD, setFormD }) {
                           id="GST_NOyes"
                           value="YES"
                           onChange={handleChange}
-                          checked={formD.GST_NO=="YES"}
+                          checked={formD.GST_NO == "YES"}
                         />
                       </div>
                       <div>
@@ -1558,7 +1586,7 @@ function Table({ formD, setFormD }) {
                           id="GST_NOno"
                           value="NO"
                           onChange={handleChange}
-                          checked={formD.GST_NO=="NO"}
+                          checked={formD.GST_NO == "NO"}
                         />
                       </div>
                     </div>
@@ -1578,7 +1606,7 @@ function Table({ formD, setFormD }) {
                           id="Current_Bank_Accountyes"
                           value="YES"
                           onChange={handleChange}
-                          checked={formD.Current_Bank_Account=="YES"}
+                          checked={formD.Current_Bank_Account == "YES"}
                         />
                       </div>
                       <div>
@@ -1589,7 +1617,7 @@ function Table({ formD, setFormD }) {
                           id="Current_Bank_Accountno"
                           value="NO"
                           onChange={handleChange}
-                          checked={formD.Current_Bank_Account=="NO"}
+                          checked={formD.Current_Bank_Account == "NO"}
                         />
                       </div>
                     </div>
@@ -1615,7 +1643,9 @@ function Table({ formD, setFormD }) {
                           id="have_CA_audited_financial_statementyes"
                           value="YES"
                           onChange={handleChange}
-                          checked={formD.have_CA_audited_financial_statement=="YES"}
+                          checked={
+                            formD.have_CA_audited_financial_statement == "YES"
+                          }
                         />
                       </div>
                       <div>
@@ -1628,7 +1658,9 @@ function Table({ formD, setFormD }) {
                           id="have_CA_audited_financial_statementno"
                           value="NO"
                           onChange={handleChange}
-                          checked={formD.have_CA_audited_financial_statement=="NO"}
+                          checked={
+                            formD.have_CA_audited_financial_statement == "NO"
+                          }
                         />
                       </div>
                     </div>
@@ -1696,7 +1728,7 @@ function Table({ formD, setFormD }) {
                           id="You_Exportyes"
                           value="YES"
                           onChange={handleChange}
-                          checked={formD.You_Export=="YES"}
+                          checked={formD.You_Export == "YES"}
                         />
                       </div>
                       <div>
@@ -1707,7 +1739,7 @@ function Table({ formD, setFormD }) {
                           id="You_Exportno"
                           value="NO"
                           onChange={handleChange}
-                          checked={formD.You_Export=="NO"}
+                          checked={formD.You_Export == "NO"}
                         />
                       </div>
                     </div>
@@ -1791,7 +1823,7 @@ function Table({ formD, setFormD }) {
                           id="Water_Availabilityyes"
                           value="YES"
                           onChange={handleChange}
-                          checked={formD.Water_Availability=="YES"}
+                          checked={formD.Water_Availability == "YES"}
                         />
                       </div>
                       <div>
@@ -1802,7 +1834,7 @@ function Table({ formD, setFormD }) {
                           id="Water_Availabilityno"
                           value="NO"
                           onChange={handleChange}
-                          checked={formD.Water_Availability=="NO"}
+                          checked={formD.Water_Availability == "NO"}
                         />
                       </div>
                     </div>
@@ -1824,7 +1856,7 @@ function Table({ formD, setFormD }) {
                           id="Effluent_Treatment_Constraintyes"
                           value="YES"
                           onChange={handleChange}
-                          checked={formD.Effluent_Treatment_Constraint=="YES"}
+                          checked={formD.Effluent_Treatment_Constraint == "YES"}
                         />
                       </div>
                       <div>
@@ -1837,7 +1869,7 @@ function Table({ formD, setFormD }) {
                           id="Effluent_Treatment_Constraintno"
                           value="NO"
                           onChange={handleChange}
-                          checked={formD.Effluent_Treatment_Constraint=="NO"}
+                          checked={formD.Effluent_Treatment_Constraint == "NO"}
                         />
                       </div>
                     </div>
@@ -1861,7 +1893,7 @@ function Table({ formD, setFormD }) {
                           id="Current_Bank_Accountyes"
                           value="YES"
                           onChange={handleChange}
-                          checked={formD.Current_Bank_Account=="YES"}
+                          checked={formD.Current_Bank_Account == "YES"}
                         />
                       </div>
                       <div>
@@ -1872,7 +1904,7 @@ function Table({ formD, setFormD }) {
                           id="Current_Bank_Accountno"
                           value="NO"
                           onChange={handleChange}
-                          checked={formD.Current_Bank_Account=="NO"}
+                          checked={formD.Current_Bank_Account == "NO"}
                         />
                       </div>
                     </div>
@@ -1883,7 +1915,13 @@ function Table({ formD, setFormD }) {
                     <label htmlFor="Email">Email : </label>
                   </td>
                   <td colSpan={6}>
-                    <input type="email" id="Email" name="Email" onChange={handleChange} value={formD.Email} />
+                    <input
+                      type="email"
+                      id="Email"
+                      name="Email"
+                      onChange={handleChange}
+                      value={formD.Email}
+                    />
                   </td>
                 </tr>
                 <tr>
@@ -1904,14 +1942,17 @@ function Table({ formD, setFormD }) {
             </table>
           </div>
         </div>
+        <div style={{ marginTop: "1em" }}>
+          <NavLink to="/2" className="arrow_notation">
+            Next
+          </NavLink>
+        </div>
         {/* <FormPart2 />
         <FormPart3 />
         <FormPart4 />
         <FormPart5 />
       <FormPart6 /> */}
       </form>
-      <NavLink to="/2">Next</NavLink>
-      <Outlet />
     </>
   );
 }
