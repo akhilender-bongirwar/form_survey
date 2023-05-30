@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { NavLink,Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import "./Table.css";
 import Input from "./Input";
 import { Form } from "react-router-dom";
@@ -10,181 +10,181 @@ import FormPart4 from "./FormPart4";
 import FormPart5 from "./FormPart5";
 import FormPart6 from "./FormPart6";
 // export async function dataaction({ request }) {
-  // const formData = await request.formData();
-  // // const checkformdata = Object.fromEntries(await request.formData());
-  // // console.log(checkformdata);
-  // const submission = {
-  //   Enterprise_Name: formData.get("Enterprise_Name"),
-  //   Entrepreneur_Name: formData.get("Entrepreneur_Name"),
-  //   Sex: formData.get("Sex"),
-  //   Category: formData.get("Category"),
-  //   Address: formData.get("Address"),
-  //   Firm_Registered: formData.get("Firm_Registered"),
-  //   Udyam_Registration: formData.get("Udyam_Registration"),
-  //   UAM_UEM_Number: formData.get("UAM_UEM_Number"),
-  //   Year_of_Establishment: formData.get("Year_of_Establishment"),
-  //   Type_of_Business: formData.get("Type_of_Business"),
-  //   Operations_seasonal: formData.get("Operations_seasonal"),
-  //   months_of_operation: formData.get("months_of_operation"),
-  //   Ownership_Pattern: formData.get("Ownership_Pattern"),
-  //   Cluster: formData.get("Cluster"),
-  //   IF_YES_HOW_MANY_UNITS: formData.get("IF_YES_HOW_MANY_UNITS"),
-  //   use_computer: formData.get("use_computer"),
-  //   TOP_THREE_PRODUCTS: [
-  //     formData.get("TOP_THREE_PRODUCTS-1"),
-  //     formData.get("TOP_THREE_PRODUCTS-2"),
-  //     formData.get("TOP_THREE_PRODUCTS-3"),
-  //   ],
-  //   sell_produce_majorly: formData.get("sell_produce_majorly"),
-  //   service_industry: formData.get("service_industry"),
-  //   full_time_Emoployee: formData.get("full_time_Emoployee"),
-  //   part_time_Emoployee: formData.get("part_time_Emoployee"),
-  //   Permanent_Emoployee: formData.get("Permanent_Emoployee"),
-  //   Contractual_Emoployee: formData.get("Contractual_Emoployee"),
-  //   male_employee: formData.get("male_employee"),
-  //   female_employee: formData.get("female_employee"),
-  //   formal_source: formData.get("formal_source"),
-  //   informal_source: formData.get("informal_source"),
-  //   internal_fund_generation: formData.get("internal_fund_generation"),
-  //   other_financing_source: formData.get("other_financing_source"),
-  //   loan_availed: formData.get("loan_availed"),
-  //   loan_specification: formData.get("loan_specification"),
-  //   loan_adequate: formData.get("loan_adequate"),
-  //   loan_required: formData.get("loan_required"),
-  //   availed_loan_last_year: formData.get("availed_loan_last_year"),
-  //   availed_loan_amount: formData.get("availed_loan_amount"),
-  //   innovation_RD: formData.get("innovation_RD"),
-  //   innovation_RD_institute: formData.get("innovation_RD_institute"),
-  //   govt_scheme: formData.get("govt_scheme"),
-  //   govt_program: formData.get("govt_program"),
-  //   govt_organisation: formData.get("govt_organisation"),
-  //   pan_card_company: formData.get("pan_card_company"),
-  //   GST_NO: formData.get("GST_NO"),
-  //   Current_Bank_Account: formData.get("Current_Bank_Account"),
-  //   have_CA_audited_financial_statement: formData.get(
-  //     "have_CA_audited_financial_statement"
-  //   ),
-  //   Annual_Turnover: formData.get("Annual_Turnover"),
-  //   Investment_plant_machinery: formData.get("Investment_plant_machinery"),
-  //   Investment_IT_Infrastructure: formData.get("Investment_IT_Infrastructure"),
-  //   You_Export: formData.get("You_Export"),
-  //   Export_Value: formData.get("Export_Value"),
-  //   Overall_Annual_production: formData.get("Overall_Annual_production"),
-  //   Electric_Availability_Hours: formData.get("Electric_Availability_Hours"),
-  //   Electricity_rate_Per_Unit: formData.get("Electricity_rate_Per_Unit"),
-  //   Water_Availability: formData.get("Water_Availability"),
-  //   Effluent_Treatment_Constraint: formData.get(
-  //     "Effluent_Treatment_Constraint"
-  //   ),
-  //   GOVT_Training: formData.get("GOVT_Training"),
-  //   Email: formData.get("Email"),
-  //   Phone_Number: formData.get("Phone_Number"),
-  //   Raw_Materials: formData.get("Raw_Materials"),
-  //   if_Raw_Materials_available: formData.get("if_Raw_Materials_available"),
-  //   if_no_mention_difficulties: formData.get("if_no_mention_difficulties"),
-  //   green_tech: formData.get("green_tech"),
-  //   environment_clearence: formData.get("environment_clearence"),
-  //   final_product_sold_to: formData.getAll("final_product_sold_to"),
-  //   markets_supplied: formData.get("markets_supplied"),
-  //   have_product_brand_name: formData.get("have_product_brand_name"),
-  //   Brand_name: formData.get("Brand_name"),
-  //   challenges_while_selling: formData.get("challenges_while_selling"),
-  //   involved_in_marketing: formData.get("involved_in_marketing"),
-  //   options_you_leverage_for_sale: formData.getAll(
-  //     "options_you_leverage_for_sale:"
-  //   ),
-  //   Quality_Testing_lab_available: formData.get(
-  //     "Quality_Testing_lab_available"
-  //   ),
-  //   labour_and_training: formData.get("labour_and_training"),
-  //   skilled_labour_is_required: formData.get("skilled_labour_is_required"),
-  //   Nature_of_Services_Offered: formData.getAll("Nature_of_Services_Offered"),
-  //   Challenges_faced: formData.getAll("Challenges_faced"),
+// const formData = await request.formData();
+// // const checkformdata = Object.fromEntries(await request.formData());
+// // console.log(checkformdata);
+// const submission = {
+//   Enterprise_Name: formData.get("Enterprise_Name"),
+//   Entrepreneur_Name: formData.get("Entrepreneur_Name"),
+//   Sex: formData.get("Sex"),
+//   Category: formData.get("Category"),
+//   Address: formData.get("Address"),
+//   Firm_Registered: formData.get("Firm_Registered"),
+//   Udyam_Registration: formData.get("Udyam_Registration"),
+//   UAM_UEM_Number: formData.get("UAM_UEM_Number"),
+//   Year_of_Establishment: formData.get("Year_of_Establishment"),
+//   Type_of_Business: formData.get("Type_of_Business"),
+//   Operations_seasonal: formData.get("Operations_seasonal"),
+//   months_of_operation: formData.get("months_of_operation"),
+//   Ownership_Pattern: formData.get("Ownership_Pattern"),
+//   Cluster: formData.get("Cluster"),
+//   IF_YES_HOW_MANY_UNITS: formData.get("IF_YES_HOW_MANY_UNITS"),
+//   use_computer: formData.get("use_computer"),
+//   TOP_THREE_PRODUCTS: [
+//     formData.get("TOP_THREE_PRODUCTS-1"),
+//     formData.get("TOP_THREE_PRODUCTS-2"),
+//     formData.get("TOP_THREE_PRODUCTS-3"),
+//   ],
+//   sell_produce_majorly: formData.get("sell_produce_majorly"),
+//   service_industry: formData.get("service_industry"),
+//   full_time_Emoployee: formData.get("full_time_Emoployee"),
+//   part_time_Emoployee: formData.get("part_time_Emoployee"),
+//   Permanent_Emoployee: formData.get("Permanent_Emoployee"),
+//   Contractual_Emoployee: formData.get("Contractual_Emoployee"),
+//   male_employee: formData.get("male_employee"),
+//   female_employee: formData.get("female_employee"),
+//   formal_source: formData.get("formal_source"),
+//   informal_source: formData.get("informal_source"),
+//   internal_fund_generation: formData.get("internal_fund_generation"),
+//   other_financing_source: formData.get("other_financing_source"),
+//   loan_availed: formData.get("loan_availed"),
+//   loan_specification: formData.get("loan_specification"),
+//   loan_adequate: formData.get("loan_adequate"),
+//   loan_required: formData.get("loan_required"),
+//   availed_loan_last_year: formData.get("availed_loan_last_year"),
+//   availed_loan_amount: formData.get("availed_loan_amount"),
+//   innovation_RD: formData.get("innovation_RD"),
+//   innovation_RD_institute: formData.get("innovation_RD_institute"),
+//   govt_scheme: formData.get("govt_scheme"),
+//   govt_program: formData.get("govt_program"),
+//   govt_organisation: formData.get("govt_organisation"),
+//   pan_card_company: formData.get("pan_card_company"),
+//   GST_NO: formData.get("GST_NO"),
+//   Current_Bank_Account: formData.get("Current_Bank_Account"),
+//   have_CA_audited_financial_statement: formData.get(
+//     "have_CA_audited_financial_statement"
+//   ),
+//   Annual_Turnover: formData.get("Annual_Turnover"),
+//   Investment_plant_machinery: formData.get("Investment_plant_machinery"),
+//   Investment_IT_Infrastructure: formData.get("Investment_IT_Infrastructure"),
+//   You_Export: formData.get("You_Export"),
+//   Export_Value: formData.get("Export_Value"),
+//   Overall_Annual_production: formData.get("Overall_Annual_production"),
+//   Electric_Availability_Hours: formData.get("Electric_Availability_Hours"),
+//   Electricity_rate_Per_Unit: formData.get("Electricity_rate_Per_Unit"),
+//   Water_Availability: formData.get("Water_Availability"),
+//   Effluent_Treatment_Constraint: formData.get(
+//     "Effluent_Treatment_Constraint"
+//   ),
+//   GOVT_Training: formData.get("GOVT_Training"),
+//   Email: formData.get("Email"),
+//   Phone_Number: formData.get("Phone_Number"),
+//   Raw_Materials: formData.get("Raw_Materials"),
+//   if_Raw_Materials_available: formData.get("if_Raw_Materials_available"),
+//   if_no_mention_difficulties: formData.get("if_no_mention_difficulties"),
+//   green_tech: formData.get("green_tech"),
+//   environment_clearence: formData.get("environment_clearence"),
+//   final_product_sold_to: formData.getAll("final_product_sold_to"),
+//   markets_supplied: formData.get("markets_supplied"),
+//   have_product_brand_name: formData.get("have_product_brand_name"),
+//   Brand_name: formData.get("Brand_name"),
+//   challenges_while_selling: formData.get("challenges_while_selling"),
+//   involved_in_marketing: formData.get("involved_in_marketing"),
+//   options_you_leverage_for_sale: formData.getAll(
+//     "options_you_leverage_for_sale:"
+//   ),
+//   Quality_Testing_lab_available: formData.get(
+//     "Quality_Testing_lab_available"
+//   ),
+//   labour_and_training: formData.get("labour_and_training"),
+//   skilled_labour_is_required: formData.get("skilled_labour_is_required"),
+//   Nature_of_Services_Offered: formData.getAll("Nature_of_Services_Offered"),
+//   Challenges_faced: formData.getAll("Challenges_faced"),
 
-  //   Govt_Scheme_Challenges: formData.get("Govt_Scheme_Challenges"),
-  //   Support_required: formData.get("Support_required"),
-  //   aware_of_govt_policy: formData.get("aware_of_govt_policy"),
-  //   Policy_benifitted: formData.getAll("Policy_benifitted"),
-  //   Benifits_of_policy: formData.get("Policy_benifitted"),
-  //   Challenges_faced_policy_related: formData.get(
-  //     "Challenges_faced_policy_related"
-  //   ),
-  //   expectation_from_govt: formData.getAll("expectation_from_govt"),
-  //   Aware_of_listed_scehmes: {
-  //     Central_Govt: formData.getAll("Central_Govt"),
-  //     State_Govt: formData.getAll("State_Govt"),
-  //   },
-  //   Remarks: formData.get("Remarks"),
-  //   Scheme_Like_to_avail: {
-  //     Central_Govt: formData.getAll("Central_Govt2"),
-  //     State_Govt: formData.getAll("State_Govt2"),
-  //   },
-  //   scheme_availed_by_you_central_govt: formData.get(
-  //     "scheme_availed_by_you_central_govt"
-  //   ),
-  //   scheme_availed_by_you_state_govt: formData.get(
-  //     "scheme_availed_by_you_state_govt"
-  //   ),
-  //   Key_Reason_Preventing_loan: formData.getAll("Key_Reason_Preventing_loan"),
-  //   source_of_credit_form: formData.get("source_of_credit_form"),
-  //   applied_loan_outcome: formData.getAll("applied_loan_outcome"),
-  //   reason_of_rejection: formData.get("reason_of_rejection"),
-  //   availed_samadhaan_service: formData.get("availed_samadhaan_service"),
-  //   face_challenge_from_buyer: formData.get("face_challenge_from_buyer"),
-  //   Questionnaire_For_Exporters: {
-  //     Certifications: {
-  //       Currently_owned_1: formData.get("Currently_owned_1"),
-  //       To_be_Required_1: formData.get("To_be_Required_1"),
-  //     },
-  //     Infrastructure: {
-  //       Currently_owned_2: formData.get("Currently_owned_2"),
-  //       To_be_Required_2: formData.get("To_be_Required_2"),
-  //     },
-  //     Laboratory: {
-  //       Currently_owned_3: formData.get("Currently_owned_3"),
-  //       To_be_Required_3: formData.get("To_be_Required_3"),
-  //     },
-  //   },
-  //   Certification_required: formData.get("Certification_required"),
-  //   laboratory_requirement: formData.get("laboratory_requirement"),
-  //   Requirement_of_Soft_Interventions: {
-  //     Counselling: formData.get("Counselling"),
-  //     Upgradation_of_IT_Infrastructure: formData.get(
-  //       "Upgradation_of_IT_Infrastructure"
-  //     ),
-  //     Participation_in_Training: formData.get("Participation_in_Training"),
-  //     Institution_Development: formData.get("Institution_Development"),
-  //     Implementation_of_new_software: formData.get(
-  //       "Implementation_of_new_software"
-  //     ),
-  //     Training_Process_Improvement: formData.get(
-  //       "Training_Process_Improvement"
-  //     ),
-  //     Market_Promotion_Initiatives: formData.get(
-  //       "Market_Promotion_Initiatives"
-  //     ),
-  //     Design_and_product_development: formData.get(
-  //       "Design_and_product_development"
-  //     ),
-  //     Promotion_Campaign: formData.get("Promotion_Campaign"),
-  //   },
-  // };
+//   Govt_Scheme_Challenges: formData.get("Govt_Scheme_Challenges"),
+//   Support_required: formData.get("Support_required"),
+//   aware_of_govt_policy: formData.get("aware_of_govt_policy"),
+//   Policy_benifitted: formData.getAll("Policy_benifitted"),
+//   Benifits_of_policy: formData.get("Policy_benifitted"),
+//   Challenges_faced_policy_related: formData.get(
+//     "Challenges_faced_policy_related"
+//   ),
+//   expectation_from_govt: formData.getAll("expectation_from_govt"),
+//   Aware_of_listed_scehmes: {
+//     Central_Govt: formData.getAll("Central_Govt"),
+//     State_Govt: formData.getAll("State_Govt"),
+//   },
+//   Remarks: formData.get("Remarks"),
+//   Scheme_Like_to_avail: {
+//     Central_Govt: formData.getAll("Central_Govt2"),
+//     State_Govt: formData.getAll("State_Govt2"),
+//   },
+//   scheme_availed_by_you_central_govt: formData.get(
+//     "scheme_availed_by_you_central_govt"
+//   ),
+//   scheme_availed_by_you_state_govt: formData.get(
+//     "scheme_availed_by_you_state_govt"
+//   ),
+//   Key_Reason_Preventing_loan: formData.getAll("Key_Reason_Preventing_loan"),
+//   source_of_credit_form: formData.get("source_of_credit_form"),
+//   applied_loan_outcome: formData.getAll("applied_loan_outcome"),
+//   reason_of_rejection: formData.get("reason_of_rejection"),
+//   availed_samadhaan_service: formData.get("availed_samadhaan_service"),
+//   face_challenge_from_buyer: formData.get("face_challenge_from_buyer"),
+//   Questionnaire_For_Exporters: {
+//     Certifications: {
+//       Currently_owned_1: formData.get("Currently_owned_1"),
+//       To_be_Required_1: formData.get("To_be_Required_1"),
+//     },
+//     Infrastructure: {
+//       Currently_owned_2: formData.get("Currently_owned_2"),
+//       To_be_Required_2: formData.get("To_be_Required_2"),
+//     },
+//     Laboratory: {
+//       Currently_owned_3: formData.get("Currently_owned_3"),
+//       To_be_Required_3: formData.get("To_be_Required_3"),
+//     },
+//   },
+//   Certification_required: formData.get("Certification_required"),
+//   laboratory_requirement: formData.get("laboratory_requirement"),
+//   Requirement_of_Soft_Interventions: {
+//     Counselling: formData.get("Counselling"),
+//     Upgradation_of_IT_Infrastructure: formData.get(
+//       "Upgradation_of_IT_Infrastructure"
+//     ),
+//     Participation_in_Training: formData.get("Participation_in_Training"),
+//     Institution_Development: formData.get("Institution_Development"),
+//     Implementation_of_new_software: formData.get(
+//       "Implementation_of_new_software"
+//     ),
+//     Training_Process_Improvement: formData.get(
+//       "Training_Process_Improvement"
+//     ),
+//     Market_Promotion_Initiatives: formData.get(
+//       "Market_Promotion_Initiatives"
+//     ),
+//     Design_and_product_development: formData.get(
+//       "Design_and_product_development"
+//     ),
+//     Promotion_Campaign: formData.get("Promotion_Campaign"),
+//   },
+// };
 
-  // console.log(submission);
-  // axios
-  // .post("http://localhost:8080/form-data", {
-  //   body: submission,
-  // })
-  // .then((result) => {
-  //   console.log(result);
-  // })
-  // .catch((err) => {
-  //   console.log(err);
-  // });
+// console.log(submission);
+// axios
+// .post("http://localhost:8080/form-data", {
+//   body: submission,
+// })
+// .then((result) => {
+//   console.log(result);
+// })
+// .catch((err) => {
+//   console.log(err);
+// });
 //   return null;
 // }
 
-function Table({formD,setFormD}) {
+function Table({ formD, setFormD }) {
   const [a1, setA1] = useState(null);
   const [a2, setA2] = useState(null);
   const [a3, setA3] = useState(null);
@@ -192,14 +192,32 @@ function Table({formD,setFormD}) {
   const [a5, setA5] = useState(null);
   const [a6, setA6] = useState(null);
   function handleChange(event) {
-    const {name, value, type, checked} = event.target
-    setFormD(prevFormData => {
+    const { name, value, type, checked } = event.target
+    if(name==="sell_produce_majorly"){
+      setFormD(prevFormData => {
         return {
-            ...prevFormData,
-            [name]: type === "checkbox" ? checked : value
+          ...prevFormData,
+          [name]: {...prevFormData[name],[value]:checked}
         }
-    })
-}
+      })
+    }
+    else if(name==="service_industry"){
+      setFormD(prevFormData => {
+        return {
+          ...prevFormData,
+          [name]: {...prevFormData[name],[value]:checked}
+        }
+      })
+    }
+    else{
+      setFormD(prevFormData => {
+        return {
+          ...prevFormData,
+          [name]: type === "checkbox" ? checked : value
+        }
+      })
+    }
+  }
   return (
     <>
       <form method="post">
@@ -271,7 +289,7 @@ function Table({formD,setFormD}) {
                       </div>
                       <div>
                         <label htmlFor="F">F</label>
-                        <input type="radio" name="Sex" id="F" value="female" onChange={handleChange}/>
+                        <input type="radio" name="Sex" id="F" value="female" onChange={handleChange} />
                       </div>
                     </div>
                   </td>
@@ -793,7 +811,8 @@ function Table({formD,setFormD}) {
                           type="checkbox"
                           name="sell_produce_majorly"
                           id="local"
-                          value="Local Market"
+                          value="Local_Market"
+                          checked={formD.sell_produce_majorly.Local_Market}
                           onChange={handleChange}
                         />
                       </div>
@@ -805,6 +824,7 @@ function Table({formD,setFormD}) {
                           id="Govt"
                           name="sell_produce_majorly"
                           value="Government"
+                          checked={formD.sell_produce_majorly.Government}
                           onChange={handleChange}
                         />
                       </div>
@@ -816,6 +836,7 @@ function Table({formD,setFormD}) {
                           id="online"
                           name="sell_produce_majorly"
                           value="online"
+                          checked={formD.sell_produce_majorly.online}
                           onChange={handleChange}
                         />
                       </div>
@@ -826,7 +847,8 @@ function Table({formD,setFormD}) {
                           type="checkbox"
                           id="other"
                           name="sell_produce_majorly"
-                          value="Other states"
+                          value="Other_states"
+                          checked={formD.sell_produce_majorly.Other_states}
                           onChange={handleChange}
                         />
                       </div>
@@ -836,7 +858,8 @@ function Table({formD,setFormD}) {
                           type="checkbox"
                           id="export"
                           name="sell_produce_majorly"
-                          value="export outside"
+                          value="export_outside"
+                          checked={formD.sell_produce_majorly.export_outside}
                           onChange={handleChange}
                         />
                       </div>
@@ -872,55 +895,60 @@ function Table({formD,setFormD}) {
                   <td colSpan={6}>
                     <div className="radio_wrapper" id="ownership_pattern">
                       <div>
-                        <label htmlFor="local">Local Market/ trader</label>
+                        <label htmlFor="local1">Local Market/ trader</label>
                         <input
                           type="checkbox"
                           name="service_industry"
-                          id="local"
-                          value="Local Market"
+                          id="local1"
+                          value="Local_Market"
+                          checked={formD.service_industry.Local_Market}
                           onChange={handleChange}
                         />
                       </div>
 
                       <div>
-                        <label htmlFor="Govt">Government (State/Central)</label>
+                        <label htmlFor="Govt1">Government (State/Central)</label>
                         <input
                           type="checkbox"
-                          id="Govt"
+                          id="Govt1"
                           name="service_industry"
                           value="Government"
+                          checked={formD.service_industry.Government}
                           onChange={handleChange}
                         />
                       </div>
 
                       <div>
-                        <label htmlFor="online">Online Platform</label>
+                        <label htmlFor="online1">Online Platform</label>
                         <input
                           type="checkbox"
-                          id="online"
+                          id="online1"
                           name="service_industry"
                           value="online"
+                          checked={formD.service_industry.online}
                           onChange={handleChange}
                         />
                       </div>
 
                       <div>
-                        <label htmlFor="other">Other states in India </label>
+                        <label htmlFor="other1">Other states in India </label>
                         <input
                           type="checkbox"
-                          id="other"
+                          id="other1"
                           name="service_industry"
-                          value="Other states"
+                          value="Other_states"
+                          checked={formD.service_industry.Other_states}
                           onChange={handleChange}
                         />
                       </div>
                       <div>
-                        <label htmlFor="export">Internationally</label>
+                        <label htmlFor="export1">Internationally</label>
                         <input
                           type="checkbox"
-                          id="export"
+                          id="export1"
                           name="service_industry"
-                          value="export outside"
+                          value="internationally"
+                          checked={formD.service_industry.internationally}
                           onChange={handleChange}
                         />
                       </div>

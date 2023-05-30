@@ -2,6 +2,15 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Table.css";
 function FormPart3({formD,setFormD}) {
+  function handleChange(event) {
+    const { name, value, type, checked } = event.target
+    setFormD(prevFormData => {
+      return {
+        ...prevFormData,
+        [name]: type === "checkbox" ? checked : value
+      }
+    })
+  }
   return (
     <div
       style={{
