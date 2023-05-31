@@ -193,20 +193,160 @@ function Table({ formD, setFormD }) {
   const [a5, setA5] = useState(null);
   const [a6, setA6] = useState(null);
   function handleChange(event) {
-    const { name, value, type, checked } = event.target;
+    const { name, value, type, checked, className, id } = event.target;
     if (name === "sell_produce_majorly") {
+      if (type == "text") {
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: { ...prevFormData[name], other: value },
+          };
+        });
+      } else {
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: { ...prevFormData[name], [value]: checked },
+          };
+        });
+      }
+    } else if (name === "service_industry") {
+      if (type == "text") {
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: { ...prevFormData[name], other: value },
+          };
+        });
+      } else {
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: { ...prevFormData[name], [value]: checked },
+          };
+        });
+      }
+    } else if (name === "Aware_of_listed_scehmes") {
+      if (className == "central") {
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: {
+              ...prevFormData[name],
+              Central_Govt: {
+                ...prevFormData[name].Central_Govt,
+                [value]: type === "checkbox" ? checked : value,
+              },
+            },
+          };
+        });
+      } else {
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: {
+              ...prevFormData[name],
+              State_Govt: {
+                ...prevFormData[name].State_Govt,
+                [value]: type === "checkbox" ? checked : value,
+              },
+            },
+          };
+        });
+      }
+    } else if (name === "Scheme_Like_to_avail") {
+      if (className == "central") {
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: {
+              ...prevFormData[name],
+              Central_Govt: {
+                ...prevFormData[name].Central_Govt,
+                [value]: type === "checkbox" ? checked : value,
+              },
+            },
+          };
+        });
+      } else {
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: {
+              ...prevFormData[name],
+              State_Govt: {
+                ...prevFormData[name].State_Govt,
+                [value]: type === "checkbox" ? checked : value,
+              },
+            },
+          };
+        });
+      }
+    } else if (name === "Key_Reason_Preventing_loan") {
+      if (type == "text") {
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: { ...prevFormData[name], other: value },
+          };
+        });
+      } else {
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: { ...prevFormData[name], [value]: checked },
+          };
+        });
+      }
+    } else if (name === "applied_loan_outcome") {
+      if (type == "radio") {
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: { ...prevFormData[name], radio_button: value, other: "" },
+          };
+        });
+      } else {
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: { ...prevFormData[name], other: value },
+          };
+        });
+      }
+    } else if (className == "Requirement_of_Soft_Interventions") {
       setFormD((prevFormData) => {
         return {
           ...prevFormData,
-          [name]: {...prevFormData[name],[value]:type === "checkbox" ? checked : value}
-        }
-      })
-    }
-    else if(name==="service_industry"){
-      setFormD(prevFormData => {
+          [className]: { ...prevFormData[className], [name]: value },
+        };
+      });
+    } else if (className == "Laboratory") {
+      setFormD((prevFormData) => {
         return {
           ...prevFormData,
-          [name]: {...prevFormData[name],[value]:type === "checkbox" ? checked : value},
+          [className]: { ...prevFormData[className], [name]: value },
+        };
+      });
+    } else if (className == "Certifications") {
+      setFormD((prevFormData) => {
+        return {
+          ...prevFormData,
+          [className]: { ...prevFormData[className], [name]: value },
+        };
+      });
+    } else if (className == "Infrastructure") {
+      setFormD((prevFormData) => {
+        return {
+          ...prevFormData,
+          [className]: { ...prevFormData[className], [name]: value },
+        };
+      });
+    } else if (name == "TOP_THREE_PRODUCTS") {
+      setFormD((prevFormData) => {
+        return {
+          ...prevFormData,
+          [name]: { ...prevFormData[name], [id]: value },
         };
       });
     } else {
@@ -225,7 +365,6 @@ function Table({ formD, setFormD }) {
           style={{
             display: "flex",
             justifyContent: "center",
-            height: "90vh",
             overflowY: "scroll",
             backgroundColor: "rgb(240 235 248 / 77%)",
           }}
@@ -259,6 +398,7 @@ function Table({ formD, setFormD }) {
                       name="Enterprise_Name"
                       value={formD.Enterprise_Name}
                       onChange={handleChange}
+                      required="required"
                     />
                   </td>
                 </tr>
@@ -275,6 +415,7 @@ function Table({ formD, setFormD }) {
                       name="Entrepreneur_Name"
                       value={formD.Entrepreneur_Name}
                       onChange={handleChange}
+                      required="required"
                     />
                   </td>
                 </tr>
@@ -293,6 +434,7 @@ function Table({ formD, setFormD }) {
                           value="male"
                           onChange={handleChange}
                           checked={formD.Sex == "male"}
+                          required="required"
                         />
                       </div>
                       <div>
@@ -304,6 +446,7 @@ function Table({ formD, setFormD }) {
                           value="female"
                           onChange={handleChange}
                           checked={formD.Sex == "female"}
+                          required="required"
                         />
                       </div>
                     </div>
@@ -324,6 +467,7 @@ function Table({ formD, setFormD }) {
                           value="SC"
                           onChange={handleChange}
                           checked={formD.Category == "SC"}
+                          required="required"
                         />
                       </div>
                       <div>
@@ -335,6 +479,7 @@ function Table({ formD, setFormD }) {
                           value="ST"
                           onChange={handleChange}
                           checked={formD.Category == "ST"}
+                          required="required"
                         />
                       </div>
                       <div>
@@ -346,6 +491,7 @@ function Table({ formD, setFormD }) {
                           value="OBC"
                           onChange={handleChange}
                           checked={formD.Category == "OBC"}
+                          required="required"
                         />
                       </div>
                       <div>
@@ -357,6 +503,7 @@ function Table({ formD, setFormD }) {
                           value="Minority"
                           onChange={handleChange}
                           checked={formD.Category == "Minority"}
+                          required="required"
                         />
                       </div>
                       <div>
@@ -368,6 +515,7 @@ function Table({ formD, setFormD }) {
                           value="General"
                           onChange={handleChange}
                           checked={formD.Category == "General"}
+                          required="required"
                         />
                       </div>
                     </div>
@@ -384,6 +532,7 @@ function Table({ formD, setFormD }) {
                       name="Address"
                       onChange={handleChange}
                       value={formD.Address}
+                      required="required"
                     />
                   </td>
                 </tr>
@@ -398,6 +547,7 @@ function Table({ formD, setFormD }) {
                       name="Website"
                       onChange={handleChange}
                       value={formD.Website}
+                      required="required"
                     />
                   </td>
                 </tr>
@@ -416,6 +566,7 @@ function Table({ formD, setFormD }) {
                           value="YES"
                           onChange={handleChange}
                           checked={formD.Firm_Registered == "YES"}
+                          required="required"
                         />
                       </div>
                       <div>
@@ -427,6 +578,7 @@ function Table({ formD, setFormD }) {
                           value="NO"
                           onChange={handleChange}
                           checked={formD.Firm_Registered == "NO"}
+                          required="required"
                         />
                       </div>
                     </div>
@@ -450,6 +602,7 @@ function Table({ formD, setFormD }) {
                           value="YES"
                           onChange={handleChange}
                           checked={formD.Udyam_Registration == "YES"}
+                          required="required"
                         />
                       </div>
                       <div>
@@ -461,6 +614,7 @@ function Table({ formD, setFormD }) {
                           value="NO"
                           onChange={handleChange}
                           checked={formD.Udyam_Registration == "NO"}
+                          required="required"
                         />
                       </div>
                     </div>
@@ -821,32 +975,35 @@ function Table({ formD, setFormD }) {
                     colSpan={6}
                   >
                     <div>
-                      <label htmlFor="TOP_THREE_PRODUCTS-1">1.</label>
+                      <label htmlFor="TOP_THREE_PRODUCTS_1">1.</label>
                       <input
                         style={{ width: "95%" }}
                         type="text"
-                        id="TOP_THREE_PRODUCTS-1"
+                        id="TOP_THREE_PRODUCTS_1"
                         name="TOP_THREE_PRODUCTS"
+                        value={formD.TOP_THREE_PRODUCTS.TOP_THREE_PRODUCTS_1}
                         onChange={handleChange}
                       />
                     </div>
                     <div>
-                      <label htmlFor="TOP_THREE_PRODUCTS-2">2.</label>
+                      <label htmlFor="TOP_THREE_PRODUCTS_2">2.</label>
                       <input
                         style={{ width: "95%" }}
                         type="text"
-                        id="TOP_THREE_PRODUCTS-2"
+                        id="TOP_THREE_PRODUCTS_2"
                         name="TOP_THREE_PRODUCTS"
+                        value={formD.TOP_THREE_PRODUCTS.TOP_THREE_PRODUCTS_2}
                         onChange={handleChange}
                       />
                     </div>
                     <div>
-                      <label htmlFor="TOP_THREE_PRODUCTS-3">3.</label>
+                      <label htmlFor="TOP_THREE_PRODUCTS_3">3.</label>
                       <input
                         style={{ width: "95%" }}
                         type="text"
-                        id="TOP_THREE_PRODUCTS-3"
+                        id="TOP_THREE_PRODUCTS_3"
                         name="TOP_THREE_PRODUCTS"
+                        value={formD.TOP_THREE_PRODUCTS.TOP_THREE_PRODUCTS_3}
                         onChange={handleChange}
                       />
                     </div>
@@ -1568,22 +1725,22 @@ function Table({ formD, setFormD }) {
                   <td colSpan={6}>
                     <div className="radio_wrapper">
                       <div>
-                        <label htmlFor="GST_NOyes">YES</label>
+                        <label htmlFor="GST_NOyes1x">YES</label>
                         <input
                           type="radio"
                           name="GST_NO"
-                          id="GST_NOyes"
+                          id="GST_NOyes1x"
                           value="YES"
                           onChange={handleChange}
                           checked={formD.GST_NO == "YES"}
                         />
                       </div>
                       <div>
-                        <label htmlFor="GST_NOno">NO</label>
+                        <label htmlFor="GST_NOno1y">NO</label>
                         <input
                           type="radio"
                           name="GST_NO"
-                          id="GST_NOno"
+                          id="GST_NOno1y"
                           value="NO"
                           onChange={handleChange}
                           checked={formD.GST_NO == "NO"}
@@ -1592,6 +1749,7 @@ function Table({ formD, setFormD }) {
                     </div>
                   </td>
                 </tr>
+
                 <tr>
                   <td colSpan={1}>
                     <span> Do you have a Current Bank Account ? </span>
@@ -1599,30 +1757,33 @@ function Table({ formD, setFormD }) {
                   <td colSpan={6}>
                     <div className="radio_wrapper">
                       <div>
-                        <label htmlFor="Current_Bank_Accountyes">YES</label>
+                        <label htmlFor="thisCurrent_Bank_Accountyes1x">
+                          YES
+                        </label>
                         <input
                           type="radio"
-                          name="Current_Bank_Account"
-                          id="Current_Bank_Accountyes"
+                          name="thisCurrent_Bank_Account"
+                          id="thisCurrent_Bank_Accountyes1x"
                           value="YES"
                           onChange={handleChange}
-                          checked={formD.Current_Bank_Account == "YES"}
+                          checked={formD.thisCurrent_Bank_Account == "YES"}
                         />
                       </div>
                       <div>
-                        <label htmlFor="Current_Bank_Accountno">NO</label>
+                        <label htmlFor="thisCurrent_Bank_Accountno1y">NO</label>
                         <input
                           type="radio"
-                          name="Current_Bank_Account"
-                          id="Current_Bank_Accountno"
+                          name="thisCurrent_Bank_Account"
+                          id="thisCurrent_Bank_Accountno1y"
                           value="NO"
                           onChange={handleChange}
-                          checked={formD.Current_Bank_Account == "NO"}
+                          checked={formD.thisCurrent_Bank_Account == "NO"}
                         />
                       </div>
                     </div>
                   </td>
                 </tr>
+
                 <tr>
                   <td colSpan={1}>
                     <span>
@@ -1886,25 +2047,25 @@ function Table({ formD, setFormD }) {
                   <td colSpan={6}>
                     <div className="radio_wrapper">
                       <div>
-                        <label htmlFor="Current_Bank_Accountyes">YES</label>
+                        <label htmlFor="undergo_activity">YES</label>
                         <input
                           type="radio"
-                          name="Current_Bank_Account"
-                          id="Current_Bank_Accountyes"
+                          name="undergoActivity"
+                          id="undergo_activity"
                           value="YES"
                           onChange={handleChange}
-                          checked={formD.Current_Bank_Account == "YES"}
+                          checked={formD.undergoActivity == "YES"}
                         />
                       </div>
                       <div>
-                        <label htmlFor="Current_Bank_Accountno">NO</label>
+                        <label htmlFor="undergo_activityno">NO</label>
                         <input
                           type="radio"
-                          name="Current_Bank_Account"
-                          id="Current_Bank_Accountno"
+                          name="undergoActivity"
+                          id="undergo_activityno"
                           value="NO"
                           onChange={handleChange}
-                          checked={formD.Current_Bank_Account == "NO"}
+                          checked={formD.undergoActivity == "NO"}
                         />
                       </div>
                     </div>
@@ -1942,11 +2103,11 @@ function Table({ formD, setFormD }) {
             </table>
           </div>
         </div>
-        <div style={{ marginTop: "1em" }}>
-          <NavLink to="/2" className="arrow_notation">
-            Next
-          </NavLink>
-        </div>
+          <div style={{margin:"20px 10px"}}>
+            <NavLink to="/2" className="arrow_notation">
+              Next
+            </NavLink>
+          </div>
         {/* <FormPart2 />
         <FormPart3 />
         <FormPart4 />
