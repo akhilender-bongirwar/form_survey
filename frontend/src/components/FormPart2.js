@@ -37,6 +37,92 @@ const FormPart2 = ({ formD, setFormD }) => {
           };
         });
       }
+    }
+    //markets supplied by akj
+    else if (name === "markets_supplied") {
+      setFormD((prevFormData) => {
+        return {
+          ...prevFormData,
+          [name]: {
+            ...prevFormData[name],
+            [value]: checked,
+          },
+        };
+      });
+    } else if (
+      name === "challenges_while_selling" ||
+      name === "options_you_leverage_for_sale"
+    ) {
+      if (type == "text") {
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: { ...prevFormData[name], other: value },
+          };
+        });
+      } else {
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: {
+              ...prevFormData[name],
+              [value]: checked,
+            },
+          };
+        });
+      }
+    } else if (
+      name === "Nature_of_Services_Offered_a" ||
+      name === "Nature_of_Services_Offered_b" ||
+      name === "Nature_of_Services_Offered_c"
+    ) {
+      setFormD((prevFormData) => {
+        return {
+          ...prevFormData,
+          Nature_of_Services_Offered: {
+            ...prevFormData.Nature_of_Services_Offered,
+            [name]: value,
+          },
+        };
+      });
+    } else if (
+      name === "Challenges_faced_a" ||
+      name === "Challenges_faced_b" ||
+      name === "Challenges_faced_c"
+    ) {
+      setFormD((prevFormData) => {
+        return {
+          ...prevFormData,
+          Challenges_faced: {
+            ...prevFormData.Challenges_faced,
+            [name]: value,
+          },
+        };
+      });
+    } else if (name === "Govt_Scheme_Challenges") {
+      setFormD((prevFormData) => {
+        return {
+          ...prevFormData,
+          [name]: value,
+        };
+      });
+    } else if (name === "Support_required") {
+      setFormD((prevFormData) => {
+        return {
+          ...prevFormData,
+          [name]: value,
+        };
+      });
+    } else if (name === "final_product_sold_to") {
+      setFormD((prevFormData) => {
+        return {
+          ...prevFormData,
+          [name]: {
+            ...prevFormData[name],
+            [value]: checked,
+          },
+        };
+      });
     } else if (name === "Aware_of_listed_scehmes") {
       if (className == "central") {
         setFormD((prevFormData) => {
@@ -260,7 +346,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             name="if_Raw_Materials_available"
                             id="yes_material"
                             onClick={() => {
-                              setchallenges("yes");
+                              setchallenges(null);
                             }}
                             value="YES"
                             onChange={handleChange}
@@ -275,7 +361,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             id="no_material"
                             value="NO"
                             onClick={() => {
-                              setchallenges(null);
+                              setchallenges("no");
                             }}
                             onChange={handleChange}
                             checked={formD.if_Raw_Materials_available == "NO"}
@@ -284,7 +370,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                       </div>
                     </td>
                   </tr>
-                  {!challenges ? (
+                  {challenges ? (
                     <tr>
                       <td colSpan={1}>
                         {/* style={{ whiteSpace: "nowrap" }} */}
@@ -390,8 +476,9 @@ const FormPart2 = ({ formD, setFormD }) => {
                             type="checkbox"
                             name="final_product_sold_to"
                             id="locala"
-                            value="Trader / Agents"
+                            value="Trader_Agents"
                             onChange={handleChange}
+                            checked={formD.final_product_sold_to.Trader_Agents}
                           />
                         </div>
 
@@ -401,8 +488,9 @@ const FormPart2 = ({ formD, setFormD }) => {
                             type="checkbox"
                             id="Govtb"
                             name="final_product_sold_to"
-                            value="Wholesalers "
+                            value="Wholesalers"
                             onChange={handleChange}
+                            checked={formD.final_product_sold_to.Wholesalers}
                           />
                         </div>
 
@@ -414,6 +502,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             name="final_product_sold_to"
                             value="Retailers"
                             onChange={handleChange}
+                            checked={formD.final_product_sold_to.Retailers}
                           />
                         </div>
 
@@ -425,8 +514,12 @@ const FormPart2 = ({ formD, setFormD }) => {
                             type="checkbox"
                             id="otherd"
                             name="final_product_sold_to"
-                            value="Large Manufacturers/ Anchor units"
+                            value="Large_Manufacturers_Anchor_units"
                             onChange={handleChange}
+                            checked={
+                              formD.final_product_sold_to
+                                .Large_Manufacturers_Anchor_units
+                            }
                           />
                         </div>
                         <div className="radio_wrapper">
@@ -437,6 +530,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             name="final_product_sold_to"
                             value="Exporters"
                             onChange={handleChange}
+                            checked={formD.final_product_sold_to.Exporters}
                           />
                         </div>
                         <div className="radio_wrapper">
@@ -446,8 +540,9 @@ const FormPart2 = ({ formD, setFormD }) => {
                               type="checkbox"
                               name="final_product_sold_to"
                               id="localf"
-                              value="Local Market"
+                              value="OEMs"
                               onChange={handleChange}
+                              checked={formD.final_product_sold_to.OEMs}
                             />
                           </div>
                         </div>
@@ -458,8 +553,9 @@ const FormPart2 = ({ formD, setFormD }) => {
                               type="checkbox"
                               name="final_product_sold_to"
                               id="localg"
-                              value="Local Market"
+                              value="End_Users"
                               onChange={handleChange}
+                              checked={formD.final_product_sold_to.End_Users}
                             />
                           </div>
                         </div>
@@ -470,8 +566,9 @@ const FormPart2 = ({ formD, setFormD }) => {
                               type="checkbox"
                               name="final_product_sold_to"
                               id="localh"
-                              value="Local Market"
+                              value="Others"
                               onChange={handleChange}
+                              checked={formD.final_product_sold_to.Others}
                             />
                           </div>
                         </div>
@@ -605,7 +702,10 @@ const FormPart2 = ({ formD, setFormD }) => {
                         <input
                           type="checkbox"
                           name="challenges_while_selling"
-                          value="advance technology"
+                          value="advance_technology"
+                          checked={
+                            formD.challenges_while_selling.advance_technology
+                          }
                           id="advanceTech"
                           onChange={handleChange}
                         />
@@ -617,8 +717,11 @@ const FormPart2 = ({ formD, setFormD }) => {
                         <input
                           type="checkbox"
                           name="challenges_while_selling"
-                          value="quality of product"
+                          value="quality_of_product"
                           id="quality"
+                          checked={
+                            formD.challenges_while_selling.quality_of_product
+                          }
                           onChange={handleChange}
                         />
                       </div>
@@ -632,9 +735,12 @@ const FormPart2 = ({ formD, setFormD }) => {
                         <input
                           type="checkbox"
                           name="challenges_while_selling"
-                          value="market competition"
+                          value="market_competition"
                           id="marketComp"
                           onChange={handleChange}
+                          checked={
+                            formD.challenges_while_selling.market_competition
+                          }
                         />
                       </div>
                       <div>
@@ -647,6 +753,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                           value="capital"
                           id="capital"
                           onChange={handleChange}
+                          checked={formD.challenges_while_selling.capital}
                         />
                       </div>
                       <div>
@@ -659,9 +766,13 @@ const FormPart2 = ({ formD, setFormD }) => {
                         <input
                           type="checkbox"
                           name="challenges_while_selling"
-                          value="branding and marketing"
+                          value="branding_and_marketing"
                           id="brandMarket"
                           onChange={handleChange}
+                          checked={
+                            formD.challenges_while_selling
+                              .branding_and_marketing
+                          }
                         />
                       </div>
                       <div style={{ display: "flex", flexWrap: "wrap" }}>
@@ -672,12 +783,13 @@ const FormPart2 = ({ formD, setFormD }) => {
                           id="other"
                           name="challenges_while_selling"
                           onChange={handleChange}
-                          value={formD.challenges_while_selling}
+                          value={formD.challenges_while_selling.other}
                           style={{
                             width: "100%",
                             border: "transparent",
                             borderBottom: "1px solid black",
                           }}
+                          checked={formD.challenges_while_selling.other}
                         />
                       </div>
                     </td>
@@ -720,6 +832,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             id="nox_material2"
                             onClick={() => {
                               setleverage(null);
+                              // clearfields();
                             }}
                             value="NO"
                             onChange={handleChange}
@@ -751,6 +864,10 @@ const FormPart2 = ({ formD, setFormD }) => {
                                 name="options_you_leverage_for_sale"
                                 value="exhibitions"
                                 onChange={handleChange}
+                                checked={
+                                  formD.options_you_leverage_for_sale
+                                    .exhibitions
+                                }
                               />
                             </div>
                             <div>
@@ -766,6 +883,9 @@ const FormPart2 = ({ formD, setFormD }) => {
                                 name="options_you_leverage_for_sale"
                                 value="portals"
                                 onChange={handleChange}
+                                checked={
+                                  formD.options_you_leverage_for_sale.portals
+                                }
                               />
                             </div>
                             <div>
@@ -781,6 +901,9 @@ const FormPart2 = ({ formD, setFormD }) => {
                                 name="options_you_leverage_for_sale"
                                 value="websites"
                                 onChange={handleChange}
+                                checked={
+                                  formD.options_you_leverage_for_sale.websites
+                                }
                               />
                             </div>
                             <div>
@@ -795,8 +918,12 @@ const FormPart2 = ({ formD, setFormD }) => {
                                 type="checkbox"
                                 id="socMedia"
                                 name="options_you_leverage_for_sale"
-                                value="social media"
+                                value="social_media"
                                 onChange={handleChange}
+                                checked={
+                                  formD.options_you_leverage_for_sale
+                                    .social_media
+                                }
                               />
                             </div>
                             <div>
@@ -810,8 +937,12 @@ const FormPart2 = ({ formD, setFormD }) => {
                                 type="checkbox"
                                 id="marketFacility"
                                 name="options_you_leverage_for_sale"
-                                value="Common marketing facility"
+                                value="Common_marketing_facility"
                                 onChange={handleChange}
+                                checked={
+                                  formD.options_you_leverage_for_sale
+                                    .Common_marketing_facility
+                                }
                               />
                             </div>
                             <div>
@@ -820,9 +951,11 @@ const FormPart2 = ({ formD, setFormD }) => {
                               <input
                                 type="text"
                                 id="other"
-                                name="challenges_while_selling"
+                                name="options_you_leverage_for_sale"
                                 onChange={handleChange}
-                                value={formD.challenges_while_selling}
+                                value={
+                                  formD.options_you_leverage_for_sale.other
+                                }
                                 style={{
                                   width: "100%",
                                   border: "transparent",
@@ -960,9 +1093,30 @@ const FormPart2 = ({ formD, setFormD }) => {
               Nature of Services Offered
             </td>
             <td colSpan={6}>
-              <input type="text" />
-              <input type="text" />
-              <input type="text" />
+              <input
+                type="text"
+                name="Nature_of_Services_Offered_a"
+                onChange={handleChange}
+                value={
+                  formD.Nature_of_Services_Offered.Nature_of_Services_Offered_a
+                }
+              />
+              <input
+                type="text"
+                name="Nature_of_Services_Offered_b"
+                onChange={handleChange}
+                value={
+                  formD.Nature_of_Services_Offered.Nature_of_Services_Offered_b
+                }
+              />
+              <input
+                type="text"
+                name="Nature_of_Services_Offered_c"
+                onChange={handleChange}
+                value={
+                  formD.Nature_of_Services_Offered.Nature_of_Services_Offered_c
+                }
+              />
             </td>
           </tr>
           <tr>
@@ -971,9 +1125,24 @@ const FormPart2 = ({ formD, setFormD }) => {
             </td>
             <td colSpan={6}>
               {" "}
-              <input type="text" />
-              <input type="text" />
-              <input type="text" />
+              <input
+                type="text"
+                name="Challenges_faced_a"
+                onChange={handleChange}
+                value={formD.Challenges_faced.Challenges_faced_a}
+              />
+              <input
+                type="text"
+                name="Challenges_faced_b"
+                onChange={handleChange}
+                value={formD.Challenges_faced.Challenges_faced_b}
+              />
+              <input
+                type="text"
+                name="Challenges_faced_c"
+                onChange={handleChange}
+                value={formD.Challenges_faced.Challenges_faced_c}
+              />
             </td>
           </tr>
           <tr>
@@ -982,7 +1151,12 @@ const FormPart2 = ({ formD, setFormD }) => {
               the challenges faced with scheme
             </td>
             <td colSpan={6}>
-              <input type="text" />
+              <input
+                type="text"
+                name="Govt_Scheme_Challenges"
+                onChange={handleChange}
+                value={formD.Govt_Scheme_Challenges}
+              />
             </td>
           </tr>
           <tr>
@@ -990,7 +1164,12 @@ const FormPart2 = ({ formD, setFormD }) => {
               Support required
             </td>
             <td colSpan={6}>
-              <input type="text" />
+              <input
+                type="text"
+                name="Support_required"
+                onChange={handleChange}
+                value={formD.Support_required}
+              />
             </td>
           </tr>
         </table>
