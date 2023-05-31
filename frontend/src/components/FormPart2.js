@@ -855,7 +855,6 @@ const FormPart2 = ({ formD, setFormD }) => {
                                 border: "transparent",
                                 borderBottom: "1px solid black",
                               }}
-                              checked={formD.challenges_while_selling.other}
                             />
                           </div>
                         </td>

@@ -24,8 +24,10 @@ function App() {
     Operations_seasonal: "",
     months_of_operation: "",
     Ownership_Pattern: "",
+    ownership_female_partnership:"",
     Cluster: "",
-    IF_YES_HOW_MANY_UNITS: "",
+    Cluster_Yes:"",
+    Cluster_No:"",
     use_computer: "",
     //added
     TOP_THREE_PRODUCTS: {
@@ -48,6 +50,7 @@ function App() {
       online: false,
       Other_states: false,
       internationally: false,
+      other:"",
     },
     full_time_Emoployee: "",
     part_time_Emoployee: "",
@@ -72,7 +75,7 @@ function App() {
     govt_organisation: "",
     pan_card_company: "",
     GST_NO: "",
-    Current_Bank_Account: "",
+    thisCurrent_Bank_Account: "",
     have_CA_audited_financial_statement: "",
     Annual_Turnover: "",
     Investment_plant_machinery: "",
@@ -84,9 +87,6 @@ function App() {
     Electricity_rate_Per_Unit: "",
     Water_Availability: "",
     Effluent_Treatment_Constraint: "",
-    // edited
-    undergoActivity: "",
-    //
     GOVT_Training: "",
     Email: "",
     Phone_Number: "",
@@ -159,7 +159,6 @@ function App() {
     //
     aware_of_govt_policy: "",
     Policy_benifitted: "",
-    Benifits_of_policy: "",
     Challenges_faced_policy_related: "",
     //added
     expectation_from_govt_1: "",

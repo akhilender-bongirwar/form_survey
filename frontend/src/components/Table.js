@@ -25,6 +25,9 @@ function Table({ formD, setFormD }) {
 
   function handleChange(event) {
     const { name, value, type, checked, className, id } = event.target;
+    if(type=="number"){
+      value=parseInt(value);
+    }
     if (name === "sell_produce_majorly") {
       if (type == "text") {
         setFormD((prevFormData) => {
@@ -457,7 +460,7 @@ function Table({ formD, setFormD }) {
                   </td>
                   <td colSpan={6}>
                     <input
-                      type="text"
+                      type="number"
                       id="UAM_UEM_Number"
                       name="UAM_UEM_Number"
                       onChange={handleChange}
@@ -1972,27 +1975,27 @@ function Table({ formD, setFormD }) {
                   <td colSpan={6}>
                     <div className="radio_wrapper">
                       <div>
-                        <label htmlFor="undergo_activity">YES</label>
+                        <label htmlFor="undergo_activityyes">YES</label>
                         <input
                           type="radio"
-                          name="undergoActivity"
-                          id="undergo_activity"
+                          name="GOVT_Training"
+                          id="undergo_activityyes"
                           value="YES"
                           required="required"
                           onChange={handleChange}
-                          checked={formD.undergoActivity == "YES"}
+                          checked={formD.GOVT_Training == "YES"}
                         />
                       </div>
                       <div>
                         <label htmlFor="undergo_activityno">NO</label>
                         <input
                           type="radio"
-                          name="undergoActivity"
+                          name="GOVT_Training"
                           id="undergo_activityno"
                           value="NO"
                           required="required"
                           onChange={handleChange}
-                          checked={formD.undergoActivity == "NO"}
+                          checked={formD.GOVT_Training == "NO"}
                         />
                       </div>
                     </div>
