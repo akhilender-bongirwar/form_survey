@@ -12,6 +12,7 @@ import FormPart5 from "./FormPart5";
 import FormPart6 from "./FormPart6";
 
 function Table({ formD, setFormD }) {
+  
   const [a1, setA1] = useState(null);
   const [a2, setA2] = useState(null);
   const [a3, setA3] = useState(null);
@@ -24,7 +25,7 @@ function Table({ formD, setFormD }) {
   };
 
   function handleChange(event) {
-    const { name, value, type, checked, className, id } = event.target;
+    let { name, value, type, checked, className, id } = event.target;
     if(type=="number"){
       value=parseInt(value);
     }
