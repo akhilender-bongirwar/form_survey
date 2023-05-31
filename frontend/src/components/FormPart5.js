@@ -202,7 +202,7 @@ function FormPart5({ formD, setFormD }) {
           </div>
         </div>
       </div>
-      <div style={{ marginTop: "1em" }}>
+      <div style={{ display: "flex",justifyContent:"space-between",margin:"20px 10px"}}>
         <NavLink to="/4" className="arrow_notation">
           Prev
         </NavLink>
