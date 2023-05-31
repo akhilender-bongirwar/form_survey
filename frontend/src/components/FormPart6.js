@@ -222,6 +222,7 @@ function FormPart6({ formD, setFormD }) {
                       id="certificate2"
                       name="To_be_Required_1"
                       className="Certifications"
+                      required="required"
                       value={formD.Certifications.To_be_Required_1}
                       style={{ border: "transparent" }}
                       placeholder="To be required"
@@ -249,6 +250,7 @@ function FormPart6({ formD, setFormD }) {
                       id="infra2"
                       className="Infrastructure"
                       name="To_be_Required_2"
+                      required="required"
                       value={formD.Infrastructure.To_be_Required_2}
                       style={{ border: "transparent" }}
                       placeholder="To be required"
@@ -275,6 +277,7 @@ function FormPart6({ formD, setFormD }) {
                       type="text"
                       id="lab2"
                       name="To_be_Required_3"
+                      required="required"
                       className="Laboratory"
                       value={formD.Laboratory.To_be_Required_3}
                       style={{ border: "transparent" }}
@@ -371,6 +374,7 @@ function FormPart6({ formD, setFormD }) {
                       id="counselling"
                       name="Counselling"
                       className="Requirement_of_Soft_Interventions"
+                      required="required"
                       value={
                         formD.Requirement_of_Soft_Interventions.Counselling
                       }
@@ -387,6 +391,7 @@ function FormPart6({ formD, setFormD }) {
                       id="upgrade"
                       className="Requirement_of_Soft_Interventions"
                       name="Upgradation_of_IT_Infrastructure"
+                      required="required"
                       value={
                         formD.Requirement_of_Soft_Interventions
                           .Upgradation_of_IT_Infrastructure
@@ -404,6 +409,7 @@ function FormPart6({ formD, setFormD }) {
                       id="training"
                       name="Participation_in_Training"
                       className="Requirement_of_Soft_Interventions"
+                      required="required"
                       value={
                         formD.Requirement_of_Soft_Interventions
                           .Participation_in_Training
@@ -420,6 +426,7 @@ function FormPart6({ formD, setFormD }) {
                       type="text"
                       id="development"
                       name="Institution_Development"
+                      required="required"
                       className="Requirement_of_Soft_Interventions"
                       value={
                         formD.Requirement_of_Soft_Interventions
@@ -437,6 +444,7 @@ function FormPart6({ formD, setFormD }) {
                       type="text"
                       id="new_software"
                       className="Requirement_of_Soft_Interventions"
+                      required="required"
                       name="Implementation_of_new_software"
                       value={
                         formD.Requirement_of_Soft_Interventions
@@ -459,6 +467,7 @@ function FormPart6({ formD, setFormD }) {
                       id="tools"
                       className="Requirement_of_Soft_Interventions"
                       name="Training_Process_Improvement"
+                      required="required"
                       value={
                         formD.Requirement_of_Soft_Interventions
                           .Training_Process_Improvement
@@ -476,6 +485,7 @@ function FormPart6({ formD, setFormD }) {
                       id="promotion"
                       className="Requirement_of_Soft_Interventions"
                       name="Market_Promotion_Initiatives"
+                      required="required"
                       value={
                         formD.Requirement_of_Soft_Interventions
                           .Market_Promotion_Initiatives
@@ -493,6 +503,7 @@ function FormPart6({ formD, setFormD }) {
                       id="design"
                       className="Requirement_of_Soft_Interventions"
                       name="Design_and_product_development"
+                      required="required"
                       value={
                         formD.Requirement_of_Soft_Interventions
                           .Design_and_product_development
@@ -510,6 +521,7 @@ function FormPart6({ formD, setFormD }) {
                       id="campaign"
                       className="Requirement_of_Soft_Interventions"
                       name="Promotion_Campaign"
+                      required="required"
                       value={
                         formD.Requirement_of_Soft_Interventions
                           .Promotion_Campaign

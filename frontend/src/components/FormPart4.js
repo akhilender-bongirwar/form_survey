@@ -158,6 +158,7 @@ function FormPart4({ formD, setFormD }) {
                     id="reason1"
                     name="Key_Reason_Preventing_loan"
                     value="Lack_of_awareness_of_bank_processes_requirements"
+                    required="required"
                     checked={
                       formD.Key_Reason_Preventing_loan.Lack_of_awareness_of_bank_processes_requirements    
                     }
@@ -173,6 +174,7 @@ function FormPart4({ formD, setFormD }) {
                     id="reason2"
                     name="Key_Reason_Preventing_loan"
                     value="High_Interest_Rate"
+                    required="required"
                     checked={
                       formD.Key_Reason_Preventing_loan.High_Interest_Rate
                     }
@@ -188,6 +190,7 @@ function FormPart4({ formD, setFormD }) {
                     id="reason3"
                     name="Key_Reason_Preventing_loan"
                     value="Longer_Processing_time"
+                    required="required"
                     checked={
                       formD.Key_Reason_Preventing_loan.Longer_Processing_time
                     }
@@ -203,6 +206,7 @@ function FormPart4({ formD, setFormD }) {
                     id="reason4"
                     name="Key_Reason_Preventing_loan"
                     value="Improper_documentation"
+                    required="required"
                     checked={
                       formD.Key_Reason_Preventing_loan.Improper_documentation
                     }
@@ -218,6 +222,7 @@ function FormPart4({ formD, setFormD }) {
                     id="reason5"
                     name="Key_Reason_Preventing_loan"
                     value="No_nearby_bank_branches"
+                    required="required"
                     checked={
                       formD.Key_Reason_Preventing_loan.No_nearby_bank_branches
                     }
@@ -251,6 +256,7 @@ function FormPart4({ formD, setFormD }) {
                   type="text"
                   id="secQuestion"
                   name="source_of_credit_form"
+                  required="required"
                   onChange={handleChange}
                   value={formD.source_of_credit_form}
                 />
@@ -281,6 +287,7 @@ function FormPart4({ formD, setFormD }) {
                     id="outcome1"
                     name="applied_loan_outcome"
                     value="Applied but the application got rejected"
+                    required="required"
                     onChange={handleChange}
                     checked={
                       formD.applied_loan_outcome.radio_button ==
@@ -298,6 +305,7 @@ function FormPart4({ formD, setFormD }) {
                     id="outcome2"
                     name="applied_loan_outcome"
                     value="Applied and got the loan amount in full"
+                    required="required"
                     onChange={handleChange}
                     checked={
                       formD.applied_loan_outcome.radio_button ==
@@ -315,6 +323,7 @@ function FormPart4({ formD, setFormD }) {
                     id="outcome3"
                     name="applied_loan_outcome"
                     value="Applied but only got partial loan amount"
+                    required="required"
                     onChange={handleChange}
                     checked={
                       formD.applied_loan_outcome.radio_button ==
@@ -333,6 +342,7 @@ function FormPart4({ formD, setFormD }) {
                     id="outcome4"
                     name="applied_loan_outcome"
                     value="Applied but refused as interest rate offered was high"
+                    required="required"
                     onChange={handleChange}
                     checked={
                       formD.applied_loan_outcome.radio_button ==
@@ -350,6 +360,7 @@ function FormPart4({ formD, setFormD }) {
                     id="outcome5"
                     name="applied_loan_outcome"
                     value="Loan approved after a significant delay"
+                    required="required"
                     onChange={handleChange}
                     checked={
                       formD.applied_loan_outcome.radio_button ==
@@ -384,6 +395,7 @@ function FormPart4({ formD, setFormD }) {
                   type="text"
                   id="fourthQuestion"
                   name="reason_of_rejection"
+                  required="required"
                   onChange={handleChange}
                   value={formD.reason_of_rejection}
                 />

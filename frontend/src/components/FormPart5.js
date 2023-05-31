@@ -177,6 +177,7 @@ function FormPart5({ formD, setFormD }) {
                   name="availed_samadhaan_service"
                   id="valid"
                   value="YES"
+                  required="required"
                   onChange={handleChange}
                   checked={formD.availed_samadhaan_service == "YES"}
                   style={{ margin: "0.5%" }}
@@ -191,6 +192,7 @@ function FormPart5({ formD, setFormD }) {
                   name="availed_samadhaan_service"
                   value="NO"
                   id="invalid"
+                  required="required"
                   onChange={handleChange}
                   checked={formD.availed_samadhaan_service == "NO"}
                   style={{ margin: "0.5%" }}

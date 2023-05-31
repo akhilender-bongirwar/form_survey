@@ -631,6 +631,7 @@ function Table({ formD, setFormD }) {
                       id="UAM_UEM_Number"
                       name="UAM_UEM_Number"
                       onChange={handleChange}
+                      required="required"
                       value={formD.UAM_UEM_Number}
                     />
                   </td>
@@ -643,10 +644,13 @@ function Table({ formD, setFormD }) {
                   </td>
                   <td colSpan={6}>
                     <input
-                      type="text"
+                      type="number"
                       id="Year_of_Establishment"
                       name="Year_of_Establishment"
                       onChange={handleChange}
+                      required="required"
+                      size="4"
+                      maxLength="4"
                       value={formD.Year_of_Establishment}
                     />
                   </td>
@@ -665,6 +669,7 @@ function Table({ formD, setFormD }) {
                           id="manufacturing"
                           value="manufacturing"
                           onChange={handleChange}
+                          required="required"
                           checked={formD.Type_of_Business == "manufacturing"}
                         />
                       </div>
@@ -676,6 +681,7 @@ function Table({ formD, setFormD }) {
                           id="service"
                           value="service"
                           onChange={handleChange}
+                          required="required"
                           checked={formD.Type_of_Business == "service"}
                         />
                       </div>
@@ -687,6 +693,7 @@ function Table({ formD, setFormD }) {
                           id="trading"
                           value="trading"
                           onChange={handleChange}
+                          required="required"
                           checked={formD.Type_of_Business == "trading"}
                         />
                       </div>
@@ -707,6 +714,7 @@ function Table({ formD, setFormD }) {
                           name="Operations_seasonal"
                           id="Operations_seasonalyes"
                           value="YES"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.Operations_seasonal == "YES"}
                         />
@@ -731,6 +739,9 @@ function Table({ formD, setFormD }) {
                             id="months_of_operation"
                             name="months_of_operation"
                             onChange={handleChange}
+                            min="0"
+                            max="12"
+                            required="required"
                             value={formD.months_of_operation}
                           />
                         </tr>
@@ -743,6 +754,7 @@ function Table({ formD, setFormD }) {
                           name="Operations_seasonal"
                           id="Operations_seasonalno"
                           value="NO"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.Operations_seasonal == "NO"}
                         />
@@ -764,6 +776,7 @@ function Table({ formD, setFormD }) {
                           onClick={() => setA2(null)}
                           id="proprietary"
                           value="proprietary"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.Ownership_Pattern == "proprietary"}
                         />
@@ -776,6 +789,7 @@ function Table({ formD, setFormD }) {
                           name="Ownership_Pattern"
                           id="partnership"
                           value="partnership"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.Ownership_Pattern == "partnership"}
                         />
@@ -788,6 +802,7 @@ function Table({ formD, setFormD }) {
                           name="Ownership_Pattern"
                           id="private"
                           value="private"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.Ownership_Pattern == "private"}
                         />
@@ -799,6 +814,7 @@ function Table({ formD, setFormD }) {
                           onClick={() => setA2(null)}
                           name="Ownership_Pattern"
                           id="LLP"
+                          required="required"
                           value="LLP"
                           onChange={handleChange}
                           checked={formD.Ownership_Pattern == "LLP"}
@@ -812,6 +828,7 @@ function Table({ formD, setFormD }) {
                           name="Ownership_Pattern"
                           id="PUBLIC"
                           value="PUBLIC"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.Ownership_Pattern == "PUBLIC"}
                         />
@@ -824,6 +841,7 @@ function Table({ formD, setFormD }) {
                           name="Ownership_Pattern"
                           id="NO LEGAL ENTITY"
                           value="NO LEGAL ENTITY"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.Ownership_Pattern == "NO LEGAL ENTITY"}
                         />
@@ -845,6 +863,9 @@ function Table({ formD, setFormD }) {
                           type="number"
                           id="ownership_female_partnership"
                           name="ownership_female_partnership"
+                          min="0"
+                          max="100"
+                          required="required"
                           onChange={handleChange}
                           value={formD.ownership_female_partnership}
                         />
@@ -866,6 +887,7 @@ function Table({ formD, setFormD }) {
                           name="Cluster"
                           id="Clusteryes"
                           value="YES"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.Cluster == "YES"}
                         />
@@ -878,6 +900,7 @@ function Table({ formD, setFormD }) {
                           name="Cluster"
                           id="Clusterno"
                           value="NO"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.Cluster == "NO"}
                         />
@@ -897,6 +920,7 @@ function Table({ formD, setFormD }) {
                           type="text"
                           id="Cluster_Yes"
                           name="Cluster_Yes"
+                          required="required"
                           onChange={handleChange}
                           value={formD.Cluster_Yes}
                         />
@@ -918,6 +942,7 @@ function Table({ formD, setFormD }) {
                           type="text"
                           id="Cluster_No"
                           name="Cluster_No"
+                          required="required"
                           onChange={handleChange}
                           value={formD.Cluster_No}
                         />
@@ -944,6 +969,7 @@ function Table({ formD, setFormD }) {
                           name="use_computer"
                           id="use_computeryes"
                           value="YES"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.use_computer == "YES"}
                         />
@@ -955,6 +981,7 @@ function Table({ formD, setFormD }) {
                           name="use_computer"
                           id="use_computerno"
                           value="NO"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.use_computer == "NO"}
                         />
@@ -1027,6 +1054,7 @@ function Table({ formD, setFormD }) {
                           name="sell_produce_majorly"
                           id="local"
                           value="Local_Market"
+                          required="required"
                           checked={formD.sell_produce_majorly.Local_Market}
                           onChange={handleChange}
                         />
@@ -1039,6 +1067,7 @@ function Table({ formD, setFormD }) {
                           id="Govt"
                           name="sell_produce_majorly"
                           value="Government"
+                          required="required"
                           checked={formD.sell_produce_majorly.Government}
                           onChange={handleChange}
                         />
@@ -1051,6 +1080,7 @@ function Table({ formD, setFormD }) {
                           id="online"
                           name="sell_produce_majorly"
                           value="online"
+                          required="required"
                           checked={formD.sell_produce_majorly.online}
                           onChange={handleChange}
                         />
@@ -1063,6 +1093,7 @@ function Table({ formD, setFormD }) {
                           id="other"
                           name="sell_produce_majorly"
                           value="Other_states"
+                          required="required"
                           checked={formD.sell_produce_majorly.Other_states}
                           onChange={handleChange}
                         />
@@ -1073,6 +1104,7 @@ function Table({ formD, setFormD }) {
                           type="checkbox"
                           id="export"
                           name="sell_produce_majorly"
+                          required="required"
                           value="export_outside"
                           checked={formD.sell_produce_majorly.export_outside}
                           onChange={handleChange}
@@ -1117,6 +1149,7 @@ function Table({ formD, setFormD }) {
                           name="service_industry"
                           id="local1"
                           value="Local_Market"
+                          required="required"
                           checked={formD.service_industry.Local_Market}
                           onChange={handleChange}
                         />
@@ -1131,6 +1164,7 @@ function Table({ formD, setFormD }) {
                           id="Govt1"
                           name="service_industry"
                           value="Government"
+                          required="required"
                           checked={formD.service_industry.Government}
                           onChange={handleChange}
                         />
@@ -1143,6 +1177,7 @@ function Table({ formD, setFormD }) {
                           id="online1"
                           name="service_industry"
                           value="online"
+                          required="required"
                           checked={formD.service_industry.online}
                           onChange={handleChange}
                         />
@@ -1155,6 +1190,7 @@ function Table({ formD, setFormD }) {
                           id="other1"
                           name="service_industry"
                           value="Other_states"
+                          required="required"
                           checked={formD.service_industry.Other_states}
                           onChange={handleChange}
                         />
@@ -1166,6 +1202,7 @@ function Table({ formD, setFormD }) {
                           id="export1"
                           name="service_industry"
                           value="internationally"
+                          required="required"
                           checked={formD.service_industry.internationally}
                           onChange={handleChange}
                         />
@@ -1210,9 +1247,12 @@ function Table({ formD, setFormD }) {
                       <label htmlFor="full_time_Emoployee-1">Full time: </label>
                       <input
                         style={{ width: "95%" }}
-                        type="text"
+                        type="number"
                         id="full_time_Emoployee-1"
                         name="full_time_Emoployee"
+                        required="required"
+                        min="0"
+                        max="100"
                         onChange={handleChange}
                         value={formD.full_time_Emoployee}
                       />
@@ -1221,9 +1261,12 @@ function Table({ formD, setFormD }) {
                       <label htmlFor="part_time_Emoployee-2">Part time: </label>
                       <input
                         style={{ width: "95%" }}
-                        type="text"
+                        type="number"
                         id="part_time_Emoployee-2"
                         name="part_time_Emoployee"
+                        required="required"
+                        min="0"
+                        max="100"                        
                         onChange={handleChange}
                         value={formD.part_time_Emoployee}
                       />
@@ -1242,9 +1285,12 @@ function Table({ formD, setFormD }) {
                       <label htmlFor="Permanent_Emoployee-1">Permanent: </label>
                       <input
                         style={{ width: "95%" }}
-                        type="text"
+                        type="number"
                         id="Permanent_Emoployee-1"
                         name="Permanent_Emoployee"
+                        required="required"
+                        min="0"
+                        max="100"                        
                         onChange={handleChange}
                         value={formD.Permanent_Emoployee}
                       />
@@ -1255,9 +1301,12 @@ function Table({ formD, setFormD }) {
                       </label>
                       <input
                         style={{ width: "95%" }}
-                        type="text"
+                        type="number"
                         id="Contractual_Emoployee-2"
                         name="Contractual_Emoployee"
+                        required="required"
+                        min="0"
+                        max="100"                        
                         onChange={handleChange}
                         value={formD.Contractual_Emoployee}
                       />
@@ -1276,9 +1325,12 @@ function Table({ formD, setFormD }) {
                       <label htmlFor="male_employee-1">Male: </label>
                       <input
                         style={{ width: "95%" }}
-                        type="text"
+                        type="number"
                         id="male_employee-1"
                         name="male_employee"
+                        required="required"
+                        min="0"
+                        max="100"                        
                         onChange={handleChange}
                         value={formD.male_employee}
                       />
@@ -1287,8 +1339,11 @@ function Table({ formD, setFormD }) {
                       <label htmlFor="female_employee-2">Female: </label>
                       <input
                         style={{ width: "95%" }}
-                        type="text"
+                        type="number"
                         id="female_employee-2"
+                        required="required"
+                        min="0"
+                        max="100"                        
                         name="female_employee"
                         onChange={handleChange}
                         value={formD.female_employee}
@@ -1318,6 +1373,7 @@ function Table({ formD, setFormD }) {
                         type="text"
                         id="formal_source-1"
                         name="formal_source"
+                        required="required"
                         onChange={handleChange}
                         value={formD.formal_source}
                       />
@@ -1341,6 +1397,7 @@ function Table({ formD, setFormD }) {
                         type="text"
                         id="informal_source-1"
                         name="informal_source"
+                        required="required"
                         onChange={handleChange}
                         value={formD.informal_source}
                       />
@@ -1364,6 +1421,7 @@ function Table({ formD, setFormD }) {
                         type="text"
                         id="internal_fund_generation-1"
                         name="internal_fund_generation"
+                        required="required"
                         onChange={handleChange}
                         value={formD.internal_fund_generation}
                       />
@@ -1406,6 +1464,7 @@ function Table({ formD, setFormD }) {
                           name="loan_availed"
                           id="loan_availedyes"
                           value="YES"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.loan_availed == "YES"}
                         />
@@ -1417,6 +1476,7 @@ function Table({ formD, setFormD }) {
                           name="loan_availed"
                           id="loan_availedno"
                           value="NO"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.loan_availed == "NO"}
                         />
@@ -1435,6 +1495,7 @@ function Table({ formD, setFormD }) {
                       type="text"
                       id="loan_specification"
                       name="loan_specification"
+                      required="required"
                       onChange={handleChange}
                       value={formD.loan_specification}
                     />
@@ -1454,6 +1515,7 @@ function Table({ formD, setFormD }) {
                           name="loan_adequate"
                           id="loan_adequateyes"
                           value="YES"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.loan_adequate == "YES"}
                         />
@@ -1466,6 +1528,7 @@ function Table({ formD, setFormD }) {
                           name="loan_adequate"
                           id="loan_adequateno"
                           value="NO"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.loan_adequate == "NO"}
                         />
@@ -1490,6 +1553,7 @@ function Table({ formD, setFormD }) {
                           type="number"
                           id="loan_required"
                           name="loan_required"
+                          required="required"
                           onChange={handleChange}
                           value={formD.loan_required}
                         />
@@ -1513,6 +1577,7 @@ function Table({ formD, setFormD }) {
                           name="availed_loan_last_year"
                           id="availed_loan_last_yearyes"
                           value="YES"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.availed_loan_last_year == "YES"}
                         />
@@ -1526,6 +1591,7 @@ function Table({ formD, setFormD }) {
                           name="availed_loan_last_year"
                           id="availed_loan_last_yearno"
                           value="NO"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.availed_loan_last_year == "NO"}
                         />
@@ -1547,6 +1613,7 @@ function Table({ formD, setFormD }) {
                           type="text"
                           id="availed_loan_amount"
                           name="availed_loan_amount"
+                          required="required"
                           onChange={handleChange}
                           value={formD.availed_loan_amount}
                         />
@@ -1572,6 +1639,7 @@ function Table({ formD, setFormD }) {
                           name="innovation_RD"
                           id="innovation_RDyes"
                           value="YES"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.innovation_RD == "YES"}
                         />
@@ -1585,6 +1653,7 @@ function Table({ formD, setFormD }) {
                           name="innovation_RD"
                           id="innovation_RDno"
                           value="NO"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.innovation_RD == "NO"}
                         />
@@ -1606,6 +1675,7 @@ function Table({ formD, setFormD }) {
                           type="text"
                           id="innovation_RD_institute"
                           name="innovation_RD_institute"
+                          required="required"
                           onChange={handleChange}
                           value={formD.innovation_RD_institute}
                         />
@@ -1635,6 +1705,7 @@ function Table({ formD, setFormD }) {
                         type="text"
                         id="govt_scheme-1"
                         name="govt_scheme"
+                        required="required"
                         onChange={handleChange}
                         value={formD.govt_scheme}
                       />
@@ -1656,6 +1727,7 @@ function Table({ formD, setFormD }) {
                         type="text"
                         id="govt_program-1"
                         name="govt_program"
+                        required="required"
                         onChange={handleChange}
                         value={formD.govt_program}
                       />
@@ -1679,6 +1751,7 @@ function Table({ formD, setFormD }) {
                         type="text"
                         id="govt_organisation-1"
                         name="govt_organisation"
+                        required="required"
                         onChange={handleChange}
                         value={formD.govt_organisation}
                       />
@@ -1701,6 +1774,7 @@ function Table({ formD, setFormD }) {
                           name="pan_card_company"
                           id="pan_card_companyyes"
                           value="YES"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.pan_card_company == "YES"}
                         />
@@ -1712,6 +1786,7 @@ function Table({ formD, setFormD }) {
                           name="pan_card_company"
                           id="pan_card_companyno"
                           value="NO"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.pan_card_company == "NO"}
                         />
@@ -1732,6 +1807,7 @@ function Table({ formD, setFormD }) {
                           name="GST_NO"
                           id="GST_NOyes1x"
                           value="YES"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.GST_NO == "YES"}
                         />
@@ -1743,6 +1819,7 @@ function Table({ formD, setFormD }) {
                           name="GST_NO"
                           id="GST_NOno1y"
                           value="NO"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.GST_NO == "NO"}
                         />
@@ -1766,6 +1843,7 @@ function Table({ formD, setFormD }) {
                           name="thisCurrent_Bank_Account"
                           id="thisCurrent_Bank_Accountyes1x"
                           value="YES"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.thisCurrent_Bank_Account == "YES"}
                         />
@@ -1777,6 +1855,7 @@ function Table({ formD, setFormD }) {
                           name="thisCurrent_Bank_Account"
                           id="thisCurrent_Bank_Accountno1y"
                           value="NO"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.thisCurrent_Bank_Account == "NO"}
                         />
@@ -1804,6 +1883,7 @@ function Table({ formD, setFormD }) {
                           name="have_CA_audited_financial_statement"
                           id="have_CA_audited_financial_statementyes"
                           value="YES"
+                          required="required"
                           onChange={handleChange}
                           checked={
                             formD.have_CA_audited_financial_statement == "YES"
@@ -1819,6 +1899,7 @@ function Table({ formD, setFormD }) {
                           name="have_CA_audited_financial_statement"
                           id="have_CA_audited_financial_statementno"
                           value="NO"
+                          required="required"
                           onChange={handleChange}
                           checked={
                             formD.have_CA_audited_financial_statement == "NO"
@@ -1839,6 +1920,7 @@ function Table({ formD, setFormD }) {
                       type="number"
                       id="Annual_Turnover"
                       name="Annual_Turnover"
+                      required="required"
                       onChange={handleChange}
                       value={formD.Annual_Turnover}
                     />
@@ -1855,6 +1937,7 @@ function Table({ formD, setFormD }) {
                       type="number"
                       id="Investment_plant_machinery"
                       name="Investment_plant_machinery"
+                      required="required"
                       onChange={handleChange}
                       value={formD.Investment_plant_machinery}
                     />
@@ -1871,6 +1954,7 @@ function Table({ formD, setFormD }) {
                       type="number"
                       id="Investment_IT_Infrastructure"
                       name="Investment_IT_Infrastructure"
+                      required="required"
                       onChange={handleChange}
                       value={formD.Investment_IT_Infrastructure}
                     />
@@ -1889,6 +1973,7 @@ function Table({ formD, setFormD }) {
                           name="You_Export"
                           id="You_Exportyes"
                           value="YES"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.You_Export == "YES"}
                         />
@@ -1900,6 +1985,7 @@ function Table({ formD, setFormD }) {
                           name="You_Export"
                           id="You_Exportno"
                           value="NO"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.You_Export == "NO"}
                         />
@@ -1918,6 +2004,7 @@ function Table({ formD, setFormD }) {
                       type="number"
                       id="Export_Value"
                       name="Export_Value"
+                      required="required"
                       onChange={handleChange}
                       value={formD.Export_Value}
                     />
@@ -1934,6 +2021,7 @@ function Table({ formD, setFormD }) {
                       type="number"
                       id="Overall_Annual_production"
                       name="Overall_Annual_production"
+                      required="required"
                       onChange={handleChange}
                       value={formD.Overall_Annual_production}
                     />
@@ -1950,6 +2038,7 @@ function Table({ formD, setFormD }) {
                       type="number"
                       id="Electric_Availability_Hours"
                       name="Electric_Availability_Hours"
+                      required="required"
                       onChange={handleChange}
                       value={formD.Electric_Availability_Hours}
                     />
@@ -1966,6 +2055,7 @@ function Table({ formD, setFormD }) {
                       type="number"
                       id="Electricity_rate_Per_Unit"
                       name="Electricity_rate_Per_Unit"
+                      required="required"
                       onChange={handleChange}
                       value={formD.Electricity_rate_Per_Unit}
                     />
@@ -1983,6 +2073,7 @@ function Table({ formD, setFormD }) {
                           type="radio"
                           name="Water_Availability"
                           id="Water_Availabilityyes"
+                          required="required"
                           value="YES"
                           onChange={handleChange}
                           checked={formD.Water_Availability == "YES"}
@@ -1994,6 +2085,7 @@ function Table({ formD, setFormD }) {
                           type="radio"
                           name="Water_Availability"
                           id="Water_Availabilityno"
+                          required="required"
                           value="NO"
                           onChange={handleChange}
                           checked={formD.Water_Availability == "NO"}
@@ -2017,6 +2109,7 @@ function Table({ formD, setFormD }) {
                           name="Effluent_Treatment_Constraint"
                           id="Effluent_Treatment_Constraintyes"
                           value="YES"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.Effluent_Treatment_Constraint == "YES"}
                         />
@@ -2030,6 +2123,7 @@ function Table({ formD, setFormD }) {
                           name="Effluent_Treatment_Constraint"
                           id="Effluent_Treatment_Constraintno"
                           value="NO"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.Effluent_Treatment_Constraint == "NO"}
                         />
@@ -2054,6 +2148,7 @@ function Table({ formD, setFormD }) {
                           name="undergoActivity"
                           id="undergo_activity"
                           value="YES"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.undergoActivity == "YES"}
                         />
@@ -2065,6 +2160,7 @@ function Table({ formD, setFormD }) {
                           name="undergoActivity"
                           id="undergo_activityno"
                           value="NO"
+                          required="required"
                           onChange={handleChange}
                           checked={formD.undergoActivity == "NO"}
                         />
@@ -2081,6 +2177,7 @@ function Table({ formD, setFormD }) {
                       type="email"
                       id="Email"
                       name="Email"
+                      required="required"
                       onChange={handleChange}
                       value={formD.Email}
                     />
@@ -2095,6 +2192,7 @@ function Table({ formD, setFormD }) {
                       type="number"
                       id="Phone_Number"
                       name="Phone_Number"
+                      required="required"
                       onChange={handleChange}
                       value={formD.Phone_Number}
                     />

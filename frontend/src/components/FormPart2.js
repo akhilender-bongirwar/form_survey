@@ -278,6 +278,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                     id="raw1"
                     name="Raw_Materials"
                     value="Direct"
+                    required="required"
                     onChange={handleChange}
                   />
                 </div>
@@ -297,6 +298,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                       formD.Raw_Materials.other == ""
                     }
                     value="Through Traders"
+                    required="required"
                     onChange={handleChange}
                   />
                 </div>
@@ -315,6 +317,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                       formD.Raw_Materials.other == ""
                     }
                     name="Raw_Materials"
+                    required="required"
                     value="Online"
                     onChange={handleChange}
                   />
@@ -349,6 +352,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               setchallenges(null);
                             }}
                             value="YES"
+                            required="required"
                             onChange={handleChange}
                             checked={formD.if_Raw_Materials_available == "YES"}
                           />
@@ -360,6 +364,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             name="if_Raw_Materials_available"
                             id="no_material"
                             value="NO"
+                            required="required"
                             onClick={() => {
                               setchallenges("no");
                             }}
@@ -383,6 +388,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                           onChange={handleChange}
                           value={formD.if_no_mention_difficulties}
                           name="if_no_mention_difficulties"
+                          required="required"
                           style={{
                             width: "100%",
                             border: "transparent",
@@ -409,6 +415,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             name="green_tech"
                             id="yes_material2"
                             value="YES"
+                            required="required"
                             onChange={handleChange}
                             checked={formD.green_tech == "YES"}
                           />
@@ -420,6 +427,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             name="green_tech"
                             id="no_material2"
                             value="NO"
+                            required="required"
                             onChange={handleChange}
                             checked={formD.green_tech == "NO"}
                           />
@@ -444,6 +452,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             name="environment_clearence"
                             id="yes_material3"
                             value="YES"
+                            required="required"
                             onChange={handleChange}
                             checked={formD.environment_clearence == "YES"}
                           />
@@ -455,6 +464,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             name="environment_clearence"
                             id="no_material3"
                             value="NO"
+                            required="required"
                             onChange={handleChange}
                             checked={formD.environment_clearence == "NO"}
                           />
@@ -477,6 +487,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             name="final_product_sold_to"
                             id="locala"
                             value="Trader_Agents"
+                            required="required"
                             onChange={handleChange}
                             checked={formD.final_product_sold_to.Trader_Agents}
                           />
@@ -489,6 +500,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             id="Govtb"
                             name="final_product_sold_to"
                             value="Wholesalers"
+                            required="required"
                             onChange={handleChange}
                             checked={formD.final_product_sold_to.Wholesalers}
                           />
@@ -501,6 +513,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             id="onlinec"
                             name="final_product_sold_to"
                             value="Retailers"
+                            required="required"
                             onChange={handleChange}
                             checked={formD.final_product_sold_to.Retailers}
                           />
@@ -515,6 +528,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             id="otherd"
                             name="final_product_sold_to"
                             value="Large_Manufacturers_Anchor_units"
+                            required="required"
                             onChange={handleChange}
                             checked={
                               formD.final_product_sold_to
@@ -529,6 +543,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             id="exporte"
                             name="final_product_sold_to"
                             value="Exporters"
+                            required="required"
                             onChange={handleChange}
                             checked={formD.final_product_sold_to.Exporters}
                           />
@@ -541,6 +556,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               name="final_product_sold_to"
                               id="localf"
                               value="OEMs"
+                              required="required"
                               onChange={handleChange}
                               checked={formD.final_product_sold_to.OEMs}
                             />
@@ -554,6 +570,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               name="final_product_sold_to"
                               id="localg"
                               value="End_Users"
+                              required="required"
                               onChange={handleChange}
                               checked={formD.final_product_sold_to.End_Users}
                             />
@@ -567,6 +584,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               name="final_product_sold_to"
                               id="localh"
                               value="Others"
+                              required="required"
                               onChange={handleChange}
                               checked={formD.final_product_sold_to.Others}
                             />
@@ -590,6 +608,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             id="withinState"
                             name="markets_supplied"
                             value="within_State"
+                            required="required"
                             checked={formD.markets_supplied.within_State}
                             onChange={handleChange}
                           />
@@ -600,6 +619,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             type="checkbox"
                             id="outState"
                             name="markets_supplied"
+                            required="required"
                             checked={formD.markets_supplied.outside_State}
                             value="outside_State"
                             onChange={handleChange}
@@ -613,6 +633,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             type="checkbox"
                             name="markets_supplied"
                             value="outside_country"
+                            required="required"
                             onChange={handleChange}
                             checked={formD.markets_supplied.outside_country}
                             id="outside_country"
@@ -638,6 +659,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             onClick={() => setothers("yes")}
                             name="have_product_brand_name"
                             value="YES"
+                            required="required"
                             onChange={handleChange}
                             checked={formD.have_product_brand_name == "YES"}
                           />
@@ -649,6 +671,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             name="have_product_brand_name"
                             id="no_material23"
                             value="NO"
+                            required="required"
                             onClick={() => setothers(null)}
                             onChange={handleChange}
                             checked={formD.have_product_brand_name == "NO"}
@@ -667,6 +690,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                           type="text"
                           id="brand"
                           name="Brand_name"
+                          required="required"
                           onChange={handleChange}
                           value={formD.Brand_name}
                           style={{
@@ -703,6 +727,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                           type="checkbox"
                           name="challenges_while_selling"
                           value="advance_technology"
+                          required="required"
                           checked={
                             formD.challenges_while_selling.advance_technology
                           }
@@ -718,6 +743,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                           type="checkbox"
                           name="challenges_while_selling"
                           value="quality_of_product"
+                          required="required"
                           id="quality"
                           checked={
                             formD.challenges_while_selling.quality_of_product
@@ -736,6 +762,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                           type="checkbox"
                           name="challenges_while_selling"
                           value="market_competition"
+                          required="required"
                           id="marketComp"
                           onChange={handleChange}
                           checked={
@@ -751,6 +778,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                           type="checkbox"
                           name="challenges_while_selling"
                           value="capital"
+                          required="required"
                           id="capital"
                           onChange={handleChange}
                           checked={formD.challenges_while_selling.capital}
@@ -767,6 +795,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                           type="checkbox"
                           name="challenges_while_selling"
                           value="branding_and_marketing"
+                          required="required"
                           id="brandMarket"
                           onChange={handleChange}
                           checked={
@@ -817,6 +846,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             name="involved_in_marketing"
                             id="yesx_material2"
                             value="YES"
+                            required="required"
                             onClick={() => {
                               setleverage("yes");
                             }}
@@ -835,6 +865,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               // clearfields();
                             }}
                             value="NO"
+                            required="required"
                             onChange={handleChange}
                             checked={formD.involved_in_marketing == "NO"}
                           />
@@ -863,6 +894,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                                 id="exhibition"
                                 name="options_you_leverage_for_sale"
                                 value="exhibitions"
+                                required="required"
                                 onChange={handleChange}
                                 checked={
                                   formD.options_you_leverage_for_sale
@@ -882,6 +914,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                                 id="portal"
                                 name="options_you_leverage_for_sale"
                                 value="portals"
+                                required="required"
                                 onChange={handleChange}
                                 checked={
                                   formD.options_you_leverage_for_sale.portals
@@ -900,6 +933,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                                 id="website"
                                 name="options_you_leverage_for_sale"
                                 value="websites"
+                                required="required"
                                 onChange={handleChange}
                                 checked={
                                   formD.options_you_leverage_for_sale.websites
@@ -919,6 +953,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                                 id="socMedia"
                                 name="options_you_leverage_for_sale"
                                 value="social_media"
+                                required="required"
                                 onChange={handleChange}
                                 checked={
                                   formD.options_you_leverage_for_sale
@@ -938,6 +973,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                                 id="marketFacility"
                                 name="options_you_leverage_for_sale"
                                 value="Common_marketing_facility"
+                                required="required"
                                 onChange={handleChange}
                                 checked={
                                   formD.options_you_leverage_for_sale
@@ -982,6 +1018,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             name="Quality_Testing_lab_available"
                             id="yes_material7"
                             value="YES"
+                            required="required"
                             onChange={handleChange}
                             checked={
                               formD.Quality_Testing_lab_available == "YES"
@@ -995,6 +1032,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             name="Quality_Testing_lab_available"
                             id="no_material7"
                             value="NO"
+                            required="required"
                             onChange={handleChange}
                             checked={
                               formD.Quality_Testing_lab_available == "NO"
@@ -1022,6 +1060,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             name="labour_and_training"
                             id="yes_material120"
                             value="YES"
+                            required="required"
                             onChange={handleChange}
                             checked={formD.labour_and_training == "YES"}
                           />
@@ -1033,6 +1072,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             name="labour_and_training"
                             id="no_material120"
                             value="NO"
+                            required="required"
                             onChange={handleChange}
                             checked={formD.labour_and_training == "NO"}
                           />
@@ -1054,6 +1094,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             name="skilled_labour_is_required"
                             id="yes_material90"
                             value="YES"
+                            required="required"
                             onChange={handleChange}
                             checked={formD.skilled_labour_is_required == "YES"}
                           />
@@ -1065,6 +1106,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             name="skilled_labour_is_required"
                             id="no_material90"
                             value="NO"
+                            required="required"
                             onChange={handleChange}
                             checked={formD.skilled_labour_is_required == "NO"}
                           />
@@ -1096,6 +1138,7 @@ const FormPart2 = ({ formD, setFormD }) => {
               <input
                 type="text"
                 name="Nature_of_Services_Offered_a"
+                required="required"
                 onChange={handleChange}
                 value={
                   formD.Nature_of_Services_Offered.Nature_of_Services_Offered_a
@@ -1128,6 +1171,7 @@ const FormPart2 = ({ formD, setFormD }) => {
               <input
                 type="text"
                 name="Challenges_faced_a"
+                required="required"
                 onChange={handleChange}
                 value={formD.Challenges_faced.Challenges_faced_a}
               />
@@ -1167,6 +1211,7 @@ const FormPart2 = ({ formD, setFormD }) => {
               <input
                 type="text"
                 name="Support_required"
+                required="required"
                 onChange={handleChange}
                 value={formD.Support_required}
               />
