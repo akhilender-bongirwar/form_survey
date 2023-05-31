@@ -523,10 +523,13 @@ function FormPart6({ formD, setFormD }) {
           </div>
         </div>
       </div>
-      <div>
+      <div style={{margin:"20px 10px",display:"flex",justifyContent:"space-between"}}>
         <NavLink to="/5" className="arrow_notation">
           Prev
         </NavLink>
+        <button type="submit" className="arrow_notation submit">
+          Submit
+        </button>
       </div>
     </>
   );
