@@ -86,14 +86,68 @@ const surveyData = new Schema({
     required: true,
   },
   TOP_THREE_PRODUCTS: {
-    type: [String],
-    required: true,
+    TOP_THREE_PRODUCTS_1: {
+      type: String,
+      required: true,
+    },
+    TOP_THREE_PRODUCTS_2: {
+      type: String,
+      required: true,
+    },
+    TOP_THREE_PRODUCTS_3: {
+      type: String,
+      required: true,
+    },
   },
   sell_produce_majorly: {
-    type: [String],
+    Local_Market: {
+      type: Boolean,
+      required: true,
+    },
+    Government: {
+      type: Boolean,
+      required: true,
+    },
+    online: {
+      type: Boolean,
+      required: true,
+    },
+    Other_states: {
+      type: Boolean,
+      required: true,
+    },
+    Local_Market: {
+      type: Boolean,
+      required: true,
+    },
+    other: {
+      type: String,
+    },
   },
   service_industry: {
-    type: [String],
+    Local_Market: {
+      type: Boolean,
+      required: true,
+    },
+    Government: {
+      type: Boolean,
+      required: true,
+    },
+    online: {
+      type: Boolean,
+      required: true,
+    },
+    Other_states: {
+      type: Boolean,
+      required: true,
+    },
+    internationally: {
+      type: Boolean,
+      required: true,
+    },
+    other: {
+      type: String,
+    },
   },
   full_time_Emoployee: {
     type: Number,
@@ -186,7 +240,7 @@ const surveyData = new Schema({
     enum: ["YES", "NO"],
     required: true,
   },
-  Current_Bank_Account: {
+  thisCurrent_Bank_Account: {
     type: String,
     enum: ["YES", "NO"],
     required: true,
@@ -239,6 +293,7 @@ const surveyData = new Schema({
     enum: ["YES", "NO"],
     required: true,
   },
+
   GOVT_Training: {
     type: String,
     enum: ["YES", "NO"],
@@ -252,8 +307,23 @@ const surveyData = new Schema({
     type: Number,
     required: true,
   },
+  industry_option: {
+    service_industry_opt: {
+      type: Boolean,
+      required: true,
+    },
+    manufacturing_industry_opt: {
+      type: Boolean,
+      required: true,
+    },
+  },
   Raw_Materials: {
-    type: String,
+    radio_button: {
+      type: String,
+    },
+    other: {
+      type: String,
+    },
   },
   if_Raw_Materials_available: {
     type: String,
@@ -271,10 +341,52 @@ const surveyData = new Schema({
     enum: ["YES", "NO"],
   },
   final_product_sold_to: {
-    type: [String],
+    Trader_Agents: {
+      type: Boolean,
+      required: true,
+    },
+    Wholesalers: {
+      type: Boolean,
+      required: true,
+    },
+    Retailers: {
+      type: Boolean,
+      required: true,
+    },
+    Large_Manufacturers_Anchor_units: {
+      type: Boolean,
+      required: true,
+    },
+    Exporters: {
+      type: Boolean,
+      required: true,
+    },
+    OEMs: {
+      type: Boolean,
+      required: true,
+    },
+    End_Users: {
+      type: Boolean,
+      required: true,
+    },
+
+    Others: {
+      type: Boolean,
+    },
   }, //multiple
   markets_supplied: {
-    type: [String],
+    within_State: {
+      type: Boolean,
+      required: true,
+    },
+    outside_State: {
+      type: Boolean,
+      required: true,
+    },
+    outside_country: {
+      type: Boolean,
+      required: true,
+    },
     //enum: ["Within State", " Outside State", "Outside Country"],
   }, //multiple
   have_product_brand_name: {
@@ -285,14 +397,58 @@ const surveyData = new Schema({
     type: String,
   },
   challenges_while_selling: {
-    type: [String],
+    advance_technology: {
+      type: Boolean,
+      required: true,
+    },
+    quality_of_product: {
+      type: Boolean,
+      required: true,
+    },
+    market_competition: {
+      type: Boolean,
+      required: true,
+    },
+    capital: {
+      type: Boolean,
+      required: true,
+    },
+    branding_and_marketing: {
+      type: Boolean,
+      required: true,
+    },
+    other: {
+      type: String,
+    },
   }, //multiple
   involved_in_marketing: {
     type: String,
     enum: ["YES", "NO"],
   }, //multiple + add a field
   options_you_leverage_for_sale: {
-    type: [String],
+    exhibitions: {
+      type: Boolean,
+      required: true,
+    },
+    portals: {
+      type: Boolean,
+      required: true,
+    },
+    websites: {
+      type: Boolean,
+      required: true,
+    },
+    social_media: {
+      type: Boolean,
+      required: true,
+    },
+    Common_marketing_facility: {
+      type: Boolean,
+      required: true,
+    },
+    other: {
+      type: String,
+    },
   },
   Quality_Testing_lab_available: {
     type: String,
@@ -308,11 +464,27 @@ const surveyData = new Schema({
     enum: ["YES", "NO"],
   },
   Nature_of_Services_Offered: {
-    type: [String],
+    Nature_of_Services_Offered_a: {
+      type: String,
+    },
+    Nature_of_Services_Offered_b: {
+      type: String,
+    },
+    Nature_of_Services_Offered_c: {
+      type: String,
+    },
   },
 
   Challenges_faced: {
-    type: [String],
+    Challenges_faced_a: {
+      type: String,
+    },
+    Challenges_faced_b: {
+      type: String,
+    },
+    Challenges_faced_c: {
+      type: String,
+    },
   },
   Govt_Scheme_Challenges: {
     type: String,
@@ -320,178 +492,297 @@ const surveyData = new Schema({
   Support_required: {
     type: String,
   },
-  // aware_of_govt_policy: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },
-  //
-  // Policy_benifitted: {
-  //   type: [String],
-  // },
-  //Benifits_of_policy:{
-  // type:String,
-  //}
-  // Challenges_faced_policy_related: {
-  //   type: String,
-  // },
-  // expectation_from_govt: {
-  //   type: [String],
-  // },
-  // Aware_of_listed_scehmes: {
-  //   Central_Govt: {
-  //     type: [String],
-  //     required: true,
-  //     enum: [
-  //       "ZED",
-  //       "LEAN",
-  //       "TREDs",
-  //       "Design_scheme",
-  //       "Digital_Scheme",
-  //       "IPR_scheme",
-  //       "Samadhan",
-  //       "CGTMSE",
-  //       "MSME Champions",
-  //     ],
-  //   },
-  //   State_Govt: {
-  //     type: String,
-  //     required: true,
-  // //enum:["ODOP","UP MSME Promotion Policy","Technical upgradation","UP Chief Minister Youth Self Employment Scheme",]
-  //}
-  // },
-  // Remarks: {
-  //   type: String,
-  //   required: true,
-  // },
-  // Scheme_Like_to_avail: {
-  //   Central_Govt2: {
-  //     type: String,
-  //     enum: [
-  //       "ZED",
-  //       "LEAN",
-  //       "TREDs",
-  //       "Design_scheme",
-  //       "Digital_Scheme",
-  //       "IPR_scheme",
-  //       "Samadhan",
-  //       "CGTMSE",
-  //       " MSME Champions",
-  //     ],
-  //   },
-  //   State_Govt2: {
-  //     type: String,
-  //     required: true,
-  //   },
-  // },
-  // scheme_availed_by_you: {
-  //   type: String,
-  //   required: true,
-  // },
-  // Key_Reason_Preventing_loan: {
-  //   type: [String],
-  //   required: true,
-  // },
-  // source_of_credit_form: {
-  //   type: String,
-  //   required: true,
-  // },
-  // applied_loan_outcome: {
-  //   type: [String],
-  //   required: true,
-  // },
-  // reason_of_rejection: {
-  //   type: String,
-  //   required: true,
-  // },
-  // availed_samadhaan_service: {
-  //   type: String,
-  //   enum: ["YES", "NO"],
-  //   required: true,
-  // },
-  // face_challenge_from_buyer: {
-  //   type: String,
-  //   required: true,
-  // },
-  // Questionnaire_For_Exporters: {
-  //   Certifications: {
-  //     Currently_owned: {
-  //       type: String,
-  //     },
-  //     To_be_Required: {
-  //       type: String,
-  //     },
-  //   },
-  //   added 1 2 3
-  //   Infrastructure: {
-  //     Currently_owned: {
-  //       type: String,
-  //     },
-  //     To_be_Required: {
-  //       type: String,
-  //     },
-  //   },
-  //   Laboratory: {
-  //     Currently_owned: {
-  //       type: String,
-  //     },
-  //     To_be_Required: {
-  //       type: String,
-  //     },
-  //   },
-  //   Certification_required: {
-  //     type: String,
-  //     required: true,
-  //     tentative_cost: {
-  //       type: String,
-  //     },
-  //   },
-  //   laboratory_requirement: {
-  //     type: String,
-  //     required: true,
-  //     tentative_cost: {
-  //       type: String,
-  //     },
-  //   },
-  // },
-  // Requirement_of_Soft_Interventions: {
-  //   Counselling: {
-  //     type: String,
-  //     required: true,
-  //   },
-  //   Upgradation_of_IT_Infrastructure: {
-  //     type: String,
-  //     required: true,
-  //   },
-  //   Participation_in_Training: {
-  //     type: String,
-  //     required: true,
-  //   },
-  //   Institution_Development: {
-  //     type: String,
-  //     required: true,
-  //   },
-  //   Implementation_of_new_software: {
-  //     type: String,
-  //     required: true,
-  //   },
-  //   Training_Process_Improvement: {
-  //     type: String,
-  //     required: true,
-  //   },
-  //   Market_Promotion_Initiatives: {
-  //     type: String,
-  //     required: true,
-  //   },
-  //   Design_and_product_development: {
-  //     type: String,
-  //     required: true,
-  //   },
-  //   Promotion_Campaign: {
-  //     type: String,
-  //     required: true,
-  //   },
-  // },
+  aware_of_govt_policy: {
+    type: String,
+    enum: ["YES", "NO"],
+    required: true,
+  },
+  policy_program_1: {
+    type: String,
+  },
+  policy_program_2: {
+    type: String,
+  },
+
+  Policy_benifitted: {
+    type: String,
+  },
+
+  Challenges_faced_policy_related: {
+    type: String,
+  },
+
+  expectation_from_govt_1: {
+    type: String,
+  },
+  expectation_from_govt_2: {
+    type: String,
+  },
+  Aware_of_listed_scehmes: {
+    Central_Govt: {
+      ZED: {
+        type: Boolean,
+        required: true,
+      },
+      MSME_Champions: {
+        type: Boolean,
+        required: true,
+      },
+      Samadhan: {
+        type: Boolean,
+        required: true,
+      },
+      CGTMSE: {
+        type: Boolean,
+        required: true,
+      },
+      IPR_scheme: {
+        type: Boolean,
+        required: true,
+      },
+      Digital_Scheme: {
+        type: Boolean,
+        required: true,
+      },
+      Design_scheme: {
+        type: Boolean,
+        required: true,
+      },
+      TREDs: {
+        type: Boolean,
+        required: true,
+      },
+      LEAN: {
+        type: Boolean,
+        required: true,
+      },
+    },
+    State_Govt: {
+      ODOP: {
+        type: Boolean,
+        required: true,
+      },
+      UP_MSME_Promotion_Policy: {
+        type: Boolean,
+        required: true,
+      },
+      Technical_upgradation: {
+        type: Boolean,
+        required: true,
+      },
+      UP_Chief_Minister_Youth_Self_Employment_Scheme: {
+        type: Boolean,
+        required: true,
+      },
+      UP_Startup_Policy_2020: {
+        type: Boolean,
+        required: true,
+      },
+      Others: {
+        type: Boolean,
+        required: true,
+      },
+      //enum:["ODOP","UP MSME Promotion Policy","Technical upgradation","UP Chief Minister Youth Self Employment Scheme",]
+    },
+  },
+  Remarks: {
+    type: String,
+    required: true,
+  },
+  Scheme_Like_to_avail: {
+    Central_Govt: {
+      ZED: {
+        type: Boolean,
+        required: true,
+      },
+      MSME_Champions: {
+        type: Boolean,
+        required: true,
+      },
+      Samadhan: {
+        type: Boolean,
+        required: true,
+      },
+      CGTMSE: {
+        type: Boolean,
+        required: true,
+      },
+      IPR_scheme: {
+        type: Boolean,
+        required: true,
+      },
+      Digital_Scheme: {
+        type: Boolean,
+        required: true,
+      },
+      Design_scheme: {
+        type: Boolean,
+        required: true,
+      },
+      TREDs: {
+        type: Boolean,
+        required: true,
+      },
+      LEAN: {
+        type: Boolean,
+        required: true,
+      },
+    },
+    State_Govt: {
+      ODOP: {
+        type: Boolean,
+        required: true,
+      },
+      UP_MSME_Promotion_Policy: {
+        type: Boolean,
+        required: true,
+      },
+      Technical_upgradation: {
+        type: Boolean,
+        required: true,
+      },
+      UP_Chief_Minister_Youth_Self_Employment_Scheme: {
+        type: Boolean,
+        required: true,
+      },
+      UP_Startup_Policy_2020: {
+        type: Boolean,
+        required: true,
+      },
+      Others: {
+        type: Boolean,
+        required: true,
+      },
+    },
+  },
+  scheme_availed_by_you_central_govt: {
+    type: String,
+    required: true,
+  },
+  scheme_availed_by_you_state_govt: {
+    type: String,
+    required: true,
+  },
+  Key_Reason_Preventing_loan: {
+    Lack_of_awareness_of_bank_processes_requirements: {
+      type: Boolean,
+      required: true,
+    },
+    High_Interest_Rate: {
+      type: Boolean,
+      required: true,
+    },
+    Longer_Processing_time: {
+      type: Boolean,
+      required: true,
+    },
+    Improper_documentation: {
+      type: Boolean,
+      required: true,
+    },
+    No_nearby_bank_branches: {
+      type: Boolean,
+      required: true,
+    },
+    other: {
+      type: String,
+    },
+  },
+  source_of_credit_form: {
+    type: String,
+    required: true,
+  },
+  applied_loan_outcome: {
+    radio_button: {
+      type: String,
+    },
+    other: {
+      type: String,
+    },
+  },
+  reason_of_rejection: {
+    type: String,
+    required: true,
+  },
+  availed_samadhaan_service: {
+    type: String,
+    enum: ["YES", "NO"],
+    required: true,
+  },
+  face_challenge_from_buyer: {
+    type: String,
+    required: true,
+  },
+  Certifications: {
+    Currently_owned_1: {
+      type: String,
+    },
+    To_be_Required_1: {
+      type: String,
+    },
+  },
+  Infrastructure: {
+    Currently_owned_2: {
+      type: String,
+    },
+    To_be_Required_2: {
+      type: String,
+    },
+  },
+  Laboratory: {
+    Currently_owned_3: {
+      type: String,
+    },
+    To_be_Required_3: {
+      type: String,
+    },
+    Certification_required: {
+      type: String,
+      required: true,
+    },
+    laboratory_requirement: {
+      type: String,
+      required: true,
+    },
+  },
+  Requirement_of_Soft_Interventions: {
+    Counselling: {
+      type: String,
+      required: true,
+    },
+    Upgradation_of_IT_Infrastructure: {
+      type: String,
+      required: true,
+    },
+    Participation_in_Training: {
+      type: String,
+      required: true,
+    },
+    Institution_Development: {
+      type: String,
+      required: true,
+    },
+    Implementation_of_new_software: {
+      type: String,
+      required: true,
+    },
+    Training_Process_Improvement: {
+      type: String,
+      required: true,
+    },
+    Market_Promotion_Initiatives: {
+      type: String,
+      required: true,
+    },
+    Design_and_product_development: {
+      type: String,
+      required: true,
+    },
+    Promotion_Campaign: {
+      type: String,
+      required: true,
+    },
+  },
 });
 
 const SurveyDatamodel = mongoose.model("SurveyData", surveyData);
