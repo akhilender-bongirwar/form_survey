@@ -206,7 +206,7 @@ function Table({ formD, setFormD }) {
       setFormD(prevFormData => {
         return {
           ...prevFormData,
-          [name]: { ...prevFormData[name], [value]: checked },
+          [name]: {...prevFormData[name],[value]:type === "checkbox" ? checked : value},
         };
       });
     } else {
@@ -1022,13 +1022,13 @@ function Table({ formD, setFormD }) {
                           justifyContent: "flex-start",
                         }}
                       >
-                        <label htmlFor="others">Other please specify</label>
+                        <label htmlFor="others1">Other please specify</label>
                         <input
                           type="text"
-                          id="others"
+                          id="others1"
                           name="service_industry"
                           onChange={handleChange}
-                          value={formD.service_industry}
+                          value={formD.service_industry.other}
                           style={{ width: "85%" }}
                         />
                       </div>

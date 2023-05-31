@@ -46,7 +46,8 @@ function App() {
       Government:false,
       online:false,
       Other_states:false,
-      internationally:false
+      internationally:false,
+      other:""
     },
     full_time_Emoployee: "",
     part_time_Emoployee: "",
