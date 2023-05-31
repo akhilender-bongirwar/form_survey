@@ -300,7 +300,7 @@ function FormPart6({ formD, setFormD }) {
               value={formD.face_challenge_from_buyer}
               placeholder=". . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
               onChange={handleChange}
-              style={{ width: "60%", border: "transparent" }}
+              style={{ border: "transparent" }}
             />
           </div>
 
@@ -318,7 +318,7 @@ function FormPart6({ formD, setFormD }) {
               value={formD.Certification_required}
               placeholder=". . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
               onChange={handleChange}
-              style={{ width: "60%", border: "transparent" }}
+              style={{ border: "transparent" }}
             />
           </div>
           <div style={{ fontSize: "1.2em", padding: "0.75em" }}>
@@ -337,13 +337,12 @@ function FormPart6({ formD, setFormD }) {
               value={formD.laboratory_requirement}
               placeholder=". . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
               onChange={handleChange}
-              style={{ width: "60%", border: "transparent" }}
+              style={{ border: "transparent" }}
             />
           </div>
           <div>
             <h2
               style={{
-                background: "grey",
                 margin: "0.5em",
                 display: "flex",
                 marginTop: "2em",

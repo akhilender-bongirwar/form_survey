@@ -85,11 +85,17 @@ function App() {
     Water_Availability: "",
     Effluent_Treatment_Constraint: "",
     // edited
-    undergoActivity:"",
+    undergoActivity: "",
     //
     GOVT_Training: "",
     Email: "",
     Phone_Number: "",
+    //
+    industry_option: {
+      service_industry_opt: false,
+      manufacturing_industry_opt: true,
+    },
+
     Raw_Materials: {
       radio_button: "",
       other: "",

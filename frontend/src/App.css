@@ -9,6 +9,17 @@
   box-sizing: border-box;
 }
 
+input:invalid {
+  background-color: ivory;
+  border: none;
+  /* outline: 2px solid red; */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 /* input[type="radio"] {
   border: 1px solid #000000;
   padding: 0.5em;
@@ -23,6 +34,16 @@
 /* input[type=radio]:focus {
   outline-color: transparent;
 } */
+.arrow_notation2 {
+  font-size: larger;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  padding: 0.6%;
+  /* border-radius: 25%; */
+  margin-top: 2px;
+}
+
 .arrow_notation {
   font-size: larger;
   text-decoration: none;
