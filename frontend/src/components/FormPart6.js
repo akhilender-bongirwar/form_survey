@@ -1,25 +1,41 @@
 import React from "react";
 import "./Table.css";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
+import "react-toastify/dist/ReactToastify.css";
 
 import { NavLink } from "react-router-dom";
+import { ImperativeToast } from "sanity";
 function FormPart6({ formD, setFormD }) {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const validate = (e) => {
     e.preventDefault();
-    const isV=document.getElementById("formy").reportValidity();
-    if(!isV){
-    }
-    else{
-      axios.post(
-        "http://127.0.0.1:8080/form-data",{
-          mode:"cors",
-          body:formD,
-        }
-      )
-      .then((d)=>console.log(d))
-      .catch((e)=>console.log(e))
+    const isV = document.getElementById("formy").reportValidity();
+    if (!isV) {
+    } else {
+      axios
+        .post("http://127.0.0.1:8080/form-data", {
+          mode: "cors",
+          body: formD,
+        })
+        .then((d) => {
+          // console.log(d.data.success);
+          if (!d.data.success) {
+            // console.log("object");
+            Object.entries(d.data.message.errors).map((elem) => {
+              // console.log(elem);
+              toast.error(elem[0] + " required");
+              console.log(elem[0] + " required");
+            });
+          } else {
+            toast.success("saved");
+          }
+        })
+        .catch((e) => {
+          toast.error(e);
+          // console.log(e);
+        });
     }
   };
   function handleChange(event) {
@@ -555,11 +571,22 @@ function FormPart6({ formD, setFormD }) {
           </div>
         </div>
       </div>
-      <div style={{margin:"20px 10px",display:"flex",justifyContent:"space-between"}}>
+      <div
+        style={{
+          margin: "20px 10px",
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        <ToastContainer />
         <NavLink to="/5" className="arrow_notation">
           Prev
         </NavLink>
-        <button type="submit" onClick={validate} className="arrow_notation submit">
+        <button
+          type="submit"
+          onClick={validate}
+          className="arrow_notation submit"
+        >
           Submit
         </button>
       </div>

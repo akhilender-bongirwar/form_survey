@@ -10,16 +10,19 @@ const formdatacontroller = async (req, res) => {
   newdata
     .save()
     .then((r) => {
-      console.log(r);
+      return res.send({
+        success: true,
+        message: "data saved successfully",
+        data,
+      });
     })
     .catch((err) => {
-      console.log(err);
+      return res.send({
+        success: false,
+        message: err,
+        data,
+      });
     });
-
-  return res.send({
-    success: true,
-    data,
-  });
 };
 
 export { formdatacontroller };
