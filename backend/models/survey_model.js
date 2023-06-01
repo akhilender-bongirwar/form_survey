@@ -736,6 +736,7 @@ const surveyData = new Schema({
     To_be_Required_3: {
       type: String,
     },
+  },
     Certification_required: {
       type: String,
       required: true,
@@ -744,7 +745,6 @@ const surveyData = new Schema({
       type: String,
       required: true,
     },
-  },
   Requirement_of_Soft_Interventions: {
     Counselling: {
       type: String,

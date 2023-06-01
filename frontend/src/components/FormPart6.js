@@ -1,7 +1,19 @@
 import React from "react";
 import "./Table.css";
+import axios from "axios";
+
 import { NavLink } from "react-router-dom";
 function FormPart6({ formD, setFormD }) {
+  function finalsubmit(){
+    axios.post(
+      "http://127.0.0.1:8080/form-data",{
+        mode:"cors",
+        body:formD,
+      }
+    )
+    .then((d)=>console.log(d))
+    .catch((e)=>console.log(e))
+  }
   function handleChange(event) {
     const { name, value, type, checked, className, id } = event.target;
     if (name === "sell_produce_majorly") {
@@ -539,7 +551,7 @@ function FormPart6({ formD, setFormD }) {
         <NavLink to="/5" className="arrow_notation">
           Prev
         </NavLink>
-        <button type="submit" className="arrow_notation submit">
+        <button type="submit" onClick={finalsubmit} className="arrow_notation submit">
           Submit
         </button>
       </div>
