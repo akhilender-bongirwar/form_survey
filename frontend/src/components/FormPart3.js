@@ -1,7 +1,17 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink ,useNavigate} from "react-router-dom";
 import "./Table.css";
 function FormPart3({ formD, setFormD }) {
+  const navigate=useNavigate();
+  const validate = (e) => {
+    const isV=document.getElementById("formy").reportValidity();
+    if(!isV){
+      e.preventDefault();
+    }
+    else{
+      navigate('/4')
+    }
+  };
   function handleChange(event) {
     const { name, value, type, checked, className } = event.target;
     if (name === "sell_produce_majorly") {
@@ -1062,7 +1072,7 @@ function FormPart3({ formD, setFormD }) {
           <NavLink to="/2" className="arrow_notation">
             Prev
           </NavLink>
-          <NavLink to="/4" className="arrow_notation">
+          <NavLink to="/4" className="arrow_notation" onClick={validate}>
             Next
           </NavLink>
         </div>

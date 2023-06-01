@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet ,redirect , useNavigate ,Navigate} from "react-router-dom";
 import "./Table.css";
 import Input from "./Input";
 import { Form } from "react-router-dom";
@@ -12,6 +12,7 @@ import FormPart5 from "./FormPart5";
 import FormPart6 from "./FormPart6";
 
 function Table({ formD, setFormD }) {
+  const navigate=useNavigate(); 
   
   const [a1, setA1] = useState(null);
   const [a2, setA2] = useState(null);
@@ -20,8 +21,14 @@ function Table({ formD, setFormD }) {
   const [a5, setA5] = useState(null);
   const [a6, setA6] = useState(null);
 
-  const validate = () => {
-    // reportValidity();
+  const validate = (e) => {
+    const isV=document.getElementById("formy").reportValidity();
+    if(!isV){
+      e.preventDefault();
+    }
+    else{
+      navigate('/2')
+    }
   };
 
   function handleChange(event) {
@@ -195,7 +202,6 @@ function Table({ formD, setFormD }) {
   }
   return (
     <>
-      <form method="post">
         <div
           style={{
             display: "flex",
@@ -2046,7 +2052,6 @@ function Table({ formD, setFormD }) {
         <FormPart4 />
         <FormPart5 />
       <FormPart6 /> */}
-      </form>
     </>
   );
 }

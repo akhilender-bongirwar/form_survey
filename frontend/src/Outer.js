@@ -5,7 +5,9 @@ const Outer=()=>{
     return(
         <>
           <h1 style={{ textAlign: "center" }}>DRAFT SURVEY FORM</h1>
-          <Outlet />
+          <form id="formy">
+              <Outlet />
+          </form>
         </>
     )
 }
