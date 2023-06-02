@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink ,useNavigate} from "react-router-dom";
 import "./Table.css";
+import { t } from "i18next";
 function FormPart3({ formD, setFormD }) {
   const navigate=useNavigate();
   const validate = (e) => {
@@ -164,8 +165,7 @@ function FormPart3({ formD, setFormD }) {
           <tr>
             <td colSpan={1}>
               <span>
-                Are you aware about the current government programs benefitting
-                MSMEs{" "}
+                {t("Are you aware about the current government programs benefitting MSME")}s{" "}
               </span>
             </td>
             <td colSpan={6}>
@@ -200,16 +200,14 @@ function FormPart3({ formD, setFormD }) {
           <tr>
             <td colSpan={1}>
               <span>
-                Which program benefits are you availing currently from the
-                state? Please describe the key benefits and challenges related
-                to the program
+                {t("Which program benefits are you availing currently from the state? Please describe the key benefits and challenges related to the program")}
               </span>
             </td>
             <td colSpan={6}>
               <tr>
                 <td colSpan={1}>
                   <tr>
-                    <span>Name of the program</span>
+                    <span>{t("Name of the program")}</span>
                   </tr>
                   <tr>
                     <label style={{ textAlign: "center" }} htmlFor="Anything">
@@ -248,7 +246,7 @@ function FormPart3({ formD, setFormD }) {
               <tr>
                 <td colSpan={2}>
                   <label htmlFor="benefits">
-                    Nature of assistance/Benefits:
+                    {t("Nature of assistance/Benefits")}:
                   </label>
                   <input
                     type="text"
@@ -266,7 +264,7 @@ function FormPart3({ formD, setFormD }) {
               </tr>
               <tr>
                 <td colSpan={2}>
-                  <label htmlFor="challenges">Challenges:</label>
+                  <label htmlFor="challenges">{t("Challenges")}:</label>
                   <input
                     type="text"
                     name="Challenges_faced_policy_related"
@@ -286,8 +284,7 @@ function FormPart3({ formD, setFormD }) {
           <tr>
             <td colSpan={1}>
               <span>
-                What are your expectations from the State / Central Government
-                (related to infra/training/finance/etc)
+                {t("What are your expectations from the State / Central Government (related to infra/training/finance/etc)")}
               </span>
             </td>
             <td colSpan={6}>
@@ -327,13 +324,13 @@ function FormPart3({ formD, setFormD }) {
           </tr>
           <tr>
             <td colSpan={1}>
-              <span>Are you aware of any of the listed Schemes</span>
+              <span>{t("Are you aware of any of the listed Schemes")}</span>
             </td>
             <td colSpan={6} style={{ width: "100%" }}>
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <div>
                   <div style={{ fontWeight: "bold", fontSize: "larger" }}>
-                    <u>Central Government:</u>
+                    <u>{t("Central Government")}:</u>
                   </div>
                   <div
                     style={{ display: "flex", flexWrap: "wrap" }}
@@ -344,7 +341,7 @@ function FormPart3({ formD, setFormD }) {
                         htmlFor="op1"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        ZED
+                        {t("ZED")}
                       </label>
                       <input
                         type="checkbox"
@@ -361,7 +358,7 @@ function FormPart3({ formD, setFormD }) {
                         htmlFor="op2"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        LEAN
+                        {t("LEAN")}
                       </label>
                       <input
                         type="checkbox"
@@ -380,7 +377,7 @@ function FormPart3({ formD, setFormD }) {
                         htmlFor="op3"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        TREDs
+                        {t("TRED")}s
                       </label>
                       <input
                         type="checkbox"
@@ -399,7 +396,7 @@ function FormPart3({ formD, setFormD }) {
                         htmlFor="op4"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        Design scheme
+                        {t("Design scheme")}
                       </label>
                       <input
                         type="checkbox"
@@ -419,7 +416,7 @@ function FormPart3({ formD, setFormD }) {
                         htmlFor="op5"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        Digital Scheme
+                        {t("Digital Scheme")}
                       </label>
                       <input
                         type="checkbox"
@@ -439,7 +436,7 @@ function FormPart3({ formD, setFormD }) {
                         htmlFor="op6"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        IPR scheme
+                        {t("IPR scheme")}
                       </label>
                       <input
                         type="checkbox"
@@ -458,7 +455,7 @@ function FormPart3({ formD, setFormD }) {
                         htmlFor="op7"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        Samadhan
+                        {t("Samadhan")}
                       </label>
                       <input
                         type="checkbox"
@@ -477,7 +474,7 @@ function FormPart3({ formD, setFormD }) {
                         htmlFor="op8"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        CGTMSE
+                        {t("CGTMSE")}
                       </label>
                       <input
                         type="checkbox"
@@ -496,7 +493,7 @@ function FormPart3({ formD, setFormD }) {
                         htmlFor="op9"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        MSME Champions
+                        {t("MSME Champions")}
                       </label>
                       <input
                         type="checkbox"
@@ -513,7 +510,7 @@ function FormPart3({ formD, setFormD }) {
                     </div>
                   </div>
                   <div style={{ fontWeight: "bold", fontSize: "larger" }}>
-                    <u>State Government:</u>
+                    <u>{t("State Government")}:</u>
                   </div>
                   <div style={{ display: "flex" }} className="radio_wrapper">
                     <div>
@@ -521,7 +518,7 @@ function FormPart3({ formD, setFormD }) {
                         htmlFor="opt1"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        ODOP
+                        {t("ODOP")}
                       </label>
                       <input
                         type="checkbox"
@@ -542,7 +539,7 @@ function FormPart3({ formD, setFormD }) {
                           whiteSpace: "nowrap",
                         }}
                       >
-                        UP MSME Promotion Policy
+                        {t("UP MSME Promotion Policy")}
                       </label>
                       <input
                         type="checkbox"
@@ -566,7 +563,7 @@ function FormPart3({ formD, setFormD }) {
                           whiteSpace: "nowrap",
                         }}
                       >
-                        Technical upgradation
+                        {t("Technical upgradation")}
                       </label>
                       <input
                         type="checkbox"
@@ -590,7 +587,7 @@ function FormPart3({ formD, setFormD }) {
                           // whiteSpace: "nowrap",
                         }}
                       >
-                        UP Chief Minister Youth Self Employment Scheme
+                        {t("UP Chief Minister Youth Self Employment Scheme")}
                       </label>
                       <input
                         type="checkbox"
@@ -614,7 +611,7 @@ function FormPart3({ formD, setFormD }) {
                           whiteSpace: "nowrap",
                         }}
                       >
-                        UP Startup Policy 2020
+                        {t("UP Startup Policy 2020")}
                       </label>
                       <input
                         type="checkbox"
@@ -638,7 +635,7 @@ function FormPart3({ formD, setFormD }) {
                           whiteSpace: "nowrap",
                         }}
                       >
-                        Others
+                        {t("Others")}
                       </label>
                       <input
                         type="checkbox"
@@ -660,8 +657,7 @@ function FormPart3({ formD, setFormD }) {
           <tr>
             <td colSpan={1}>
               <label htmlFor="remark">
-                Remarks (Specify if MSMEs are onboarded on any of the above on
-                any of the above schemes)
+                {t("Remarks (Specify if MSMEs are onboarded on any of the above on any of the above schemes)")}
               </label>
             </td>
             <td colSpan={6}>
@@ -681,13 +677,13 @@ function FormPart3({ formD, setFormD }) {
           </tr>
           <tr>
             <td colSpan={1}>
-              <span> Which scheme would you like to avail?</span>
+              <span>{t("Which scheme would you like to avail")}?</span>
             </td>
             <td colSpan={6} style={{ width: "100%" }}>
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <div>
                   <div style={{ fontWeight: "bold", fontSize: "larger" }}>
-                    <u>Central Government:</u>
+                    <u>{t("Central Government")}:</u>
                   </div>
                   <div
                     style={{ display: "flex", flexWrap: "wrap" }}
@@ -698,7 +694,7 @@ function FormPart3({ formD, setFormD }) {
                         htmlFor="op11"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        ZED
+                        {t("ZED")}
                       </label>
                       <input
                         type="checkbox"
@@ -715,7 +711,7 @@ function FormPart3({ formD, setFormD }) {
                         htmlFor="op22"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        LEAN
+                        {t("LEAN")}
                       </label>
                       <input
                         type="checkbox"
@@ -732,7 +728,7 @@ function FormPart3({ formD, setFormD }) {
                         htmlFor="op33"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        TREDs
+                        {t("TREDs")}
                       </label>
                       <input
                         type="checkbox"
@@ -749,7 +745,7 @@ function FormPart3({ formD, setFormD }) {
                         htmlFor="op44"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        Design scheme
+                        {t("Design scheme")}
                       </label>
                       <input
                         type="checkbox"
@@ -768,7 +764,7 @@ function FormPart3({ formD, setFormD }) {
                         htmlFor="op55"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        Digital Scheme
+                        {t("Digital Scheme")}
                       </label>
                       <input
                         type="checkbox"
@@ -787,7 +783,7 @@ function FormPart3({ formD, setFormD }) {
                         htmlFor="op66"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        IPR scheme
+                        {t("IPR scheme")}
                       </label>
                       <input
                         type="checkbox"
@@ -806,7 +802,7 @@ function FormPart3({ formD, setFormD }) {
                         htmlFor="op77"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        Samadhan
+                        {t("Samadhan")}
                       </label>
                       <input
                         type="checkbox"
@@ -825,7 +821,7 @@ function FormPart3({ formD, setFormD }) {
                         htmlFor="op88"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        CGTMSE
+                        {t("CGTMSE")}
                       </label>
                       <input
                         type="checkbox"
@@ -842,7 +838,7 @@ function FormPart3({ formD, setFormD }) {
                         htmlFor="op99"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        MSME Champions
+                        {t("MSME Champions")}
                       </label>
                       <input
                         type="checkbox"
@@ -858,7 +854,7 @@ function FormPart3({ formD, setFormD }) {
                     </div>
                   </div>
                   <div style={{ fontWeight: "bold", fontSize: "larger" }}>
-                    <u>State Government:</u>
+                    <u>{t("State Government")}:</u>
                   </div>
                   <div style={{ display: "flex" }} className="radio_wrapper">
                     <div>
@@ -866,7 +862,7 @@ function FormPart3({ formD, setFormD }) {
                         htmlFor="opt11"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        ODOP
+                        {t("ODOP")}
                       </label>
                       <input
                         type="checkbox"
@@ -887,7 +883,7 @@ function FormPart3({ formD, setFormD }) {
                           whiteSpace: "nowrap",
                         }}
                       >
-                        UP MSME Promotion Policy
+                        {t("UP MSME Promotion Policy")}
                       </label>
                       <input
                         type="checkbox"
@@ -911,7 +907,7 @@ function FormPart3({ formD, setFormD }) {
                           whiteSpace: "nowrap",
                         }}
                       >
-                        Technical upgradation
+                        {t("Technical upgradation")}
                       </label>
                       <input
                         type="checkbox"
@@ -934,7 +930,7 @@ function FormPart3({ formD, setFormD }) {
                           padding: "0.5em",
                         }}
                       >
-                        UP Chief Minister Youth Self Employment Scheme
+                        {t("UP Chief Minister Youth Self Employment Scheme")}
                       </label>
                       <input
                         type="checkbox"
@@ -958,7 +954,7 @@ function FormPart3({ formD, setFormD }) {
                           whiteSpace: "nowrap",
                         }}
                       >
-                        UP Startup Policy 2020
+                        {t("UP Startup Policy 2020")}
                       </label>
                       <input
                         type="checkbox"
@@ -978,7 +974,7 @@ function FormPart3({ formD, setFormD }) {
                         htmlFor="opt66"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        Others
+                        {t("Others")}
                       </label>
                       <input
                         type="checkbox"
@@ -998,8 +994,7 @@ function FormPart3({ formD, setFormD }) {
           <tr>
             <td colSpan={1}>
               <div>
-                What are the schemes under which you are availing benefits from
-                Govt? (Both State and Central Govt separately)
+                {t("What are the schemes under which you are availing benefits from Govt? (Both State and Central Govt separately)")}
               </div>
             </td>
             <td colSpan={6} style={{ width: "100%" }}>
