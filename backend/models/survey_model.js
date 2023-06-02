@@ -3,6 +3,14 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const surveyData = new Schema({
+  submission_date:{
+    type:String,
+    required:true
+  },
+  District_code:{
+    type:String,
+    required:true
+  },
   Enterprise_Name: {
     type: String,
     required: true,
