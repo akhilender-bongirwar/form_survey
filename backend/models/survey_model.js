@@ -7,7 +7,7 @@ const surveyData = new Schema({
     type:String,
     required:true
   },
-  District_code:{
+  District_Code:{
     type:String,
     required:true
   },

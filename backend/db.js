@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const ConnectDB = () => {
   mongoose
     .connect(
-      "mongodb+srv://akhileshjyotishi1729:HvCHg8fRNT19ri13@cluster3.i2qv5af.mongodb.net/?retryWrites=true&w=majority"
+      "mongodb+srv://surveyform008:BEOrFi5lv3QWr9ti@cluster0.hqx4pj0.mongodb.net/?retryWrites=true&w=majority"
     )
     .then(() => console.log("Connected!"))
     .catch((err) => {
