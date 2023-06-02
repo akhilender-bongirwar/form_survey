@@ -244,7 +244,7 @@ function Table({ formD, setFormD }) {
               <tr>
                 <td colSpan={1}>
                   <label htmlFor="Enterprise_Name">
-                    {t("Enterprise Name")}
+                    {t("Enterprise_Name")}
                   </label>
                 </td>
                 <td colSpan={6}>
@@ -261,7 +261,7 @@ function Table({ formD, setFormD }) {
               <tr>
                 <td colSpan={1}>
                   <label htmlFor="Entrepreneur_Name">
-                    {t("Entrepreneur Name")}
+                    {t("Entrepreneur_Name")}
                   </label>
                 </td>
                 <td colSpan={6}>
@@ -2026,9 +2026,9 @@ function Table({ formD, setFormD }) {
                 <td colSpan={1}>
                   <span>
                     {" "}
-                    {
+                    {t(
                       "Did you undergo any training activities or attend seminars/awareness program of the Govt. for MSME Sector"
-                    }
+                    )}
                     ?{" "}
                   </span>
                 </td>
