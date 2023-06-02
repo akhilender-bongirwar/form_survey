@@ -894,7 +894,6 @@ function Table({ formD, setFormD }) {
                           name="sell_produce_majorly"
                           id="local"
                           value="Local_Market"
-                          required="required"
                           checked={formD.sell_produce_majorly.Local_Market}
                           onChange={handleChange}
                         />
@@ -907,7 +906,6 @@ function Table({ formD, setFormD }) {
                           id="Govt"
                           name="sell_produce_majorly"
                           value="Government"
-                          required="required"
                           checked={formD.sell_produce_majorly.Government}
                           onChange={handleChange}
                         />
@@ -920,7 +918,6 @@ function Table({ formD, setFormD }) {
                           id="online"
                           name="sell_produce_majorly"
                           value="online"
-                          required="required"
                           checked={formD.sell_produce_majorly.online}
                           onChange={handleChange}
                         />
@@ -933,7 +930,6 @@ function Table({ formD, setFormD }) {
                           id="other"
                           name="sell_produce_majorly"
                           value="Other_states"
-                          required="required"
                           checked={formD.sell_produce_majorly.Other_states}
                           onChange={handleChange}
                         />
@@ -944,7 +940,6 @@ function Table({ formD, setFormD }) {
                           type="checkbox"
                           id="export"
                           name="sell_produce_majorly"
-                          required="required"
                           value="export_outside"
                           checked={formD.sell_produce_majorly.export_outside}
                           onChange={handleChange}
@@ -989,7 +984,6 @@ function Table({ formD, setFormD }) {
                           name="service_industry"
                           id="local1"
                           value="Local_Market"
-                          required="required"
                           checked={formD.service_industry.Local_Market}
                           onChange={handleChange}
                         />
@@ -1004,7 +998,6 @@ function Table({ formD, setFormD }) {
                           id="Govt1"
                           name="service_industry"
                           value="Government"
-                          required="required"
                           checked={formD.service_industry.Government}
                           onChange={handleChange}
                         />
@@ -1017,7 +1010,6 @@ function Table({ formD, setFormD }) {
                           id="online1"
                           name="service_industry"
                           value="online"
-                          required="required"
                           checked={formD.service_industry.online}
                           onChange={handleChange}
                         />
@@ -1030,7 +1022,6 @@ function Table({ formD, setFormD }) {
                           id="other1"
                           name="service_industry"
                           value="Other_states"
-                          required="required"
                           checked={formD.service_industry.Other_states}
                           onChange={handleChange}
                         />
@@ -1042,7 +1033,6 @@ function Table({ formD, setFormD }) {
                           id="export1"
                           name="service_industry"
                           value="internationally"
-                          required="required"
                           checked={formD.service_industry.internationally}
                           onChange={handleChange}
                         />

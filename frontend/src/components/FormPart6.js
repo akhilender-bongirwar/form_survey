@@ -6,7 +6,6 @@ import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
 
 import { NavLink } from "react-router-dom";
-import { ImperativeToast } from "sanity";
 function FormPart6({ formD, setFormD }) {
   const navigate = useNavigate();
   const validate = (e) => {

@@ -168,7 +168,6 @@ function FormPart4({ formD, setFormD }) {
                     id="reason1"
                     name="Key_Reason_Preventing_loan"
                     value="Lack_of_awareness_of_bank_processes_requirements"
-                    required="required"
                     checked={
                       formD.Key_Reason_Preventing_loan.Lack_of_awareness_of_bank_processes_requirements    
                     }
@@ -184,7 +183,6 @@ function FormPart4({ formD, setFormD }) {
                     id="reason2"
                     name="Key_Reason_Preventing_loan"
                     value="High_Interest_Rate"
-                    required="required"
                     checked={
                       formD.Key_Reason_Preventing_loan.High_Interest_Rate
                     }
@@ -200,7 +198,6 @@ function FormPart4({ formD, setFormD }) {
                     id="reason3"
                     name="Key_Reason_Preventing_loan"
                     value="Longer_Processing_time"
-                    required="required"
                     checked={
                       formD.Key_Reason_Preventing_loan.Longer_Processing_time
                     }
@@ -216,7 +213,6 @@ function FormPart4({ formD, setFormD }) {
                     id="reason4"
                     name="Key_Reason_Preventing_loan"
                     value="Improper_documentation"
-                    required="required"
                     checked={
                       formD.Key_Reason_Preventing_loan.Improper_documentation
                     }
@@ -232,7 +228,6 @@ function FormPart4({ formD, setFormD }) {
                     id="reason5"
                     name="Key_Reason_Preventing_loan"
                     value="No_nearby_bank_branches"
-                    required="required"
                     checked={
                       formD.Key_Reason_Preventing_loan.No_nearby_bank_branches
                     }

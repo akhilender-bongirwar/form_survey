@@ -352,7 +352,6 @@ function FormPart3({ formD, setFormD }) {
                         className="central"
                         name="Aware_of_listed_scehmes"
                         value="ZED"
-                        required="required"
                         checked={formD.Aware_of_listed_scehmes.Central_Govt.ZED}
                         onChange={handleChange}
                       />
@@ -370,7 +369,6 @@ function FormPart3({ formD, setFormD }) {
                         className="central"
                         name="Aware_of_listed_scehmes"
                         value="LEAN"
-                        required="required"
                         checked={
                           formD.Aware_of_listed_scehmes.Central_Govt.LEAN
                         }
@@ -390,7 +388,6 @@ function FormPart3({ formD, setFormD }) {
                         id="op3"
                         name="Aware_of_listed_scehmes"
                         value="TREDs"
-                        required="required"
                         checked={
                           formD.Aware_of_listed_scehmes.Central_Govt.TREDs
                         }
@@ -410,7 +407,6 @@ function FormPart3({ formD, setFormD }) {
                         id="op4"
                         name="Aware_of_listed_scehmes"
                         value="Design_scheme"
-                        required="required"
                         checked={
                           formD.Aware_of_listed_scehmes.Central_Govt
                             .Design_scheme
@@ -431,7 +427,6 @@ function FormPart3({ formD, setFormD }) {
                         id="op5"
                         name="Aware_of_listed_scehmes"
                         value="Digital_Scheme"
-                        required="required"
                         checked={
                           formD.Aware_of_listed_scehmes.Central_Govt
                             .Digital_Scheme
@@ -452,7 +447,6 @@ function FormPart3({ formD, setFormD }) {
                         id="op6"
                         name="Aware_of_listed_scehmes"
                         value="IPR_scheme"
-                        required="required"
                         checked={
                           formD.Aware_of_listed_scehmes.Central_Govt.IPR_scheme
                         }
@@ -472,7 +466,6 @@ function FormPart3({ formD, setFormD }) {
                         className="central"
                         name="Aware_of_listed_scehmes"
                         value="Samadhan"
-                        required="required"
                         checked={
                           formD.Aware_of_listed_scehmes.Central_Govt.Samadhan
                         }
@@ -492,7 +485,6 @@ function FormPart3({ formD, setFormD }) {
                         className="central"
                         name="Aware_of_listed_scehmes"
                         value="CGTMSE"
-                        required="required"
                         checked={
                           formD.Aware_of_listed_scehmes.Central_Govt.CGTMSE
                         }
@@ -512,7 +504,6 @@ function FormPart3({ formD, setFormD }) {
                         className="central"
                         name="Aware_of_listed_scehmes"
                         value="MSME_Champions"
-                        required="required"
                         checked={
                           formD.Aware_of_listed_scehmes.Central_Govt
                             .MSME_Champions
@@ -539,7 +530,6 @@ function FormPart3({ formD, setFormD }) {
                         name="Aware_of_listed_scehmes"
                         checked={formD.Aware_of_listed_scehmes.State_Govt.ODOP}
                         value="ODOP"
-                        required="required"
                         onChange={handleChange}
                       />
                     </div>
@@ -560,7 +550,6 @@ function FormPart3({ formD, setFormD }) {
                         className="state"
                         name="Aware_of_listed_scehmes"
                         value="UP_MSME_Promotion_Policy"
-                        required="required"
                         checked={
                           formD.Aware_of_listed_scehmes.State_Govt
                             .UP_MSME_Promotion_Policy
@@ -585,7 +574,6 @@ function FormPart3({ formD, setFormD }) {
                         className="state"
                         name="Aware_of_listed_scehmes"
                         value="Technical_upgradation"
-                        required="required"
                         checked={
                           formD.Aware_of_listed_scehmes.State_Govt
                             .Technical_upgradation
@@ -610,7 +598,6 @@ function FormPart3({ formD, setFormD }) {
                         className="state"
                         name="Aware_of_listed_scehmes"
                         value="UP_Chief_Minister_Youth_Self_Employment_Scheme"
-                        required="required"
                         checked={
                           formD.Aware_of_listed_scehmes.State_Govt
                             .UP_Chief_Minister_Youth_Self_Employment_Scheme
@@ -634,7 +621,6 @@ function FormPart3({ formD, setFormD }) {
                         className="state"
                         id="opt5"
                         name="Aware_of_listed_scehmes"
-                        required="required"
                         checked={
                           formD.Aware_of_listed_scehmes.State_Govt
                             .UP_Startup_Policy_2020
@@ -663,7 +649,6 @@ function FormPart3({ formD, setFormD }) {
                         }
                         name="Aware_of_listed_scehmes"
                         value="Others"
-                        required="required"
                         onChange={handleChange}
                       />
                     </div>
@@ -722,7 +707,6 @@ function FormPart3({ formD, setFormD }) {
                         checked={formD.Scheme_Like_to_avail.Central_Govt.ZED}
                         name="Scheme_Like_to_avail"
                         value="ZED"
-                        required="required"
                         onChange={handleChange}
                       />
                     </div>
@@ -740,7 +724,6 @@ function FormPart3({ formD, setFormD }) {
                         checked={formD.Scheme_Like_to_avail.Central_Govt.LEAN}
                         name="Scheme_Like_to_avail"
                         value="LEAN"
-                        required="required"
                         onChange={handleChange}
                       />
                     </div>
@@ -758,7 +741,6 @@ function FormPart3({ formD, setFormD }) {
                         checked={formD.Scheme_Like_to_avail.Central_Govt.TREDs}
                         name="Scheme_Like_to_avail"
                         value="TREDs"
-                        required="required"
                         onChange={handleChange}
                       />
                     </div>
@@ -778,7 +760,6 @@ function FormPart3({ formD, setFormD }) {
                         }
                         name="Scheme_Like_to_avail"
                         value="Design_scheme"
-                        required="required"
                         onChange={handleChange}
                       />
                     </div>
@@ -795,7 +776,6 @@ function FormPart3({ formD, setFormD }) {
                         name="Scheme_Like_to_avail"
                         value="Digital_Scheme"
                         className="central"
-                        required="required"
                         checked={
                           formD.Scheme_Like_to_avail.Central_Govt.Digital_Scheme
                         }
@@ -814,7 +794,6 @@ function FormPart3({ formD, setFormD }) {
                         id="op66"
                         name="Scheme_Like_to_avail"
                         value="IPR_scheme"
-                        required="required"
                         className="central"
                         checked={
                           formD.Scheme_Like_to_avail.Central_Govt.IPR_scheme
@@ -837,7 +816,6 @@ function FormPart3({ formD, setFormD }) {
                           formD.Scheme_Like_to_avail.Central_Govt.Samadhan
                         }
                         name="Scheme_Like_to_avail"
-                        required="required"
                         value="Samadhan"
                         onChange={handleChange}
                       />
@@ -855,7 +833,6 @@ function FormPart3({ formD, setFormD }) {
                         className="central"
                         checked={formD.Scheme_Like_to_avail.Central_Govt.CGTMSE}
                         name="Scheme_Like_to_avail"
-                        required="required"
                         value="CGTMSE"
                         onChange={handleChange}
                       />
@@ -875,7 +852,6 @@ function FormPart3({ formD, setFormD }) {
                           formD.Scheme_Like_to_avail.Central_Govt.MSME_Champions
                         }
                         name="Scheme_Like_to_avail"
-                        required="required"
                         value="MSME_Champions"
                         onChange={handleChange}
                       />
@@ -898,7 +874,6 @@ function FormPart3({ formD, setFormD }) {
                         className="state"
                         checked={formD.Scheme_Like_to_avail.State_Govt.ODOP}
                         name="Scheme_Like_to_avail"
-                        required="required"
                         value="ODOP"
                         onChange={handleChange}
                       />
@@ -924,7 +899,6 @@ function FormPart3({ formD, setFormD }) {
                         }
                         name="Scheme_Like_to_avail"
                         value="UP_MSME_Promotion_Policy"
-                        required="required"
                         onChange={handleChange}
                       />
                     </div>
@@ -949,7 +923,6 @@ function FormPart3({ formD, setFormD }) {
                         }
                         name="Scheme_Like_to_avail"
                         value="Technical_upgradation"
-                        required="required"
                         onChange={handleChange}
                       />
                     </div>
@@ -973,7 +946,6 @@ function FormPart3({ formD, setFormD }) {
                         }
                         name="Scheme_Like_to_avail"
                         value="UP_Chief_Minister_Youth_Self_Employment_Scheme"
-                        required="required"
                         onChange={handleChange}
                       />
                     </div>
@@ -998,7 +970,6 @@ function FormPart3({ formD, setFormD }) {
                         }
                         name="Scheme_Like_to_avail"
                         value="UP_Startup_Policy_2020"
-                        required="required"
                         onChange={handleChange}
                       />
                     </div>
@@ -1016,7 +987,6 @@ function FormPart3({ formD, setFormD }) {
                         checked={formD.Scheme_Like_to_avail.State_Govt.Others}
                         name="Scheme_Like_to_avail"
                         value="Others"
-                        required="required"
                         onChange={handleChange}
                       />
                     </div>
