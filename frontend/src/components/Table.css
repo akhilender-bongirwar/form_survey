@@ -98,7 +98,9 @@ input[type=radio] {
 .firstTable{
   width: 40%;
 }
-
+.next{
+  margin-left: auto;
+}
 @media screen and (max-width:768px) {
   tr {
     flex-direction: column;

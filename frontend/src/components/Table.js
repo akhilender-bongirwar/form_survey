@@ -2103,10 +2103,11 @@ function Table({ formD, setFormD }) {
           </table>
         </div>
       </div>
-      <div style={{ marginTop: "1em" }}>
-        <NavLink to="/" className="arrow_notation">
-          Prev
-        </NavLink>
+      <div style={{ display:"flex",justifyContent:"space-between",margin:"0 15px",fontSize:"large"}}>
+
+          <NavLink to="/" className="arrow_notation">
+            Prev
+          </NavLink>
         <NavLink to="/2" className="arrow_notation" onClick={validate}>
           Next
         </NavLink>

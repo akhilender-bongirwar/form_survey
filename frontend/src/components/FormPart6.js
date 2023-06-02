@@ -580,14 +580,10 @@ function FormPart6({ formD, setFormD }) {
           </div>
         </div>
       </div>
+      <ToastContainer />
       <div
-        style={{
-          margin: "20px 10px",
-          display: "flex",
-          justifyContent: "space-between",
-        }}
+        style={{ display: "flex", justifyContent: "space-between", margin: "0 15px", fontSize: "large" }}
       >
-        <ToastContainer />
         <NavLink to="/5" className="arrow_notation">
           Prev
         </NavLink>

@@ -1291,7 +1291,7 @@ const FormPart2 = ({ formD, setFormD }) => {
               </tr>
             </table>
           )}
-          <div style={{ marginTop: "1em" }}>
+          <div style={{ display:"flex",justifyContent:"space-between",margin:"0 15px",fontSize:"large"}}>
             <NavLink to="/1" className="arrow_notation">
               {t("Prev")}
             </NavLink>

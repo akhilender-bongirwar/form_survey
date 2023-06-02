@@ -264,7 +264,7 @@ const First = ({ formD, setFormD }) => {
         <label htmlFor="submission_date">Date</label>
         <input required="true" onChange={handleChange} value={formD.submission_date} style={{fontFamily:"calibri",fontSize:"medium",height:"45px",padding:"10px",width:"auto",marginTop:"5px"}} type="date" id="submission_date" name="submission_date" />
       </div>
-      <div style={{ marginTop: "1em" }}>
+      <div className="buttoncontainer" style={{ fontSize:"large",marginRight: "15px",display:"flex",justifyContent:"flex-end" }}>
         <NavLink to="/1" className="arrow_notation" onClick={validate}>
           Next
         </NavLink>

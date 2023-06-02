@@ -1028,11 +1028,7 @@ function FormPart3({ formD, setFormD }) {
           </tr>
         </table>
         <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            margin: "20px 10px",
-          }}
+          style={{ display:"flex",justifyContent:"space-between",margin:"0 15px",fontSize:"large"}}
         >
           <NavLink to="/2" className="arrow_notation">
             Prev
