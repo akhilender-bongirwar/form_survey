@@ -2095,7 +2095,7 @@ function Table({ formD, setFormD }) {
           </table>
         </div>
       </div>
-      <div style={{ marginTop: "1em" }}>
+      <div style={{ display:"flex",justifyContent:"space-between",margin:"0 15px",fontSize:"large"}}>
 
           <NavLink to="/" className="arrow_notation">
             Prev

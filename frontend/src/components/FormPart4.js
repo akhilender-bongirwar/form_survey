@@ -408,7 +408,7 @@ function FormPart4({ formD, setFormD }) {
             </tr>
           </thead>
         </table>
-        <div style={{ display: "flex",justifyContent:"space-between",width:"97%",padding:"10px" }}>
+        <div style={{ display:"flex",justifyContent:"space-between",margin:"0 15px",fontSize:"large"}}>
           <NavLink to="/3" className="arrow_notation">
             Prev
           </NavLink>
