@@ -8,8 +8,7 @@ const surveyData = new Schema({
     required:true
   },
   District_code:{
-    type:String,
-    required:true
+    type:String
   },
   Enterprise_Name: {
     type: String,
