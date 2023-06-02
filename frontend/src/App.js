@@ -7,6 +7,10 @@ import FormPart5 from "./components/FormPart5";
 import FormPart6 from "./components/FormPart6";
 import Table from "./components/Table";
 import Outer from "./Outer";
+import "./i18n";
+import { useTranslation } from "react-i18next";
+import { changeLanguage } from "i18next";
+
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 function App() {
@@ -24,10 +28,10 @@ function App() {
     Operations_seasonal: "",
     months_of_operation: "",
     Ownership_Pattern: "",
-    ownership_female_partnership:"",
+    ownership_female_partnership: "",
     Cluster: "",
-    Cluster_Yes:"",
-    Cluster_No:"",
+    Cluster_Yes: "",
+    Cluster_No: "",
     use_computer: "",
     //added
     TOP_THREE_PRODUCTS: {
@@ -50,7 +54,7 @@ function App() {
       online: false,
       Other_states: false,
       internationally: false,
-      other:"",
+      other: "",
     },
     full_time_Emoployee: "",
     part_time_Emoployee: "",
@@ -256,34 +260,58 @@ function App() {
       Promotion_Campaign: "",
     },
   });
+  const { t } = useTranslation();
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Outer />}>
-          <Route index element={<Table formD={formD} setFormD={setFormD} />} />
-          <Route
-            path="/2"
-            element={<FormPart2 formD={formD} setFormD={setFormD} />}
-          />
-          <Route
-            path="/3"
-            element={<FormPart3 formD={formD} setFormD={setFormD} />}
-          />
-          <Route
-            path="/4"
-            element={<FormPart4 formD={formD} setFormD={setFormD} />}
-          />
-          <Route
-            path="/5"
-            element={<FormPart5 formD={formD} setFormD={setFormD} />}
-          />
-          <Route
-            path="/6"
-            element={<FormPart6 formD={formD} setFormD={setFormD} />}
-          />
-        </Route>
-      </Routes>
-    </Router>
+    <>
+      <button
+        className="arrow_notation"
+        type="button"
+        onClick={() => {
+          changeLanguage("hi");
+          console.log("click");
+        }}
+      >
+        hindi
+      </button>
+      <button
+        className="arrow_notation"
+        type="button"
+        onClick={() => changeLanguage("en")}
+      >
+        english
+      </button>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Outer />}>
+            <Route
+              index
+              element={<Table formD={formD} setFormD={setFormD} />}
+            />
+            <Route
+              path="/2"
+              element={<FormPart2 formD={formD} setFormD={setFormD} />}
+            />
+            <Route
+              path="/3"
+              element={<FormPart3 formD={formD} setFormD={setFormD} />}
+            />
+            <Route
+              path="/4"
+              element={<FormPart4 formD={formD} setFormD={setFormD} />}
+            />
+            <Route
+              path="/5"
+              element={<FormPart5 formD={formD} setFormD={setFormD} />}
+            />
+            <Route
+              path="/6"
+              element={<FormPart6 formD={formD} setFormD={setFormD} />}
+            />
+          </Route>
+        </Routes>
+      </Router>
+    </>
   );
 }
 

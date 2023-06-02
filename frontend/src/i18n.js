@@ -3,7 +3,7 @@ import HttpBackend from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 
-const apiKey = "7Jlp857QM03x1zfJ-2a6_A";
+const apiKey = "v3E1TP00fu26S7FrMGqV9w";
 const loadPath = `https://api.i18nexus.com/project_resources/translations/{{lng}}/{{ns}}.json?api_key=${apiKey}`;
 
 i18next
@@ -11,7 +11,7 @@ i18next
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: "en",
+    fallbackLng: "hi",
 
     ns: ["default"],
     defaultNS: "default",
