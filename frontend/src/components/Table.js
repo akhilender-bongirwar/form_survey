@@ -414,7 +414,7 @@ function Table({ formD, setFormD }) {
                 <td colSpan={6}>
                   <div className="radio_wrapper">
                     <div>
-                      <label htmlFor="Firm_Registeredyes">YES</label>
+                      <label htmlFor="Firm_Registeredyes">{t("YES")}</label>
                       <input
                         type="radio"
                         name="Firm_Registered"
@@ -426,7 +426,7 @@ function Table({ formD, setFormD }) {
                       />
                     </div>
                     <div>
-                      <label htmlFor="Firm_Registeredno">NO</label>
+                      <label htmlFor="Firm_Registeredno">{t("NO")}</label>
                       <input
                         type="radio"
                         name="Firm_Registered"
@@ -450,7 +450,7 @@ function Table({ formD, setFormD }) {
                 <td colSpan={6}>
                   <div className="radio_wrapper">
                     <div>
-                      <label htmlFor="Udyam_Registrationyes">YES</label>
+                      <label htmlFor="Udyam_Registrationyes">{t("YES")}</label>
                       <input
                         type="radio"
                         name="Udyam_Registration"
@@ -462,7 +462,7 @@ function Table({ formD, setFormD }) {
                       />
                     </div>
                     <div>
-                      <label htmlFor="Udyam_Registrationno">NO</label>
+                      <label htmlFor="Udyam_Registrationno">{t("NO")}</label>
                       <input
                         type="radio"
                         name="Udyam_Registration"
@@ -567,7 +567,7 @@ function Table({ formD, setFormD }) {
                 <td colSpan={6}>
                   <div className="radio_wrapper">
                     <div>
-                      <label htmlFor="Operations_seasonalyes">YES</label>
+                      <label htmlFor="Operations_seasonalyes">{t("YES")}</label>
                       <input
                         type="radio"
                         onClick={() => setA1("show1")}
@@ -608,7 +608,7 @@ function Table({ formD, setFormD }) {
                       </tr>
                     )}
                     <div>
-                      <label htmlFor="Operations_seasonalno">NO</label>
+                      <label htmlFor="Operations_seasonalno">{t("NO")}</label>
                       <input
                         type="radio"
                         onClick={() => setA1(null)}
@@ -743,7 +743,7 @@ function Table({ formD, setFormD }) {
                 <td colSpan={6}>
                   <div className="radio_wrapper">
                     <div>
-                      <label htmlFor="Clusteryes">YES</label>
+                      <label htmlFor="Clusteryes">{t("YES")}</label>
                       <input
                         type="radio"
                         onClick={() => setA3("Yes")}
@@ -756,7 +756,7 @@ function Table({ formD, setFormD }) {
                       />
                     </div>
                     <div>
-                      <label htmlFor="Clusterno">NO</label>
+                      <label htmlFor="Clusterno">{t("NO")}</label>
                       <input
                         type="radio"
                         onClick={() => setA3("No")}
@@ -830,7 +830,7 @@ function Table({ formD, setFormD }) {
                 <td colSpan={6}>
                   <div className="radio_wrapper">
                     <div>
-                      <label htmlFor="use_computeryes">YES</label>
+                      <label htmlFor="use_computeryes">{t("YES")}</label>
                       <input
                         type="radio"
                         name="use_computer"
@@ -842,7 +842,7 @@ function Table({ formD, setFormD }) {
                       />
                     </div>
                     <div>
-                      <label htmlFor="use_computerno">NO</label>
+                      <label htmlFor="use_computerno">{t("NO")}</label>
                       <input
                         type="radio"
                         name="use_computer"
@@ -1318,7 +1318,7 @@ function Table({ formD, setFormD }) {
                 >
                   <div>
                     <label htmlFor="other_financing_source-1">
-                      {t("Other, please specify")}{" "}
+                      {t("Other please specify")}{" "}
                     </label>
                     <input
                       style={{ width: "95%" }}
@@ -1338,7 +1338,7 @@ function Table({ formD, setFormD }) {
                 <td colSpan={6}>
                   <div className="radio_wrapper">
                     <div>
-                      <label htmlFor="loan_availedyes">YES</label>
+                      <label htmlFor="loan_availedyes">{t("YES")}</label>
                       <input
                         type="radio"
                         name="loan_availed"
@@ -1350,7 +1350,7 @@ function Table({ formD, setFormD }) {
                       />
                     </div>
                     <div>
-                      <label htmlFor="loan_availedno">NO</label>
+                      <label htmlFor="loan_availedno">{t("NO")}</label>
                       <input
                         type="radio"
                         name="loan_availed"
@@ -1390,7 +1390,7 @@ function Table({ formD, setFormD }) {
                 <td colSpan={6}>
                   <div className="radio_wrapper">
                     <div>
-                      <label htmlFor="loan_adequateyes">YES</label>
+                      <label htmlFor="loan_adequateyes">{t("YES")}</label>
                       <input
                         type="radio"
                         onClick={() => setA4("show4")}
@@ -1403,7 +1403,7 @@ function Table({ formD, setFormD }) {
                       />
                     </div>
                     <div>
-                      <label htmlFor="loan_adequateno">NO</label>
+                      <label htmlFor="loan_adequateno">{t("NO")}</label>
                       <input
                         type="radio"
                         onClick={() => setA4(null)}
@@ -1456,7 +1456,9 @@ function Table({ formD, setFormD }) {
                 <td colSpan={6}>
                   <div className="radio_wrapper">
                     <div>
-                      <label htmlFor="availed_loan_last_yearyes">YES</label>
+                      <label htmlFor="availed_loan_last_yearyes">
+                        {t("YES")}
+                      </label>
                       <input
                         type="radio"
                         onClick={() => setA5("show5")}
@@ -1470,7 +1472,9 @@ function Table({ formD, setFormD }) {
                     </div>
 
                     <div>
-                      <label htmlFor="availed_loan_last_yearno">NO</label>
+                      <label htmlFor="availed_loan_last_yearno">
+                        {t("NO")}
+                      </label>
                       <input
                         type="radio"
                         onClick={() => setA5(null)}
@@ -1520,7 +1524,7 @@ function Table({ formD, setFormD }) {
                 <td colSpan={6}>
                   <div className="radio_wrapper">
                     <div>
-                      <label htmlFor="innovation_RDyes">YES</label>
+                      <label htmlFor="innovation_RDyes">{t("YES")}</label>
                       <input
                         type="radio"
                         onClick={() => setA6("show6")}
@@ -1534,7 +1538,7 @@ function Table({ formD, setFormD }) {
                     </div>
 
                     <div>
-                      <label htmlFor="innovation_RDno">NO</label>
+                      <label htmlFor="innovation_RDno">{t("NO")}</label>
                       <input
                         type="radio"
                         onClick={() => setA6(null)}
@@ -1632,7 +1636,7 @@ function Table({ formD, setFormD }) {
                 >
                   <div>
                     <label htmlFor="govt_organisation-1">
-                      {t("Name of Organisation")}:{" "}
+                      {t(" Name of Organisation")}:{" "}
                     </label>
                     <input
                       style={{ width: "95%" }}
@@ -1658,7 +1662,7 @@ function Table({ formD, setFormD }) {
                 <td colSpan={6}>
                   <div className="radio_wrapper">
                     <div>
-                      <label htmlFor="pan_card_companyyes">YES</label>
+                      <label htmlFor="pan_card_companyyes">{t("YES")}</label>
                       <input
                         type="radio"
                         name="pan_card_company"
@@ -1670,7 +1674,7 @@ function Table({ formD, setFormD }) {
                       />
                     </div>
                     <div>
-                      <label htmlFor="pan_card_companyno">NO</label>
+                      <label htmlFor="pan_card_companyno">{t("NO")}</label>
                       <input
                         type="radio"
                         name="pan_card_company"
@@ -1691,7 +1695,7 @@ function Table({ formD, setFormD }) {
                 <td colSpan={6}>
                   <div className="radio_wrapper">
                     <div>
-                      <label htmlFor="GST_NOyes1x">YES</label>
+                      <label htmlFor="GST_NOyes1x">{t("YES")}</label>
                       <input
                         type="radio"
                         name="GST_NO"
@@ -1703,7 +1707,7 @@ function Table({ formD, setFormD }) {
                       />
                     </div>
                     <div>
-                      <label htmlFor="GST_NOno1y">NO</label>
+                      <label htmlFor="GST_NOno1y">{t("NO")}</label>
                       <input
                         type="radio"
                         name="GST_NO"
@@ -1725,7 +1729,9 @@ function Table({ formD, setFormD }) {
                 <td colSpan={6}>
                   <div className="radio_wrapper">
                     <div>
-                      <label htmlFor="thisCurrent_Bank_Accountyes1x">YES</label>
+                      <label htmlFor="thisCurrent_Bank_Accountyes1x">
+                        {t("YES")}
+                      </label>
                       <input
                         type="radio"
                         name="thisCurrent_Bank_Account"
@@ -1737,7 +1743,9 @@ function Table({ formD, setFormD }) {
                       />
                     </div>
                     <div>
-                      <label htmlFor="thisCurrent_Bank_Accountno1y">NO</label>
+                      <label htmlFor="thisCurrent_Bank_Accountno1y">
+                        {t("NO")}
+                      </label>
                       <input
                         type="radio"
                         name="thisCurrent_Bank_Account"
@@ -1765,7 +1773,7 @@ function Table({ formD, setFormD }) {
                   <div className="radio_wrapper">
                     <div>
                       <label htmlFor="have_CA_audited_financial_statementyes">
-                        YES
+                        {t("YES")}
                       </label>
                       <input
                         type="radio"
@@ -1856,7 +1864,7 @@ function Table({ formD, setFormD }) {
                 <td colSpan={6}>
                   <div className="radio_wrapper">
                     <div>
-                      <label htmlFor="You_Exportyes">YES</label>
+                      <label htmlFor="You_Exportyes">{t("YES")}</label>
                       <input
                         type="radio"
                         name="You_Export"
@@ -1868,7 +1876,7 @@ function Table({ formD, setFormD }) {
                       />
                     </div>
                     <div>
-                      <label htmlFor="You_Exportno">NO</label>
+                      <label htmlFor="You_Exportno">{t("NO")}</label>
                       <input
                         type="radio"
                         name="You_Export"
@@ -1957,7 +1965,7 @@ function Table({ formD, setFormD }) {
                 <td colSpan={6}>
                   <div className="radio_wrapper">
                     <div>
-                      <label htmlFor="Water_Availabilityyes">YES</label>
+                      <label htmlFor="Water_Availabilityyes">{t("YES")}</label>
                       <input
                         type="radio"
                         name="Water_Availability"
@@ -1969,7 +1977,7 @@ function Table({ formD, setFormD }) {
                       />
                     </div>
                     <div>
-                      <label htmlFor="Water_Availabilityno">NO</label>
+                      <label htmlFor="Water_Availabilityno">{t("NO")}</label>
                       <input
                         type="radio"
                         name="Water_Availability"
@@ -1993,7 +2001,7 @@ function Table({ formD, setFormD }) {
                   <div className="radio_wrapper">
                     <div>
                       <label htmlFor="Effluent_Treatment_Constraintyes">
-                        YES
+                        {t("YES")}
                       </label>
                       <input
                         type="radio"
@@ -2026,16 +2034,16 @@ function Table({ formD, setFormD }) {
                 <td colSpan={1}>
                   <span>
                     {" "}
-                    {
-                      t("Did you undergo any training activities or attend seminars/awareness program of the Govt. for MSME Sector")
-                    }
+                    {t(
+                      "Did you undergo any training activities or attend seminars/awareness program of the Govt. for MSME Sector"
+                    )}
                     ?{" "}
                   </span>
                 </td>
                 <td colSpan={6}>
                   <div className="radio_wrapper">
                     <div>
-                      <label htmlFor="undergo_activityyes">YES</label>
+                      <label htmlFor="undergo_activityyes">{t("YES")}</label>
                       <input
                         type="radio"
                         name="GOVT_Training"
@@ -2047,7 +2055,7 @@ function Table({ formD, setFormD }) {
                       />
                     </div>
                     <div>
-                      <label htmlFor="undergo_activityno">NO</label>
+                      <label htmlFor="undergo_activityno">{t("NO")}</label>
                       <input
                         type="radio"
                         name="GOVT_Training"

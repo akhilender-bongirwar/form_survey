@@ -1,3 +1,4 @@
+import { t } from "i18next";
 import React from "react";
 import { NavLink,useNavigate } from "react-router-dom";
 
@@ -147,8 +148,7 @@ function FormPart4({ formD, setFormD }) {
             <tr>
               <td>
                 <label htmlFor="">
-                  1.What are the key reasons which prevents you from even
-                  applying for a loan from Bank/FI
+                  1.{t("What are the key reasons which prevents you from even applying for a loan from Bank/FI")}
                 </label>
               </td>
               <td
@@ -161,7 +161,7 @@ function FormPart4({ formD, setFormD }) {
               >
                 <div>
                   <label htmlFor="reason1" style={{ padding: "0.5em" }}>
-                    a.{"  "}Lack of awareness of bank processes requirements
+                    a.{"  "}{t("Lack of awareness of bank processes requirements")}
                   </label>
                   <input
                     type="checkbox"
@@ -176,7 +176,7 @@ function FormPart4({ formD, setFormD }) {
                 </div>
                 <div>
                   <label htmlFor="reason2" style={{ padding: "0.5em" }}>
-                    b.{"  "}High Interest Rate{" "}
+                    b.{"  "}{t("High Interest Rate")}{" "}
                   </label>
                   <input
                     type="checkbox"
@@ -191,7 +191,7 @@ function FormPart4({ formD, setFormD }) {
                 </div>
                 <div>
                   <label htmlFor="reason3" style={{ padding: "0.5em" }}>
-                    c.{"  "}Longer Processing time{" "}
+                    c.{"  "}{t("Longer Processing time")}{" "}
                   </label>
                   <input
                     type="checkbox"
@@ -206,7 +206,7 @@ function FormPart4({ formD, setFormD }) {
                 </div>
                 <div>
                   <label htmlFor="reason4" style={{ padding: "0.5em" }}>
-                    d.{"  "} Improper documentation{" "}
+                    d.{"  "}{t("Improper documentation")}{" "}
                   </label>
                   <input
                     type="checkbox"
@@ -221,7 +221,7 @@ function FormPart4({ formD, setFormD }) {
                 </div>
                 <div>
                   <label htmlFor="reason5" style={{ padding: "0.5em" }}>
-                    e.{"  "} No nearby bank branches{" "}
+                    e.{"  "}{t("No nearby bank branches")}{" "}
                   </label>
                   <input
                     type="checkbox"
@@ -236,7 +236,7 @@ function FormPart4({ formD, setFormD }) {
                 </div>
                 <div style={{ display: "flex", flexWrap: "wrap" }}>
                   <label htmlFor="reason6" style={{ padding: "0.5em" }}>
-                    f.{"  "} Others, Please specify ...{" "}
+                    f.{"  "}{t("Others, Please specify")} ...{" "}
                   </label>
                   <input
                     type="text"
@@ -251,9 +251,7 @@ function FormPart4({ formD, setFormD }) {
             <tr>
               <td>
                 <label>
-                  2. What is major source of credit demand (Raw Material/
-                  Salaries / Repair & maintenance / Long cash cycle / Demand due
-                  to peak season/ duties and taxes/ Others ) . . . . . . .
+                  2.{t("What is major source of credit demand (Raw Material/ Salaries / Repair & maintenance / Long cash cycle / Demand due to peak season/ duties and taxes/ Others )")} . . . . . . .
                 </label>
               </td>
               <td colSpan={5}>
@@ -270,8 +268,7 @@ function FormPart4({ formD, setFormD }) {
             <tr>
               <td>
                 <label>
-                  3.{"   "}If you applied and tried for a loan over the last 12
-                  months, what was the outcome?{" "}
+                  3.{"   "}{t("If you applied and tried for a loan over the last 12 months, what was the outcome")}?{" "}
                 </label>
               </td>
               <td
@@ -285,7 +282,7 @@ function FormPart4({ formD, setFormD }) {
               >
                 <div>
                   <label htmlFor="outcome1" style={{ padding: "0.5em" }}>
-                    a.{"  "}Applied but the application got rejected{" "}
+                    a.{"  "}{t("Applied but the application got rejected")}{" "}
                   </label>
                   <input
                     type="radio"
@@ -303,7 +300,7 @@ function FormPart4({ formD, setFormD }) {
                 </div>
                 <div>
                   <label htmlFor="outcome2" style={{ padding: "0.5em" }}>
-                    b.{"  "}Applied and got the loan amount in full{" "}
+                    b.{"  "}{t("Applied and got the loan amount in full")}{" "}
                   </label>
                   <input
                     type="radio"
@@ -321,7 +318,7 @@ function FormPart4({ formD, setFormD }) {
                 </div>
                 <div>
                   <label htmlFor="outcome3" style={{ padding: "0.5em" }}>
-                    c.{"  "}Applied but only got partial loan amount{" "}
+                    c.{"  "}{t("Applied but only got partial loan amount")}{" "}
                   </label>
                   <input
                     type="radio"
@@ -339,8 +336,7 @@ function FormPart4({ formD, setFormD }) {
                 </div>
                 <div>
                   <label htmlFor="outcome4" style={{ padding: "0.5em" }}>
-                    d.{"  "}Applied but refused as interest rate offered was
-                    high{" "}
+                    d.{"  "}{t("Applied but refused as interest rate offered was high")}{" "}
                   </label>
                   <input
                     type="radio"
@@ -358,7 +354,7 @@ function FormPart4({ formD, setFormD }) {
                 </div>
                 <div>
                   <label htmlFor="outcome5" style={{ padding: "0.5em" }}>
-                    e.{"  "} Loan approved after a significant delay{" "}
+                    e.{"  "}{t("Loan approved after a significant delay")}{" "}
                   </label>
                   <input
                     type="radio"
@@ -376,7 +372,7 @@ function FormPart4({ formD, setFormD }) {
                 </div>
                 <div style={{ display: "flex", flexWrap: "wrap" }}>
                   <label htmlFor="outcome6" style={{ padding: "0.5em" }}>
-                    f.{"  "} Others, Please specify ...{" "}
+                    f.{"  "} {t("Others, Please specify")} ...{" "}
                   </label>
                   <input
                     type="text"
@@ -391,8 +387,7 @@ function FormPart4({ formD, setFormD }) {
             <tr>
               <td>
                 <label>
-                  4. {"  "}If the loan was rejected, what was the reason offered
-                  for rejection?
+                  4. {"  "}{t("If the loan was rejected, what was the reason offered for rejection")}?
                 </label>
               </td>
               <td className="form4_styling">
@@ -410,10 +405,10 @@ function FormPart4({ formD, setFormD }) {
         </table>
         <div style={{ display:"flex",justifyContent:"space-between",margin:"0 15px",fontSize:"large"}}>
           <NavLink to="/3" className="arrow_notation">
-            Prev
+            {t("Prev")}
           </NavLink>
           <NavLink to="/5" className="arrow_notation" onClick={validate}>
-            Next
+            {t("Next")}
           </NavLink>
         </div>
       </div>

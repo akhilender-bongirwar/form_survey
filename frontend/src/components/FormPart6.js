@@ -4,9 +4,12 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
+import { useTranslation } from "react-i18next";
 
 import { NavLink } from "react-router-dom";
 function FormPart6({ formD, setFormD }) {
+  const { t } = useTranslation();
+
   const navigate = useNavigate();
   const validate = (e) => {
     e.preventDefault();
@@ -224,7 +227,7 @@ function FormPart6({ formD, setFormD }) {
                 backgroundColor: "rgb(240 235 248 / 77%)",
               }}
             >
-              Questionnaire For Exporters
+              {t("Questionnaire For Exporters")}
             </h2>
           </div>
           <div
@@ -238,7 +241,7 @@ function FormPart6({ formD, setFormD }) {
             <table style={{ width: "80%" }}>
               <tbody>
                 <tr>
-                  <td>Certifications</td>
+                  <td>{t("Certifications")}</td>
                   <td>
                     <input
                       type="text"
@@ -266,7 +269,7 @@ function FormPart6({ formD, setFormD }) {
                   </td>
                 </tr>
                 <tr>
-                  <td>Infrastructure</td>
+                  <td>{t("Infrastructure")}</td>
                   <td>
                     <input
                       type="text"
@@ -294,7 +297,7 @@ function FormPart6({ formD, setFormD }) {
                   </td>
                 </tr>
                 <tr>
-                  <td>Laboratory</td>
+                  <td>{t("Laboratory")}</td>
                   <td>
                     <input
                       type="text"
@@ -326,10 +329,11 @@ function FormPart6({ formD, setFormD }) {
           </div>
           <div>
             <div style={{ fontSize: "1.2em", padding: "0.75em" }}>
-              Do you face any challenge while getting payments from buyer?{" "}
-              <br />
-              If Yes, What are the challenges you are facing to receive payment
-              from buyers for supplying materials?
+              {t("Do you face any challenge while getting payments from buyer")}
+              ? <br />
+              {t(
+                "If Yes, What are the challenges you are facing to receive payment from buyers for supplying materials"
+              )}
             </div>
             <input
               type="text"
@@ -343,10 +347,12 @@ function FormPart6({ formD, setFormD }) {
           </div>
 
           <div style={{ fontSize: "1.2em", padding: "0.75em" }}>
-            • Any certification specific to export requirement which is
-            currently not available? (Please specify).
-            <br />
-            If Yes, mention support required and tentative cost:
+            •
+            {t(
+              " Any certification specific to export requirement which is currently not available?"
+            )}
+            (Please specify) <br />
+            {t("If Yes, mention support required and tentative cost:")}
           </div>
           <div>
             <input
@@ -360,12 +366,14 @@ function FormPart6({ formD, setFormD }) {
             />
           </div>
           <div style={{ fontSize: "1.2em", padding: "0.75em" }}>
-            • Any laboratory testing facility specific to export requirement
-            which is currently not available?
+            •{" "}
+            {t(
+              "Any laboratory testing facility specific to export requirement  which is currently not available?"
+            )}
             <br />
             (Please specify).
             <br />
-            If Yes, mention support required and tentative cost:
+            {t("If Yes, mention support required and tentative cost:")}
           </div>
           <div>
             <input
@@ -386,7 +394,7 @@ function FormPart6({ formD, setFormD }) {
                 marginTop: "2em",
               }}
             >
-              Requirement of Soft-Interventions
+              {t("Requirement of Soft-Interventions")}
             </h2>
           </div>
           <div
@@ -401,7 +409,7 @@ function FormPart6({ formD, setFormD }) {
               <thead></thead>
               <tbody>
                 <tr>
-                  <td>Counselling</td>
+                  <td>{t("Counselling")}</td>
                   <td>
                     <input
                       type="text"
@@ -418,7 +426,7 @@ function FormPart6({ formD, setFormD }) {
                   </td>
                 </tr>
                 <tr>
-                  <td>Upgradation of IT Infrastructure</td>
+                  <td>{t("Upgradation of IT Infrastructure")}</td>
                   <td>
                     <input
                       type="text"
@@ -436,7 +444,9 @@ function FormPart6({ formD, setFormD }) {
                   </td>
                 </tr>
                 <tr>
-                  <td>Participation in Training Session/Workshop/Seminar</td>
+                  <td>
+                    {t("Participation in Training Session/Workshop/Seminar")}
+                  </td>
                   <td>
                     <input
                       type="text"
@@ -454,7 +464,7 @@ function FormPart6({ formD, setFormD }) {
                   </td>
                 </tr>
                 <tr>
-                  <td>Institution Development</td>
+                  <td>{t("Institution Development")}</td>
                   <td>
                     <input
                       type="text"
@@ -472,7 +482,7 @@ function FormPart6({ formD, setFormD }) {
                   </td>
                 </tr>
                 <tr>
-                  <td>Implementation of new software</td>
+                  <td>{t("Implementation of new software")}</td>
                   <td>
                     <input
                       type="text"
@@ -491,9 +501,9 @@ function FormPart6({ formD, setFormD }) {
                 </tr>
                 <tr>
                   <td>
-                    Training / hand holding support for process improvement
-                    <br />
-                    tools (QMs, ISO, ERP etc.)
+                    {t(
+                      " Training / hand holding support for process improvement tools (QMs, ISO, ERP etc.)"
+                    )}
                   </td>
                   <td>
                     <input
@@ -512,7 +522,7 @@ function FormPart6({ formD, setFormD }) {
                   </td>
                 </tr>
                 <tr>
-                  <td>Market Promotion Initiatives</td>
+                  <td>{t("Market Promotion Initiatives")}</td>
                   <td>
                     <input
                       type="text"
@@ -530,7 +540,7 @@ function FormPart6({ formD, setFormD }) {
                   </td>
                 </tr>
                 <tr>
-                  <td>Design and product development</td>
+                  <td>{t("Design and product development")}</td>
                   <td>
                     <input
                       type="text"
@@ -548,7 +558,7 @@ function FormPart6({ formD, setFormD }) {
                   </td>
                 </tr>
                 <tr>
-                  <td>Brand Building, Promotion Campaign</td>
+                  <td>{t("Brand Building, Promotion Campaign")}</td>
                   <td>
                     <input
                       type="text"
