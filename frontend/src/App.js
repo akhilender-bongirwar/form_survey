@@ -12,9 +12,12 @@ import { useTranslation } from "react-i18next";
 import { changeLanguage } from "i18next";
 
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import First from "./components/First";
 
 function App() {
   const [formD, setFormD] = useState({
+    District_code:"",
+    submission_date:"",
     Enterprise_Name: "",
     Entrepreneur_Name: "",
     Sex: "",
@@ -286,7 +289,8 @@ function App() {
           <Route path="/" element={<Outer />}>
             <Route
               index
-              element={<Table formD={formD} setFormD={setFormD} />}
+              element={<First formD={formD} setFormD={setFormD}/>} />
+          <Route path="/1" element={<Table formD={formD} setFormD={setFormD} />}
             />
             <Route
               path="/2"
