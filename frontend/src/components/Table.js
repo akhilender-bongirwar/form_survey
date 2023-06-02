@@ -244,7 +244,7 @@ function Table({ formD, setFormD }) {
               <tr>
                 <td colSpan={1}>
                   <label htmlFor="Enterprise_Name">
-                    {t("Enterprise_Name")}
+                    {t("Enterprise Name")}
                   </label>
                 </td>
                 <td colSpan={6}>
@@ -261,7 +261,7 @@ function Table({ formD, setFormD }) {
               <tr>
                 <td colSpan={1}>
                   <label htmlFor="Entrepreneur_Name">
-                    {t("Entrepreneur_Name")}
+                    {t("Entrepreneur Name")}
                   </label>
                 </td>
                 <td colSpan={6}>
@@ -1318,7 +1318,7 @@ function Table({ formD, setFormD }) {
                 >
                   <div>
                     <label htmlFor="other_financing_source-1">
-                    {t("Other please specify")}{" "}
+                      {t("Other please specify")}{" "}
                     </label>
                     <input
                       style={{ width: "95%" }}
