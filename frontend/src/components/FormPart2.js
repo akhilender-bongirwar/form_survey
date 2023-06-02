@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Table.css";
 import { NavLink, useNavigate } from "react-router-dom";
+import { t } from "i18next";
 
 const FormPart2 = ({ formD, setFormD }) => {
   const navigate = useNavigate();
@@ -255,7 +256,7 @@ const FormPart2 = ({ formD, setFormD }) => {
             }}
             className="arrow_notation"
           >
-            For Service Industry
+            {t("For Service Industry")}
           </button>
         </div>
         <div style={{ textAlign: "center" }}>
@@ -276,7 +277,7 @@ const FormPart2 = ({ formD, setFormD }) => {
             }}
             className="arrow_notation"
           >
-            For manufacturing Industry
+            {t("For manufacturing Industry")}
           </button>
         </div>
       </div>
@@ -300,11 +301,11 @@ const FormPart2 = ({ formD, setFormD }) => {
               }}
             >
               <thead>
-                <th colSpan={6}>{"B. For Manufacturing"}</th>
+                <th colSpan={6}>{t("B. For Manufacturing")}</th>
               </thead>
               <tr>
                 <td colSpan={1} style={{ textAlign: "center" }}>
-                  Raw Materials
+                  {t("Raw Materials")}
                 </td>
                 <td
                   colSpan={1}
@@ -315,7 +316,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                   }}
                 >
                   <div style={{ textAlign: "center", fontWeight: "bolder" }}>
-                    Source of Procurement
+                    {t("Source of Procurement")}
                   </div>
                   <div
                     style={{ display: "flex", flexWrap: "wrap" }}
@@ -326,7 +327,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                         htmlFor="raw1"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        Direct
+                        {t("Direct")}
                       </label>
                       <input
                         type="radio"
@@ -345,7 +346,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                         htmlFor="raw2"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        Through Traders
+                        {t("Through Traders")}
                       </label>
                       <input
                         type="radio"
@@ -364,7 +365,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                         htmlFor="raw3"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        Online
+                        {t("Online")}
                       </label>
                       <input
                         type="radio"
@@ -393,7 +394,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                       <tr>
                         <td colSpan={1}>
                           <span style={{ whiteSpace: "nowrap" }}>
-                            Is Raw Material available easily?
+                            {t("Is Raw Material available easily")}?
                           </span>
                         </td>
                         <td colSpan={6}>
@@ -437,7 +438,9 @@ const FormPart2 = ({ formD, setFormD }) => {
                         <tr>
                           <td colSpan={1}>
                             {/* style={{ whiteSpace: "nowrap" }} */}
-                            If No, please mention difficulties / challenges
+                            {t(
+                              "If No, please mention difficulties / challenges"
+                            )}
                           </td>
                           <td colSpan={6}>
                             <input
@@ -459,8 +462,9 @@ const FormPart2 = ({ formD, setFormD }) => {
                         <td colSpan={1}>
                           <span>
                             {/* style={{ whiteSpace: "nowrap" }} */}
-                            Do you adopt any green technology in your production
-                            cycle (waste management/ recycling/ etc)
+                            {t(
+                              "Do you adopt any green technology in your production cycle (waste management/ recycling/ etc)"
+                            )}
                           </span>
                         </td>
                         <td colSpan={6}>
@@ -494,8 +498,10 @@ const FormPart2 = ({ formD, setFormD }) => {
                         <td colSpan={1}>
                           <span>
                             {/* style={{ whiteSpace: "nowrap" }} */}
-                            Does your production facility need any Environment
-                            Clearance?
+                            {t(
+                              "Does your production facility need any Environment Clearance"
+                            )}
+                            ?
                           </span>
                         </td>
                         <td colSpan={6}>
@@ -528,13 +534,15 @@ const FormPart2 = ({ formD, setFormD }) => {
                       <tr>
                         <td colSpan={1}>
                           <span style={{ whiteSpace: "nowrap" }}>
-                            Final Product sold to
+                            {t("Final Product sold to")}
                           </span>
                         </td>
                         <td colSpan={6}>
                           <div className="radio_wrapper">
                             <div className="radio_wrapper">
-                              <label htmlFor="locala">Trader / Agents </label>
+                              <label htmlFor="locala">
+                                {t("Trader / Agents")}{" "}
+                              </label>
                               <input
                                 type="checkbox"
                                 name="final_product_sold_to"
@@ -548,7 +556,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             </div>
 
                             <div className="radio_wrapper">
-                              <label htmlFor="Govtb">Wholesalers </label>
+                              <label htmlFor="Govtb">{t("Wholesalers")} </label>
                               <input
                                 type="checkbox"
                                 id="Govtb"
@@ -562,7 +570,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             </div>
 
                             <div className="radio_wrapper">
-                              <label htmlFor="onlinec">Retailers</label>
+                              <label htmlFor="onlinec">{t("Retailers")}</label>
                               <input
                                 type="checkbox"
                                 id="onlinec"
@@ -575,7 +583,7 @@ const FormPart2 = ({ formD, setFormD }) => {
 
                             <div className="radio_wrapper">
                               <label htmlFor="otherd">
-                                Large Manufacturers/ Anchor units{" "}
+                                {t("Large Manufacturers/ Anchor units")}{" "}
                               </label>
                               <input
                                 type="checkbox"
@@ -590,7 +598,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               />
                             </div>
                             <div className="radio_wrapper">
-                              <label htmlFor="exporte">Exporters </label>
+                              <label htmlFor="exporte">{t("Exporters")} </label>
                               <input
                                 type="checkbox"
                                 id="exporte"
@@ -602,7 +610,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             </div>
                             <div className="radio_wrapper">
                               <div className="radio_wrapper">
-                                <label htmlFor="localf">OEMs </label>
+                                <label htmlFor="localf">{t("OEMs")} </label>
                                 <input
                                   type="checkbox"
                                   name="final_product_sold_to"
@@ -615,7 +623,9 @@ const FormPart2 = ({ formD, setFormD }) => {
                             </div>
                             <div className="radio_wrapper">
                               <div className="radio_wrapper">
-                                <label htmlFor="localg">End Users </label>
+                                <label htmlFor="localg">
+                                  {t("End Users")}{" "}
+                                </label>
                                 <input
                                   type="checkbox"
                                   name="final_product_sold_to"
@@ -630,7 +640,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             </div>
                             <div className="radio_wrapper">
                               <div className="radio_wrapper">
-                                <label htmlFor="localh">Others </label>
+                                <label htmlFor="localh">{t("Others")} </label>
                                 <input
                                   type="checkbox"
                                   name="final_product_sold_to"
@@ -647,13 +657,15 @@ const FormPart2 = ({ formD, setFormD }) => {
                       <tr>
                         <td colSpan={1}>
                           <span style={{ whiteSpace: "nowrap" }}>
-                            Markets you supply to
+                            {t("Markets you supply to")}
                           </span>
                         </td>
                         <td colSpan={6}>
                           <div className="radio_wrapper" id="ownership_pattern">
                             <div>
-                              <label htmlFor="withinState">within State</label>
+                              <label htmlFor="withinState">
+                                {t("within State")}
+                              </label>
                               <input
                                 type="checkbox"
                                 id="withinState"
@@ -664,7 +676,9 @@ const FormPart2 = ({ formD, setFormD }) => {
                               />
                             </div>
                             <div>
-                              <label htmlFor="outState">outside State</label>
+                              <label htmlFor="outState">
+                                {t("outside State")}
+                              </label>
                               <input
                                 type="checkbox"
                                 id="outState"
@@ -676,7 +690,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             </div>
                             <div>
                               <label htmlFor="outside_country">
-                                outside country
+                                {t("outside country")}
                               </label>
                               <input
                                 type="checkbox"
@@ -693,8 +707,10 @@ const FormPart2 = ({ formD, setFormD }) => {
                       <tr>
                         <td colSpan={1}>
                           <span>
-                            Are the products sold under any brand name? If yes,
-                            provide the brand name.
+                            {t(
+                              "Are the products sold under any brand name? If yes,provide the brand name"
+                            )}
+                            .
                           </span>
                         </td>
                         <td colSpan={6}>
@@ -729,7 +745,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                       {others ? (
                         <tr>
                           <td colSpan={1}>
-                            <label htmlFor="brand">Brand_name</label>
+                            <label htmlFor="brand">{t("Brand_name")}</label>
                           </td>
                           <td colSpan={6}>
                             <input
@@ -748,8 +764,10 @@ const FormPart2 = ({ formD, setFormD }) => {
                       <tr>
                         <td>
                           <label>
-                            What challenges are you facing in selling the
-                            product in the market?
+                            {t(
+                              "What challenges are you facing in selling the product in the market"
+                            )}
+                            ?
                           </label>
                         </td>
                         <td
@@ -766,7 +784,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               style={{ padding: "0.5em" }}
                               htmlFor="advanceTech"
                             >
-                              Advance technology
+                              {t("Advance technology")}
                             </label>
                             <input
                               type="checkbox"
@@ -785,7 +803,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               htmlFor="quality"
                               style={{ padding: "0.5em" }}
                             >
-                              Quality of product
+                              {t("Quality of product")}
                             </label>
                             <input
                               type="checkbox"
@@ -804,7 +822,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               htmlFor="marketComp"
                               style={{ padding: "0.5em" }}
                             >
-                              Market Competition
+                              {t("Market Competition")}
                             </label>
                             <input
                               type="checkbox"
@@ -823,7 +841,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               htmlFor="capital"
                               style={{ padding: "0.5em" }}
                             >
-                              Capital
+                              {t("Capital")}
                             </label>
                             <input
                               type="checkbox"
@@ -839,7 +857,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               htmlFor="brandMarket"
                               style={{ padding: "0.5em" }}
                             >
-                              Branding & Marketing
+                              {t("Branding & Marketing")}
                             </label>
                             <input
                               type="checkbox"
@@ -854,7 +872,9 @@ const FormPart2 = ({ formD, setFormD }) => {
                             />
                           </div>
                           <div style={{ display: "flex", flexWrap: "wrap" }}>
-                            <label htmlFor="other">Other (specify)</label>
+                            <label htmlFor="other">
+                              {t("Other (specify)")}
+                            </label>
 
                             <input
                               type="text"
@@ -874,9 +894,10 @@ const FormPart2 = ({ formD, setFormD }) => {
                       <tr>
                         <td colSpan={1}>
                           <span>
-                            Are you involved in marketing & branding of the
-                            product ? If yes, please select the options you
-                            leverage for sale of the product ?
+                            {t(
+                              "Are you involved in marketing & branding of the product ? If yes, please select the options you leverage for sale of the product"
+                            )}{" "}
+                            ?
                           </span>{" "}
                         </td>
                         <td
@@ -933,7 +954,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                                     htmlFor="exhibition"
                                     style={{ padding: "0.5em" }}
                                   >
-                                    Exhibitions
+                                    {t("Exhibitions")}
                                   </label>
                                   <input
                                     type="checkbox"
@@ -952,7 +973,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                                     htmlFor="portal"
                                     style={{ padding: "0.5em" }}
                                   >
-                                    Portals
+                                    {t("Portals")}
                                   </label>
                                   <input
                                     type="checkbox"
@@ -971,7 +992,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                                     htmlFor="website"
                                     style={{ padding: "0.5em" }}
                                   >
-                                    Websites{" "}
+                                    {t("Websites")}{" "}
                                   </label>
                                   <input
                                     type="checkbox"
@@ -990,7 +1011,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                                     htmlFor="socMedia"
                                     style={{ padding: "0.5em" }}
                                   >
-                                    Social Media
+                                    {t("Social Media")}
                                   </label>
 
                                   <input
@@ -1010,7 +1031,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                                     htmlFor="marketFacility"
                                     style={{ padding: "0.5em" }}
                                   >
-                                    Common marketing facility
+                                    {t("Common marketing facility")}
                                   </label>
                                   <input
                                     type="checkbox"
@@ -1025,7 +1046,9 @@ const FormPart2 = ({ formD, setFormD }) => {
                                   />
                                 </div>
                                 <div>
-                                  <label htmlFor="other">Other (specify)</label>
+                                  <label htmlFor="other">
+                                    {t("Other (specify)")}
+                                  </label>
 
                                   <input
                                     type="text"
@@ -1050,7 +1073,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                       <tr>
                         <td colSpan={1}>
                           <span>
-                            Quality/Testing labs are easily available?
+                            {t("Quality/Testing labs are easily available")}?
                           </span>
                         </td>
 
@@ -1089,8 +1112,10 @@ const FormPart2 = ({ formD, setFormD }) => {
                         <td colSpan={1}>
                           <span>
                             {" "}
-                            Is skilled labour and training facilities easily
-                            available?
+                            {t(
+                              "Is skilled labour and training facilities easily available"
+                            )}
+                            ?
                           </span>
                         </td>
 
@@ -1123,7 +1148,9 @@ const FormPart2 = ({ formD, setFormD }) => {
                       </tr>
                       <tr>
                         <td colSpan={1}>
-                          <span>Whether skilled labour is required?</span>
+                          <span>
+                            {t("Whether skilled labour is required")}?
+                          </span>
                         </td>
 
                         <td colSpan={6}>
@@ -1172,11 +1199,11 @@ const FormPart2 = ({ formD, setFormD }) => {
               className="grevience_redressal"
             >
               <thead>
-                <th colSpan={6}>{" For Service Industry"}</th>
+                <th colSpan={6}>{t("For Service Industry")}</th>
               </thead>
               <tr>
                 <td colSpan={1} style={{ textAlign: "center" }}>
-                  Nature of Services Offered
+                  {t("Nature of Services Offered")}
                 </td>
                 <td colSpan={6}>
                   <input
@@ -1210,7 +1237,7 @@ const FormPart2 = ({ formD, setFormD }) => {
               </tr>
               <tr>
                 <td colSpan={1} style={{ textAlign: "center" }}>
-                  Challenges Faced
+                  {t("Challenges Faced")}
                 </td>
                 <td colSpan={6}>
                   {" "}
@@ -1236,8 +1263,9 @@ const FormPart2 = ({ formD, setFormD }) => {
               </tr>
               <tr>
                 <td colSpan={1} style={{ textAlign: "center" }}>
-                  In case you are availing support Govt. agencies / schemes what
-                  are the challenges faced with scheme
+                  {t(
+                    "In case you are availing support Govt. agencies / schemes what are the challenges faced with scheme"
+                  )}
                 </td>
                 <td colSpan={6}>
                   <input
@@ -1250,7 +1278,7 @@ const FormPart2 = ({ formD, setFormD }) => {
               </tr>
               <tr>
                 <td colSpan={1} style={{ textAlign: "center" }}>
-                  Support required
+                  {t("Support required")}
                 </td>
                 <td colSpan={6}>
                   <input
@@ -1265,10 +1293,10 @@ const FormPart2 = ({ formD, setFormD }) => {
           )}
           <div style={{ marginTop: "1em" }}>
             <NavLink to="/1" className="arrow_notation">
-              Prev
+              {t("Prev")}
             </NavLink>
             <NavLink to="/3" className="arrow_notation" onClick={validate}>
-              Next
+              {t("Next")}
             </NavLink>
           </div>
         </div>

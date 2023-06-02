@@ -1318,7 +1318,7 @@ function Table({ formD, setFormD }) {
                 >
                   <div>
                     <label htmlFor="other_financing_source-1">
-                      {t("Other, please specify")}{" "}
+                    {t("Other please specify")}{" "}
                     </label>
                     <input
                       style={{ width: "95%" }}
@@ -1636,7 +1636,7 @@ function Table({ formD, setFormD }) {
                 >
                   <div>
                     <label htmlFor="govt_organisation-1">
-                      {t("Name of Organisation")}:{" "}
+                      {t(" Name of Organisation")}:{" "}
                     </label>
                     <input
                       style={{ width: "95%" }}
