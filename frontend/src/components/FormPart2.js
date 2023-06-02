@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import "./Table.css";
-import { NavLink ,useNavigate} from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const FormPart2 = ({ formD, setFormD }) => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const validate = (e) => {
-    const isV=document.getElementById("formy").reportValidity();
-    if(!isV){
+    const isV = document.getElementById("formy").reportValidity();
+    if (!isV) {
       e.preventDefault();
-    }
-    else{
-      navigate('/3')
+    } else {
+      navigate("/3");
     }
   };
   function handleChange(event) {
@@ -241,7 +240,8 @@ const FormPart2 = ({ formD, setFormD }) => {
       <div style={{ display: "grid", gridTemplateColumns: "repeat(2,50%)" }}>
         <div style={{ textAlign: "center" }}>
           <button
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
               setexpand(true);
               setFormD((prevFormData) => {
                 return {
@@ -260,7 +260,9 @@ const FormPart2 = ({ formD, setFormD }) => {
         </div>
         <div style={{ textAlign: "center" }}>
           <button
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
+
               setexpand(false);
               setFormD((prevFormData) => {
                 return {
