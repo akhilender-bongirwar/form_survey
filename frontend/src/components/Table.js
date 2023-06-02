@@ -379,7 +379,7 @@ function Table({ formD, setFormD }) {
               </tr>
               <tr>
                 <td colSpan={1}>
-                  <label htmlFor="Address">{t("Address:")}</label>
+                  <label htmlFor="Address">{t("Address")}:</label>
                 </td>
                 <td colSpan={6}>
                   <input
@@ -394,7 +394,7 @@ function Table({ formD, setFormD }) {
               </tr>
               <tr>
                 <td colSpan={1}>
-                  <label htmlFor="Website">{t("Website:")}</label>
+                  <label htmlFor="Website">{t("Website")}:</label>
                 </td>
                 <td colSpan={6}>
                   <input
@@ -625,7 +625,7 @@ function Table({ formD, setFormD }) {
               </tr>
               <tr>
                 <td colSpan={1}>
-                  <span>{t(" Ownership_Pattern")} </span>
+                  <span>{t("Ownership_Pattern")} </span>
                 </td>
                 <td colSpan={6}>
                   <div className="radio_wrapper" id="ownership_pattern">
@@ -2027,7 +2027,7 @@ function Table({ formD, setFormD }) {
                   <span>
                     {" "}
                     {
-                      "Did you undergo any training activities or attend seminars/awareness program of the Govt. for MSME Sector"
+                      t("Did you undergo any training activities or attend seminars/awareness program of the Govt. for MSME Sector")
                     }
                     ?{" "}
                   </span>
