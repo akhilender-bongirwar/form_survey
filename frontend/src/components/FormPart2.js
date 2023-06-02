@@ -1262,7 +1262,7 @@ const FormPart2 = ({ formD, setFormD }) => {
             </table>
           )}
           <div style={{ marginTop: "1em" }}>
-            <NavLink to="/" className="arrow_notation">
+            <NavLink to="/1" className="arrow_notation">
               Prev
             </NavLink>
             <NavLink to="/3" className="arrow_notation" onClick={validate}>

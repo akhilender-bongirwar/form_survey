@@ -2096,6 +2096,10 @@ function Table({ formD, setFormD }) {
         </div>
       </div>
       <div style={{ marginTop: "1em" }}>
+
+          <NavLink to="/" className="arrow_notation">
+            Prev
+          </NavLink>
         <NavLink to="/2" className="arrow_notation" onClick={validate}>
           Next
         </NavLink>
