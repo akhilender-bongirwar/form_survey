@@ -95,12 +95,20 @@ input[type=radio] {
   justify-content: center;
   align-items: center;
 }
+.firstTable{
+  width: 40%;
+}
 
 @media screen and (max-width:768px) {
   tr {
     flex-direction: column;
     display: flex;
-
+  }
+  .firstTr{
+    display: table-row;
+  }
+  .firstTable{
+    width: 90%;
   }
 
   .form4_styling {
