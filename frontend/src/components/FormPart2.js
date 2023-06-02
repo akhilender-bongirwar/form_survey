@@ -253,7 +253,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                 };
               });
             }}
-            className="arrow_notation2"
+            className="arrow_notation"
           >
             For Service Industry
           </button>
@@ -274,7 +274,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                 };
               });
             }}
-            className="arrow_notation2"
+            className="arrow_notation"
           >
             For manufacturing Industry
           </button>
