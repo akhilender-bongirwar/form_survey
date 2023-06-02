@@ -12,6 +12,7 @@ const First = ({ formD, setFormD }) => {
   };
   function handleChange(event) {
     let { name, value, type, checked, className, id } = event.target;
+    console.log(event)
     if (type == "number") {
       value = parseInt(value);
     }
@@ -246,7 +247,7 @@ const First = ({ formD, setFormD }) => {
       </tbody>
     </table>
       <div style={{display:"flex",flexDirection:"column",width:"min-content", margin:"auto"}}>
-        <select name="District_code" id="District_code" style={{height:"45px",padding:"10px",margin:"20px auto"}}>
+        <select name="District_code" id="District_code" onChange={handleChange} value={formD.District_Code} style={{height:"45px",padding:"10px",margin:"20px auto"}}>
           <option value="HA">Hardoi</option>
           <option value="LA">Lakhimpur Kheri</option>
           <option value="LU">Lucknow</option>
@@ -260,7 +261,7 @@ const First = ({ formD, setFormD }) => {
           <option value="AM">Amethi</option>
         </select>
         <label htmlFor="submission_date">Date</label>
-        <input style={{fontFamily:"calibri",fontSize:"medium",height:"45px",padding:"10px",width:"auto",marginTop:"5px"}} type="date" id="submission_date" name="submission_date" />
+        <input onChange={handleChange} value={formD.submission_date} style={{fontFamily:"calibri",fontSize:"medium",height:"45px",padding:"10px",width:"auto",marginTop:"5px"}} type="date" id="submission_date" name="submission_date" />
       </div>
       <div style={{ marginTop: "1em" }}>
         <NavLink to="/1" className="arrow_notation" onClick={validate}>
