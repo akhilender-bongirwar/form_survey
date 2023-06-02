@@ -230,7 +230,7 @@ function Table({ formD, setFormD }) {
               <tbody>
                 <tr>
                   <td colSpan={1}>
-                    <label htmlFor="Enterprise_Name">{"Enterprise name"}</label>
+                    <label htmlFor="Enterprise_Name">{t("Enterprise Name")}</label>
                   </td>
                   <td colSpan={6}>
                     <input
@@ -246,7 +246,7 @@ function Table({ formD, setFormD }) {
                 <tr>
                   <td colSpan={1}>
                     <label htmlFor="Entrepreneur_Name">
-                      {"Entrepreneur Name"}
+                      {t("Entrepreneur Name")}
                     </label>
                   </td>
                   <td colSpan={6}>
@@ -262,7 +262,7 @@ function Table({ formD, setFormD }) {
                 </tr>
                 <tr>
                   <td colSpan={1}>
-                    <span>Sex:</span>
+                    <span>{t("Sex")}:</span>
                   </td>
                   <td colSpan={6}>
                     <div className="radio_wrapper">
@@ -295,7 +295,7 @@ function Table({ formD, setFormD }) {
                 </tr>
                 <tr>
                   <td colSpan={1}>
-                    <span>Category:</span>
+                    <span>{t("Category")}:</span>
                   </td>
                   <td colSpan={6}>
                     <div className="radio_wrapper">
@@ -364,7 +364,7 @@ function Table({ formD, setFormD }) {
                 </tr>
                 <tr>
                   <td colSpan={1}>
-                    <label htmlFor="Address">{"Address:"}</label>
+                    <label htmlFor="Address">{t("Address:")}</label>
                   </td>
                   <td colSpan={6}>
                     <input
@@ -379,7 +379,7 @@ function Table({ formD, setFormD }) {
                 </tr>
                 <tr>
                   <td colSpan={1}>
-                    <label htmlFor="Website">{"Website:"}</label>
+                    <label htmlFor="Website">{t("Website:")}</label>
                   </td>
                   <td colSpan={6}>
                     <input
@@ -394,7 +394,7 @@ function Table({ formD, setFormD }) {
                 </tr>
                 <tr>
                   <td colSpan={1}>
-                    <span>Is your firm registerd?</span>
+                    <span>{t("Is your firm registerd")}?</span>
                   </td>
                   <td colSpan={6}>
                     <div className="radio_wrapper">
@@ -429,7 +429,7 @@ function Table({ formD, setFormD }) {
                   <td colSpan={1}>
                     <span>
                       {" "}
-                      Do you have Udhyog Aadhar / Udyam Registration{" "}
+                      {t("Do you have Udhyog Aadhar / Udyam Registration")}{" "}
                     </span>
                   </td>
                   <td colSpan={6}>
@@ -463,7 +463,7 @@ function Table({ formD, setFormD }) {
                 </tr>
                 <tr>
                   <td colSpan={1}>
-                    <label htmlFor="UAM_UEM_Number">Uam Uem Number</label>
+                    <label htmlFor="UAM_UEM_Number">{t("Uam Uem Number")}</label>
                   </td>
                   <td colSpan={6}>
                     <input
@@ -479,7 +479,7 @@ function Table({ formD, setFormD }) {
                 <tr>
                   <td colSpan={1}>
                     <label htmlFor="Year_of_Establishment">
-                      Year_of_Establishment:
+                      {t("Year_of_Establishment")}:
                     </label>
                   </td>
                   <td colSpan={6}>
@@ -497,12 +497,12 @@ function Table({ formD, setFormD }) {
                 </tr>
                 <tr>
                   <td colSpan={1}>
-                    <span> Type_of_Business </span>
+                    <span> {t("Type_of_Business")} </span>
                   </td>
                   <td colSpan={6}>
                     <div className="radio_wrapper">
                       <div>
-                        <label htmlFor="manufacturing">Manufacturing</label>
+                        <label htmlFor="manufacturing">{t("Manufacturing")}</label>
                         <input
                           type="radio"
                           name="Type_of_Business"
@@ -514,7 +514,7 @@ function Table({ formD, setFormD }) {
                         />
                       </div>
                       <div>
-                        <label htmlFor="service">Service</label>
+                        <label htmlFor="service">{t("Service")}</label>
                         <input
                           type="radio"
                           name="Type_of_Business"
@@ -526,7 +526,7 @@ function Table({ formD, setFormD }) {
                         />
                       </div>
                       <div>
-                        <label htmlFor="trading">Trading</label>
+                        <label htmlFor="trading">{t("Trading")}</label>
                         <input
                           type="radio"
                           name="Type_of_Business"
@@ -542,7 +542,7 @@ function Table({ formD, setFormD }) {
                 </tr>
                 <tr>
                   <td colSpan={1}>
-                    <span> Whether operations are seasonal in nature?</span>
+                    <span> {t("Whether operations are seasonal in nature")}?</span>
                   </td>
                   <td colSpan={6}>
                     <div className="radio_wrapper">
@@ -570,8 +570,7 @@ function Table({ formD, setFormD }) {
                           }}
                         >
                           <span>
-                            In case seasonal operations, no. of months of
-                            operations in a year{" "}
+                          {t("In case seasonal operations, no. of months of operations in a year")}{" "}
                           </span>
                           <input
                             style={{ minWidth: "20px", marginBottom: "12px" }}
@@ -604,12 +603,12 @@ function Table({ formD, setFormD }) {
                 </tr>
                 <tr>
                   <td colSpan={1}>
-                    <span> Ownership_Pattern </span>
+                    <span>{t(" Ownership_Pattern")} </span>
                   </td>
                   <td colSpan={6}>
                     <div className="radio_wrapper" id="ownership_pattern">
                       <div>
-                        <label htmlFor="proprietary">Proprietary</label>
+                        <label htmlFor="proprietary">{t("Proprietary")}</label>
                         <input
                           type="radio"
                           name="Ownership_Pattern"
@@ -622,7 +621,7 @@ function Table({ formD, setFormD }) {
                         />
                       </div>
                       <div>
-                        <label htmlFor="partnership">Partnership</label>
+                        <label htmlFor="partnership">{t("Partnership")}</label>
                         <input
                           type="radio"
                           onClick={() => setA2("show2")}
@@ -635,7 +634,7 @@ function Table({ formD, setFormD }) {
                         />
                       </div>
                       <div>
-                        <label htmlFor="private">Private</label>
+                        <label htmlFor="private">{t("Private")}</label>
                         <input
                           type="radio"
                           onClick={() => setA2(null)}
@@ -648,7 +647,7 @@ function Table({ formD, setFormD }) {
                         />
                       </div>
                       <div>
-                        <label htmlFor="LLP">LLP</label>
+                        <label htmlFor="LLP">{t("LLP")}</label>
                         <input
                           type="radio"
                           onClick={() => setA2(null)}
@@ -661,7 +660,7 @@ function Table({ formD, setFormD }) {
                         />
                       </div>
                       <div>
-                        <label htmlFor="PUBLIC">Public</label>
+                        <label htmlFor="PUBLIC">{t("Public")}</label>
                         <input
                           type="radio"
                           onClick={() => setA2(null)}
@@ -674,7 +673,7 @@ function Table({ formD, setFormD }) {
                         />
                       </div>
                       <div>
-                        <label htmlFor="NO LEGAL ENTITY">No Legal Entity</label>
+                        <label htmlFor="NO LEGAL ENTITY">{t("No Legal Entity")}</label>
                         <input
                           type="radio"
                           onClick={() => setA2(null)}
@@ -697,7 +696,7 @@ function Table({ formD, setFormD }) {
                           gap: "3px",
                         }}
                       >
-                        <span>If Yes, % ownership of female </span>
+                        <span>{t("If Yes, % ownership of female")} </span>
                         <input
                           style={{ minWidth: "20px" }}
                           type="number"
@@ -715,7 +714,7 @@ function Table({ formD, setFormD }) {
                 </tr>
                 <tr>
                   <td colSpan={1}>
-                    <span>Are you a part of any Cluster? </span>
+                    <span>{t("Are you a part of any Cluster")}? </span>
                   </td>
                   <td colSpan={6}>
                     <div className="radio_wrapper">
@@ -754,7 +753,7 @@ function Table({ formD, setFormD }) {
                           gap: "3px",
                         }}
                       >
-                        <span>If Yes, which one? How many units are there</span>
+                        <span>{t("If Yes, which one? How many units are there")}</span>
                         <input
                           style={{ minWidth: "20px" }}
                           type="text"
@@ -776,7 +775,7 @@ function Table({ formD, setFormD }) {
                           gap: "3px",
                         }}
                       >
-                        <span>If No, Why? </span>
+                        <span>{t("If No, Why")}? </span>
                         <input
                           style={{ minWidth: "20px", marginBottom: "12px" }}
                           type="text"
@@ -796,8 +795,7 @@ function Table({ formD, setFormD }) {
                   <td colSpan={1}>
                     <span>
                       {" "}
-                      Do you use computer software for accounting or managing
-                      finances?
+                      {t("Do you use computer software for accounting or managing finances")}?
                     </span>
                   </td>
                   <td colSpan={6}>
@@ -831,7 +829,7 @@ function Table({ formD, setFormD }) {
                 </tr>
                 <tr>
                   <td colSpan={1}>
-                    <span>What are the top 3 products you offer? </span>
+                    <span>{t("What are the top 3 products you offer")}? </span>
                   </td>
                   <td
                     className="input_label_gapper"
@@ -881,14 +879,13 @@ function Table({ formD, setFormD }) {
                   <td colSpan={1}>
                     <span>
                       {" "}
-                      Where all do you sell your produce/products majorly?
-                      Please tick (✓) all the relevant options{" "}
+                      {t("Where all do you sell your produce/products majorly?  Please tick (✓) all the relevant options")}{" "}
                     </span>
                   </td>
                   <td colSpan={6}>
                     <div className="radio_wrapper" id="ownership_pattern">
                       <div>
-                        <label htmlFor="local">Local Market/ trader</label>
+                        <label htmlFor="local">{t("Local Market/ trader")}</label>
                         <input
                           type="checkbox"
                           name="sell_produce_majorly"
@@ -900,7 +897,7 @@ function Table({ formD, setFormD }) {
                       </div>
 
                       <div>
-                        <label htmlFor="Govt">Government (State/Central)</label>
+                        <label htmlFor="Govt">{t("Government (State/Central)")}</label>
                         <input
                           type="checkbox"
                           id="Govt"
@@ -912,7 +909,7 @@ function Table({ formD, setFormD }) {
                       </div>
 
                       <div>
-                        <label htmlFor="online">Online Platform</label>
+                        <label htmlFor="online">{t("Online Platform")}</label>
                         <input
                           type="checkbox"
                           id="online"
@@ -924,7 +921,7 @@ function Table({ formD, setFormD }) {
                       </div>
 
                       <div>
-                        <label htmlFor="other">Other states in India </label>
+                        <label htmlFor="other">{t("Other states in India")} </label>
                         <input
                           type="checkbox"
                           id="other"
@@ -935,7 +932,7 @@ function Table({ formD, setFormD }) {
                         />
                       </div>
                       <div>
-                        <label htmlFor="export">Export outside India</label>
+                        <label htmlFor="export">{t("Export outside India")}</label>
                         <input
                           type="checkbox"
                           id="export"
@@ -955,7 +952,7 @@ function Table({ formD, setFormD }) {
                           justifyContent: "flex-start",
                         }}
                       >
-                        <label htmlFor="others">Other please specify</label>
+                        <label htmlFor="others">{t("Other please specify")}</label>
                         <input
                           type="text"
                           id="others"
@@ -972,13 +969,13 @@ function Table({ formD, setFormD }) {
                   <td colSpan={1}>
                     <span>
                       {" "}
-                      In case of Service Industry, your services are offered to{" "}
+                      {t("In case of Service Industry, your services are offered to")}{" "}
                     </span>
                   </td>
                   <td colSpan={6}>
                     <div className="radio_wrapper" id="ownership_pattern">
                       <div>
-                        <label htmlFor="local1">Local Market/ trader</label>
+                        <label htmlFor="local1">{t("Local Market/ trader")}</label>
                         <input
                           type="checkbox"
                           name="service_industry"
@@ -991,7 +988,7 @@ function Table({ formD, setFormD }) {
 
                       <div>
                         <label htmlFor="Govt1">
-                          Government (State/Central)
+                          {t("Government (State/Central)")}
                         </label>
                         <input
                           type="checkbox"
@@ -1004,7 +1001,7 @@ function Table({ formD, setFormD }) {
                       </div>
 
                       <div>
-                        <label htmlFor="online1">Online Platform</label>
+                        <label htmlFor="online1">{t("Online Platform")}</label>
                         <input
                           type="checkbox"
                           id="online1"
@@ -1016,7 +1013,7 @@ function Table({ formD, setFormD }) {
                       </div>
 
                       <div>
-                        <label htmlFor="other1">Other states in India </label>
+                        <label htmlFor="other1">{t("Other states in India")}</label>
                         <input
                           type="checkbox"
                           id="other1"
@@ -1027,7 +1024,7 @@ function Table({ formD, setFormD }) {
                         />
                       </div>
                       <div>
-                        <label htmlFor="export1">Internationally</label>
+                        <label htmlFor="export1">{t("Internationally")}</label>
                         <input
                           type="checkbox"
                           id="export1"
@@ -1047,7 +1044,7 @@ function Table({ formD, setFormD }) {
                           justifyContent: "flex-start",
                         }}
                       >
-                        <label htmlFor="others1">Other please specify</label>
+                        <label htmlFor="others1">{t("Other please specify")}</label>
                         <input
                           type="text"
                           id="others1"
@@ -1062,7 +1059,7 @@ function Table({ formD, setFormD }) {
                 </tr>
                 <tr>
                   <td colSpan={1}>
-                    <span>No of Employees ( or % )</span>
+                    <span>{t("No of Employees ( or % )")}</span>
                   </td>
                   <td
                     className="input_label_gapper"
@@ -1074,7 +1071,7 @@ function Table({ formD, setFormD }) {
                     colSpan={6}
                   >
                     <div>
-                      <label htmlFor="full_time_Emoployee-1">Full time: </label>
+                      <label htmlFor="full_time_Emoployee-1">{t("Full time")}: </label>
                       <input
                         style={{ width: "95%" }}
                         type="number"
@@ -1088,7 +1085,7 @@ function Table({ formD, setFormD }) {
                       />
                     </div>
                     <div>
-                      <label htmlFor="part_time_Emoployee-2">Part time: </label>
+                      <label htmlFor="part_time_Emoployee-2">{t("Part time")}: </label>
                       <input
                         style={{ width: "95%" }}
                         type="number"
@@ -1112,7 +1109,7 @@ function Table({ formD, setFormD }) {
                     colSpan={6}
                   >
                     <div>
-                      <label htmlFor="Permanent_Emoployee-1">Permanent: </label>
+                      <label htmlFor="Permanent_Emoployee-1">{t("Permanent")}: </label>
                       <input
                         style={{ width: "95%" }}
                         type="number"
@@ -1127,7 +1124,7 @@ function Table({ formD, setFormD }) {
                     </div>
                     <div>
                       <label htmlFor="Contractual_Emoployee-2">
-                        Contractual:{" "}
+                        {t("Contractual")}:{" "}
                       </label>
                       <input
                         style={{ width: "95%" }}
@@ -1152,7 +1149,7 @@ function Table({ formD, setFormD }) {
                     colSpan={6}
                   >
                     <div>
-                      <label htmlFor="male_employee-1">Male: </label>
+                      <label htmlFor="male_employee-1">{t("Male")}: </label>
                       <input
                         style={{ width: "95%" }}
                         type="number"
@@ -1166,7 +1163,7 @@ function Table({ formD, setFormD }) {
                       />
                     </div>
                     <div>
-                      <label htmlFor="female_employee-2">Female: </label>
+                      <label htmlFor="female_employee-2">{t("Female")}: </label>
                       <input
                         style={{ width: "95%" }}
                         type="number"
@@ -1183,7 +1180,7 @@ function Table({ formD, setFormD }) {
                 </tr>
                 <tr>
                   <td colSpan={1}>
-                    <span>Major Source of your Financing (or %) </span>
+                    <span>{t("Major Source of your Financing (or %)")} </span>
                   </td>
                   <td
                     className="input_label_gapper"
@@ -1196,7 +1193,7 @@ function Table({ formD, setFormD }) {
                   >
                     <div>
                       <label htmlFor="formal_source-1">
-                        Formal Sources(Bank/NBFCs etc):{" "}
+                        {t("Formal Sources(Bank/NBFCs etc)")}:{" "}
                       </label>
                       <input
                         style={{ width: "95%" }}
@@ -1220,7 +1217,7 @@ function Table({ formD, setFormD }) {
                   >
                     <div>
                       <label htmlFor="informal_source-1">
-                        Informal Sources(friends/relatives//money lenders):{" "}
+                        {t("Informal Sources(friends/relatives//money lenders)")}:{" "}
                       </label>
                       <input
                         style={{ width: "95%" }}
@@ -1244,7 +1241,7 @@ function Table({ formD, setFormD }) {
                   >
                     <div>
                       <label htmlFor="internal_fund_generation-1">
-                        Internal fund generation/Own sources:{" "}
+                        {t("Internal fund generation/Own sources")}:{" "}
                       </label>
                       <input
                         style={{ width: "95%" }}
@@ -1268,7 +1265,7 @@ function Table({ formD, setFormD }) {
                   >
                     <div>
                       <label htmlFor="other_financing_source-1">
-                        Other, please specify{" "}
+                        {t("Other, please specify")}{" "}
                       </label>
                       <input
                         style={{ width: "95%" }}
@@ -1283,7 +1280,7 @@ function Table({ formD, setFormD }) {
                 </tr>
                 <tr>
                   <td colSpan={1}>
-                    <span> Whether loan availed </span>
+                    <span>{t("Whether loan availed")} </span>
                   </td>
                   <td colSpan={6}>
                     <div className="radio_wrapper">
@@ -1317,7 +1314,7 @@ function Table({ formD, setFormD }) {
                 <tr>
                   <td colSpan={1}>
                     <label htmlFor="loan_specification">
-                      Please specify, Term Loan / Working Capital / Both{" "}
+                      {t("Please specify, Term Loan / Working Capital / Both")}{" "}
                     </label>
                   </td>
                   <td colSpan={6}>
@@ -1333,7 +1330,7 @@ function Table({ formD, setFormD }) {
                 </tr>
                 <tr>
                   <td colSpan={1}>
-                    <span> Whether Loan is adequate for your operations?</span>
+                    <span>{t("Whether Loan is adequate for your operations")}?</span>
                   </td>
                   <td colSpan={6}>
                     <div className="radio_wrapper">
@@ -1375,8 +1372,7 @@ function Table({ formD, setFormD }) {
                         }}
                       >
                         <span>
-                          If not, please indicate the amount of loan required
-                          for both term loan and working capital loan{" "}
+                          {t("If not, please indicate the amount of loan required for both term loan and working capital loan")}{" "}
                         </span>
                         <input
                           style={{ minWidth: "20px", marginBottom: "12px" }}
@@ -1394,7 +1390,7 @@ function Table({ formD, setFormD }) {
                 <tr>
                   <td colSpan={1}>
                     <span>
-                      Did you avail any credit facility in the last 12 months?{" "}
+                     {t("Did you avail any credit facility in the last 12 months")}?{" "}
                     </span>
                   </td>
                   <td colSpan={6}>
@@ -1437,7 +1433,7 @@ function Table({ formD, setFormD }) {
                           gap: "3px",
                         }}
                       >
-                        <span>If Yes, then amount and bank/lender </span>
+                        <span>{t("If Yes, then amount and bank/lender")} </span>
                         <input
                           style={{ minWidth: "20px", marginBottom: "12px" }}
                           type="text"
@@ -1455,8 +1451,7 @@ function Table({ formD, setFormD }) {
                   <td colSpan={1}>
                     <span>
                       {" "}
-                      Any innovation or R&D undertaken on your own or in
-                      collaboration/support from some institute?{" "}
+                      {t("Any innovation or R&D undertaken on your own or in collaboration/support from some institute")}?{" "}
                     </span>
                   </td>
                   <td colSpan={6}>
@@ -1499,7 +1494,7 @@ function Table({ formD, setFormD }) {
                           gap: "3px",
                         }}
                       >
-                        <span>If yes, which one? </span>
+                        <span>{t("If yes, which one")}? </span>
                         <input
                           style={{ minWidth: "20px", marginBottom: "12px" }}
                           type="text"
@@ -1516,7 +1511,7 @@ function Table({ formD, setFormD }) {
                 <tr>
                   <td colSpan={1}>
                     <span>
-                      Have you taken any support from Govt agency / scheme{" "}
+                      {t("Have you taken any support from Govt agency / scheme")}{" "}
                     </span>
                   </td>
                   <td
@@ -1529,7 +1524,7 @@ function Table({ formD, setFormD }) {
                     colSpan={6}
                   >
                     <div>
-                      <label htmlFor="govt_scheme-1">Scheme: </label>
+                      <label htmlFor="govt_scheme-1">{t("Scheme")}: </label>
                       <input
                         style={{ width: "95%" }}
                         type="text"
@@ -1551,7 +1546,7 @@ function Table({ formD, setFormD }) {
                     colSpan={6}
                   >
                     <div>
-                      <label htmlFor="govt_program-1">Program: </label>
+                      <label htmlFor="govt_program-1">{t("Program")}: </label>
                       <input
                         style={{ width: "95%" }}
                         type="text"
@@ -1574,7 +1569,7 @@ function Table({ formD, setFormD }) {
                   >
                     <div>
                       <label htmlFor="govt_organisation-1">
-                        Name of Organisation:{" "}
+                       {t("Name of Organisation")}:{" "}
                       </label>
                       <input
                         style={{ width: "95%" }}
@@ -1592,7 +1587,7 @@ function Table({ formD, setFormD }) {
                   <td colSpan={1}>
                     <span>
                       {" "}
-                      Do you have PAN card on the name of your company?{" "}
+                      {t("Do you have PAN card on the name of your company")}?{" "}
                     </span>
                   </td>
                   <td colSpan={6}>
@@ -1626,7 +1621,7 @@ function Table({ formD, setFormD }) {
                 </tr>
                 <tr>
                   <td colSpan={1}>
-                    <span> Do you have GST No.? </span>
+                    <span>{t("Do you have GST No")}.? </span>
                   </td>
                   <td colSpan={6}>
                     <div className="radio_wrapper">
@@ -1660,7 +1655,7 @@ function Table({ formD, setFormD }) {
 
                 <tr>
                   <td colSpan={1}>
-                    <span> Do you have a Current Bank Account ? </span>
+                    <span>{t("Do you have a Current Bank Account")}? </span>
                   </td>
                   <td colSpan={6}>
                     <div className="radio_wrapper">
@@ -1698,8 +1693,7 @@ function Table({ formD, setFormD }) {
                   <td colSpan={1}>
                     <span>
                       {" "}
-                      Do you have CA audited financial statement for Last FY
-                      2021-2022{" "}
+                      {t("Do you have CA audited financial statement for Last FY 2021-2022")}{" "}
                     </span>
                   </td>
                   <td colSpan={6}>
@@ -1742,7 +1736,7 @@ function Table({ formD, setFormD }) {
                 <tr>
                   <td colSpan={1}>
                     <label htmlFor="Annual_Turnover">
-                      Annual Turnover (Avg last 3 years)
+                      {t("Annual Turnover (Avg last 3 years)")}
                     </label>
                   </td>
                   <td colSpan={6}>
@@ -1759,7 +1753,7 @@ function Table({ formD, setFormD }) {
                 <tr>
                   <td colSpan={1}>
                     <label htmlFor="Investment_plant_machinery">
-                      Investment in plant & machinery (Avg last 3 years)
+                      {t("Investment in plant & machinery (Avg last 3 years)")}
                     </label>
                   </td>
                   <td colSpan={6}>
@@ -1776,7 +1770,7 @@ function Table({ formD, setFormD }) {
                 <tr>
                   <td colSpan={1}>
                     <label htmlFor="Investment_IT_Infrastructure">
-                      Investment in IT Infrastructure (Avg in Last 3 Years)
+                      {t("Investment in IT Infrastructure (Avg in Last 3 Years)")}
                     </label>
                   </td>
                   <td colSpan={6}>
@@ -1792,7 +1786,7 @@ function Table({ formD, setFormD }) {
                 </tr>
                 <tr>
                   <td colSpan={1}>
-                    <span> Do you Export ? </span>
+                    <span>{t("Do you Export")} ? </span>
                   </td>
                   <td colSpan={6}>
                     <div className="radio_wrapper">
@@ -1826,7 +1820,7 @@ function Table({ formD, setFormD }) {
                 <tr>
                   <td colSpan={1}>
                     <label htmlFor="Export_Value">
-                      Export value (avg in last 3 yrs){" "}
+                      {t("Export value (avg in last 3 yrs)")}{" "}
                     </label>
                   </td>
                   <td colSpan={6}>
@@ -1843,7 +1837,7 @@ function Table({ formD, setFormD }) {
                 <tr>
                   <td colSpan={1}>
                     <label htmlFor="Overall_Annual_production">
-                      Overall Annual Production:{" "}
+                      {t("Overall Annual Production")}:{" "}
                     </label>
                   </td>
                   <td colSpan={6}>
@@ -1860,7 +1854,7 @@ function Table({ formD, setFormD }) {
                 <tr>
                   <td colSpan={1}>
                     <label htmlFor="Electric_Availability_Hours">
-                      Electricity availability for how many hours?{" "}
+                      {t("Electricity availability for how many hours")}?{" "}
                     </label>
                   </td>
                   <td colSpan={6}>
@@ -1877,7 +1871,7 @@ function Table({ formD, setFormD }) {
                 <tr>
                   <td colSpan={1}>
                     <label htmlFor="Electricity_rate_Per_Unit">
-                      Electricity rate per unit{" "}
+                      {t("Electricity rate per unit")}{" "}
                     </label>
                   </td>
                   <td colSpan={6}>
@@ -1893,7 +1887,7 @@ function Table({ formD, setFormD }) {
                 </tr>
                 <tr>
                   <td colSpan={1}>
-                    <span> Is water availability a constraint? </span>
+                    <span>{t("Is water availability a constraint")}? </span>
                   </td>
                   <td colSpan={6}>
                     <div className="radio_wrapper">
@@ -1926,7 +1920,7 @@ function Table({ formD, setFormD }) {
                 </tr>
                 <tr>
                   <td colSpan={1}>
-                    <span> Is there a constraint for Effluent Treatment? </span>
+                    <span>{t("Is there a constraint for Effluent Treatment")}? </span>
                   </td>
                   <td colSpan={6}>
                     <div className="radio_wrapper">
@@ -1965,8 +1959,7 @@ function Table({ formD, setFormD }) {
                   <td colSpan={1}>
                     <span>
                       {" "}
-                      Did you undergo any training activities or attend
-                      seminars/awareness program of the Govt. for MSME Sector?{" "}
+                      {("Did you undergo any training activities or attend seminars/awareness program of the Govt. for MSME Sector")}?{" "}
                     </span>
                   </td>
                   <td colSpan={6}>
@@ -2000,7 +1993,7 @@ function Table({ formD, setFormD }) {
                 </tr>
                 <tr>
                   <td colSpan={1}>
-                    <label htmlFor="Email">Email : </label>
+                    <label htmlFor="Email">{t("Email")} : </label>
                   </td>
                   <td colSpan={6}>
                     <input
@@ -2015,7 +2008,7 @@ function Table({ formD, setFormD }) {
                 </tr>
                 <tr>
                   <td colSpan={1}>
-                    <label htmlFor="Phone_Number">Phone No. : </label>
+                    <label htmlFor="Phone_Number">{t("Phone No")}. : </label>
                   </td>
                   <td colSpan={6}>
                     <input
