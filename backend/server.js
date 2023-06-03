@@ -21,7 +21,7 @@ ConnectDB();
 app.use('*',function (req,res){
 res.sendFile(path.join(__dirname,'./frontend/build/index.html'))
 })
-
+app.post("/form-data", formdatacontroller);
 app.listen(process.env.PORT, () => {
   console.log(`server has started at port ${process.env.PORT}`);
 });
