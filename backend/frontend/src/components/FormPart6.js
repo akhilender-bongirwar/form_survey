@@ -17,7 +17,7 @@ function FormPart6({ formD, setFormD }) {
     if (!isV) {
     } else {
       axios
-        .post("http://127.0.0.1/form-data", {
+        .post("/form-data", {
           mode: "cors",
           body: formD,
         })
