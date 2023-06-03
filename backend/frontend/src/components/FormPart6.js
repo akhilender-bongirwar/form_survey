@@ -17,7 +17,7 @@ function FormPart6({ formD, setFormD }) {
     if (!isV) {
     } else {
       axios
-        .post("http://127.0.0.1:8080/form-data", {
+        .post("https://form-survey-hhvh05mu4-umeshsinghverma.vercel.app/form-data", {
           mode: "cors",
           body: formD,
         })
