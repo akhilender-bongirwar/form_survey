@@ -913,7 +913,7 @@ function Table({ formD, setFormD }) {
                   <span>
                     {" "}
                     {t(
-                      "Where all do you sell your produce/products majorly?  Please tick (✓) all the relevant options"
+                      "For Manufacturing :- Where all do you sell your produce/products majorly?  Please tick (✓) all the relevant options"
                     )}{" "}
                   </span>
                 </td>
@@ -1864,7 +1864,7 @@ function Table({ formD, setFormD }) {
               <tr>
                 <td colSpan={1}>
                   <label htmlFor="Annual_Turnover">
-                    {t("Annual Turnover (Avg last 3 years)")}
+                    {t("Annual Turnover (Avg last 3 years) (in Rs.)")}
                   </label>
                 </td>
                 <td colSpan={6}>

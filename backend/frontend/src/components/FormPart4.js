@@ -14,27 +14,6 @@ function FormPart4({ formD, setFormD }) {
   //   }
   // };
   const validate = (e) => {
-    const form = document.getElementById("formy");
-
-    const checkboxes = form.querySelectorAll(`input[type="checkbox"].loan`);
-    console.log("these are",checkboxes)
-    var checked = false; 
-
-    checkboxes.forEach(function (checkbox) {
-      if (checkbox.checked) {
-        checked = true;
-      }
-    });
-    const err = form.querySelector(`input[type="checkbox"].loan`);
-    // console.log(checked);
-    var ischecked = err.reportValidity();
-    if (!checked) {
-      err.setCustomValidity("select any one option");
-    } else {
-      err.setCustomValidity("");
-      navigate("/5");
-    }
-
     const isV = document.getElementById("formy").reportValidity();
 
     if (!isV) {
@@ -137,6 +116,25 @@ function FormPart4({ formD, setFormD }) {
                   })
             }
         }
+        else if (name === "Major_source_credit_demand") {
+            if(type=="text"){
+                setFormD((prevFormData) => {
+                    return {
+                      ...prevFormData,
+                      [name]: {...prevFormData[name],other: value}
+                    }
+                  })
+            }
+            else{
+
+                setFormD((prevFormData) => {
+                    return {
+                      ...prevFormData,
+                      [name]: {...prevFormData[name],[value]:checked}
+                    }
+                  })
+            }
+        }
         else if (name === "applied_loan_outcome") {
             if(type=="radio"){
                 setFormD((prevFormData) => {
@@ -165,6 +163,10 @@ function FormPart4({ formD, setFormD }) {
         }
       }
   return (
+    <>
+    <h2 style={{ marginTop: "2em", marginBottom: "2em" }}>
+        {t("D. Access to Finance")}
+      </h2>
     <div
       style={{
         display: "flex",
@@ -177,7 +179,7 @@ function FormPart4({ formD, setFormD }) {
             <tr>
               <td>
                 <label htmlFor="">
-                  1.{t("What are the key reasons which prevents you from even applying for a loan from Bank/FI")}
+                  1.{t("What are the key reasons which prevents you from even applying for a loan from Bank/FI")}?
                 </label>
               </td>
               <td
@@ -196,7 +198,6 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="reason1"
                     name="Key_Reason_Preventing_loan"
-                    className="loan"
                     value="Lack_of_awareness_of_bank_processes_requirements"
                     checked={
                       formD.Key_Reason_Preventing_loan.Lack_of_awareness_of_bank_processes_requirements    
@@ -212,7 +213,6 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="reason2"
                     name="Key_Reason_Preventing_loan"
-                    className="loan"
                     value="High_Interest_Rate"
                     checked={
                       formD.Key_Reason_Preventing_loan.High_Interest_Rate
@@ -228,7 +228,6 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="reason3"
                     name="Key_Reason_Preventing_loan"
-                    className="loan"
                     value="Longer_Processing_time"
                     checked={
                       formD.Key_Reason_Preventing_loan.Longer_Processing_time
@@ -244,7 +243,6 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="reason4"
                     name="Key_Reason_Preventing_loan"
-                    className="loan"
                     value="Improper_documentation"
                     checked={
                       formD.Key_Reason_Preventing_loan.Improper_documentation
@@ -260,7 +258,6 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="reason5"
                     name="Key_Reason_Preventing_loan"
-                    className="loan"
                     value="No_nearby_bank_branches"
                     checked={
                       formD.Key_Reason_Preventing_loan.No_nearby_bank_branches
@@ -285,10 +282,10 @@ function FormPart4({ formD, setFormD }) {
             <tr>
               <td>
                 <label>
-                  2.{t("What is major source of credit demand (Raw Material/ Salaries / Repair & maintenance / Long cash cycle / Demand due to peak season/ duties and taxes/ Others )")} . . . . . . .
+                  2.{t("What is major source of credit demand ")}?
                 </label>
               </td>
-              <td colSpan={5}>
+              {/* <td colSpan={5}>
                 <input
                   type="text"
                   id="secQuestion"
@@ -297,6 +294,119 @@ function FormPart4({ formD, setFormD }) {
                   onChange={handleChange}
                   value={formD.source_of_credit_form}
                 />
+              </td> */}
+              <td
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+                className="input_label_gapper"
+              >
+                <div>
+                  <label htmlFor="r1" style={{ padding: "0.5em" }}>
+                    a.{"  "}{t("Raw Materials")}
+                  </label>
+                  <input
+                    type="checkbox"
+                    id="r1"
+                    name="Major_source_credit_demand"
+                    value="Raw_Materials"
+                    checked={
+                      formD.Major_source_credit_demand.Raw_Material    
+                    }
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="r2" style={{ padding: "0.5em" }}>
+                    b.{"  "}{t("Salaries")}{" "}
+                  </label>
+                  <input
+                    type="checkbox"
+                    id="r2"
+                    name="Major_source_credit_demand"
+                    value="Salaries"
+                    checked={
+                      formD.Major_source_credit_demand.Salaries
+                    }
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="r3" style={{ padding: "0.5em" }}>
+                    c.{"  "}{t("Repair and Maintenance")}{" "}
+                  </label>
+                  <input
+                    type="checkbox"
+                    id="r3"
+                    name="Major_source_credit_demand"
+                    value="Repair_and_Maintenance"
+                    checked={
+                      formD.Major_source_credit_demand.Repair_and_Maintenance
+                    }
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="r4" style={{ padding: "0.5em" }}>
+                    d.{"  "}{t("Long cash cycle")}{" "}
+                  </label>
+                  <input
+                    type="checkbox"
+                    id="r4"
+                    name="Major_source_credit_demand"
+                    value="Long_cash_cycle"
+                    checked={
+                      formD.Major_source_credit_demand.Long_cash_cycle
+                    }
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="r5" style={{ padding: "0.5em" }}>
+                    e.{"  "}{t("Demand due to peak season")}{" "}
+                  </label>
+                  <input
+                    type="checkbox"
+                    id="r5"
+                    name="Major_source_credit_demand"
+                    value="Demand_due_to_peak_season"
+                    checked={
+                      formD.Major_source_credit_demand.Demand_due_to_peak_season
+                    }
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="r6" style={{ padding: "0.5em" }}>
+                    f.{"  "}{t("Duties and taxes")}{" "}
+                  </label>
+                  <input
+                    type="checkbox"
+                    id="r6"
+                    name="Major_source_credit_demand"
+                    value="Duties_and_taxes"
+                    checked={
+                      formD.Major_source_credit_demand.Duties_and_taxes
+                    }
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="r7" style={{ padding: "0.5em" }}>
+                    {"  "}{t("Others")}{" "}
+                  </label>
+                  <input
+                    id="r7"
+                    name="Major_source_credit_demand"
+                    type="text"
+                    onChange={handleChange}
+                    value={formD.Major_source_credit_demand.other}
+                  />
+                </div>
+                
+                
               </td>
             </tr>
             <tr>
@@ -323,7 +433,6 @@ function FormPart4({ formD, setFormD }) {
                     id="outcome1"
                     name="applied_loan_outcome"
                     value="Applied but the application got rejected"
-                    required="required"
                     onChange={handleChange}
                     checked={
                       formD.applied_loan_outcome.radio_button ==
@@ -341,7 +450,6 @@ function FormPart4({ formD, setFormD }) {
                     id="outcome2"
                     name="applied_loan_outcome"
                     value="Applied and got the loan amount in full"
-                    required="required"
                     onChange={handleChange}
                     checked={
                       formD.applied_loan_outcome.radio_button ==
@@ -359,7 +467,6 @@ function FormPart4({ formD, setFormD }) {
                     id="outcome3"
                     name="applied_loan_outcome"
                     value="Applied but only got partial loan amount"
-                    required="required"
                     onChange={handleChange}
                     checked={
                       formD.applied_loan_outcome.radio_button ==
@@ -377,7 +484,6 @@ function FormPart4({ formD, setFormD }) {
                     id="outcome4"
                     name="applied_loan_outcome"
                     value="Applied but refused as interest rate offered was high"
-                    required="required"
                     onChange={handleChange}
                     checked={
                       formD.applied_loan_outcome.radio_button ==
@@ -395,7 +501,6 @@ function FormPart4({ formD, setFormD }) {
                     id="outcome5"
                     name="applied_loan_outcome"
                     value="Loan approved after a significant delay"
-                    required="required"
                     onChange={handleChange}
                     checked={
                       formD.applied_loan_outcome.radio_button ==
@@ -447,6 +552,7 @@ function FormPart4({ formD, setFormD }) {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

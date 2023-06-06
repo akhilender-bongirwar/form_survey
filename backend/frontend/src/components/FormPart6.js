@@ -209,7 +209,7 @@ function FormPart6({ formD, setFormD }) {
   }
   return (
     <>
-      <h1 style={{ marginBottom: "2em" }}>F. Online Dispute Resolution</h1>
+      <h1 style={{ marginBottom: "2em" }}>{t("F. Online Dispute Resolution")}</h1>
       <div
         style={{
           display: "flex",
@@ -592,7 +592,7 @@ function FormPart6({ formD, setFormD }) {
                 marginTop: "2em",
               }}
             >
-              {t("Entrepreneurship Skill Development Programme (ESDP) Training Requirement : ")}
+              {t("Entrepreneurship Skill Development Programme (ESDP) Training Requirement :")}
             </h2>
           </div>
           <table>
@@ -735,7 +735,7 @@ function FormPart6({ formD, setFormD }) {
         }}
       >
         <NavLink to="/5" className="arrow_notation">
-          Prev
+          {t("Prev")}
         </NavLink>
         <button
           type="submit"
