@@ -4,13 +4,42 @@ import { NavLink,useNavigate } from "react-router-dom";
 
 function FormPart4({ formD, setFormD }) {
   const navigate=useNavigate();
+  // const validate = (e) => {
+  //   const isV=document.getElementById("formy").reportValidity();
+  //   if(!isV){
+  //     e.preventDefault();
+  //   }
+  //   else{
+  //     navigate('/5')
+  //   }
+  // };
   const validate = (e) => {
-    const isV=document.getElementById("formy").reportValidity();
-    if(!isV){
-      e.preventDefault();
+    const form = document.getElementById("formy");
+
+    const checkboxes = form.querySelectorAll(`input[type="checkbox"].a`);
+    var checked = false;
+
+    checkboxes.forEach(function (checkbox) {
+      if (checkbox.checked) {
+        checked = true;
+      }
+    });
+    const err = form.querySelector(`input[type="checkbox"].a`);
+    // console.log(checked);
+    var ischecked = err.reportValidity();
+    if (!checked) {
+      err.setCustomValidity("select any one option");
+    } else {
+      err.setCustomValidity("");
+      navigate("/3");
     }
-    else{
-      navigate('/5')
+
+    const isV = document.getElementById("formy").reportValidity();
+
+    if (!isV) {
+      e.preventDefault();
+    } else {
+      navigate("/3");
     }
   };
     function handleChange(event) {
@@ -139,11 +168,10 @@ function FormPart4({ formD, setFormD }) {
       style={{
         display: "flex",
         justifyContent: "center",
-        backgroundColor: "rgb(240 235 248 / 77%)",
       }}
     >
-      <div>
-        <table style={{ width: "95vw" }}>
+      <div style={{backgroundColor: "rgb(240 235 248 / 77%)",}}>
+        <table style={{ width: "75vw" }}>
           <thead>
             <tr>
               <td>

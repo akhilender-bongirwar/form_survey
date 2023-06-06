@@ -5,8 +5,37 @@ import { t } from "i18next";
 
 const FormPart2 = ({ formD, setFormD }) => {
   const navigate = useNavigate();
+  // const validate = (e) => {
+  //   const isV = document.getElementById("formy").reportValidity();
+  //   if (!isV) {
+  //     e.preventDefault();
+  //   } else {
+  //     navigate("/3");
+  //   }
+  // };
   const validate = (e) => {
+    const form = document.getElementById("formy");
+
+    const checkboxes = form.querySelectorAll(`input[type="checkbox"].a`);
+    var checked = false;
+
+    checkboxes.forEach(function (checkbox) {
+      if (checkbox.checked) {
+        checked = true;
+      }
+    });
+    const err = form.querySelector(`input[type="checkbox"].a`);
+    // console.log(checked);
+    var ischecked = err.reportValidity();
+    if (!checked) {
+      err.setCustomValidity("select any one option");
+    } else {
+      err.setCustomValidity("");
+      navigate("/3");
+    }
+
     const isV = document.getElementById("formy").reportValidity();
+
     if (!isV) {
       e.preventDefault();
     } else {
@@ -286,11 +315,11 @@ const FormPart2 = ({ formD, setFormD }) => {
           display: "flex",
           justifyContent: "center",
           height: "90vh",
-          backgroundColor: "rgb(240 235 248 / 77%)",
+          //backgroundColor: "rgb(240 235 248 / 77%)",
         }}
       >
         <div
-          style={{ width: "95vw", backgroundColor: "rgb(240 235 248 / 77%)" }}
+          style={{ width: "75vw", backgroundColor: "rgb(240 235 248 / 77%)" }}
         >
           {!expand ? (
             <table
@@ -546,6 +575,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               <input
                                 type="checkbox"
                                 name="final_product_sold_to"
+                                className="a"
                                 id="locala"
                                 value="Trader_Agents"
                                 onChange={handleChange}
@@ -561,6 +591,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                                 type="checkbox"
                                 id="Govtb"
                                 name="final_product_sold_to"
+                                className="a"
                                 value="Wholesalers"
                                 onChange={handleChange}
                                 checked={
@@ -576,6 +607,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                                 id="onlinec"
                                 name="final_product_sold_to"
                                 value="Retailers"
+                                className="a"
                                 onChange={handleChange}
                                 checked={formD.final_product_sold_to.Retailers}
                               />
@@ -590,6 +622,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                                 id="otherd"
                                 name="final_product_sold_to"
                                 value="Large_Manufacturers_Anchor_units"
+                                className="a"
                                 onChange={handleChange}
                                 checked={
                                   formD.final_product_sold_to
@@ -603,6 +636,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                                 type="checkbox"
                                 id="exporte"
                                 name="final_product_sold_to"
+                                className="a"
                                 value="Exporters"
                                 onChange={handleChange}
                                 checked={formD.final_product_sold_to.Exporters}
@@ -614,6 +648,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                                 <input
                                   type="checkbox"
                                   name="final_product_sold_to"
+                                  className="a"
                                   id="localf"
                                   value="OEMs"
                                   onChange={handleChange}
@@ -631,6 +666,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                                   name="final_product_sold_to"
                                   id="localg"
                                   value="End_Users"
+                                  className="a"
                                   onChange={handleChange}
                                   checked={
                                     formD.final_product_sold_to.End_Users
@@ -646,6 +682,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                                   name="final_product_sold_to"
                                   id="localh"
                                   value="Others"
+                                  className="a"
                                   onChange={handleChange}
                                   checked={formD.final_product_sold_to.Others}
                                 />

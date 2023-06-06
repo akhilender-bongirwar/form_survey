@@ -150,15 +150,15 @@ function FormPart3({ formD, setFormD }) {
         display: "flex",
         justifyContent: "center",
         overflowY: "scroll",
-        backgroundColor: "rgb(240 235 248 / 77%)",
       }}
     >
       <div
         style={{
-          width: "95vw",
+          width: "75vw",
           flexWrap: "wrap",
           overflowWrap: "break-word",
           borderBottom: "0",
+          backgroundColor: "rgb(240 235 248 / 77%)",
         }}
       >
         <table style={{ width: "100%", overflowWrap: "break-word" }}>

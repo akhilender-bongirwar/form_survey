@@ -155,7 +155,7 @@ function FormPart5({ formD, setFormD }) {
         style={{
           display: "flex",
           justifyContent: "center",
-          backgroundColor: "rgb(240 235 248 / 77%)",
+          //backgroundColor: "rgb(240 235 248 / 77%)",
         }}
       >
         <div
@@ -165,8 +165,7 @@ function FormPart5({ formD, setFormD }) {
             flexWrap: "wrap",
             overflowWrap: "break-word",
             borderBottom: "0",
-            width: "95vw",
-            backgroundColor: "rgb(240 235 248 / 77%)",
+            width: "75vw",
           }}
         >
           <div

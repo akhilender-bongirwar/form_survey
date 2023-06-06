@@ -13,7 +13,6 @@ import { changeLanguage } from "i18next";
 import "./Table.css";
 import "../i18n.js";
 
-import Input from "./Input";
 import { Form } from "react-router-dom";
 import FormPart3 from "./FormPart3";
 import axios from "axios";
@@ -220,15 +219,16 @@ function Table({ formD, setFormD }) {
           display: "flex",
           justifyContent: "center",
           overflowY: "scroll",
-          backgroundColor: "rgb(240 235 248 / 77%)",
+  //        backgroundColor: "rgb(240 235 248 / 77%)",
         }}
       >
         <div
           style={{
-            width: "95vw",
+            width: "75vw",
             flexWrap: "wrap",
             overflowWrap: "break-word",
             borderBottom: "0",
+            backgroundColor: "rgb(240 235 248 / 77%)",
           }}
         >
           {/* <h2 style={{ marginLeft: "0.8em", padding: "2%" }}>
@@ -237,7 +237,7 @@ function Table({ formD, setFormD }) {
           <table style={{ width: "100%", overflowWrap: "break-word" }}>
             <thead>
               <tr>
-                <th colSpan={2}>{"A. MSME Specific Questionairre"}</th>
+              <th colSpan={2} style={{ fontFamily: "Spectral" }}>{"A. MSME Specific Questionairre"}</th>
               </tr>
             </thead>
             <tbody>

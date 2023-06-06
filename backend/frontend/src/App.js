@@ -267,6 +267,7 @@ function App() {
 
   return (
     <>
+    <div  style={{ textAlign: "end" }}>
       <button
         className="arrow_notation"
         type="button"
@@ -284,6 +285,7 @@ function App() {
       >
         english
       </button>
+      </div>
       <Router>
         <Routes>
           <Route path="/" element={<Outer />}>
