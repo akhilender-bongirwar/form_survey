@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 
 import { NavLink } from "react-router-dom";
 function FormPart6({ formD, setFormD }) {
+  const [a61, setA61] = React.useState(null);
   const { t } = useTranslation();
 
   const navigate = useNavigate();
@@ -216,7 +217,13 @@ function FormPart6({ formD, setFormD }) {
           alignItems: "center",
         }}
       >
-        <div style={{ display: "flex", flexDirection: "column",backgroundColor: "rgb(240 235 248 / 77%)",}}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            backgroundColor: "rgb(240 235 248 / 77%)",
+          }}
+        >
           <div>
             <h2
               style={{
@@ -242,7 +249,7 @@ function FormPart6({ formD, setFormD }) {
                 <tr>
                   <td>{t("Certifications")}</td>
                   <td>
-                    <input 
+                    <input
                       type="text"
                       id="certificate1"
                       className="Certifications"
@@ -577,11 +584,155 @@ function FormPart6({ formD, setFormD }) {
               </tbody>
             </table>
           </div>
+          <div>
+            <h2
+              style={{
+                margin: "0.5em",
+                display: "flex",
+                marginTop: "2em",
+              }}
+            >
+              {t("Entrepreneurship Skill Development Programme (ESDP) Training Requirement : ")}
+            </h2>
+          </div>
+          <table>
+            <tr>
+              <td colSpan={1}>
+                <span>
+                  {" "}
+                  {t(
+                    "Do you need ant training program supported by Government of India for developing entrepreneurial skills?"
+                  )}
+                </span>
+              </td>
+              <td colSpan={6}>
+                <div className="radio_wrapper">
+                  <div>
+                    <label htmlFor="Requirement_of_Trainingyes">
+                      {t("YES")}
+                    </label>
+                    <input
+                      type="radio"
+                      name="Requirement_of_Training"
+                      id="Requirement_of_Trainingyes"
+                      value="YES"
+                      required="required"
+                      onClick={() => setA61("show61")}
+                      onChange={handleChange}
+                      checked={formD.Requirement_of_Training == "YES"}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="Requirement_of_Trainingno">{t("NO")}</label>
+                    <input
+                      type="radio"
+                      name="Requirement_of_Training"
+                      id="Requirement_of_Trainingno"
+                      value="NO"
+                      required="required"
+                      onClick={() => setA61(null)}
+                      onChange={handleChange}
+                      checked={formD.Requirement_of_Training == "NO"}
+                    />
+                  </div>
+                </div>
+              </td>
+            </tr>
+                {a61!="show61"?"":
+                <tr>
+                <td colSpan={1}>
+                  <label htmlFor="ESDP_beneficiaries">{t(
+                        "In yes, then who will be the beneficiaries(entrepreneurs, students, etc) ?"
+                      )}{" "}</label>
+                </td>
+                <td colSpan={6}>
+                <input
+                      style={{ minWidth: "20px", marginBottom: "12px" }}
+                      type="text"
+                      id="ESDP_beneficiaries"
+                      name="ESDP_beneficiaries"
+                      onChange={handleChange}
+                      required="required"
+                      value={formD.ESDP_beneficiaries}
+                    />
+                </td>
+              </tr>}
+                  <tr>
+                    <td colSpan={7}>
+                      <p style={{textAlign:"center"}}><b>{t("Point of Contact Member Details")}</b></p>
+                    </td>
+                  </tr>
+              <tr>
+                <td colSpan={1}>
+                  <label htmlFor="Contact_Member_details_name">{t("Name :")}</label>
+                </td>
+                <td colSpan={6}>
+                  <input
+                    type="text"
+                    id="Contact_Member_details_name"
+                    name="Contact_Member_details_name"
+                    onChange={handleChange}
+                    required="required"
+                    value={formD.Contact_Member_details_name}
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td colSpan={1}>
+                  <label htmlFor="Contact_Member_details_contact">{t("Contact :")}</label>
+                </td>
+                <td colSpan={6}>
+                  <input
+                    type="text"
+                    id="Contact_Member_details_contact"
+                    name="Contact_Member_details_contact"
+                    onChange={handleChange}
+                    required="required"
+                    value={formD.Contact_Member_details_contact}
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td colSpan={1}>
+                  <label htmlFor="Contact_Member_details_designation">{t("Designation :")}</label>
+                </td>
+                <td colSpan={6}>
+                  <input
+                    type="text"
+                    id="Contact_Member_details_designation"
+                    name="Contact_Member_details_designation"
+                    onChange={handleChange}
+                    required="required"
+                    value={formD.Contact_Member_details_designation}
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td colSpan={1}>
+                  <label htmlFor="Contact_Member_details_email">{t("Email :")}</label>
+                </td>
+                <td colSpan={6}>
+                  <input
+                    type="email"
+                    id="Contact_Member_details_email"
+                    name="Contact_Member_details_email"
+                    onChange={handleChange}
+                    required="required"
+                    value={formD.Contact_Member_details_email}
+                  />
+                </td>
+              </tr>
+          </table>
         </div>
       </div>
       <ToastContainer />
       <div
-        style={{ display: "flex", justifyContent: "space-between", margin: "0 15px", fontSize: "large" }}
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          margin: "0 15px",
+          fontSize: "large",
+        }}
       >
         <NavLink to="/5" className="arrow_notation">
           Prev
