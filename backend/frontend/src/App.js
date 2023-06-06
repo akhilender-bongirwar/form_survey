@@ -283,14 +283,14 @@ function App() {
           console.log("click");
         }}
       >
-        hindi
+        Hindi
       </button>
       <button
         className="arrow_notation"
         type="button"
         onClick={() => changeLanguage("en")}
       >
-        english
+        English
       </button>
       </div>
       <Router>

@@ -149,7 +149,7 @@ function FormPart5({ formD, setFormD }) {
   return (
     <>
       <h2 style={{ marginTop: "2em", marginBottom: "2em" }}>
-        E. Grievance Redressal
+        {t("E. Grievance Redressal")}
       </h2>
       <div
         style={{
@@ -226,10 +226,10 @@ function FormPart5({ formD, setFormD }) {
       </div>
       <div style={{ display:"flex",justifyContent:"space-between",margin:"0 15px",fontSize:"large"}}>
         <NavLink to="/4" className="arrow_notation">
-          Prev
+          {t("Prev")}
         </NavLink>
         <NavLink to="/6" className="arrow_notation" onClick={validate}>
-          Next
+          {t("Next")}
         </NavLink>
       </div>
     </>
