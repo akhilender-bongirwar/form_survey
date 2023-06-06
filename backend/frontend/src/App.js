@@ -262,6 +262,13 @@ function App() {
       Design_and_product_development: "",
       Promotion_Campaign: "",
     },
+    //added
+    Requirement_of_Training:"",
+    ESDP_beneficiaries:"",
+    Contact_Member_details_name:"",
+    Contact_Member_details_contact:"",
+    Contact_Member_details_designation:"",
+    Contact_Member_details_email:"",
   });
   const { t } = useTranslation();
 
