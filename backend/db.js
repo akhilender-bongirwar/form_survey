@@ -1,9 +1,10 @@
 import mongoose from "mongoose";
-
+import 'dotenv/config.js'
+// console.log(process.env.MONGOURI)
 const ConnectDB = () => {
   mongoose
     .connect(
-      "mongodb+srv://surveyform008:BEOrFi5lv3QWr9ti@cluster0.hqx4pj0.mongodb.net/?retryWrites=true&w=majority"
+    process.env.MONGOURI
     )
     .then(() => console.log("Connected!"))
     .catch((err) => {
