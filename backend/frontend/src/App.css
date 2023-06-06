@@ -10,8 +10,8 @@
 }
 
 input:invalid {
-  background-color: ivory;
   border: none;
+  outline: none;
   /* outline: 2px solid red; */
   border-radius: 5px;
 }
@@ -57,11 +57,13 @@ input:invalid {
   border: black solid 2px;
   margin: 10px;
 }
-.arrow_notation:active{
+
+.arrow_notation:active {
   transform: scale(0.98);
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
-.submit{
+
+.submit {
   background-color: black;
   color: white;
 }
@@ -71,6 +73,7 @@ input[type=number],
 input[type=email] {
   outline: none;
   padding: 1%;
+  border: none;
   font-size: larger;
   letter-spacing: 0.1em;
 }
