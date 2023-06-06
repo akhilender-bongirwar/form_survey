@@ -116,6 +116,25 @@ function FormPart4({ formD, setFormD }) {
                   })
             }
         }
+        else if (name === "Major_source_credit_demand") {
+            if(type=="text"){
+                setFormD((prevFormData) => {
+                    return {
+                      ...prevFormData,
+                      [name]: {...prevFormData[name],other: value}
+                    }
+                  })
+            }
+            else{
+
+                setFormD((prevFormData) => {
+                    return {
+                      ...prevFormData,
+                      [name]: {...prevFormData[name],[value]:checked}
+                    }
+                  })
+            }
+        }
         else if (name === "applied_loan_outcome") {
             if(type=="radio"){
                 setFormD((prevFormData) => {
@@ -144,6 +163,10 @@ function FormPart4({ formD, setFormD }) {
         }
       }
   return (
+    <>
+    <h2 style={{ marginTop: "2em", marginBottom: "2em" }}>
+        {t("D. Access to Finance")}
+      </h2>
     <div
       style={{
         display: "flex",
@@ -156,7 +179,7 @@ function FormPart4({ formD, setFormD }) {
             <tr>
               <td>
                 <label htmlFor="">
-                  1.{t("What are the key reasons which prevents you from even applying for a loan from Bank/FI")}
+                  1.{t("What are the key reasons which prevents you from even applying for a loan from Bank/FI")}?
                 </label>
               </td>
               <td
@@ -259,7 +282,7 @@ function FormPart4({ formD, setFormD }) {
             <tr>
               <td>
                 <label>
-                  2.{t("What is major source of credit demand (Raw Material/ Salaries / Repair & maintenance / Long cash cycle / Demand due to peak season/ duties and taxes/ Others )")} . . . . . . .
+                  2.{t("What is major source of credit demand ")}?
                 </label>
               </td>
               {/* <td colSpan={5}>
@@ -290,7 +313,7 @@ function FormPart4({ formD, setFormD }) {
                     name="Major_source_credit_demand"
                     value="Raw_Materials"
                     checked={
-                      formD.Key_Reason_Preventing_loan.Raw_Material    
+                      formD.Major_source_credit_demand.Raw_Material    
                     }
                     onChange={handleChange}
                   />
@@ -305,7 +328,7 @@ function FormPart4({ formD, setFormD }) {
                     name="Major_source_credit_demand"
                     value="Salaries"
                     checked={
-                      formD.Key_Reason_Preventing_loan.Salaries
+                      formD.Major_source_credit_demand.Salaries
                     }
                     onChange={handleChange}
                   />
@@ -320,7 +343,7 @@ function FormPart4({ formD, setFormD }) {
                     name="Major_source_credit_demand"
                     value="Repair_and_Maintenance"
                     checked={
-                      formD.Key_Reason_Preventing_loan.Repair_and_Maintenance
+                      formD.Major_source_credit_demand.Repair_and_Maintenance
                     }
                     onChange={handleChange}
                   />
@@ -335,7 +358,7 @@ function FormPart4({ formD, setFormD }) {
                     name="Major_source_credit_demand"
                     value="Long_cash_cycle"
                     checked={
-                      formD.Key_Reason_Preventing_loan.Long_cash_cycle
+                      formD.Major_source_credit_demand.Long_cash_cycle
                     }
                     onChange={handleChange}
                   />
@@ -350,7 +373,7 @@ function FormPart4({ formD, setFormD }) {
                     name="Major_source_credit_demand"
                     value="Demand_due_to_peak_season"
                     checked={
-                      formD.Key_Reason_Preventing_loan.Demand_due_to_peak_season
+                      formD.Major_source_credit_demand.Demand_due_to_peak_season
                     }
                     onChange={handleChange}
                   />
@@ -365,7 +388,7 @@ function FormPart4({ formD, setFormD }) {
                     name="Major_source_credit_demand"
                     value="Duties_and_taxes"
                     checked={
-                      formD.Key_Reason_Preventing_loan.Duties_and_taxes
+                      formD.Major_source_credit_demand.Duties_and_taxes
                     }
                     onChange={handleChange}
                   />
@@ -379,7 +402,7 @@ function FormPart4({ formD, setFormD }) {
                     name="Major_source_credit_demand"
                     type="text"
                     onChange={handleChange}
-                    value={formD.Key_Reason_Preventing_loan.other}
+                    value={formD.Major_source_credit_demand.other}
                   />
                 </div>
                 
@@ -410,7 +433,6 @@ function FormPart4({ formD, setFormD }) {
                     id="outcome1"
                     name="applied_loan_outcome"
                     value="Applied but the application got rejected"
-                    required="required"
                     onChange={handleChange}
                     checked={
                       formD.applied_loan_outcome.radio_button ==
@@ -428,7 +450,6 @@ function FormPart4({ formD, setFormD }) {
                     id="outcome2"
                     name="applied_loan_outcome"
                     value="Applied and got the loan amount in full"
-                    required="required"
                     onChange={handleChange}
                     checked={
                       formD.applied_loan_outcome.radio_button ==
@@ -446,7 +467,6 @@ function FormPart4({ formD, setFormD }) {
                     id="outcome3"
                     name="applied_loan_outcome"
                     value="Applied but only got partial loan amount"
-                    required="required"
                     onChange={handleChange}
                     checked={
                       formD.applied_loan_outcome.radio_button ==
@@ -464,7 +484,6 @@ function FormPart4({ formD, setFormD }) {
                     id="outcome4"
                     name="applied_loan_outcome"
                     value="Applied but refused as interest rate offered was high"
-                    required="required"
                     onChange={handleChange}
                     checked={
                       formD.applied_loan_outcome.radio_button ==
@@ -482,7 +501,6 @@ function FormPart4({ formD, setFormD }) {
                     id="outcome5"
                     name="applied_loan_outcome"
                     value="Loan approved after a significant delay"
-                    required="required"
                     onChange={handleChange}
                     checked={
                       formD.applied_loan_outcome.radio_button ==
@@ -534,6 +552,7 @@ function FormPart4({ formD, setFormD }) {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
