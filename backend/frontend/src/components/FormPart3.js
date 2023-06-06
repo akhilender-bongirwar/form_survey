@@ -1,15 +1,15 @@
 import React from "react";
-import { NavLink ,useNavigate} from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./Table.css";
 import { t } from "i18next";
 function FormPart3({ formD, setFormD }) {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const validate = (e) => {
-    const isV=document.getElementById("formy").reportValidity();
-    if(!isV){
+    const isV = document.getElementById("formy").reportValidity();
+    if (!isV) {
       e.preventDefault();
     }
-    else{
+    else {
       navigate('/4')
     }
   };
@@ -144,6 +144,7 @@ function FormPart3({ formD, setFormD }) {
       });
     }
   }
+  const [addfields, setAddFields] = React.useState([]);
   return (
     <div
       style={{
@@ -204,35 +205,75 @@ function FormPart3({ formD, setFormD }) {
               </span>
             </td>
             <td colSpan={6}>
-              <tr>
-                <td colSpan={1}>
+              <button onClick={(e) => {
+                e.preventDefault();
+                setAddFields([...addfields, [
+                  <div style={{ width: "100%", display: "flex" }}>
+                    <td colSpan={1} style={{ width: "50%" }}>
+                      <tr>
+                        <span>{t("Name of the program")}</span>
+                      </tr>
+                      <tr>
+                        <input
+                          type="text"
+                          name={`Anything_${addfields.length}`}
+                          id={`policy_program_${addfields.length}`}
+                          // value={formD[`policy_program_${addfields.length}`]}
+                          onChange={handleChange}
+                          style={{
+                            width: "90%",
+                            border: "transparent",
+                            borderBottom: "2px solid black",
+                          }}
+                        />
+                      </tr>
+                    </td>
+                    <td colSpan={2} style={{ width: "100%" }}>
+                      <label htmlFor="benefits">
+                        {t("Nature of assistance/Benefits")}:
+                      </label>
+                      <input
+                        type="text"
+                        name={`Policy_benifitted_${addfields.length}`}
+                        id={`benefits_${addfields.length}`}
+                        // value={formD[`Policy_benifitted_${addfields.length}`]}
+                        onChange={handleChange}
+                        style={{
+                          width: "90%",
+                          border: "transparent",
+                          borderBottom: "2px solid black",
+                        }}
+                      />
+                    </td>
+                    <td style={{ width: "100%" }}>
+                      <label htmlFor="challenges">{t("Challenges")}:</label>
+                      <input
+                        type="text"
+                        name={`Challenges_faced_policy_related_${addfields.length}`}
+                        id={`challenges_${addfields.length}`}
+                        // value={formD[`Challenges_faced_policy_related_${addfields.length}`]}
+                        onChange={handleChange}
+                        style={{
+                          width: "90%",
+                          border: "transparent",
+                          borderBottom: "2px solid black",
+                        }}
+                      />
+                    </td>
+                  </div>
+                ]])
+              }}>Add</button>
+              <div style={{ width: "100%", display: "flex" }}>
+                <td colSpan={1} style={{ width: "50%" }}>
                   <tr>
                     <span>{t("Name of the program")}</span>
                   </tr>
                   <tr>
-                    <label style={{ textAlign: "center" }} htmlFor="Anything">
-                      1.
-                    </label>
                     <input
                       type="text"
-                      id="Anything"
-                      name="policy_program_1"
-                      value={formD.policy_program_1}
-                      onChange={handleChange}
-                      style={{
-                        width: "90%",
-                        border: "transparent",
-                        borderBottom: "2px solid black",
-                      }}
-                    />
-                  </tr>
-                  <tr>
-                    <label htmlFor="Anything1">2.</label>
-                    <input
-                      type="text"
-                      id="Anything1"
-                      name="policy_program_2"
-                      value={formD.policy_program_2}
+                      id="Anything_p"
+                      name="policy_program_p"
+                      value={formD.policy_program_p}
                       onChange={handleChange}
                       style={{
                         width: "90%",
@@ -242,18 +283,16 @@ function FormPart3({ formD, setFormD }) {
                     />
                   </tr>
                 </td>
-              </tr>
-              <tr>
-                <td colSpan={2}>
+                <td colSpan={2} style={{ width: "100%" }}>
                   <label htmlFor="benefits">
                     {t("Nature of assistance/Benefits")}:
                   </label>
                   <input
                     type="text"
-                    name="Policy_benifitted"
-                    id="benefits"
+                    name="Policy_benifitted_p"
+                    id="benefits_p"
                     onChange={handleChange}
-                    value={formD.Policy_benifitted}
+                    value={formD.Policy_benifitted_p}
                     style={{
                       width: "90%",
                       border: "transparent",
@@ -261,16 +300,14 @@ function FormPart3({ formD, setFormD }) {
                     }}
                   />
                 </td>
-              </tr>
-              <tr>
-                <td colSpan={2}>
+                <td style={{ width: "100%" }}>
                   <label htmlFor="challenges">{t("Challenges")}:</label>
                   <input
                     type="text"
-                    name="Challenges_faced_policy_related"
-                    id="challenges"
+                    name="Challenges_faced_policy_related_p"
+                    id="challenges_p"
                     onChange={handleChange}
-                    value={formD.Challenges_faced_policy_related}
+                    value={formD.Challenges_faced_policy_related_p}
                     style={{
                       width: "90%",
                       border: "transparent",
@@ -278,7 +315,8 @@ function FormPart3({ formD, setFormD }) {
                     }}
                   />
                 </td>
-              </tr>
+              </div>
+              {addfields}
             </td>
           </tr>
           <tr>
@@ -1028,7 +1066,7 @@ function FormPart3({ formD, setFormD }) {
           </tr>
         </table>
         <div
-          style={{ display:"flex",justifyContent:"space-between",margin:"0 15px",fontSize:"large"}}
+          style={{ display: "flex", justifyContent: "space-between", margin: "0 15px", fontSize: "large" }}
         >
           <NavLink to="/2" className="arrow_notation">
             Prev
