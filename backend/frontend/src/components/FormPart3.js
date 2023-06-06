@@ -435,7 +435,7 @@ function FormPart3({ formD, setFormD }) {
                         htmlFor="op2"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        {t("LEAN")}
+                        {("LEAN")}
                       </label>
                       <input
                         type="checkbox"
@@ -585,6 +585,26 @@ function FormPart3({ formD, setFormD }) {
                         onChange={handleChange}
                       />
                     </div>
+                    <div className="d_flex_align_CONTENT_justify">
+                      <label
+                        htmlFor="op10"
+                        style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                      >
+                        {t("Not Aware")}
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="op10"
+                        className="central" data-aware="ct"
+                        name="Aware_of_listed_scehmes"
+                        value="Not_Aware"
+                        checked={
+                          formD.Aware_of_listed_scehmes.Central_Govt
+                            .Not_Aware
+                        }
+                        onChange={handleChange}
+                      />
+                    </div>
                   </div>
                   <div style={{ fontWeight: "bold", fontSize: "larger" }}>
                     <u>{t("State Government")}:</u>
@@ -726,6 +746,29 @@ function FormPart3({ formD, setFormD }) {
                         onChange={handleChange}
                       />
                     </div>
+                    <div>
+                      <label
+                        htmlFor="opt7"
+                        style={{
+                          fontSize: "0.9rem",
+                          padding: "0.5em",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        {t("Not Aware")}
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="opt7"
+                         className="state" data-avail="st"
+                        checked={
+                          formD.Aware_of_listed_scehmes.State_Govt.Not_Aware
+                        }
+                        name="Aware_of_listed_scehmes"
+                        value="Not_Aware"
+                        onChange={handleChange}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -788,7 +831,7 @@ function FormPart3({ formD, setFormD }) {
                         htmlFor="op22"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        {t("LEAN")}
+                        {("LEAN")}
                       </label>
                       <input
                         type="checkbox"
