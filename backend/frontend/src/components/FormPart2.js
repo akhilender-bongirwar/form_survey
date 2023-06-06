@@ -16,24 +16,55 @@ const FormPart2 = ({ formD, setFormD }) => {
   const validate = (e) => {
     const form = document.getElementById("formy");
 
-    const checkboxes = form.querySelectorAll(`input[type="checkbox"].a`);
-    var checked = false;
+    const checkboxes1 = form.querySelectorAll(`input[type="checkbox"].a`);
+    const checkboxes2 = form.querySelectorAll(`input[type="checkbox"].b`);
+    const checkboxes3 = form.querySelectorAll(`input[type="checkbox"].c`);
+    var checked1 = false;
+    var checked2 = false;
+    var checked3 = false;
 
-    checkboxes.forEach(function (checkbox) {
+    checkboxes1.forEach(function (checkbox) {
       if (checkbox.checked) {
-        checked = true;
+        checked1 = true;
       }
     });
-    const err = form.querySelector(`input[type="checkbox"].a`);
+    checkboxes2.forEach(function (checkbox) {
+      if (checkbox.checked) {
+        checked2 = true;
+      }
+    });
+    // checkboxes3.forEach(function (checkbox) {
+    //   if (checkbox.checked) {
+    //     checked2 = true;
+    //   }
+    // });
+    
+    const err1 = form.querySelector(`input[type="checkbox"].a`);
+    const err2 = form.querySelector(`input[type="checkbox"].b`);
+    const err3 = form.querySelector(`input[type="checkbox"].c`);
     // console.log(checked);
-    var ischecked = err.reportValidity();
-    if (!checked) {
-      err.setCustomValidity("select any one option");
+    //var ischecked = err.reportValidity();
+    if (!checked1) {
+      err1.setCustomValidity("select any one option");
     } else {
-      err.setCustomValidity("");
+      err1.setCustomValidity("");
+      // navigate("/3");
+    }
+    if (!checked2) {
+      err2.setCustomValidity("select any one option");
+    } else {
+      err2.setCustomValidity("");
+      // navigate("/3");
+    }
+    // if(!checked3){
+    //   err3.setCustomValidity("select any one option");
+    // }else{
+    //   err3.setCustomValidity("");
+    // }
+    if(checked1&&checked2){
       navigate("/3");
     }
-
+    
     const isV = document.getElementById("formy").reportValidity();
 
     if (!isV) {
@@ -708,6 +739,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                                 id="withinState"
                                 name="markets_supplied"
                                 value="within_State"
+                                className="b"
                                 checked={formD.markets_supplied.within_State}
                                 onChange={handleChange}
                               />
@@ -722,6 +754,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                                 name="markets_supplied"
                                 checked={formD.markets_supplied.outside_State}
                                 value="outside_State"
+                                className="b"
                                 onChange={handleChange}
                               />
                             </div>
@@ -733,6 +766,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                                 type="checkbox"
                                 name="markets_supplied"
                                 value="outside_country"
+                                className="b"
                                 onChange={handleChange}
                                 checked={formD.markets_supplied.outside_country}
                                 id="outside_country"
@@ -827,6 +861,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               type="checkbox"
                               name="challenges_while_selling"
                               value="advance_technology"
+                              className="c"
                               checked={
                                 formD.challenges_while_selling
                                   .advance_technology
@@ -846,6 +881,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               type="checkbox"
                               name="challenges_while_selling"
                               value="quality_of_product"
+                              className="c"
                               id="quality"
                               checked={
                                 formD.challenges_while_selling
@@ -865,6 +901,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               type="checkbox"
                               name="challenges_while_selling"
                               value="market_competition"
+                              className="c"
                               id="marketComp"
                               onChange={handleChange}
                               checked={
@@ -885,6 +922,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               name="challenges_while_selling"
                               value="capital"
                               id="capital"
+                              className="c"
                               onChange={handleChange}
                               checked={formD.challenges_while_selling.capital}
                             />
@@ -901,6 +939,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               name="challenges_while_selling"
                               value="branding_and_marketing"
                               id="brandMarket"
+                              className="c"
                               onChange={handleChange}
                               checked={
                                 formD.challenges_while_selling
@@ -917,6 +956,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               type="text"
                               id="other"
                               name="challenges_while_selling"
+                              className="c"
                               onChange={handleChange}
                               value={formD.challenges_while_selling.other}
                               style={{

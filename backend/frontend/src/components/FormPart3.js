@@ -3,14 +3,91 @@ import { NavLink ,useNavigate} from "react-router-dom";
 import "./Table.css";
 import { t } from "i18next";
 function FormPart3({ formD, setFormD }) {
-  const navigate=useNavigate();
+  const form = document.getElementById("formy");
+  // const err = form.querySelectorAll(`[data-aware]`);
+  // const err1 = form.querySelectorAll(`[data-aware1]`);
+  // console.log("hello i am ",Array.from(err));
+  // console.log("hello i am2 ",Array.from(err1));
+  const navigate = useNavigate();
   const validate = (e) => {
-    const isV=document.getElementById("formy").reportValidity();
-    if(!isV){
-      e.preventDefault();
+    const form = document.getElementById("formy");
+
+    const checkboxes1 = form.querySelectorAll(`[data-aware]`);
+    const checkboxes2 = form.querySelectorAll(`[data-aware1]`);
+    const checkboxes3 = form.querySelectorAll(`[data-avail]`);
+    const checkboxes4 = form.querySelectorAll(`[data-avail1]`);
+    console.log(checkboxes1);
+    console.log(checkboxes2);
+   // console.log("these are",checkboxes)
+    var checked1 = false; 
+    var checked2 = false;
+    var checked3 = false;
+    var checked4 = false;
+
+    checkboxes1.forEach(function (checkbox) {
+      if (checkbox.checked) {
+        checked1 = true;
+      }
+    });
+    checkboxes2.forEach(function (checkbox) {
+      if (checkbox.checked) {
+        checked2 = true;
+      }
+    });
+    checkboxes3.forEach(function (checkbox) {
+      if (checkbox.checked) {
+        checked3 = true;
+      }
+    });
+    checkboxes4.forEach(function (checkbox) {
+      if (checkbox.checked) {
+        checked4 = true;
+      }
+    });
+    const err1 = form.querySelector(`[data-aware]`);
+    const err2 = form.querySelector(`[data-aware1]`);
+    const err3 = form.querySelector(`[data-avail]`);
+    const err4 = form.querySelector(`[data-avail1]`);
+    // console.log(checked);
+    //var ischecked = err.reportValidity();
+    if (!checked1) {
+      err1.setCustomValidity("select any one option");
+      console.log("f1 is empty");
+    }else{
+      err1.setCustomValidity("");
     }
-    else{
-      navigate('/4')
+    if(!checked2){
+      err2.setCustomValidity("select any one option");
+      console.log("field2 is empty");
+    }else{
+      err2.setCustomValidity("");
+    }
+    if(!checked3){
+      err3.setCustomValidity("select any one of option");
+      console.log("field3 is empty");
+    }else{
+      err3.setCustomValidity("");
+    }
+    if(!checked4){
+      err4.setCustomValidity("select any one of option");
+      console.log("field4 is empty");
+    }
+    else {
+      err4.setCustomValidity("");
+      console.log("NO empty field")
+      //navigate("/4");
+    }
+    if(checked1 && checked2 && checked3 && checked4){
+      console.log("Now you can navigate to next page");
+      navigate("/4");
+    }
+
+    const isV = document.getElementById("formy").reportValidity();
+
+    if (!isV) {
+      e.preventDefault();
+    } else {
+      navigate("/4");
     }
   };
   function handleChange(event) {
@@ -346,7 +423,7 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op1"
-                        className="central"
+                        className="central" data-aware="ct"
                         name="Aware_of_listed_scehmes"
                         value="ZED"
                         checked={formD.Aware_of_listed_scehmes.Central_Govt.ZED}
@@ -363,7 +440,7 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op2"
-                        className="central"
+                        className="central" data-aware="ct"
                         name="Aware_of_listed_scehmes"
                         value="LEAN"
                         checked={
@@ -381,7 +458,7 @@ function FormPart3({ formD, setFormD }) {
                       </label>
                       <input
                         type="checkbox"
-                        className="central"
+                        className="central" data-aware="ct"
                         id="op3"
                         name="Aware_of_listed_scehmes"
                         value="TREDs"
@@ -400,7 +477,7 @@ function FormPart3({ formD, setFormD }) {
                       </label>
                       <input
                         type="checkbox"
-                        className="central"
+                        className="central" data-aware="ct"
                         id="op4"
                         name="Aware_of_listed_scehmes"
                         value="Design_scheme"
@@ -420,7 +497,7 @@ function FormPart3({ formD, setFormD }) {
                       </label>
                       <input
                         type="checkbox"
-                        className="central"
+                        className="central" data-aware="ct"
                         id="op5"
                         name="Aware_of_listed_scehmes"
                         value="Digital_Scheme"
@@ -440,7 +517,7 @@ function FormPart3({ formD, setFormD }) {
                       </label>
                       <input
                         type="checkbox"
-                        className="central"
+                        className="central" data-aware="ct"
                         id="op6"
                         name="Aware_of_listed_scehmes"
                         value="IPR_scheme"
@@ -460,7 +537,7 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op7"
-                        className="central"
+                        className="central" data-aware="ct"
                         name="Aware_of_listed_scehmes"
                         value="Samadhan"
                         checked={
@@ -479,7 +556,7 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op8"
-                        className="central"
+                        className="central" data-aware="ct"
                         name="Aware_of_listed_scehmes"
                         value="CGTMSE"
                         checked={
@@ -498,7 +575,7 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op9"
-                        className="central"
+                        className="central" data-aware="ct"
                         name="Aware_of_listed_scehmes"
                         value="MSME_Champions"
                         checked={
@@ -523,7 +600,7 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt1"
-                        className="state"
+                         className="state" data-avail="st"
                         name="Aware_of_listed_scehmes"
                         checked={formD.Aware_of_listed_scehmes.State_Govt.ODOP}
                         value="ODOP"
@@ -544,7 +621,7 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt2"
-                        className="state"
+                         className="state" data-avail="st"
                         name="Aware_of_listed_scehmes"
                         value="UP_MSME_Promotion_Policy"
                         checked={
@@ -568,7 +645,7 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt3"
-                        className="state"
+                         className="state" data-avail="st"
                         name="Aware_of_listed_scehmes"
                         value="Technical_upgradation"
                         checked={
@@ -592,7 +669,7 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt4"
-                        className="state"
+                         className="state" data-avail="st"
                         name="Aware_of_listed_scehmes"
                         value="UP_Chief_Minister_Youth_Self_Employment_Scheme"
                         checked={
@@ -615,7 +692,7 @@ function FormPart3({ formD, setFormD }) {
                       </label>
                       <input
                         type="checkbox"
-                        className="state"
+                         className="state" data-avail="st"
                         id="opt5"
                         name="Aware_of_listed_scehmes"
                         checked={
@@ -640,7 +717,7 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt6"
-                        className="state"
+                         className="state" data-avail="st"
                         checked={
                           formD.Aware_of_listed_scehmes.State_Govt.Others
                         }
@@ -699,7 +776,7 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op11"
-                        className="central"
+                        className="central" data-aware1="ct1"
                         checked={formD.Scheme_Like_to_avail.Central_Govt.ZED}
                         name="Scheme_Like_to_avail"
                         value="ZED"
@@ -716,7 +793,7 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op22"
-                        className="central"
+                        className="central" data-aware1="ct1"
                         checked={formD.Scheme_Like_to_avail.Central_Govt.LEAN}
                         name="Scheme_Like_to_avail"
                         value="LEAN"
@@ -733,7 +810,8 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op33"
-                        className="central"
+                        className="central" data-aware1="ct1"
+                        data-aware="ct"
                         checked={formD.Scheme_Like_to_avail.Central_Govt.TREDs}
                         name="Scheme_Like_to_avail"
                         value="TREDs"
@@ -750,7 +828,7 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op44"
-                        className="central"
+                        className="central" data-aware1="ct1"
                         checked={
                           formD.Scheme_Like_to_avail.Central_Govt.Design_scheme
                         }
@@ -771,7 +849,7 @@ function FormPart3({ formD, setFormD }) {
                         id="op55"
                         name="Scheme_Like_to_avail"
                         value="Digital_Scheme"
-                        className="central"
+                        className="central" data-aware1="ct1"
                         checked={
                           formD.Scheme_Like_to_avail.Central_Govt.Digital_Scheme
                         }
@@ -790,7 +868,7 @@ function FormPart3({ formD, setFormD }) {
                         id="op66"
                         name="Scheme_Like_to_avail"
                         value="IPR_scheme"
-                        className="central"
+                        className="central" data-aware1="ct1"
                         checked={
                           formD.Scheme_Like_to_avail.Central_Govt.IPR_scheme
                         }
@@ -807,7 +885,7 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op77"
-                        className="central"
+                        className="central" data-aware1="ct1"
                         checked={
                           formD.Scheme_Like_to_avail.Central_Govt.Samadhan
                         }
@@ -826,7 +904,7 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op88"
-                        className="central"
+                        className="central" data-aware1="ct1"
                         checked={formD.Scheme_Like_to_avail.Central_Govt.CGTMSE}
                         name="Scheme_Like_to_avail"
                         value="CGTMSE"
@@ -843,7 +921,7 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op99"
-                        className="central"
+                        className="central" data-aware1="ct1"
                         checked={
                           formD.Scheme_Like_to_avail.Central_Govt.MSME_Champions
                         }
@@ -867,7 +945,7 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt11"
-                        className="state"
+                         className="state" data-avail1="st"
                         checked={formD.Scheme_Like_to_avail.State_Govt.ODOP}
                         name="Scheme_Like_to_avail"
                         value="ODOP"
@@ -888,7 +966,7 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt22"
-                        className="state"
+                         className="state" data-avail1="st"
                         checked={
                           formD.Scheme_Like_to_avail.State_Govt
                             .UP_MSME_Promotion_Policy
@@ -912,7 +990,7 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt33"
-                        className="state"
+                         className="state" data-avail1="st"
                         checked={
                           formD.Scheme_Like_to_avail.State_Govt
                             .Technical_upgradation
@@ -935,7 +1013,7 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt44"
-                        className="state"
+                         className="state" data-avail1="st"
                         checked={
                           formD.Scheme_Like_to_avail.State_Govt
                             .UP_Chief_Minister_Youth_Self_Employment_Scheme
@@ -959,7 +1037,7 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt55"
-                        className="state"
+                         className="state" data-avail1="st"
                         checked={
                           formD.Scheme_Like_to_avail.State_Govt
                             .UP_Startup_Policy_2020
@@ -979,7 +1057,7 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt66"
-                        className="state"
+                         className="state" data-avail1="st"
                         checked={formD.Scheme_Like_to_avail.State_Govt.Others}
                         name="Scheme_Like_to_avail"
                         value="Others"

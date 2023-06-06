@@ -16,22 +16,23 @@ function FormPart4({ formD, setFormD }) {
   const validate = (e) => {
     const form = document.getElementById("formy");
 
-    const checkboxes = form.querySelectorAll(`input[type="checkbox"].a`);
-    var checked = false;
+    const checkboxes = form.querySelectorAll(`input[type="checkbox"].loan`);
+    console.log("these are",checkboxes)
+    var checked = false; 
 
     checkboxes.forEach(function (checkbox) {
       if (checkbox.checked) {
         checked = true;
       }
     });
-    const err = form.querySelector(`input[type="checkbox"].a`);
+    const err = form.querySelector(`input[type="checkbox"].loan`);
     // console.log(checked);
     var ischecked = err.reportValidity();
     if (!checked) {
       err.setCustomValidity("select any one option");
     } else {
       err.setCustomValidity("");
-      navigate("/3");
+      navigate("/5");
     }
 
     const isV = document.getElementById("formy").reportValidity();
@@ -39,7 +40,7 @@ function FormPart4({ formD, setFormD }) {
     if (!isV) {
       e.preventDefault();
     } else {
-      navigate("/3");
+      navigate("/5");
     }
   };
     function handleChange(event) {
@@ -195,6 +196,7 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="reason1"
                     name="Key_Reason_Preventing_loan"
+                    className="loan"
                     value="Lack_of_awareness_of_bank_processes_requirements"
                     checked={
                       formD.Key_Reason_Preventing_loan.Lack_of_awareness_of_bank_processes_requirements    
@@ -210,6 +212,7 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="reason2"
                     name="Key_Reason_Preventing_loan"
+                    className="loan"
                     value="High_Interest_Rate"
                     checked={
                       formD.Key_Reason_Preventing_loan.High_Interest_Rate
@@ -225,6 +228,7 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="reason3"
                     name="Key_Reason_Preventing_loan"
+                    className="loan"
                     value="Longer_Processing_time"
                     checked={
                       formD.Key_Reason_Preventing_loan.Longer_Processing_time
@@ -240,6 +244,7 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="reason4"
                     name="Key_Reason_Preventing_loan"
+                    className="loan"
                     value="Improper_documentation"
                     checked={
                       formD.Key_Reason_Preventing_loan.Improper_documentation
@@ -255,6 +260,7 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="reason5"
                     name="Key_Reason_Preventing_loan"
+                    className="loan"
                     value="No_nearby_bank_branches"
                     checked={
                       formD.Key_Reason_Preventing_loan.No_nearby_bank_branches
