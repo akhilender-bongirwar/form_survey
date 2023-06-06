@@ -32,6 +32,9 @@ function Table({ formD, setFormD }) {
   const [a4, setA4] = useState(null);
   const [a5, setA5] = useState(null);
   const [a6, setA6] = useState(null);
+  const [a7, setA7] = useState(null);
+  const [a8, setA8] = useState(null);
+  const [a9, setA9] = useState(null);
 
   const validate = (e) => {
     const isV = document.getElementById("formy").reportValidity();
@@ -219,7 +222,7 @@ function Table({ formD, setFormD }) {
           display: "flex",
           justifyContent: "center",
           overflowY: "scroll",
-  //        backgroundColor: "rgb(240 235 248 / 77%)",
+          //        backgroundColor: "rgb(240 235 248 / 77%)",
         }}
       >
         <div
@@ -237,7 +240,9 @@ function Table({ formD, setFormD }) {
           <table style={{ width: "100%", overflowWrap: "break-word" }}>
             <thead>
               <tr>
-              <th colSpan={2} style={{ fontFamily: "Spectral" }}>{"A. MSME Specific Questionairre"}</th>
+                <th colSpan={2} style={{ fontFamily: "Spectral" }}>
+                  {t("A. MSME Specific Questionairre")}
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -403,7 +408,6 @@ function Table({ formD, setFormD }) {
                     name="Website"
                     onChange={handleChange}
                     value={formD.Website}
-                    required="required"
                   />
                 </td>
               </tr>
@@ -478,7 +482,7 @@ function Table({ formD, setFormD }) {
               </tr>
               <tr>
                 <td colSpan={1}>
-                  <label htmlFor="UAM_UEM_Number">{t("Uam Uem Number")}</label>
+                  <label htmlFor="UAM_UEM_Number">{t("UAM /UEM Number")}</label>
                 </td>
                 <td colSpan={6}>
                   <input
@@ -512,7 +516,7 @@ function Table({ formD, setFormD }) {
               </tr>
               <tr>
                 <td colSpan={1}>
-                  <span> {t("Type_of_Business")} </span>
+                  <span> {t("Type of Business")} </span>
                 </td>
                 <td colSpan={6}>
                   <div className="radio_wrapper">
@@ -625,7 +629,7 @@ function Table({ formD, setFormD }) {
               </tr>
               <tr>
                 <td colSpan={1}>
-                  <span>{t("Ownership_Pattern")} </span>
+                  <span>{t("Ownership Pattern")} </span>
                 </td>
                 <td colSpan={6}>
                   <div className="radio_wrapper" id="ownership_pattern">
@@ -1345,6 +1349,7 @@ function Table({ formD, setFormD }) {
                         id="loan_availedyes"
                         value="YES"
                         required="required"
+                        onClick={() => setA7("show7")}
                         onChange={handleChange}
                         checked={formD.loan_availed == "YES"}
                       />
@@ -1356,6 +1361,7 @@ function Table({ formD, setFormD }) {
                         name="loan_availed"
                         id="loan_availedno"
                         value="NO"
+                        onClick={() => setA7(null)}
                         required="required"
                         onChange={handleChange}
                         checked={formD.loan_availed == "NO"}
@@ -1364,23 +1370,27 @@ function Table({ formD, setFormD }) {
                   </div>
                 </td>
               </tr>
-              <tr>
-                <td colSpan={1}>
-                  <label htmlFor="loan_specification">
-                    {t("Please specify, Term Loan / Working Capital / Both")}{" "}
-                  </label>
-                </td>
-                <td colSpan={6}>
-                  <input
-                    type="text"
-                    id="loan_specification"
-                    name="loan_specification"
-                    required="required"
-                    onChange={handleChange}
-                    value={formD.loan_specification}
-                  />
-                </td>
-              </tr>
+              {a7 != "show7" ? (
+                ""
+              ) : (
+                <tr>
+                  <td colSpan={1}>
+                    <label htmlFor="loan_specification">
+                      {t("Please specify, Term Loan / Working Capital / Both")}{" "}
+                    </label>
+                  </td>
+                  <td colSpan={6}>
+                    <input
+                      type="text"
+                      id="loan_specification"
+                      name="loan_specification"
+                      required="required"
+                      onChange={handleChange}
+                      value={formD.loan_specification}
+                    />
+                  </td>
+                </tr>
+              )}
               <tr>
                 <td colSpan={1}>
                   <span>
@@ -1393,7 +1403,7 @@ function Table({ formD, setFormD }) {
                       <label htmlFor="loan_adequateyes">{t("YES")}</label>
                       <input
                         type="radio"
-                        onClick={() => setA4("show4")}
+                        onClick={() => setA4(null)}
                         name="loan_adequate"
                         id="loan_adequateyes"
                         value="YES"
@@ -1406,7 +1416,7 @@ function Table({ formD, setFormD }) {
                       <label htmlFor="loan_adequateno">{t("NO")}</label>
                       <input
                         type="radio"
-                        onClick={() => setA4(null)}
+                        onClick={() => setA4("show4")}
                         name="loan_adequate"
                         id="loan_adequateno"
                         value="NO"
@@ -1436,7 +1446,7 @@ function Table({ formD, setFormD }) {
                         type="number"
                         id="loan_required"
                         name="loan_required"
-                        required="required"
+                        // required="required"
                         onChange={handleChange}
                         value={formD.loan_required}
                       />
@@ -1581,73 +1591,118 @@ function Table({ formD, setFormD }) {
                     {t("Have you taken any support from Govt agency / scheme")}{" "}
                   </span>
                 </td>
-                <td
-                  className="input_label_gapper"
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "10px",
-                  }}
-                  colSpan={6}
-                >
-                  <div>
-                    <label htmlFor="govt_scheme-1">{t("Scheme")}: </label>
-                    <input
-                      style={{ width: "95%" }}
-                      type="text"
-                      id="govt_scheme-1"
-                      name="govt_scheme"
-                      required="required"
-                      onChange={handleChange}
-                      value={formD.govt_scheme}
-                    />
-                  </div>
-                </td>
-                <td
-                  className="input_label_gapper"
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "10px",
-                  }}
-                  colSpan={6}
-                >
-                  <div>
-                    <label htmlFor="govt_program-1">{t("Program")}: </label>
-                    <input
-                      style={{ width: "95%" }}
-                      type="text"
-                      id="govt_program-1"
-                      name="govt_program"
-                      required="required"
-                      onChange={handleChange}
-                      value={formD.govt_program}
-                    />
-                  </div>
-                </td>
-                <td
-                  className="input_label_gapper"
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "10px",
-                  }}
-                  colSpan={6}
-                >
-                  <div>
-                    <label htmlFor="govt_organisation-1">
-                      {t(" Name of Organisation")}:{" "}
-                    </label>
-                    <input
-                      style={{ width: "95%" }}
-                      type="text"
-                      id="govt_organisation-1"
-                      name="govt_organisation"
-                      required="required"
-                      onChange={handleChange}
-                      value={formD.govt_organisation}
-                    />
-                  </div>
+                <td>
+                  <tr style={{display:"flex"}} colSpan={6}>
+                    <div className="radio_wrapper">
+                      <div>
+                        <label htmlFor="support_from_agencyyes">{t("YES")}</label>
+                        <input
+                          type="radio"
+                          name="support_from_agency"
+                          id="support_from_agencyyes"
+                          onClick={() => {
+                            setA8("show8");
+                          }}
+                          value="YES"
+                          required="required"
+                          onChange={handleChange}
+                          checked={formD.support_from_agency == "YES"}
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="support_from_agencyno">{t("NO")}</label>
+                        <input
+                          type="radio"
+                          name="support_from_agency"
+                          id="support_from_agencyno"
+                          value="NO"
+                          onClick={() => {
+                            setA8(null);
+                          }}
+                          required="required"
+                          onChange={handleChange}
+                          checked={formD.support_from_agency == "NO"}
+                        />
+                      </div>
+                    </div>
+                  </tr>
+                  {a8 != "show8" ? (
+                    ""
+                  ) : (
+                    <tr
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "3px",
+                      }}
+                    >
+                      <td
+                        className="input_label_gapper"
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: "10px",
+                          border:"none",
+                        }}
+                        colSpan={6}
+                      >
+                          <label htmlFor="govt_scheme-1">{t("Scheme")}: </label>
+                          <input
+                            style={{ width: "95%" }}
+                            type="text"
+                            id="govt_scheme-1"
+                            name="govt_scheme"
+                            required="required"
+                            onChange={handleChange}
+                            value={formD.govt_scheme}
+                          />
+                      </td>
+                      <td
+                        className="input_label_gapper"
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: "10px",
+                          border:"none",
+                        }}
+                        colSpan={6}
+                      >
+                          <label htmlFor="govt_program-1">{t("Program")}: </label>
+                          <input
+                            style={{ width: "95%" }}
+                            type="text"
+                            id="govt_program-1"
+                            name="govt_program"
+                            required="required"
+                            onChange={handleChange}
+                            value={formD.govt_program}
+                          />
+                      </td>
+                      <td
+                        className="input_label_gapper"
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: "10px",
+                          border:"none",
+                        }}
+                        colSpan={6}
+                      >
+                          <label htmlFor="govt_organisation-1">
+                            {t(" Name of Organisation")}:{" "}
+                          </label>
+                          <input
+                            style={{ width: "95%" }}
+                            type="text"
+                            id="govt_organisation-1"
+                            name="govt_organisation"
+                            required="required"
+                            onChange={handleChange}
+                            value={formD.govt_organisation}
+                          />
+                      </td>
+                    </tr>
+                  )}
                 </td>
               </tr>
               <tr>
@@ -1789,7 +1844,7 @@ function Table({ formD, setFormD }) {
                     </div>
                     <div>
                       <label htmlFor="have_CA_audited_financial_statementno">
-                        NO
+                        {t("NO")}
                       </label>
                       <input
                         type="radio"
@@ -1834,7 +1889,7 @@ function Table({ formD, setFormD }) {
                     type="number"
                     id="Investment_plant_machinery"
                     name="Investment_plant_machinery"
-                    required="required"
+                    // required="required"
                     onChange={handleChange}
                     value={formD.Investment_plant_machinery}
                   />
@@ -1851,7 +1906,7 @@ function Table({ formD, setFormD }) {
                     type="number"
                     id="Investment_IT_Infrastructure"
                     name="Investment_IT_Infrastructure"
-                    required="required"
+                    // required="required"
                     onChange={handleChange}
                     value={formD.Investment_IT_Infrastructure}
                   />
@@ -1869,6 +1924,7 @@ function Table({ formD, setFormD }) {
                         type="radio"
                         name="You_Export"
                         id="You_Exportyes"
+                        onClick={()=>{setA9("show9")}}
                         value="YES"
                         required="required"
                         onChange={handleChange}
@@ -1882,6 +1938,7 @@ function Table({ formD, setFormD }) {
                         name="You_Export"
                         id="You_Exportno"
                         value="NO"
+                        onClick={()=>{setA9(null)}}
                         required="required"
                         onChange={handleChange}
                         checked={formD.You_Export == "NO"}
@@ -1890,7 +1947,7 @@ function Table({ formD, setFormD }) {
                   </div>
                 </td>
               </tr>
-              <tr>
+              {a9!="show9"?(""):(<tr>
                 <td colSpan={1}>
                   <label htmlFor="Export_Value">
                     {t("Export value (avg in last 3 yrs)")}{" "}
@@ -1906,7 +1963,7 @@ function Table({ formD, setFormD }) {
                     value={formD.Export_Value}
                   />
                 </td>
-              </tr>
+              </tr>)}
               <tr>
                 <td colSpan={1}>
                   <label htmlFor="Overall_Annual_production">
@@ -1918,7 +1975,7 @@ function Table({ formD, setFormD }) {
                     type="number"
                     id="Overall_Annual_production"
                     name="Overall_Annual_production"
-                    required="required"
+                    //required="required"
                     onChange={handleChange}
                     value={formD.Overall_Annual_production}
                   />
@@ -2015,7 +2072,7 @@ function Table({ formD, setFormD }) {
                     </div>
                     <div>
                       <label htmlFor="Effluent_Treatment_Constraintno">
-                        NO
+                        {t("NO")}
                       </label>
                       <input
                         type="radio"
@@ -2078,7 +2135,7 @@ function Table({ formD, setFormD }) {
                     type="email"
                     id="Email"
                     name="Email"
-                    required="required"
+                    //required="required"
                     onChange={handleChange}
                     value={formD.Email}
                   />
@@ -2103,13 +2160,19 @@ function Table({ formD, setFormD }) {
           </table>
         </div>
       </div>
-      <div style={{ display:"flex",justifyContent:"space-between",margin:"0 15px",fontSize:"large"}}>
-
-          <NavLink to="/" className="arrow_notation">
-            Prev
-          </NavLink>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          margin: "0 15px",
+          fontSize: "large",
+        }}
+      >
+        <NavLink to="/" className="arrow_notation">
+          {t("Prev")}
+        </NavLink>
         <NavLink to="/2" className="arrow_notation" onClick={validate}>
-          Next
+          {t("Next")}
         </NavLink>
       </div>
       {/* <FormPart2 />

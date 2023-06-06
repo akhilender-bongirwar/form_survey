@@ -460,7 +460,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                         <td colSpan={6}>
                           <div className="radio_wrapper">
                             <div>
-                              <label htmlFor="yes_material">Yes</label>
+                              <label htmlFor="yes_material">{t("YES")}</label>
                               <input
                                 type="radio"
                                 name="if_Raw_Materials_available"
@@ -476,7 +476,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               />
                             </div>
                             <div>
-                              <label htmlFor="no_material">No</label>
+                              <label htmlFor="no_material">{t("NO")}</label>
                               <input
                                 type="radio"
                                 name="if_Raw_Materials_available"
@@ -530,7 +530,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                         <td colSpan={6}>
                           <div className="radio_wrapper">
                             <div>
-                              <label htmlFor="yes_material2">Yes</label>
+                              <label htmlFor="yes_material2">{t("YES")}</label>
                               <input
                                 type="radio"
                                 name="green_tech"
@@ -541,7 +541,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               />
                             </div>
                             <div>
-                              <label htmlFor="no_material2">No</label>
+                              <label htmlFor="no_material2">{t("NO")}</label>
                               <input
                                 type="radio"
                                 name="green_tech"
@@ -567,7 +567,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                         <td colSpan={6}>
                           <div className="radio_wrapper">
                             <div>
-                              <label htmlFor="yes_material3">Yes</label>
+                              <label htmlFor="yes_material3">{t("YES")}</label>
                               <input
                                 type="radio"
                                 name="environment_clearence"
@@ -578,7 +578,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               />
                             </div>
                             <div>
-                              <label htmlFor="no_material3">No</label>
+                              <label htmlFor="no_material3">{t("NO")}</label>
                               <input
                                 type="radio"
                                 name="environment_clearence"
@@ -787,7 +787,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                         <td colSpan={6}>
                           <div className="radio_wrapper">
                             <div>
-                              <label htmlFor="yes_material23">Yes</label>
+                              <label htmlFor="yes_material23">{t("YES")}</label>
                               <input
                                 type="radio"
                                 id="yes_material23"
@@ -799,7 +799,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               />
                             </div>
                             <div>
-                              <label htmlFor="no_material23">No</label>
+                              <label htmlFor="no_material23">{t("NO")}</label>
                               <input
                                 type="radio"
                                 name="have_product_brand_name"
@@ -986,7 +986,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             style={{ alignSelf: "center" }}
                           >
                             <div>
-                              <label htmlFor="yesx_material2">Yes</label>
+                              <label htmlFor="yesx_material2">{t("YES")}</label>
                               <input
                                 type="radio"
                                 name="involved_in_marketing"
@@ -1000,7 +1000,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               />
                             </div>
                             <div>
-                              <label htmlFor="nox_material2">No</label>
+                              <label htmlFor="nox_material2">{t("NO")}</label>
                               <input
                                 type="radio"
                                 name="involved_in_marketing"
@@ -1157,7 +1157,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                         <td colSpan={6}>
                           <div className="radio_wrapper">
                             <div>
-                              <label htmlFor="yes_material7">Yes</label>
+                              <label htmlFor="yes_material7">{t("YES")}</label>
                               <input
                                 type="radio"
                                 name="Quality_Testing_lab_available"
@@ -1170,7 +1170,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               />
                             </div>
                             <div>
-                              <label htmlFor="no_material7">No</label>
+                              <label htmlFor="no_material7">{t("NO")}</label>
                               <input
                                 type="radio"
                                 name="Quality_Testing_lab_available"
@@ -1199,7 +1199,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                         <td colSpan={6}>
                           <div className="radio_wrapper">
                             <div>
-                              <label htmlFor="yes_material120">Yes</label>
+                              <label htmlFor="yes_material120">{t("YES")}</label>
                               <input
                                 type="radio"
                                 name="labour_and_training"
@@ -1210,7 +1210,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               />
                             </div>
                             <div>
-                              <label htmlFor="no_material120">No</label>
+                              <label htmlFor="no_material120">{t("NO")}</label>
                               <input
                                 type="radio"
                                 name="labour_and_training"
@@ -1233,7 +1233,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                         <td colSpan={6}>
                           <div className="radio_wrapper">
                             <div>
-                              <label htmlFor="yes_material90">Yes</label>
+                              <label htmlFor="yes_material90">{t("YES")}</label>
                               <input
                                 type="radio"
                                 name="skilled_labour_is_required"
@@ -1246,7 +1246,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               />
                             </div>
                             <div>
-                              <label htmlFor="no_material90">No</label>
+                              <label htmlFor="no_material90">{t("NO")}</label>
                               <input
                                 type="radio"
                                 name="skilled_labour_is_required"
@@ -1286,6 +1286,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                   <input
                     type="text"
                     name="Nature_of_Services_Offered_a"
+                    required="required"
                     onChange={handleChange}
                     value={
                       formD.Nature_of_Services_Offered
