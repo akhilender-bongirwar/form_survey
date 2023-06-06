@@ -166,13 +166,13 @@ function FormPart3({ formD, setFormD }) {
           <tr>
             <td colSpan={1}>
               <span>
-                {t("Are you aware about the current government programs benefitting MSME")}s{" "}
+                {t("Are you aware about the current government programs benefitting MSMEs")}{" "}
               </span>
             </td>
             <td colSpan={6}>
               <div className="radio_wrapper">
                 <div>
-                  <label htmlFor="YES">YES</label>
+                  <label htmlFor="YES">{t("YES")}</label>
                   <input
                     type="radio"
                     name="aware_of_govt_policy"
@@ -184,7 +184,7 @@ function FormPart3({ formD, setFormD }) {
                   />
                 </div>
                 <div>
-                  <label htmlFor="NO">NO</label>
+                  <label htmlFor="NO">{t("NO")}</label>
                   <input
                     type="radio"
                     name="aware_of_govt_policy"
@@ -1069,10 +1069,10 @@ function FormPart3({ formD, setFormD }) {
           style={{ display: "flex", justifyContent: "space-between", margin: "0 15px", fontSize: "large" }}
         >
           <NavLink to="/2" className="arrow_notation">
-            Prev
+            {t("Prev")}
           </NavLink>
           <NavLink to="/4" className="arrow_notation" onClick={validate}>
-            Next
+            {t("Next")}
           </NavLink>
         </div>
       </div>
