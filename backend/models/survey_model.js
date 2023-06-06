@@ -791,6 +791,30 @@ const surveyData = new Schema({
       required: true,
     },
   },
+  Requirement_of_Training: {
+    type: String,
+    enum: ["YES", "NO"],
+  },
+  ESDP_beneficiaries: {
+    type: String,
+    required: true,
+  },
+  Contact_Member_details_name: {
+    type: String,
+    required: true,
+  },
+  Contact_Member_details_contact: {
+    type: String,
+    required: true,
+  },
+  Contact_Member_details_designation: {
+    type: String,
+    required: true,
+  },
+  Contact_Member_details_email: {
+    type: String,
+    required: true,
+  },
 });
 
 const SurveyDatamodel = mongoose.model("SurveyData", surveyData);
