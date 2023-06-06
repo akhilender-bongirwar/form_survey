@@ -14,27 +14,6 @@ function FormPart4({ formD, setFormD }) {
   //   }
   // };
   const validate = (e) => {
-    const form = document.getElementById("formy");
-
-    const checkboxes = form.querySelectorAll(`input[type="checkbox"].loan`);
-    console.log("these are",checkboxes)
-    var checked = false; 
-
-    checkboxes.forEach(function (checkbox) {
-      if (checkbox.checked) {
-        checked = true;
-      }
-    });
-    const err = form.querySelector(`input[type="checkbox"].loan`);
-    // console.log(checked);
-    var ischecked = err.reportValidity();
-    if (!checked) {
-      err.setCustomValidity("select any one option");
-    } else {
-      err.setCustomValidity("");
-      navigate("/5");
-    }
-
     const isV = document.getElementById("formy").reportValidity();
 
     if (!isV) {
@@ -196,7 +175,6 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="reason1"
                     name="Key_Reason_Preventing_loan"
-                    className="loan"
                     value="Lack_of_awareness_of_bank_processes_requirements"
                     checked={
                       formD.Key_Reason_Preventing_loan.Lack_of_awareness_of_bank_processes_requirements    
@@ -212,7 +190,6 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="reason2"
                     name="Key_Reason_Preventing_loan"
-                    className="loan"
                     value="High_Interest_Rate"
                     checked={
                       formD.Key_Reason_Preventing_loan.High_Interest_Rate
@@ -228,7 +205,6 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="reason3"
                     name="Key_Reason_Preventing_loan"
-                    className="loan"
                     value="Longer_Processing_time"
                     checked={
                       formD.Key_Reason_Preventing_loan.Longer_Processing_time
@@ -244,7 +220,6 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="reason4"
                     name="Key_Reason_Preventing_loan"
-                    className="loan"
                     value="Improper_documentation"
                     checked={
                       formD.Key_Reason_Preventing_loan.Improper_documentation
@@ -260,7 +235,6 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="reason5"
                     name="Key_Reason_Preventing_loan"
-                    className="loan"
                     value="No_nearby_bank_branches"
                     checked={
                       formD.Key_Reason_Preventing_loan.No_nearby_bank_branches
@@ -288,7 +262,7 @@ function FormPart4({ formD, setFormD }) {
                   2.{t("What is major source of credit demand (Raw Material/ Salaries / Repair & maintenance / Long cash cycle / Demand due to peak season/ duties and taxes/ Others )")} . . . . . . .
                 </label>
               </td>
-              <td colSpan={5}>
+              {/* <td colSpan={5}>
                 <input
                   type="text"
                   id="secQuestion"
@@ -297,6 +271,119 @@ function FormPart4({ formD, setFormD }) {
                   onChange={handleChange}
                   value={formD.source_of_credit_form}
                 />
+              </td> */}
+              <td
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+                className="input_label_gapper"
+              >
+                <div>
+                  <label htmlFor="r1" style={{ padding: "0.5em" }}>
+                    a.{"  "}{t("Raw Materials")}
+                  </label>
+                  <input
+                    type="checkbox"
+                    id="r1"
+                    name="Major_source_credit_demand"
+                    value="Raw_Materials"
+                    checked={
+                      formD.Key_Reason_Preventing_loan.Raw_Material    
+                    }
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="r2" style={{ padding: "0.5em" }}>
+                    b.{"  "}{t("Salaries")}{" "}
+                  </label>
+                  <input
+                    type="checkbox"
+                    id="r2"
+                    name="Major_source_credit_demand"
+                    value="Salaries"
+                    checked={
+                      formD.Key_Reason_Preventing_loan.Salaries
+                    }
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="r3" style={{ padding: "0.5em" }}>
+                    c.{"  "}{t("Repair and Maintenance")}{" "}
+                  </label>
+                  <input
+                    type="checkbox"
+                    id="r3"
+                    name="Major_source_credit_demand"
+                    value="Repair_and_Maintenance"
+                    checked={
+                      formD.Key_Reason_Preventing_loan.Repair_and_Maintenance
+                    }
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="r4" style={{ padding: "0.5em" }}>
+                    d.{"  "}{t("Long cash cycle")}{" "}
+                  </label>
+                  <input
+                    type="checkbox"
+                    id="r4"
+                    name="Major_source_credit_demand"
+                    value="Long_cash_cycle"
+                    checked={
+                      formD.Key_Reason_Preventing_loan.Long_cash_cycle
+                    }
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="r5" style={{ padding: "0.5em" }}>
+                    e.{"  "}{t("Demand due to peak season")}{" "}
+                  </label>
+                  <input
+                    type="checkbox"
+                    id="r5"
+                    name="Major_source_credit_demand"
+                    value="Demand_due_to_peak_season"
+                    checked={
+                      formD.Key_Reason_Preventing_loan.Demand_due_to_peak_season
+                    }
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="r6" style={{ padding: "0.5em" }}>
+                    f.{"  "}{t("Duties and taxes")}{" "}
+                  </label>
+                  <input
+                    type="checkbox"
+                    id="r6"
+                    name="Major_source_credit_demand"
+                    value="Duties_and_taxes"
+                    checked={
+                      formD.Key_Reason_Preventing_loan.Duties_and_taxes
+                    }
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="r7" style={{ padding: "0.5em" }}>
+                    {"  "}{t("Others")}{" "}
+                  </label>
+                  <input
+                    id="r7"
+                    name="Major_source_credit_demand"
+                    type="text"
+                    onChange={handleChange}
+                    value={formD.Key_Reason_Preventing_loan.other}
+                  />
+                </div>
+                
+                
               </td>
             </tr>
             <tr>
