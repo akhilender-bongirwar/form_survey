@@ -61,6 +61,7 @@ function App() {
       internationally: false,
       other: "",
     },
+    employee_unit:"NUMBER",
     full_time_Emoployee: "",
     part_time_Emoployee: "",
     Permanent_Emoployee: "",
@@ -185,6 +186,7 @@ function App() {
         Design_scheme: false,
         TREDs: false,
         LEAN: false,
+        Not_Aware:false,
       },
       State_Govt: {
         ODOP: false,
@@ -193,6 +195,7 @@ function App() {
         UP_Chief_Minister_Youth_Self_Employment_Scheme: false,
         UP_Startup_Policy_2020: false,
         Others: false,
+        Not_Aware:false,
       },
     },
     Remarks: "",
@@ -229,7 +232,15 @@ function App() {
       No_nearby_bank_branches: false,
       other: "",
     },
-    source_of_credit_form: "",
+    Major_source_credit_demand: {
+      Raw_Materials: false,
+      Salaries: false,
+      Repair_and_Maintenance: false,
+      Long_cash_cycle: false,
+      Demand_due_to_peak_season: false,
+      Duties_and_taxes:false,
+      other: "",
+    },
     //added
     applied_loan_outcome: {
       radio_button: "",
@@ -251,6 +262,7 @@ function App() {
       Currently_owned_3: "",
       To_be_Required_3: "",
     },
+    support_from_agency:"",
     Certification_required: "",
     laboratory_requirement: "",
     Requirement_of_Soft_Interventions: {
@@ -264,6 +276,13 @@ function App() {
       Design_and_product_development: "",
       Promotion_Campaign: "",
     },
+    //added
+    Requirement_of_Training:"",
+    ESDP_beneficiaries:"",
+    Contact_Member_details_name:"",
+    Contact_Member_details_contact:"",
+    Contact_Member_details_designation:"",
+    Contact_Member_details_email:"",
   });
   const { t } = useTranslation();
 
@@ -277,14 +296,14 @@ function App() {
           console.log("click");
         }}
       >
-        hindi
+        Hindi
       </button>
       <button
         className="arrow_notation"
         type="button"
         onClick={() => changeLanguage("en")}
       >
-        english
+        English
       </button>
       <Router>
         <Routes>

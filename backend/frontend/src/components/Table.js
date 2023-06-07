@@ -22,6 +22,7 @@ import FormPart4 from "./FormPart4";
 
 import FormPart5 from "./FormPart5";
 import FormPart6 from "./FormPart6";
+import { ToastContainer, toast } from "react-toastify";
 
 function Table({ formD, setFormD }) {
   const navigate = useNavigate();
@@ -36,10 +37,34 @@ function Table({ formD, setFormD }) {
   const [a7, setA7] = useState(null);
   const [a8, setA8] = useState(null);
   const [a9, setA9] = useState(null);
+  const [an, setAn] = useState("NUMBER");
 
   const validate = (e) => {
     const isV = document.getElementById("formy").reportValidity();
-    if (!isV) {
+    const check = document.querySelectorAll(".x");
+    const check1 = document.querySelector(".x");
+    var chk = false;
+    var chk2 = false;
+    check.forEach((elem) => {
+      if (elem.type == "checkbox") {
+        if (elem.checked) {
+          chk = true;
+        }
+      } else if (elem.type == "text") {
+        if (elem.value != "") {
+          chk2 = true;
+        }
+      }
+    });
+    // console.log(chk, chk2);
+    if (!chk || !chk2) {
+      toast.error("choose one of the option or fill in the text-field");
+      check1.setCustomValidity("enter here or fill the text");
+    } else {
+      check1.setCustomValidity("");
+    }
+
+    if (!isV && (!chk || !chk2)) {
       e.preventDefault();
     } else {
       navigate("/2");
@@ -226,6 +251,7 @@ function Table({ formD, setFormD }) {
                 //  backgroundColor: "rgb(240 235 248 / 77%)",
         }}
       >
+        <ToastContainer />
         <div
           style={{
             width: "95vw",
@@ -914,7 +940,7 @@ function Table({ formD, setFormD }) {
                   <span>
                     {" "}
                     {t(
-                      "Where all do you sell your produce/products majorly?  Please tick (✓) all the relevant options"
+                      "For Manufacturing :- Where all do you sell your produce/products majorly?  Please tick (✓) all the relevant options"
                     )}{" "}
                   </span>
                 </td>
@@ -1031,6 +1057,7 @@ function Table({ formD, setFormD }) {
                         value="Local_Market"
                         checked={formD.service_industry.Local_Market}
                         onChange={handleChange}
+                        className="x"
                       />
                     </div>
 
@@ -1045,6 +1072,7 @@ function Table({ formD, setFormD }) {
                         value="Government"
                         checked={formD.service_industry.Government}
                         onChange={handleChange}
+                        className="x"
                       />
                     </div>
 
@@ -1057,6 +1085,7 @@ function Table({ formD, setFormD }) {
                         value="online"
                         checked={formD.service_industry.online}
                         onChange={handleChange}
+                        className="x"
                       />
                     </div>
 
@@ -1071,6 +1100,7 @@ function Table({ formD, setFormD }) {
                         value="Other_states"
                         checked={formD.service_industry.Other_states}
                         onChange={handleChange}
+                        className="x"
                       />
                     </div>
                     <div>
@@ -1082,6 +1112,7 @@ function Table({ formD, setFormD }) {
                         value="internationally"
                         checked={formD.service_industry.internationally}
                         onChange={handleChange}
+                        className="x"
                       />
                     </div>
                     <div
@@ -1104,6 +1135,7 @@ function Table({ formD, setFormD }) {
                         onChange={handleChange}
                         value={formD.service_industry.other}
                         style={{ width: "85%" }}
+                        className="x"
                       />
                     </div>
                   </div>
@@ -1112,7 +1144,37 @@ function Table({ formD, setFormD }) {
               <tr>
                 <td colSpan={1}>
                   <span>{t("No of Employees ( or % )")}</span>
+                  <div className="radio_wrapper">
+                    <div>
+                      <label htmlFor="employee_unityes">{t("Number")}</label>
+                      <input
+                        type="radio"
+                        onClick={() => setAn("NUMBER")}
+                        name="employee_unit"
+                        id="employee_unityes"
+                        value="NUMBER"
+                        required="required"
+                        onChange={handleChange}
+                        checked={formD.employee_unit == "NUMBER"}
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="employee_unitno">{t("Percentage")}</label>
+                      <input
+                        type="radio"
+                        onClick={() => setAn("Percentage")}
+                        name="employee_unit"
+                        id="employee_unitno"
+                        value="Percentage"
+                        required="required"
+                        onChange={handleChange}
+                        checked={formD.employee_unit == "Percentage"}
+                      />
+                    </div>
+                  </div>
                 </td>
+                {an=="Percentage"?
+                (<>
                 <td
                   className="input_label_gapper"
                   style={{
@@ -1235,6 +1297,120 @@ function Table({ formD, setFormD }) {
                     />
                   </div>
                 </td>
+                </>)
+                :
+                (<>
+                <td
+                  className="input_label_gapper"
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "10px",
+                  }}
+                  colSpan={6}
+                >
+                  <div>
+                    <label htmlFor="full_time_Emoployee-1">
+                      {t("Full time")}:{" "}
+                    </label>
+                    <input
+                      style={{ width: "95%" }}
+                      type="number"
+                      id="full_time_Emoployee-1"
+                      name="full_time_Emoployee"
+                      required="required"
+                      onChange={handleChange}
+                      value={formD.full_time_Emoployee}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="part_time_Emoployee-2">
+                      {t("Part time")}:{" "}
+                    </label>
+                    <input
+                      style={{ width: "95%" }}
+                      type="number"
+                      id="part_time_Emoployee-2"
+                      name="part_time_Emoployee"
+                      required="required"
+                      onChange={handleChange}
+                      value={formD.part_time_Emoployee}
+                    />
+                  </div>
+                </td>
+                <td
+                  className="input_label_gapper"
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "10px",
+                  }}
+                  colSpan={6}
+                >
+                  <div>
+                    <label htmlFor="Permanent_Emoployee-1">
+                      {t("Permanent")}:{" "}
+                    </label>
+                    <input
+                      style={{ width: "95%" }}
+                      type="number"
+                      id="Permanent_Emoployee-1"
+                      name="Permanent_Emoployee"
+                      required="required"
+                      onChange={handleChange}
+                      value={formD.Permanent_Emoployee}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="Contractual_Emoployee-2">
+                      {t("Contractual")}:{" "}
+                    </label>
+                    <input
+                      style={{ width: "95%" }}
+                      type="number"
+                      id="Contractual_Emoployee-2"
+                      name="Contractual_Emoployee"
+                      required="required"
+                      onChange={handleChange}
+                      value={formD.Contractual_Emoployee}
+                    />
+                  </div>
+                </td>
+                <td
+                  className="input_label_gapper"
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "10px",
+                  }}
+                  colSpan={6}
+                >
+                  <div>
+                    <label htmlFor="male_employee-1">{t("Male")}: </label>
+                    <input
+                      style={{ width: "95%" }}
+                      type="number"
+                      id="male_employee-1"
+                      name="male_employee"
+                      required="required"
+                      onChange={handleChange}
+                      value={formD.male_employee}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="female_employee-2">{t("Female")}: </label>
+                    <input
+                      style={{ width: "95%" }}
+                      type="number"
+                      id="female_employee-2"
+                      required="required"
+                      name="female_employee"
+                      onChange={handleChange}
+                      value={formD.female_employee}
+                    />
+                  </div>
+                </td>
+                </>)}
               </tr>
               <tr>
                 <td colSpan={1}>
@@ -1593,10 +1769,12 @@ function Table({ formD, setFormD }) {
                   </span>
                 </td>
                 <td>
-                  <tr style={{display:"flex"}} colSpan={6}>
+                  <tr style={{ display: "flex" }} colSpan={6}>
                     <div className="radio_wrapper">
                       <div>
-                        <label htmlFor="support_from_agencyyes">{t("YES")}</label>
+                        <label htmlFor="support_from_agencyyes">
+                          {t("YES")}
+                        </label>
                         <input
                           type="radio"
                           name="support_from_agency"
@@ -1643,20 +1821,20 @@ function Table({ formD, setFormD }) {
                           display: "flex",
                           flexDirection: "column",
                           gap: "10px",
-                          border:"none",
+                          border: "none",
                         }}
                         colSpan={6}
                       >
-                          <label htmlFor="govt_scheme-1">{t("Scheme")}: </label>
-                          <input
-                            style={{ width: "95%" }}
-                            type="text"
-                            id="govt_scheme-1"
-                            name="govt_scheme"
-                            required="required"
-                            onChange={handleChange}
-                            value={formD.govt_scheme}
-                          />
+                        <label htmlFor="govt_scheme-1">{t("Scheme")}: </label>
+                        <input
+                          style={{ width: "95%" }}
+                          type="text"
+                          id="govt_scheme-1"
+                          name="govt_scheme"
+                          required="required"
+                          onChange={handleChange}
+                          value={formD.govt_scheme}
+                        />
                       </td>
                       <td
                         className="input_label_gapper"
@@ -1664,20 +1842,20 @@ function Table({ formD, setFormD }) {
                           display: "flex",
                           flexDirection: "column",
                           gap: "10px",
-                          border:"none",
+                          border: "none",
                         }}
                         colSpan={6}
                       >
-                          <label htmlFor="govt_program-1">{t("Program")}: </label>
-                          <input
-                            style={{ width: "95%" }}
-                            type="text"
-                            id="govt_program-1"
-                            name="govt_program"
-                            required="required"
-                            onChange={handleChange}
-                            value={formD.govt_program}
-                          />
+                        <label htmlFor="govt_program-1">{t("Program")}: </label>
+                        <input
+                          style={{ width: "95%" }}
+                          type="text"
+                          id="govt_program-1"
+                          name="govt_program"
+                          required="required"
+                          onChange={handleChange}
+                          value={formD.govt_program}
+                        />
                       </td>
                       <td
                         className="input_label_gapper"
@@ -1685,22 +1863,22 @@ function Table({ formD, setFormD }) {
                           display: "flex",
                           flexDirection: "column",
                           gap: "10px",
-                          border:"none",
+                          border: "none",
                         }}
                         colSpan={6}
                       >
-                          <label htmlFor="govt_organisation-1">
-                            {t(" Name of Organisation")}:{" "}
-                          </label>
-                          <input
-                            style={{ width: "95%" }}
-                            type="text"
-                            id="govt_organisation-1"
-                            name="govt_organisation"
-                            required="required"
-                            onChange={handleChange}
-                            value={formD.govt_organisation}
-                          />
+                        <label htmlFor="govt_organisation-1">
+                          {t(" Name of Organisation")}:{" "}
+                        </label>
+                        <input
+                          style={{ width: "95%" }}
+                          type="text"
+                          id="govt_organisation-1"
+                          name="govt_organisation"
+                          required="required"
+                          onChange={handleChange}
+                          value={formD.govt_organisation}
+                        />
                       </td>
                     </tr>
                   )}
@@ -1865,7 +2043,7 @@ function Table({ formD, setFormD }) {
               <tr>
                 <td colSpan={1}>
                   <label htmlFor="Annual_Turnover">
-                    {t("Annual Turnover (Avg last 3 years)")}
+                    {t("Annual Turnover (Avg last 3 years) (in Rs.)")}
                   </label>
                 </td>
                 <td colSpan={6}>
@@ -1925,7 +2103,9 @@ function Table({ formD, setFormD }) {
                         type="radio"
                         name="You_Export"
                         id="You_Exportyes"
-                        onClick={()=>{setA9("show9")}}
+                        onClick={() => {
+                          setA9("show9");
+                        }}
                         value="YES"
                         required="required"
                         onChange={handleChange}
@@ -1939,7 +2119,9 @@ function Table({ formD, setFormD }) {
                         name="You_Export"
                         id="You_Exportno"
                         value="NO"
-                        onClick={()=>{setA9(null)}}
+                        onClick={() => {
+                          setA9(null);
+                        }}
                         required="required"
                         onChange={handleChange}
                         checked={formD.You_Export == "NO"}
@@ -1948,23 +2130,27 @@ function Table({ formD, setFormD }) {
                   </div>
                 </td>
               </tr>
-              {a9!="show9"?(""):(<tr>
-                <td colSpan={1}>
-                  <label htmlFor="Export_Value">
-                    {t("Export value (avg in last 3 yrs)")}{" "}
-                  </label>
-                </td>
-                <td colSpan={6}>
-                  <input
-                    type="number"
-                    id="Export_Value"
-                    name="Export_Value"
-                    required="required"
-                    onChange={handleChange}
-                    value={formD.Export_Value}
-                  />
-                </td>
-              </tr>)}
+              {a9 != "show9" ? (
+                ""
+              ) : (
+                <tr>
+                  <td colSpan={1}>
+                    <label htmlFor="Export_Value">
+                      {t("Export value (avg in last 3 yrs)")}{" "}
+                    </label>
+                  </td>
+                  <td colSpan={6}>
+                    <input
+                      type="number"
+                      id="Export_Value"
+                      name="Export_Value"
+                      required="required"
+                      onChange={handleChange}
+                      value={formD.Export_Value}
+                    />
+                  </td>
+                </tr>
+              )}
               <tr>
                 <td colSpan={1}>
                   <label htmlFor="Overall_Annual_production">
@@ -2169,6 +2355,7 @@ function Table({ formD, setFormD }) {
           fontSize: "large",
         }}
       >
+        {/* <ToastContainer /> */}
         <NavLink to="/" className="arrow_notation">
           {t("Prev")}
         </NavLink>

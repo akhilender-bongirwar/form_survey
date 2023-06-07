@@ -157,6 +157,10 @@ const surveyData = new Schema({
       type: String,
     },
   },
+  employee_unit:{
+    type: Number,
+    required: true,
+  },
   full_time_Emoployee: {
     type: Number,
     required: true,
@@ -309,7 +313,6 @@ const surveyData = new Schema({
   },
   Email: {
     type: String,
-    required: true,
   },
   Phone_Number: {
     type: Number,
@@ -564,6 +567,10 @@ const surveyData = new Schema({
         type: Boolean,
         required: true,
       },
+      Not_Aware: {
+        type: Boolean,
+        required: true,
+      },
     },
     State_Govt: {
       ODOP: {
@@ -587,6 +594,10 @@ const surveyData = new Schema({
         required: true,
       },
       Others: {
+        type: Boolean,
+        required: true,
+      },
+      Not_Aware: {
         type: Boolean,
         required: true,
       },
@@ -696,10 +707,39 @@ const surveyData = new Schema({
       type: String,
     },
   },
-  source_of_credit_form: {
-    type: String,
-    required: true,
+  Major_source_credit_demand: {
+    Raw_Materials: {
+      type: Boolean,
+      required: true,
+    },
+    Salaries: {
+      type: Boolean,
+      required: true,
+    },
+    Repair_and_Maintenance: {
+      type: Boolean,
+      required: true,
+    },
+    Long_cash_cycle: {
+      type: Boolean,
+      required: true,
+    },
+    Demand_due_to_peak_season: {
+      type: Boolean,
+      required: true,
+    },
+    Duties_and_taxes: {
+      type: Boolean,
+      required: true,
+    },
+    other: {
+      type: String,
+    },
   },
+  // source_of_credit_form: {
+  //   type: String,
+  //   required: true,
+  // },
   applied_loan_outcome: {
     radio_button: {
       type: String,
@@ -790,6 +830,34 @@ const surveyData = new Schema({
       type: String,
       required: true,
     },
+  },
+  Requirement_of_Training: {
+    type: String,
+    enum: ["YES", "NO"],
+  },
+  support_from_agency: {
+    type: String,
+    enum: ["YES", "NO"],
+  },
+  ESDP_beneficiaries: {
+    type: String,
+    required: true,
+  },
+  Contact_Member_details_name: {
+    type: String,
+    required: true,
+  },
+  Contact_Member_details_contact: {
+    type: String,
+    required: true,
+  },
+  Contact_Member_details_designation: {
+    type: String,
+    required: true,
+  },
+  Contact_Member_details_email: {
+    type: String,
+    required: true,
   },
 });
 
