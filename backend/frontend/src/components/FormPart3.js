@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./Table.css";
 import { t } from "i18next";
-function FormPart3({ formD, setFormD }) {
+function FormPart3({ formD, setFormD, addfields, setAddFields }) {
   const navigate = useNavigate();
   const validate = (e) => {
     const isV = document.getElementById("formy").reportValidity();
@@ -144,7 +144,6 @@ function FormPart3({ formD, setFormD }) {
       });
     }
   }
-  const [addfields, setAddFields] = React.useState([]);
   return (
     <div
       style={{
@@ -207,116 +206,92 @@ function FormPart3({ formD, setFormD }) {
             <td colSpan={6}>
               <button onClick={(e) => {
                 e.preventDefault();
-                setAddFields([...addfields, [
-                  <div style={{ width: "100%", display: "flex" }}>
-                    <td colSpan={1} style={{ width: "50%" }}>
-                      <tr>
-                        <span>{t("Name of the program")}</span>
-                      </tr>
-                      <tr>
-                        <input
-                          type="text"
-                          name={`Anything_${addfields.length}`}
-                          id={`policy_program_${addfields.length}`}
-                          // value={formD[`policy_program_${addfields.length}`]}
-                          onChange={handleChange}
-                          style={{
-                            width: "90%",
-                            border: "transparent",
-                            borderBottom: "2px solid black",
-                          }}
-                        />
-                      </tr>
-                    </td>
-                    <td colSpan={2} style={{ width: "100%" }}>
-                      <label htmlFor="benefits">
-                        {t("Nature of assistance/Benefits")}:
-                      </label>
-                      <input
-                        type="text"
-                        name={`Policy_benifitted_${addfields.length}`}
-                        id={`benefits_${addfields.length}`}
-                        // value={formD[`Policy_benifitted_${addfields.length}`]}
-                        onChange={handleChange}
-                        style={{
-                          width: "90%",
-                          border: "transparent",
-                          borderBottom: "2px solid black",
-                        }}
-                      />
-                    </td>
-                    <td style={{ width: "100%" }}>
-                      <label htmlFor="challenges">{t("Challenges")}:</label>
-                      <input
-                        type="text"
-                        name={`Challenges_faced_policy_related_${addfields.length}`}
-                        id={`challenges_${addfields.length}`}
-                        // value={formD[`Challenges_faced_policy_related_${addfields.length}`]}
-                        onChange={handleChange}
-                        style={{
-                          width: "90%",
-                          border: "transparent",
-                          borderBottom: "2px solid black",
-                        }}
-                      />
-                    </td>
-                  </div>
-                ]])
+                setAddFields(prevobj=>{
+                  return(
+                    {...prevobj,[Object.keys(prevobj).length]:{name:"",assistance:"",challanges:""}}
+                  )
+                })
+                
               }}>Add</button>
-              <div style={{ width: "100%", display: "flex" }}>
-                <td colSpan={1} style={{ width: "50%" }}>
-                  <tr>
-                    <span>{t("Name of the program")}</span>
-                  </tr>
-                  <tr>
-                    <input
-                      type="text"
-                      id="Anything_p"
-                      name="policy_program_p"
-                      value={formD.policy_program_p}
-                      onChange={handleChange}
-                      style={{
-                        width: "90%",
-                        border: "transparent",
-                        borderBottom: "2px solid black",
-                      }}
-                    />
-                  </tr>
-                </td>
-                <td colSpan={2} style={{ width: "100%" }}>
-                  <label htmlFor="benefits">
-                    {t("Nature of assistance/Benefits")}:
-                  </label>
-                  <input
-                    type="text"
-                    name="Policy_benifitted_p"
-                    id="benefits_p"
-                    onChange={handleChange}
-                    value={formD.Policy_benifitted_p}
-                    style={{
-                      width: "90%",
-                      border: "transparent",
-                      borderBottom: "2px solid black",
-                    }}
-                  />
-                </td>
-                <td style={{ width: "100%" }}>
-                  <label htmlFor="challenges">{t("Challenges")}:</label>
-                  <input
-                    type="text"
-                    name="Challenges_faced_policy_related_p"
-                    id="challenges_p"
-                    onChange={handleChange}
-                    value={formD.Challenges_faced_policy_related_p}
-                    style={{
-                      width: "90%",
-                      border: "transparent",
-                      borderBottom: "2px solid black",
-                    }}
-                  />
-                </td>
-              </div>
-              {addfields}
+              {Object.values(addfields).map((obj,index)=>{
+                return(
+                  <div style={{ width: "100%", display: "flex" }}>
+                        <td colSpan={1} style={{ width: "50%" }}>
+                          <tr>
+                            <span>{t("Name of the program")}</span>
+                          </tr>
+                          <tr>
+                            <input
+                              type="text"
+                              data-identity={`${index}`}
+                              value = {obj.name}
+                              onChange={(e) => {
+                                let id = e.target.dataset.identity;
+                                console.log("target id",id);
+                                setAddFields((prevobj) => {
+                                  return (
+                                    { ...prevobj, [index]: { ...prevobj[index], name: e.target.value  } }
+                                  )
+                                })
+                              }}
+                              style={{
+                                width: "90%",
+                                border: "transparent",
+                                borderBottom: "2px solid black",
+                              }}
+                            />
+                          </tr>
+                        </td>
+                        <td colSpan={2} style={{ width: "100%" }}>
+                          <label htmlFor="benefits">
+                            {t("Nature of assistance/Benefits")}:
+                          </label>
+                          <input
+                            type="text"
+                            data-identity={`${index}`}
+                              value = {obj.assistance}
+                              onChange={(e) => {
+                                let id = e.target.dataset.identity;
+                                console.log("target id",id);
+                                setAddFields((prevobj) => {
+                                  return (
+                                    { ...prevobj, [index]: { ...prevobj[index], assistance: e.target.value  } }
+                                  )
+                                })
+                              }}
+                            style={{
+                              width: "90%",
+                              border: "transparent",
+                              borderBottom: "2px solid black",
+                            }}
+                          />
+                        </td>
+                        <td style={{ width: "100%" }}>
+                          <label htmlFor="challenges">{t("Challenges")}:</label>
+                          <input
+                            type="text"
+                            data-identity={`${index}`}
+                              value = {obj.challanges}
+                              onChange={(e) => {
+                                let id = e.target.dataset.identity;
+                                console.log("target id",id);
+                                setAddFields((prevobj) => {
+                                  return (
+                                    { ...prevobj, [index]: { ...prevobj[index], challanges: e.target.value  } }
+                                  )
+                                })
+                              }}
+                            style={{
+                              width: "90%",
+                              border: "transparent",
+                              borderBottom: "2px solid black",
+                            }}
+                          />
+                        </td>
+                      </div>
+                )
+                
+              })}
             </td>
           </tr>
           <tr>
