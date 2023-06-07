@@ -215,6 +215,7 @@ function FormPart6({ formD, setFormD }) {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          backgroundColor: "rgb(240 235 248 / 77%)",
         }}
       >
         <div
@@ -227,10 +228,10 @@ function FormPart6({ formD, setFormD }) {
           <div>
             <h2
               style={{
-                //background: "grey",
+                background: "grey",
                 margin: "0.5em",
                 display: "flex",
-                //backgroundColor: "rgb(240 235 248 / 77%)",
+                backgroundColor: "rgb(240 235 248 / 77%)",
               }}
             >
               {t("Questionnaire For Exporters")}
@@ -346,7 +347,7 @@ function FormPart6({ formD, setFormD }) {
               id="question"
               name="face_challenge_from_buyer"
               value={formD.face_challenge_from_buyer}
-              placeholder=". . . . . . . . . . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . . . . . . . . . . . . . . ."
+              placeholder=". . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
               onChange={handleChange}
               style={{ border: "transparent" }}
             />
@@ -366,7 +367,7 @@ function FormPart6({ formD, setFormD }) {
               id="question"
               name="Certification_required"
               value={formD.Certification_required}
-              placeholder=". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+              placeholder=". . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
               onChange={handleChange}
               style={{ border: "transparent" }}
             />
@@ -387,7 +388,7 @@ function FormPart6({ formD, setFormD }) {
               id="question"
               name="laboratory_requirement"
               value={formD.laboratory_requirement}
-              placeholder=". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . "
+              placeholder=". . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
               onChange={handleChange}
               style={{ border: "transparent" }}
             />

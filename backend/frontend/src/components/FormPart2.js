@@ -11,14 +11,6 @@ import { ToastContainer, toast } from "react-toastify";
 
 const FormPart2 = ({ formD, setFormD }) => {
   const navigate = useNavigate();
-  // const validate = (e) => {
-  //   const isV = document.getElementById("formy").reportValidity();
-  //   if (!isV) {
-  //     e.preventDefault();
-  //   } else {
-  //     navigate("/3");
-  //   }
-  // };
   const validate = (e) => {
     const form = document.getElementById("formy");
 
@@ -74,7 +66,6 @@ const FormPart2 = ({ formD, setFormD }) => {
     }
 
     const isV = document.getElementById("formy").reportValidity();
-
     if (!isV) {
       e.preventDefault();
     } else {

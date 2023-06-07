@@ -13,6 +13,7 @@ import { changeLanguage } from "i18next";
 import "./Table.css";
 import "../i18n.js";
 
+import Input from "./Input";
 import { Form } from "react-router-dom";
 import FormPart3 from "./FormPart3";
 import axios from "axios";
@@ -247,13 +248,13 @@ function Table({ formD, setFormD }) {
           display: "flex",
           justifyContent: "center",
           overflowY: "scroll",
-          //        backgroundColor: "rgb(240 235 248 / 77%)",
+                //  backgroundColor: "rgb(240 235 248 / 77%)",
         }}
       >
         <ToastContainer />
         <div
           style={{
-            width: "75vw",
+            width: "95vw",
             flexWrap: "wrap",
             overflowWrap: "break-word",
             borderBottom: "0",
