@@ -157,6 +157,10 @@ const surveyData = new Schema({
       type: String,
     },
   },
+  employee_unit:{
+    type: Number,
+    required: true,
+  },
   full_time_Emoployee: {
     type: Number,
     required: true,

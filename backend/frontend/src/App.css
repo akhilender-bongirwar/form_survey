@@ -13,6 +13,7 @@ input:invalid {
   border: none;
   outline: none;
   /* outline: 2px solid red; */
+  background-color: aqua;
   border-radius: 5px;
 }
 

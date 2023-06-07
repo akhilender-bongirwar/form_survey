@@ -59,6 +59,7 @@ function App() {
       internationally: false,
       other: "",
     },
+    employee_unit:"NUMBER",
     full_time_Emoployee: "",
     part_time_Emoployee: "",
     Permanent_Emoployee: "",
