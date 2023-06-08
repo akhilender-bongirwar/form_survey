@@ -353,8 +353,8 @@ const FormPart2 = ({
           //backgroundColor: "rgb(240 235 248 / 77%)",
         }}
       >
-        <div style={{ width: "75vw" }}>
-          <h1 style={{ textAlign: "center" }}>Supply Chain</h1>
+        <div>
+        <h1 style={{ textAlign: "center" }}>Supply Chain</h1>
           <div style={{ marginTop: "7vw" }}>
             <Accordion
               onClick={(e) => {
@@ -385,13 +385,10 @@ const FormPart2 = ({
                         e.stopPropagation();
                       }}
                     >
-                      <thead>
-                        <th colSpan={6}>{t("B. For Manufacturing")}</th>
-                      </thead>
                       <tr>
-                        <td colSpan={1} style={{ textAlign: "center" }}>
+                        <h1 style={{ margin: "10px 0" }}>
                           {t("Raw Materials")}
-                        </td>
+                        </h1>
                         <td
                           colSpan={1}
                           style={{
@@ -402,74 +399,76 @@ const FormPart2 = ({
                         >
                           <div
                             style={{
-                              textAlign: "center",
                               fontWeight: "bolder",
+                              margin: "10px 0"
                             }}
                           >
                             {t("Source of Procurement")}
                           </div>
-                          <div
-                            style={{ display: "flex", flexWrap: "wrap" }}
-                            className="grevience_redressal radio_wrapper"
-                          >
-                            <div className="d_flex_align_CONTENT_justify">
-                              <label
-                                htmlFor="raw1"
-                                style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                              >
-                                {t("Direct")}
-                              </label>
-                              <input
-                                type="radio"
-                                checked={
-                                  formD.Raw_Materials.radio_button ==
+                          <td>
+                            <td
+                              style={{ display: "flex", flexWrap: "wrap" }}
+                              className="grevience_redressal radio_wrapper wrapup"
+                            >
+                              <td className="d_flex_align_CONTENT_justify">
+                                <label
+                                  htmlFor="raw1"
+                                  style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                                >
+                                  {t("Direct")}
+                                </label>
+                                <input
+                                  type="radio"
+                                  checked={
+                                    formD.Raw_Materials.radio_button ==
                                     "Direct" && formD.Raw_Materials.other == ""
-                                }
-                                id="raw1"
-                                name="Raw_Materials"
-                                value="Direct"
-                                onChange={handleChange}
-                              />
-                            </div>
-                            <div className="d_flex_align_CONTENT_justify">
-                              <label
-                                htmlFor="raw2"
-                                style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                              >
-                                {t("Through Traders")}
-                              </label>
-                              <input
-                                type="radio"
-                                id="raw2"
-                                name="Raw_Materials"
-                                checked={
-                                  formD.Raw_Materials.radio_button ==
+                                  }
+                                  id="raw1"
+                                  name="Raw_Materials"
+                                  value="Direct"
+                                  onChange={handleChange}
+                                />
+                              </td>
+                              <td className="d_flex_align_CONTENT_justify">
+                                <label
+                                  htmlFor="raw2"
+                                  style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                                >
+                                  {t("Through Traders")}
+                                </label>
+                                <input
+                                  type="radio"
+                                  id="raw2"
+                                  name="Raw_Materials"
+                                  checked={
+                                    formD.Raw_Materials.radio_button ==
                                     "Through Traders" &&
-                                  formD.Raw_Materials.other == ""
-                                }
-                                value="Through Traders"
-                                onChange={handleChange}
-                              />
-                            </div>
-                            <div className="d_flex_align_CONTENT_justify">
-                              <label
-                                htmlFor="raw3"
-                                style={{ fontSize: "0.9rem", padding: "0.5em" }}
-                              >
-                                {t("Online")}
-                              </label>
-                              <input
-                                type="radio"
-                                id="raw3"
-                                checked={
-                                  formD.Raw_Materials.radio_button ==
+                                    formD.Raw_Materials.other == ""
+                                  }
+                                  value="Through Traders"
+                                  onChange={handleChange}
+                                />
+                              </td>
+                              <td className="d_flex_align_CONTENT_justify">
+                                <label
+                                  htmlFor="raw3"
+                                  style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                                >
+                                  {t("Online")}
+                                </label>
+                                <input
+                                  type="radio"
+                                  id="raw3"
+                                  checked={
+                                    formD.Raw_Materials.radio_button ==
                                     "Online" && formD.Raw_Materials.other == ""
-                                }
-                                name="Raw_Materials"
-                                value="Online"
-                                onChange={handleChange}
-                              />
-                              <div>
+                                  }
+                                  name="Raw_Materials"
+                                  value="Online"
+                                  onChange={handleChange}
+                                />
+                              </td>
+                              <td>
                                 <input
                                   type="text"
                                   name="Raw_Materials"
@@ -477,19 +476,21 @@ const FormPart2 = ({
                                   value={formD.Raw_Materials.other}
                                   placeholder={t("others")}
                                 />
-                              </div>
-                            </div>
-                          </div>
+                              </td>
+                            </td>
+                          </td>
                           <tr>
                             <div>
                               <tr>
-                                <td colSpan={1}>
-                                  <span>
-                                    {t("Is Raw Material available easily")}?
-                                  </span>
-                                </td>
+                                <h1
+                                  style={{
+                                    fontWeight: "bolder",
+                                    margin: "20px 0"
+                                  }}>
+                                  {t("Is Raw Material available easily")}?
+                                </h1>
                                 <td colSpan={6}>
-                                  <div className="radio_wrapper">
+                                  <div className="radio_wrapper wrapup">
                                     <div>
                                       <label htmlFor="yes_material">
                                         {t("YES")}
@@ -535,12 +536,13 @@ const FormPart2 = ({
                               </tr>
                               {challenges ? (
                                 <tr>
-                                  <td colSpan={1}>
-                                    {/* style={{ whiteSpace: "nowrap" }} */}
-                                    {t(
-                                      "If No, please mention difficulties / challenges"
-                                    )}
-                                  </td>
+                                  <h1
+                                    style={{
+                                      fontWeight: "bolder",
+                                      margin: "20px 0"
+                                    }}>
+                                    {t("If No, please mention difficulties / challenges")}?
+                                  </h1>
                                   <td colSpan={6}>
                                     <input
                                       type="text"
@@ -549,26 +551,20 @@ const FormPart2 = ({
                                       value={formD.if_no_mention_difficulties}
                                       name="if_no_mention_difficulties"
                                       required="required"
-                                      style={{
-                                        width: "100%",
-                                        border: "transparent",
-                                        borderBottom: "1px solid black",
-                                      }}
                                     />
                                   </td>
                                 </tr>
                               ) : null}
                               <tr>
-                                <td colSpan={1}>
-                                  <span>
-                                    {/* style={{ whiteSpace: "nowrap" }} */}
-                                    {t(
-                                      "Do you adopt any green technology in your production cycle (waste management/ recycling/ etc)"
-                                    )}
-                                  </span>
-                                </td>
+                                <h1
+                                  style={{
+                                    fontWeight: "bolder",
+                                    margin: "20px 0"
+                                  }}>
+                                  {t("Do you adopt any green technology in your production cycle (waste management/ recycling/ etc)")}?
+                                </h1>
                                 <td colSpan={6}>
-                                  <div className="radio_wrapper">
+                                  <div className="radio_wrapper wrapup">
                                     <div>
                                       <label htmlFor="yes_material2">
                                         {t("YES")}
@@ -601,17 +597,15 @@ const FormPart2 = ({
                                 </td>
                               </tr>
                               <tr>
-                                <td colSpan={1}>
-                                  <span>
-                                    {/* style={{ whiteSpace: "nowrap" }} */}
-                                    {t(
-                                      "Does your production facility need any Environment Clearance"
-                                    )}
-                                    ?
-                                  </span>
-                                </td>
+                                <h1
+                                  style={{
+                                    fontWeight: "bolder",
+                                    margin: "20px 0"
+                                  }}>
+                                  {t("Does your production facility need any Environment Clearance")}?
+                                </h1>
                                 <td colSpan={6}>
-                                  <div className="radio_wrapper">
+                                  <div className="radio_wrapper wrapup">
                                     <div>
                                       <label htmlFor="yes_material3">
                                         {t("YES")}
@@ -649,161 +643,153 @@ const FormPart2 = ({
                               </tr>
                               <tr>
                                 <td colSpan={1}>
-                                  <span>{t("Final Product sold to")}</span>
+                                  <h1>{t("Final Product sold to")}</h1>
                                 </td>
-                                <td colSpan={6}>
-                                  <div className="radio_wrapper">
-                                    <div className="radio_wrapper">
-                                      <label htmlFor="locala">
-                                        {t("Trader / Agents")}{" "}
-                                      </label>
-                                      <input
-                                        type="checkbox"
-                                        name="final_product_sold_to"
-                                        className="a"
-                                        id="locala"
-                                        value="Trader_Agents"
-                                        onChange={handleChange}
-                                        checked={
-                                          formD.final_product_sold_to
-                                            .Trader_Agents
-                                        }
-                                      />
-                                    </div>
-
-                                    <div className="radio_wrapper">
-                                      <label htmlFor="Govtb">
-                                        {t("Wholesalers")}{" "}
-                                      </label>
-                                      <input
-                                        type="checkbox"
-                                        id="Govtb"
-                                        name="final_product_sold_to"
-                                        className="a"
-                                        value="Wholesalers"
-                                        onChange={handleChange}
-                                        checked={
-                                          formD.final_product_sold_to
-                                            .Wholesalers
-                                        }
-                                      />
-                                    </div>
-
-                                    <div className="radio_wrapper">
-                                      <label htmlFor="onlinec">
-                                        {t("Retailers")}
-                                      </label>
-                                      <input
-                                        type="checkbox"
-                                        id="onlinec"
-                                        name="final_product_sold_to"
-                                        value="Retailers"
-                                        className="a"
-                                        onChange={handleChange}
-                                        checked={
-                                          formD.final_product_sold_to.Retailers
-                                        }
-                                      />
-                                    </div>
-
-                                    <div className="radio_wrapper">
-                                      <label htmlFor="otherd">
-                                        {t("Large Manufacturers/ Anchor units")}{" "}
-                                      </label>
-                                      <input
-                                        type="checkbox"
-                                        id="otherd"
-                                        name="final_product_sold_to"
-                                        value="Large_Manufacturers_Anchor_units"
-                                        className="a"
-                                        onChange={handleChange}
-                                        checked={
-                                          formD.final_product_sold_to
-                                            .Large_Manufacturers_Anchor_units
-                                        }
-                                      />
-                                    </div>
-                                    <div className="radio_wrapper">
-                                      <label htmlFor="exporte">
-                                        {t("Exporters")}{" "}
-                                      </label>
-                                      <input
-                                        type="checkbox"
-                                        id="exporte"
-                                        name="final_product_sold_to"
-                                        className="a"
-                                        value="Exporters"
-                                        onChange={handleChange}
-                                        checked={
-                                          formD.final_product_sold_to.Exporters
-                                        }
-                                      />
-                                    </div>
-                                    <div className="radio_wrapper">
-                                      <div className="radio_wrapper">
-                                        <label htmlFor="localf">
-                                          {t("OEMs")}{" "}
+                                <td>
+                                  <div className="radio_wrapper wrapup">
+                                  
+                                      <div>
+                                        <label htmlFor="locala">
+                                          {t("Trader / Agents")}{" "}
                                         </label>
                                         <input
                                           type="checkbox"
                                           name="final_product_sold_to"
                                           className="a"
-                                          id="localf"
-                                          value="OEMs"
+                                          id="locala"
+                                          value="Trader_Agents"
                                           onChange={handleChange}
                                           checked={
-                                            formD.final_product_sold_to.OEMs
+                                            formD.final_product_sold_to
+                                              .Trader_Agents
                                           }
                                         />
                                       </div>
-                                    </div>
-                                    <div className="radio_wrapper">
-                                      <div className="radio_wrapper">
-                                        <label htmlFor="localg">
-                                          {t("End Users")}{" "}
+                                      <div>
+                                        <label htmlFor="Govtb">
+                                          {t("Wholesalers")}{" "}
                                         </label>
                                         <input
                                           type="checkbox"
+                                          id="Govtb"
                                           name="final_product_sold_to"
-                                          id="localg"
-                                          value="End_Users"
+                                          className="a"
+                                          value="Wholesalers"
+                                          onChange={handleChange}
+                                          checked={
+                                            formD.final_product_sold_to
+                                              .Wholesalers
+                                          }
+                                        />
+                                      </div>
+                                      <div>
+                                        <label htmlFor="onlinec">
+                                          {t("Retailers")}
+                                        </label>
+                                        <input
+                                          type="checkbox"
+                                          id="onlinec"
+                                          name="final_product_sold_to"
+                                          value="Retailers"
+                                          className="a"
+                                          onChange={handleChange}
+                                          checked={
+                                            formD.final_product_sold_to.Retailers
+                                          }
+                                        />
+                                      </div>
+                                      <div>
+                                        <label htmlFor="otherd">
+                                          {t("Large Manufacturers/ Anchor units")}{" "}
+                                        </label>
+                                        <input
+                                          type="checkbox"
+                                          id="otherd"
+                                          name="final_product_sold_to"
+                                          value="Large_Manufacturers_Anchor_units"
                                           className="a"
                                           onChange={handleChange}
                                           checked={
                                             formD.final_product_sold_to
-                                              .End_Users
+                                              .Large_Manufacturers_Anchor_units
                                           }
                                         />
                                       </div>
-                                    </div>
-                                    <div className="radio_wrapper">
-                                      <div className="radio_wrapper">
-                                        <label htmlFor="localh">
-                                          {t("Others")}{" "}
+                                      <div>
+                                        <label htmlFor="exporte">
+                                          {t("Exporters")}{" "}
                                         </label>
                                         <input
                                           type="checkbox"
+                                          id="exporte"
                                           name="final_product_sold_to"
-                                          id="localh"
-                                          value="Others"
                                           className="a"
+                                          value="Exporters"
                                           onChange={handleChange}
                                           checked={
-                                            formD.final_product_sold_to.Others
+                                            formD.final_product_sold_to.Exporters
                                           }
                                         />
                                       </div>
-                                    </div>
+                                        <div>
+                                          <label htmlFor="localf">
+                                            {t("OEMs")}{" "}
+                                          </label>
+                                          <input
+                                            type="checkbox"
+                                            name="final_product_sold_to"
+                                            className="a"
+                                            id="localf"
+                                            value="OEMs"
+                                            onChange={handleChange}
+                                            checked={
+                                              formD.final_product_sold_to.OEMs
+                                            }
+                                          />
+                                        </div>
+                                        <div>
+                                          <label htmlFor="localg">
+                                            {t("End Users")}{" "}
+                                          </label>
+                                          <input
+                                            type="checkbox"
+                                            name="final_product_sold_to"
+                                            id="localg"
+                                            value="End_Users"
+                                            className="a"
+                                            onChange={handleChange}
+                                            checked={
+                                              formD.final_product_sold_to
+                                                .End_Users
+                                            }
+                                          />
+                                        </div>
+                                        <div>
+                                          <label htmlFor="localh">
+                                            {t("Others")}{" "}
+                                          </label>
+                                          <input
+                                            type="checkbox"
+                                            name="final_product_sold_to"
+                                            id="localh"
+                                            value="Others"
+                                            className="a"
+                                            onChange={handleChange}
+                                            checked={
+                                              formD.final_product_sold_to.Others
+                                            }
+                                          />
+                                        </div>
                                   </div>
                                 </td>
                               </tr>
                               <tr>
                                 <td colSpan={1}>
-                                  <span>{t("Markets you supply to")}</span>
+                                  <h1>{t("Markets you supply to")}</h1>
                                 </td>
                                 <td colSpan={6}>
                                   <div
-                                    className="radio_wrapper"
+                                    className="radio_wrapper wrapup"
                                     id="ownership_pattern"
                                   >
                                     <div>
@@ -859,15 +845,15 @@ const FormPart2 = ({
                               </tr>
                               <tr>
                                 <td colSpan={1}>
-                                  <span>
+                                  <h1>
                                     {t(
                                       "Are the products sold under any brand name? If yes,provide the brand name"
                                     )}
                                     .
-                                  </span>
+                                  </h1>
                                 </td>
                                 <td colSpan={6}>
-                                  <div className="radio_wrapper">
+                                  <div className="radio_wrapper wrapup">
                                     <div>
                                       <label htmlFor="yes_material23">
                                         {t("YES")}
@@ -930,163 +916,163 @@ const FormPart2 = ({
                               <tr>
                                 <td>
                                   <label>
-                                    {t(
-                                      "What challenges are you facing in selling the product in the market"
-                                    )}
-                                    ?
+                                    <h1>
+                                      {t(
+                                        "What challenges are you facing in selling the product in the market"
+                                      )}
+                                      ?
+                                    </h1>
                                   </label>
                                 </td>
-                                <td
-                                  colSpan={6}
-                                  style={{
-                                    width: "100%",
-                                    display: "flex",
-                                    flexDirection: "column",
-                                  }}
-                                  className="input_label_gapper"
-                                >
-                                  <div>
-                                    <label
-                                      style={{ padding: "0.5em" }}
-                                      htmlFor="advanceTech"
-                                    >
-                                      {t("Advance technology")}
-                                    </label>
-                                    <input
-                                      type="checkbox"
-                                      name="challenges_while_selling"
-                                      value="advance_technology"
-                                      className="facingChal"
-                                      checked={
-                                        formD.challenges_while_selling
-                                          .advance_technology
-                                      }
-                                      id="advanceTech"
-                                      onChange={handleChange}
-                                    />
-                                  </div>
-                                  <div>
-                                    <label
-                                      htmlFor="quality"
-                                      style={{ padding: "0.5em" }}
-                                    >
-                                      {t("Quality of product")}
-                                    </label>
-                                    <input
-                                      type="checkbox"
-                                      name="challenges_while_selling"
-                                      value="quality_of_product"
-                                      className="facingChal"
-                                      id="quality"
-                                      checked={
-                                        formD.challenges_while_selling
-                                          .quality_of_product
-                                      }
-                                      onChange={handleChange}
-                                    />
-                                  </div>
-                                  <div>
-                                    <label
-                                      htmlFor="marketComp"
-                                      style={{ padding: "0.5em" }}
-                                    >
-                                      {t("Market Competition")}
-                                    </label>
-                                    <input
-                                      type="checkbox"
-                                      name="challenges_while_selling"
-                                      value="market_competition"
-                                      className="facingChal"
-                                      id="marketComp"
-                                      onChange={handleChange}
-                                      checked={
-                                        formD.challenges_while_selling
-                                          .market_competition
-                                      }
-                                    />
-                                  </div>
-                                  <div>
-                                    <label
-                                      htmlFor="capital"
-                                      style={{ padding: "0.5em" }}
-                                    >
-                                      {t("Capital")}
-                                    </label>
-                                    <input
-                                      type="checkbox"
-                                      name="challenges_while_selling"
-                                      value="capital"
-                                      id="capital"
-                                      className="facingChal"
-                                      onChange={handleChange}
-                                      checked={
-                                        formD.challenges_while_selling.capital
-                                      }
-                                    />
-                                  </div>
-                                  <div>
-                                    <label
-                                      htmlFor="brandMarket"
-                                      style={{ padding: "0.5em" }}
-                                    >
-                                      {t("Branding & Marketing")}
-                                    </label>
-                                    <input
-                                      type="checkbox"
-                                      name="challenges_while_selling"
-                                      value="branding_and_marketing"
-                                      id="brandMarket"
-                                      className="facingChal"
-                                      onChange={handleChange}
-                                      checked={
-                                        formD.challenges_while_selling
-                                          .branding_and_marketing
-                                      }
-                                    />
-                                  </div>
-                                  <div
+                                <div>
+                                  <td
+                                    colSpan={6}
                                     style={{
+                                      width: "100%",
                                       display: "flex",
-                                      flexWrap: "wrap",
+                                      flexDirection: "column",
                                     }}
+                                    className="input_label_gapper radio_wrapper wrapup"
                                   >
-                                    <label htmlFor="other">
-                                      {t("Other (specify)")}
-                                    </label>
-
-                                    <input
-                                      type="text"
-                                      id="other"
-                                      name="challenges_while_selling"
-                                      className="facingChal"
-                                      onChange={handleChange}
-                                      value={
-                                        formD.challenges_while_selling.other
-                                      }
+                                    <div>
+                                      <label
+                                        style={{ padding: "0.5em" }}
+                                        htmlFor="advanceTech"
+                                      >
+                                        {t("Advance technology")}
+                                      </label>
+                                      <input
+                                        type="checkbox"
+                                        name="challenges_while_selling"
+                                        value="advance_technology"
+                                        className="facingChal"
+                                        checked={
+                                          formD.challenges_while_selling
+                                            .advance_technology
+                                        }
+                                        id="advanceTech"
+                                        onChange={handleChange}
+                                      />
+                                    </div>
+                                    <div>
+                                      <label
+                                        htmlFor="quality"
+                                        style={{ padding: "0.5em" }}
+                                      >
+                                        {t("Quality of product")}
+                                      </label>
+                                      <input
+                                        type="checkbox"
+                                        name="challenges_while_selling"
+                                        value="quality_of_product"
+                                        className="facingChal"
+                                        id="quality"
+                                        checked={
+                                          formD.challenges_while_selling
+                                            .quality_of_product
+                                        }
+                                        onChange={handleChange}
+                                      />
+                                    </div>
+                                    <div>
+                                      <label
+                                        htmlFor="marketComp"
+                                        style={{ padding: "0.5em" }}
+                                      >
+                                        {t("Market Competition")}
+                                      </label>
+                                      <input
+                                        type="checkbox"
+                                        name="challenges_while_selling"
+                                        value="market_competition"
+                                        className="facingChal"
+                                        id="marketComp"
+                                        onChange={handleChange}
+                                        checked={
+                                          formD.challenges_while_selling
+                                            .market_competition
+                                        }
+                                      />
+                                    </div>
+                                    <div>
+                                      <label
+                                        htmlFor="capital"
+                                        style={{ padding: "0.5em" }}
+                                      >
+                                        {t("Capital")}
+                                      </label>
+                                      <input
+                                        type="checkbox"
+                                        name="challenges_while_selling"
+                                        value="capital"
+                                        id="capital"
+                                        className="facingChal"
+                                        onChange={handleChange}
+                                        checked={
+                                          formD.challenges_while_selling.capital
+                                        }
+                                      />
+                                    </div>
+                                    <div>
+                                      <label
+                                        htmlFor="brandMarket"
+                                        style={{ padding: "0.5em" }}
+                                      >
+                                        {t("Branding & Marketing")}
+                                      </label>
+                                      <input
+                                        type="checkbox"
+                                        name="challenges_while_selling"
+                                        value="branding_and_marketing"
+                                        id="brandMarket"
+                                        className="facingChal"
+                                        onChange={handleChange}
+                                        checked={
+                                          formD.challenges_while_selling
+                                            .branding_and_marketing
+                                        }
+                                      />
+                                    </div>
+                                    <div
                                       style={{
-                                        width: "100%",
-                                        border: "transparent",
-                                        borderBottom: "1px solid black",
+                                        display: "flex",
+                                        flexWrap: "wrap",
                                       }}
-                                    />
-                                  </div>
-                                </td>
+                                    >
+                                      <label htmlFor="other">
+                                        {t("Other (specify)")}
+                                      </label>
+                                      <td>
+                                        <input
+                                          type="text"
+                                          id="other"
+                                          name="challenges_while_selling"
+                                          className="facingChal"
+                                          onChange={handleChange}
+                                          value={
+                                            formD.challenges_while_selling.other
+                                          }
+                                        />
+                                      </td>
+                                    </div>
+                                  </td>
+                                </div>
                               </tr>
                               <tr>
                                 <td colSpan={1}>
-                                  <span>
+                                  <h1>
                                     {t(
                                       "Are you involved in marketing & branding of the product ? If yes, please select the options you leverage for sale of the product"
                                     )}{" "}
                                     ?
-                                  </span>{" "}
+                                  </h1>{" "}
                                 </td>
                                 <td
                                   colSpan={6}
-                                  // style={{ display: "flex", alignItems: "center" }}
+                                // style={{ display: "flex", alignItems: "center" }}
                                 >
                                   <div
-                                    className="radio_wrapper"
+                                    className="radio_wrapper wrapup"
                                     style={{ alignSelf: "center" }}
                                   >
                                     <div>
@@ -1132,143 +1118,138 @@ const FormPart2 = ({
                                   {leverage ? (
                                     <div>
                                       <td
-                                        colSpan={6}
-                                        style={{
-                                          width: "100%",
-                                          display: "flex",
-                                          flexDirection: "column",
-                                        }}
-                                        className="input_label_gapper"
-                                      >
-                                        <div>
-                                          <label
-                                            htmlFor="exhibition"
-                                            style={{ padding: "0.5em" }}
-                                          >
-                                            {t("Exhibitions")}
-                                          </label>
-                                          <input
-                                            type="checkbox"
-                                            id="exhibition"
-                                            name="options_you_leverage_for_sale"
-                                            className="branding"
-                                            value="exhibitions"
-                                            onChange={handleChange}
-                                            checked={
-                                              formD
-                                                .options_you_leverage_for_sale
-                                                .exhibitions
-                                            }
-                                          />
-                                        </div>
-                                        <div>
-                                          <label
-                                            htmlFor="portal"
-                                            style={{ padding: "0.5em" }}
-                                          >
-                                            {t("Portals")}
-                                          </label>
-                                          <input
-                                            type="checkbox"
-                                            id="portal"
-                                            name="options_you_leverage_for_sale"
-                                            className="branding"
-                                            value="portals"
-                                            onChange={handleChange}
-                                            checked={
-                                              formD
-                                                .options_you_leverage_for_sale
-                                                .portals
-                                            }
-                                          />
-                                        </div>
-                                        <div>
-                                          <label
-                                            htmlFor="website"
-                                            style={{ padding: "0.5em" }}
-                                          >
-                                            {t("Websites")}{" "}
-                                          </label>
-                                          <input
-                                            type="checkbox"
-                                            id="website"
-                                            name="options_you_leverage_for_sale"
-                                            className="branding"
-                                            value="websites"
-                                            onChange={handleChange}
-                                            checked={
-                                              formD
-                                                .options_you_leverage_for_sale
-                                                .websites
-                                            }
-                                          />
-                                        </div>
-                                        <div>
-                                          <label
-                                            htmlFor="socMedia"
-                                            style={{ padding: "0.5em" }}
-                                          >
-                                            {t("Social Media")}
-                                          </label>
-
-                                          <input
-                                            type="checkbox"
-                                            id="socMedia"
-                                            name="options_you_leverage_for_sale"
-                                            className="branding"
-                                            value="social_media"
-                                            onChange={handleChange}
-                                            checked={
-                                              formD
-                                                .options_you_leverage_for_sale
-                                                .social_media
-                                            }
-                                          />
-                                        </div>
-                                        <div>
-                                          <label
-                                            htmlFor="marketFacility"
-                                            style={{ padding: "0.5em" }}
-                                          >
-                                            {t("Common marketing facility")}
-                                          </label>
-                                          <input
-                                            type="checkbox"
-                                            id="marketFacility"
-                                            name="options_you_leverage_for_sale"
-                                            value="Common_marketing_facility"
-                                            className="branding"
-                                            onChange={handleChange}
-                                            checked={
-                                              formD
-                                                .options_you_leverage_for_sale
-                                                .Common_marketing_facility
-                                            }
-                                          />
-                                        </div>
-                                        <div>
-                                          <label htmlFor="other">
-                                            {t("Other (specify)")}
-                                          </label>
-
-                                          <input
-                                            type="text"
-                                            id="other"
-                                            name="options_you_leverage_for_sale"
-                                            className="branding"
-                                            onChange={handleChange}
-                                            value={
-                                              formD
-                                                .options_you_leverage_for_sale
-                                                .other
-                                            }
-                                            style={{
-                                              width: "100%",
-                                              border: "transparent",
-                                              borderBottom: "1px solid black",
-                                            }}
-                                          />
-                                        </div>
+                                      style={{
+                                            width: "100%",
+                                            display: "flex",
+                                            flexDirection: "column",
+                                          }}>
+                                        <td
+                                          colSpan={6}           
+                                          className="input_label_gapper wrapup"
+                                        >
+                                          <div>
+                                            <label
+                                              htmlFor="exhibition"
+                                              style={{ padding: "0.5em" }}
+                                            >
+                                              {t("Exhibitions")}
+                                            </label>
+                                            <input
+                                              type="checkbox"
+                                              id="exhibition"
+                                              name="options_you_leverage_for_sale"
+                                              className="branding"
+                                              value="exhibitions"
+                                              onChange={handleChange}
+                                              checked={
+                                                formD
+                                                  .options_you_leverage_for_sale
+                                                  .exhibitions
+                                              }
+                                            />
+                                          </div>
+                                          <div>
+                                            <label
+                                              htmlFor="portal"
+                                              style={{ padding: "0.5em" }}
+                                            >
+                                              {t("Portals")}
+                                            </label>
+                                            <input
+                                              type="checkbox"
+                                              id="portal"
+                                              name="options_you_leverage_for_sale"
+                                              className="branding"
+                                              value="portals"
+                                              onChange={handleChange}
+                                              checked={
+                                                formD
+                                                  .options_you_leverage_for_sale
+                                                  .portals
+                                              }
+                                            />
+                                          </div>
+                                          <div>
+                                            <label
+                                              htmlFor="website"
+                                              style={{ padding: "0.5em" }}
+                                            >
+                                              {t("Websites")}{" "}
+                                            </label>
+                                            <input
+                                              type="checkbox"
+                                              id="website"
+                                              name="options_you_leverage_for_sale"
+                                              className="branding"
+                                              value="websites"
+                                              onChange={handleChange}
+                                              checked={
+                                                formD
+                                                  .options_you_leverage_for_sale
+                                                  .websites
+                                              }
+                                            />
+                                          </div>
+                                          <div>
+                                            <label
+                                              htmlFor="socMedia"
+                                              style={{ padding: "0.5em" }}
+                                            >
+                                              {t("Social Media")}
+                                            </label>
+                                            <input
+                                              type="checkbox"
+                                              id="socMedia"
+                                              name="options_you_leverage_for_sale"
+                                              className="branding"
+                                              value="social_media"
+                                              onChange={handleChange}
+                                              checked={
+                                                formD
+                                                  .options_you_leverage_for_sale
+                                                  .social_media
+                                              }
+                                            />
+                                          </div>
+                                          <div>
+                                            <label
+                                              htmlFor="marketFacility"
+                                              style={{ padding: "0.5em" }}
+                                            >
+                                              {t("Common marketing facility")}
+                                            </label>
+                                            <input
+                                              type="checkbox"
+                                              id="marketFacility"
+                                              name="options_you_leverage_for_sale"
+                                              value="Common_marketing_facility"
+                                              className="branding"
+                                              onChange={handleChange}
+                                              checked={
+                                                formD
+                                                  .options_you_leverage_for_sale
+                                                  .Common_marketing_facility
+                                              }
+                                            />
+                                          </div>
+                                          <div>
+                                            <label htmlFor="other">
+                                              {t("Other (specify)")}
+                                            </label>
+                                            <input
+                                              type="text"
+                                              id="other"
+                                              name="options_you_leverage_for_sale"
+                                              className="branding"
+                                              onChange={handleChange}
+                                              value={
+                                                formD
+                                                  .options_you_leverage_for_sale
+                                                  .other
+                                              }
+                                            />
+                                          </div>
+                                        </td>
                                       </td>
                                     </div>
                                   ) : null}
@@ -1276,16 +1257,16 @@ const FormPart2 = ({
                               </tr>
                               <tr>
                                 <td colSpan={1}>
-                                  <span>
+                                  <h1>
                                     {t(
                                       "Quality/Testing labs are easily available"
                                     )}
                                     ?
-                                  </span>
+                                  </h1>
                                 </td>
 
                                 <td colSpan={6}>
-                                  <div className="radio_wrapper">
+                                  <div className="radio_wrapper wrapup">
                                     <div>
                                       <label htmlFor="yes_material7">
                                         {t("YES")}
@@ -1325,17 +1306,17 @@ const FormPart2 = ({
                               </tr>
                               <tr>
                                 <td colSpan={1}>
-                                  <span>
+                                  <h1>
                                     {" "}
                                     {t(
                                       "Is skilled labour and training facilities easily available"
                                     )}
                                     ?
-                                  </span>
+                                  </h1>
                                 </td>
 
                                 <td colSpan={6}>
-                                  <div className="radio_wrapper">
+                                  <div className="radio_wrapper wrapup">
                                     <div>
                                       <label htmlFor="yes_material120">
                                         {t("YES")}
@@ -1373,13 +1354,13 @@ const FormPart2 = ({
                               </tr>
                               <tr>
                                 <td colSpan={1}>
-                                  <span>
+                                  <h1>
                                     {t("Whether skilled labour is required")}?
-                                  </span>
+                                  </h1>
                                 </td>
 
                                 <td colSpan={6}>
-                                  <div className="radio_wrapper">
+                                  <div className="radio_wrapper wrapup">
                                     <div>
                                       <label htmlFor="yes_material90">
                                         {t("YES")}
@@ -1458,76 +1439,85 @@ const FormPart2 = ({
                         e.stopPropagation();
                       }}
                     >
-                      <thead>
-                        <h1>{t("For Service Industry")}</h1>
-                      </thead>
                       <tr>
-                        <td className="heading" colSpan={1}>
+                        <h1 style={{ margin: "10px 0" }}>
                           {t("Nature of Services Offered")}
-                        </td>
-                        <td colSpan={6}>
-                          <input
-                            type="text"
-                            name="Nature_of_Services_Offered_a"
-                            required="required"
-                            onChange={handleChange}
-                            value={
-                              formD.Nature_of_Services_Offered
-                                .Nature_of_Services_Offered_a
-                            }
-                          />
-                          <input
-                            type="text"
-                            name="Nature_of_Services_Offered_b"
-                            onChange={handleChange}
-                            value={
-                              formD.Nature_of_Services_Offered
-                                .Nature_of_Services_Offered_b
-                            }
-                          />
-                          <input
-                            type="text"
-                            name="Nature_of_Services_Offered_c"
-                            onChange={handleChange}
-                            value={
-                              formD.Nature_of_Services_Offered
-                                .Nature_of_Services_Offered_c
-                            }
-                          />
-                        </td>
+                        </h1>
+                        <tr colSpan={6}>
+                          <td>
+                            <input
+                              type="text"
+                              name="Nature_of_Services_Offered_a"
+                              required="required"
+                              onChange={handleChange}
+                              value={
+                                formD.Nature_of_Services_Offered
+                                  .Nature_of_Services_Offered_a
+                              }
+                            />
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              name="Nature_of_Services_Offered_b"
+                              onChange={handleChange}
+                              value={
+                                formD.Nature_of_Services_Offered
+                                  .Nature_of_Services_Offered_b
+                              }
+                            />
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              name="Nature_of_Services_Offered_c"
+                              onChange={handleChange}
+                              value={
+                                formD.Nature_of_Services_Offered
+                                  .Nature_of_Services_Offered_c
+                              }
+                            />
+                          </td>
+                        </tr>
                       </tr>
                       <tr>
-                        <td colSpan={1} style={{ textAlign: "center" }}>
+                        <h1 style={{ margin: "10px 0" }}>
                           {t("Challenges Faced")}
-                        </td>
-                        <td colSpan={6}>
+                        </h1>
+                        <tr colSpan={6}>
                           {" "}
-                          <input
-                            type="text"
-                            name="Challenges_faced_a"
-                            onChange={handleChange}
-                            value={formD.Challenges_faced.Challenges_faced_a}
-                          />
-                          <input
-                            type="text"
-                            name="Challenges_faced_b"
-                            onChange={handleChange}
-                            value={formD.Challenges_faced.Challenges_faced_b}
-                          />
-                          <input
-                            type="text"
-                            name="Challenges_faced_c"
-                            onChange={handleChange}
-                            value={formD.Challenges_faced.Challenges_faced_c}
-                          />
-                        </td>
+                          <td>
+                            <input
+                              type="text"
+                              name="Challenges_faced_a"
+                              onChange={handleChange}
+                              value={formD.Challenges_faced.Challenges_faced_a}
+                            />
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              name="Challenges_faced_b"
+                              onChange={handleChange}
+                              value={formD.Challenges_faced.Challenges_faced_b}
+                            />
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              name="Challenges_faced_c"
+                              onChange={handleChange}
+                              value={formD.Challenges_faced.Challenges_faced_c}
+                            />
+                          </td>
+                        </tr>
                       </tr>
                       <tr>
-                        <td colSpan={1} style={{ textAlign: "center" }}>
+                        <h1 style={{ margin: "10px 0" }}>
                           {t(
                             "In case you are availing support Govt. agencies / schemes what are the challenges faced with scheme"
                           )}
-                        </td>
+                        </h1>
                         <td colSpan={6}>
                           <input
                             type="text"
@@ -1538,9 +1528,9 @@ const FormPart2 = ({
                         </td>
                       </tr>
                       <tr>
-                        <td colSpan={1} style={{ textAlign: "center" }}>
+                        <h1 style={{ margin: "10px 0" }}>
                           {t("Support required")}
-                        </td>
+                        </h1>
                         <td colSpan={6}>
                           <input
                             type="text"
@@ -1580,6 +1570,3 @@ const FormPart2 = ({
 };
 
 export default FormPart2;
-//  ☐  ☐
-// ☐  ☐  ☐
-// Capital
