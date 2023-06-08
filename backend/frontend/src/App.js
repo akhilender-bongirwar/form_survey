@@ -15,11 +15,14 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import First from "./components/First";
 
 function App() {
-  const [addfields, setAddFields] = React.useState({0:{name:"",assistance:"",challanges:""}});
-  console.log("this is add fields ",addfields);
+  const [expand, setexpand] = useState(false);
+  const [expand2, setexpand2] = useState(false);
+  const [addfields, setAddFields] = React.useState({
+    0: { name: "", assistance: "", challanges: "" },
+  });
   const [formD, setFormD] = useState({
-    District_code:"",
-    submission_date:"",
+    District_code: "",
+    submission_date: "",
     Enterprise_Name: "",
     Entrepreneur_Name: "",
     Sex: "",
@@ -61,7 +64,7 @@ function App() {
       internationally: false,
       other: "",
     },
-    employee_unit:"NUMBER",
+    employee_unit: "NUMBER",
     full_time_Emoployee: "",
     part_time_Emoployee: "",
     Permanent_Emoployee: "",
@@ -186,7 +189,7 @@ function App() {
         Design_scheme: false,
         TREDs: false,
         LEAN: false,
-        Not_Aware:false,
+        Not_Aware: false,
       },
       State_Govt: {
         ODOP: false,
@@ -195,7 +198,7 @@ function App() {
         UP_Chief_Minister_Youth_Self_Employment_Scheme: false,
         UP_Startup_Policy_2020: false,
         Others: false,
-        Not_Aware:false,
+        Not_Aware: false,
       },
     },
     Remarks: "",
@@ -238,7 +241,7 @@ function App() {
       Repair_and_Maintenance: false,
       Long_cash_cycle: false,
       Demand_due_to_peak_season: false,
-      Duties_and_taxes:false,
+      Duties_and_taxes: false,
       other: "",
     },
     //added
@@ -262,7 +265,7 @@ function App() {
       Currently_owned_3: "",
       To_be_Required_3: "",
     },
-    support_from_agency:"",
+    support_from_agency: "",
     Certification_required: "",
     laboratory_requirement: "",
     Requirement_of_Soft_Interventions: {
@@ -277,12 +280,12 @@ function App() {
       Promotion_Campaign: "",
     },
     //added
-    Requirement_of_Training:"",
-    ESDP_beneficiaries:"",
-    Contact_Member_details_name:"",
-    Contact_Member_details_contact:"",
-    Contact_Member_details_designation:"",
-    Contact_Member_details_email:"",
+    Requirement_of_Training: "",
+    ESDP_beneficiaries: "",
+    Contact_Member_details_name: "",
+    Contact_Member_details_contact: "",
+    Contact_Member_details_designation: "",
+    Contact_Member_details_email: "",
   });
   const { t } = useTranslation();
 
@@ -310,16 +313,35 @@ function App() {
           <Route path="/" element={<Outer />}>
             <Route
               index
-              element={<First formD={formD} setFormD={setFormD}/>} />
-          <Route path="/1" element={<Table formD={formD} setFormD={setFormD} />}
+              element={<First formD={formD} setFormD={setFormD} />}
+            />
+            <Route
+              path="/1"
+              element={<Table formD={formD} setFormD={setFormD} />}
             />
             <Route
               path="/2"
-              element={<FormPart2 formD={formD} setFormD={setFormD} />}
+              element={
+                <FormPart2
+                  formD={formD}
+                  setFormD={setFormD}
+                  expand={expand}
+                  setexpand={setexpand}
+                  expand2={expand2}
+                  setexpand2={setexpand2}
+                />
+              }
             />
             <Route
               path="/3"
-              element={<FormPart3 formD={formD} addfields={addfields} setAddFields={setAddFields} setFormD={setFormD} />}
+              element={
+                <FormPart3
+                  formD={formD}
+                  addfields={addfields}
+                  setAddFields={setAddFields}
+                  setFormD={setFormD}
+                />
+              }
             />
             <Route
               path="/4"
