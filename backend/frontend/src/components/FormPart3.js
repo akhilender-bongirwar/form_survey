@@ -169,15 +169,15 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
       >
         <table style={{ width: "100%", overflowWrap: "break-word" }}>
           <tr>
-            <td colSpan={1}>
-              <span>
+            <td className="heading" colSpan={1}>
+              <>
                 {t(
                   "Are you aware about the current government programs benefitting MSMEs"
                 )}{" "}
-              </span>
+              </>
             </td>
             <td colSpan={6}>
-              <div className="radio_wrapper">
+              <div className="radio_wrapper wrapup">
                 <div>
                   <label htmlFor="YES">{t("YES")}</label>
                   <input
@@ -213,12 +213,12 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
           </tr>
           {chk ? (
             <tr>
-              <td colSpan={1}>
-                <span>
+              <td className="heading" colSpan={1}>
+                <>
                   {t(
                     "Which program benefits are you availing currently from the state? Please describe the key benefits and challenges related to the program"
                   )}
-                </span>
+                </>
               </td>
               <td colSpan={6}>
                 <Tooltip title="Add">
@@ -241,117 +241,122 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                   </IconButton>
                 </Tooltip>
                 <Tooltip title="Delete">
-                  <IconButton>
+                  <IconButton onClick={(e)=>{
+                    let ree={...addfields}
+                    delete ree[Object.values(ree).length-1]
+                    e.preventDefault();
+                    setAddFields(ree);
+                  }}>
                     <DeleteIcon />
                   </IconButton>
                 </Tooltip>
 
-                {Object.values(addfields).map((obj, index) => {
-                  return (
-                    <div style={{ width: "100%", display: "flex" }}>
-                      <td colSpan={1} style={{ width: "50%" }}>
+                <div className="wrapup">
+                  {Object.values(addfields).map((obj, index) => {
+                    return (
+                      <div style={{ width: "100%", display: "flex",alignItems:"flex-end" }}>
                         <tr>
-                          <span>{t("Name of the program")}</span>
+                          <td>
+                            <>{t("Name of the program")}</>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              data-identity={`${index}`}
+                              value={obj.name}
+                              onChange={(e) => {
+                                let id = e.target.dataset.identity;
+                                console.log("target id", id);
+                                setAddFields((prevobj) => {
+                                  return {
+                                    ...prevobj,
+                                    [index]: {
+                                      ...prevobj[index],
+                                      name: e.target.value,
+                                    },
+                                  };
+                                });
+                              }}
+                            />
+                          </td>
                         </tr>
                         <tr>
-                          <input
-                            type="text"
-                            data-identity={`${index}`}
-                            value={obj.name}
-                            onChange={(e) => {
-                              let id = e.target.dataset.identity;
-                              console.log("target id", id);
-                              setAddFields((prevobj) => {
-                                return {
-                                  ...prevobj,
-                                  [index]: {
-                                    ...prevobj[index],
-                                    name: e.target.value,
-                                  },
-                                };
-                              });
-                            }}
-                            style={{
-                              width: "90%",
-                              border: "transparent",
-                              borderBottom: "2px solid black",
-                            }}
-                          />
+                          <td>
+                            <label htmlFor="benefits">
+                              {t("Nature of assistance/Benefits")}:
+                            </label>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              data-identity={`${index}`}
+                              value={obj.assistance}
+                              onChange={(e) => {
+                                let id = e.target.dataset.identity;
+                                console.log("target id", id);
+                                setAddFields((prevobj) => {
+                                  return {
+                                    ...prevobj,
+                                    [index]: {
+                                      ...prevobj[index],
+                                      assistance: e.target.value,
+                                    },
+                                  };
+                                });
+                              }}
+                            />
+                          </td>
                         </tr>
-                      </td>
-                      <td colSpan={2} style={{ width: "100%" }}>
-                        <label htmlFor="benefits">
-                          {t("Nature of assistance/Benefits")}:
-                        </label>
-                        <input
-                          type="text"
-                          data-identity={`${index}`}
-                          value={obj.assistance}
-                          onChange={(e) => {
-                            let id = e.target.dataset.identity;
-                            console.log("target id", id);
-                            setAddFields((prevobj) => {
-                              return {
-                                ...prevobj,
-                                [index]: {
-                                  ...prevobj[index],
-                                  assistance: e.target.value,
-                                },
-                              };
-                            });
-                          }}
-                          style={{
-                            width: "90%",
-                            border: "transparent",
-                            borderBottom: "2px solid black",
-                          }}
-                        />
-                      </td>
-                      <td style={{ width: "100%" }}>
-                        <label htmlFor="challenges">{t("Challenges")}:</label>
-                        <input
-                          type="text"
-                          data-identity={`${index}`}
-                          value={obj.challanges}
-                          onChange={(e) => {
-                            let id = e.target.dataset.identity;
-                            console.log("target id", id);
-                            setAddFields((prevobj) => {
-                              return {
-                                ...prevobj,
-                                [index]: {
-                                  ...prevobj[index],
-                                  challanges: e.target.value,
-                                },
-                              };
-                            });
-                          }}
-                          style={{
-                            width: "90%",
-                            border: "transparent",
-                            borderBottom: "2px solid black",
-                          }}
-                        />
-                      </td>
-                    </div>
-                  );
-                })}
+                        <tr>
+                          <td><label htmlFor="challenges">{t("Challenges")}:</label></td>
+                          <td>
+                            <input
+                              type="text"
+                              data-identity={`${index}`}
+                              value={obj.challanges}
+                              onChange={(e) => {
+                                let id = e.target.dataset.identity;
+                                console.log("target id", id);
+                                setAddFields((prevobj) => {
+                                  return {
+                                    ...prevobj,
+                                    [index]: {
+                                      ...prevobj[index],
+                                      challanges: e.target.value,
+                                    },
+                                  };
+                                });
+                              }}
+                            />
+                          </td>
+                        </tr>
+                      </div>
+                    );
+                  })}
+                </div>
               </td>
             </tr>
           ) : null}
 
           <tr>
-            <td colSpan={1}>
-              <span>
+            <td className="heading" colSpan={1}>
+              <>
                 {t(
                   "What are your expectations from the State / Central Government (related to infra/training/finance/etc)"
                 )}
-              </span>
+              </>
             </td>
-            <td colSpan={6}>
-              <div>
+            <td
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "10px",
+              }}
+              colSpan={6}
+            >
+              <td>
                 <label style={{ textAlign: "center" }} htmlFor="Anything3">
-                  1.
+                  1.{" "}
                 </label>
                 <input
                   type="text"
@@ -360,14 +365,12 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                   value={formD.expectations_from_govt_1}
                   onChange={handleChange}
                   style={{
-                    width: "90%",
-                    border: "transparent",
-                    borderBottom: "2px solid black",
+                    width: "90%"
                   }}
                 />
-              </div>
-              <div>
-                <label htmlFor="Anything4">2.</label>
+              </td>
+              <td>
+                <label htmlFor="Anything4">2.{" "}</label>
                 <input
                   type="text"
                   id="Anything4"
@@ -375,23 +378,21 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                   value={formD.expectations_from_govt_2}
                   onChange={handleChange}
                   style={{
-                    width: "90%",
-                    border: "transparent",
-                    borderBottom: "2px solid black",
+                    width: "90%"
                   }}
                 />
-              </div>
+              </td>
             </td>
           </tr>
           <tr>
-            <td colSpan={1}>
-              <span>{t("Are you aware of any of the listed Schemes")}</span>
+            <td className="heading" colSpan={1}>
+              <>{t("Are you aware of any of the listed Schemes")}</>
             </td>
             <td colSpan={6} style={{ width: "100%" }}>
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <div>
-                  <div style={{ fontWeight: "bold", fontSize: "larger" }}>
-                    <u>{t("Central Government")}:</u>
+                  <div style={{ marginBottom:"10px",fontWeight: "bold", fontSize: "larger" }}>
+                    <h1>{t("Central Government")}:</h1>
                   </div>
                   <div
                     style={{
@@ -399,7 +400,7 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                       flexWrap: "wrap",
                       flexDirection: "column",
                     }}
-                    className="grevience_redressal radio_wrapper"
+                    className="grevience_redressal radio_wrapper wrapup"
                   >
                     <div className="d_flex_align_CONTENT_justify">
                       <label
@@ -594,10 +595,10 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                       />
                     </div>
                   </div>
-                  <div style={{ fontWeight: "bold", fontSize: "larger" }}>
-                    <u>{t("State Government")}:</u>
+                  <div style={{ marginTop:"30px",marginBottom:"10px", fontWeight: "bold", fontSize: "larger" }}>
+                    <h1>{t("State Government")}:</h1>
                   </div>
-                  <div style={{ display: "flex" }} className="radio_wrapper">
+                  <div style={{ display: "flex" }} className="radio_wrapper wrapup">
                     <div>
                       <label
                         htmlFor="opt1"
@@ -764,7 +765,7 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
             </td>
           </tr>
           <tr>
-            <td colSpan={1}>
+            <td className="heading" colSpan={1}>
               <label htmlFor="remark">
                 {t(
                   "Remarks (Specify if MSMEs are onboarded on any of the above on any of the above schemes)"
@@ -778,27 +779,22 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                 name="Remarks"
                 onChange={handleChange}
                 value={formD.Remarks}
-                style={{
-                  width: "50%",
-                  border: "transparent",
-                  borderBottom: "2px solid black",
-                }}
               />
             </td>
           </tr>
           <tr>
-            <td colSpan={1}>
-              <span>{t("Which scheme would you like to avail")}?</span>
+            <td className="heading" colSpan={1}>
+              <>{t("Which scheme would you like to avail")}?</>
             </td>
             <td colSpan={6} style={{ width: "100%" }}>
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <div>
-                  <div style={{ fontWeight: "bold", fontSize: "larger" }}>
-                    <u>{t("Central Government")}:</u>
+                  <div style={{marginBottom:"10px", fontWeight: "bold", fontSize: "larger" }}>
+                    <h1>{t("Central Government")}:</h1>
                   </div>
                   <div
                     style={{ display: "flex", flexWrap: "wrap" }}
-                    className="grevience_redressal radio_wrapper"
+                    className="grevience_redressal radio_wrapper wrapup"
                   >
                     <div className="d_flex_align_CONTENT_justify">
                       <label
@@ -964,10 +960,10 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                       />
                     </div>
                   </div>
-                  <div style={{ fontWeight: "bold", fontSize: "larger" }}>
-                    <u>{t("State Government")}:</u>
+                  <div style={{ marginTop:"30px",marginBottom:"10px", fontWeight: "bold", fontSize: "larger" }}>
+                    <h1>{t("State Government")}:</h1>
                   </div>
-                  <div style={{ display: "flex" }} className="radio_wrapper">
+                  <div style={{ display: "flex" }} className="radio_wrapper wrapup">
                     <div>
                       <label
                         htmlFor="opt11"
@@ -1103,7 +1099,7 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
             </td>
           </tr>
           <tr>
-            <td colSpan={1}>
+            <td className="heading" colSpan={1}>
               <div>
                 {t(
                   "What are the schemes under which you are availing benefits from Govt? (Both State and Central Govt separately)"
@@ -1111,32 +1107,28 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
               </div>
             </td>
             <td colSpan={6} style={{ width: "100%" }}>
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <input
-                  type="text"
-                  id="availedByMe"
-                  name="scheme_availed_by_you_central_govt"
-                  placeholder={t("central govt")}
-                  onChange={handleChange}
-                  value={formD.scheme_availed_by_you_central_govt}
-                  style={{
-                    border: "transparent",
-                    borderBottom: "2px solid black",
-                  }}
-                />
-                <input
-                  type="text"
-                  id="availedByMe2"
-                  placeholder={t("state govt")}
-                  name="scheme_availed_by_you_state_govt"
-                  onChange={handleChange}
-                  value={formD.scheme_availed_by_you_state_govt}
-                  style={{
-                    border: "transparent",
-                    borderBottom: "2px solid black",
-                  }}
-                />
-              </div>
+              <tr>
+                <td>
+                  <input
+                    type="text"
+                    id="availedByMe"
+                    name="scheme_availed_by_you_central_govt"
+                    placeholder="central govt."
+                    onChange={handleChange}
+                    value={formD.scheme_availed_by_you_central_govt}
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="availedByMe2"
+                    placeholder="state govt."
+                    name="scheme_availed_by_you_state_govt"
+                    onChange={handleChange}
+                    value={formD.scheme_availed_by_you_state_govt}
+                  />
+                </td>
+              </tr>
             </td>
           </tr>
         </table>

@@ -30,11 +30,6 @@ const FormPart2 = ({
     var marketingChk = false;
     var marketingChk1 = false;
 
-    const srcProcurement = document.querySelectorAll(".source");
-    const srcProcurement1 = document.querySelector(".source");
-    var srcChk = false;
-    var srcChk1 = false;
-
     const form = document.getElementById("formy");
 
     const checkboxes1 = form.querySelectorAll(`input[type="checkbox"].a`);
@@ -77,18 +72,6 @@ const FormPart2 = ({
         }
       }
     });
-    srcProcurement.forEach((el) => {
-      if (el.type == "radio") {
-        if (el.checked) {
-          srcChk = true;
-        }
-      } else if (el.type == "text") {
-        console.log(el);
-        if (el.value != "") {
-          srcChk1 = true;
-        }
-      }
-    });
 
     const err1 = form.querySelector(`input[type="checkbox"].a`);
     const err2 = form.querySelector(`input[type="checkbox"].b`);
@@ -102,17 +85,6 @@ const FormPart2 = ({
       } else {
         challFacing1.setCustomValidity("");
       }
-
-      if (!srcChk && !srcChk1) {
-        toast.error("Choose any one of the option or fill the text-field");
-        srcProcurement1.setCustomValidity(
-          "Choose any one of the option or fill the text-field"
-        );
-        srcProcurement1.reportValidity();
-      } else {
-        srcProcurement1.setCustomValidity("");
-      }
-
       if (leverage) {
         if (!marketingChk && !marketingChk1) {
           toast.error("Choose any one of the option or fill the text-field");
@@ -143,8 +115,7 @@ const FormPart2 = ({
     if (
       !isV &&
       (!challengesChk || !challengesChk1) &&
-      (!marketingChk || !marketingChk1) &&
-      (!srcChk || !srcChk1)
+      (!marketingChk || !marketingChk1)
     ) {
       e.preventDefault();
     } else {
@@ -407,7 +378,7 @@ const FormPart2 = ({
                       style={{
                         width: "100%",
                         overflowWrap: "break-word",
-                        backgroundColor: "rgb(240 235 248 / 77%)",
+                        // backgroundColor: "rgb(240 235 248 / 77%)",
                       }}
                       onClick={(e) => {
                         e.stopPropagation();
@@ -456,7 +427,6 @@ const FormPart2 = ({
                                 id="raw1"
                                 name="Raw_Materials"
                                 value="Direct"
-                                className="source"
                                 onChange={handleChange}
                               />
                             </div>
@@ -471,7 +441,6 @@ const FormPart2 = ({
                                 type="radio"
                                 id="raw2"
                                 name="Raw_Materials"
-                                className="source"
                                 checked={
                                   formD.Raw_Materials.radio_button ==
                                     "Through Traders" &&
@@ -491,7 +460,6 @@ const FormPart2 = ({
                               <input
                                 type="radio"
                                 id="raw3"
-                                className="source"
                                 checked={
                                   formD.Raw_Materials.radio_button ==
                                     "Online" && formD.Raw_Materials.other == ""
@@ -504,7 +472,6 @@ const FormPart2 = ({
                                 <input
                                   type="text"
                                   name="Raw_Materials"
-                                  className="source"
                                   onChange={handleChange}
                                   value={formD.Raw_Materials.other}
                                   placeholder={t("others")}
@@ -1483,7 +1450,7 @@ const FormPart2 = ({
                       style={{
                         width: "100%",
                         overflowWrap: "break-word",
-                        backgroundColor: "rgb(240 235 248 / 77%)",
+                        // backgroundColor: "rgb(240 235 248 / 77%)",
                       }}
                       className="grevience_redressal"
                       onClick={(e) => {
@@ -1491,10 +1458,10 @@ const FormPart2 = ({
                       }}
                     >
                       <thead>
-                        <th colSpan={6}>{t("For Service Industry")}</th>
+                        <h1>{t("For Service Industry")}</h1>
                       </thead>
                       <tr>
-                        <td colSpan={1} style={{ textAlign: "center" }}>
+                        <td className="heading" colSpan={1}>
                           {t("Nature of Services Offered")}
                         </td>
                         <td colSpan={6}>
