@@ -156,7 +156,7 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
         display: "flex",
         justifyContent: "center",
         overflowY: "scroll",
-        backgroundColor: "rgb(240 235 248 / 77%)",
+        // backgroundColor: "rgb(240 235 248 / 77%)",
       }}
     >
       <div

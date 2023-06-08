@@ -215,23 +215,23 @@ function FormPart6({ formD, setFormD }) {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          backgroundColor: "rgb(240 235 248 / 77%)",
+          // backgroundColor: "rgb(240 235 248 / 77%)",
         }}
       >
         <div
           style={{
             display: "flex",
             flexDirection: "column",
-            backgroundColor: "rgb(240 235 248 / 77%)",
+            // backgroundColor: "rgb(240 235 248 / 77%)",
           }}
         >
           <div>
             <h2
               style={{
-                background: "grey",
+                // background: "grey",
                 margin: "0.5em",
                 display: "flex",
-                backgroundColor: "rgb(240 235 248 / 77%)",
+                // backgroundColor: "rgb(240 235 248 / 77%)",
               }}
             >
               {t("Questionnaire For Exporters")}
@@ -245,7 +245,7 @@ function FormPart6({ formD, setFormD }) {
               marginBottom: "1em",
             }}
           >
-            <table style={{ width: "80%" }}>
+            <table style={{ width: "100%" }}>
               <tbody>
                 <tr>
                   <td>{t("Certifications")}</td>
@@ -256,7 +256,7 @@ function FormPart6({ formD, setFormD }) {
                       className="Certifications"
                       name="Currently_owned_1"
                       value={formD.Certifications.Currently_owned_1}
-                      style={{ border: "transparent" }}
+
                       placeholder="Currently owned"
                       onChange={handleChange}
                     />
@@ -269,7 +269,7 @@ function FormPart6({ formD, setFormD }) {
                       className="Certifications"
                       required="required"
                       value={formD.Certifications.To_be_Required_1}
-                      style={{ border: "transparent" }}
+
                       placeholder="To be required"
                       onChange={handleChange}
                     />
@@ -284,7 +284,7 @@ function FormPart6({ formD, setFormD }) {
                       className="Infrastructure"
                       name="Currently_owned_2"
                       value={formD.Infrastructure.Currently_owned_2}
-                      style={{ border: "transparent" }}
+
                       placeholder="Currently owned"
                       onChange={handleChange}
                     />
@@ -297,7 +297,7 @@ function FormPart6({ formD, setFormD }) {
                       name="To_be_Required_2"
                       required="required"
                       value={formD.Infrastructure.To_be_Required_2}
-                      style={{ border: "transparent" }}
+
                       placeholder="To be required"
                       onChange={handleChange}
                     />
@@ -312,7 +312,7 @@ function FormPart6({ formD, setFormD }) {
                       className="Laboratory"
                       name="Currently_owned_3"
                       value={formD.Laboratory.Currently_owned_3}
-                      style={{ border: "transparent" }}
+
                       placeholder="Currently owned"
                       onChange={handleChange}
                     />
@@ -325,8 +325,56 @@ function FormPart6({ formD, setFormD }) {
                       required="required"
                       className="Laboratory"
                       value={formD.Laboratory.To_be_Required_3}
-                      style={{ border: "transparent" }}
+
                       placeholder="To be required"
+                      onChange={handleChange}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td >
+                    {t("Do you face any challenge while getting payments from buyer")}?{t("If Yes, What are the challenges you are facing to receive payment from buyers for supplying materials")}
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      id="question"
+                      name="face_challenge_from_buyer"
+                      value={formD.face_challenge_from_buyer}
+                      onChange={handleChange}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    {t(
+                      " Any certification specific to export requirement which is currently not available?"
+                    )}
+                    {t("If Yes, mention support required and tentative cost:")}
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      id="question"
+                      name="Certification_required"
+                      value={formD.Certification_required}
+                      onChange={handleChange}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    {t(
+                      "Any laboratory testing facility specific to export requirement  which is currently not available?"
+                    )}
+                    {t("If Yes, mention support required and tentative cost:")}
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      id="question"
+                      name="laboratory_requirement"
+                      value={formD.laboratory_requirement}
                       onChange={handleChange}
                     />
                   </td>
@@ -334,65 +382,9 @@ function FormPart6({ formD, setFormD }) {
               </tbody>
             </table>
           </div>
-          <div>
-            <div style={{ fontSize: "1.2em", padding: "0.75em" }}>
-              {t("Do you face any challenge while getting payments from buyer")}
-              ? <br />
-              {t(
-                "If Yes, What are the challenges you are facing to receive payment from buyers for supplying materials"
-              )}
-            </div>
-            <input
-              type="text"
-              id="question"
-              name="face_challenge_from_buyer"
-              value={formD.face_challenge_from_buyer}
-              placeholder=". . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-              onChange={handleChange}
-              style={{ border: "transparent" }}
-            />
-          </div>
 
-          <div style={{ fontSize: "1.2em", padding: "0.75em" }}>
-            •
-            {t(
-              " Any certification specific to export requirement which is currently not available?"
-            )}
-            (Please specify) <br />
-            {t("If Yes, mention support required and tentative cost:")}
-          </div>
-          <div>
-            <input
-              type="text"
-              id="question"
-              name="Certification_required"
-              value={formD.Certification_required}
-              placeholder=". . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-              onChange={handleChange}
-              style={{ border: "transparent" }}
-            />
-          </div>
-          <div style={{ fontSize: "1.2em", padding: "0.75em" }}>
-            •{" "}
-            {t(
-              "Any laboratory testing facility specific to export requirement  which is currently not available?"
-            )}
-            <br />
-            (Please specify).
-            <br />
-            {t("If Yes, mention support required and tentative cost:")}
-          </div>
-          <div>
-            <input
-              type="text"
-              id="question"
-              name="laboratory_requirement"
-              value={formD.laboratory_requirement}
-              placeholder=". . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-              onChange={handleChange}
-              style={{ border: "transparent" }}
-            />
-          </div>
+
+
           <div>
             <h2
               style={{
@@ -428,7 +420,7 @@ function FormPart6({ formD, setFormD }) {
                         formD.Requirement_of_Soft_Interventions.Counselling
                       }
                       onChange={handleChange}
-                      style={{ border: "transparent" }}
+
                     />
                   </td>
                 </tr>
@@ -446,7 +438,7 @@ function FormPart6({ formD, setFormD }) {
                           .Upgradation_of_IT_Infrastructure
                       }
                       onChange={handleChange}
-                      style={{ border: "transparent" }}
+
                     />
                   </td>
                 </tr>
@@ -466,7 +458,7 @@ function FormPart6({ formD, setFormD }) {
                           .Participation_in_Training
                       }
                       onChange={handleChange}
-                      style={{ border: "transparent" }}
+
                     />
                   </td>
                 </tr>
@@ -484,7 +476,7 @@ function FormPart6({ formD, setFormD }) {
                           .Institution_Development
                       }
                       onChange={handleChange}
-                      style={{ border: "transparent" }}
+
                     />
                   </td>
                 </tr>
@@ -502,7 +494,7 @@ function FormPart6({ formD, setFormD }) {
                           .Implementation_of_new_software
                       }
                       onChange={handleChange}
-                      style={{ border: "transparent" }}
+
                     />
                   </td>
                 </tr>
@@ -524,7 +516,7 @@ function FormPart6({ formD, setFormD }) {
                           .Training_Process_Improvement
                       }
                       onChange={handleChange}
-                      style={{ border: "transparent" }}
+
                     />
                   </td>
                 </tr>
@@ -542,7 +534,7 @@ function FormPart6({ formD, setFormD }) {
                           .Market_Promotion_Initiatives
                       }
                       onChange={handleChange}
-                      style={{ border: "transparent" }}
+
                     />
                   </td>
                 </tr>
@@ -560,7 +552,7 @@ function FormPart6({ formD, setFormD }) {
                           .Design_and_product_development
                       }
                       onChange={handleChange}
-                      style={{ border: "transparent" }}
+
                     />
                   </td>
                 </tr>
@@ -578,7 +570,7 @@ function FormPart6({ formD, setFormD }) {
                           .Promotion_Campaign
                       }
                       onChange={handleChange}
-                      style={{ border: "transparent" }}
+
                     />
                   </td>
                 </tr>
@@ -598,17 +590,15 @@ function FormPart6({ formD, setFormD }) {
           </div>
           <table>
             <tr>
-              <td colSpan={1}>
-                <span>
+              <td>
                   {" "}
                   {t(
-                    "Do you need ant training program supported by Government of India for developing entrepreneurial skills?"
+                    "Do you need any training program supported by Government of India for developing entrepreneurial skills?"
                   )}
-                </span>
               </td>
               <td colSpan={6}>
-                <div className="radio_wrapper">
-                  <div>
+                <div style={{width:"20%"}} className="radio_wrapper">
+                  <tr>
                     <label htmlFor="Requirement_of_Trainingyes">
                       {t("YES")}
                     </label>
@@ -622,8 +612,8 @@ function FormPart6({ formD, setFormD }) {
                       onChange={handleChange}
                       checked={formD.Requirement_of_Training == "YES"}
                     />
-                  </div>
-                  <div>
+                  </tr>
+                  <tr>
                     <label htmlFor="Requirement_of_Trainingno">{t("NO")}</label>
                     <input
                       type="radio"
@@ -635,94 +625,94 @@ function FormPart6({ formD, setFormD }) {
                       onChange={handleChange}
                       checked={formD.Requirement_of_Training == "NO"}
                     />
-                  </div>
+                  </tr>
                 </div>
               </td>
             </tr>
-                {a61!="show61"?"":
-                <tr>
+            {a61 != "show61" ? "" :
+              <tr>
                 <td colSpan={1}>
                   <label htmlFor="ESDP_beneficiaries">{t(
-                        "In yes, then who will be the beneficiaries(entrepreneurs, students, etc) ?"
-                      )}{" "}</label>
+                    "In yes, then who will be the beneficiaries(entrepreneurs, students, etc) ?"
+                  )}{" "}</label>
                 </td>
                 <td colSpan={6}>
-                <input
-                      style={{ minWidth: "20px", marginBottom: "12px" }}
-                      type="text"
-                      id="ESDP_beneficiaries"
-                      name="ESDP_beneficiaries"
-                      onChange={handleChange}
-                      required="required"
-                      value={formD.ESDP_beneficiaries}
-                    />
+                  <input
+                    style={{ minWidth: "20px", marginBottom: "12px" }}
+                    type="text"
+                    id="ESDP_beneficiaries"
+                    name="ESDP_beneficiaries"
+                    onChange={handleChange}
+                    required="required"
+                    value={formD.ESDP_beneficiaries}
+                  />
                 </td>
               </tr>}
-                  <tr>
-                    <td colSpan={7}>
-                      <p style={{textAlign:"center"}}><b>{t("Point of Contact Member Details")}</b></p>
-                    </td>
-                  </tr>
-              <tr>
-                <td colSpan={1}>
-                  <label htmlFor="Contact_Member_details_name">{t("Name :")}</label>
-                </td>
-                <td colSpan={6}>
-                  <input
-                    type="text"
-                    id="Contact_Member_details_name"
-                    name="Contact_Member_details_name"
-                    onChange={handleChange}
-                    required="required"
-                    value={formD.Contact_Member_details_name}
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td colSpan={1}>
-                  <label htmlFor="Contact_Member_details_contact">{t("Contact :")}</label>
-                </td>
-                <td colSpan={6}>
-                  <input
-                    type="text"
-                    id="Contact_Member_details_contact"
-                    name="Contact_Member_details_contact"
-                    onChange={handleChange}
-                    required="required"
-                    value={formD.Contact_Member_details_contact}
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td colSpan={1}>
-                  <label htmlFor="Contact_Member_details_designation">{t("Designation :")}</label>
-                </td>
-                <td colSpan={6}>
-                  <input
-                    type="text"
-                    id="Contact_Member_details_designation"
-                    name="Contact_Member_details_designation"
-                    onChange={handleChange}
-                    required="required"
-                    value={formD.Contact_Member_details_designation}
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td colSpan={1}>
-                  <label htmlFor="Contact_Member_details_email">{t("Email :")}</label>
-                </td>
-                <td colSpan={6}>
-                  <input
-                    type="email"
-                    id="Contact_Member_details_email"
-                    name="Contact_Member_details_email"
-                    onChange={handleChange}
-                    required="required"
-                    value={formD.Contact_Member_details_email}
-                  />
-                </td>
-              </tr>
+            <tr>
+              <td colSpan={7}>
+                <p style={{ textAlign: "center" }}><b>{t("Point of Contact Member Details")}</b></p>
+              </td>
+            </tr>
+            <tr>
+              <td colSpan={1}>
+                <label htmlFor="Contact_Member_details_name">{t("Name :")}</label>
+              </td>
+              <td colSpan={6}>
+                <input
+                  type="text"
+                  id="Contact_Member_details_name"
+                  name="Contact_Member_details_name"
+                  onChange={handleChange}
+                  required="required"
+                  value={formD.Contact_Member_details_name}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td colSpan={1}>
+                <label htmlFor="Contact_Member_details_contact">{t("Contact :")}</label>
+              </td>
+              <td colSpan={6}>
+                <input
+                  type="text"
+                  id="Contact_Member_details_contact"
+                  name="Contact_Member_details_contact"
+                  onChange={handleChange}
+                  required="required"
+                  value={formD.Contact_Member_details_contact}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td colSpan={1}>
+                <label htmlFor="Contact_Member_details_designation">{t("Designation :")}</label>
+              </td>
+              <td colSpan={6}>
+                <input
+                  type="text"
+                  id="Contact_Member_details_designation"
+                  name="Contact_Member_details_designation"
+                  onChange={handleChange}
+                  required="required"
+                  value={formD.Contact_Member_details_designation}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td colSpan={1}>
+                <label htmlFor="Contact_Member_details_email">{t("Email :")}</label>
+              </td>
+              <td colSpan={6}>
+                <input
+                  type="email"
+                  id="Contact_Member_details_email"
+                  name="Contact_Member_details_email"
+                  onChange={handleChange}
+                  required="required"
+                  value={formD.Contact_Member_details_email}
+                />
+              </td>
+            </tr>
           </table>
         </div>
       </div>
