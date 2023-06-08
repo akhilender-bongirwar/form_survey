@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import FormPart2 from "./FormPart2";
-function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
+function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
   const [a61, setA61] = React.useState(null);
   const { t } = useTranslation();
 
@@ -17,14 +17,13 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
     const isV = document.getElementById("formy").reportValidity();
     if (!isV) {
     } else {
-      let formDt = {...formD,State_benefits_obj:addfields};
+      let formDt = { ...formD, State_benefits_obj: addfields };
       if (formDt.Ownership_Pattern != "partnership") {
         formDt.ownership_female_partnership = "";
       }
       if (formDt.Cluster == "YES") {
         formDt.Cluster_No = "";
-      }
-      else {
+      } else {
         formDt.Cluster_Yes = "";
       }
       if (formDt.loan_availed == "NO") {
@@ -71,8 +70,8 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
         formDt.Challenges_faced.Challenges_faced_a = "";
         formDt.Challenges_faced.Challenges_faced_b = "";
         formDt.Challenges_faced.Challenges_faced_c = "";
-        formDt.Govt_Scheme_Challenges = ""
-        formDt.Support_required = ""
+        formDt.Govt_Scheme_Challenges = "";
+        formDt.Support_required = "";
       }
       if (expand == false) {
         formDt.Raw_Materials.radio_button = "";
@@ -114,8 +113,8 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
       axios
         .post("/form-data", {
           mode: "cors",
-          body: formD,
-         })
+          body: formDt,
+        })
         .then((d) => {
           // console.log(d.data.success);
           if (!d.data.success) {
@@ -129,7 +128,7 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
             toast.success("saved");
             setTimeout(() => {
               navigate("/");
-              window.location.reload()
+              window.location.reload();
             }, 500);
           }
         })
@@ -307,7 +306,9 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
   }
   return (
     <>
-      <h1 style={{ marginBottom: "2em" }}>{t("F. Online Dispute Resolution")}</h1>
+      <h1 style={{ marginBottom: "2em" }}>
+        {t("F. Online Dispute Resolution")}
+      </h1>
       <div
         style={{
           display: "flex",
@@ -354,7 +355,6 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
                       className="Certifications"
                       name="Currently_owned_1"
                       value={formD.Certifications.Currently_owned_1}
-
                       placeholder={t("Currently owned")}
                       onChange={handleChange}
                     />
@@ -367,7 +367,6 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
                       className="Certifications"
                       required="required"
                       value={formD.Certifications.To_be_Required_1}
-
                       placeholder={t("To be required")}
                       onChange={handleChange}
                     />
@@ -382,7 +381,6 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
                       className="Infrastructure"
                       name="Currently_owned_2"
                       value={formD.Infrastructure.Currently_owned_2}
-
                       placeholder={t("Currently owned")}
                       onChange={handleChange}
                     />
@@ -395,7 +393,6 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
                       name="To_be_Required_2"
                       required="required"
                       value={formD.Infrastructure.To_be_Required_2}
-
                       placeholder={t("To be required")}
                       onChange={handleChange}
                     />
@@ -410,7 +407,6 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
                       className="Laboratory"
                       name="Currently_owned_3"
                       value={formD.Laboratory.Currently_owned_3}
-
                       placeholder={t("Currently owned")}
                       onChange={handleChange}
                     />
@@ -423,15 +419,20 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
                       required="required"
                       className="Laboratory"
                       value={formD.Laboratory.To_be_Required_3}
-
                       placeholder={t("To be required")}
                       onChange={handleChange}
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td className="heading" >
-                    {t("Do you face any challenge while getting payments from buyer")}?{t("If Yes, What are the challenges you are facing to receive payment from buyers for supplying materials")}
+                  <td className="heading">
+                    {t(
+                      "Do you face any challenge while getting payments from buyer"
+                    )}
+                    ?
+                    {t(
+                      "If Yes, What are the challenges you are facing to receive payment from buyers for supplying materials"
+                    )}
                   </td>
                   <td>
                     <input
@@ -481,8 +482,6 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
             </table>
           </div>
 
-
-
           <div>
             <h2
               style={{
@@ -518,12 +517,13 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
                         formD.Requirement_of_Soft_Interventions.Counselling
                       }
                       onChange={handleChange}
-
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td className="heading">{t("Upgradation of IT Infrastructure")}</td>
+                  <td className="heading">
+                    {t("Upgradation of IT Infrastructure")}
+                  </td>
                   <td>
                     <input
                       type="text"
@@ -536,7 +536,6 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
                           .Upgradation_of_IT_Infrastructure
                       }
                       onChange={handleChange}
-
                     />
                   </td>
                 </tr>
@@ -556,7 +555,6 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
                           .Participation_in_Training
                       }
                       onChange={handleChange}
-
                     />
                   </td>
                 </tr>
@@ -574,12 +572,13 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
                           .Institution_Development
                       }
                       onChange={handleChange}
-
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td className="heading">{t("Implementation of new software")}</td>
+                  <td className="heading">
+                    {t("Implementation of new software")}
+                  </td>
                   <td>
                     <input
                       type="text"
@@ -592,7 +591,6 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
                           .Implementation_of_new_software
                       }
                       onChange={handleChange}
-
                     />
                   </td>
                 </tr>
@@ -614,12 +612,13 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
                           .Training_Process_Improvement
                       }
                       onChange={handleChange}
-
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td className="heading">{t("Market Promotion Initiatives")}</td>
+                  <td className="heading">
+                    {t("Market Promotion Initiatives")}
+                  </td>
                   <td>
                     <input
                       type="text"
@@ -632,12 +631,13 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
                           .Market_Promotion_Initiatives
                       }
                       onChange={handleChange}
-
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td className="heading">{t("Design and product development")}</td>
+                  <td className="heading">
+                    {t("Design and product development")}
+                  </td>
                   <td>
                     <input
                       type="text"
@@ -650,12 +650,13 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
                           .Design_and_product_development
                       }
                       onChange={handleChange}
-
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td className="heading">{t("Brand Building, Promotion Campaign")}</td>
+                  <td className="heading">
+                    {t("Brand Building, Promotion Campaign")}
+                  </td>
                   <td>
                     <input
                       type="text"
@@ -668,7 +669,6 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
                           .Promotion_Campaign
                       }
                       onChange={handleChange}
-
                     />
                   </td>
                 </tr>
@@ -684,7 +684,9 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
                 marginBottom: "2em",
               }}
             >
-              {t("Entrepreneurship Skill Development Programme (ESDP) Training Requirement :")}
+              {t(
+                "Entrepreneurship Skill Development Programme (ESDP) Training Requirement :"
+              )}
             </h2>
           </div>
           <table>
@@ -698,7 +700,10 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
               <td colSpan={6}>
                 <div className="radio_wrapper wrapup">
                   <td>
-                    <label style={{marginRight:"20px"}} htmlFor="Requirement_of_Trainingyes">
+                    <label
+                      style={{ marginRight: "20px" }}
+                      htmlFor="Requirement_of_Trainingyes"
+                    >
                       {t("YES")}
                     </label>
                     <input
@@ -713,7 +718,12 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
                     />
                   </td>
                   <td>
-                    <label style={{marginRight:"20px"}} htmlFor="Requirement_of_Trainingno">{t("NO")}</label>
+                    <label
+                      style={{ marginRight: "20px" }}
+                      htmlFor="Requirement_of_Trainingno"
+                    >
+                      {t("NO")}
+                    </label>
                     <input
                       type="radio"
                       name="Requirement_of_Training"
@@ -728,12 +738,16 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
                 </div>
               </td>
             </tr>
-            {a61 != "show61" ? "" :
+            {a61 != "show61" ? (
+              ""
+            ) : (
               <tr>
                 <td className="heading" colSpan={1}>
-                  <label htmlFor="ESDP_beneficiaries">{t(
-                    "In yes, then who will be the beneficiaries(entrepreneurs, students, etc) ?"
-                  )}{" "}</label>
+                  <label htmlFor="ESDP_beneficiaries">
+                    {t(
+                      "In yes, then who will be the beneficiaries(entrepreneurs, students, etc) ?"
+                    )}{" "}
+                  </label>
                 </td>
                 <td colSpan={6}>
                   <input
@@ -746,7 +760,8 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
                     value={formD.ESDP_beneficiaries}
                   />
                 </td>
-              </tr>}
+              </tr>
+            )}
             <tr>
               <td colSpan={7}>
                 <h1
@@ -754,13 +769,17 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
                     display: "flex",
                     marginTop: "2em",
                     marginBottom: "2em",
-                  }}>
-                  {t("Point of Contact Member Details")}</h1>
+                  }}
+                >
+                  {t("Point of Contact Member Details")}
+                </h1>
               </td>
             </tr>
             <tr>
               <td className="heading" colSpan={1}>
-                <label htmlFor="Contact_Member_details_name">{t("Name :")}</label>
+                <label htmlFor="Contact_Member_details_name">
+                  {t("Name :")}
+                </label>
               </td>
               <td colSpan={6}>
                 <input
@@ -775,7 +794,9 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
             </tr>
             <tr>
               <td className="heading" colSpan={1}>
-                <label htmlFor="Contact_Member_details_contact">{t("Contact :")}</label>
+                <label htmlFor="Contact_Member_details_contact">
+                  {t("Contact :")}
+                </label>
               </td>
               <td colSpan={6}>
                 <input
@@ -790,7 +811,9 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
             </tr>
             <tr>
               <td className="heading" colSpan={1}>
-                <label htmlFor="Contact_Member_details_designation">{t("Designation :")}</label>
+                <label htmlFor="Contact_Member_details_designation">
+                  {t("Designation :")}
+                </label>
               </td>
               <td colSpan={6}>
                 <input
@@ -805,7 +828,9 @@ function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
             </tr>
             <tr>
               <td className="heading" colSpan={1}>
-                <label htmlFor="Contact_Member_details_email">{t("Email :")}</label>
+                <label htmlFor="Contact_Member_details_email">
+                  {t("Email :")}
+                </label>
               </td>
               <td colSpan={6}>
                 <input

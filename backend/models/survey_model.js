@@ -3,13 +3,13 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const surveyData = new Schema({
-  submission_date:{
-    type:String,
-    required:true
+  submission_date: {
+    type: String,
+    required: true,
   },
-  District_Code:{
-    type:String,
-    required:true
+  District_Code: {
+    type: String,
+    required: true,
   },
   Enterprise_Name: {
     type: String,
@@ -157,8 +157,8 @@ const surveyData = new Schema({
       type: String,
     },
   },
-  employee_unit:{
-    type: Number,
+  employee_unit: {
+    type: String,
     required: true,
   },
   full_time_Emoployee: {
@@ -318,16 +318,16 @@ const surveyData = new Schema({
     type: Number,
     required: true,
   },
-  industry_option: {
-    service_industry_opt: {
-      type: Boolean,
-      required: true,
-    },
-    manufacturing_industry_opt: {
-      type: Boolean,
-      required: true,
-    },
-  },
+  // industry_option: {
+  //   service_industry_opt: {
+  //     type: Boolean,
+  //     required: true,
+  //   },
+  //   manufacturing_industry_opt: {
+  //     type: Boolean,
+  //     required: true,
+  //   },
+  // },
   Raw_Materials: {
     radio_button: {
       type: String,
@@ -523,8 +523,8 @@ const surveyData = new Schema({
   // Challenges_faced_policy_related: {
   //   type: String,
   // },
-  State_benefits_obj:{
-    type:mongoose.Schema.Types.Mixed,
+  State_benefits_obj: {
+    type: mongoose.Schema.Types.Mixed,
   },
 
   expectation_from_govt_1: {
@@ -789,14 +789,14 @@ const surveyData = new Schema({
       type: String,
     },
   },
-    Certification_required: {
-      type: String,
-      required: true,
-    },
-    laboratory_requirement: {
-      type: String,
-      required: true,
-    },
+  Certification_required: {
+    type: String,
+    required: true,
+  },
+  laboratory_requirement: {
+    type: String,
+    required: true,
+  },
   Requirement_of_Soft_Interventions: {
     Counselling: {
       type: String,
