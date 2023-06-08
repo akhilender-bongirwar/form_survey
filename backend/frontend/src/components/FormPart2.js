@@ -20,14 +20,22 @@ const FormPart2 = ({
   const navigate = useNavigate();
   const validate = (e) => {
     e.preventDefault();
+    const challFacing = document.querySelectorAll(".facingChal");
+    const challFacing1 = document.querySelector(".facingChal");
+    var challengesChk = false;
+    var challengesChk1=false;
+
+    const marketing = document.querySelectorAll(".branding");
+    const marketing1 = document.querySelector(".branding");
+    var marketingChk = false;
+    var marketingChk1 = false;
+
     const form = document.getElementById("formy");
 
     const checkboxes1 = form.querySelectorAll(`input[type="checkbox"].a`);
     const checkboxes2 = form.querySelectorAll(`input[type="checkbox"].b`);
-    const checkboxes3 = form.querySelectorAll(`input[type="checkbox"].c`);
     var checked1 = false;
     var checked2 = false;
-    var checked3 = false;
 
     checkboxes1.forEach(function (checkbox) {
       if (checkbox.checked) {
@@ -39,44 +47,75 @@ const FormPart2 = ({
         checked2 = true;
       }
     });
-    // checkboxes3.forEach(function (checkbox) {
-    //   if (checkbox.checked) {
-    //     checked2 = true;
-    //   }
-    // });
+    challFacing.forEach((el)=>{
+      if(el.type=="checkbox"){
+        if(el.checked){
+          challengesChk = true;
+        }
+      }
+      else if(el.type == "text"){
+          console.log(el)
+          if(el.value !=""){
+            challengesChk1=true;
+          }
+        }
+    });
+
+    marketing.forEach((el)=>{
+      if(el.type=="checkbox"){
+        if(el.checked){
+          marketingChk = true;
+        }
+      }
+      else if(el.type == "text"){
+          console.log(el)
+          if(el.value !=""){
+            marketingChk1=true;
+          }
+        }
+    });
+
+    if(!challengesChk && !challengesChk1){
+
+      toast.error("Choose any one of the option or fill the text-field");
+      challFacing1.setCustomValidity("Choose any one of the option or fill the text-field");
+      challFacing1.reportValidity();
+    }else{
+      challFacing1.setCustomValidity("");
+    }
+
+    if(!marketingChk && !marketingChk1){
+
+      toast.error("Choose any one of the option or fill the text-field");
+      marketing1.setCustomValidity("Choose any one of the option or fill the text-field");
+      marketing1.reportValidity();
+    }else{
+      marketing1.setCustomValidity("");
+    }
+    console.log(marketingChk);
+    console.log(marketingChk1);
+
 
     const err1 = form.querySelector(`input[type="checkbox"].a`);
     const err2 = form.querySelector(`input[type="checkbox"].b`);
-    const err3 = form.querySelector(`input[type="checkbox"].c`);
-    // console.log(checked);
-    //var ischecked = err.reportValidity();
     if (expand) {
       if (!checked1) {
         toast.error("fill the required field");
         err1.setCustomValidity("select any one option");
       } else {
         err1.setCustomValidity("");
-        // navigate("/3");
       }
       if (!checked2) {
         toast.error("fill the required field");
         err2.setCustomValidity("select any one option");
       } else {
         err2.setCustomValidity("");
-        // navigate("/3");
-      }
-      // if(!checked3){
-      //   err3.setCustomValidity("select any one option");
-      // }else{
-      //   err3.setCustomValidity("");
-      // }
-      if (checked1 && checked2) {
-        navigate("/3");
+
       }
     }
 
     const isV = document.getElementById("formy").reportValidity();
-    if (!isV) {
+    if (!isV && (!challengesChk || !challengesChk1) && (!marketingChk || !marketingChk1)) {
       e.preventDefault();
     } else {
       navigate("/3");
@@ -456,6 +495,7 @@ const FormPart2 = ({
                                       <input
                                         type="radio"
                                         name="if_Raw_Materials_available"
+                                        required="required"
                                         id="yes_material"
                                         onClick={() => {
                                           setchallenges(null);
@@ -475,6 +515,7 @@ const FormPart2 = ({
                                       <input
                                         type="radio"
                                         name="if_Raw_Materials_available"
+                                        required="required"
                                         id="no_material"
                                         value="NO"
                                         onClick={() => {
@@ -505,6 +546,7 @@ const FormPart2 = ({
                                       onChange={handleChange}
                                       value={formD.if_no_mention_difficulties}
                                       name="if_no_mention_difficulties"
+                                      required="required"
                                       style={{
                                         width: "100%",
                                         border: "transparent",
@@ -533,6 +575,7 @@ const FormPart2 = ({
                                         type="radio"
                                         name="green_tech"
                                         id="yes_material2"
+                                        required="required"
                                         value="YES"
                                         onChange={handleChange}
                                         checked={formD.green_tech == "YES"}
@@ -546,6 +589,7 @@ const FormPart2 = ({
                                         type="radio"
                                         name="green_tech"
                                         id="no_material2"
+                                        required="required"
                                         value="NO"
                                         onChange={handleChange}
                                         checked={formD.green_tech == "NO"}
@@ -574,6 +618,7 @@ const FormPart2 = ({
                                         type="radio"
                                         name="environment_clearence"
                                         id="yes_material3"
+                                        required="required"
                                         value="YES"
                                         onChange={handleChange}
                                         checked={
@@ -589,6 +634,7 @@ const FormPart2 = ({
                                         type="radio"
                                         name="environment_clearence"
                                         id="no_material3"
+                                        required="required"
                                         value="NO"
                                         onChange={handleChange}
                                         checked={
@@ -829,6 +875,7 @@ const FormPart2 = ({
                                         id="yes_material23"
                                         onClick={() => setothers("yes")}
                                         name="have_product_brand_name"
+                                        required="required"
                                         value="YES"
                                         onChange={handleChange}
                                         checked={
@@ -845,6 +892,7 @@ const FormPart2 = ({
                                         name="have_product_brand_name"
                                         id="no_material23"
                                         value="NO"
+                                        required="required"
                                         onClick={() => setothers(null)}
                                         onChange={handleChange}
                                         checked={
@@ -867,6 +915,7 @@ const FormPart2 = ({
                                       type="text"
                                       id="brand"
                                       name="Brand_name"
+                                      required="required"
                                       onChange={handleChange}
                                       value={formD.Brand_name}
                                       style={{
@@ -905,7 +954,7 @@ const FormPart2 = ({
                                       type="checkbox"
                                       name="challenges_while_selling"
                                       value="advance_technology"
-                                      className="c"
+                                      className="facingChal"
                                       checked={
                                         formD.challenges_while_selling
                                           .advance_technology
@@ -925,7 +974,7 @@ const FormPart2 = ({
                                       type="checkbox"
                                       name="challenges_while_selling"
                                       value="quality_of_product"
-                                      className="c"
+                                      className="facingChal"
                                       id="quality"
                                       checked={
                                         formD.challenges_while_selling
@@ -945,7 +994,7 @@ const FormPart2 = ({
                                       type="checkbox"
                                       name="challenges_while_selling"
                                       value="market_competition"
-                                      className="c"
+                                      className="facingChal"
                                       id="marketComp"
                                       onChange={handleChange}
                                       checked={
@@ -966,7 +1015,7 @@ const FormPart2 = ({
                                       name="challenges_while_selling"
                                       value="capital"
                                       id="capital"
-                                      className="c"
+                                      className="facingChal"
                                       onChange={handleChange}
                                       checked={
                                         formD.challenges_while_selling.capital
@@ -985,7 +1034,7 @@ const FormPart2 = ({
                                       name="challenges_while_selling"
                                       value="branding_and_marketing"
                                       id="brandMarket"
-                                      className="c"
+                                      className="facingChal"
                                       onChange={handleChange}
                                       checked={
                                         formD.challenges_while_selling
@@ -1007,7 +1056,7 @@ const FormPart2 = ({
                                       type="text"
                                       id="other"
                                       name="challenges_while_selling"
-                                      className="c"
+                                      className="facingChal"
                                       onChange={handleChange}
                                       value={
                                         formD.challenges_while_selling.other
@@ -1047,6 +1096,7 @@ const FormPart2 = ({
                                         name="involved_in_marketing"
                                         id="yesx_material2"
                                         value="YES"
+                                        required="required"
                                         onClick={() => {
                                           setleverage("yes");
                                         }}
@@ -1064,6 +1114,7 @@ const FormPart2 = ({
                                         type="radio"
                                         name="involved_in_marketing"
                                         id="nox_material2"
+                                        required="required"
                                         onClick={() => {
                                           setleverage(null);
                                           // clearfields();
@@ -1098,6 +1149,7 @@ const FormPart2 = ({
                                             type="checkbox"
                                             id="exhibition"
                                             name="options_you_leverage_for_sale"
+                                            className="branding"
                                             value="exhibitions"
                                             onChange={handleChange}
                                             checked={
@@ -1118,6 +1170,7 @@ const FormPart2 = ({
                                             type="checkbox"
                                             id="portal"
                                             name="options_you_leverage_for_sale"
+                                            className="branding"
                                             value="portals"
                                             onChange={handleChange}
                                             checked={
@@ -1138,6 +1191,7 @@ const FormPart2 = ({
                                             type="checkbox"
                                             id="website"
                                             name="options_you_leverage_for_sale"
+                                            className="branding"
                                             value="websites"
                                             onChange={handleChange}
                                             checked={
@@ -1159,6 +1213,7 @@ const FormPart2 = ({
                                             type="checkbox"
                                             id="socMedia"
                                             name="options_you_leverage_for_sale"
+                                            className="branding"
                                             value="social_media"
                                             onChange={handleChange}
                                             checked={
@@ -1180,6 +1235,7 @@ const FormPart2 = ({
                                             id="marketFacility"
                                             name="options_you_leverage_for_sale"
                                             value="Common_marketing_facility"
+                                            className="branding"
                                             onChange={handleChange}
                                             checked={
                                               formD
@@ -1197,6 +1253,7 @@ const FormPart2 = ({
                                             type="text"
                                             id="other"
                                             name="options_you_leverage_for_sale"
+                                            className="branding"
                                             onChange={handleChange}
                                             value={
                                               formD
@@ -1236,6 +1293,7 @@ const FormPart2 = ({
                                         name="Quality_Testing_lab_available"
                                         id="yes_material7"
                                         value="YES"
+                                        required="required"
                                         onChange={handleChange}
                                         checked={
                                           formD.Quality_Testing_lab_available ==
@@ -1252,6 +1310,7 @@ const FormPart2 = ({
                                         name="Quality_Testing_lab_available"
                                         id="no_material7"
                                         value="NO"
+                                        required="required"
                                         onChange={handleChange}
                                         checked={
                                           formD.Quality_Testing_lab_available ==
@@ -1284,6 +1343,7 @@ const FormPart2 = ({
                                         name="labour_and_training"
                                         id="yes_material120"
                                         value="YES"
+                                        required="required"
                                         onChange={handleChange}
                                         checked={
                                           formD.labour_and_training == "YES"
@@ -1299,6 +1359,7 @@ const FormPart2 = ({
                                         name="labour_and_training"
                                         id="no_material120"
                                         value="NO"
+                                        required="required"
                                         onChange={handleChange}
                                         checked={
                                           formD.labour_and_training == "NO"
@@ -1326,6 +1387,7 @@ const FormPart2 = ({
                                         name="skilled_labour_is_required"
                                         id="yes_material90"
                                         value="YES"
+                                        required="required"
                                         onChange={handleChange}
                                         checked={
                                           formD.skilled_labour_is_required ==
@@ -1342,6 +1404,7 @@ const FormPart2 = ({
                                         name="skilled_labour_is_required"
                                         id="no_material90"
                                         value="NO"
+                                        required="required"
                                         onChange={handleChange}
                                         checked={
                                           formD.skilled_labour_is_required ==
