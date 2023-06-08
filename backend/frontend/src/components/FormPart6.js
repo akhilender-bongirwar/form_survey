@@ -5,9 +5,9 @@ import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
 import { useTranslation } from "react-i18next";
-
 import { NavLink } from "react-router-dom";
-function FormPart6({ formD, setFormD }) {
+import FormPart2 from "./FormPart2";
+function FormPart6({ formD, setFormD, expand2, expand }) {
   const [a61, setA61] = React.useState(null);
   const { t } = useTranslation();
 
@@ -17,6 +17,100 @@ function FormPart6({ formD, setFormD }) {
     const isV = document.getElementById("formy").reportValidity();
     if (!isV) {
     } else {
+      let formDt = formD;
+      if (formDt.Ownership_Pattern != "partnership") {
+        formDt.ownership_female_partnership = "";
+      }
+      if (formDt.Cluster == "YES") {
+        formDt.Cluster_No = "";
+      }
+      else {
+        formDt.Cluster_Yes = "";
+      }
+      if (formDt.loan_availed == "NO") {
+        formDt.loan_specification = "";
+      }
+      if (formDt.loan_adequate == "YES") {
+        formDt.loan_required = "";
+      }
+      if (formDt.availed_loan_last_year == "NO") {
+        formDt.availed_loan_amount = "";
+      }
+      if (formDt.innovation_RD == "NO") {
+        formDt.innovation_RD_institute = "";
+      }
+      if (formDt.support_from_agency == "NO") {
+        formDt.govt_scheme = "";
+        formDt.govt_program = "";
+        formDt.govt_organisation = "";
+      }
+      if (formDt.You_Export == "NO") {
+        formDt.Export_Value = "";
+      }
+      if (formDt.if_Raw_Materials_available == "YES") {
+        formDt.if_no_mention_difficulties = "";
+      }
+      if (formDt.have_product_brand_name == "NO") {
+        formDt.Brand_name = "";
+      }
+      if (formDt.involved_in_marketing == "NO") {
+        formDt.options_you_leverage_for_sale.exhibitions = false;
+        formDt.options_you_leverage_for_sale.portals = false;
+        formDt.options_you_leverage_for_sale.websites = false;
+        formDt.options_you_leverage_for_sale.social_media = false;
+        formDt.options_you_leverage_for_sale.Common_marketing_facility = false;
+        formDt.options_you_leverage_for_sale.other = "";
+      }
+      if (formDt.Requirement_of_Training == "NO") {
+        formDt.ESDP_beneficiaries = "";
+      }
+      if (expand2 == false) {
+        formDt.Nature_of_Services_Offered.Nature_of_Services_Offered_a = "";
+        formDt.Nature_of_Services_Offered.Nature_of_Services_Offered_b = "";
+        formDt.Nature_of_Services_Offered.Nature_of_Services_Offered_c = "";
+        formDt.Challenges_faced.Challenges_faced_a = "";
+        formDt.Challenges_faced.Challenges_faced_b = "";
+        formDt.Challenges_faced.Challenges_faced_c = "";
+        formDt.Govt_Scheme_Challenges = ""
+        formDt.Support_required = ""
+      }
+      if (expand == false) {
+        formDt.Raw_Materials.radio_button = "";
+        formDt.Raw_Materials.other = "";
+        formDt.if_Raw_Materials_available = "";
+        formDt.if_no_mention_difficulties = "";
+        formDt.green_tech = "";
+        formDt.environment_clearence = "";
+        formDt.final_product_sold_to.Trader_Agents = false;
+        formDt.final_product_sold_to.Wholesalers = false;
+        formDt.final_product_sold_to.Retailers = false;
+        formDt.final_product_sold_to.Large_Manufacturers_Anchor_units = false;
+        formDt.final_product_sold_to.Exporters = false;
+        formDt.final_product_sold_to.OEMs = false;
+        formDt.final_product_sold_to.End_Users = false;
+        formDt.final_product_sold_to.Others = false;
+        formDt.markets_supplied.within_State = false;
+        formDt.markets_supplied.outside_State = false;
+        formDt.markets_supplied.outside_country = false;
+        formDt.have_product_brand_name = "";
+        formDt.Brand_name = "";
+        formDt.challenges_while_selling.advance_technology = false;
+        formDt.challenges_while_selling.quality_of_product = false;
+        formDt.challenges_while_selling.market_competition = false;
+        formDt.challenges_while_selling.capital = false;
+        formDt.challenges_while_selling.branding_and_marketing = false;
+        formDt.challenges_while_selling.other = "";
+        formDt.involved_in_marketing = "";
+        formDt.options_you_leverage_for_sale.exhibitions = false;
+        formDt.options_you_leverage_for_sale.portals = false;
+        formDt.options_you_leverage_for_sale.websites = false;
+        formDt.options_you_leverage_for_sale.social_media = false;
+        formDt.options_you_leverage_for_sale.Common_marketing_facility = false;
+        formDt.options_you_leverage_for_sale.other = "";
+        formDt.Quality_Testing_lab_available = "";
+        formDt.labour_and_training = "";
+        formDt.skilled_labour_is_required = "";
+      }
       axios
         .post("/form-data", {
           mode: "cors",
@@ -33,6 +127,10 @@ function FormPart6({ formD, setFormD }) {
             });
           } else {
             toast.success("saved");
+            setTimeout(() => {
+              navigate("/");
+              window.location.reload()
+            }, 500);
           }
         })
         .catch((e) => {
@@ -248,7 +346,7 @@ function FormPart6({ formD, setFormD }) {
             <table style={{ width: "100%" }}>
               <tbody>
                 <tr>
-                  <td>{t("Certifications")}</td>
+                  <td className="heading">{t("Certifications")}</td>
                   <td>
                     <input
                       type="text"
@@ -257,7 +355,7 @@ function FormPart6({ formD, setFormD }) {
                       name="Currently_owned_1"
                       value={formD.Certifications.Currently_owned_1}
 
-                      placeholder="Currently owned"
+                      placeholder={t("Currently owned")}
                       onChange={handleChange}
                     />
                   </td>
@@ -270,13 +368,13 @@ function FormPart6({ formD, setFormD }) {
                       required="required"
                       value={formD.Certifications.To_be_Required_1}
 
-                      placeholder="To be required"
+                      placeholder={t("To be required")}
                       onChange={handleChange}
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td>{t("Infrastructure")}</td>
+                  <td className="heading">{t("Infrastructure")}</td>
                   <td>
                     <input
                       type="text"
@@ -285,7 +383,7 @@ function FormPart6({ formD, setFormD }) {
                       name="Currently_owned_2"
                       value={formD.Infrastructure.Currently_owned_2}
 
-                      placeholder="Currently owned"
+                      placeholder={t("Currently owned")}
                       onChange={handleChange}
                     />
                   </td>
@@ -298,13 +396,13 @@ function FormPart6({ formD, setFormD }) {
                       required="required"
                       value={formD.Infrastructure.To_be_Required_2}
 
-                      placeholder="To be required"
+                      placeholder={t("To be required")}
                       onChange={handleChange}
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td>{t("Laboratory")}</td>
+                  <td className="heading">{t("Laboratory")}</td>
                   <td>
                     <input
                       type="text"
@@ -313,7 +411,7 @@ function FormPart6({ formD, setFormD }) {
                       name="Currently_owned_3"
                       value={formD.Laboratory.Currently_owned_3}
 
-                      placeholder="Currently owned"
+                      placeholder={t("Currently owned")}
                       onChange={handleChange}
                     />
                   </td>
@@ -326,13 +424,13 @@ function FormPart6({ formD, setFormD }) {
                       className="Laboratory"
                       value={formD.Laboratory.To_be_Required_3}
 
-                      placeholder="To be required"
+                      placeholder={t("To be required")}
                       onChange={handleChange}
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td >
+                  <td className="heading" >
                     {t("Do you face any challenge while getting payments from buyer")}?{t("If Yes, What are the challenges you are facing to receive payment from buyers for supplying materials")}
                   </td>
                   <td>
@@ -346,7 +444,7 @@ function FormPart6({ formD, setFormD }) {
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td className="heading">
                     {t(
                       " Any certification specific to export requirement which is currently not available?"
                     )}
@@ -363,7 +461,7 @@ function FormPart6({ formD, setFormD }) {
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td className="heading">
                     {t(
                       "Any laboratory testing facility specific to export requirement  which is currently not available?"
                     )}
@@ -408,7 +506,7 @@ function FormPart6({ formD, setFormD }) {
               <thead></thead>
               <tbody>
                 <tr>
-                  <td>{t("Counselling")}</td>
+                  <td className="heading">{t("Counselling")}</td>
                   <td>
                     <input
                       type="text"
@@ -425,7 +523,7 @@ function FormPart6({ formD, setFormD }) {
                   </td>
                 </tr>
                 <tr>
-                  <td>{t("Upgradation of IT Infrastructure")}</td>
+                  <td className="heading">{t("Upgradation of IT Infrastructure")}</td>
                   <td>
                     <input
                       type="text"
@@ -443,7 +541,7 @@ function FormPart6({ formD, setFormD }) {
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td className="heading">
                     {t("Participation in Training Session/Workshop/Seminar")}
                   </td>
                   <td>
@@ -463,7 +561,7 @@ function FormPart6({ formD, setFormD }) {
                   </td>
                 </tr>
                 <tr>
-                  <td>{t("Institution Development")}</td>
+                  <td className="heading">{t("Institution Development")}</td>
                   <td>
                     <input
                       type="text"
@@ -481,7 +579,7 @@ function FormPart6({ formD, setFormD }) {
                   </td>
                 </tr>
                 <tr>
-                  <td>{t("Implementation of new software")}</td>
+                  <td className="heading">{t("Implementation of new software")}</td>
                   <td>
                     <input
                       type="text"
@@ -499,7 +597,7 @@ function FormPart6({ formD, setFormD }) {
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td className="heading">
                     {t(
                       " Training / hand holding support for process improvement tools (QMs, ISO, ERP etc.)"
                     )}
@@ -521,7 +619,7 @@ function FormPart6({ formD, setFormD }) {
                   </td>
                 </tr>
                 <tr>
-                  <td>{t("Market Promotion Initiatives")}</td>
+                  <td className="heading">{t("Market Promotion Initiatives")}</td>
                   <td>
                     <input
                       type="text"
@@ -539,7 +637,7 @@ function FormPart6({ formD, setFormD }) {
                   </td>
                 </tr>
                 <tr>
-                  <td>{t("Design and product development")}</td>
+                  <td className="heading">{t("Design and product development")}</td>
                   <td>
                     <input
                       type="text"
@@ -557,7 +655,7 @@ function FormPart6({ formD, setFormD }) {
                   </td>
                 </tr>
                 <tr>
-                  <td>{t("Brand Building, Promotion Campaign")}</td>
+                  <td className="heading">{t("Brand Building, Promotion Campaign")}</td>
                   <td>
                     <input
                       type="text"
@@ -583,6 +681,7 @@ function FormPart6({ formD, setFormD }) {
                 margin: "0.5em",
                 display: "flex",
                 marginTop: "2em",
+                marginBottom: "2em",
               }}
             >
               {t("Entrepreneurship Skill Development Programme (ESDP) Training Requirement :")}
@@ -590,16 +689,16 @@ function FormPart6({ formD, setFormD }) {
           </div>
           <table>
             <tr>
-              <td>
-                  {" "}
-                  {t(
-                    "Do you need any training program supported by Government of India for developing entrepreneurial skills?"
-                  )}
+              <td className="heading">
+                {" "}
+                {t(
+                  "Do you need any training program supported by Government of India for developing entrepreneurial skills?"
+                )}
               </td>
               <td colSpan={6}>
-                <div style={{width:"20%"}} className="radio_wrapper">
-                  <tr>
-                    <label htmlFor="Requirement_of_Trainingyes">
+                <div className="radio_wrapper wrapup">
+                  <td>
+                    <label style={{marginRight:"20px"}} htmlFor="Requirement_of_Trainingyes">
                       {t("YES")}
                     </label>
                     <input
@@ -612,9 +711,9 @@ function FormPart6({ formD, setFormD }) {
                       onChange={handleChange}
                       checked={formD.Requirement_of_Training == "YES"}
                     />
-                  </tr>
-                  <tr>
-                    <label htmlFor="Requirement_of_Trainingno">{t("NO")}</label>
+                  </td>
+                  <td>
+                    <label style={{marginRight:"20px"}} htmlFor="Requirement_of_Trainingno">{t("NO")}</label>
                     <input
                       type="radio"
                       name="Requirement_of_Training"
@@ -625,13 +724,13 @@ function FormPart6({ formD, setFormD }) {
                       onChange={handleChange}
                       checked={formD.Requirement_of_Training == "NO"}
                     />
-                  </tr>
+                  </td>
                 </div>
               </td>
             </tr>
             {a61 != "show61" ? "" :
               <tr>
-                <td colSpan={1}>
+                <td className="heading" colSpan={1}>
                   <label htmlFor="ESDP_beneficiaries">{t(
                     "In yes, then who will be the beneficiaries(entrepreneurs, students, etc) ?"
                   )}{" "}</label>
@@ -650,11 +749,17 @@ function FormPart6({ formD, setFormD }) {
               </tr>}
             <tr>
               <td colSpan={7}>
-                <p style={{ textAlign: "center" }}><b>{t("Point of Contact Member Details")}</b></p>
+                <h1
+                  style={{
+                    display: "flex",
+                    marginTop: "2em",
+                    marginBottom: "2em",
+                  }}>
+                  {t("Point of Contact Member Details")}</h1>
               </td>
             </tr>
             <tr>
-              <td colSpan={1}>
+              <td className="heading" colSpan={1}>
                 <label htmlFor="Contact_Member_details_name">{t("Name :")}</label>
               </td>
               <td colSpan={6}>
@@ -669,7 +774,7 @@ function FormPart6({ formD, setFormD }) {
               </td>
             </tr>
             <tr>
-              <td colSpan={1}>
+              <td className="heading" colSpan={1}>
                 <label htmlFor="Contact_Member_details_contact">{t("Contact :")}</label>
               </td>
               <td colSpan={6}>
@@ -684,7 +789,7 @@ function FormPart6({ formD, setFormD }) {
               </td>
             </tr>
             <tr>
-              <td colSpan={1}>
+              <td className="heading" colSpan={1}>
                 <label htmlFor="Contact_Member_details_designation">{t("Designation :")}</label>
               </td>
               <td colSpan={6}>
@@ -699,7 +804,7 @@ function FormPart6({ formD, setFormD }) {
               </td>
             </tr>
             <tr>
-              <td colSpan={1}>
+              <td className="heading" colSpan={1}>
                 <label htmlFor="Contact_Member_details_email">{t("Email :")}</label>
               </td>
               <td colSpan={6}>

@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./Table.css";
 import { t } from "i18next";
+import Fab from "@mui/material/Fab";
+import AddIcon from "@mui/icons-material/Add";
+import DeleteIcon from "@mui/icons-material/Delete";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
+import IconButton from "@mui/material/IconButton";
+import Tooltip from "@mui/material/Tooltip";
 function FormPart3({ formD, setFormD, addfields, setAddFields }) {
+  const [chk, setchk] = useState(null);
   const navigate = useNavigate();
   const validate = (e) => {
     const isV = document.getElementById("formy").reportValidity();
@@ -181,6 +188,9 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                     required="required"
                     onChange={handleChange}
                     checked={formD.aware_of_govt_policy == "YES"}
+                    onClick={() => {
+                      setchk(true);
+                    }}
                   />
                 </div>
                 <div>
@@ -193,129 +203,141 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                     required="required"
                     onChange={handleChange}
                     checked={formD.aware_of_govt_policy == "NO"}
+                    onClick={() => {
+                      setchk(false);
+                    }}
                   />
                 </div>
               </div>
             </td>
           </tr>
-          <tr>
-            <td className="heading" colSpan={1}>
-              <>
-                {t(
-                  "Which program benefits are you availing currently from the state? Please describe the key benefits and challenges related to the program"
-                )}
-              </>
-            </td>
-            <td colSpan={6}>
-              <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  setAddFields((prevobj) => {
-                    return {
-                      ...prevobj,
-                      [Object.keys(prevobj).length]: {
-                        name: "",
-                        assistance: "",
-                        challanges: "",
-                      },
-                    };
-                  });
-                }}
-              >
-                Add
-              </button>
-              {Object.values(addfields).map((obj, index) => {
-                return (
-                  <div style={{ width: "100%", display: "flex" }}>
-                    <td colSpan={1} style={{ width: "50%" }}>
-                      <tr>
-                        <>{t("Name of the program")}</>
-                      </tr>
-                      <tr>
-                        <input
-                          type="text"
-                          data-identity={`${index}`}
-                          value={obj.name}
-                          onChange={(e) => {
-                            let id = e.target.dataset.identity;
-                            console.log("target id", id);
-                            setAddFields((prevobj) => {
-                              return {
-                                ...prevobj,
-                                [index]: {
-                                  ...prevobj[index],
-                                  name: e.target.value,
-                                },
-                              };
-                            });
-                          }}
-                          style={{
-                            width: "90%",
-                            border: "transparent",
-                            borderBottom: "2px solid black",
-                          }}
-                        />
-                      </tr>
-                    </td>
-                    <td colSpan={2} style={{ width: "100%" }}>
-                      <label htmlFor="benefits">
-                        {t("Nature of assistance/Benefits")}:
-                      </label>
-                      <input
-                        type="text"
-                        data-identity={`${index}`}
-                        value={obj.assistance}
-                        onChange={(e) => {
-                          let id = e.target.dataset.identity;
-                          console.log("target id", id);
-                          setAddFields((prevobj) => {
-                            return {
-                              ...prevobj,
-                              [index]: {
-                                ...prevobj[index],
-                                assistance: e.target.value,
-                              },
-                            };
-                          });
-                        }}
-                        style={{
-                          width: "90%",
-                          border: "transparent",
-                          borderBottom: "2px solid black",
-                        }}
-                      />
-                    </td>
-                    <td style={{ width: "100%" }}>
-                      <label htmlFor="challenges">{t("Challenges")}:</label>
-                      <input
-                        type="text"
-                        data-identity={`${index}`}
-                        value={obj.challanges}
-                        onChange={(e) => {
-                          let id = e.target.dataset.identity;
-                          console.log("target id", id);
-                          setAddFields((prevobj) => {
-                            return {
-                              ...prevobj,
-                              [index]: {
-                                ...prevobj[index],
-                                challanges: e.target.value,
-                              },
-                            };
-                          });
-                        }}
-                        style={{
-                          width: "90%",
-                          border: "transparent",
-                          borderBottom: "2px solid black",
-                        }}
-                      />
-                    </td>
-                  </div>
-                );
-              })}
-            </td>
-          </tr>
+          {chk ? (
+            <tr>
+              <td className="heading" colSpan={1}>
+                <>
+                  {t(
+                    "Which program benefits are you availing currently from the state? Please describe the key benefits and challenges related to the program"
+                  )}
+                </>
+              </td>
+              <td colSpan={6}>
+                <Tooltip title="Add">
+                  <IconButton
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setAddFields((prevobj) => {
+                        return {
+                          ...prevobj,
+                          [Object.keys(prevobj).length]: {
+                            name: "",
+                            assistance: "",
+                            challanges: "",
+                          },
+                        };
+                      });
+                    }}
+                  >
+                    <AddCircleIcon />
+                  </IconButton>
+                </Tooltip>
+                <Tooltip title="Delete">
+                  <IconButton onClick={(e)=>{
+                    let ree={...addfields}
+                    delete ree[Object.values(ree).length-1]
+                    e.preventDefault();
+                    setAddFields(ree);
+                  }}>
+                    <DeleteIcon />
+                  </IconButton>
+                </Tooltip>
+
+                <div className="wrapup">
+                  {Object.values(addfields).map((obj, index) => {
+                    return (
+                      <div style={{ width: "100%", display: "flex",alignItems:"flex-end" }}>
+                        <tr>
+                          <td>
+                            <>{t("Name of the program")}</>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              data-identity={`${index}`}
+                              value={obj.name}
+                              onChange={(e) => {
+                                let id = e.target.dataset.identity;
+                                console.log("target id", id);
+                                setAddFields((prevobj) => {
+                                  return {
+                                    ...prevobj,
+                                    [index]: {
+                                      ...prevobj[index],
+                                      name: e.target.value,
+                                    },
+                                  };
+                                });
+                              }}
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label htmlFor="benefits">
+                              {t("Nature of assistance/Benefits")}:
+                            </label>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              data-identity={`${index}`}
+                              value={obj.assistance}
+                              onChange={(e) => {
+                                let id = e.target.dataset.identity;
+                                console.log("target id", id);
+                                setAddFields((prevobj) => {
+                                  return {
+                                    ...prevobj,
+                                    [index]: {
+                                      ...prevobj[index],
+                                      assistance: e.target.value,
+                                    },
+                                  };
+                                });
+                              }}
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><label htmlFor="challenges">{t("Challenges")}:</label></td>
+                          <td>
+                            <input
+                              type="text"
+                              data-identity={`${index}`}
+                              value={obj.challanges}
+                              onChange={(e) => {
+                                let id = e.target.dataset.identity;
+                                console.log("target id", id);
+                                setAddFields((prevobj) => {
+                                  return {
+                                    ...prevobj,
+                                    [index]: {
+                                      ...prevobj[index],
+                                      challanges: e.target.value,
+                                    },
+                                  };
+                                });
+                              }}
+                            />
+                          </td>
+                        </tr>
+                      </div>
+                    );
+                  })}
+                </div>
+              </td>
+            </tr>
+          ) : null}
+
           <tr>
             <td className="heading" colSpan={1}>
               <>
@@ -324,10 +346,17 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                 )}
               </>
             </td>
-            <td colSpan={6}>
-              <div>
+            <td
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "10px",
+              }}
+              colSpan={6}
+            >
+              <td>
                 <label style={{ textAlign: "center" }} htmlFor="Anything3">
-                  1.
+                  1.{" "}
                 </label>
                 <input
                   type="text"
@@ -336,14 +365,12 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                   value={formD.expectations_from_govt_1}
                   onChange={handleChange}
                   style={{
-                    width: "90%",
-                    border: "transparent",
-                    borderBottom: "2px solid black",
+                    width: "90%"
                   }}
                 />
-              </div>
-              <div>
-                <label htmlFor="Anything4">2.</label>
+              </td>
+              <td>
+                <label htmlFor="Anything4">2.{" "}</label>
                 <input
                   type="text"
                   id="Anything4"
@@ -351,12 +378,10 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                   value={formD.expectations_from_govt_2}
                   onChange={handleChange}
                   style={{
-                    width: "90%",
-                    border: "transparent",
-                    borderBottom: "2px solid black",
+                    width: "90%"
                   }}
                 />
-              </div>
+              </td>
             </td>
           </tr>
           <tr>
@@ -366,8 +391,8 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
             <td colSpan={6} style={{ width: "100%" }}>
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <div>
-                  <div style={{ fontWeight: "bold", fontSize: "larger" }}>
-                    <u>{t("Central Government")}:</u>
+                  <div style={{ marginBottom:"10px",fontWeight: "bold", fontSize: "larger" }}>
+                    <h1>{t("Central Government")}:</h1>
                   </div>
                   <div
                     style={{
@@ -570,8 +595,8 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                       />
                     </div>
                   </div>
-                  <div style={{ fontWeight: "bold", fontSize: "larger" }}>
-                    <u>{t("State Government")}:</u>
+                  <div style={{ marginTop:"30px",marginBottom:"10px", fontWeight: "bold", fontSize: "larger" }}>
+                    <h1>{t("State Government")}:</h1>
                   </div>
                   <div style={{ display: "flex" }} className="radio_wrapper wrapup">
                     <div>
@@ -754,11 +779,6 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                 name="Remarks"
                 onChange={handleChange}
                 value={formD.Remarks}
-                style={{
-                  width: "50%",
-                  border: "transparent",
-                  borderBottom: "2px solid black",
-                }}
               />
             </td>
           </tr>
@@ -769,8 +789,8 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
             <td colSpan={6} style={{ width: "100%" }}>
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <div>
-                  <div style={{ fontWeight: "bold", fontSize: "larger" }}>
-                    <u>{t("Central Government")}:</u>
+                  <div style={{marginBottom:"10px", fontWeight: "bold", fontSize: "larger" }}>
+                    <h1>{t("Central Government")}:</h1>
                   </div>
                   <div
                     style={{ display: "flex", flexWrap: "wrap" }}
@@ -940,8 +960,8 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                       />
                     </div>
                   </div>
-                  <div style={{ fontWeight: "bold", fontSize: "larger" }}>
-                    <u>{t("State Government")}:</u>
+                  <div style={{ marginTop:"30px",marginBottom:"10px", fontWeight: "bold", fontSize: "larger" }}>
+                    <h1>{t("State Government")}:</h1>
                   </div>
                   <div style={{ display: "flex" }} className="radio_wrapper wrapup">
                     <div>

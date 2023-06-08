@@ -104,11 +104,10 @@ function App() {
     Email: "",
     Phone_Number: "",
     //
-    industry_option: {
-      service_industry_opt: false,
-      manufacturing_industry_opt: true,
-    },
-
+    // industry_option: {
+    //   service_industry_opt: false,
+    //   manufacturing_industry_opt: true,
+    // },
     Raw_Materials: {
       radio_button: "",
       other: "",
@@ -353,7 +352,7 @@ function App() {
             />
             <Route
               path="/6"
-              element={<FormPart6 formD={formD} setFormD={setFormD} />}
+              element={<FormPart6 formD={formD} setFormD={setFormD} expand2={expand2}  expand={expand} />}
             />
           </Route>
         </Routes>
