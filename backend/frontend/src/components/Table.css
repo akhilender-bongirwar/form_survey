@@ -2,7 +2,7 @@
   user-select: none;
 }
 
-td[ colspan="6"] {
+td[colspan="6"] {
   width: 100%;
 }
 
@@ -14,11 +14,9 @@ td {
   padding: 0.8em;
 }
 
-
 label {
   font-size: medium;
 }
-
 
 .inner-div-tag {
   margin-right: 1%;
@@ -68,19 +66,19 @@ label {
   border: black solid 1px;
 }
 
-input[type=checkbox] {
+input[type="checkbox"] {
   width: 15px;
   margin-left: auto;
   margin-right: 50%;
 }
 
-input[type=radio] {
+input[type="radio"] {
   width: 15px;
   margin-left: auto;
   margin-right: 50%;
 }
 
-.radio_wrapper>div {
+.radio_wrapper > div {
   display: flex;
   gap: 5px;
   align-items: center;
@@ -95,85 +93,91 @@ input[type=radio] {
   justify-content: center;
   align-items: center;
 }
-.firstTable{
+.firstTable {
   width: 40%;
 }
-.next{
+.next {
   margin-left: auto;
 }
-@media screen and (max-width:768px) {
-  tr {
-    flex-direction: column;
-    display: flex;
-  }
-  .firstTr{
-    display: table-row;
-  }
-  .firstTable{
-    width: 90%;
-  }
 
-  .form4_styling {
-    width: 100%;
-  }
+tr {
+  flex-direction: column;
+  display: flex;
+}
+.firstTr {
+  display: table-row;
+}
+.firstTable {
+  width: 90%;
+}
 
-  input[type=checkbox] {
-    width: 15px;
-    margin-left: auto;
-    margin-right: 10px;
-  }
+.form4_styling {
+  width: 100%;
+}
 
-  input[type=radio] {
-    width: 15px;
-    margin-left: auto;
-    margin-right: 10px;
-  }
+input[type="checkbox"] {
+  width: 15px;
+  margin-left: auto;
+  margin-right: 10px;
+}
 
-  .grevience_redressal {
-    flex-direction: column;
-  }
+input[type="radio"] {
+  width: 15px;
+  margin-left: auto;
+  margin-right: 10px;
+}
 
+.grevience_redressal {
+  flex-direction: column;
+}
 
-  input[type=text] {
-    font-size: small;
-  }
+input[type="text"] {
+  font-size: small;
+}
 
-  .radio_wrapper>div {
-    display: flex;
-    /* flex-direction: column; */
-    justify-content: center;
-    width: 100%;
-    /* gap: 5px; */
-    align-items: center;
-  }
+.radio_wrapper > div {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  width: 100%;
+  /* gap: 5px; */
+  align-items: center;
+}
 
-  .radio_wrapper>div>input {
-    margin-left: auto;
-    width: 15px;
-    margin-right: 15%;
-  }
+.radio_wrapper > div > input {
+  margin-left: auto;
+  width: 15px;
+  margin-right: 15%;
+}
 
-  .radio_wrapper {
-    flex-direction: column;
-  }
+.radio_wrapper {
+  flex-direction: column;
+}
 
-  label {
-    font-weight: 600;
-    font-size: small;
-  }
+label {
+  font-weight: 600;
+  font-size: small;
+}
 
-  span {
-    font-weight: 600;
-    font-size: small;
-  }
+span {
+  font-weight: 600;
+  font-size: small;
 }
 
 input {
-  width: 100%
+  width: 100%;
 }
 
-.input_label_gapper>div {
+.input_label_gapper > div {
   display: flex;
   gap: 10px;
   align-items: center;
+}
+
+table,td,tr{
+  border: none;
+}
+#formy{
+  width: 70%;
+  margin: auto;
 }
