@@ -115,7 +115,7 @@ function FormPart6({ formD, setFormD, expand2, expand }) {
         .post("/form-data", {
           mode: "cors",
           body: formD,
-        })
+         })
         .then((d) => {
           // console.log(d.data.success);
           if (!d.data.success) {
