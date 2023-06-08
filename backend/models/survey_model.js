@@ -44,7 +44,6 @@ const surveyData = new Schema({
   },
   UAM_UEM_Number: {
     type: Number,
-    required: true,
   },
   Year_of_Establishment: {
     type: Number,
@@ -96,15 +95,12 @@ const surveyData = new Schema({
   TOP_THREE_PRODUCTS: {
     TOP_THREE_PRODUCTS_1: {
       type: String,
-      required: true,
     },
     TOP_THREE_PRODUCTS_2: {
       type: String,
-      required: true,
     },
     TOP_THREE_PRODUCTS_3: {
       type: String,
-      required: true,
     },
   },
   sell_produce_majorly: {
@@ -212,7 +208,6 @@ const surveyData = new Schema({
   loan_adequate: {
     type: String,
     enum: ["YES", "NO"],
-    required: true,
   },
   loan_required: {
     type: Number,
@@ -447,7 +442,6 @@ const surveyData = new Schema({
     },
     websites: {
       type: Boolean,
-      required: true,
     },
     social_media: {
       type: Boolean,
@@ -680,11 +674,9 @@ const surveyData = new Schema({
   },
   scheme_availed_by_you_central_govt: {
     type: String,
-    required: true,
   },
   scheme_availed_by_you_state_govt: {
     type: String,
-    required: true,
   },
   Key_Reason_Preventing_loan: {
     Lack_of_awareness_of_bank_processes_requirements: {
@@ -754,7 +746,6 @@ const surveyData = new Schema({
   },
   reason_of_rejection: {
     type: String,
-    required: true,
   },
   availed_samadhaan_service: {
     type: String,
@@ -763,7 +754,6 @@ const surveyData = new Schema({
   },
   face_challenge_from_buyer: {
     type: String,
-    required: true,
   },
   Certifications: {
     Currently_owned_1: {
@@ -791,48 +781,37 @@ const surveyData = new Schema({
   },
   Certification_required: {
     type: String,
-    required: true,
   },
   laboratory_requirement: {
     type: String,
-    required: true,
   },
   Requirement_of_Soft_Interventions: {
     Counselling: {
       type: String,
-      required: true,
     },
     Upgradation_of_IT_Infrastructure: {
       type: String,
-      required: true,
     },
     Participation_in_Training: {
       type: String,
-      required: true,
     },
     Institution_Development: {
       type: String,
-      required: true,
     },
     Implementation_of_new_software: {
       type: String,
-      required: true,
     },
     Training_Process_Improvement: {
       type: String,
-      required: true,
     },
     Market_Promotion_Initiatives: {
       type: String,
-      required: true,
     },
     Design_and_product_development: {
       type: String,
-      required: true,
     },
     Promotion_Campaign: {
       type: String,
-      required: true,
     },
   },
   Requirement_of_Training: {
