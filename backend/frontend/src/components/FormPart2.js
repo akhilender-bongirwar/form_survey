@@ -9,7 +9,14 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { ToastContainer, toast } from "react-toastify";
 
-const FormPart2 = ({ formD, setFormD }) => {
+const FormPart2 = ({
+  formD,
+  setFormD,
+  expand,
+  setexpand,
+  expand2,
+  setexpand2,
+}) => {
   const navigate = useNavigate();
   const validate = (e) => {
     e.preventDefault();
@@ -43,27 +50,29 @@ const FormPart2 = ({ formD, setFormD }) => {
     const err3 = form.querySelector(`input[type="checkbox"].c`);
     // console.log(checked);
     //var ischecked = err.reportValidity();
-    if (!checked1) {
-      toast.error("fill the required field");
-      err1.setCustomValidity("select any one option");
-    } else {
-      err1.setCustomValidity("");
-      // navigate("/3");
-    }
-    if (!checked2) {
-      toast.error("fill the required field");
-      err2.setCustomValidity("select any one option");
-    } else {
-      err2.setCustomValidity("");
-      // navigate("/3");
-    }
-    // if(!checked3){
-    //   err3.setCustomValidity("select any one option");
-    // }else{
-    //   err3.setCustomValidity("");
-    // }
-    if (checked1 && checked2) {
-      navigate("/3");
+    if (expand) {
+      if (!checked1) {
+        toast.error("fill the required field");
+        err1.setCustomValidity("select any one option");
+      } else {
+        err1.setCustomValidity("");
+        // navigate("/3");
+      }
+      if (!checked2) {
+        toast.error("fill the required field");
+        err2.setCustomValidity("select any one option");
+      } else {
+        err2.setCustomValidity("");
+        // navigate("/3");
+      }
+      // if(!checked3){
+      //   err3.setCustomValidity("select any one option");
+      // }else{
+      //   err3.setCustomValidity("");
+      // }
+      if (checked1 && checked2) {
+        navigate("/3");
+      }
     }
 
     const isV = document.getElementById("formy").reportValidity();
@@ -295,8 +304,6 @@ const FormPart2 = ({ formD, setFormD }) => {
   const [others, setothers] = useState(null);
   const [challenges, setchallenges] = useState(null);
   const [leverage, setleverage] = useState(null);
-  const [expand, setexpand] = useState(false);
-  const [expand2, setexpand2] = useState(false);
   return (
     <>
       <div
@@ -311,9 +318,11 @@ const FormPart2 = ({ formD, setFormD }) => {
             <Accordion
               onClick={(e) => {
                 e.preventDefault();
+                e.stopPropagation();
 
                 setexpand(!expand);
               }}
+              expanded={expand}
             >
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
@@ -330,6 +339,9 @@ const FormPart2 = ({ formD, setFormD }) => {
                         width: "100%",
                         overflowWrap: "break-word",
                         backgroundColor: "rgb(240 235 248 / 77%)",
+                      }}
+                      onClick={(e) => {
+                        e.stopPropagation();
                       }}
                     >
                       <thead>
@@ -431,7 +443,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                             <div>
                               <tr>
                                 <td colSpan={1}>
-                                  <span style={{ whiteSpace: "nowrap" }}>
+                                  <span>
                                     {t("Is Raw Material available easily")}?
                                   </span>
                                 </td>
@@ -589,9 +601,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               </tr>
                               <tr>
                                 <td colSpan={1}>
-                                  <span style={{ whiteSpace: "nowrap" }}>
-                                    {t("Final Product sold to")}
-                                  </span>
+                                  <span>{t("Final Product sold to")}</span>
                                 </td>
                                 <td colSpan={6}>
                                   <div className="radio_wrapper">
@@ -741,9 +751,7 @@ const FormPart2 = ({ formD, setFormD }) => {
                               </tr>
                               <tr>
                                 <td colSpan={1}>
-                                  <span style={{ whiteSpace: "nowrap" }}>
-                                    {t("Markets you supply to")}
-                                  </span>
+                                  <span>{t("Markets you supply to")}</span>
                                 </td>
                                 <td colSpan={6}>
                                   <div
@@ -1357,8 +1365,10 @@ const FormPart2 = ({ formD, setFormD }) => {
           <ToastContainer />
           <div style={{ marginTop: "2vw" }}>
             <Accordion
+              expanded={expand2}
               onClick={(e) => {
                 e.preventDefault();
+
                 setexpand2(!expand2);
               }}
             >
@@ -1379,6 +1389,9 @@ const FormPart2 = ({ formD, setFormD }) => {
                         backgroundColor: "rgb(240 235 248 / 77%)",
                       }}
                       className="grevience_redressal"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                      }}
                     >
                       <thead>
                         <th colSpan={6}>{t("For Service Industry")}</th>
