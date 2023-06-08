@@ -9,13 +9,13 @@
   box-sizing: border-box;
 }
 
-input:invalid {
+/* input:invalid {
   border: none;
-  outline: none;
+  outline: none; */
   /* outline: 2px solid red; */
   /* background-color: aqua; */
-  border-radius: 5px;
-}
+  /* border-radius: 5px;
+} */
 
 ::-webkit-scrollbar {
   display: none;

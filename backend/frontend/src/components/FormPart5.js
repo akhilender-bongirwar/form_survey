@@ -177,21 +177,21 @@ function FormPart5({ formD, setFormD }) {
               // backgroundColor: "rgb(240 235 248 / 77%)",
             }}
           >
-            <label className="inner-div-tag" style={{ width: "100%" }}>
+            <label className="inner-div-tag heading" style={{ width: "100%" }}>
               {t(
                 "Do you avail Samadhaan service (Online dispute mechanism) for delayed payments"
               )}{" "}
             </label>
             <div
-              className="checkboxes  grevience_redressal"
+              className="checkboxes  grevience_redressal wrapup"
               style={{
                 alignItems: "center",
-                gap: "18%",
+                gap: "20px",
                 padding: "2%",
                 marginLeft: "9%",
               }}
             >
-              <div style={{ display: "flex", width: "100%" }}>
+              <div style={{ display: "flex",gap:"10px", width: "100%" }}>
                 <label htmlFor="valid" style={{ fontWeight: "500" }}>
                   {t("YES")}
                 </label>
@@ -206,7 +206,7 @@ function FormPart5({ formD, setFormD }) {
                   style={{ margin: "0.5%" }}
                 />
               </div>
-              <div style={{ display: "flex", width: "100%" }}>
+              <div style={{ display: "flex",gap:"10px", width: "100%" }}>
                 <label htmlFor="invalid" style={{ fontWeight: "500" }}>
                   {t("NO")}
                 </label>
