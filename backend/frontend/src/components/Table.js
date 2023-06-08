@@ -1218,33 +1218,37 @@ function Table({ formD, setFormD }) {
                         <label htmlFor="full_time_Emoployee-1">
                           {t("Full time")}:{" "}
                         </label>
-                        <input
-                          style={{ width: "95%" }}
-                          type="number"
-                          id="full_time_Emoployee-1"
-                          name="full_time_Emoployee"
-                          required="required"
-                          min="0"
-                          max="100"
-                          onChange={handleChange}
-                          value={formD.full_time_Emoployee}
-                        />
+                        <td>
+                          <input
+                            style={{ width: "95%" }}
+                            type="number"
+                            id="full_time_Emoployee-1"
+                            name="full_time_Emoployee"
+                            required="required"
+                            min="0"
+                            max="100"
+                            onChange={handleChange}
+                            value={formD.full_time_Emoployee}
+                          />
+                        </td>
                       </div>
                       <div>
                         <label htmlFor="part_time_Emoployee-2">
                           {t("Part time")}:{" "}
                         </label>
-                        <input
-                          style={{ width: "95%" }}
-                          type="number"
-                          id="part_time_Emoployee-2"
-                          name="part_time_Emoployee"
-                          required="required"
-                          min="0"
-                          max="100"
-                          onChange={handleChange}
-                          value={formD.part_time_Emoployee}
-                        />
+                        <td>
+                          <input
+                            style={{ width: "95%" }}
+                            type="number"
+                            id="part_time_Emoployee-2"
+                            name="part_time_Emoployee"
+                            required="required"
+                            min="0"
+                            max="100"
+                            onChange={handleChange}
+                            value={formD.part_time_Emoployee}
+                          />
+                        </td>
                       </div>
                     </td>
                     <td
@@ -1260,33 +1264,37 @@ function Table({ formD, setFormD }) {
                         <label htmlFor="Permanent_Emoployee-1">
                           {t("Permanent")}:{" "}
                         </label>
-                        <input
-                          style={{ width: "95%" }}
-                          type="number"
-                          id="Permanent_Emoployee-1"
-                          name="Permanent_Emoployee"
-                          required="required"
-                          min="0"
-                          max="100"
-                          onChange={handleChange}
-                          value={formD.Permanent_Emoployee}
-                        />
+                        <td>
+                          <input
+                            style={{ width: "95%" }}
+                            type="number"
+                            id="Permanent_Emoployee-1"
+                            name="Permanent_Emoployee"
+                            required="required"
+                            min="0"
+                            max="100"
+                            onChange={handleChange}
+                            value={formD.Permanent_Emoployee}
+                          />
+                        </td>
                       </div>
                       <div>
                         <label htmlFor="Contractual_Emoployee-2">
                           {t("Contractual")}:{" "}
                         </label>
-                        <input
-                          style={{ width: "95%" }}
-                          type="number"
-                          id="Contractual_Emoployee-2"
-                          name="Contractual_Emoployee"
-                          required="required"
-                          min="0"
-                          max="100"
-                          onChange={handleChange}
-                          value={formD.Contractual_Emoployee}
-                        />
+                        <td>
+                          <input
+                            style={{ width: "95%" }}
+                            type="number"
+                            id="Contractual_Emoployee-2"
+                            name="Contractual_Emoployee"
+                            required="required"
+                            min="0"
+                            max="100"
+                            onChange={handleChange}
+                            value={formD.Contractual_Emoployee}
+                          />
+                        </td>
                       </div>
                     </td>
                     <td
@@ -1300,33 +1308,37 @@ function Table({ formD, setFormD }) {
                     >
                       <div>
                         <label htmlFor="male_employee-1">{t("Male")}: </label>
-                        <input
-                          style={{ width: "95%" }}
-                          type="number"
-                          id="male_employee-1"
-                          name="male_employee"
-                          required="required"
-                          min="0"
-                          max="100"
-                          onChange={handleChange}
-                          value={formD.male_employee}
-                        />
+                        <td>
+                          <input
+                            style={{ width: "95%" }}
+                            type="number"
+                            id="male_employee-1"
+                            name="male_employee"
+                            required="required"
+                            min="0"
+                            max="100"
+                            onChange={handleChange}
+                            value={formD.male_employee}
+                          />
+                        </td>
                       </div>
                       <div>
                         <label htmlFor="female_employee-2">
                           {t("Female")}:{" "}
                         </label>
-                        <input
-                          style={{ width: "95%" }}
-                          type="number"
-                          id="female_employee-2"
-                          required="required"
-                          min="0"
-                          max="100"
-                          name="female_employee"
-                          onChange={handleChange}
-                          value={formD.female_employee}
-                        />
+                        <td>
+                          <input
+                            style={{ width: "95%" }}
+                            type="number"
+                            id="female_employee-2"
+                            required="required"
+                            min="0"
+                            max="100"
+                            name="female_employee"
+                            onChange={handleChange}
+                            value={formD.female_employee}
+                          />
+                        </td>
                       </div>
                     </td>
                   </div>
@@ -1451,101 +1463,103 @@ function Table({ formD, setFormD }) {
                 <td className="heading" colSpan={1}>
                   <>{t("Major Source of your Financing (or %)")} </>
                 </td>
-                <td
-                  className="input_label_gapper"
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "10px",
-                  }}
-                  colSpan={6}
-                >
-                  <div>
-                    <label htmlFor="formal_source-1">
-                      {t("Formal Sources(Bank/NBFCs etc)")}:{" "}
-                    </label>
-                    <input
-                      style={{ width: "95%" }}
-                      type="text"
-                      id="formal_source-1"
-                      name="formal_source"
-                      required="required"
-                      onChange={handleChange}
-                      value={formD.formal_source}
-                    />
-                  </div>
-                </td>
-                <td
-                  className="input_label_gapper"
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "10px",
-                  }}
-                  colSpan={6}
-                >
-                  <div>
-                    <label htmlFor="informal_source-1">
-                      {t("Informal Sources(friends/relatives//money lenders)")}:{" "}
-                    </label>
-                    <input
-                      style={{ width: "95%" }}
-                      type="text"
-                      id="informal_source-1"
-                      name="informal_source"
-                      required="required"
-                      onChange={handleChange}
-                      value={formD.informal_source}
-                    />
-                  </div>
-                </td>
-                <td
-                  className="input_label_gapper"
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "10px",
-                  }}
-                  colSpan={6}
-                >
-                  <div>
-                    <label htmlFor="internal_fund_generation-1">
-                      {t("Internal fund generation/Own sources")}:{" "}
-                    </label>
-                    <input
-                      style={{ width: "95%" }}
-                      type="text"
-                      id="internal_fund_generation-1"
-                      name="internal_fund_generation"
-                      required="required"
-                      onChange={handleChange}
-                      value={formD.internal_fund_generation}
-                    />
-                  </div>
-                </td>
-                <td
-                  className="input_label_gapper"
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "10px",
-                  }}
-                  colSpan={6}
-                >
-                  <div>
-                    <label htmlFor="other_financing_source-1">
-                      {t("Other please specify")}{" "}
-                    </label>
-                    <input
-                      style={{ width: "95%" }}
-                      type="text"
-                      id="other_financing_source-1"
-                      name="other_financing_source"
-                      onChange={handleChange}
-                      value={formD.other_financing_source}
-                    />
-                  </div>
-                </td>
+                <div className="wrapup">
+                  <td
+                    className="input_label_gapper"
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "10px",
+                    }}
+                    colSpan={6}
+                  >
+                    <div>
+                      <label htmlFor="formal_source-1">
+                        {t("Formal Sources(Bank/NBFCs etc)")}:{" "}
+                      </label>
+                      <input
+                        style={{ width: "95%" }}
+                        type="text"
+                        id="formal_source-1"
+                        name="formal_source"
+                        required="required"
+                        onChange={handleChange}
+                        value={formD.formal_source}
+                      />
+                    </div>
+                  </td>
+                  <td
+                    className="input_label_gapper"
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "10px",
+                    }}
+                    colSpan={6}
+                  >
+                    <div>
+                      <label htmlFor="informal_source-1">
+                        {t("Informal Sources(friends/relatives//money lenders)")}:{" "}
+                      </label>
+                      <input
+                        style={{ width: "95%" }}
+                        type="text"
+                        id="informal_source-1"
+                        name="informal_source"
+                        required="required"
+                        onChange={handleChange}
+                        value={formD.informal_source}
+                      />
+                    </div>
+                  </td>
+                  <td
+                    className="input_label_gapper"
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "10px",
+                    }}
+                    colSpan={6}
+                  >
+                    <div>
+                      <label htmlFor="internal_fund_generation-1">
+                        {t("Internal fund generation/Own sources")}:{" "}
+                      </label>
+                      <input
+                        style={{ width: "95%" }}
+                        type="text"
+                        id="internal_fund_generation-1"
+                        name="internal_fund_generation"
+                        required="required"
+                        onChange={handleChange}
+                        value={formD.internal_fund_generation}
+                      />
+                    </div>
+                  </td>
+                  <td
+                    className="input_label_gapper"
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "10px",
+                    }}
+                    colSpan={6}
+                  >
+                    <div>
+                      <label htmlFor="other_financing_source-1">
+                        {t("Other please specify")}{" "}
+                      </label>
+                      <input
+                        style={{ width: "95%" }}
+                        type="text"
+                        id="other_financing_source-1"
+                        name="other_financing_source"
+                        onChange={handleChange}
+                        value={formD.other_financing_source}
+                      />
+                    </div>
+                  </td>
+                </div>
               </tr>
               <tr>
                 <td colSpan={1}>
@@ -1783,16 +1797,18 @@ function Table({ formD, setFormD }) {
                         gap: "3px",
                       }}
                     >
-                      <>{t("If yes, which one")}? </>
-                      <input
-                        style={{ minWidth: "20px", marginBottom: "12px" }}
-                        type="text"
-                        id="innovation_RD_institute"
-                        name="innovation_RD_institute"
-                        required="required"
-                        onChange={handleChange}
-                        value={formD.innovation_RD_institute}
-                      />
+                      <td>{t("If yes, which one")}? </td>
+                      <td>
+                        <input
+                          style={{ minWidth: "20px", marginBottom: "12px" }}
+                          type="text"
+                          id="innovation_RD_institute"
+                          name="innovation_RD_institute"
+                          required="required"
+                          onChange={handleChange}
+                          value={formD.innovation_RD_institute}
+                        />
+                      </td>
                     </tr>
                   )}
                 </td>
