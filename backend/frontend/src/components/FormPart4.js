@@ -221,7 +221,7 @@ function FormPart4({ formD, setFormD }) {
   return (
     <>
     <h2 style={{ marginTop: "2em", marginBottom: "2em" }}>
-        {t("D. Access to Finance")}
+    D.{t(" Access to Finance")}
       </h2>
     <div
       style={{
