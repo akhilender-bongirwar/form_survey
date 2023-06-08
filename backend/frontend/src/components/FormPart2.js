@@ -23,7 +23,7 @@ const FormPart2 = ({
     const challFacing = document.querySelectorAll(".facingChal");
     const challFacing1 = document.querySelector(".facingChal");
     var challengesChk = false;
-    var challengesChk1=false;
+    var challengesChk1 = false;
 
     const marketing = document.querySelectorAll(".branding");
     const marketing1 = document.querySelector(".branding");
@@ -47,58 +47,56 @@ const FormPart2 = ({
         checked2 = true;
       }
     });
-    challFacing.forEach((el)=>{
-      if(el.type=="checkbox"){
-        if(el.checked){
+    challFacing.forEach((el) => {
+      if (el.type == "checkbox") {
+        if (el.checked) {
           challengesChk = true;
         }
-      }
-      else if(el.type == "text"){
-          console.log(el)
-          if(el.value !=""){
-            challengesChk1=true;
-          }
+      } else if (el.type == "text") {
+        console.log(el);
+        if (el.value != "") {
+          challengesChk1 = true;
         }
+      }
     });
 
-    marketing.forEach((el)=>{
-      if(el.type=="checkbox"){
-        if(el.checked){
+    marketing.forEach((el) => {
+      if (el.type == "checkbox") {
+        if (el.checked) {
           marketingChk = true;
         }
-      }
-      else if(el.type == "text"){
-          console.log(el)
-          if(el.value !=""){
-            marketingChk1=true;
-          }
+      } else if (el.type == "text") {
+        console.log(el);
+        if (el.value != "") {
+          marketingChk1 = true;
         }
+      }
     });
-
-    if(!challengesChk && !challengesChk1){
-
-      toast.error("Choose any one of the option or fill the text-field");
-      challFacing1.setCustomValidity("Choose any one of the option or fill the text-field");
-      challFacing1.reportValidity();
-    }else{
-      challFacing1.setCustomValidity("");
-    }
-
-    if(!marketingChk && !marketingChk1){
-
-      toast.error("Choose any one of the option or fill the text-field");
-      marketing1.setCustomValidity("Choose any one of the option or fill the text-field");
-      marketing1.reportValidity();
-    }else{
-      marketing1.setCustomValidity("");
-    }
-    console.log(marketingChk);
-    console.log(marketingChk1);
-
 
     const err1 = form.querySelector(`input[type="checkbox"].a`);
     const err2 = form.querySelector(`input[type="checkbox"].b`);
     if (expand) {
+      if (!challengesChk && !challengesChk1) {
+        toast.error("Choose any one of the option or fill the text-field");
+        challFacing1.setCustomValidity(
+          "Choose any one of the option or fill the text-field"
+        );
+        challFacing1.reportValidity();
+      } else {
+        challFacing1.setCustomValidity("");
+      }
+      if (leverage) {
+        if (!marketingChk && !marketingChk1) {
+          toast.error("Choose any one of the option or fill the text-field");
+          marketing1.setCustomValidity(
+            "Choose any one of the option or fill the text-field"
+          );
+          marketing1.reportValidity();
+        } else {
+          marketing1.setCustomValidity("");
+        }
+      }
+
       if (!checked1) {
         toast.error("fill the required field");
         err1.setCustomValidity("select any one option");
@@ -110,12 +108,15 @@ const FormPart2 = ({
         err2.setCustomValidity("select any one option");
       } else {
         err2.setCustomValidity("");
-
       }
     }
 
     const isV = document.getElementById("formy").reportValidity();
-    if (!isV && (!challengesChk || !challengesChk1) && (!marketingChk || !marketingChk1)) {
+    if (
+      !isV &&
+      (!challengesChk || !challengesChk1) &&
+      (!marketingChk || !marketingChk1)
+    ) {
       e.preventDefault();
     } else {
       navigate("/3");

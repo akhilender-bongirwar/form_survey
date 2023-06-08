@@ -188,6 +188,9 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                     required="required"
                     onChange={handleChange}
                     checked={formD.aware_of_govt_policy == "YES"}
+                    onClick={() => {
+                      setchk(true);
+                    }}
                   />
                 </div>
                 <div>
@@ -200,57 +203,90 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                     required="required"
                     onChange={handleChange}
                     checked={formD.aware_of_govt_policy == "NO"}
+                    onClick={() => {
+                      setchk(false);
+                    }}
                   />
                 </div>
               </div>
             </td>
           </tr>
-          <tr>
-            <td colSpan={1}>
-              <span>
-                {t(
-                  "Which program benefits are you availing currently from the state? Please describe the key benefits and challenges related to the program"
-                )}
-              </span>
-            </td>
-            <td colSpan={6}>
-              <Tooltip title="Add">
-                <IconButton
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setAddFields((prevobj) => {
-                      return {
-                        ...prevobj,
-                        [Object.keys(prevobj).length]: {
-                          name: "",
-                          assistance: "",
-                          challanges: "",
-                        },
-                      };
-                    });
-                  }}
-                >
-                  <AddCircleIcon />
-                </IconButton>
-              </Tooltip>
-              <Tooltip title="Delete">
-                <IconButton>
-                  <DeleteIcon />
-                </IconButton>
-              </Tooltip>
+          {chk ? (
+            <tr>
+              <td colSpan={1}>
+                <span>
+                  {t(
+                    "Which program benefits are you availing currently from the state? Please describe the key benefits and challenges related to the program"
+                  )}
+                </span>
+              </td>
+              <td colSpan={6}>
+                <Tooltip title="Add">
+                  <IconButton
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setAddFields((prevobj) => {
+                        return {
+                          ...prevobj,
+                          [Object.keys(prevobj).length]: {
+                            name: "",
+                            assistance: "",
+                            challanges: "",
+                          },
+                        };
+                      });
+                    }}
+                  >
+                    <AddCircleIcon />
+                  </IconButton>
+                </Tooltip>
+                <Tooltip title="Delete">
+                  <IconButton>
+                    <DeleteIcon />
+                  </IconButton>
+                </Tooltip>
 
-              {Object.values(addfields).map((obj, index) => {
-                return (
-                  <div style={{ width: "100%", display: "flex" }}>
-                    <td colSpan={1} style={{ width: "50%" }}>
-                      <tr>
-                        <span>{t("Name of the program")}</span>
-                      </tr>
-                      <tr>
+                {Object.values(addfields).map((obj, index) => {
+                  return (
+                    <div style={{ width: "100%", display: "flex" }}>
+                      <td colSpan={1} style={{ width: "50%" }}>
+                        <tr>
+                          <span>{t("Name of the program")}</span>
+                        </tr>
+                        <tr>
+                          <input
+                            type="text"
+                            data-identity={`${index}`}
+                            value={obj.name}
+                            onChange={(e) => {
+                              let id = e.target.dataset.identity;
+                              console.log("target id", id);
+                              setAddFields((prevobj) => {
+                                return {
+                                  ...prevobj,
+                                  [index]: {
+                                    ...prevobj[index],
+                                    name: e.target.value,
+                                  },
+                                };
+                              });
+                            }}
+                            style={{
+                              width: "90%",
+                              border: "transparent",
+                              borderBottom: "2px solid black",
+                            }}
+                          />
+                        </tr>
+                      </td>
+                      <td colSpan={2} style={{ width: "100%" }}>
+                        <label htmlFor="benefits">
+                          {t("Nature of assistance/Benefits")}:
+                        </label>
                         <input
                           type="text"
                           data-identity={`${index}`}
-                          value={obj.name}
+                          value={obj.assistance}
                           onChange={(e) => {
                             let id = e.target.dataset.identity;
                             console.log("target id", id);
@@ -259,7 +295,7 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                                 ...prevobj,
                                 [index]: {
                                   ...prevobj[index],
-                                  name: e.target.value,
+                                  assistance: e.target.value,
                                 },
                               };
                             });
@@ -270,67 +306,40 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                             borderBottom: "2px solid black",
                           }}
                         />
-                      </tr>
-                    </td>
-                    <td colSpan={2} style={{ width: "100%" }}>
-                      <label htmlFor="benefits">
-                        {t("Nature of assistance/Benefits")}:
-                      </label>
-                      <input
-                        type="text"
-                        data-identity={`${index}`}
-                        value={obj.assistance}
-                        onChange={(e) => {
-                          let id = e.target.dataset.identity;
-                          console.log("target id", id);
-                          setAddFields((prevobj) => {
-                            return {
-                              ...prevobj,
-                              [index]: {
-                                ...prevobj[index],
-                                assistance: e.target.value,
-                              },
-                            };
-                          });
-                        }}
-                        style={{
-                          width: "90%",
-                          border: "transparent",
-                          borderBottom: "2px solid black",
-                        }}
-                      />
-                    </td>
-                    <td style={{ width: "100%" }}>
-                      <label htmlFor="challenges">{t("Challenges")}:</label>
-                      <input
-                        type="text"
-                        data-identity={`${index}`}
-                        value={obj.challanges}
-                        onChange={(e) => {
-                          let id = e.target.dataset.identity;
-                          console.log("target id", id);
-                          setAddFields((prevobj) => {
-                            return {
-                              ...prevobj,
-                              [index]: {
-                                ...prevobj[index],
-                                challanges: e.target.value,
-                              },
-                            };
-                          });
-                        }}
-                        style={{
-                          width: "90%",
-                          border: "transparent",
-                          borderBottom: "2px solid black",
-                        }}
-                      />
-                    </td>
-                  </div>
-                );
-              })}
-            </td>
-          </tr>
+                      </td>
+                      <td style={{ width: "100%" }}>
+                        <label htmlFor="challenges">{t("Challenges")}:</label>
+                        <input
+                          type="text"
+                          data-identity={`${index}`}
+                          value={obj.challanges}
+                          onChange={(e) => {
+                            let id = e.target.dataset.identity;
+                            console.log("target id", id);
+                            setAddFields((prevobj) => {
+                              return {
+                                ...prevobj,
+                                [index]: {
+                                  ...prevobj[index],
+                                  challanges: e.target.value,
+                                },
+                              };
+                            });
+                          }}
+                          style={{
+                            width: "90%",
+                            border: "transparent",
+                            borderBottom: "2px solid black",
+                          }}
+                        />
+                      </td>
+                    </div>
+                  );
+                })}
+              </td>
+            </tr>
+          ) : null}
+
           <tr>
             <td colSpan={1}>
               <span>
