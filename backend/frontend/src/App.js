@@ -166,12 +166,13 @@ function App() {
     Govt_Scheme_Challenges: "",
     Support_required: "",
     //added
-    policy_program_1: "",
-    policy_program_2: "",
+    // policy_program_1: "",
+    // policy_program_2: "",
     //
+
     aware_of_govt_policy: "",
-    Policy_benifitted: "",
-    Challenges_faced_policy_related: "",
+    // Policy_benifitted: "",
+    // Challenges_faced_policy_related: "",
     //added
     expectation_from_govt_1: "",
     expectation_from_govt_2: "",
@@ -360,6 +361,7 @@ function App() {
                   setFormD={setFormD}
                   expand2={expand2}
                   expand={expand}
+                  addfields={addfields}
                 />
               }
             />
