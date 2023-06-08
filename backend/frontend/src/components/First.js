@@ -1,5 +1,10 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+
 const First = ({ formD, setFormD }) => {
   const navigate = useNavigate();
   const validate = (e) => {
@@ -12,7 +17,7 @@ const First = ({ formD, setFormD }) => {
   };
   function handleChange(event) {
     let { name, value, type, checked, className, id } = event.target;
-    console.log(event)
+    console.log(event);
     if (type == "number") {
       value = parseInt(value);
     }
@@ -182,89 +187,140 @@ const First = ({ formD, setFormD }) => {
   }
   return (
     <div>
-    <table className="firstTable" style={{margin:"auto",fontSize:"small",marginTop:"10px"}} onClick={()=>document.getElementById('District_code').focus()}>
-    <thead>
-      <th colspan={3}>District code</th>
-    </thead>
-      <tbody>
-        <th colspan={3}>Code Description</th>
-        <tr style={{display:"table-row"}}>
-          <th>1</th>
-          <th>HA</th>
-          <th>Hardoi</th>
-        </tr>
-        <tr style={{display:"table-row"}}>
-          <th>2</th>
-          <th>LA</th>
-          <th>Lakhimpur Kheri</th>
-        </tr>
-        <tr style={{display:"table-row"}}>
-          <th>3</th>
-          <th>LU</th>
-          <th>Lucknow</th>
-        </tr>
-        <tr style={{display:"table-row"}}>
-          <th>4</th>
-          <th>RA</th>
-          <th>Raebareli</th>
-        </tr>
-        <tr style={{display:"table-row"}}>
-          <th>5</th>
-          <th>SI</th>
-          <th>Sitapur</th>
-        </tr>
-        <tr style={{display:"table-row"}}>
-          <th>6</th>
-          <th>UN</th>
-          <th>Unnao</th>
-        </tr>
-        <tr style={{display:"table-row"}}>
-          <th>7</th>
-          <th>AY</th>
-          <th>Ayodhya</th>
-        </tr>
-        <tr style={{display:"table-row"}}>
-          <th>8</th>
-          <th>AN</th>
-          <th>Ambedkar Nagar</th>
-        </tr>
-        <tr style={{display:"table-row"}}>
-          <th>9</th>
-          <th>BA</th>
-          <th>Barabanki</th>
-        </tr>
-        <tr style={{display:"table-row"}}>
-          <th>10</th>
-          <th>SU</th>
-          <th>Sultanpur</th>
-        </tr>
-        <tr style={{display:"table-row"}}>
-          <th>11</th>
-          <th>AM</th>
-          <th>Ayodhya</th>
-        </tr>
+      <table
+        className="firstTable"
+        style={{ margin: "auto", fontSize: "small", marginTop: "10px" }}
+        onClick={() => document.getElementById("District_code").focus()}
+      >
+        <thead>
+          <th colspan={3}>District code</th>
+        </thead>
+        <tbody>
+          <th colspan={3}>Code Description</th>
+          <tr style={{ display: "table-row" }}>
+            <th>1</th>
+            <th>HA</th>
+            <th>Hardoi</th>
+          </tr>
+          <tr style={{ display: "table-row" }}>
+            <th>2</th>
+            <th>LA</th>
+            <th>Lakhimpur Kheri</th>
+          </tr>
+          <tr style={{ display: "table-row" }}>
+            <th>3</th>
+            <th>LU</th>
+            <th>Lucknow</th>
+          </tr>
+          <tr style={{ display: "table-row" }}>
+            <th>4</th>
+            <th>RA</th>
+            <th>Raebareli</th>
+          </tr>
+          <tr style={{ display: "table-row" }}>
+            <th>5</th>
+            <th>SI</th>
+            <th>Sitapur</th>
+          </tr>
+          <tr style={{ display: "table-row" }}>
+            <th>6</th>
+            <th>UN</th>
+            <th>Unnao</th>
+          </tr>
+          <tr style={{ display: "table-row" }}>
+            <th>7</th>
+            <th>AY</th>
+            <th>Ayodhya</th>
+          </tr>
+          <tr style={{ display: "table-row" }}>
+            <th>8</th>
+            <th>AN</th>
+            <th>Ambedkar Nagar</th>
+          </tr>
+          <tr style={{ display: "table-row" }}>
+            <th>9</th>
+            <th>BA</th>
+            <th>Barabanki</th>
+          </tr>
+          <tr style={{ display: "table-row" }}>
+            <th>10</th>
+            <th>SU</th>
+            <th>Sultanpur</th>
+          </tr>
+          <tr style={{ display: "table-row" }}>
+            <th>11</th>
+            <th>AM</th>
+            <th>Ayodhya</th>
+          </tr>
+        </tbody>
+      </table>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          width: "min-content",
+          margin: "auto",
+        }}
+      >
+        <FormControl sx={{ m: 1, minWidth: 80 }}>
+          <InputLabel id="demo-simple-select-autowidth-label">
+            District
+          </InputLabel>
+          <Select
+            labelId="demo-simple-select-autowidth-label"
+            id="District_code"
+            name="District_Code"
+            required="true"
+            // value={age}
+            onChange={handleChange}
+            value={formD.District_Code}
+            autoWidth
+            label="District"
+          >
+            <MenuItem value="">
+              <em>None</em>
+            </MenuItem>
+            <MenuItem value="HA">Hardoi</MenuItem>
+            <MenuItem value="LA">Lakhimpur Kheri</MenuItem>
+            <MenuItem value="LU">Lucknow</MenuItem>
+            <MenuItem value="RA">Raebareli</MenuItem>
+            <MenuItem value="SI">Sitapur</MenuItem>
+            <MenuItem value="UN">Unnao</MenuItem>
+            <MenuItem value="AY">Ayodhya</MenuItem>
+            <MenuItem value="AN">Ambedkar Nagar</MenuItem>
+            <MenuItem value="BA">Barabanki</MenuItem>
+            <MenuItem value="SU">Sultanpur</MenuItem>
+            <MenuItem value="AM">Amethi</MenuItem>
+          </Select>
+        </FormControl>
 
-      </tbody>
-    </table>
-      <div style={{display:"flex",flexDirection:"column",width:"min-content", margin:"auto"}}>
-        <select name="District_Code" id="District_code" onChange={handleChange} value={formD.District_Code} required="true" style={{height:"45px",padding:"10px",margin:"20px auto"}}>
-          <option value="">Select an Option</option>
-          <option value="HA">Hardoi</option>
-          <option value="LA">Lakhimpur Kheri</option>
-          <option value="LU">Lucknow</option>
-          <option value="RA">Raebareli</option>
-          <option value="SI">Sitapur</option>
-          <option value="UN">Unnao</option>
-          <option value="AY">Ayodhya</option>
-          <option value="AN">Ambedkar Nagar</option>
-          <option value="BA">Barabanki</option>
-          <option value="SU">Sultanpur</option>
-          <option value="AM">Amethi</option>
-        </select>
         <label htmlFor="submission_date">Date</label>
-        <input required="true" onChange={handleChange} value={formD.submission_date} style={{fontFamily:"calibri",fontSize:"medium",height:"45px",padding:"10px",width:"auto",marginTop:"5px"}} type="date" id="submission_date" name="submission_date" />
+        <input
+          required="true"
+          onChange={handleChange}
+          value={formD.submission_date}
+          style={{
+            fontFamily: "calibri",
+            fontSize: "medium",
+            height: "45px",
+            padding: "10px",
+            width: "auto",
+            marginTop: "5px",
+          }}
+          type="date"
+          id="submission_date"
+          name="submission_date"
+        />
       </div>
-      <div className="buttoncontainer" style={{ fontSize:"large",marginRight: "15px",display:"flex",justifyContent:"flex-end" }}>
+      <div
+        className="buttoncontainer"
+        style={{
+          fontSize: "large",
+          marginRight: "15px",
+          display: "flex",
+          justifyContent: "flex-end",
+        }}
+      >
         <NavLink to="/1" className="arrow_notation" onClick={validate}>
           Next
         </NavLink>
