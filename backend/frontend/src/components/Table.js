@@ -285,7 +285,7 @@ function Table({ formD, setFormD }) {
             flexWrap: "wrap",
             overflowWrap: "break-word",
             borderBottom: "0",
-            backgroundColor: "rgb(240 235 248 / 77%)",
+            // backgroundColor: "rgb(240 235 248 / 77%)",
           }}
         >
           {/* <h2 style={{ marginLeft: "0.8em", padding: "2%" }}>

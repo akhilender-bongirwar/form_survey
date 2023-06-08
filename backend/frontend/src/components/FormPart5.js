@@ -155,18 +155,18 @@ function FormPart5({ formD, setFormD }) {
         style={{
           display: "flex",
           justifyContent: "center",
-          backgroundColor: "rgb(240 235 248 / 77%)",
+          // backgroundColor: "rgb(240 235 248 / 77%)",
         }}
       >
         <div
           style={{
-            border: "0.2em solid black",
+            // border: "0.2em solid black",
             // width: "71vw",
             flexWrap: "wrap",
             overflowWrap: "break-word",
             borderBottom: "0",
-            width: "95vw",
-            backgroundColor: "rgb(240 235 248 / 77%)",
+            width: "100%",
+            // backgroundColor: "rgb(240 235 248 / 77%)",
           }}
         >
           <div
@@ -174,7 +174,7 @@ function FormPart5({ formD, setFormD }) {
             style={{
               borderTop: 0,
               gap: "2%",
-              backgroundColor: "rgb(240 235 248 / 77%)",
+              // backgroundColor: "rgb(240 235 248 / 77%)",
             }}
           >
             <label className="inner-div-tag" style={{ width: "100%" }}>
