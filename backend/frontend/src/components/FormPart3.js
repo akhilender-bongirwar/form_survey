@@ -1107,7 +1107,7 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                   type="text"
                   id="availedByMe"
                   name="scheme_availed_by_you_central_govt"
-                  placeholder="central govt."
+                  placeholder={t("central govt")}
                   onChange={handleChange}
                   value={formD.scheme_availed_by_you_central_govt}
                   style={{
@@ -1118,7 +1118,7 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                 <input
                   type="text"
                   id="availedByMe2"
-                  placeholder="state govt."
+                  placeholder={t("state govt")}
                   name="scheme_availed_by_you_state_govt"
                   onChange={handleChange}
                   value={formD.scheme_availed_by_you_state_govt}

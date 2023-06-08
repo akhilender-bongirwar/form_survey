@@ -193,7 +193,7 @@ function FormPart5({ formD, setFormD }) {
             >
               <div style={{ display: "flex", width: "100%" }}>
                 <label htmlFor="valid" style={{ fontWeight: "500" }}>
-                  Yes
+                  {t("YES")}
                 </label>
                 <input
                   type="radio"
@@ -208,10 +208,10 @@ function FormPart5({ formD, setFormD }) {
               </div>
               <div style={{ display: "flex", width: "100%" }}>
                 <label htmlFor="invalid" style={{ fontWeight: "500" }}>
-                  No
+                  {t("NO")}
                 </label>
                 <input
-                  type="radio"
+                  type="radio"  
                   name="availed_samadhaan_service"
                   value="NO"
                   id="invalid"

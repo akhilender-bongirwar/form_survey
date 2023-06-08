@@ -473,7 +473,7 @@ const FormPart2 = ({
                                   name="Raw_Materials"
                                   onChange={handleChange}
                                   value={formD.Raw_Materials.other}
-                                  placeholder="others"
+                                  placeholder={t("others")}
                                 />
                               </div>
                             </div>

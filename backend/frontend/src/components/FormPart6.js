@@ -257,7 +257,7 @@ function FormPart6({ formD, setFormD }) {
                       name="Currently_owned_1"
                       value={formD.Certifications.Currently_owned_1}
 
-                      placeholder="Currently owned"
+                      placeholder={t("Currently owned")}
                       onChange={handleChange}
                     />
                   </td>
@@ -270,7 +270,7 @@ function FormPart6({ formD, setFormD }) {
                       required="required"
                       value={formD.Certifications.To_be_Required_1}
 
-                      placeholder="To be required"
+                      placeholder={t("To be required")}
                       onChange={handleChange}
                     />
                   </td>
@@ -285,7 +285,7 @@ function FormPart6({ formD, setFormD }) {
                       name="Currently_owned_2"
                       value={formD.Infrastructure.Currently_owned_2}
 
-                      placeholder="Currently owned"
+                      placeholder={t("Currently owned")}
                       onChange={handleChange}
                     />
                   </td>
@@ -298,7 +298,7 @@ function FormPart6({ formD, setFormD }) {
                       required="required"
                       value={formD.Infrastructure.To_be_Required_2}
 
-                      placeholder="To be required"
+                      placeholder={t("To be required")}
                       onChange={handleChange}
                     />
                   </td>
@@ -313,7 +313,7 @@ function FormPart6({ formD, setFormD }) {
                       name="Currently_owned_3"
                       value={formD.Laboratory.Currently_owned_3}
 
-                      placeholder="Currently owned"
+                      placeholder={t("Currently owned")}
                       onChange={handleChange}
                     />
                   </td>
@@ -326,7 +326,7 @@ function FormPart6({ formD, setFormD }) {
                       className="Laboratory"
                       value={formD.Laboratory.To_be_Required_3}
 
-                      placeholder="To be required"
+                      placeholder={t("To be required")}
                       onChange={handleChange}
                     />
                   </td>
