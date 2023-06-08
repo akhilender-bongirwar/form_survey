@@ -19,39 +19,39 @@ function FormPart6({ formD, setFormD ,expand2,expand}) {
     } else {
       let formDt=formD;
       if(formDt.Ownership_Pattern!="partnership"){
-        formDt.ownership_female_partnership=="";
+        formDt.ownership_female_partnership="";
       }
       if(formDt.Cluster=="YES"){
-        formDt.Cluster_No=="";
+        formDt.Cluster_No="";
       }
       else{
-        formDt.Cluster_Yes=="";
+        formDt.Cluster_Yes="";
       }
       if(formDt.loan_availed=="NO"){
-        formDt.loan_specification=="";
+        formDt.loan_specification="";
       }
       if(formDt.loan_adequate=="YES"){
-        formDt.loan_required=="";
+        formDt.loan_required="";
       }
       if(formDt.availed_loan_last_year=="NO"){
-        formDt.availed_loan_amount=="";
+        formDt.availed_loan_amount="";
       }
       if(formDt.innovation_RD=="NO"){
-        formDt.innovation_RD_institute=="";
+        formDt.innovation_RD_institute="";
       }
       if(formDt.support_from_agency=="NO"){
-        formDt.govt_scheme=="";
-        formDt.govt_program=="";
-        formDt.govt_organisation=="";
+        formDt.govt_scheme="";
+        formDt.govt_program="";
+        formDt.govt_organisation="";
       }
       if(formDt.You_Export=="NO"){
-        formDt.Export_Value=="";
+        formDt.Export_Value="";
       }
       if(formDt.if_Raw_Materials_available=="YES"){
-        formDt.if_no_mention_difficulties=="";
+        formDt.if_no_mention_difficulties="";
       }
       if(formDt.have_product_brand_name=="NO"){
-        formDt.Brand_name=="";
+        formDt.Brand_name="";
       }
       if(formDt.involved_in_marketing=="NO"){
         formDt.options_you_leverage_for_sale.exhibitions=false;
@@ -62,15 +62,15 @@ function FormPart6({ formD, setFormD ,expand2,expand}) {
         formDt.options_you_leverage_for_sale.other="";
       }
       if(formDt.Requirement_of_Training=="NO"){
-        formDt.ESDP_beneficiaries=="";
+        formDt.ESDP_beneficiaries="";
       }
       if(expand2==false){
-        formDt.Nature_of_Services_Offered.Nature_of_Services_Offered_a=="";
-        formDt.Nature_of_Services_Offered.Nature_of_Services_Offered_b=="";
-        formDt.Nature_of_Services_Offered.Nature_of_Services_Offered_c=="";
-        formDt.Challenges_faced.Challenges_faced_a=="";
-        formDt.Challenges_faced.Challenges_faced_b=="";
-        formDt.Challenges_faced.Challenges_faced_c=="";
+        formDt.Nature_of_Services_Offered.Nature_of_Services_Offered_a="";
+        formDt.Nature_of_Services_Offered.Nature_of_Services_Offered_b="";
+        formDt.Nature_of_Services_Offered.Nature_of_Services_Offered_c="";
+        formDt.Challenges_faced.Challenges_faced_a="";
+        formDt.Challenges_faced.Challenges_faced_b="";
+        formDt.Challenges_faced.Challenges_faced_c="";
         formDt.Govt_Scheme_Challenges=""
         formDt.Support_required=""
       }
