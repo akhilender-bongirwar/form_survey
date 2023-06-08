@@ -1,7 +1,9 @@
 * {
   user-select: none;
 }
-
+body{
+  background-color: #f9fafe;
+}
 td[colspan="6"] {
   width: 100%;
 }
@@ -30,15 +32,6 @@ label {
   flex-basis: content;
   flex-direction: column;
   flex-wrap: wrap;
-}
-
-.div-style {
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
-  border: 0.15em solid black;
-  border-left: 0;
-  border-right: 0;
 }
 
 .checkboxes {
@@ -75,7 +68,7 @@ input[type="checkbox"] {
 input[type="radio"] {
   width: 15px;
   margin-left: auto;
-  margin-right: 50%;
+  margin-right: 30%;
 }
 
 .radio_wrapper > div {
@@ -176,8 +169,32 @@ input {
 
 table,td,tr{
   border: none;
+  width: 100%;
 }
 #formy{
   width: 70%;
   margin: auto;
+  background-color: #ffffff;
+  padding: 50px;
+  border: 1px solid #818489;
+  border-radius: 20px;
+  color: #1d1e21;
+  font-weight: 600;
+  font-size: 18px;
+}
+h1,h2{
+  color: #0f2871;
+  font-size: large;
+}
+input[type="text"]{
+  color: #414754;
+  border:1px solid #818489;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: 500;
+  margin-top:-10px;
+  font-size: medium;
+}
+input:focus{
+  border: solid black;
 }

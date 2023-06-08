@@ -40,7 +40,6 @@ function Table({ formD, setFormD }) {
   const [an, setAn] = useState("NUMBER");
 
   const validate = (e) => {
-    const isV = document.getElementById("formy").reportValidity();
     const check = document.querySelectorAll(".x");
     const check1 = document.querySelector(".x");
     var chk = false;
@@ -56,14 +55,17 @@ function Table({ formD, setFormD }) {
         }
       }
     });
-    // console.log(chk, chk2);
-    if (!chk || !chk2) {
+
+    console.log(chk, chk2);
+    if (!chk && !chk2) {
       toast.error("choose one of the option or fill in the text-field");
       check1.setCustomValidity("enter here or fill the text");
+      check1.reportValidity();
     } else {
       check1.setCustomValidity("");
     }
 
+    const isV = document.getElementById("formy").reportValidity();
     if (!isV && (!chk || !chk2)) {
       e.preventDefault();
     } else {
@@ -258,7 +260,7 @@ function Table({ formD, setFormD }) {
             flexWrap: "wrap",
             overflowWrap: "break-word",
             borderBottom: "0",
-            backgroundColor: "rgb(240 235 248 / 77%)",
+            // backgroundColor: "rgb(240 235 248 / 77%)",
           }}
         >
           {/* <h2 style={{ marginLeft: "0.8em", padding: "2%" }}>
@@ -1173,244 +1175,249 @@ function Table({ formD, setFormD }) {
                     </div>
                   </div>
                 </td>
-                {an=="Percentage"?
-                (<>
-                <td
-                  className="input_label_gapper"
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "10px",
-                  }}
-                  colSpan={6}
-                >
-                  <div>
-                    <label htmlFor="full_time_Emoployee-1">
-                      {t("Full time")}:{" "}
-                    </label>
-                    <input
-                      style={{ width: "95%" }}
-                      type="number"
-                      id="full_time_Emoployee-1"
-                      name="full_time_Emoployee"
-                      required="required"
-                      min="0"
-                      max="100"
-                      onChange={handleChange}
-                      value={formD.full_time_Emoployee}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="part_time_Emoployee-2">
-                      {t("Part time")}:{" "}
-                    </label>
-                    <input
-                      style={{ width: "95%" }}
-                      type="number"
-                      id="part_time_Emoployee-2"
-                      name="part_time_Emoployee"
-                      required="required"
-                      min="0"
-                      max="100"
-                      onChange={handleChange}
-                      value={formD.part_time_Emoployee}
-                    />
-                  </div>
-                </td>
-                <td
-                  className="input_label_gapper"
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "10px",
-                  }}
-                  colSpan={6}
-                >
-                  <div>
-                    <label htmlFor="Permanent_Emoployee-1">
-                      {t("Permanent")}:{" "}
-                    </label>
-                    <input
-                      style={{ width: "95%" }}
-                      type="number"
-                      id="Permanent_Emoployee-1"
-                      name="Permanent_Emoployee"
-                      required="required"
-                      min="0"
-                      max="100"
-                      onChange={handleChange}
-                      value={formD.Permanent_Emoployee}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="Contractual_Emoployee-2">
-                      {t("Contractual")}:{" "}
-                    </label>
-                    <input
-                      style={{ width: "95%" }}
-                      type="number"
-                      id="Contractual_Emoployee-2"
-                      name="Contractual_Emoployee"
-                      required="required"
-                      min="0"
-                      max="100"
-                      onChange={handleChange}
-                      value={formD.Contractual_Emoployee}
-                    />
-                  </div>
-                </td>
-                <td
-                  className="input_label_gapper"
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "10px",
-                  }}
-                  colSpan={6}
-                >
-                  <div>
-                    <label htmlFor="male_employee-1">{t("Male")}: </label>
-                    <input
-                      style={{ width: "95%" }}
-                      type="number"
-                      id="male_employee-1"
-                      name="male_employee"
-                      required="required"
-                      min="0"
-                      max="100"
-                      onChange={handleChange}
-                      value={formD.male_employee}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="female_employee-2">{t("Female")}: </label>
-                    <input
-                      style={{ width: "95%" }}
-                      type="number"
-                      id="female_employee-2"
-                      required="required"
-                      min="0"
-                      max="100"
-                      name="female_employee"
-                      onChange={handleChange}
-                      value={formD.female_employee}
-                    />
-                  </div>
-                </td>
-                </>)
-                :
-                (<>
-                <td
-                  className="input_label_gapper"
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "10px",
-                  }}
-                  colSpan={6}
-                >
-                  <div>
-                    <label htmlFor="full_time_Emoployee-1">
-                      {t("Full time")}:{" "}
-                    </label>
-                    <input
-                      style={{ width: "95%" }}
-                      type="number"
-                      id="full_time_Emoployee-1"
-                      name="full_time_Emoployee"
-                      required="required"
-                      onChange={handleChange}
-                      value={formD.full_time_Emoployee}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="part_time_Emoployee-2">
-                      {t("Part time")}:{" "}
-                    </label>
-                    <input
-                      style={{ width: "95%" }}
-                      type="number"
-                      id="part_time_Emoployee-2"
-                      name="part_time_Emoployee"
-                      required="required"
-                      onChange={handleChange}
-                      value={formD.part_time_Emoployee}
-                    />
-                  </div>
-                </td>
-                <td
-                  className="input_label_gapper"
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "10px",
-                  }}
-                  colSpan={6}
-                >
-                  <div>
-                    <label htmlFor="Permanent_Emoployee-1">
-                      {t("Permanent")}:{" "}
-                    </label>
-                    <input
-                      style={{ width: "95%" }}
-                      type="number"
-                      id="Permanent_Emoployee-1"
-                      name="Permanent_Emoployee"
-                      required="required"
-                      onChange={handleChange}
-                      value={formD.Permanent_Emoployee}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="Contractual_Emoployee-2">
-                      {t("Contractual")}:{" "}
-                    </label>
-                    <input
-                      style={{ width: "95%" }}
-                      type="number"
-                      id="Contractual_Emoployee-2"
-                      name="Contractual_Emoployee"
-                      required="required"
-                      onChange={handleChange}
-                      value={formD.Contractual_Emoployee}
-                    />
-                  </div>
-                </td>
-                <td
-                  className="input_label_gapper"
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "10px",
-                  }}
-                  colSpan={6}
-                >
-                  <div>
-                    <label htmlFor="male_employee-1">{t("Male")}: </label>
-                    <input
-                      style={{ width: "95%" }}
-                      type="number"
-                      id="male_employee-1"
-                      name="male_employee"
-                      required="required"
-                      onChange={handleChange}
-                      value={formD.male_employee}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="female_employee-2">{t("Female")}: </label>
-                    <input
-                      style={{ width: "95%" }}
-                      type="number"
-                      id="female_employee-2"
-                      required="required"
-                      name="female_employee"
-                      onChange={handleChange}
-                      value={formD.female_employee}
-                    />
-                  </div>
-                </td>
-                </>)}
+                {an == "Percentage" ? (
+                  <>
+                    <td
+                      className="input_label_gapper"
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "10px",
+                      }}
+                      colSpan={6}
+                    >
+                      <div>
+                        <label htmlFor="full_time_Emoployee-1">
+                          {t("Full time")}:{" "}
+                        </label>
+                        <input
+                          style={{ width: "95%" }}
+                          type="number"
+                          id="full_time_Emoployee-1"
+                          name="full_time_Emoployee"
+                          required="required"
+                          min="0"
+                          max="100"
+                          onChange={handleChange}
+                          value={formD.full_time_Emoployee}
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="part_time_Emoployee-2">
+                          {t("Part time")}:{" "}
+                        </label>
+                        <input
+                          style={{ width: "95%" }}
+                          type="number"
+                          id="part_time_Emoployee-2"
+                          name="part_time_Emoployee"
+                          required="required"
+                          min="0"
+                          max="100"
+                          onChange={handleChange}
+                          value={formD.part_time_Emoployee}
+                        />
+                      </div>
+                    </td>
+                    <td
+                      className="input_label_gapper"
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "10px",
+                      }}
+                      colSpan={6}
+                    >
+                      <div>
+                        <label htmlFor="Permanent_Emoployee-1">
+                          {t("Permanent")}:{" "}
+                        </label>
+                        <input
+                          style={{ width: "95%" }}
+                          type="number"
+                          id="Permanent_Emoployee-1"
+                          name="Permanent_Emoployee"
+                          required="required"
+                          min="0"
+                          max="100"
+                          onChange={handleChange}
+                          value={formD.Permanent_Emoployee}
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="Contractual_Emoployee-2">
+                          {t("Contractual")}:{" "}
+                        </label>
+                        <input
+                          style={{ width: "95%" }}
+                          type="number"
+                          id="Contractual_Emoployee-2"
+                          name="Contractual_Emoployee"
+                          required="required"
+                          min="0"
+                          max="100"
+                          onChange={handleChange}
+                          value={formD.Contractual_Emoployee}
+                        />
+                      </div>
+                    </td>
+                    <td
+                      className="input_label_gapper"
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "10px",
+                      }}
+                      colSpan={6}
+                    >
+                      <div>
+                        <label htmlFor="male_employee-1">{t("Male")}: </label>
+                        <input
+                          style={{ width: "95%" }}
+                          type="number"
+                          id="male_employee-1"
+                          name="male_employee"
+                          required="required"
+                          min="0"
+                          max="100"
+                          onChange={handleChange}
+                          value={formD.male_employee}
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="female_employee-2">
+                          {t("Female")}:{" "}
+                        </label>
+                        <input
+                          style={{ width: "95%" }}
+                          type="number"
+                          id="female_employee-2"
+                          required="required"
+                          min="0"
+                          max="100"
+                          name="female_employee"
+                          onChange={handleChange}
+                          value={formD.female_employee}
+                        />
+                      </div>
+                    </td>
+                  </>
+                ) : (
+                  <>
+                    <td
+                      className="input_label_gapper"
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "10px",
+                      }}
+                      colSpan={6}
+                    >
+                      <div>
+                        <label htmlFor="full_time_Emoployee-1">
+                          {t("Full time")}:{" "}
+                        </label>
+                        <input
+                          style={{ width: "95%" }}
+                          type="number"
+                          id="full_time_Emoployee-1"
+                          name="full_time_Emoployee"
+                          required="required"
+                          onChange={handleChange}
+                          value={formD.full_time_Emoployee}
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="part_time_Emoployee-2">
+                          {t("Part time")}:{" "}
+                        </label>
+                        <input
+                          style={{ width: "95%" }}
+                          type="number"
+                          id="part_time_Emoployee-2"
+                          name="part_time_Emoployee"
+                          required="required"
+                          onChange={handleChange}
+                          value={formD.part_time_Emoployee}
+                        />
+                      </div>
+                    </td>
+                    <td
+                      className="input_label_gapper"
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "10px",
+                      }}
+                      colSpan={6}
+                    >
+                      <div>
+                        <label htmlFor="Permanent_Emoployee-1">
+                          {t("Permanent")}:{" "}
+                        </label>
+                        <input
+                          style={{ width: "95%" }}
+                          type="number"
+                          id="Permanent_Emoployee-1"
+                          name="Permanent_Emoployee"
+                          required="required"
+                          onChange={handleChange}
+                          value={formD.Permanent_Emoployee}
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="Contractual_Emoployee-2">
+                          {t("Contractual")}:{" "}
+                        </label>
+                        <input
+                          style={{ width: "95%" }}
+                          type="number"
+                          id="Contractual_Emoployee-2"
+                          name="Contractual_Emoployee"
+                          required="required"
+                          onChange={handleChange}
+                          value={formD.Contractual_Emoployee}
+                        />
+                      </div>
+                    </td>
+                    <td
+                      className="input_label_gapper"
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "10px",
+                      }}
+                      colSpan={6}
+                    >
+                      <div>
+                        <label htmlFor="male_employee-1">{t("Male")}: </label>
+                        <input
+                          style={{ width: "95%" }}
+                          type="number"
+                          id="male_employee-1"
+                          name="male_employee"
+                          required="required"
+                          onChange={handleChange}
+                          value={formD.male_employee}
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="female_employee-2">
+                          {t("Female")}:{" "}
+                        </label>
+                        <input
+                          style={{ width: "95%" }}
+                          type="number"
+                          id="female_employee-2"
+                          required="required"
+                          name="female_employee"
+                          onChange={handleChange}
+                          value={formD.female_employee}
+                        />
+                      </div>
+                    </td>
+                  </>
+                )}
               </tr>
               <tr>
                 <td colSpan={1}>

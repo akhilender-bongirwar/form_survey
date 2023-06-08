@@ -8,9 +8,8 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
     const isV = document.getElementById("formy").reportValidity();
     if (!isV) {
       e.preventDefault();
-    }
-    else {
-      navigate('/4')
+    } else {
+      navigate("/4");
     }
   };
   function handleChange(event) {
@@ -150,7 +149,7 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
         display: "flex",
         justifyContent: "center",
         overflowY: "scroll",
-        backgroundColor: "rgb(240 235 248 / 77%)",
+        // backgroundColor: "rgb(240 235 248 / 77%)",
       }}
     >
       <div
@@ -165,7 +164,9 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
           <tr>
             <td colSpan={1}>
               <span>
-                {t("Are you aware about the current government programs benefitting MSMEs")}{" "}
+                {t(
+                  "Are you aware about the current government programs benefitting MSMEs"
+                )}{" "}
               </span>
             </td>
             <td colSpan={6}>
@@ -200,104 +201,127 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
           <tr>
             <td colSpan={1}>
               <span>
-                {t("Which program benefits are you availing currently from the state? Please describe the key benefits and challenges related to the program")}
+                {t(
+                  "Which program benefits are you availing currently from the state? Please describe the key benefits and challenges related to the program"
+                )}
               </span>
             </td>
             <td colSpan={6}>
-              <button onClick={(e) => {
-                e.preventDefault();
-                setAddFields(prevobj=>{
-                  return(
-                    {...prevobj,[Object.keys(prevobj).length]:{name:"",assistance:"",challanges:""}}
-                  )
-                })
-                
-              }}>Add</button>
-              {Object.values(addfields).map((obj,index)=>{
-                return(
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setAddFields((prevobj) => {
+                    return {
+                      ...prevobj,
+                      [Object.keys(prevobj).length]: {
+                        name: "",
+                        assistance: "",
+                        challanges: "",
+                      },
+                    };
+                  });
+                }}
+              >
+                Add
+              </button>
+              {Object.values(addfields).map((obj, index) => {
+                return (
                   <div style={{ width: "100%", display: "flex" }}>
-                        <td colSpan={1} style={{ width: "50%" }}>
-                          <tr>
-                            <span>{t("Name of the program")}</span>
-                          </tr>
-                          <tr>
-                            <input
-                              type="text"
-                              data-identity={`${index}`}
-                              value = {obj.name}
-                              onChange={(e) => {
-                                let id = e.target.dataset.identity;
-                                console.log("target id",id);
-                                setAddFields((prevobj) => {
-                                  return (
-                                    { ...prevobj, [index]: { ...prevobj[index], name: e.target.value  } }
-                                  )
-                                })
-                              }}
-                              style={{
-                                width: "90%",
-                                border: "transparent",
-                                borderBottom: "2px solid black",
-                              }}
-                            />
-                          </tr>
-                        </td>
-                        <td colSpan={2} style={{ width: "100%" }}>
-                          <label htmlFor="benefits">
-                            {t("Nature of assistance/Benefits")}:
-                          </label>
-                          <input
-                            type="text"
-                            data-identity={`${index}`}
-                              value = {obj.assistance}
-                              onChange={(e) => {
-                                let id = e.target.dataset.identity;
-                                console.log("target id",id);
-                                setAddFields((prevobj) => {
-                                  return (
-                                    { ...prevobj, [index]: { ...prevobj[index], assistance: e.target.value  } }
-                                  )
-                                })
-                              }}
-                            style={{
-                              width: "90%",
-                              border: "transparent",
-                              borderBottom: "2px solid black",
-                            }}
-                          />
-                        </td>
-                        <td style={{ width: "100%" }}>
-                          <label htmlFor="challenges">{t("Challenges")}:</label>
-                          <input
-                            type="text"
-                            data-identity={`${index}`}
-                              value = {obj.challanges}
-                              onChange={(e) => {
-                                let id = e.target.dataset.identity;
-                                console.log("target id",id);
-                                setAddFields((prevobj) => {
-                                  return (
-                                    { ...prevobj, [index]: { ...prevobj[index], challanges: e.target.value  } }
-                                  )
-                                })
-                              }}
-                            style={{
-                              width: "90%",
-                              border: "transparent",
-                              borderBottom: "2px solid black",
-                            }}
-                          />
-                        </td>
-                      </div>
-                )
-                
+                    <td colSpan={1} style={{ width: "50%" }}>
+                      <tr>
+                        <span>{t("Name of the program")}</span>
+                      </tr>
+                      <tr>
+                        <input
+                          type="text"
+                          data-identity={`${index}`}
+                          value={obj.name}
+                          onChange={(e) => {
+                            let id = e.target.dataset.identity;
+                            console.log("target id", id);
+                            setAddFields((prevobj) => {
+                              return {
+                                ...prevobj,
+                                [index]: {
+                                  ...prevobj[index],
+                                  name: e.target.value,
+                                },
+                              };
+                            });
+                          }}
+                          style={{
+                            width: "90%",
+                            border: "transparent",
+                            borderBottom: "2px solid black",
+                          }}
+                        />
+                      </tr>
+                    </td>
+                    <td colSpan={2} style={{ width: "100%" }}>
+                      <label htmlFor="benefits">
+                        {t("Nature of assistance/Benefits")}:
+                      </label>
+                      <input
+                        type="text"
+                        data-identity={`${index}`}
+                        value={obj.assistance}
+                        onChange={(e) => {
+                          let id = e.target.dataset.identity;
+                          console.log("target id", id);
+                          setAddFields((prevobj) => {
+                            return {
+                              ...prevobj,
+                              [index]: {
+                                ...prevobj[index],
+                                assistance: e.target.value,
+                              },
+                            };
+                          });
+                        }}
+                        style={{
+                          width: "90%",
+                          border: "transparent",
+                          borderBottom: "2px solid black",
+                        }}
+                      />
+                    </td>
+                    <td style={{ width: "100%" }}>
+                      <label htmlFor="challenges">{t("Challenges")}:</label>
+                      <input
+                        type="text"
+                        data-identity={`${index}`}
+                        value={obj.challanges}
+                        onChange={(e) => {
+                          let id = e.target.dataset.identity;
+                          console.log("target id", id);
+                          setAddFields((prevobj) => {
+                            return {
+                              ...prevobj,
+                              [index]: {
+                                ...prevobj[index],
+                                challanges: e.target.value,
+                              },
+                            };
+                          });
+                        }}
+                        style={{
+                          width: "90%",
+                          border: "transparent",
+                          borderBottom: "2px solid black",
+                        }}
+                      />
+                    </td>
+                  </div>
+                );
               })}
             </td>
           </tr>
           <tr>
             <td colSpan={1}>
               <span>
-                {t("What are your expectations from the State / Central Government (related to infra/training/finance/etc)")}
+                {t(
+                  "What are your expectations from the State / Central Government (related to infra/training/finance/etc)"
+                )}
               </span>
             </td>
             <td colSpan={6}>
@@ -346,7 +370,11 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                     <u>{t("Central Government")}:</u>
                   </div>
                   <div
-                    style={{ display: "flex", flexWrap: "wrap" }}
+                    style={{
+                      display: "flex",
+                      flexWrap: "wrap",
+                      flexDirection: "column",
+                    }}
                     className="grevience_redressal radio_wrapper"
                   >
                     <div className="d_flex_align_CONTENT_justify">
@@ -371,7 +399,7 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                         htmlFor="op2"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        {("LEAN")}
+                        {"LEAN"}
                       </label>
                       <input
                         type="checkbox"
@@ -531,12 +559,12 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                       <input
                         type="checkbox"
                         id="op10"
-                        className="central" data-aware="ct"
+                        className="central"
+                        data-aware="ct"
                         name="Aware_of_listed_scehmes"
                         value="Not_Aware"
                         checked={
-                          formD.Aware_of_listed_scehmes.Central_Govt
-                            .Not_Aware
+                          formD.Aware_of_listed_scehmes.Central_Govt.Not_Aware
                         }
                         onChange={handleChange}
                       />
@@ -696,7 +724,8 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                       <input
                         type="checkbox"
                         id="opt7"
-                         className="state" data-avail="st"
+                        className="state"
+                        data-avail="st"
                         checked={
                           formD.Aware_of_listed_scehmes.State_Govt.Not_Aware
                         }
@@ -713,7 +742,9 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
           <tr>
             <td colSpan={1}>
               <label htmlFor="remark">
-                {t("Remarks (Specify if MSMEs are onboarded on any of the above on any of the above schemes)")}
+                {t(
+                  "Remarks (Specify if MSMEs are onboarded on any of the above on any of the above schemes)"
+                )}
               </label>
             </td>
             <td colSpan={6}>
@@ -767,7 +798,7 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                         htmlFor="op22"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        {("LEAN")}
+                        {"LEAN"}
                       </label>
                       <input
                         type="checkbox"
@@ -1050,7 +1081,9 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
           <tr>
             <td colSpan={1}>
               <div>
-                {t("What are the schemes under which you are availing benefits from Govt? (Both State and Central Govt separately)")}
+                {t(
+                  "What are the schemes under which you are availing benefits from Govt? (Both State and Central Govt separately)"
+                )}
               </div>
             </td>
             <td colSpan={6} style={{ width: "100%" }}>
@@ -1084,7 +1117,12 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
           </tr>
         </table>
         <div
-          style={{ display: "flex", justifyContent: "space-between", margin: "0 15px", fontSize: "large" }}
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            margin: "0 15px",
+            fontSize: "large",
+          }}
         >
           <NavLink to="/2" className="arrow_notation">
             {t("Prev")}

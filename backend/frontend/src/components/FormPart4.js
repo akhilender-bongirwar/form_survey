@@ -163,11 +163,11 @@ function FormPart4({ formD, setFormD }) {
       style={{
         display: "flex",
         justifyContent: "center",
-        backgroundColor: "rgb(240 235 248 / 77%)",
+        // backgroundColor: "rgb(240 235 248 / 77%)",
       }}
     >
       <div>
-        <table style={{ width: "95vw" }}>
+        <table>
           <thead>
             <tr>
               <td>
