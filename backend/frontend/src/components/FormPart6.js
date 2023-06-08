@@ -5,9 +5,9 @@ import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
 import { useTranslation } from "react-i18next";
-
 import { NavLink } from "react-router-dom";
-function FormPart6({ formD, setFormD }) {
+import FormPart2 from "./FormPart2";
+function FormPart6({ formD, setFormD ,expand2,expand}) {
   const [a61, setA61] = React.useState(null);
   const { t } = useTranslation();
 
@@ -17,6 +17,100 @@ function FormPart6({ formD, setFormD }) {
     const isV = document.getElementById("formy").reportValidity();
     if (!isV) {
     } else {
+      let formDt=formD;
+      if(formDt.Ownership_Pattern!="partnership"){
+        formDt.ownership_female_partnership=="";
+      }
+      if(formDt.Cluster=="YES"){
+        formDt.Cluster_No=="";
+      }
+      else{
+        formDt.Cluster_Yes=="";
+      }
+      if(formDt.loan_availed=="NO"){
+        formDt.loan_specification=="";
+      }
+      if(formDt.loan_adequate=="YES"){
+        formDt.loan_required=="";
+      }
+      if(formDt.availed_loan_last_year=="NO"){
+        formDt.availed_loan_amount=="";
+      }
+      if(formDt.innovation_RD=="NO"){
+        formDt.innovation_RD_institute=="";
+      }
+      if(formDt.support_from_agency=="NO"){
+        formDt.govt_scheme=="";
+        formDt.govt_program=="";
+        formDt.govt_organisation=="";
+      }
+      if(formDt.You_Export=="NO"){
+        formDt.Export_Value=="";
+      }
+      if(formDt.if_Raw_Materials_available=="YES"){
+        formDt.if_no_mention_difficulties=="";
+      }
+      if(formDt.have_product_brand_name=="NO"){
+        formDt.Brand_name=="";
+      }
+      if(formDt.involved_in_marketing=="NO"){
+        formDt.options_you_leverage_for_sale.exhibitions=false;
+        formDt.options_you_leverage_for_sale.portals=false;
+        formDt.options_you_leverage_for_sale.websites=false;
+        formDt.options_you_leverage_for_sale.social_media=false;
+        formDt.options_you_leverage_for_sale.Common_marketing_facility=false;
+        formDt.options_you_leverage_for_sale.other="";
+      }
+      if(formDt.Requirement_of_Training=="NO"){
+        formDt.ESDP_beneficiaries=="";
+      }
+      if(expand2==false){
+        formDt.Nature_of_Services_Offered.Nature_of_Services_Offered_a=="";
+        formDt.Nature_of_Services_Offered.Nature_of_Services_Offered_b=="";
+        formDt.Nature_of_Services_Offered.Nature_of_Services_Offered_c=="";
+        formDt.Challenges_faced.Challenges_faced_a=="";
+        formDt.Challenges_faced.Challenges_faced_b=="";
+        formDt.Challenges_faced.Challenges_faced_c=="";
+        formDt.Govt_Scheme_Challenges=""
+        formDt.Support_required=""
+      }
+      if(expand==false){
+        formDt.Raw_Materials.radio_button="";
+        formDt.Raw_Materials.other="";
+        formDt.if_Raw_Materials_available="";
+        formDt.if_no_mention_difficulties="";
+        formDt.green_tech="";
+        formDt.environment_clearence="";
+        formDt.final_product_sold_to.Trader_Agents=false;
+        formDt.final_product_sold_to.Wholesalers=false;
+        formDt.final_product_sold_to.Retailers=false;
+        formDt.final_product_sold_to.Large_Manufacturers_Anchor_units=false;
+        formDt.final_product_sold_to.Exporters=false;
+        formDt.final_product_sold_to.OEMs=false;
+        formDt.final_product_sold_to.End_Users=false;
+        formDt.final_product_sold_to.Others=false;   
+        formDt.markets_supplied.within_State=false;   
+        formDt.markets_supplied.outside_State=false;   
+        formDt.markets_supplied.outside_country=false;
+        formDt.have_product_brand_name="";
+        formDt.Brand_name="";
+        formDt.challenges_while_selling.advance_technology=false;
+        formDt.challenges_while_selling.quality_of_product=false;
+        formDt.challenges_while_selling.market_competition=false;
+        formDt.challenges_while_selling.capital=false;
+        formDt.challenges_while_selling.branding_and_marketing=false;
+        formDt.challenges_while_selling.other="";
+        formDt.involved_in_marketing="";
+        formDt.options_you_leverage_for_sale.exhibitions=false;
+        formDt.options_you_leverage_for_sale.portals=false;
+        formDt.options_you_leverage_for_sale.websites=false;
+        formDt.options_you_leverage_for_sale.social_media=false;
+        formDt.options_you_leverage_for_sale.Common_marketing_facility=false;
+        formDt.options_you_leverage_for_sale.other="";
+        formDt.Quality_Testing_lab_available="";
+        formDt.labour_and_training="";
+        formDt.skilled_labour_is_required="";
+      }
       axios
         .post("/form-data", {
           mode: "cors",
@@ -33,6 +127,10 @@ function FormPart6({ formD, setFormD }) {
             });
           } else {
             toast.success("saved");
+            setTimeout(()=>{
+              navigate("/");
+              window.location.reload()
+            },500);
           }
         })
         .catch((e) => {
