@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./Table.css";
 import { t } from "i18next";
+import Fab from "@mui/material/Fab";
+import AddIcon from "@mui/icons-material/Add";
+import DeleteIcon from "@mui/icons-material/Delete";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
+import IconButton from "@mui/material/IconButton";
+import Tooltip from "@mui/material/Tooltip";
 function FormPart3({ formD, setFormD, addfields, setAddFields }) {
+  const [chk, setchk] = useState(null);
   const navigate = useNavigate();
   const validate = (e) => {
     const isV = document.getElementById("formy").reportValidity();
@@ -207,23 +214,31 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
               </span>
             </td>
             <td colSpan={6}>
-              <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  setAddFields((prevobj) => {
-                    return {
-                      ...prevobj,
-                      [Object.keys(prevobj).length]: {
-                        name: "",
-                        assistance: "",
-                        challanges: "",
-                      },
-                    };
-                  });
-                }}
-              >
-                Add
-              </button>
+              <Tooltip title="Add">
+                <IconButton
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setAddFields((prevobj) => {
+                      return {
+                        ...prevobj,
+                        [Object.keys(prevobj).length]: {
+                          name: "",
+                          assistance: "",
+                          challanges: "",
+                        },
+                      };
+                    });
+                  }}
+                >
+                  <AddCircleIcon />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Delete">
+                <IconButton>
+                  <DeleteIcon />
+                </IconButton>
+              </Tooltip>
+
               {Object.values(addfields).map((obj, index) => {
                 return (
                   <div style={{ width: "100%", display: "flex" }}>
