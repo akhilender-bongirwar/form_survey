@@ -2,87 +2,10 @@ import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./Table.css";
 import { t } from "i18next";
-function FormPart3({ formD, setFormD }) {
-  const form = document.getElementById("formy");
-  // const err = form.querySelectorAll(`[data-aware]`);
-  // const err1 = form.querySelectorAll(`[data-aware1]`);
-  // console.log("hello i am ",Array.from(err));
-  // console.log("hello i am2 ",Array.from(err1));
+function FormPart3({ formD, setFormD, addfields, setAddFields }) {
   const navigate = useNavigate();
   const validate = (e) => {
-    const form = document.getElementById("formy");
-
-    const checkboxes1 = form.querySelectorAll(`[data-aware]`);
-    const checkboxes2 = form.querySelectorAll(`[data-aware1]`);
-    const checkboxes3 = form.querySelectorAll(`[data-avail]`);
-    const checkboxes4 = form.querySelectorAll(`[data-avail1]`);
-    console.log(checkboxes1);
-    console.log(checkboxes2);
-    // console.log("these are",checkboxes)
-    var checked1 = false;
-    var checked2 = false;
-    var checked3 = false;
-    var checked4 = false;
-
-    checkboxes1.forEach(function (checkbox) {
-      if (checkbox.checked) {
-        checked1 = true;
-      }
-    });
-    checkboxes2.forEach(function (checkbox) {
-      if (checkbox.checked) {
-        checked2 = true;
-      }
-    });
-    checkboxes3.forEach(function (checkbox) {
-      if (checkbox.checked) {
-        checked3 = true;
-      }
-    });
-    checkboxes4.forEach(function (checkbox) {
-      if (checkbox.checked) {
-        checked4 = true;
-      }
-    });
-    const err1 = form.querySelector(`[data-aware]`);
-    const err2 = form.querySelector(`[data-aware1]`);
-    const err3 = form.querySelector(`[data-avail]`);
-    const err4 = form.querySelector(`[data-avail1]`);
-    // console.log(checked);
-    //var ischecked = err.reportValidity();
-    if (!checked1) {
-      err1.setCustomValidity("select any one option");
-      console.log("f1 is empty");
-    } else {
-      err1.setCustomValidity("");
-    }
-    if (!checked2) {
-      err2.setCustomValidity("select any one option");
-      console.log("field2 is empty");
-    } else {
-      err2.setCustomValidity("");
-    }
-    if (!checked3) {
-      err3.setCustomValidity("select any one of option");
-      console.log("field3 is empty");
-    } else {
-      err3.setCustomValidity("");
-    }
-    if (!checked4) {
-      err4.setCustomValidity("select any one of option");
-      console.log("field4 is empty");
-    } else {
-      err4.setCustomValidity("");
-      console.log("NO empty field");
-      //navigate("/4");
-    }
-    if (checked1 && checked2 && checked3 && checked4) {
-      console.log("Now you can navigate to next page");
-      navigate("/4");
-    }
-
     const isV = document.getElementById("formy").reportValidity();
-
     if (!isV) {
       e.preventDefault();
     } else {
@@ -226,15 +149,15 @@ function FormPart3({ formD, setFormD }) {
         display: "flex",
         justifyContent: "center",
         overflowY: "scroll",
+        backgroundColor: "rgb(240 235 248 / 77%)",
       }}
     >
       <div
         style={{
-          width: "75vw",
+          width: "95vw",
           flexWrap: "wrap",
           overflowWrap: "break-word",
           borderBottom: "0",
-          backgroundColor: "rgb(240 235 248 / 77%)",
         }}
       >
         <table style={{ width: "100%", overflowWrap: "break-word" }}>
@@ -284,81 +207,113 @@ function FormPart3({ formD, setFormD }) {
               </span>
             </td>
             <td colSpan={6}>
-              <tr>
-                <td colSpan={1}>
-                  <tr>
-                    <span>{t("Name of the program")}</span>
-                  </tr>
-                  <tr>
-                    <label style={{ textAlign: "center" }} htmlFor="Anything">
-                      1.
-                    </label>
-                    <input
-                      type="text"
-                      id="Anything"
-                      name="policy_program_1"
-                      value={formD.policy_program_1}
-                      onChange={handleChange}
-                      style={{
-                        width: "90%",
-                        border: "transparent",
-                        borderBottom: "2px solid black",
-                      }}
-                    />
-                  </tr>
-                  <tr>
-                    <label htmlFor="Anything1">2.</label>
-                    <input
-                      type="text"
-                      id="Anything1"
-                      name="policy_program_2"
-                      value={formD.policy_program_2}
-                      onChange={handleChange}
-                      style={{
-                        width: "90%",
-                        border: "transparent",
-                        borderBottom: "2px solid black",
-                      }}
-                    />
-                  </tr>
-                </td>
-              </tr>
-              <tr>
-                <td colSpan={2}>
-                  <label htmlFor="benefits">
-                    {t("Nature of assistance/Benefits")}:
-                  </label>
-                  <input
-                    type="text"
-                    name="Policy_benifitted"
-                    id="benefits"
-                    onChange={handleChange}
-                    value={formD.Policy_benifitted}
-                    style={{
-                      width: "90%",
-                      border: "transparent",
-                      borderBottom: "2px solid black",
-                    }}
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td colSpan={2}>
-                  <label htmlFor="challenges">{t("Challenges")}:</label>
-                  <input
-                    type="text"
-                    name="Challenges_faced_policy_related"
-                    id="challenges"
-                    onChange={handleChange}
-                    value={formD.Challenges_faced_policy_related}
-                    style={{
-                      width: "90%",
-                      border: "transparent",
-                      borderBottom: "2px solid black",
-                    }}
-                  />
-                </td>
-              </tr>
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setAddFields((prevobj) => {
+                    return {
+                      ...prevobj,
+                      [Object.keys(prevobj).length]: {
+                        name: "",
+                        assistance: "",
+                        challanges: "",
+                      },
+                    };
+                  });
+                }}
+              >
+                Add
+              </button>
+              {Object.values(addfields).map((obj, index) => {
+                return (
+                  <div style={{ width: "100%", display: "flex" }}>
+                    <td colSpan={1} style={{ width: "50%" }}>
+                      <tr>
+                        <span>{t("Name of the program")}</span>
+                      </tr>
+                      <tr>
+                        <input
+                          type="text"
+                          data-identity={`${index}`}
+                          value={obj.name}
+                          onChange={(e) => {
+                            let id = e.target.dataset.identity;
+                            console.log("target id", id);
+                            setAddFields((prevobj) => {
+                              return {
+                                ...prevobj,
+                                [index]: {
+                                  ...prevobj[index],
+                                  name: e.target.value,
+                                },
+                              };
+                            });
+                          }}
+                          style={{
+                            width: "90%",
+                            border: "transparent",
+                            borderBottom: "2px solid black",
+                          }}
+                        />
+                      </tr>
+                    </td>
+                    <td colSpan={2} style={{ width: "100%" }}>
+                      <label htmlFor="benefits">
+                        {t("Nature of assistance/Benefits")}:
+                      </label>
+                      <input
+                        type="text"
+                        data-identity={`${index}`}
+                        value={obj.assistance}
+                        onChange={(e) => {
+                          let id = e.target.dataset.identity;
+                          console.log("target id", id);
+                          setAddFields((prevobj) => {
+                            return {
+                              ...prevobj,
+                              [index]: {
+                                ...prevobj[index],
+                                assistance: e.target.value,
+                              },
+                            };
+                          });
+                        }}
+                        style={{
+                          width: "90%",
+                          border: "transparent",
+                          borderBottom: "2px solid black",
+                        }}
+                      />
+                    </td>
+                    <td style={{ width: "100%" }}>
+                      <label htmlFor="challenges">{t("Challenges")}:</label>
+                      <input
+                        type="text"
+                        data-identity={`${index}`}
+                        value={obj.challanges}
+                        onChange={(e) => {
+                          let id = e.target.dataset.identity;
+                          console.log("target id", id);
+                          setAddFields((prevobj) => {
+                            return {
+                              ...prevobj,
+                              [index]: {
+                                ...prevobj[index],
+                                challanges: e.target.value,
+                              },
+                            };
+                          });
+                        }}
+                        style={{
+                          width: "90%",
+                          border: "transparent",
+                          borderBottom: "2px solid black",
+                        }}
+                      />
+                    </td>
+                  </div>
+                );
+              })}
             </td>
           </tr>
           <tr>
@@ -433,7 +388,6 @@ function FormPart3({ formD, setFormD }) {
                         type="checkbox"
                         id="op1"
                         className="central"
-                        data-aware="ct"
                         name="Aware_of_listed_scehmes"
                         value="ZED"
                         checked={formD.Aware_of_listed_scehmes.Central_Govt.ZED}
@@ -451,7 +405,6 @@ function FormPart3({ formD, setFormD }) {
                         type="checkbox"
                         id="op2"
                         className="central"
-                        data-aware="ct"
                         name="Aware_of_listed_scehmes"
                         value="LEAN"
                         checked={
@@ -470,7 +423,6 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         className="central"
-                        data-aware="ct"
                         id="op3"
                         name="Aware_of_listed_scehmes"
                         value="TREDs"
@@ -490,7 +442,6 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         className="central"
-                        data-aware="ct"
                         id="op4"
                         name="Aware_of_listed_scehmes"
                         value="Design_scheme"
@@ -511,7 +462,6 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         className="central"
-                        data-aware="ct"
                         id="op5"
                         name="Aware_of_listed_scehmes"
                         value="Digital_Scheme"
@@ -532,7 +482,6 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         className="central"
-                        data-aware="ct"
                         id="op6"
                         name="Aware_of_listed_scehmes"
                         value="IPR_scheme"
@@ -553,7 +502,6 @@ function FormPart3({ formD, setFormD }) {
                         type="checkbox"
                         id="op7"
                         className="central"
-                        data-aware="ct"
                         name="Aware_of_listed_scehmes"
                         value="Samadhan"
                         checked={
@@ -573,7 +521,6 @@ function FormPart3({ formD, setFormD }) {
                         type="checkbox"
                         id="op8"
                         className="central"
-                        data-aware="ct"
                         name="Aware_of_listed_scehmes"
                         value="CGTMSE"
                         checked={
@@ -593,7 +540,6 @@ function FormPart3({ formD, setFormD }) {
                         type="checkbox"
                         id="op9"
                         className="central"
-                        data-aware="ct"
                         name="Aware_of_listed_scehmes"
                         value="MSME_Champions"
                         checked={
@@ -639,7 +585,6 @@ function FormPart3({ formD, setFormD }) {
                         type="checkbox"
                         id="opt1"
                         className="state"
-                        data-avail="st"
                         name="Aware_of_listed_scehmes"
                         checked={formD.Aware_of_listed_scehmes.State_Govt.ODOP}
                         value="ODOP"
@@ -661,7 +606,6 @@ function FormPart3({ formD, setFormD }) {
                         type="checkbox"
                         id="opt2"
                         className="state"
-                        data-avail="st"
                         name="Aware_of_listed_scehmes"
                         value="UP_MSME_Promotion_Policy"
                         checked={
@@ -686,7 +630,6 @@ function FormPart3({ formD, setFormD }) {
                         type="checkbox"
                         id="opt3"
                         className="state"
-                        data-avail="st"
                         name="Aware_of_listed_scehmes"
                         value="Technical_upgradation"
                         checked={
@@ -711,7 +654,6 @@ function FormPart3({ formD, setFormD }) {
                         type="checkbox"
                         id="opt4"
                         className="state"
-                        data-avail="st"
                         name="Aware_of_listed_scehmes"
                         value="UP_Chief_Minister_Youth_Self_Employment_Scheme"
                         checked={
@@ -735,7 +677,6 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         className="state"
-                        data-avail="st"
                         id="opt5"
                         name="Aware_of_listed_scehmes"
                         checked={
@@ -761,7 +702,6 @@ function FormPart3({ formD, setFormD }) {
                         type="checkbox"
                         id="opt6"
                         className="state"
-                        data-avail="st"
                         checked={
                           formD.Aware_of_listed_scehmes.State_Govt.Others
                         }
@@ -847,7 +787,6 @@ function FormPart3({ formD, setFormD }) {
                         type="checkbox"
                         id="op11"
                         className="central"
-                        data-aware1="ct1"
                         checked={formD.Scheme_Like_to_avail.Central_Govt.ZED}
                         name="Scheme_Like_to_avail"
                         value="ZED"
@@ -865,7 +804,6 @@ function FormPart3({ formD, setFormD }) {
                         type="checkbox"
                         id="op22"
                         className="central"
-                        data-aware1="ct1"
                         checked={formD.Scheme_Like_to_avail.Central_Govt.LEAN}
                         name="Scheme_Like_to_avail"
                         value="LEAN"
@@ -883,8 +821,6 @@ function FormPart3({ formD, setFormD }) {
                         type="checkbox"
                         id="op33"
                         className="central"
-                        data-aware1="ct1"
-                        data-aware="ct"
                         checked={formD.Scheme_Like_to_avail.Central_Govt.TREDs}
                         name="Scheme_Like_to_avail"
                         value="TREDs"
@@ -902,7 +838,6 @@ function FormPart3({ formD, setFormD }) {
                         type="checkbox"
                         id="op44"
                         className="central"
-                        data-aware1="ct1"
                         checked={
                           formD.Scheme_Like_to_avail.Central_Govt.Design_scheme
                         }
@@ -924,7 +859,6 @@ function FormPart3({ formD, setFormD }) {
                         name="Scheme_Like_to_avail"
                         value="Digital_Scheme"
                         className="central"
-                        data-aware1="ct1"
                         checked={
                           formD.Scheme_Like_to_avail.Central_Govt.Digital_Scheme
                         }
@@ -944,7 +878,6 @@ function FormPart3({ formD, setFormD }) {
                         name="Scheme_Like_to_avail"
                         value="IPR_scheme"
                         className="central"
-                        data-aware1="ct1"
                         checked={
                           formD.Scheme_Like_to_avail.Central_Govt.IPR_scheme
                         }
@@ -962,7 +895,6 @@ function FormPart3({ formD, setFormD }) {
                         type="checkbox"
                         id="op77"
                         className="central"
-                        data-aware1="ct1"
                         checked={
                           formD.Scheme_Like_to_avail.Central_Govt.Samadhan
                         }
@@ -982,7 +914,6 @@ function FormPart3({ formD, setFormD }) {
                         type="checkbox"
                         id="op88"
                         className="central"
-                        data-aware1="ct1"
                         checked={formD.Scheme_Like_to_avail.Central_Govt.CGTMSE}
                         name="Scheme_Like_to_avail"
                         value="CGTMSE"
@@ -1000,7 +931,6 @@ function FormPart3({ formD, setFormD }) {
                         type="checkbox"
                         id="op99"
                         className="central"
-                        data-aware1="ct1"
                         checked={
                           formD.Scheme_Like_to_avail.Central_Govt.MSME_Champions
                         }
@@ -1025,7 +955,6 @@ function FormPart3({ formD, setFormD }) {
                         type="checkbox"
                         id="opt11"
                         className="state"
-                        data-avail1="st"
                         checked={formD.Scheme_Like_to_avail.State_Govt.ODOP}
                         name="Scheme_Like_to_avail"
                         value="ODOP"
@@ -1047,7 +976,6 @@ function FormPart3({ formD, setFormD }) {
                         type="checkbox"
                         id="opt22"
                         className="state"
-                        data-avail1="st"
                         checked={
                           formD.Scheme_Like_to_avail.State_Govt
                             .UP_MSME_Promotion_Policy
@@ -1072,7 +1000,6 @@ function FormPart3({ formD, setFormD }) {
                         type="checkbox"
                         id="opt33"
                         className="state"
-                        data-avail1="st"
                         checked={
                           formD.Scheme_Like_to_avail.State_Govt
                             .Technical_upgradation
@@ -1096,7 +1023,6 @@ function FormPart3({ formD, setFormD }) {
                         type="checkbox"
                         id="opt44"
                         className="state"
-                        data-avail1="st"
                         checked={
                           formD.Scheme_Like_to_avail.State_Govt
                             .UP_Chief_Minister_Youth_Self_Employment_Scheme
@@ -1121,7 +1047,6 @@ function FormPart3({ formD, setFormD }) {
                         type="checkbox"
                         id="opt55"
                         className="state"
-                        data-avail1="st"
                         checked={
                           formD.Scheme_Like_to_avail.State_Govt
                             .UP_Startup_Policy_2020
@@ -1142,7 +1067,6 @@ function FormPart3({ formD, setFormD }) {
                         type="checkbox"
                         id="opt66"
                         className="state"
-                        data-avail1="st"
                         checked={formD.Scheme_Like_to_avail.State_Govt.Others}
                         name="Scheme_Like_to_avail"
                         value="Others"

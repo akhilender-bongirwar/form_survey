@@ -15,6 +15,8 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import First from "./components/First";
 
 function App() {
+  const [addfields, setAddFields] = React.useState({0:{name:"",assistance:"",challanges:""}});
+  console.log("this is add fields ",addfields);
   const [formD, setFormD] = useState({
     District_code:"",
     submission_date:"",
@@ -286,7 +288,6 @@ function App() {
 
   return (
     <>
-    <div  style={{ textAlign: "end" }}>
       <button
         className="arrow_notation"
         type="button"
@@ -304,7 +305,6 @@ function App() {
       >
         English
       </button>
-      </div>
       <Router>
         <Routes>
           <Route path="/" element={<Outer />}>
@@ -319,7 +319,7 @@ function App() {
             />
             <Route
               path="/3"
-              element={<FormPart3 formD={formD} setFormD={setFormD} />}
+              element={<FormPart3 formD={formD} addfields={addfields} setAddFields={setAddFields} setFormD={setFormD} />}
             />
             <Route
               path="/4"

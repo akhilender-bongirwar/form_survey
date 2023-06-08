@@ -4,22 +4,14 @@ import { NavLink,useNavigate } from "react-router-dom";
 
 function FormPart4({ formD, setFormD }) {
   const navigate=useNavigate();
-  // const validate = (e) => {
-  //   const isV=document.getElementById("formy").reportValidity();
-  //   if(!isV){
-  //     e.preventDefault();
-  //   }
-  //   else{
-  //     navigate('/5')
-  //   }
-  // };
   const validate = (e) => {
     const isV = document.getElementById("formy").reportValidity();
 
     if (!isV) {
       e.preventDefault();
-    } else {
-      navigate("/5");
+    }
+    else{
+      navigate('/5')
     }
   };
     function handleChange(event) {
@@ -171,10 +163,11 @@ function FormPart4({ formD, setFormD }) {
       style={{
         display: "flex",
         justifyContent: "center",
+        backgroundColor: "rgb(240 235 248 / 77%)",
       }}
     >
-      <div style={{backgroundColor: "rgb(240 235 248 / 77%)",}}>
-        <table style={{ width: "75vw" }}>
+      <div>
+        <table style={{ width: "95vw" }}>
           <thead>
             <tr>
               <td>
