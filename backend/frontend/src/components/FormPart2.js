@@ -407,7 +407,7 @@ const FormPart2 = ({
                       style={{
                         width: "100%",
                         overflowWrap: "break-word",
-                        backgroundColor: "rgb(240 235 248 / 77%)",
+                        // backgroundColor: "rgb(240 235 248 / 77%)",
                       }}
                       onClick={(e) => {
                         e.stopPropagation();
@@ -1483,7 +1483,7 @@ const FormPart2 = ({
                       style={{
                         width: "100%",
                         overflowWrap: "break-word",
-                        backgroundColor: "rgb(240 235 248 / 77%)",
+                        // backgroundColor: "rgb(240 235 248 / 77%)",
                       }}
                       className="grevience_redressal"
                       onClick={(e) => {
