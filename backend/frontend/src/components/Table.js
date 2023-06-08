@@ -40,10 +40,15 @@ function Table({ formD, setFormD }) {
   const [an, setAn] = useState("NUMBER");
 
   const validate = (e) => {
-    const check = document.querySelectorAll(".x");
-    const check1 = document.querySelector(".x");
+    const check = document.querySelectorAll(".serviceInd");
+    const check1 = document.querySelector(".serviceInd");
+    const manuCheck = document.querySelectorAll(".manufac");
+    const manuCheck1 = document.querySelector(".manufac");
+
     var chk = false;
     var chk2 = false;
+    var manuchk = false;
+    var manuchk1=false;
     check.forEach((elem) => {
       if (elem.type == "checkbox") {
         if (elem.checked) {
@@ -55,6 +60,19 @@ function Table({ formD, setFormD }) {
         }
       }
     });
+    manuCheck.forEach((el)=>{
+      if(el.type=="checkbox"){
+        if(el.checked){
+          manuchk = true;
+        }
+      }
+      else if(el.type=="text"){
+          if(el.value!=""){
+            manuchk1=true;
+          }
+        }
+      
+    });
 
     console.log(chk, chk2);
     if (!chk && !chk2) {
@@ -64,9 +82,16 @@ function Table({ formD, setFormD }) {
     } else {
       check1.setCustomValidity("");
     }
+    if(!manuchk && !manuchk1){
+      toast.error("Choose any one of the option or fill the text-field");
+      manuCheck1.setCustomValidity("Please fill the text field");
+      manuCheck1.reportValidity();
+    }else{
+      manuCheck1.setCustomValidity("");
+    }
 
     const isV = document.getElementById("formy").reportValidity();
-    if (!isV && (!chk || !chk2)) {
+    if (!isV && (!chk || !chk2) && (!manuchk || !manuchk1)) {
       e.preventDefault();
     } else {
       navigate("/2");
@@ -954,6 +979,7 @@ function Table({ formD, setFormD }) {
                         type="checkbox"
                         name="sell_produce_majorly"
                         id="local"
+                        className="manufac"
                         value="Local_Market"
                         checked={formD.sell_produce_majorly.Local_Market}
                         onChange={handleChange}
@@ -969,6 +995,7 @@ function Table({ formD, setFormD }) {
                         id="Govt"
                         name="sell_produce_majorly"
                         value="Government"
+                        className="manufac"
                         checked={formD.sell_produce_majorly.Government}
                         onChange={handleChange}
                       />
@@ -981,6 +1008,7 @@ function Table({ formD, setFormD }) {
                         id="online"
                         name="sell_produce_majorly"
                         value="online"
+                        className="manufac"
                         checked={formD.sell_produce_majorly.online}
                         onChange={handleChange}
                       />
@@ -995,6 +1023,7 @@ function Table({ formD, setFormD }) {
                         id="other"
                         name="sell_produce_majorly"
                         value="Other_states"
+                        className="manufac"
                         checked={formD.sell_produce_majorly.Other_states}
                         onChange={handleChange}
                       />
@@ -1008,6 +1037,7 @@ function Table({ formD, setFormD }) {
                         id="export"
                         name="sell_produce_majorly"
                         value="export_outside"
+                        className="manufac"
                         checked={formD.sell_produce_majorly.export_outside}
                         onChange={handleChange}
                       />
@@ -1029,6 +1059,7 @@ function Table({ formD, setFormD }) {
                         type="text"
                         id="others"
                         name="sell_produce_majorly"
+                        className="manufac"
                         onChange={handleChange}
                         value={formD.sell_produce_majorly.other}
                         style={{ width: "85%" }}
@@ -1059,7 +1090,7 @@ function Table({ formD, setFormD }) {
                         value="Local_Market"
                         checked={formD.service_industry.Local_Market}
                         onChange={handleChange}
-                        className="x"
+                        className="serviceInd"
                       />
                     </div>
 
@@ -1074,7 +1105,7 @@ function Table({ formD, setFormD }) {
                         value="Government"
                         checked={formD.service_industry.Government}
                         onChange={handleChange}
-                        className="x"
+                        className="serviceInd"
                       />
                     </div>
 
@@ -1087,7 +1118,7 @@ function Table({ formD, setFormD }) {
                         value="online"
                         checked={formD.service_industry.online}
                         onChange={handleChange}
-                        className="x"
+                        className="serviceInd"
                       />
                     </div>
 
@@ -1102,7 +1133,7 @@ function Table({ formD, setFormD }) {
                         value="Other_states"
                         checked={formD.service_industry.Other_states}
                         onChange={handleChange}
-                        className="x"
+                        className="serviceInd"
                       />
                     </div>
                     <div>
@@ -1114,7 +1145,7 @@ function Table({ formD, setFormD }) {
                         value="internationally"
                         checked={formD.service_industry.internationally}
                         onChange={handleChange}
-                        className="x"
+                        className="serviceInd"
                       />
                     </div>
                     <div
@@ -1137,7 +1168,7 @@ function Table({ formD, setFormD }) {
                         onChange={handleChange}
                         value={formD.service_industry.other}
                         style={{ width: "85%" }}
-                        className="x"
+                        className="serviceInd"
                       />
                     </div>
                   </div>

@@ -1,13 +1,77 @@
 import { t } from "i18next";
 import React from "react";
 import { NavLink,useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 function FormPart4({ formD, setFormD }) {
   const navigate=useNavigate();
   const validate = (e) => {
+    const preLoanCheck = document.querySelectorAll(".preventLoan");
+    const preLoanCheck1 = document.querySelector(".preventLoan");
+    var preLoanChk = false;
+    var preLoanChk1=false;
+
+    const creditDemand = document.querySelectorAll(".credit");
+    const creditDemand1 = document.querySelector(".credit");
+    var demandChk = false;
+    var demandChk1 = false;
+    
+    preLoanCheck.forEach((el)=>{
+      if(el.type=="checkbox"){
+        if(el.checked){
+          preLoanChk = true;
+        }
+      }
+      else if(el.type == "text"){
+          console.log(el)
+          if(el.value !=""){
+            preLoanChk1=true;
+          }
+        }
+      
+    });
+
+    creditDemand.forEach((el)=>{
+      if(el.type=="checkbox"){
+        if(el.checked){
+          demandChk = true;
+        }
+      }
+      else if(el.type == "text"){
+          console.log(el)
+          if(el.value !=""){
+            demandChk1=true;
+          }
+        }
+      
+    });
+    
+    console.log(preLoanChk)
+    console.log(preLoanChk1)
+    if(!preLoanChk && !preLoanChk1){
+
+      toast.error("Choose any one of the option or fill the text-field");
+      preLoanCheck1.setCustomValidity("Please fill the text field");
+      preLoanCheck1.reportValidity();
+    }else{
+      preLoanCheck1.setCustomValidity("");
+    }
+
+    if(!demandChk && !demandChk1){
+
+      toast.error("Choose any one of the option or fill the text-field");
+      creditDemand1.setCustomValidity("Please fill the text field");
+      creditDemand1.reportValidity();
+    }else{
+      creditDemand1.setCustomValidity("");
+    }
+
+
+
+
     const isV = document.getElementById("formy").reportValidity();
 
-    if (!isV) {
+    if (!isV && (!preLoanChk || !preLoanChk1) && (!demandChk || !demandChk1)) {
       e.preventDefault();
     }
     else{
@@ -166,6 +230,7 @@ function FormPart4({ formD, setFormD }) {
         backgroundColor: "rgb(240 235 248 / 77%)",
       }}
     >
+      <ToastContainer />
       <div>
         <table style={{ width: "95vw" }}>
           <thead>
@@ -192,6 +257,7 @@ function FormPart4({ formD, setFormD }) {
                     id="reason1"
                     name="Key_Reason_Preventing_loan"
                     value="Lack_of_awareness_of_bank_processes_requirements"
+                    className="preventLoan"
                     checked={
                       formD.Key_Reason_Preventing_loan.Lack_of_awareness_of_bank_processes_requirements    
                     }
@@ -206,6 +272,7 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="reason2"
                     name="Key_Reason_Preventing_loan"
+                    className="preventLoan"
                     value="High_Interest_Rate"
                     checked={
                       formD.Key_Reason_Preventing_loan.High_Interest_Rate
@@ -222,6 +289,7 @@ function FormPart4({ formD, setFormD }) {
                     id="reason3"
                     name="Key_Reason_Preventing_loan"
                     value="Longer_Processing_time"
+                    className="preventLoan"
                     checked={
                       formD.Key_Reason_Preventing_loan.Longer_Processing_time
                     }
@@ -237,6 +305,7 @@ function FormPart4({ formD, setFormD }) {
                     id="reason4"
                     name="Key_Reason_Preventing_loan"
                     value="Improper_documentation"
+                    className="preventLoan"
                     checked={
                       formD.Key_Reason_Preventing_loan.Improper_documentation
                     }
@@ -252,6 +321,7 @@ function FormPart4({ formD, setFormD }) {
                     id="reason5"
                     name="Key_Reason_Preventing_loan"
                     value="No_nearby_bank_branches"
+                    className="preventLoan"
                     checked={
                       formD.Key_Reason_Preventing_loan.No_nearby_bank_branches
                     }
@@ -266,6 +336,7 @@ function FormPart4({ formD, setFormD }) {
                     type="text"
                     id="reason6"
                     name="Key_Reason_Preventing_loan"
+                    className="preventLoan"
                     value={formD.Key_Reason_Preventing_loan.other}
                     onChange={handleChange}
                   />
@@ -304,6 +375,7 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="r1"
                     name="Major_source_credit_demand"
+                    className="credit"
                     value="Raw_Materials"
                     checked={
                       formD.Major_source_credit_demand.Raw_Material    
@@ -319,6 +391,7 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="r2"
                     name="Major_source_credit_demand"
+                    className="credit"
                     value="Salaries"
                     checked={
                       formD.Major_source_credit_demand.Salaries
@@ -334,6 +407,7 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="r3"
                     name="Major_source_credit_demand"
+                    className="credit"
                     value="Repair_and_Maintenance"
                     checked={
                       formD.Major_source_credit_demand.Repair_and_Maintenance
@@ -349,6 +423,7 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="r4"
                     name="Major_source_credit_demand"
+                    className="credit"
                     value="Long_cash_cycle"
                     checked={
                       formD.Major_source_credit_demand.Long_cash_cycle
@@ -364,6 +439,7 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="r5"
                     name="Major_source_credit_demand"
+                    className="credit"
                     value="Demand_due_to_peak_season"
                     checked={
                       formD.Major_source_credit_demand.Demand_due_to_peak_season
@@ -379,6 +455,7 @@ function FormPart4({ formD, setFormD }) {
                     type="checkbox"
                     id="r6"
                     name="Major_source_credit_demand"
+                    className="credit"
                     value="Duties_and_taxes"
                     checked={
                       formD.Major_source_credit_demand.Duties_and_taxes
@@ -394,6 +471,7 @@ function FormPart4({ formD, setFormD }) {
                     id="r7"
                     name="Major_source_credit_demand"
                     type="text"
+                    className="credit"
                     onChange={handleChange}
                     value={formD.Major_source_credit_demand.other}
                   />
