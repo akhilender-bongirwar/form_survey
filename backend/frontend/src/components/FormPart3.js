@@ -162,15 +162,15 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
       >
         <table style={{ width: "100%", overflowWrap: "break-word" }}>
           <tr>
-            <td colSpan={1}>
-              <span>
+            <td className="heading" colSpan={1}>
+              <>
                 {t(
                   "Are you aware about the current government programs benefitting MSMEs"
                 )}{" "}
-              </span>
+              </>
             </td>
             <td colSpan={6}>
-              <div className="radio_wrapper">
+              <div className="radio_wrapper wrapup">
                 <div>
                   <label htmlFor="YES">{t("YES")}</label>
                   <input
@@ -199,12 +199,12 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
             </td>
           </tr>
           <tr>
-            <td colSpan={1}>
-              <span>
+            <td className="heading" colSpan={1}>
+              <>
                 {t(
                   "Which program benefits are you availing currently from the state? Please describe the key benefits and challenges related to the program"
                 )}
-              </span>
+              </>
             </td>
             <td colSpan={6}>
               <button
@@ -229,7 +229,7 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                   <div style={{ width: "100%", display: "flex" }}>
                     <td colSpan={1} style={{ width: "50%" }}>
                       <tr>
-                        <span>{t("Name of the program")}</span>
+                        <>{t("Name of the program")}</>
                       </tr>
                       <tr>
                         <input
@@ -317,12 +317,12 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
             </td>
           </tr>
           <tr>
-            <td colSpan={1}>
-              <span>
+            <td className="heading" colSpan={1}>
+              <>
                 {t(
                   "What are your expectations from the State / Central Government (related to infra/training/finance/etc)"
                 )}
-              </span>
+              </>
             </td>
             <td colSpan={6}>
               <div>
@@ -360,8 +360,8 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
             </td>
           </tr>
           <tr>
-            <td colSpan={1}>
-              <span>{t("Are you aware of any of the listed Schemes")}</span>
+            <td className="heading" colSpan={1}>
+              <>{t("Are you aware of any of the listed Schemes")}</>
             </td>
             <td colSpan={6} style={{ width: "100%" }}>
               <div style={{ display: "flex", flexDirection: "column" }}>
@@ -375,7 +375,7 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                       flexWrap: "wrap",
                       flexDirection: "column",
                     }}
-                    className="grevience_redressal radio_wrapper"
+                    className="grevience_redressal radio_wrapper wrapup"
                   >
                     <div className="d_flex_align_CONTENT_justify">
                       <label
@@ -573,7 +573,7 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                   <div style={{ fontWeight: "bold", fontSize: "larger" }}>
                     <u>{t("State Government")}:</u>
                   </div>
-                  <div style={{ display: "flex" }} className="radio_wrapper">
+                  <div style={{ display: "flex" }} className="radio_wrapper wrapup">
                     <div>
                       <label
                         htmlFor="opt1"
@@ -740,7 +740,7 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
             </td>
           </tr>
           <tr>
-            <td colSpan={1}>
+            <td className="heading" colSpan={1}>
               <label htmlFor="remark">
                 {t(
                   "Remarks (Specify if MSMEs are onboarded on any of the above on any of the above schemes)"
@@ -763,8 +763,8 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
             </td>
           </tr>
           <tr>
-            <td colSpan={1}>
-              <span>{t("Which scheme would you like to avail")}?</span>
+            <td className="heading" colSpan={1}>
+              <>{t("Which scheme would you like to avail")}?</>
             </td>
             <td colSpan={6} style={{ width: "100%" }}>
               <div style={{ display: "flex", flexDirection: "column" }}>
@@ -774,7 +774,7 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                   </div>
                   <div
                     style={{ display: "flex", flexWrap: "wrap" }}
-                    className="grevience_redressal radio_wrapper"
+                    className="grevience_redressal radio_wrapper wrapup"
                   >
                     <div className="d_flex_align_CONTENT_justify">
                       <label
@@ -943,7 +943,7 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                   <div style={{ fontWeight: "bold", fontSize: "larger" }}>
                     <u>{t("State Government")}:</u>
                   </div>
-                  <div style={{ display: "flex" }} className="radio_wrapper">
+                  <div style={{ display: "flex" }} className="radio_wrapper wrapup">
                     <div>
                       <label
                         htmlFor="opt11"
@@ -1079,7 +1079,7 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
             </td>
           </tr>
           <tr>
-            <td colSpan={1}>
+            <td className="heading" colSpan={1}>
               <div>
                 {t(
                   "What are the schemes under which you are availing benefits from Govt? (Both State and Central Govt separately)"
@@ -1087,32 +1087,28 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
               </div>
             </td>
             <td colSpan={6} style={{ width: "100%" }}>
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <input
-                  type="text"
-                  id="availedByMe"
-                  name="scheme_availed_by_you_central_govt"
-                  placeholder="central govt."
-                  onChange={handleChange}
-                  value={formD.scheme_availed_by_you_central_govt}
-                  style={{
-                    border: "transparent",
-                    borderBottom: "2px solid black",
-                  }}
-                />
-                <input
-                  type="text"
-                  id="availedByMe2"
-                  placeholder="state govt."
-                  name="scheme_availed_by_you_state_govt"
-                  onChange={handleChange}
-                  value={formD.scheme_availed_by_you_state_govt}
-                  style={{
-                    border: "transparent",
-                    borderBottom: "2px solid black",
-                  }}
-                />
-              </div>
+              <tr>
+                <td>
+                  <input
+                    type="text"
+                    id="availedByMe"
+                    name="scheme_availed_by_you_central_govt"
+                    placeholder="central govt."
+                    onChange={handleChange}
+                    value={formD.scheme_availed_by_you_central_govt}
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="availedByMe2"
+                    placeholder="state govt."
+                    name="scheme_availed_by_you_state_govt"
+                    onChange={handleChange}
+                    value={formD.scheme_availed_by_you_state_govt}
+                  />
+                </td>
+              </tr>
             </td>
           </tr>
         </table>

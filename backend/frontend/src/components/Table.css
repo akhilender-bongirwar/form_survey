@@ -43,8 +43,9 @@ label {
   display: flex;
   flex-wrap: wrap;
   /* flex-direction: column; */
-  width: 100%;
+  /* width: 20%; */
   padding: 1%;
+  gap: 10px;
   justify-content: space-evenly;
   align-content: space-evenly;
 }
@@ -182,11 +183,17 @@ table,td,tr{
   font-weight: 600;
   font-size: 18px;
 }
+label{
+  color: #1d1e21;
+  font-weight: 600;
+  font-size: 18px;
+}
 h1,h2{
   color: #0f2871;
   font-size: large;
 }
-input[type="text"]{
+
+input[type="text"],input[type="number"],input[type="email"]{
   color: #414754;
   border:1px solid #818489;
   padding: 15px;
@@ -195,6 +202,17 @@ input[type="text"]{
   margin-top:-10px;
   font-size: medium;
 }
+
 input:focus{
   border: solid black;
+}
+.heading,.heading>label{
+  color: #0f2871;
+  font-size: large;
+  font-weight: 600;
+}
+.wrapup{
+  border: 1px #818489 solid;
+  border-radius: 10px;
+  padding: 15px;
 }
