@@ -244,7 +244,7 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                   <IconButton onClick={(e)=>{
                     let ree={...addfields}
                     delete ree[Object.values(ree).length-1]
-                    e.preventDefault();
+                    e.preventDefault(); 
                     setAddFields(ree);
                   }}>
                     <DeleteIcon />
