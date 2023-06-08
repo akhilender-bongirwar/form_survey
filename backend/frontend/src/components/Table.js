@@ -771,18 +771,20 @@ function Table({ formD, setFormD }) {
                         gap: "3px",
                       }}
                     >
-                      <>{t("If Yes, % ownership of female")} </>
-                      <input
-                        style={{ minWidth: "20px" }}
-                        type="number"
-                        id="ownership_female_partnership"
-                        name="ownership_female_partnership"
-                        min="0"
-                        max="100"
-                        required="required"
-                        onChange={handleChange}
-                        value={formD.ownership_female_partnership}
-                      />
+                      <td>{t("If Yes, % ownership of female")} </td>
+                      <td>
+                        <input
+                          style={{ minWidth: "20px" }}
+                          type="number"
+                          id="ownership_female_partnership"
+                          name="ownership_female_partnership"
+                          min="0"
+                          max="100"
+                          required="required"
+                          onChange={handleChange}
+                          value={formD.ownership_female_partnership}
+                        />
+                      </td>
                     </tr>
                   )}
                 </td>
@@ -831,15 +833,17 @@ function Table({ formD, setFormD }) {
                       <td>
                         {t("If Yes, which one? How many units are there")}
                       </td>
-                      <input
-                        style={{ minWidth: "20px" }}
-                        type="text"
-                        id="Cluster_Yes"
-                        name="Cluster_Yes"
-                        required="required"
-                        onChange={handleChange}
-                        value={formD.Cluster_Yes}
-                      />
+                      <td>
+                        <input
+                          style={{ minWidth: "20px" }}
+                          type="text"
+                          id="Cluster_Yes"
+                          name="Cluster_Yes"
+                          required="required"
+                          onChange={handleChange}
+                          value={formD.Cluster_Yes}
+                        />
+                      </td>
                     </tr>
                   ) : (
                     ""
@@ -852,16 +856,18 @@ function Table({ formD, setFormD }) {
                         gap: "3px",
                       }}
                     >
-                      <>{t("If No, Why")}? </>
-                      <input
-                        style={{ minWidth: "20px", marginBottom: "12px" }}
-                        type="text"
-                        id="Cluster_No"
-                        name="Cluster_No"
-                        required="required"
-                        onChange={handleChange}
-                        value={formD.Cluster_No}
-                      />
+                      <td>{t("If No, Why")}?</td>
+                      <td>
+                        <input
+                          style={{ minWidth: "20px", marginBottom: "12px" }}
+                          type="text"
+                          id="Cluster_No"
+                          name="Cluster_No"
+                          required="required"
+                          onChange={handleChange}
+                          value={formD.Cluster_No}
+                        />
+                      </td>
                     </tr>
                   ) : (
                     ""
@@ -1719,16 +1725,18 @@ function Table({ formD, setFormD }) {
                         gap: "3px",
                       }}
                     >
-                      <>{t("If Yes, then amount and bank/lender")} </>
-                      <input
-                        style={{ minWidth: "20px", marginBottom: "12px" }}
-                        type="text"
-                        id="availed_loan_amount"
-                        name="availed_loan_amount"
-                        required="required"
-                        onChange={handleChange}
-                        value={formD.availed_loan_amount}
-                      />
+                      <td>{t("If Yes, then amount and bank/lender")} </td>
+                      <td>
+                        <input
+                          style={{ minWidth: "20px", marginBottom: "12px" }}
+                          type="text"
+                          id="availed_loan_amount"
+                          name="availed_loan_amount"
+                          required="required"
+                          onChange={handleChange}
+                          value={formD.availed_loan_amount}
+                        />
+                      </td>
                     </tr>
                   )}
                 </td>
