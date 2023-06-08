@@ -220,7 +220,7 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                   )}
                 </>
               </td>
-              <td colSpan={6}>
+              <td colSpan={6} >
                 <Tooltip title="Add">
                   <IconButton
                     onClick={(e) => {
@@ -255,9 +255,9 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                   {Object.values(addfields).map((obj, index) => {
                     return (
                       <div style={{ width: "100%", display: "flex",alignItems:"flex-end" }}>
-                        <tr>
+                        <tr >
                           <td>
-                            <>{t("Name of the program")}</>
+                            <>{t("Name of program")}</>
                           </td>
                           <td>
                             <input
@@ -283,7 +283,7 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                         <tr>
                           <td>
                             <label htmlFor="benefits">
-                              {t("Nature of assistance/Benefits")}:
+                              {t("Assistance (Benefits)")}:
                             </label>
                           </td>
                           <td>
@@ -1113,7 +1113,7 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                     type="text"
                     id="availedByMe"
                     name="scheme_availed_by_you_central_govt"
-                    placeholder="central govt."
+                    placeholder={t("Central Govt")}
                     onChange={handleChange}
                     value={formD.scheme_availed_by_you_central_govt}
                   />
@@ -1122,7 +1122,7 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                   <input
                     type="text"
                     id="availedByMe2"
-                    placeholder="state govt."
+                    placeholder={t("State Govt")}
                     name="scheme_availed_by_you_state_govt"
                     onChange={handleChange}
                     value={formD.scheme_availed_by_you_state_govt}

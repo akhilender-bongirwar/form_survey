@@ -354,6 +354,7 @@ const FormPart2 = ({
         }}
       >
         <div>
+        <h1 style={{ textAlign: "center" }}>Supply Chain</h1>
           <div style={{ marginTop: "7vw" }}>
             <Accordion
               onClick={(e) => {
@@ -1569,6 +1570,3 @@ const FormPart2 = ({
 };
 
 export default FormPart2;
-//  ☐  ☐
-// ☐  ☐  ☐
-// Capital

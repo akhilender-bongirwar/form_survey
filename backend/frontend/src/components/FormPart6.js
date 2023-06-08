@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import FormPart2 from "./FormPart2";
-function FormPart6({ formD, setFormD, expand2, expand }) {
+function FormPart6({ formD, setFormD, expand2, expand ,addfields}) {
   const [a61, setA61] = React.useState(null);
   const { t } = useTranslation();
 
@@ -17,7 +17,7 @@ function FormPart6({ formD, setFormD, expand2, expand }) {
     const isV = document.getElementById("formy").reportValidity();
     if (!isV) {
     } else {
-      let formDt = formD;
+      let formDt = {...formD,State_benefits_obj:addfields};
       if (formDt.Ownership_Pattern != "partnership") {
         formDt.ownership_female_partnership = "";
       }
@@ -115,7 +115,7 @@ function FormPart6({ formD, setFormD, expand2, expand }) {
         .post("/form-data", {
           mode: "cors",
           body: formD,
-        })
+         })
         .then((d) => {
           // console.log(d.data.success);
           if (!d.data.success) {

@@ -166,12 +166,13 @@ function App() {
     Govt_Scheme_Challenges: "",
     Support_required: "",
     //added
-    policy_program_1: "",
-    policy_program_2: "",
+    // policy_program_1: "",
+    // policy_program_2: "",
     //
+
     aware_of_govt_policy: "",
-    Policy_benifitted: "",
-    Challenges_faced_policy_related: "",
+    // Policy_benifitted: "",
+    // Challenges_faced_policy_related: "",
     //added
     expectation_from_govt_1: "",
     expectation_from_govt_2: "",
@@ -290,23 +291,25 @@ function App() {
 
   return (
     <>
-      <button
-        className="arrow_notation"
-        type="button"
-        onClick={() => {
-          changeLanguage("hi");
-          console.log("click");
-        }}
-      >
-        Hindi
-      </button>
-      <button
-        className="arrow_notation"
-        type="button"
-        onClick={() => changeLanguage("en")}
-      >
-        English
-      </button>
+      <div>
+        <button
+          className="arrow_notation"
+          type="button"
+          onClick={() => {
+            changeLanguage("hi");
+            // console.log("click");
+          }}
+        >
+          Hindi
+        </button>
+        <button
+          className="arrow_notation"
+          type="button"
+          onClick={() => changeLanguage("en")}
+        >
+          English
+        </button>
+      </div>
       <Router>
         <Routes>
           <Route path="/" element={<Outer />}>
@@ -352,7 +355,15 @@ function App() {
             />
             <Route
               path="/6"
-              element={<FormPart6 formD={formD} setFormD={setFormD} expand2={expand2}  expand={expand} />}
+              element={
+                <FormPart6
+                  formD={formD}
+                  setFormD={setFormD}
+                  expand2={expand2}
+                  expand={expand}
+                  addfields={addfields}
+                />
+              }
             />
           </Route>
         </Routes>

@@ -216,7 +216,7 @@ input:focus{
   border-radius: 10px;
   padding: 15px;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   #formy {
     width: 95%;
     padding: 0px;

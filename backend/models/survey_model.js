@@ -508,19 +508,23 @@ const surveyData = new Schema({
     enum: ["YES", "NO"],
     required: true,
   },
-  policy_program_1: {
-    type: String,
-  },
-  policy_program_2: {
-    type: String,
-  },
 
-  Policy_benifitted: {
-    type: String,
-  },
+  // policy_program_1: {
+  //   type: String,
+  // },
+  // policy_program_2: {
+  //   type: String,
+  // },
 
-  Challenges_faced_policy_related: {
-    type: String,
+  // Policy_benifitted: {
+  //   type: String,
+  // },
+
+  // Challenges_faced_policy_related: {
+  //   type: String,
+  // },
+  State_benefits_obj:{
+    type:mongoose.Schema.Types.Mixed,
   },
 
   expectation_from_govt_1: {
