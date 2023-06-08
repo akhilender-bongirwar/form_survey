@@ -77,7 +77,7 @@ input[type=checkbox] {
 input[type=radio] {
   width: 15px;
   margin-left: auto;
-  margin-right: 50%;
+  margin-right: 30%;
 }
 
 .radio_wrapper>div {
@@ -95,21 +95,26 @@ input[type=radio] {
   justify-content: center;
   align-items: center;
 }
-.firstTable{
+
+.firstTable {
   width: 40%;
 }
-.next{
+
+.next {
   margin-left: auto;
 }
+
 @media screen and (max-width:768px) {
   tr {
     flex-direction: column;
     display: flex;
   }
-  .firstTr{
+
+  .firstTr {
     display: table-row;
   }
-  .firstTable{
+
+  .firstTable {
     width: 90%;
   }
 

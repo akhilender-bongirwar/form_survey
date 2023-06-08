@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink ,useNavigate} from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./Table.css";
 import { t } from "i18next";
 function FormPart3({ formD, setFormD }) {
@@ -18,8 +18,8 @@ function FormPart3({ formD, setFormD }) {
     const checkboxes4 = form.querySelectorAll(`[data-avail1]`);
     console.log(checkboxes1);
     console.log(checkboxes2);
-   // console.log("these are",checkboxes)
-    var checked1 = false; 
+    // console.log("these are",checkboxes)
+    var checked1 = false;
     var checked2 = false;
     var checked3 = false;
     var checked4 = false;
@@ -53,31 +53,30 @@ function FormPart3({ formD, setFormD }) {
     if (!checked1) {
       err1.setCustomValidity("select any one option");
       console.log("f1 is empty");
-    }else{
+    } else {
       err1.setCustomValidity("");
     }
-    if(!checked2){
+    if (!checked2) {
       err2.setCustomValidity("select any one option");
       console.log("field2 is empty");
-    }else{
+    } else {
       err2.setCustomValidity("");
     }
-    if(!checked3){
+    if (!checked3) {
       err3.setCustomValidity("select any one of option");
       console.log("field3 is empty");
-    }else{
+    } else {
       err3.setCustomValidity("");
     }
-    if(!checked4){
+    if (!checked4) {
       err4.setCustomValidity("select any one of option");
       console.log("field4 is empty");
-    }
-    else {
+    } else {
       err4.setCustomValidity("");
-      console.log("NO empty field")
+      console.log("NO empty field");
       //navigate("/4");
     }
-    if(checked1 && checked2 && checked3 && checked4){
+    if (checked1 && checked2 && checked3 && checked4) {
       console.log("Now you can navigate to next page");
       navigate("/4");
     }
@@ -242,7 +241,9 @@ function FormPart3({ formD, setFormD }) {
           <tr>
             <td colSpan={1}>
               <span>
-                {t("Are you aware about the current government programs benefitting MSMEs")}{" "}
+                {t(
+                  "Are you aware about the current government programs benefitting MSMEs"
+                )}{" "}
               </span>
             </td>
             <td colSpan={6}>
@@ -277,7 +278,9 @@ function FormPart3({ formD, setFormD }) {
           <tr>
             <td colSpan={1}>
               <span>
-                {t("Which program benefits are you availing currently from the state? Please describe the key benefits and challenges related to the program")}
+                {t(
+                  "Which program benefits are you availing currently from the state? Please describe the key benefits and challenges related to the program"
+                )}
               </span>
             </td>
             <td colSpan={6}>
@@ -361,7 +364,9 @@ function FormPart3({ formD, setFormD }) {
           <tr>
             <td colSpan={1}>
               <span>
-                {t("What are your expectations from the State / Central Government (related to infra/training/finance/etc)")}
+                {t(
+                  "What are your expectations from the State / Central Government (related to infra/training/finance/etc)"
+                )}
               </span>
             </td>
             <td colSpan={6}>
@@ -410,7 +415,11 @@ function FormPart3({ formD, setFormD }) {
                     <u>{t("Central Government")}:</u>
                   </div>
                   <div
-                    style={{ display: "flex", flexWrap: "wrap" }}
+                    style={{
+                      display: "flex",
+                      flexWrap: "wrap",
+                      flexDirection: "column",
+                    }}
                     className="grevience_redressal radio_wrapper"
                   >
                     <div className="d_flex_align_CONTENT_justify">
@@ -423,7 +432,8 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op1"
-                        className="central" data-aware="ct"
+                        className="central"
+                        data-aware="ct"
                         name="Aware_of_listed_scehmes"
                         value="ZED"
                         checked={formD.Aware_of_listed_scehmes.Central_Govt.ZED}
@@ -435,12 +445,13 @@ function FormPart3({ formD, setFormD }) {
                         htmlFor="op2"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        {("LEAN")}
+                        {"LEAN"}
                       </label>
                       <input
                         type="checkbox"
                         id="op2"
-                        className="central" data-aware="ct"
+                        className="central"
+                        data-aware="ct"
                         name="Aware_of_listed_scehmes"
                         value="LEAN"
                         checked={
@@ -458,7 +469,8 @@ function FormPart3({ formD, setFormD }) {
                       </label>
                       <input
                         type="checkbox"
-                        className="central" data-aware="ct"
+                        className="central"
+                        data-aware="ct"
                         id="op3"
                         name="Aware_of_listed_scehmes"
                         value="TREDs"
@@ -477,7 +489,8 @@ function FormPart3({ formD, setFormD }) {
                       </label>
                       <input
                         type="checkbox"
-                        className="central" data-aware="ct"
+                        className="central"
+                        data-aware="ct"
                         id="op4"
                         name="Aware_of_listed_scehmes"
                         value="Design_scheme"
@@ -497,7 +510,8 @@ function FormPart3({ formD, setFormD }) {
                       </label>
                       <input
                         type="checkbox"
-                        className="central" data-aware="ct"
+                        className="central"
+                        data-aware="ct"
                         id="op5"
                         name="Aware_of_listed_scehmes"
                         value="Digital_Scheme"
@@ -517,7 +531,8 @@ function FormPart3({ formD, setFormD }) {
                       </label>
                       <input
                         type="checkbox"
-                        className="central" data-aware="ct"
+                        className="central"
+                        data-aware="ct"
                         id="op6"
                         name="Aware_of_listed_scehmes"
                         value="IPR_scheme"
@@ -537,7 +552,8 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op7"
-                        className="central" data-aware="ct"
+                        className="central"
+                        data-aware="ct"
                         name="Aware_of_listed_scehmes"
                         value="Samadhan"
                         checked={
@@ -556,7 +572,8 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op8"
-                        className="central" data-aware="ct"
+                        className="central"
+                        data-aware="ct"
                         name="Aware_of_listed_scehmes"
                         value="CGTMSE"
                         checked={
@@ -575,7 +592,8 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op9"
-                        className="central" data-aware="ct"
+                        className="central"
+                        data-aware="ct"
                         name="Aware_of_listed_scehmes"
                         value="MSME_Champions"
                         checked={
@@ -595,12 +613,12 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op10"
-                        className="central" data-aware="ct"
+                        className="central"
+                        data-aware="ct"
                         name="Aware_of_listed_scehmes"
                         value="Not_Aware"
                         checked={
-                          formD.Aware_of_listed_scehmes.Central_Govt
-                            .Not_Aware
+                          formD.Aware_of_listed_scehmes.Central_Govt.Not_Aware
                         }
                         onChange={handleChange}
                       />
@@ -620,7 +638,8 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt1"
-                         className="state" data-avail="st"
+                        className="state"
+                        data-avail="st"
                         name="Aware_of_listed_scehmes"
                         checked={formD.Aware_of_listed_scehmes.State_Govt.ODOP}
                         value="ODOP"
@@ -641,7 +660,8 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt2"
-                         className="state" data-avail="st"
+                        className="state"
+                        data-avail="st"
                         name="Aware_of_listed_scehmes"
                         value="UP_MSME_Promotion_Policy"
                         checked={
@@ -665,7 +685,8 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt3"
-                         className="state" data-avail="st"
+                        className="state"
+                        data-avail="st"
                         name="Aware_of_listed_scehmes"
                         value="Technical_upgradation"
                         checked={
@@ -689,7 +710,8 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt4"
-                         className="state" data-avail="st"
+                        className="state"
+                        data-avail="st"
                         name="Aware_of_listed_scehmes"
                         value="UP_Chief_Minister_Youth_Self_Employment_Scheme"
                         checked={
@@ -712,7 +734,8 @@ function FormPart3({ formD, setFormD }) {
                       </label>
                       <input
                         type="checkbox"
-                         className="state" data-avail="st"
+                        className="state"
+                        data-avail="st"
                         id="opt5"
                         name="Aware_of_listed_scehmes"
                         checked={
@@ -737,7 +760,8 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt6"
-                         className="state" data-avail="st"
+                        className="state"
+                        data-avail="st"
                         checked={
                           formD.Aware_of_listed_scehmes.State_Govt.Others
                         }
@@ -760,7 +784,8 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt7"
-                         className="state" data-avail="st"
+                        className="state"
+                        data-avail="st"
                         checked={
                           formD.Aware_of_listed_scehmes.State_Govt.Not_Aware
                         }
@@ -777,7 +802,9 @@ function FormPart3({ formD, setFormD }) {
           <tr>
             <td colSpan={1}>
               <label htmlFor="remark">
-                {t("Remarks (Specify if MSMEs are onboarded on any of the above on any of the above schemes)")}
+                {t(
+                  "Remarks (Specify if MSMEs are onboarded on any of the above on any of the above schemes)"
+                )}
               </label>
             </td>
             <td colSpan={6}>
@@ -819,7 +846,8 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op11"
-                        className="central" data-aware1="ct1"
+                        className="central"
+                        data-aware1="ct1"
                         checked={formD.Scheme_Like_to_avail.Central_Govt.ZED}
                         name="Scheme_Like_to_avail"
                         value="ZED"
@@ -831,12 +859,13 @@ function FormPart3({ formD, setFormD }) {
                         htmlFor="op22"
                         style={{ fontSize: "0.9rem", padding: "0.5em" }}
                       >
-                        {("LEAN")}
+                        {"LEAN"}
                       </label>
                       <input
                         type="checkbox"
                         id="op22"
-                        className="central" data-aware1="ct1"
+                        className="central"
+                        data-aware1="ct1"
                         checked={formD.Scheme_Like_to_avail.Central_Govt.LEAN}
                         name="Scheme_Like_to_avail"
                         value="LEAN"
@@ -853,7 +882,8 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op33"
-                        className="central" data-aware1="ct1"
+                        className="central"
+                        data-aware1="ct1"
                         data-aware="ct"
                         checked={formD.Scheme_Like_to_avail.Central_Govt.TREDs}
                         name="Scheme_Like_to_avail"
@@ -871,7 +901,8 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op44"
-                        className="central" data-aware1="ct1"
+                        className="central"
+                        data-aware1="ct1"
                         checked={
                           formD.Scheme_Like_to_avail.Central_Govt.Design_scheme
                         }
@@ -892,7 +923,8 @@ function FormPart3({ formD, setFormD }) {
                         id="op55"
                         name="Scheme_Like_to_avail"
                         value="Digital_Scheme"
-                        className="central" data-aware1="ct1"
+                        className="central"
+                        data-aware1="ct1"
                         checked={
                           formD.Scheme_Like_to_avail.Central_Govt.Digital_Scheme
                         }
@@ -911,7 +943,8 @@ function FormPart3({ formD, setFormD }) {
                         id="op66"
                         name="Scheme_Like_to_avail"
                         value="IPR_scheme"
-                        className="central" data-aware1="ct1"
+                        className="central"
+                        data-aware1="ct1"
                         checked={
                           formD.Scheme_Like_to_avail.Central_Govt.IPR_scheme
                         }
@@ -928,7 +961,8 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op77"
-                        className="central" data-aware1="ct1"
+                        className="central"
+                        data-aware1="ct1"
                         checked={
                           formD.Scheme_Like_to_avail.Central_Govt.Samadhan
                         }
@@ -947,7 +981,8 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op88"
-                        className="central" data-aware1="ct1"
+                        className="central"
+                        data-aware1="ct1"
                         checked={formD.Scheme_Like_to_avail.Central_Govt.CGTMSE}
                         name="Scheme_Like_to_avail"
                         value="CGTMSE"
@@ -964,7 +999,8 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="op99"
-                        className="central" data-aware1="ct1"
+                        className="central"
+                        data-aware1="ct1"
                         checked={
                           formD.Scheme_Like_to_avail.Central_Govt.MSME_Champions
                         }
@@ -988,7 +1024,8 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt11"
-                         className="state" data-avail1="st"
+                        className="state"
+                        data-avail1="st"
                         checked={formD.Scheme_Like_to_avail.State_Govt.ODOP}
                         name="Scheme_Like_to_avail"
                         value="ODOP"
@@ -1009,7 +1046,8 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt22"
-                         className="state" data-avail1="st"
+                        className="state"
+                        data-avail1="st"
                         checked={
                           formD.Scheme_Like_to_avail.State_Govt
                             .UP_MSME_Promotion_Policy
@@ -1033,7 +1071,8 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt33"
-                         className="state" data-avail1="st"
+                        className="state"
+                        data-avail1="st"
                         checked={
                           formD.Scheme_Like_to_avail.State_Govt
                             .Technical_upgradation
@@ -1056,7 +1095,8 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt44"
-                         className="state" data-avail1="st"
+                        className="state"
+                        data-avail1="st"
                         checked={
                           formD.Scheme_Like_to_avail.State_Govt
                             .UP_Chief_Minister_Youth_Self_Employment_Scheme
@@ -1080,7 +1120,8 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt55"
-                         className="state" data-avail1="st"
+                        className="state"
+                        data-avail1="st"
                         checked={
                           formD.Scheme_Like_to_avail.State_Govt
                             .UP_Startup_Policy_2020
@@ -1100,7 +1141,8 @@ function FormPart3({ formD, setFormD }) {
                       <input
                         type="checkbox"
                         id="opt66"
-                         className="state" data-avail1="st"
+                        className="state"
+                        data-avail1="st"
                         checked={formD.Scheme_Like_to_avail.State_Govt.Others}
                         name="Scheme_Like_to_avail"
                         value="Others"
@@ -1115,7 +1157,9 @@ function FormPart3({ formD, setFormD }) {
           <tr>
             <td colSpan={1}>
               <div>
-                {t("What are the schemes under which you are availing benefits from Govt? (Both State and Central Govt separately)")}
+                {t(
+                  "What are the schemes under which you are availing benefits from Govt? (Both State and Central Govt separately)"
+                )}
               </div>
             </td>
             <td colSpan={6} style={{ width: "100%" }}>
@@ -1149,7 +1193,12 @@ function FormPart3({ formD, setFormD }) {
           </tr>
         </table>
         <div
-          style={{ display:"flex",justifyContent:"space-between",margin:"0 15px",fontSize:"large"}}
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            margin: "0 15px",
+            fontSize: "large",
+          }}
         >
           <NavLink to="/2" className="arrow_notation">
             {t("Prev")}
