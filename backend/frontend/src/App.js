@@ -290,23 +290,25 @@ function App() {
 
   return (
     <>
-      <button
-        className="arrow_notation"
-        type="button"
-        onClick={() => {
-          changeLanguage("hi");
-          console.log("click");
-        }}
-      >
-        Hindi
-      </button>
-      <button
-        className="arrow_notation"
-        type="button"
-        onClick={() => changeLanguage("en")}
-      >
-        English
-      </button>
+      <div>
+        <button
+          className="arrow_notation"
+          type="button"
+          onClick={() => {
+            changeLanguage("hi");
+            // console.log("click");
+          }}
+        >
+          Hindi
+        </button>
+        <button
+          className="arrow_notation"
+          type="button"
+          onClick={() => changeLanguage("en")}
+        >
+          English
+        </button>
+      </div>
       <Router>
         <Routes>
           <Route path="/" element={<Outer />}>
@@ -352,7 +354,14 @@ function App() {
             />
             <Route
               path="/6"
-              element={<FormPart6 formD={formD} setFormD={setFormD} expand2={expand2}  expand={expand} />}
+              element={
+                <FormPart6
+                  formD={formD}
+                  setFormD={setFormD}
+                  expand2={expand2}
+                  expand={expand}
+                />
+              }
             />
           </Route>
         </Routes>
