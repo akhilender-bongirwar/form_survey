@@ -114,8 +114,10 @@ function App() {
     //   manufacturing_industry_opt: true,
     // },
     Raw_Materials: {
-      radio_button: "",
-      other: "",
+      Direct:false,
+      Through_Traders:false,
+      Online:false,
+      other:"",
     },
     if_Raw_Materials_available: "",
     if_no_mention_difficulties: "",

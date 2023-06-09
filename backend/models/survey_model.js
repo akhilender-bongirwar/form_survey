@@ -333,8 +333,17 @@ const surveyData = new Schema({
   //   },
   // },
   Raw_Materials: {
-    radio_button: {
-      type: String,
+    Direct: {
+      type: Boolean,
+      required: true,
+    },
+    Through_Traders: {
+      type: Boolean,
+      required: true,
+    },
+    Online: {
+      type: Boolean,
+      required: true,
     },
     other: {
       type: String,

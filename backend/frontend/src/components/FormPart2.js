@@ -170,7 +170,8 @@ const FormPart2 = ({
       });
     } else if (
       name === "challenges_while_selling" ||
-      name === "options_you_leverage_for_sale"
+      name === "options_you_leverage_for_sale" ||
+      name=== "Raw_Materials"
     ) {
       if (type == "text") {
         setFormD((prevFormData) => {
@@ -423,11 +424,9 @@ const FormPart2 = ({
                                   {t("Direct")}
                                 </label>
                                 <input
-                                  type="radio"
+                                  type="checkbox"
                                   checked={
-                                    formD.Raw_Materials.radio_button ==
-                                      "Direct" &&
-                                    formD.Raw_Materials.other == ""
+                                    formD.Raw_Materials.Direct
                                   }
                                   id="raw1"
                                   name="Raw_Materials"
@@ -446,15 +445,13 @@ const FormPart2 = ({
                                   {t("Through Traders")}
                                 </label>
                                 <input
-                                  type="radio"
+                                  type="checkbox"
                                   id="raw2"
                                   name="Raw_Materials"
                                   checked={
-                                    formD.Raw_Materials.radio_button ==
-                                      "Through Traders" &&
-                                    formD.Raw_Materials.other == ""
+                                    formD.Raw_Materials.Through_Traders
                                   }
-                                  value="Through Traders"
+                                  value="Through_Traders"
                                   onChange={handleChange}
                                 />
                               </td>
@@ -469,12 +466,10 @@ const FormPart2 = ({
                                   {t("Online")}
                                 </label>
                                 <input
-                                  type="radio"
+                                  type="checkbox"
                                   id="raw3"
                                   checked={
-                                    formD.Raw_Materials.radio_button ==
-                                      "Online" &&
-                                    formD.Raw_Materials.other == ""
+                                    formD.Raw_Materials.Online
                                   }
                                   name="Raw_Materials"
                                   value="Online"
