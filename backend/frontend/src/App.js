@@ -13,6 +13,7 @@ import { changeLanguage } from "i18next";
 
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import First from "./components/First";
+import { Surveyer } from "./components/Surveyer";
 
 function App() {
   const [expand, setexpand] = useState(false);
@@ -21,7 +22,7 @@ function App() {
     0: { name: "", assistance: "", challanges: "" },
   });
   const [formD, setFormD] = useState({
-    District_code: "",
+    District_code: "HA",
     submission_date: "",
     Enterprise_Name: "",
     Entrepreneur_Name: "",
@@ -32,7 +33,11 @@ function App() {
     Udyam_Registration: "",
     UAM_UEM_Number: "",
     Year_of_Establishment: "",
-    Type_of_Business: "",
+    Type_of_Business: {
+      service:false,
+      manufacturing:false,
+      trading:false,
+    },
     Operations_seasonal: "",
     months_of_operation: "",
     Ownership_Pattern: "",
@@ -321,6 +326,7 @@ function App() {
               path="/1"
               element={<Table formD={formD} setFormD={setFormD} />}
             />
+            <Route path="/surveyer" element={<Surveyer />} />
             <Route
               path="/2"
               element={

@@ -50,9 +50,18 @@ const surveyData = new Schema({
     required: true,
   },
   Type_of_Business: {
-    type: String,
-    enum: ["manufacturing", "service", "trading"],
-    required: true,
+    service:{
+      type:Boolean,
+      required:true,
+    },
+    manufacturing:{
+      type:Boolean,
+      required:true,
+    },
+    trading:{
+      type:Boolean,
+      required:true,
+    },
   },
   Operations_seasonal: {
     type: String,

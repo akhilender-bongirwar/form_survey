@@ -243,7 +243,21 @@ function Table({ formD, setFormD }) {
           [className]: { ...prevFormData[className], [name]: value },
         };
       });
-    } else if (className == "Infrastructure") {
+    } 
+    else if (
+      name =="Type_of_Business"
+    ) {
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: {
+              ...prevFormData[name],
+              [value]: checked,
+            },
+          };
+        });
+    }
+    else if (className == "Infrastructure") {
       setFormD((prevFormData) => {
         return {
           ...prevFormData,
@@ -577,37 +591,37 @@ function Table({ formD, setFormD }) {
                         {t("Manufacturing")}
                       </label>
                       <input
-                        type="radio"
+                        type="checkbox"
                         name="Type_of_Business"
                         id="manufacturing"
                         value="manufacturing"
                         onChange={handleChange}
                         required="required"
-                        checked={formD.Type_of_Business == "manufacturing"}
+                        checked={formD.Type_of_Business.manufacturing}
                       />
                     </div>
                     <div>
                       <label htmlFor="service">{t("Service")}</label>
                       <input
-                        type="radio"
+                        type="checkbox"
                         name="Type_of_Business"
                         id="service"
                         value="service"
                         onChange={handleChange}
                         required="required"
-                        checked={formD.Type_of_Business == "service"}
+                        checked={formD.Type_of_Business.service}
                       />
                     </div>
                     <div>
                       <label htmlFor="trading">{t("Trading")}</label>
                       <input
-                        type="radio"
+                        type="checkbox"
                         name="Type_of_Business"
                         id="trading"
                         value="trading"
                         onChange={handleChange}
                         required="required"
-                        checked={formD.Type_of_Business == "trading"}
+                        checked={formD.Type_of_Business.trading}
                       />
                     </div>
                   </div>

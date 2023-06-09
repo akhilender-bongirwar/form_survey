@@ -250,7 +250,7 @@ const First = ({ formD, setFormD }) => {
           <tr style={{ display: "table-row" }}>
             <th>11</th>
             <th>AM</th>
-            <th>Ayodhya</th>
+            <th>Amethi</th>
           </tr>
         </tbody>
       </table>
@@ -277,9 +277,6 @@ const First = ({ formD, setFormD }) => {
             autoWidth
             label="District"
           >
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
             <MenuItem value="HA">Hardoi</MenuItem>
             <MenuItem value="LA">Lakhimpur Kheri</MenuItem>
             <MenuItem value="LU">Lucknow</MenuItem>
