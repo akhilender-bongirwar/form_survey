@@ -365,7 +365,7 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       id="certificate2"
                       name="To_be_Required_1"
                       className="Certifications"
-                      required="required"
+                      
                       value={formD.Certifications.To_be_Required_1}
                       placeholder={t("To be required")}
                       onChange={handleChange}
@@ -391,7 +391,6 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       id="infra2"
                       className="Infrastructure"
                       name="To_be_Required_2"
-                      required="required"
                       value={formD.Infrastructure.To_be_Required_2}
                       placeholder={t("To be required")}
                       onChange={handleChange}
@@ -416,7 +415,6 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       type="text"
                       id="lab2"
                       name="To_be_Required_3"
-                      required="required"
                       className="Laboratory"
                       value={formD.Laboratory.To_be_Required_3}
                       placeholder={t("To be required")}
@@ -451,7 +449,7 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                     )}
                     {t("If Yes, mention support required and tentative cost:")}
                   </td>
-                  <td>
+                  {/* <td>
                     <input
                       type="text"
                       id="question"
@@ -459,7 +457,47 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       value={formD.Certification_required}
                       onChange={handleChange}
                     />
+                  </td> */}
+                  <td colSpan={6}>
+                <div className="radio_wrapper wrapup">
+                  <td>
+                    <label
+                      style={{ marginRight: "20px" }}
+                      htmlFor="Certification_export_support_reqdyes"
+                    >
+                      {t("YES")}
+                    </label>
+                    <input
+                      type="radio"
+                      name="Certification_export_support_reqd"
+                      id="Certification_export_support_reqdyes"
+                      value="YES"
+                      required="required"
+                      onClick={() => setA61("show61")}
+                      onChange={handleChange}
+                      checked={formD.Certification_export_support_reqd == "YES"}
+                    />
                   </td>
+                  <td>
+                    <label
+                      style={{ marginRight: "20px" }}
+                      htmlFor="Certification_export_support_reqdno"
+                    >
+                      {t("NO")}
+                    </label>
+                    <input
+                      type="radio"
+                      name="Certification_export_support_reqd"
+                      id="Certification_export_support_reqdno"
+                      value="NO"
+                      required="required"
+                      onClick={() => setA61(null)}
+                      onChange={handleChange}
+                      checked={formD.Requirement_of_Training == "NO"}
+                    />
+                  </td>
+                </div>
+              </td>
                 </tr>
                 <tr>
                   <td className="heading">
@@ -512,7 +550,6 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       id="counselling"
                       name="Counselling"
                       className="Requirement_of_Soft_Interventions"
-                      required="required"
                       value={
                         formD.Requirement_of_Soft_Interventions.Counselling
                       }
@@ -530,7 +567,6 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       id="upgrade"
                       className="Requirement_of_Soft_Interventions"
                       name="Upgradation_of_IT_Infrastructure"
-                      required="required"
                       value={
                         formD.Requirement_of_Soft_Interventions
                           .Upgradation_of_IT_Infrastructure
@@ -549,7 +585,6 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       id="training"
                       name="Participation_in_Training"
                       className="Requirement_of_Soft_Interventions"
-                      required="required"
                       value={
                         formD.Requirement_of_Soft_Interventions
                           .Participation_in_Training
@@ -565,7 +600,6 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       type="text"
                       id="development"
                       name="Institution_Development"
-                      required="required"
                       className="Requirement_of_Soft_Interventions"
                       value={
                         formD.Requirement_of_Soft_Interventions
@@ -584,7 +618,6 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       type="text"
                       id="new_software"
                       className="Requirement_of_Soft_Interventions"
-                      required="required"
                       name="Implementation_of_new_software"
                       value={
                         formD.Requirement_of_Soft_Interventions
@@ -606,7 +639,6 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       id="tools"
                       className="Requirement_of_Soft_Interventions"
                       name="Training_Process_Improvement"
-                      required="required"
                       value={
                         formD.Requirement_of_Soft_Interventions
                           .Training_Process_Improvement
@@ -625,7 +657,6 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       id="promotion"
                       className="Requirement_of_Soft_Interventions"
                       name="Market_Promotion_Initiatives"
-                      required="required"
                       value={
                         formD.Requirement_of_Soft_Interventions
                           .Market_Promotion_Initiatives
@@ -644,7 +675,6 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       id="design"
                       className="Requirement_of_Soft_Interventions"
                       name="Design_and_product_development"
-                      required="required"
                       value={
                         formD.Requirement_of_Soft_Interventions
                           .Design_and_product_development
@@ -663,7 +693,6 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       id="campaign"
                       className="Requirement_of_Soft_Interventions"
                       name="Promotion_Campaign"
-                      required="required"
                       value={
                         formD.Requirement_of_Soft_Interventions
                           .Promotion_Campaign

@@ -45,6 +45,7 @@ function Table({ formD, setFormD }) {
     const check1 = document.querySelector(".serviceInd");
     const manuCheck = document.querySelectorAll(".manufac");
     const manuCheck1 = document.querySelector(".manufac");
+    const typOfBusi = document
 
     var chk = false;
     var chk2 = false;
@@ -594,6 +595,7 @@ function Table({ formD, setFormD }) {
                         type="checkbox"
                         name="Type_of_Business"
                         id="manufacturing"
+                        className="part1"
                         value="manufacturing"
                         onChange={handleChange}
                         required="required"
@@ -606,6 +608,7 @@ function Table({ formD, setFormD }) {
                         type="checkbox"
                         name="Type_of_Business"
                         id="service"
+                        className="part1"
                         value="service"
                         onChange={handleChange}
                         required="required"
@@ -618,6 +621,7 @@ function Table({ formD, setFormD }) {
                         type="checkbox"
                         name="Type_of_Business"
                         id="trading"
+                        className="part1"
                         value="trading"
                         onChange={handleChange}
                         required="required"
