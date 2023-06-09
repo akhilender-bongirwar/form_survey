@@ -1247,23 +1247,27 @@ const FormPart2 = ({
                                               }
                                             />
                                           </div>
-                                          <div>
-                                            <label htmlFor="other">
-                                              {t("Other (specify)")}
-                                            </label>
-                                            <input
-                                              type="text"
-                                              id="other"
-                                              name="options_you_leverage_for_sale"
-                                              className="branding"
-                                              onChange={handleChange}
-                                              value={
-                                                formD
-                                                  .options_you_leverage_for_sale
-                                                  .other
-                                              }
-                                            />
-                                          </div>
+                                          <tr>
+                                            <td>
+                                              <label htmlFor="other">
+                                                {t("Other (specify)")}
+                                              </label>
+                                            </td>
+                                            <td>
+                                              <input
+                                                type="text"
+                                                id="other"
+                                                name="options_you_leverage_for_sale"
+                                                className="branding"
+                                                onChange={handleChange}
+                                                value={
+                                                  formD
+                                                    .options_you_leverage_for_sale
+                                                    .other
+                                                }
+                                              />
+                                            </td>
+                                          </tr>
                                         </td>
                                       </td>
                                     </div>
