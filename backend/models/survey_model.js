@@ -32,6 +32,9 @@ const surveyData = new Schema({
     type: String,
     required: true,
   },
+  challenges_face_hear: {
+    type: String,
+  },
   Firm_Registered: {
     type: String,
     enum: ["YES", "NO"],

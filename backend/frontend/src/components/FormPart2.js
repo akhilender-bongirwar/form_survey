@@ -914,6 +914,21 @@ const FormPart2 = ({
                                 </tr>
                               ) : null}
                               <tr>
+                        <h1 style={{ margin: "10px 0" }}>
+                          {t(
+                            "What challenges do you face/hear while selling your products"
+                          )}
+                        </h1>
+                        <td colSpan={6}>
+                          <input
+                            type="text"
+                            name="challenges_face_hear"
+                            onChange={handleChange}
+                            value={formD.challenges_face_hear}
+                          />
+                        </td>
+                      </tr>
+                              <tr>
                                 <td>
                                   <label>
                                     <h1>
