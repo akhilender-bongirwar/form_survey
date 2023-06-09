@@ -138,6 +138,7 @@ function App() {
     },
     have_product_brand_name: "",
     Brand_name: "",
+    challenges_face_hear:"",
     challenges_while_selling: {
       advance_technology: false,
       quality_of_product: false,

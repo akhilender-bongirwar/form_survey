@@ -151,6 +151,10 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
     }
   }
   return (
+    <>
+    <h1 style={{ marginBottom: "2em" }}>
+        {t("C. Policy Specific Information")}
+      </h1>
     <div
       style={{
         display: "flex",
@@ -1149,6 +1153,7 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
