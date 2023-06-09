@@ -401,7 +401,7 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
             ) : (
               <tr>
                 <td className="heading" colSpan={1}>
-                  <label htmlFor="laboratory_exportchallenge_faced_payment_support_required">
+                  <label htmlFor="challenge_faced_payment">
                   {t(
                       "If Yes, What are the challenges you are facing to receive payment from buyers for supplying materials"
                     )}{" "}

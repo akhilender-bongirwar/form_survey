@@ -120,7 +120,9 @@ function App() {
     if_Raw_Materials_available: "",
     if_no_mention_difficulties: "",
     green_tech: "",
+    adopted_green_tech: "",
     environment_clearence: "",
+    required_environment_clearence:"",
     final_product_sold_to: {
       Trader_Agents: false,
       Wholesalers: false,

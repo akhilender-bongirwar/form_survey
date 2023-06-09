@@ -351,6 +351,12 @@ const surveyData = new Schema({
     type: String,
     enum: ["YES", "NO"],
   },
+  adopted_green_tech: {
+    type: String,
+  },
+  required_environment_clearence: {
+    type: String,
+  },
   environment_clearence: {
     type: String,
     enum: ["YES", "NO"],
