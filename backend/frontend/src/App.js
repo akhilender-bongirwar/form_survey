@@ -258,6 +258,7 @@ function App() {
     reason_of_rejection: "",
     availed_samadhaan_service: "",
     face_challenge_from_buyer: "",
+    challenge_faced_payment: "",
     //added
     Certifications: {
       Currently_owned_1: "",
@@ -273,7 +274,9 @@ function App() {
     },
     support_from_agency: "",
     Certification_required: "",
+    Certification_export_support_required:"",
     laboratory_requirement: "",
+    laboratory_export_support_required: "",
     Requirement_of_Soft_Interventions: {
       Counselling: "",
       Upgradation_of_IT_Infrastructure: "",

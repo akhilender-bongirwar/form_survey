@@ -794,8 +794,20 @@ const surveyData = new Schema({
   Certification_required: {
     type: String,
   },
+  Certification_export_support_required: {
+    type: String,
+    required:true,
+  },
+  challenge_faced_payment: {
+    type: String,
+    required:true,
+  },
   laboratory_requirement: {
     type: String,
+  },
+  laboratory_export_support_required: {
+    type: String,
+    required:true,
   },
   Requirement_of_Soft_Interventions: {
     Counselling: {
