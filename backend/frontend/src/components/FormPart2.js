@@ -30,6 +30,11 @@ const FormPart2 = ({
     var marketingChk = false;
     var marketingChk1 = false;
 
+    const srcProcurement = document.querySelectorAll(".src");
+    const srcProcurement1 = document.querySelector(".src");
+    var srcChk = false;
+    var srcChk1 = false;
+
     const form = document.getElementById("formy");
 
     const checkboxes1 = form.querySelectorAll(`input[type="checkbox"].a`);
@@ -47,6 +52,21 @@ const FormPart2 = ({
         checked2 = true;
       }
     });
+
+    srcProcurement.forEach((el)=>{
+      if(el.type == "checkbox"){
+        if(el.checked){
+          srcChk=true;
+        }
+      }
+      else if(el.type == "text"){
+        if(el.value!=""){
+          srcChk1=true;
+        }
+      }
+    })
+
+
     challFacing.forEach((el) => {
       if (el.type == "checkbox") {
         if (el.checked) {
@@ -76,6 +96,16 @@ const FormPart2 = ({
     const err1 = form.querySelector(`input[type="checkbox"].a`);
     const err2 = form.querySelector(`input[type="checkbox"].b`);
     if (expand) {
+      if(!srcChk && !srcChk1){
+        toast.error("Choose any one of the option or fill the text-field");
+        srcProcurement1.setCustomValidity(
+          "Choose any one of the option or fill the text-field"
+        );
+        srcProcurement1.reportValidity();
+      }else{
+        srcProcurement1.setCustomValidity("");
+      }
+
       if (!challengesChk && !challengesChk1) {
         toast.error("Choose any one of the option or fill the text-field");
         challFacing1.setCustomValidity(
@@ -115,7 +145,7 @@ const FormPart2 = ({
     if (
       !isV &&
       (!challengesChk || !challengesChk1) &&
-      (!marketingChk || !marketingChk1)
+      (!marketingChk || !marketingChk1) && (!srcChk || !srcChk1)
     ) {
       e.preventDefault();
     } else {
@@ -430,6 +460,7 @@ const FormPart2 = ({
                                   }
                                   id="raw1"
                                   name="Raw_Materials"
+                                  className="src"
                                   value="Direct"
                                   onChange={handleChange}
                                 />
@@ -447,6 +478,7 @@ const FormPart2 = ({
                                 <input
                                   type="checkbox"
                                   id="raw2"
+                                  className="src"
                                   name="Raw_Materials"
                                   checked={
                                     formD.Raw_Materials.Through_Traders
@@ -468,6 +500,7 @@ const FormPart2 = ({
                                 <input
                                   type="checkbox"
                                   id="raw3"
+                                  className="src"
                                   checked={
                                     formD.Raw_Materials.Online
                                   }
@@ -480,6 +513,7 @@ const FormPart2 = ({
                                 <input
                                   type="text"
                                   name="Raw_Materials"
+                                  className="src"
                                   onChange={handleChange}
                                   value={formD.Raw_Materials.other}
                                   placeholder={t("others")}
