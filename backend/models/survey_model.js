@@ -195,16 +195,13 @@ const surveyData = new Schema({
     required: true,
   },
   formal_source: {
-    type: String,
-    required: true,
+    type: Number,
   },
   informal_source: {
-    type: String,
-    required: true,
+    type: Number,
   },
   internal_fund_generation: {
-    type: String,
-    required: true,
+    type: Number,
   },
   other_financing_source: {
     type: String,
