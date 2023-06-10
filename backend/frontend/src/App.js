@@ -14,6 +14,9 @@ import { changeLanguage } from "i18next";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import First from "./components/First";
 import { Surveyer } from "./components/Surveyer";
+import { UploadSurvey } from "./components/UploadSurvey";
+import { Landing } from "./components/Landing";
+import { NotFound } from "./components/NotFound";
 
 function App() {
   const [expand, setexpand] = useState(false);
@@ -325,61 +328,66 @@ function App() {
       </div>
       <Router>
         <Routes>
-          <Route path="/" element={<Outer />}>
-            <Route
-              index
-              element={<First formD={formD} setFormD={setFormD} />}
-            />
-            <Route
-              path="/1"
-              element={<Table formD={formD} setFormD={setFormD} />}
-            />
-            <Route path="/surveyer" element={<Surveyer />} />
-            <Route
-              path="/2"
-              element={
-                <FormPart2
-                  formD={formD}
-                  setFormD={setFormD}
-                  expand={expand}
-                  setexpand={setexpand}
-                  expand2={expand2}
-                  setexpand2={setexpand2}
-                />
-              }
-            />
-            <Route
-              path="/3"
-              element={
-                <FormPart3
-                  formD={formD}
-                  addfields={addfields}
-                  setAddFields={setAddFields}
-                  setFormD={setFormD}
-                />
-              }
-            />
-            <Route
-              path="/4"
-              element={<FormPart4 formD={formD} setFormD={setFormD} />}
-            />
-            <Route
-              path="/5"
-              element={<FormPart5 formD={formD} setFormD={setFormD} />}
-            />
-            <Route
-              path="/6"
-              element={
-                <FormPart6
-                  formD={formD}
-                  setFormD={setFormD}
-                  expand2={expand2}
-                  expand={expand}
-                  addfields={addfields}
-                />
-              }
-            />
+          <Route path="/" element={<Landing />}>
+            {/* <Route index element={<Frontpart />} /> */}
+            <Route path="/eForm" element={<Outer />}>
+              <Route
+                index
+                element={<First formD={formD} setFormD={setFormD} />}
+              />
+              <Route
+                path="/eForm/1"
+                element={<Table formD={formD} setFormD={setFormD} />}
+              />
+              <Route path="/eForm/surveyer" element={<Surveyer />} />
+              <Route
+                path="/eForm/2"
+                element={
+                  <FormPart2
+                    formD={formD}
+                    setFormD={setFormD}
+                    expand={expand}
+                    setexpand={setexpand}
+                    expand2={expand2}
+                    setexpand2={setexpand2}
+                  />
+                }
+              />
+              <Route
+                path="/eForm/3"
+                element={
+                  <FormPart3
+                    formD={formD}
+                    addfields={addfields}
+                    setAddFields={setAddFields}
+                    setFormD={setFormD}
+                  />
+                }
+              />
+              <Route
+                path="/eForm/4"
+                element={<FormPart4 formD={formD} setFormD={setFormD} />}
+              />
+              <Route
+                path="/eForm/5"
+                element={<FormPart5 formD={formD} setFormD={setFormD} />}
+              />
+              <Route
+                path="/eForm/6"
+                element={
+                  <FormPart6
+                    formD={formD}
+                    setFormD={setFormD}
+                    expand2={expand2}
+                    expand={expand}
+                    addfields={addfields}
+                  />
+                }
+              />
+            </Route>
+            <Route path="/uploadSurvey" element={<UploadSurvey />} />
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </>

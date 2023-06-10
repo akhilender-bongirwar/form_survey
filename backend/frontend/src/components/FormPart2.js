@@ -1651,11 +1651,11 @@ const FormPart2 = ({
               fontSize: "large",
             }}
           >
-            <NavLink to="/1" className="arrow_notation">
+            <NavLink to="/eForm/1" className="arrow_notation">
               {t("Prev")}
             </NavLink>
             {expand || expand2 ? (
-              <NavLink to="/3" className="arrow_notation" onClick={validate}>
+              <NavLink to="/eForm/3" className="arrow_notation" onClick={validate}>
                 {t("Next")}
               </NavLink>
             ) : null}

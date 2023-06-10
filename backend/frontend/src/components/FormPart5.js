@@ -226,10 +226,10 @@ function FormPart5({ formD, setFormD }) {
         </div>
       </div>
       <div style={{ display:"flex",justifyContent:"space-between",margin:"0 15px",fontSize:"large"}}>
-        <NavLink to="/4" className="arrow_notation">
+        <NavLink to="/eForm/4" className="arrow_notation">
           {t("Prev")}
         </NavLink>
-        <NavLink to="/6" className="arrow_notation" onClick={validate}>
+        <NavLink to="/eForm/6" className="arrow_notation" onClick={validate}>
           {t("Next")}
         </NavLink>
       </div>
