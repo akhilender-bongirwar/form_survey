@@ -265,9 +265,16 @@ input:focus{
   align-items: center;
   justify-content: center;
 }
-.hero>img{
+.imges>img{
+  height: 100%;
+  /* margin-bottom: 30px; */
+}
+.imges{
   height: 50%;
-  margin-bottom: 30px;
+  display: flex;
+  align-items: flex-end;
+  width: 30vw;
+  justify-content: space-between;
 }
 .hero>p{
   margin: 5px;
