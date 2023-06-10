@@ -1144,10 +1144,10 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
             fontSize: "large",
           }}
         >
-          <NavLink to="/2" className="arrow_notation">
+          <NavLink to="/eForm/2" className="arrow_notation">
             {t("Prev")}
           </NavLink>
-          <NavLink to="/4" className="arrow_notation" onClick={validate}>
+          <NavLink to="/eForm/4" className="arrow_notation" onClick={validate}>
             {t("Next")}
           </NavLink>
         </div>

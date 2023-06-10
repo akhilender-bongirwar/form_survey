@@ -608,10 +608,10 @@ function FormPart4({ formD, setFormD }) {
             </tbody>
           </table>
           <div style={{ display: "flex", justifyContent: "space-between", margin: "0 15px", fontSize: "large" }}>
-            <NavLink to="/3" className="arrow_notation">
+            <NavLink to="/eForm/3" className="arrow_notation">
               {t("Prev")}
             </NavLink>
-            <NavLink to="/5" className="arrow_notation" onClick={validate}>
+            <NavLink to="/eForm/5" className="arrow_notation" onClick={validate}>
               {t("Next")}
             </NavLink>
           </div>
