@@ -238,3 +238,75 @@ input:focus{
     font-size: medium;
   }
 }
+.menubar{
+  width: 250px;
+  height: calc(100vh);
+  background-color: white;
+  transition: translate 0.2s ease-in-out;
+  overflow-y: auto;
+  flex-shrink: 0;
+  position: fixed;
+  top:0px;
+  left: -250px;
+  color: #f0f6fc;
+  z-index: 2;
+  box-shadow: 1px 6px 6px 0px rgba(0, 0, 0, 0.24);
+}
+.expand{
+  translate: 250px 0px;
+  /* Move menubar to the right */
+  background-color: white;
+}
+.hero{
+  width: 100vw;
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.hero>img{
+  height: 50%;
+  margin-bottom: 30px;
+}
+.hero>p{
+  margin: 5px;
+}
+.buttonclass{
+  display: flex;
+  /* position: fixed;
+  top: 40vh; */
+  bottom: 0;
+  height: calc(100vh - (25vh + 22.07px + 47.1px));
+  background-color: white;
+  padding: 50px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.btns{
+  height: 80px;
+  padding: 20px;
+  width: 250px;
+  margin: 20px;
+  color: white;
+  background-color: #005f99;
+  font-weight: 600;
+  border-radius: 5px;
+}
+.menubarcontent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.menubardivbtn{
+  position: absolute;
+  top: 0;
+  height: 40px;
+  width: 100vw;
+  background-color: #f9fafe;
+}
+.menubarcontent>button{
+  width: 90%;
+}
