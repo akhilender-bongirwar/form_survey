@@ -8,8 +8,9 @@ export const Surveyer = () => {
         method="post"
         enctype="multipart/form-data"
       >
+        <label htmlFor="input-files"></label>
         <input type="file" name="myImage" id="input-files" />
-        <button type="submit">Submit</button>
+        <button className="arrow_notation" type="submit">Submit</button>
       </form>
     </div>
   );
