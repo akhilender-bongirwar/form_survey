@@ -258,15 +258,17 @@ input:focus{
   background-color: white;
 }
 .hero{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif,
+  monospace;
   width: 100vw;
-  height: 25vh;
+  height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content:flex-start;
 }
 .imges{
-  height: 60%;
+  height: 40%;
   display: flex;
   align-items: center;
   width: 100vw;
@@ -274,26 +276,47 @@ input:focus{
   padding: 0 2vw;
   margin-top: 40px;
 }
+
 .hero>p{
   margin: 5px;
 }
+.front_heading{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif,
+  monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+  transform: translateY(-30%);
+}
+.front_heading>p:last-child{
+  width: 50%;
+  word-wrap: break-word;
+  text-align: center;
+  margin-top: 10px;
+}
 .buttonclass{
+  
   display: flex;
   /* position: fixed;
   top: 40vh; */
   bottom: 0;
-  height: calc(100vh - (25vh + 22.07px + 47.1px));
-  background-color: white;
+  height: calc(100vh - (40vh + 22.07px + 47.1px));
+  background-color: rgb(255, 255, 255);
   padding: 50px;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 .btns{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif,
+  monospace;
   height: 80px;
   padding: 20px;
   width: 250px;
   margin: 20px;
   color: white;
+  font-size: 1rem;
   background-color: #005f99;
   font-weight: 600;
   border-radius: 5px;
@@ -333,15 +356,58 @@ input:focus{
   margin-left: 10px;
   font-size: larger;
 }
+@media screen and (max-width: 1024px) {
+  .msme>div{
+    font-size: 1rem;
+  }  
+  .imges>div>img{
+    height: 70%;
+  }
+  .imges>img{
+    height: 70%;
+  }
+}
 @media screen and (max-width: 600px) {
   .msme>div{
-    font-size: medium;
+    font-size: 0.9rem;
   }  
+  .imges>div>img{
+    height: 65%;
+  }
+  .imges>img{
+    height: 65%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .imges>div>div>p{
+    width: 80%;
+    word-wrap: break-word;
+  }
 }
 @media screen and (max-width: 450px) {
   .msme>div{
     font-size: small;
   }  
+  .imges>div>img{
+    height: 55%;
+  }
+  .imges>img{
+    height: 50%;
+  }
+}
+@media screen and (max-width: 400px) { 
+  .imges>div>img{
+    height: 50%;
+  }
+  .imges>img{
+    height: 45%;
+  }
+}
+@media screen and (max-width: 350px) { 
+  .msme>div{
+    font-size:0.8rem;
+    /* font-size: smaller; */
+  } 
 }
 .iiitl{
   height: 15vw;

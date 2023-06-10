@@ -315,9 +315,12 @@ const First = ({ formD, setFormD }) => {
           fontSize: "large",
           marginRight: "15px",
           display: "flex",
-          justifyContent: "flex-end",
+          justifyContent: "space-between",
         }}
       >
+        <NavLink to="/" className="arrow_notation" >
+          Back to Home
+        </NavLink>
         <NavLink to="/eForm/1" className="arrow_notation" onClick={validate}>
           Next
         </NavLink>

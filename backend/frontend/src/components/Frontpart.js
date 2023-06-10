@@ -31,14 +31,16 @@ export default function Frontpart() {
             <img class="national_emblem" src="https://msme.gov.in/sites/all/themes/msme/images/emblem-dark.png" alt="national emblem" />
             <div>
               <p lang="hi">सूक्ष्म , लघु और मध्यम उद्यम मंत्रालय</p>
-              <p class="maintitle1">Ministry of <br /> <strong>Micro, small &amp; Medium Enterprises </strong></p>
+              <p class="maintitle1">Ministry of <br /> <strong>MICRO, SMALL &amp; MEDIUM ENTERPRISES </strong></p>
             </div>
           </div>
           <img className='iiitl' src="https://iiitl.ac.in/wp-content/uploads/2019/10/Final_Logo_IIITL.png" alt="" />
         </div>
-        <p style={{ fontWeight: "700", fontSize: "xx-large" }}>RAMP Project</p>
-        <p>RAMP Project App for Managing all Operations</p>
       </div>
+        <div className="front_heading">
+          <p  style={{ fontWeight: "700", fontSize: "xx-large" }}>RAMP Project</p>
+          <p>RAMP Project App for Managing all Operations</p>
+        </div>
       <div className="buttonclass">
         <button className='btns'><NavLink to="/uploadSurvey" style={{ color: "white", textDecoration: "none" }}>Upload Survey Documents </NavLink></button>
         <button className='btns'><NavLink to="/eForm" style={{ color: "white", textDecoration: "none" }}>RAMP E-Survey Form </NavLink></button>
