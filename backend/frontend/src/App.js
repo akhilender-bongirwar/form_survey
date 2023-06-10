@@ -17,6 +17,7 @@ import { Surveyer } from "./components/Surveyer";
 import { UploadSurvey } from "./components/UploadSurvey";
 import { Landing } from "./components/Landing";
 import { NotFound } from "./components/NotFound";
+import Frontpart from "./components/Frontpart";
 
 function App() {
   const [expand, setexpand] = useState(false);
@@ -329,7 +330,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Landing />}>
-            {/* <Route index element={<Frontpart />} /> */}
+            <Route index element={<Frontpart />} />
             <Route path="/eForm" element={<Outer />}>
               <Route
                 index
