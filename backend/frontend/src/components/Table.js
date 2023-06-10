@@ -2452,10 +2452,10 @@ function Table({ formD, setFormD }) {
         }}
       >
         {/* <ToastContainer /> */}
-        <NavLink to="/" className="arrow_notation">
+        <NavLink to="/eForm/" className="arrow_notation">
           {t("Prev")}
         </NavLink>
-        <NavLink to="/2" className="arrow_notation" onClick={validate}>
+        <NavLink to="/eForm/2" className="arrow_notation" onClick={validate}>
           {t("Next")}
         </NavLink>
       </div>

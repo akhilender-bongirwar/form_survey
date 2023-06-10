@@ -1033,7 +1033,7 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
           fontSize: "large",
         }}
       >
-        <NavLink to="/5" className="arrow_notation">
+        <NavLink to="/eForm/5" className="arrow_notation">
           {t("Prev")}
         </NavLink>
         <button
