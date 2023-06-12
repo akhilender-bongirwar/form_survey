@@ -14,6 +14,11 @@ import { changeLanguage } from "i18next";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import First from "./components/First";
 import Googledrive from "./components/googledrive";
+import { Surveyer } from "./components/Surveyer";
+import { UploadSurvey } from "./components/UploadSurvey";
+import { Landing } from "./components/Landing";
+import { NotFound } from "./components/NotFound";
+import Frontpart from "./components/Frontpart";
 
 function App() {
   const [expand, setexpand] = useState(false);
@@ -22,7 +27,7 @@ function App() {
     0: { name: "", assistance: "", challanges: "" },
   });
   const [formD, setFormD] = useState({
-    District_code: "",
+    District_code: "HA",
     submission_date: "",
     Enterprise_Name: "",
     Entrepreneur_Name: "",
@@ -33,7 +38,11 @@ function App() {
     Udyam_Registration: "",
     UAM_UEM_Number: "",
     Year_of_Establishment: "",
-    Type_of_Business: "",
+    Type_of_Business: {
+      service: false,
+      manufacturing: false,
+      trading: false,
+    },
     Operations_seasonal: "",
     months_of_operation: "",
     Ownership_Pattern: "",
@@ -110,13 +119,17 @@ function App() {
     //   manufacturing_industry_opt: true,
     // },
     Raw_Materials: {
-      radio_button: "",
+      Direct: false,
+      Through_Traders: false,
+      Online: false,
       other: "",
     },
     if_Raw_Materials_available: "",
     if_no_mention_difficulties: "",
     green_tech: "",
+    adopted_green_tech: "",
     environment_clearence: "",
+    required_environment_clearence: "",
     final_product_sold_to: {
       Trader_Agents: false,
       Wholesalers: false,
@@ -134,6 +147,7 @@ function App() {
     },
     have_product_brand_name: "",
     Brand_name: "",
+    challenges_face_hear: "",
     challenges_while_selling: {
       advance_technology: false,
       quality_of_product: false,
@@ -253,6 +267,7 @@ function App() {
     reason_of_rejection: "",
     availed_samadhaan_service: "",
     face_challenge_from_buyer: "",
+    challenge_faced_payment: "",
     //added
     Certifications: {
       Currently_owned_1: "",
@@ -268,7 +283,9 @@ function App() {
     },
     support_from_agency: "",
     Certification_required: "",
+    Certification_export_support_required: "",
     laboratory_requirement: "",
+    laboratory_export_support_required: "",
     Requirement_of_Soft_Interventions: {
       Counselling: "",
       Upgradation_of_IT_Infrastructure: "",
@@ -313,61 +330,67 @@ function App() {
       </div>
       <Router>
         <Routes>
-          <Route path="/" element={<Outer />}>
-            <Route path="/googleDrive" element={<Googledrive />} />
-            <Route
-              index
-              element={<First formD={formD} setFormD={setFormD} />}
-            />
-            <Route
-              path="/1"
-              element={<Table formD={formD} setFormD={setFormD} />}
-            />
-            <Route
-              path="/2"
-              element={
-                <FormPart2
-                  formD={formD}
-                  setFormD={setFormD}
-                  expand={expand}
-                  setexpand={setexpand}
-                  expand2={expand2}
-                  setexpand2={setexpand2}
-                />
-              }
-            />
-            <Route
-              path="/3"
-              element={
-                <FormPart3
-                  formD={formD}
-                  addfields={addfields}
-                  setAddFields={setAddFields}
-                  setFormD={setFormD}
-                />
-              }
-            />
-            <Route
-              path="/4"
-              element={<FormPart4 formD={formD} setFormD={setFormD} />}
-            />
-            <Route
-              path="/5"
-              element={<FormPart5 formD={formD} setFormD={setFormD} />}
-            />
-            <Route
-              path="/6"
-              element={
-                <FormPart6
-                  formD={formD}
-                  setFormD={setFormD}
-                  expand2={expand2}
-                  expand={expand}
-                  addfields={addfields}
-                />
-              }
-            />
+          <Route path="/" element={<Landing />}>
+            <Route index element={<Frontpart />} />
+            <Route path="googleDrive" element={<Googledrive />} />
+            <Route path="/eForm" element={<Outer />}>
+              <Route
+                index
+                element={<First formD={formD} setFormD={setFormD} />}
+              />
+              <Route
+                path="/eForm/1"
+                element={<Table formD={formD} setFormD={setFormD} />}
+              />
+              <Route path="/eForm/surveyer" element={<Surveyer />} />
+              <Route
+                path="/eForm/2"
+                element={
+                  <FormPart2
+                    formD={formD}
+                    setFormD={setFormD}
+                    expand={expand}
+                    setexpand={setexpand}
+                    expand2={expand2}
+                    setexpand2={setexpand2}
+                  />
+                }
+              />
+              <Route
+                path="/eForm/3"
+                element={
+                  <FormPart3
+                    formD={formD}
+                    addfields={addfields}
+                    setAddFields={setAddFields}
+                    setFormD={setFormD}
+                  />
+                }
+              />
+              <Route
+                path="/eForm/4"
+                element={<FormPart4 formD={formD} setFormD={setFormD} />}
+              />
+              <Route
+                path="/eForm/5"
+                element={<FormPart5 formD={formD} setFormD={setFormD} />}
+              />
+              <Route
+                path="/eForm/6"
+                element={
+                  <FormPart6
+                    formD={formD}
+                    setFormD={setFormD}
+                    expand2={expand2}
+                    expand={expand}
+                    addfields={addfields}
+                  />
+                }
+              />
+            </Route>
+            <Route path="/uploadSurvey" element={<UploadSurvey />} />
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </>

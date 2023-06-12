@@ -151,6 +151,10 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
     }
   }
   return (
+    <>
+    <h1 style={{ marginBottom: "2em" }}>
+        {t("C. Policy Specific Information")}
+      </h1>
     <div
       style={{
         display: "flex",
@@ -244,7 +248,7 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
                   <IconButton onClick={(e)=>{
                     let ree={...addfields}
                     delete ree[Object.values(ree).length-1]
-                    e.preventDefault();
+                    e.preventDefault(); 
                     setAddFields(ree);
                   }}>
                     <DeleteIcon />
@@ -1140,15 +1144,16 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
             fontSize: "large",
           }}
         >
-          <NavLink to="/2" className="arrow_notation">
+          <NavLink to="/eForm/2" className="arrow_notation">
             {t("Prev")}
           </NavLink>
-          <NavLink to="/4" className="arrow_notation" onClick={validate}>
+          <NavLink to="/eForm/4" className="arrow_notation" onClick={validate}>
             {t("Next")}
           </NavLink>
         </div>
       </div>
     </div>
+    </>
   );
 }
 

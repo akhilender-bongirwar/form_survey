@@ -8,6 +8,9 @@ import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import FormPart2 from "./FormPart2";
 function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
+  const [a611, setA611] = React.useState(null);
+  const [a613, setA613] = React.useState(null);
+  const [a612, setA612] = React.useState(null);
   const [a61, setA61] = React.useState(null);
   const { t } = useTranslation();
 
@@ -324,7 +327,100 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
             // backgroundColor: "rgb(240 235 248 / 77%)",
           }}
         >
-          <div>
+          
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "2em",
+              marginBottom: "1em",
+            }}
+          >
+            <table style={{ width: "100%" }}>
+              <tbody>
+              <tr>
+                  <td className="heading">
+                    {t(
+                      "Do you face any challenge while getting payments from buyer"
+                    )}
+                    ?
+                    
+                  </td>
+                  {/* <td>
+                    <input
+                      type="text"
+                      id="question"
+                      name="face_challenge_from_buyer"
+                      value={formD.face_challenge_from_buyer}
+                      onChange={handleChange}
+                    />
+                  </td> */}
+                  <td colSpan={6}>
+                <div className="radio_wrapper wrapup">
+                  <td>
+                    <label
+                      style={{ marginRight: "20px" }}
+                      htmlFor="face_challenge_from_buyeryes"
+                    >
+                      {t("YES")}
+                    </label>
+                    <input
+                      type="radio"
+                      name="face_challenge_from_buyer"
+                      id="face_challenge_from_buyeryes"
+                      value="YES"
+                      required="required"
+                      onClick={() => setA613("show613")}
+                      onChange={handleChange}
+                      checked={formD.face_challenge_from_buyer == "YES"}
+                    />
+                  </td>
+                  <td>
+                    <label
+                      style={{ marginRight: "20px" }}
+                      htmlFor="face_challenge_from_buyerno"
+                    >
+                      {t("NO")}
+                    </label>
+                    <input
+                      type="radio"
+                      name="face_challenge_from_buyer"
+                      id="face_challenge_from_buyerno"
+                      value="NO"
+                      required="required"
+                      onClick={() => setA613(null)}
+                      onChange={handleChange}
+                      checked={formD.face_challenge_from_buyer == "NO"}
+                    />
+                  </td>
+                </div>
+              </td>
+                </tr>
+                {a613 != "show613" ? (
+              ""
+            ) : (
+              <tr>
+                <td className="heading" colSpan={1}>
+                  <label htmlFor="challenge_faced_payment">
+                  {t(
+                      "If Yes, What are the challenges you are facing to receive payment from buyers for supplying materials"
+                    )}{" "}
+                  </label>
+                </td>
+                <td colSpan={6}>
+                  <input
+                    style={{ minWidth: "20px", marginBottom: "12px" }}
+                    type="text"
+                    id="challenge_faced_payment"
+                    name="challenge_faced_payment"
+                    onChange={handleChange}
+                    required="required"
+                    value={formD.challenge_faced_payment}
+                  />
+                </td>
+              </tr>
+            )}
+            <div>
             <h2
               style={{
                 // background: "grey",
@@ -336,16 +432,6 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
               {t("Questionnaire For Exporters")}
             </h2>
           </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              marginTop: "2em",
-              marginBottom: "1em",
-            }}
-          >
-            <table style={{ width: "100%" }}>
-              <tbody>
                 <tr>
                   <td className="heading">{t("Certifications")}</td>
                   <td>
@@ -365,7 +451,7 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       id="certificate2"
                       name="To_be_Required_1"
                       className="Certifications"
-                      required="required"
+                      
                       value={formD.Certifications.To_be_Required_1}
                       placeholder={t("To be required")}
                       onChange={handleChange}
@@ -391,7 +477,6 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       id="infra2"
                       className="Infrastructure"
                       name="To_be_Required_2"
-                      required="required"
                       value={formD.Infrastructure.To_be_Required_2}
                       placeholder={t("To be required")}
                       onChange={handleChange}
@@ -416,7 +501,6 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       type="text"
                       id="lab2"
                       name="To_be_Required_3"
-                      required="required"
                       className="Laboratory"
                       value={formD.Laboratory.To_be_Required_3}
                       placeholder={t("To be required")}
@@ -424,34 +508,14 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                     />
                   </td>
                 </tr>
-                <tr>
-                  <td className="heading">
-                    {t(
-                      "Do you face any challenge while getting payments from buyer"
-                    )}
-                    ?
-                    {t(
-                      "If Yes, What are the challenges you are facing to receive payment from buyers for supplying materials"
-                    )}
-                  </td>
-                  <td>
-                    <input
-                      type="text"
-                      id="question"
-                      name="face_challenge_from_buyer"
-                      value={formD.face_challenge_from_buyer}
-                      onChange={handleChange}
-                    />
-                  </td>
-                </tr>
+                
                 <tr>
                   <td className="heading">
                     {t(
                       " Any certification specific to export requirement which is currently not available?"
                     )}
-                    {t("If Yes, mention support required and tentative cost:")}
                   </td>
-                  <td>
+                  {/* <td>
                     <input
                       type="text"
                       id="question"
@@ -459,16 +523,77 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       value={formD.Certification_required}
                       onChange={handleChange}
                     />
+                  </td> */}
+                  <td colSpan={6}>
+                <div className="radio_wrapper wrapup">
+                  <td>
+                    <label
+                      style={{ marginRight: "20px" }}
+                      htmlFor="Certification_requiredyes"
+                    >
+                      {t("YES")}
+                    </label>
+                    <input
+                      type="radio"
+                      name="Certification_required"
+                      id="Certification_requiredyes"
+                      value="YES"
+                      required="required"
+                      onClick={() => setA611("show611")}
+                      onChange={handleChange}
+                      checked={formD.Certification_required == "YES"}
+                    />
                   </td>
+                  <td>
+                    <label
+                      style={{ marginRight: "20px" }}
+                      htmlFor="Certification_requiredno"
+                    >
+                      {t("NO")}
+                    </label>
+                    <input
+                      type="radio"
+                      name="Certification_required"
+                      id="Certification_requiredno"
+                      value="NO"
+                      required="required"
+                      onClick={() => setA611(null)}
+                      onChange={handleChange}
+                      checked={formD.Certification_required == "NO"}
+                    />
+                  </td>
+                </div>
+              </td>
+              {a611 != "show611" ? (
+              ""
+            ) : (
+              <tr>
+                <td className="heading" colSpan={1}>
+                  <label htmlFor="Certification_export_support_required">
+                  {t("If Yes, mention support required and tentative cost:")}{" "}
+                  </label>
+                </td>
+                <td colSpan={6}>
+                  <input
+                    style={{ minWidth: "20px", marginBottom: "12px" }}
+                    type="text"
+                    id="Certification_export_support_required"
+                    name="Certification_export_support_required"
+                    onChange={handleChange}
+                    required="required"
+                    value={formD.Certification_export_support_required}
+                  />
+                </td>
+              </tr>
+            )}
                 </tr>
                 <tr>
                   <td className="heading">
                     {t(
                       "Any laboratory testing facility specific to export requirement  which is currently not available?"
                     )}
-                    {t("If Yes, mention support required and tentative cost:")}
                   </td>
-                  <td>
+                  {/* <td>
                     <input
                       type="text"
                       id="question"
@@ -476,8 +601,70 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       value={formD.laboratory_requirement}
                       onChange={handleChange}
                     />
+                  </td> */}
+                  <td colSpan={6}>
+                <div className="radio_wrapper wrapup">
+                  <td>
+                    <label
+                      style={{ marginRight: "20px" }}
+                      htmlFor="laboratory_requirementyes"
+                    >
+                      {t("YES")}
+                    </label>
+                    <input
+                      type="radio"
+                      name="laboratory_requirement"
+                      id="laboratory_requirementyes"
+                      value="YES"
+                      required="required"
+                      onClick={() => setA612("show612")}
+                      onChange={handleChange}
+                      checked={formD.laboratory_requirement == "YES"}
+                    />
                   </td>
+                  <td>
+                    <label
+                      style={{ marginRight: "20px" }}
+                      htmlFor="laboratory_requirementno"
+                    >
+                      {t("NO")}
+                    </label>
+                    <input
+                      type="radio"
+                      name="laboratory_requirement"
+                      id="laboratory_requirementno"
+                      value="NO"
+                      required="required"
+                      onClick={() => setA612(null)}
+                      onChange={handleChange}
+                      checked={formD.laboratory_requirement == "NO"}
+                    />
+                  </td>
+                </div>
+              </td>
                 </tr>
+                {a612 != "show612" ? (
+              ""
+            ) : (
+              <tr>
+                <td className="heading" colSpan={1}>
+                  <label htmlFor="laboratory_export_support_required">
+                  {t("If Yes, mention support required and tentative cost:")}{" "}
+                  </label>
+                </td>
+                <td colSpan={6}>
+                  <input
+                    style={{ minWidth: "20px", marginBottom: "12px" }}
+                    type="text"
+                    id="laboratory_export_support_required"
+                    name="laboratory_export_support_required"
+                    onChange={handleChange}
+                    required="required"
+                    value={formD.laboratory_export_support_required}
+                  />
+                </td>
+              </tr>
+            )}
               </tbody>
             </table>
           </div>
@@ -512,7 +699,6 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       id="counselling"
                       name="Counselling"
                       className="Requirement_of_Soft_Interventions"
-                      required="required"
                       value={
                         formD.Requirement_of_Soft_Interventions.Counselling
                       }
@@ -530,7 +716,6 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       id="upgrade"
                       className="Requirement_of_Soft_Interventions"
                       name="Upgradation_of_IT_Infrastructure"
-                      required="required"
                       value={
                         formD.Requirement_of_Soft_Interventions
                           .Upgradation_of_IT_Infrastructure
@@ -549,7 +734,6 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       id="training"
                       name="Participation_in_Training"
                       className="Requirement_of_Soft_Interventions"
-                      required="required"
                       value={
                         formD.Requirement_of_Soft_Interventions
                           .Participation_in_Training
@@ -565,7 +749,6 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       type="text"
                       id="development"
                       name="Institution_Development"
-                      required="required"
                       className="Requirement_of_Soft_Interventions"
                       value={
                         formD.Requirement_of_Soft_Interventions
@@ -584,7 +767,6 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       type="text"
                       id="new_software"
                       className="Requirement_of_Soft_Interventions"
-                      required="required"
                       name="Implementation_of_new_software"
                       value={
                         formD.Requirement_of_Soft_Interventions
@@ -606,7 +788,6 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       id="tools"
                       className="Requirement_of_Soft_Interventions"
                       name="Training_Process_Improvement"
-                      required="required"
                       value={
                         formD.Requirement_of_Soft_Interventions
                           .Training_Process_Improvement
@@ -625,7 +806,6 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       id="promotion"
                       className="Requirement_of_Soft_Interventions"
                       name="Market_Promotion_Initiatives"
-                      required="required"
                       value={
                         formD.Requirement_of_Soft_Interventions
                           .Market_Promotion_Initiatives
@@ -644,7 +824,6 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       id="design"
                       className="Requirement_of_Soft_Interventions"
                       name="Design_and_product_development"
-                      required="required"
                       value={
                         formD.Requirement_of_Soft_Interventions
                           .Design_and_product_development
@@ -663,7 +842,6 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
                       id="campaign"
                       className="Requirement_of_Soft_Interventions"
                       name="Promotion_Campaign"
-                      required="required"
                       value={
                         formD.Requirement_of_Soft_Interventions
                           .Promotion_Campaign
@@ -855,7 +1033,7 @@ function FormPart6({ formD, setFormD, expand2, expand, addfields }) {
           fontSize: "large",
         }}
       >
-        <NavLink to="/5" className="arrow_notation">
+        <NavLink to="/eForm/5" className="arrow_notation">
           {t("Prev")}
         </NavLink>
         <button

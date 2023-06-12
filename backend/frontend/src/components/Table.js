@@ -41,15 +41,25 @@ function Table({ formD, setFormD }) {
   const [an, setAn] = useState("NUMBER");
 
   const validate = (e) => {
+    const form = document.getElementById("formy");
     const check = document.querySelectorAll(".serviceInd");
     const check1 = document.querySelector(".serviceInd");
     const manuCheck = document.querySelectorAll(".manufac");
     const manuCheck1 = document.querySelector(".manufac");
+    const business = form.querySelectorAll(`input[type="checkbox"].part1`);
 
+    var BusiChk = false;
     var chk = false;
     var chk2 = false;
     var manuchk = false;
     var manuchk1 = false;
+
+    business.forEach((el)=>{
+      if(el.checked){
+        BusiChk=true;
+      }
+    });
+
     check.forEach((elem) => {
       if (elem.type == "checkbox") {
         if (elem.checked) {
@@ -72,8 +82,17 @@ function Table({ formD, setFormD }) {
         }
       }
     });
+    const err1 = document.querySelector(`input[type="checkbox"].part1`);
 
     console.log(chk, chk2);
+
+    if (!BusiChk) {
+      toast.error("Please select any one option");
+      err1.setCustomValidity("select any one option");
+    }else {
+      err1.setCustomValidity("");
+    }
+
     if (!chk && !chk2) {
       toast.error("choose one of the option or fill in the text-field");
       check1.setCustomValidity("enter here or fill the text");
@@ -243,7 +262,21 @@ function Table({ formD, setFormD }) {
           [className]: { ...prevFormData[className], [name]: value },
         };
       });
-    } else if (className == "Infrastructure") {
+    } 
+    else if (
+      name =="Type_of_Business"
+    ) {
+        setFormD((prevFormData) => {
+          return {
+            ...prevFormData,
+            [name]: {
+              ...prevFormData[name],
+              [value]: checked,
+            },
+          };
+        });
+    }
+    else if (className == "Infrastructure") {
       setFormD((prevFormData) => {
         return {
           ...prevFormData,
@@ -577,37 +610,37 @@ function Table({ formD, setFormD }) {
                         {t("Manufacturing")}
                       </label>
                       <input
-                        type="radio"
+                        type="checkbox"
                         name="Type_of_Business"
                         id="manufacturing"
+                        className="part1"
                         value="manufacturing"
                         onChange={handleChange}
-                        required="required"
-                        checked={formD.Type_of_Business == "manufacturing"}
+                        checked={formD.Type_of_Business.manufacturing}
                       />
                     </div>
                     <div>
                       <label htmlFor="service">{t("Service")}</label>
                       <input
-                        type="radio"
+                        type="checkbox"
                         name="Type_of_Business"
                         id="service"
+                        className="part1"
                         value="service"
                         onChange={handleChange}
-                        required="required"
-                        checked={formD.Type_of_Business == "service"}
+                        checked={formD.Type_of_Business.service}
                       />
                     </div>
                     <div>
                       <label htmlFor="trading">{t("Trading")}</label>
                       <input
-                        type="radio"
+                        type="checkbox"
                         name="Type_of_Business"
                         id="trading"
+                        className="part1"
                         value="trading"
                         onChange={handleChange}
-                        required="required"
-                        checked={formD.Type_of_Business == "trading"}
+                        checked={formD.Type_of_Business.trading}
                       />
                     </div>
                   </div>
@@ -1495,10 +1528,9 @@ function Table({ formD, setFormD }) {
                       </label>
                       <input
                         style={{ width: "95%" }}
-                        type="text"
+                        type="number"
                         id="formal_source-1"
                         name="formal_source"
-                        required="required"
                         onChange={handleChange}
                         value={formD.formal_source}
                       />
@@ -1519,10 +1551,9 @@ function Table({ formD, setFormD }) {
                       </label>
                       <input
                         style={{ width: "95%" }}
-                        type="text"
+                        type="number"
                         id="informal_source-1"
                         name="informal_source"
-                        required="required"
                         onChange={handleChange}
                         value={formD.informal_source}
                       />
@@ -1543,10 +1574,9 @@ function Table({ formD, setFormD }) {
                       </label>
                       <input
                         style={{ width: "95%" }}
-                        type="text"
+                        type="number"
                         id="internal_fund_generation-1"
                         name="internal_fund_generation"
-                        required="required"
                         onChange={handleChange}
                         value={formD.internal_fund_generation}
                       />
@@ -1676,12 +1706,12 @@ function Table({ formD, setFormD }) {
                         gap: "3px",
                       }}
                     >
-                      <>
+                      <td>
                         {t(
                           "If not, please indicate the amount of loan required for both term loan and working capital loan"
                         )}{" "}
-                      </>
-                      <input
+                      </td>
+                      <td><input
                         style={{ minWidth: "20px", marginBottom: "12px" }}
                         type="number"
                         id="loan_required"
@@ -1690,6 +1720,7 @@ function Table({ formD, setFormD }) {
                         onChange={handleChange}
                         value={formD.loan_required}
                       />
+                      </td>
                     </tr>
                   )}
                 </td>
@@ -2421,10 +2452,10 @@ function Table({ formD, setFormD }) {
         }}
       >
         {/* <ToastContainer /> */}
-        <NavLink to="/" className="arrow_notation">
+        <NavLink to="/eForm/" className="arrow_notation">
           {t("Prev")}
         </NavLink>
-        <NavLink to="/2" className="arrow_notation" onClick={validate}>
+        <NavLink to="/eForm/2" className="arrow_notation" onClick={validate}>
           {t("Next")}
         </NavLink>
       </div>

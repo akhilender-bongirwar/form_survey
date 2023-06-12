@@ -30,6 +30,11 @@ const FormPart2 = ({
     var marketingChk = false;
     var marketingChk1 = false;
 
+    const srcProcurement = document.querySelectorAll(".src");
+    const srcProcurement1 = document.querySelector(".src");
+    var srcChk = false;
+    var srcChk1 = false;
+
     const form = document.getElementById("formy");
 
     const checkboxes1 = form.querySelectorAll(`input[type="checkbox"].a`);
@@ -47,6 +52,21 @@ const FormPart2 = ({
         checked2 = true;
       }
     });
+
+    srcProcurement.forEach((el)=>{
+      if(el.type == "checkbox"){
+        if(el.checked){
+          srcChk=true;
+        }
+      }
+      else if(el.type == "text"){
+        if(el.value!=""){
+          srcChk1=true;
+        }
+      }
+    })
+
+
     challFacing.forEach((el) => {
       if (el.type == "checkbox") {
         if (el.checked) {
@@ -76,6 +96,16 @@ const FormPart2 = ({
     const err1 = form.querySelector(`input[type="checkbox"].a`);
     const err2 = form.querySelector(`input[type="checkbox"].b`);
     if (expand) {
+      if(!srcChk && !srcChk1){
+        toast.error("Choose any one of the option or fill the text-field");
+        srcProcurement1.setCustomValidity(
+          "Choose any one of the option or fill the text-field"
+        );
+        srcProcurement1.reportValidity();
+      }else{
+        srcProcurement1.setCustomValidity("");
+      }
+
       if (!challengesChk && !challengesChk1) {
         toast.error("Choose any one of the option or fill the text-field");
         challFacing1.setCustomValidity(
@@ -115,7 +145,7 @@ const FormPart2 = ({
     if (
       !isV &&
       (!challengesChk || !challengesChk1) &&
-      (!marketingChk || !marketingChk1)
+      (!marketingChk || !marketingChk1) && (!srcChk || !srcChk1)
     ) {
       e.preventDefault();
     } else {
@@ -170,7 +200,8 @@ const FormPart2 = ({
       });
     } else if (
       name === "challenges_while_selling" ||
-      name === "options_you_leverage_for_sale"
+      name === "options_you_leverage_for_sale" ||
+      name=== "Raw_Materials"
     ) {
       if (type == "text") {
         setFormD((prevFormData) => {
@@ -342,6 +373,8 @@ const FormPart2 = ({
     }
   }
   const [others, setothers] = useState(null);
+  const [a211, setA211] = useState(null);
+  const [a212, setA212] = useState(null);
   const [challenges, setchallenges] = useState(null);
   const [leverage, setleverage] = useState(null);
   return (
@@ -354,7 +387,7 @@ const FormPart2 = ({
         }}
       >
         <div>
-        <h1 style={{ textAlign: "center" }}>Supply Chain</h1>
+          <h1 style={{ textAlign: "center" }}>Supply Chain</h1>
           <div style={{ marginTop: "7vw" }}>
             <Accordion
               onClick={(e) => {
@@ -400,7 +433,7 @@ const FormPart2 = ({
                           <div
                             style={{
                               fontWeight: "bolder",
-                              margin: "10px 0"
+                              margin: "10px 0",
                             }}
                           >
                             {t("Source of Procurement")}
@@ -413,18 +446,21 @@ const FormPart2 = ({
                               <td className="d_flex_align_CONTENT_justify">
                                 <label
                                   htmlFor="raw1"
-                                  style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                                  style={{
+                                    fontSize: "0.9rem",
+                                    padding: "0.5em",
+                                  }}
                                 >
                                   {t("Direct")}
                                 </label>
                                 <input
-                                  type="radio"
+                                  type="checkbox"
                                   checked={
-                                    formD.Raw_Materials.radio_button ==
-                                    "Direct" && formD.Raw_Materials.other == ""
+                                    formD.Raw_Materials.Direct
                                   }
                                   id="raw1"
                                   name="Raw_Materials"
+                                  className="src"
                                   value="Direct"
                                   onChange={handleChange}
                                 />
@@ -432,36 +468,41 @@ const FormPart2 = ({
                               <td className="d_flex_align_CONTENT_justify">
                                 <label
                                   htmlFor="raw2"
-                                  style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                                  style={{
+                                    fontSize: "0.9rem",
+                                    padding: "0.5em",
+                                  }}
                                 >
                                   {t("Through Traders")}
                                 </label>
                                 <input
-                                  type="radio"
+                                  type="checkbox"
                                   id="raw2"
+                                  className="src"
                                   name="Raw_Materials"
                                   checked={
-                                    formD.Raw_Materials.radio_button ==
-                                    "Through Traders" &&
-                                    formD.Raw_Materials.other == ""
+                                    formD.Raw_Materials.Through_Traders
                                   }
-                                  value="Through Traders"
+                                  value="Through_Traders"
                                   onChange={handleChange}
                                 />
                               </td>
                               <td className="d_flex_align_CONTENT_justify">
                                 <label
                                   htmlFor="raw3"
-                                  style={{ fontSize: "0.9rem", padding: "0.5em" }}
+                                  style={{
+                                    fontSize: "0.9rem",
+                                    padding: "0.5em",
+                                  }}
                                 >
                                   {t("Online")}
                                 </label>
                                 <input
-                                  type="radio"
+                                  type="checkbox"
                                   id="raw3"
+                                  className="src"
                                   checked={
-                                    formD.Raw_Materials.radio_button ==
-                                    "Online" && formD.Raw_Materials.other == ""
+                                    formD.Raw_Materials.Online
                                   }
                                   name="Raw_Materials"
                                   value="Online"
@@ -472,6 +513,7 @@ const FormPart2 = ({
                                 <input
                                   type="text"
                                   name="Raw_Materials"
+                                  className="src"
                                   onChange={handleChange}
                                   value={formD.Raw_Materials.other}
                                   placeholder={t("others")}
@@ -485,8 +527,9 @@ const FormPart2 = ({
                                 <h1
                                   style={{
                                     fontWeight: "bolder",
-                                    margin: "20px 0"
-                                  }}>
+                                    margin: "20px 0",
+                                  }}
+                                >
                                   {t("Is Raw Material available easily")}?
                                 </h1>
                                 <td colSpan={6}>
@@ -539,9 +582,13 @@ const FormPart2 = ({
                                   <h1
                                     style={{
                                       fontWeight: "bolder",
-                                      margin: "20px 0"
-                                    }}>
-                                    {t("If No, please mention difficulties / challenges")}?
+                                      margin: "20px 0",
+                                    }}
+                                  >
+                                    {t(
+                                      "If No, please mention difficulties / challenges"
+                                    )}
+                                    ?
                                   </h1>
                                   <td colSpan={6}>
                                     <input
@@ -559,9 +606,13 @@ const FormPart2 = ({
                                 <h1
                                   style={{
                                     fontWeight: "bolder",
-                                    margin: "20px 0"
-                                  }}>
-                                  {t("Do you adopt any green technology in your production cycle (waste management/ recycling/ etc)")}?
+                                    margin: "20px 0",
+                                  }}
+                                >
+                                  {t(
+                                    "Do you adopt any green technology in your production cycle (waste management/ recycling/ etc)"
+                                  )}
+                                  ?
                                 </h1>
                                 <td colSpan={6}>
                                   <div className="radio_wrapper wrapup">
@@ -575,6 +626,7 @@ const FormPart2 = ({
                                         id="yes_material2"
                                         required="required"
                                         value="YES"
+                                        onClick={() => setA211("show211")}
                                         onChange={handleChange}
                                         checked={formD.green_tech == "YES"}
                                       />
@@ -589,6 +641,7 @@ const FormPart2 = ({
                                         id="no_material2"
                                         required="required"
                                         value="NO"
+                                        onClick={() => setA211(null)}
                                         onChange={handleChange}
                                         checked={formD.green_tech == "NO"}
                                       />
@@ -596,13 +649,44 @@ const FormPart2 = ({
                                   </div>
                                 </td>
                               </tr>
+                              {a211 != "show211" ? (
+                                ""
+                              ) : (
+                                <tr>
+                                  <td className="heading" colSpan={1}>
+                                    <label htmlFor="adopted_green_tech">
+                                      {t(
+                                        "If Yes, Mention green technology adopted"
+                                      )}{" "}
+                                    </label>
+                                  </td>
+                                  <td colSpan={6}>
+                                    <input
+                                      style={{
+                                        minWidth: "20px",
+                                        marginBottom: "12px",
+                                      }}
+                                      type="text"
+                                      id="adopted_green_tech"
+                                      name="adopted_green_tech"
+                                      onChange={handleChange}
+                                      required="required"
+                                      value={formD.adopted_green_tech}
+                                    />
+                                  </td>
+                                </tr>
+                              )}
                               <tr>
                                 <h1
                                   style={{
                                     fontWeight: "bolder",
-                                    margin: "20px 0"
-                                  }}>
-                                  {t("Does your production facility need any Environment Clearance")}?
+                                    margin: "20px 0",
+                                  }}
+                                >
+                                  {t(
+                                    "Does your production facility need any Environment Clearance"
+                                  )}
+                                  ?
                                 </h1>
                                 <td colSpan={6}>
                                   <div className="radio_wrapper wrapup">
@@ -616,6 +700,7 @@ const FormPart2 = ({
                                         id="yes_material3"
                                         required="required"
                                         value="YES"
+                                        onClick={() => setA212("show212")}
                                         onChange={handleChange}
                                         checked={
                                           formD.environment_clearence == "YES"
@@ -632,6 +717,7 @@ const FormPart2 = ({
                                         id="no_material3"
                                         required="required"
                                         value="NO"
+                                        onClick={() => setA212(null)}
                                         onChange={handleChange}
                                         checked={
                                           formD.environment_clearence == "NO"
@@ -641,145 +727,170 @@ const FormPart2 = ({
                                   </div>
                                 </td>
                               </tr>
+                              {a212 != "show212" ? (
+                                ""
+                              ) : (
+                                <tr>
+                                  <td className="heading" colSpan={1}>
+                                    <label htmlFor="required_environment_clearence">
+                                      {t(
+                                        "If Yes, Mention Clearance required"
+                                      )}{" "}
+                                    </label>
+                                  </td>
+                                  <td colSpan={6}>
+                                    <input
+                                      style={{
+                                        minWidth: "20px",
+                                        marginBottom: "12px",
+                                      }}
+                                      type="text"
+                                      id="required_environment_clearence"
+                                      name="required_environment_clearence"
+                                      onChange={handleChange}
+                                      required="required"
+                                      value={formD.required_environment_clearence}
+                                    />
+                                  </td>
+                                </tr>
+                              )}
                               <tr>
                                 <td colSpan={1}>
                                   <h1>{t("Final Product sold to")}</h1>
                                 </td>
                                 <td>
                                   <div className="radio_wrapper wrapup">
-                                  
-                                      <div>
-                                        <label htmlFor="locala">
-                                          {t("Trader / Agents")}{" "}
-                                        </label>
-                                        <input
-                                          type="checkbox"
-                                          name="final_product_sold_to"
-                                          className="a"
-                                          id="locala"
-                                          value="Trader_Agents"
-                                          onChange={handleChange}
-                                          checked={
-                                            formD.final_product_sold_to
-                                              .Trader_Agents
-                                          }
-                                        />
-                                      </div>
-                                      <div>
-                                        <label htmlFor="Govtb">
-                                          {t("Wholesalers")}{" "}
-                                        </label>
-                                        <input
-                                          type="checkbox"
-                                          id="Govtb"
-                                          name="final_product_sold_to"
-                                          className="a"
-                                          value="Wholesalers"
-                                          onChange={handleChange}
-                                          checked={
-                                            formD.final_product_sold_to
-                                              .Wholesalers
-                                          }
-                                        />
-                                      </div>
-                                      <div>
-                                        <label htmlFor="onlinec">
-                                          {t("Retailers")}
-                                        </label>
-                                        <input
-                                          type="checkbox"
-                                          id="onlinec"
-                                          name="final_product_sold_to"
-                                          value="Retailers"
-                                          className="a"
-                                          onChange={handleChange}
-                                          checked={
-                                            formD.final_product_sold_to.Retailers
-                                          }
-                                        />
-                                      </div>
-                                      <div>
-                                        <label htmlFor="otherd">
-                                          {t("Large Manufacturers/ Anchor units")}{" "}
-                                        </label>
-                                        <input
-                                          type="checkbox"
-                                          id="otherd"
-                                          name="final_product_sold_to"
-                                          value="Large_Manufacturers_Anchor_units"
-                                          className="a"
-                                          onChange={handleChange}
-                                          checked={
-                                            formD.final_product_sold_to
-                                              .Large_Manufacturers_Anchor_units
-                                          }
-                                        />
-                                      </div>
-                                      <div>
-                                        <label htmlFor="exporte">
-                                          {t("Exporters")}{" "}
-                                        </label>
-                                        <input
-                                          type="checkbox"
-                                          id="exporte"
-                                          name="final_product_sold_to"
-                                          className="a"
-                                          value="Exporters"
-                                          onChange={handleChange}
-                                          checked={
-                                            formD.final_product_sold_to.Exporters
-                                          }
-                                        />
-                                      </div>
-                                        <div>
-                                          <label htmlFor="localf">
-                                            {t("OEMs")}{" "}
-                                          </label>
-                                          <input
-                                            type="checkbox"
-                                            name="final_product_sold_to"
-                                            className="a"
-                                            id="localf"
-                                            value="OEMs"
-                                            onChange={handleChange}
-                                            checked={
-                                              formD.final_product_sold_to.OEMs
-                                            }
-                                          />
-                                        </div>
-                                        <div>
-                                          <label htmlFor="localg">
-                                            {t("End Users")}{" "}
-                                          </label>
-                                          <input
-                                            type="checkbox"
-                                            name="final_product_sold_to"
-                                            id="localg"
-                                            value="End_Users"
-                                            className="a"
-                                            onChange={handleChange}
-                                            checked={
-                                              formD.final_product_sold_to
-                                                .End_Users
-                                            }
-                                          />
-                                        </div>
-                                        <div>
-                                          <label htmlFor="localh">
-                                            {t("Others")}{" "}
-                                          </label>
-                                          <input
-                                            type="checkbox"
-                                            name="final_product_sold_to"
-                                            id="localh"
-                                            value="Others"
-                                            className="a"
-                                            onChange={handleChange}
-                                            checked={
-                                              formD.final_product_sold_to.Others
-                                            }
-                                          />
-                                        </div>
+                                    <div>
+                                      <label htmlFor="locala">
+                                        {t("Trader / Agents")}{" "}
+                                      </label>
+                                      <input
+                                        type="checkbox"
+                                        name="final_product_sold_to"
+                                        className="a"
+                                        id="locala"
+                                        value="Trader_Agents"
+                                        onChange={handleChange}
+                                        checked={
+                                          formD.final_product_sold_to
+                                            .Trader_Agents
+                                        }
+                                      />
+                                    </div>
+                                    <div>
+                                      <label htmlFor="Govtb">
+                                        {t("Wholesalers")}{" "}
+                                      </label>
+                                      <input
+                                        type="checkbox"
+                                        id="Govtb"
+                                        name="final_product_sold_to"
+                                        className="a"
+                                        value="Wholesalers"
+                                        onChange={handleChange}
+                                        checked={
+                                          formD.final_product_sold_to
+                                            .Wholesalers
+                                        }
+                                      />
+                                    </div>
+                                    <div>
+                                      <label htmlFor="onlinec">
+                                        {t("Retailers")}
+                                      </label>
+                                      <input
+                                        type="checkbox"
+                                        id="onlinec"
+                                        name="final_product_sold_to"
+                                        value="Retailers"
+                                        className="a"
+                                        onChange={handleChange}
+                                        checked={
+                                          formD.final_product_sold_to.Retailers
+                                        }
+                                      />
+                                    </div>
+                                    <div>
+                                      <label htmlFor="otherd">
+                                        {t("Large Manufacturers/ Anchor units")}{" "}
+                                      </label>
+                                      <input
+                                        type="checkbox"
+                                        id="otherd"
+                                        name="final_product_sold_to"
+                                        value="Large_Manufacturers_Anchor_units"
+                                        className="a"
+                                        onChange={handleChange}
+                                        checked={
+                                          formD.final_product_sold_to
+                                            .Large_Manufacturers_Anchor_units
+                                        }
+                                      />
+                                    </div>
+                                    <div>
+                                      <label htmlFor="exporte">
+                                        {t("Exporters")}{" "}
+                                      </label>
+                                      <input
+                                        type="checkbox"
+                                        id="exporte"
+                                        name="final_product_sold_to"
+                                        className="a"
+                                        value="Exporters"
+                                        onChange={handleChange}
+                                        checked={
+                                          formD.final_product_sold_to.Exporters
+                                        }
+                                      />
+                                    </div>
+                                    <div>
+                                      <label htmlFor="localf">
+                                        {t("OEMs")}{" "}
+                                      </label>
+                                      <input
+                                        type="checkbox"
+                                        name="final_product_sold_to"
+                                        className="a"
+                                        id="localf"
+                                        value="OEMs"
+                                        onChange={handleChange}
+                                        checked={
+                                          formD.final_product_sold_to.OEMs
+                                        }
+                                      />
+                                    </div>
+                                    <div>
+                                      <label htmlFor="localg">
+                                        {t("End Users")}{" "}
+                                      </label>
+                                      <input
+                                        type="checkbox"
+                                        name="final_product_sold_to"
+                                        id="localg"
+                                        value="End_Users"
+                                        className="a"
+                                        onChange={handleChange}
+                                        checked={
+                                          formD.final_product_sold_to.End_Users
+                                        }
+                                      />
+                                    </div>
+                                    <div>
+                                      <label htmlFor="localh">
+                                        {t("Others")}{" "}
+                                      </label>
+                                      <input
+                                        type="checkbox"
+                                        name="final_product_sold_to"
+                                        id="localh"
+                                        value="Others"
+                                        className="a"
+                                        onChange={handleChange}
+                                        checked={
+                                          formD.final_product_sold_to.Others
+                                        }
+                                      />
+                                    </div>
                                   </div>
                                 </td>
                               </tr>
@@ -913,6 +1024,21 @@ const FormPart2 = ({
                                   </td>
                                 </tr>
                               ) : null}
+                              <tr>
+                                <h1 style={{ margin: "10px 0" }}>
+                                  {t(
+                                    "What challenges do you face/hear while selling your products"
+                                  )}
+                                </h1>
+                                <td colSpan={6}>
+                                  <input
+                                    type="text"
+                                    name="challenges_face_hear"
+                                    onChange={handleChange}
+                                    value={formD.challenges_face_hear}
+                                  />
+                                </td>
+                              </tr>
                               <tr>
                                 <td>
                                   <label>
@@ -1069,7 +1195,7 @@ const FormPart2 = ({
                                 </td>
                                 <td
                                   colSpan={6}
-                                // style={{ display: "flex", alignItems: "center" }}
+                                  // style={{ display: "flex", alignItems: "center" }}
                                 >
                                   <div
                                     className="radio_wrapper wrapup"
@@ -1118,13 +1244,14 @@ const FormPart2 = ({
                                   {leverage ? (
                                     <div>
                                       <td
-                                      style={{
-                                            width: "100%",
-                                            display: "flex",
-                                            flexDirection: "column",
-                                          }}>
+                                        style={{
+                                          width: "100%",
+                                          display: "flex",
+                                          flexDirection: "column",
+                                        }}
+                                      >
                                         <td
-                                          colSpan={6}           
+                                          colSpan={6}
                                           className="input_label_gapper wrapup"
                                         >
                                           <div>
@@ -1232,23 +1359,27 @@ const FormPart2 = ({
                                               }
                                             />
                                           </div>
-                                          <div>
-                                            <label htmlFor="other">
-                                              {t("Other (specify)")}
-                                            </label>
-                                            <input
-                                              type="text"
-                                              id="other"
-                                              name="options_you_leverage_for_sale"
-                                              className="branding"
-                                              onChange={handleChange}
-                                              value={
-                                                formD
-                                                  .options_you_leverage_for_sale
-                                                  .other
-                                              }
-                                            />
-                                          </div>
+                                          <tr>
+                                            <td>
+                                              <label htmlFor="other">
+                                                {t("Other (specify)")}
+                                              </label>
+                                            </td>
+                                            <td>
+                                              <input
+                                                type="text"
+                                                id="other"
+                                                name="options_you_leverage_for_sale"
+                                                className="branding"
+                                                onChange={handleChange}
+                                                value={
+                                                  formD
+                                                    .options_you_leverage_for_sale
+                                                    .other
+                                                }
+                                              />
+                                            </td>
+                                          </tr>
                                         </td>
                                       </td>
                                     </div>
@@ -1554,11 +1685,11 @@ const FormPart2 = ({
               fontSize: "large",
             }}
           >
-            <NavLink to="/1" className="arrow_notation">
+            <NavLink to="/eForm/1" className="arrow_notation">
               {t("Prev")}
             </NavLink>
             {expand || expand2 ? (
-              <NavLink to="/3" className="arrow_notation" onClick={validate}>
+              <NavLink to="/eForm/3" className="arrow_notation" onClick={validate}>
                 {t("Next")}
               </NavLink>
             ) : null}

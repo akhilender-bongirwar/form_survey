@@ -288,7 +288,7 @@ const First = ({ formD, setFormD }) => {
           <tr style={{ display: "table-row" }}>
             <th>11</th>
             <th>AM</th>
-            <th>Ayodhya</th>
+            <th>Amethi</th>
           </tr>
         </tbody>
       </table>
@@ -315,9 +315,6 @@ const First = ({ formD, setFormD }) => {
             autoWidth
             label="District"
           >
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
             <MenuItem value="HA">Hardoi</MenuItem>
             <MenuItem value="LA">Lakhimpur Kheri</MenuItem>
             <MenuItem value="LU">Lucknow</MenuItem>
@@ -366,10 +363,13 @@ const First = ({ formD, setFormD }) => {
           fontSize: "large",
           marginRight: "15px",
           display: "flex",
-          justifyContent: "flex-end",
+          justifyContent: "space-between",
         }}
       >
-        <NavLink to="/1" className="arrow_notation" onClick={validate}>
+        <NavLink to="/" className="arrow_notation" >
+          Back to Home
+        </NavLink>
+        <NavLink to="/eForm/1" className="arrow_notation" onClick={validate}>
           Next
         </NavLink>
       </div>

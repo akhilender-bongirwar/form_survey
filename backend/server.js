@@ -29,7 +29,7 @@ app.use(express.json());
 ConnectDB();
 //rest api
 app.post("/form-data", formdatacontroller);
-console.log("al least smthing came");
+// console.log("al least smthing came");
 app.use("/drive-data", uploadRouter);
 app.use("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./frontend/build/index.html"));
