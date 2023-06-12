@@ -13,6 +13,7 @@ import { changeLanguage } from "i18next";
 
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import First from "./components/First";
+import Googledrive from "./components/googledrive";
 
 function App() {
   const [expand, setexpand] = useState(false);
@@ -313,6 +314,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Outer />}>
+            <Route path="/googleDrive" element={<Googledrive />} />
             <Route
               index
               element={<First formD={formD} setFormD={setFormD} />}

@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
+import axios from "axios";
 
 const First = ({ formD, setFormD }) => {
   const navigate = useNavigate();
+  const [filedata, setfiledata] = useState(null);
   const validate = (e) => {
     const isV = document.getElementById("formy").reportValidity();
     if (!isV) {
@@ -15,6 +17,42 @@ const First = ({ formD, setFormD }) => {
       navigate("/1");
     }
   };
+
+  // const upload_to_drive = () => {
+  //   const formdata = new FormData();
+
+  //   console.log(filedata);
+  //   const blob = new Blob([JSON.stringify(filedata)]);
+  //   formdata.append("media", blob, { contentType: "application/pdf" });
+  //   const metadata = {
+  //     file: formdata.name,
+  //     filename: "sample.pdf",
+  //   };
+  //   const metadata_blob = new Blob([JSON.stringify(metadata)]);
+
+  //   formdata.append("metadata", metadata_blob, {
+  //     contentType: "application/json;charset=UTF-8",
+  //   });
+  //   const Headers = {
+  //     "Content-Type": `multipart/related`,
+  //     "Content-Length": formdata.size,
+  //   };
+  //   console.log(formdata);
+  //   axios
+  //     .post(
+  //       "https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart",
+  //       formdata,
+  //       {
+  //         Headers,
+  //       }
+  //     )
+  //     .then((res) => {
+  //       console.log(res);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
   function handleChange(event) {
     let { name, value, type, checked, className, id } = event.target;
     console.log(event);
@@ -312,6 +350,16 @@ const First = ({ formD, setFormD }) => {
           name="submission_date"
         />
       </div>
+      {/* <div>
+        <input
+          type="file"
+          onChange={(e) => {
+            setfiledata(e.target.files[0]);
+          }}
+          accept=".pdf"
+        />
+        <button onClick={upload_to_drive}>send</button>
+      </div> */}
       <div
         className="buttoncontainer"
         style={{
