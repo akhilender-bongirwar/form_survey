@@ -112,7 +112,7 @@ function Table({ formD, setFormD }) {
     if (!isV && (!chk || !chk2) && (!manuchk || !manuchk1)) {
       e.preventDefault();
     } else {
-      navigate("/2");
+      navigate("/eform/2");
     }
   };
 

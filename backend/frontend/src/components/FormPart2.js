@@ -149,7 +149,7 @@ const FormPart2 = ({
     ) {
       e.preventDefault();
     } else {
-      navigate("/3");
+      navigate("/eform/3");
     }
   };
   function handleChange(event) {
