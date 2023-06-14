@@ -16,7 +16,7 @@ function FormPart3({ formD, setFormD, addfields, setAddFields }) {
     if (!isV) {
       e.preventDefault();
     } else {
-      navigate("/4");
+      navigate("/eform/4");
     }
   };
   function handleChange(event) {

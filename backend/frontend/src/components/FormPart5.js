@@ -12,7 +12,7 @@ function FormPart5({ formD, setFormD }) {
     if (!isV) {
       e.preventDefault();
     } else {
-      navigate("/6");
+      navigate("/eform/6");
     }
   };
   function handleChange(event) {

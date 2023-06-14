@@ -75,7 +75,7 @@ function FormPart4({ formD, setFormD }) {
       e.preventDefault();
     }
     else {
-      navigate('/5')
+      navigate('/eform/5')
     }
   };
   function handleChange(event) {
